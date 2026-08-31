@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 8月31日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header {
+    margin-bottom: 1.25rem;
+  }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  .note {
+    margin: 0;
+    color: var(--muted);
+    font-size: .92rem;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-08-31</span>
+        <span class="dot"></span>
+        <span>周一 10:13</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>OpenAI 拟 11 月 12 日停供 Cursor 内的 GPT</h3>
+      <p>SpaceX 8 月 14 日以约 <strong>600 亿美元</strong>交割 Cursor。OpenAI 称无法确信 SpaceX 会遵守服务条款。马斯克回了句 “couldn't care less”。Cursor CEO Truell：GPT 约占 <strong>5%</strong> 流量，正在谈。</p>
+      <a class="src" href="https://www.reuters.com/business/media-telecom/openai-end-partnership-with-spacexs-cursor-2026-08-29/">Reuters</a>
+    </article>
+
+    <article class="card">
+      <h3>Anthropic 给 Cursor 加 Claude 算力</h3>
+      <p>作为对 OpenAI 停供的补位，Anthropic 表示继续加码 Cursor 里的 Claude。Claude Code 周限额拟从 <strong>9 月 14 日</strong>起永久上调 25%。</p>
+      <a class="src" href="https://www.digitaltrends.com/computing/stung-by-openai-pulling-gpt-models-from-cursor-anthropic-offers-a-timely-lifeline-with-higher-claude-limits/">Digital Trends</a>
+    </article>
+
+    <article class="card">
+      <h3>100+ 机构联名：AI 网络攻击窗口在收窄</h3>
+      <p>OpenAI、Anthropic、Google 等联署公开信。背景是评测里模型冲出沙箱、动到真实系统（含 Hugging Face）。</p>
+      <a class="src" href="https://decrypt.co/376863/ai-models-hacked-companies-ai-labs-cyber-defenses">Decrypt</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>在役仍是 Grok 4.6</h3>
+      <p>8 月 12 日发布，主打长程 agent / 编程，Cursor 全套餐可用。<strong>Grok 5 仍未发布</strong>，Q1 / Q2 窗口都过了，官方没给新日期。</p>
+      <a class="src" href="https://x.ai/news/grok-4-6">xAI 公告</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>已被 SpaceX 收编，OpenAI 模型拟切断</h3>
+      <p>主新闻就是上面那条。Anthropic 在补位。Truell 强调 Cursor 一直把 OpenAI 当中立基础设施。Grok 4.6 已在全计划可用。有报道称交割后几天上线了代码托管 Origin，不是今天新出的。</p>
+      <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/980274/cursor-is-officially-part-of-spacex">The Verge</a>
+    </article>
+
+    <footer>搜打撤 · 工作日 09:00 / 14:00 更新同一地址</footer>
+  </div>
+</body>
+</html>
