@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月2日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-02</span>
+        <span class="dot"></span>
+        <span>周三 08:33</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>Google Pics：Workspace 里的 AI 作图</h3>
+      <p>9 月 1 日上线，基于 Nano Banana。面向 Google AI Pro / Ultra 与多数 Workspace 商业客户，先嵌进 Docs / Slides（入口 <strong>pics.new</strong>），随后进 Drive。主打提示词生成、物体分割、图内改字/翻译与协作。</p>
+      <a class="src" href="https://blog.google/products-and-platforms/products/workspace/google-pics/">Google Blog</a>
+    </article>
+
+    <article class="card">
+      <h3>Gemini 视频理解改成「主动看」</h3>
+      <p>Agentic video understanding 上线到 Gemini <strong>3.7 / 3.6 Flash</strong> 与 <strong>3.5 Flash-Lite</strong>。官方称分析成本最多降 <strong>66%</strong>、token 最多降 <strong>88%</strong>、准确率最多升 <strong>7%</strong>；Gemini API / AI Studio / Enterprise 可用。</p>
+      <a class="src" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-agentic-video-in-gemini/">Google DeepMind</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Astra 正式跨过「Critical」网络能力线</h3>
+      <p>9 月 1 日官方长文：Astra 是首个达到 Preparedness Framework <strong>Critical</strong> 网络能力阈值的模型，可在少人引导下找未知漏洞并打出利用链。计划 <strong>soon</strong> 开放，但最强网络能力先给小范围测试，再经 Daybreak Blue 扩给防御侧。ExploitBench 满分；内部评测里还挖到 <strong>2</strong> 个 zero-day。没有公开完整型号发布日。</p>
+      <a class="src" href="https://openai.com/index/path-to-astra/">OpenAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge warn">有新产品</span>
+    </div>
+    <article class="card">
+      <h3>Claude Fable 5.1 / Mythos 5.1 上线</h3>
+      <p>同一底座、不同护栏：Fable 5.1 全面可用（API 名 <strong>claude-fable-5-1</strong>），Mythos 5.1 只给受审的网络安全/生命科学伙伴。缓存读取价砍 <strong>75%</strong> 到 <strong>$0.25</strong>/百万 token，典型负载大约省 <strong>25%</strong>、重度 agent 最高约 <strong>45%</strong>。Terminal-Bench-Science 0.1：<strong>52.6%</strong>（Fable 5 为 24.7%）。输入/输出仍是 <strong>$10 / $50</strong>。</p>
+      <a class="src" href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic</a>
+    </article>
+    <article class="card">
+      <h3>企业侧：EFS 与更少误拦</h3>
+      <p>Enterprise Frontier Safeguards 把监控数据放在客户自有云上，官方称隐私接近零留存；今秋分批上线，EFS 就绪前合格客户可对 Fable 5.1 用零留存。网络护栏误拦大约少 <strong>60%</strong>，并允许用 Fable 做漏洞发现（仍不开放利用开发）。</p>
+      <a class="src" href="https://www.anthropic.com/claude-fable-and-mythos-5-1">Anthropic</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室没有 9/1 下午后的新 AI 稿</h3>
+      <p>覆盖窗自昨天下午起，新闻室最新仍是 <strong>9 月 1 日</strong>联发科 <strong>35 亿美元</strong>可转债 + NVLink Fusion（上午已报）。再往前是 CrowdStrike SafeMind（8/27）、NVHBM（8/25）。</p>
+      <a class="src" href="https://nvidianews.nvidia.com/">NVIDIA Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>在役仍是 Grok 4.6，未见 4.7 上架</h3>
+      <p>开发者文档与模型列表仍以 <strong>Grok 4.6</strong>（8/12）为最新旗舰；没有 Grok 4.7 / Grok 5 的正式型号页或定价卡。马斯克此前口头窗口指向 9 月初，但官方未发。</p>
+      <a class="src" href="https://docs.x.ai/developers/models">xAI Docs</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>Changelog 仍停在 Cloud Agents「从零开始」</h3>
+      <p>本窗无条目：顶部仍是无需第三方 SCM、直接起 Cloud Agent 再存到 Origin 的能力（此前已报）。没有新的 GPT 停供截止日变更，也没有新的 Origin 大版本。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
