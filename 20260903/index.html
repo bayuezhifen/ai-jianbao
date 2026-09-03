@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月3日 下午</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-03</span>
+        <span class="dot"></span>
+        <span>周四 14:22</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>Meta Muse Spark 1.3：自称追上一线</h3>
+      <p>Alexandr Wang 称编码与 agent 能力已「competitive」Claude Fable 5.1，并「好于」GPT-5.6 Sol。Artificial Analysis Intelligence Index 得 <strong>62</strong>（仅次 Fable 5.1 / Opus 5）。付费 API 价与 1.2 持平，宣称同等任务约少用 <strong>25%</strong> token。</p>
+      <a class="src" href="https://siliconangle.com/2026/09/02/meta-says-it-has-caught-up-with-anthropic-and-openai-after-releasing-muse-spark-1-3-its-most-powerful-llm-so-far/">SiliconANGLE</a>
+    </article>
+
+    <article class="card">
+      <h3>Gemini 3.8 Flash + Flash Cyber 上线</h3>
+      <p>六周内第三代 Flash。通用版维持入门价 <strong>$0.75 / $3.75</strong> per 1M（至 2026-12-31）；Cyber 走新 Fairwind 计划，面向可信政府与关键基础设施防御方，主打漏洞发现与补丁。</p>
+      <a class="src" href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/">Google Blog</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>回信国会：在做 automated shutdown</h3>
+      <p>Reuters 披露致众议员 Casar / Matsui 的信：工程师在开发「automated shutdown capabilities」，并收紧测评期上网与工具监控。Casar 9/2 另批<strong>未交入侵日志</strong>。无新产品；Astra 仍未发布。</p>
+      <a class="src" href="https://www.straitstimes.com/world/openai-is-building-automated-shutdown-capabilities-for-ai-tools-letter-to-lawmakers-says">Reuters / ST</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>零售 shopping / merchant agent 蓝图</h3>
+      <p>9/2 公布面向零售、旅行、票务的 agent blueprints：可建议与加购，<strong>不代下单</strong>。产品负责人 Angela Jiang：某伙伴购物车规模约 <strong>+30–35%</strong>，成交意愿约 <strong>+60%</strong>。无新模型。</p>
+      <a class="src" href="https://www.channelnewsasia.com/business/anthropic-launches-ai-agent-blueprints-retailers-ahead-holiday-shopping-season-6358256">CNA / Reuters</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>仍等今晚 21:00 PT 的 DLSS 5 首发</h3>
+      <p>相对今早预告无实质变化：NBA 2K27 + Game Ready 仍按计划今晚太平洋时间上线；上海午后尚无实机评测或驱动提前放出。</p>
+      <a class="src" href="https://www.nvidia.com/en-us/geforce/news/dlss-5-3d-guided-neural-rendering/">NVIDIA GeForce</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>官方仍停在 Grok 4.6</h3>
+      <p>x.ai/news 与开发者文档本窗口无新稿。上午记下的 Grok 4.7「约 9/12」二手传闻仍<strong>无官方公告</strong>，不作重复展开。</p>
+      <a class="src" href="https://x.ai/news">xAI News</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>changelog 仍停在 Self-hosted machines</h3>
+      <p>今早已报的 9/2 自托管机器 / Team pools 仍是最新条目；本窗口没有新产品或补丁说明。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
