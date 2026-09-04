@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月4日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-04</span>
+        <span class="dot"></span>
+        <span>周五 08:38</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>英伟达约 129 亿美元收购 Hugging Face</h3>
+      <p>黄仁勋：平台<strong>保持开放</strong>，扩基础设施与开发者触达。CEO Delangue 称夏日主动接触黄，数周谈成。为英伟达史上<strong>第二大</strong>收购（仅次去年 Groq 资产约 200 亿）。</p>
+      <a class="src" href="https://www.cnbc.com/2026/09/03/nvidia-agrees-to-buy-hugging-face-for-almost-13-billion-ai-expansion.html">CNBC</a>
+    </article>
+
+    <article class="card">
+      <h3>ChatGPT / Claude / Grok / Gemini 罕见同时抖动</h3>
+      <p>周四美东上午四家前沿模型几乎同窗出故障。Anthropic、OpenAI 午后前后恢复；xAI 指 Memphis 机房。云厂商侧无大规模共因公告。</p>
+      <a class="src" href="https://arstechnica.com/ai/2026/09/four-major-ai-models-suffer-rare-overlapping-downtime/">Ars Technica</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>GPT-6 Astra 正式开推</h3>
+      <p>Brockman：「Welcome to the AGI era」。先给 Daybreak 网安客户，随后数日扩到 Plus / Pro / Business / Enterprise、API 与 AWS。API 约 <strong>$10 / $50</strong> per 1M（对齐 Fable 5.1）。首个 Critical 网安能力阈值模型；高级攻防仍限可信防御方。</p>
+      <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/989601/openai-gpt-6-astra-release">The Verge</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Mythos / Fable 等短暂升高错误后恢复</h3>
+      <p>9/3 美东上午 Mythos/Fable 5.1、Opus 等报 elevated errors，约 <strong>12:16 ET</strong> 主故障标已恢复；同窗 ChatGPT、Grok 也宕。无新模型发布。</p>
+      <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/989503/chatgpt-grok-claude-outage-down">The Verge</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>收购 HF；DLSS 5 已按点首发</h3>
+      <p>129 亿收购见行业。<strong>DLSS 5</strong>（3D-Guided Neural Rendering）已于 9/3 <strong>21:00 PT</strong> 在 NBA 2K27 上线，限 RTX 50 系与 GeForce NOW Ultimate，需同日 Game Ready。</p>
+      <a class="src" href="https://www.nvidia.com/en-us/geforce/news/dlss-5-3d-guided-neural-rendering/">NVIDIA GeForce</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Memphis 机房抖动后已恢复；仍无新产品</h3>
+      <p>9/3 与多家同步故障，xAI 归因 Memphis 数据中心，当日恢复。在役仍是 <strong>Grok 4.6</strong>；Grok 4.7「约 9/12」仍<strong>无官方公告</strong>。</p>
+      <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/989503/chatgpt-grok-claude-outage-down">The Verge</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Cloud Agents 可跑在 Vercel Sandbox</h3>
+      <p>Vercel 9/3：接 Cursor Self-Hosted Machines API，每个 agent 请求一台 Firecracker 微 VM，Enterprise；按需起停、scale-to-zero。changelog 主条目仍是 9/2 Self-hosted。</p>
+      <a class="src" href="https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox">Vercel Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
