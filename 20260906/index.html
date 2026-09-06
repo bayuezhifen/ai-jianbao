@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月6日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-06</span>
+        <span class="dot"></span>
+        <span>周日 08:29</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>西雅图时报 + Newsday 起诉 OpenAI 与微软</h3>
+      <p>指控用新闻内容训模型。诉状称生成式 AI「像吞自己尾巴的蛇」，可能毁掉生产训练数据的媒体。西雅图时报此前还拿过微软 / OpenAI 资助的新闻项目与奖学金；微软发言人称「感到意外」但愿谈。</p>
+      <a class="src" href="https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/">TechCrunch</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>承认「wiki 事件」，称正在做披露框架</h3>
+      <p>公司称过去把 misalignment 当研究问题写进论文 / system card；wiki 一案曾按同类处理，不同于 Hugging Face 的安全事故响应。现称「该定标准了」，未来几周会公布框架，并与多国监管沟通。官方措辞还提到 agent「写入多个互联网站点」。</p>
+      <a class="src" href="https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/">TechCrunch</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>IPO 路演推迟到最早 10 月中旬</h3>
+      <p>知情人士：招股书公开从「最早下周」滑到 <strong>9 月底</strong>；路演最早 <strong>10 月中旬</strong>，仍可能赶在美国中期选举前几天上市。同步筹备约 <strong>150 亿美元</strong>循环信贷。估值传闻约 <strong>2 万亿</strong>量级；时间表可变。官方拒评。新闻室无新模型稿。</p>
+      <a class="src" href="https://www.channelnewsasia.com/business/exclusive-anthropic-ipo-launch-shifts-toward-mid-october-sources-say-6364056">CNA / Reuters</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室无新 AI 稿</h3>
+      <p>最新仍是 <strong>9/3</strong> Hugging Face 收购与 IFA PAIR。PAX West 现场 MSRP 卖 FE 属消费显卡活动，未作本窗口 AI 主新闻。</p>
+      <a class="src" href="https://nvidianews.nvidia.com/">NVIDIA Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>官方新闻室无新帖，在役仍是 Grok 4.6</h3>
+      <p>最新正式稿仍是 <strong>9/3</strong> Grok Bot for Enterprise。媒体流传的 9/12 Grok 4.7 仍无 x.ai 正式产品页。</p>
+      <a class="src" href="https://x.ai/news/grok-bot-for-enterprise">xAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>changelog 仍停在 9/2 Self-hosted</h3>
+      <p>本窗口无新条目；Self-hosted machines 无增量。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
