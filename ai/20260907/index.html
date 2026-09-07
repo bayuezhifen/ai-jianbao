@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 9月7日</title>
+
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+
+      <div class="when">
+        <span>2026-09-07</span>
+        <span class="dot"></span>
+        <span>周一 14:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec">
+      <h2>行业</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Liquid Network：联邦钱包被抽走约 4,000 BTC（约 3.2 亿美元）</h3>
+      <p>Blockstream 旗下侧链 Liquid 确认「自称白帽」攻击者从联邦钱包 peg-out 约 <strong>3,996–4,000 BTC</strong>；链上留言称会等漏洞修复后归还。SideSwap 称其 PAK 未失窃，问题在 Elements 侧错误铸币；网络已暂停新交易。截至 9 月 7 日午间，资金是否归还仍未证实。</p>
+      <a class="src" href="https://www.coindesk.com/markets/2026/09/07/bitcoin-network-used-by-exchanges-hit-by-usd320-million-exploit-hackers-claim-theyre-the-good-guys">CoinDesk</a>
+    </article>
+    <article class="card">
+      <h3>Pixxel 完成 1 亿美元 C 轮，Temasek / Seraphim 领投</h3>
+      <p>洛杉矶 + 班加罗尔高光谱卫星成像公司 Pixxel 周一宣布 <strong>$100M</strong> Series C（Temasek、Seraphim 领投），累计融资约 <strong>$195M</strong>，用于扩产卫星与成像能力。</p>
+      <a class="src" href="https://www.techmeme.com/">Reuters / Techmeme</a>
+    </article>
+    <article class="card">
+      <h3>WSJ：散户用 Claude / Codex「氛围编程」交易策略</h3>
+      <p>《华尔街日报》报道美国个人投资者把券商账户接到 Claude 或 Codex 搭的 agent，自动跑交易算法；把零售炒股推到「机器人散户」新阶段，也放大了闪崩式风险讨论。</p>
+      <a class="src" href="https://www.wsj.com/">Wall Street Journal</a>
+    </article>
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Fortune：Astra 发布稿评测数字多次改动，部分更利 Astra</h3>
+      <p>Emily Forlini 对照归档快照称 GPT-6 Astra 发布页上多项评测被改：幻觉率曾从 <strong>4.2%</strong> 暂改 <strong>2%</strong> 再改回；竞品 Fable 5.1 的 FrontierMath 曾短暂下调；ARC-AGI-3 从媒体预览稿 <strong>98.6%</strong> 到线上约 <strong>99.99%</strong>。OpenAI 称多为噪声修正。</p>
+      <a class="src" href="https://fortune.com/2026/09/04/openai-quietly-boosts-some-of-astras-evaluation-metrics-amid-rare-delay-in-publication-of-the-modeblog-post-announcement/">Fortune</a>
+    </article>
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>新闻室最新仍是 <strong>9/1</strong> Fable/Mythos 5.1；本午后窗口无新产品帖。WSJ「氛围编程」见行业栏。</p>
+    </article>
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>新闻室最新仍是 <strong>9/3</strong> 收购 Hugging Face、IFA PAIR、DLSS 5；黄仁勋 AGI 表态已在今早 10:07 期次，午后无官方新产品。</p>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>官方新闻室最新仍是 <strong>9/3</strong> Grok Bot for Enterprise；在役 Grok 4.6。</p>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>changelog 仍停在 <strong>9/2</strong> Self-hosted machines。</p>
+    </article>
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>今早 08:35 / 10:07 之后窗口未检出可核验新料；已查官方新闻室与主流聚合。</p>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>高通确认 Snapdragon Summit：9/22–24 夏威夷，下一代旗舰 SoC 将亮相</h3>
+      <p>公司确认年度峰会 <strong>9 月 22–24 日</strong>在 Maui 举行；此前已预告 Adreno Neural Fusion GPU（矩阵核 + 约 18MB 片上 HPM、宣称最高约 40% 功耗改善）。市场预期含 2nm 旗舰与峰值约 <strong>5 GHz</strong> 的 Pro 规格，正式 SKU 名待峰会公布。</p>
+      <a class="src" href="https://www.techtimes.com/articles/326531/20260903/qualcomm-adreno-neural-fusion-puts-ai-inside-mobile-gpu-unity-unreal-already-onboard.htm">TechTimes / Qualcomm 材料报道</a>
+    </article>
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>AI 驱动的 DRAM/HBM 挤兑仍在发酵（Switch 2 / Xbox 等此前已涨价），本午后窗口无新一轮厂商报价或交换机新品可核验稿。</p>
+    </article>
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>明天（9/8）是 9 月 Patch Tuesday</h3>
+      <p>微软固定每月第二个周二发安全更新；本窗口尚未放出正式 CVE 清单。今早已覆盖的 Windows 11 IFA / Linux 7.3-rc2 / Asahi M3 不重复。</p>
+      <a class="src" href="https://www.helpnetsecurity.com/2026/09/04/september-2026-patch-tuesday-forecast/">Help Net Security 预告</a>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>TanStack Router / Start：9/6 晚间一批补丁发布</h3>
+      <p>GitHub 在 <strong>2026-09-06 21:27</strong> 打出 router / react-start / vue-start / solid-start 等多包同步修订（如 react-router 1.170.33 等），属维护向合集而非大版本叙事。</p>
+      <a class="src" href="https://newreleases.io/project/github/TanStack/router/release/release-2026-09-06-2127">TanStack / newreleases.io</a>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>OpenMDW 提交 OSI 审议仍是 8 月中旬主线，本窗口无新裁定。</p>
+    </article>
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Wine 11.17 双周开发版发布</h3>
+      <p>Wine 于 9 月 4 日放出 <strong>11.17</strong> 功能开发版，继续推进 Linux/macOS 上跑 Windows 应用与游戏；属常规双周节奏，非 LTS。</p>
+      <a class="src" href="https://www.phoronix.com/news/Wine-11.17-Released">Phoronix</a>
+    </article>
+    <div class="sec">
+      <h2>漏洞与勒索</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Liquid / Blockstream：约 3.2 亿美元侧链抽干事件</h3>
+      <p>见「行业」首条。属基础设施级安全事件；交易所侧 L-BTC 存取已受影响。</p>
+      <a class="src" href="https://www.coindesk.com/markets/2026/09/07/bitcoin-network-used-by-exchanges-hit-by-usd320-million-exploit-hackers-claim-theyre-the-good-guys">CoinDesk</a>
+    </article>
+    <article class="card">
+      <h3>柏林州拒付赎金后，Rhysida 公开约 5.8 TB 政府数据</h3>
+      <p>报道称勒索组织在期限过后释放约 <strong>5.79–5.8 TB</strong> 柏林州网络数据（含敏感行政材料）；联邦机构已介入。英文媒体周末至周一仍在跟进。</p>
+      <a class="src" href="https://www.techmeme.com/">Reuters / Euronews 脉络（Techmeme）</a>
+    </article>
+    <article class="card">
+      <h3>提醒：Adobe Magento StyleSmuggler 计划 9/8 安全公告</h3>
+      <p>今早已详述的 0-day 仍活跃；Sansec 建议临时关 GraphQL，并盯 Adobe <strong>9 月 8 日</strong>补丁窗。不重复全案细节。</p>
+      <a class="src" href="https://sansec.io/research/stylesmuggler">Sansec</a>
+    </article>
+    <div class="sec">
+      <h2>身份与访问</h2>
+    </div>
+<article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>IDScan.net / McKesson→Okta vishing 已在今早期次；午后无新的大规模 SSO 事件可核验稿。</p>
+    </article>
+    <div class="sec">
+      <h2>隐私与监管</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>欧盟 CRA 第 14 条：9/11 起主动利用漏洞须 24 小时内预警</h3>
+      <p>《网络弹性法案》要求带数字元素的产品制造商，在知悉「正被主动利用」的漏洞后，经 ENISA 平台做 <strong>24h</strong> 早期预警、<strong>72h</strong> 完整通报；含销往欧盟的境外厂商。Forkast 等解读强调 AI agent 产品同样落在时钟内。</p>
+      <a class="src" href="https://forkast.news/eu-cra-article-14-hits-sep-11-every-ai-agent-product-now-has-a-24-hour-disclosure-clock/">Forkast</a>
+    </article>
+    <article class="card">
+      <h3>日经：9/24 美中会谈或谈 AI 网络攻击与出口管制</h3>
+      <p>消息称美方拟在 9 月 24 日相关会谈提出防范 AI 驱动网络攻击，中方可能重提美方 AI 芯片出口管制。属议程预期，非正式协议。</p>
+      <a class="src" href="https://www.techmeme.com/">Nikkei Asia / Techmeme</a>
+    </article>
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>苹果「Surprise and Shine」发布会：9 月 9 日（本周三）</h3>
+      <p>活动日历与供应链预期指向 iPhone 18 / A20 等；Tim Cook 新任执行董事长薪酬包显示其仍深度参与，本场是否现身仍有分歧报道。</p>
+      <a class="src" href="https://www.techmeme.com/">Bloomberg / Techmeme 日历</a>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Gurman：Ternus / Eddy Cue 欲再挖 App Store 利润，Schiller 不愿掺和</h3>
+      <p>Bloomberg Power On 称新管理层想进一步提高 App Store 利润率与经常性收入；Phil Schiller 担心进一步激怒开发者与监管，已转到特殊项目并卸下相关职责。</p>
+      <a class="src" href="https://9to5mac.com/2026/09/06/apple-might-soon-make-app-store-changes-to-raise-revenue-increase-margins-report/">Bloomberg / 9to5Mac</a>
+    </article>
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · 路径 /ai/ · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
