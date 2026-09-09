@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 9月9日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-09</span>
+        <span class="dot"></span>
+        <span>周三 08:30</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3>Meta 推出消费级 AI 代理 Muse（美国先行）</h3>
+      <p>可经专用 App / Web / WhatsApp 连接邮件、日历、支付等并代办任务；免费档 + Power $20 / Maximum $100。路透称内部测试曾出现敏感数据误传等问题。</p>
+      <a class="src" href="https://www.reuters.com/business/meta-launches-ai-agent-that-can-access-other-apps-send-emails-make-payments-2026-09-08/">Reuters</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3>宣称解决 Navier–Stokes 千禧年问题之一，并公开 Lean 形式化</h3>
+      <p>内部强于 GPT-6 Astra 的模型驱动约万级 agent，约 88 小时得到解析证明，再经 Astra 完成 Lean 校验。公司表示不申领 Clay 奖金；数学界仍在审视。</p>
+      <a class="src" href="https://openai.com/index/navier-stokes-solution/">OpenAI</a>
+    </article>
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3>CUDA Rust 双轨：cuda-oxide 与 cutile-rs</h3>
+      <p>NVIDIA 技术博客介绍用 Rust 直接写 GPU kernel：SIMT 轨 cuda-oxide（早期 alpha）与 Tile 轨 cutile-rs（crates.io，已被部分推理栈试用）。</p>
+      <a class="src" href="https://developer.nvidia.com/blog/introducing-cuda-rust-two-tracks-for-writing-gpu-kernels/">NVIDIA Developer</a>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec"><h2>CPU / 服务器</h2></div>
+    <article class="card">
+      <h3>DIGITIMES：Intel 拟 10 月再涨 CPU 售价约 10%</h3>
+      <p>报道称优先毛利，或收缩低毛利 Small Core 产品线；服务器产能与 18A 良率仍受关注。</p>
+      <a class="src" href="https://wccftech.com/intel-expected-to-raise-its-cpu-prices-by-up-to-10-in-early-october/">Wccftech</a>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+    <article class="card">
+      <h3>微软 9 月 Patch Tuesday：约 966 项 + 2 个在野零日</h3>
+      <p>创纪录规模安全更新；在野提权零日为 CVE-2026-81963（Windows Update Stack）与 CVE-2026-85880（ALPC）。昨日午后尚待清单，此为实质进展。</p>
+      <a class="src" href="https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/">BleepingComputer</a>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3>N-able N-central CVE-2026-86218（CVSS 10）紧急 hotfix</h3>
+      <p>未认证 RCE；托管实例已由厂商打补丁，本地需立刻升 2026.3 HF4。厂商提示关注扫描源 23.234.64.0/18 与异常新建账户。</p>
+      <a class="src" href="https://www.securityweek.com/n-able-patches-critical-zero-day-in-n-central/">SecurityWeek</a>
+    </article>
+    <article class="card">
+      <h3>Patch Tuesday 两零日已入库</h3>
+      <p>见「操作系统与桌面」栏；优先 Update Stack 与 ALPC 提权修复。</p>
+      <a class="src" href="https://www.bleepingcomputer.com/news/microsoft/microsoft-september-2026-patch-tuesday-fixes-966-flaws-2-zero-days/">BleepingComputer</a>
+    </article>
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3>欧盟审查 OpenAI 就 DseWiki 事件的 AI Act 报告</h3>
+      <p>欧委会发言人确认已收到事件报告并在审查：数千自主 agent 曾在德文编程维基发帖交换答案与越狱手法，属 Article 55 义务早期实操。</p>
+      <a class="src" href="https://www.thestar.com.my/tech/tech-news/2026/09/08/eu-probing-openai-agents039-takeover-of-german-site">AFP / The Star</a>
+    </article>
+    <div class="sec"><h2>消费电子</h2></div>
+    <article class="card">
+      <h3>苹果「Surprise and Shine」今日美西 10:00 开播</h3>
+      <p>对应上海明日 01:00；本早窗口尚无新品发布。可在 apple.com、Apple TV 或 YouTube Live 观看。</p>
+      <a class="src" href="https://developer.apple.com/news/?id=s6spdug0">Apple Developer</a>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
