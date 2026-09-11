@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-09-11</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-11</span>
+        <span class="dot"></span>
+        <span>周五 08:41</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>OpenAI 因 Astra 需求空前，临时暂停新 Pro（200 美元/月）订阅</h3>
+      <p>产品负责人 Thibault Sottiaux 在 X 上称 Pro 对基建压力最大，故先关掉新签；API、Go、Plus 等仍开放。Astra 于 9 月 3 日推出后需求「前所未见」，公司未公布停多久。</p>
+      <a class="src" href="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/">TechCrunch</a>
+    </article>
+
+    <div class="sec"><h2>OpenAI</h2></div>
+
+    <article class="card">
+      <h3>Paul Christiano 加入非营利董事会安全与安保委员会，并警告行业失控风险未收敛</h3>
+      <p>前对齐负责人、现美方 AI 标准顾问入董事会 SSC。其个人声明称近期存在「灾难性且不可逆失控」的切实风险，并认为含 OpenAI 在内的业界目前未把该风险降到可接受水平；主观估计一年约 4%、三年约 15%。</p>
+      <a class="src" href="https://paulfchristiano.substack.com/p/personal-statement-on-joining-the">Paul Christiano / Substack</a>
+    </article>
+
+    <article class="card">
+      <h3>Astra 挤爆算力：新 Pro 订阅暂停，存量用户与低价档优先</h3>
+      <p>公司称此为「最小一步」以保住最广覆盖；此前已预告若需求不减可能暂停 Pro 新签。Astra 被定位为推理、编程与计算机使用的代际跃迁，并被公司与「AGI 时代」叙事绑定，进一步推高需求。</p>
+      <a class="src" href="https://techcrunch.com/2026/09/10/openai-puts-pro-subscriptions-on-hold-due-to-astra-demand/">TechCrunch</a>
+    </article>
+
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+
+    <article class="card">
+      <h3>九月威胁情报：八个月打掉七类 Claude 滥用，AI 抹平原国家与散兵技能差</h3>
+      <p>官方报告覆盖 2025-12 至 2026-08，涉及网络行动、影响操作、监控、诈骗、生物误用、常规武器软件与非法蒸馏；涉案多为 Haiku/Sonnet/Opus，Fable/Mythos 几乎未现。案例含俄系间谍（&gt;20 组织）、疑似 ShinyHunters 供应链砸抢、中国学生自治 exploit 工厂等。</p>
+      <a class="src" href="https://www.anthropic.com/threat-intelligence-report-september-2026">Anthropic</a>
+    </article>
+
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+
+    <article class="card">
+      <h3>d-Matrix 采用 NVLink Fusion，把下一代 Raptor XPU 接入英伟达机架生态</h3>
+      <p>官方博客称将通过 NVLink 纵向扩展与 Spectrum-X 横向扩展、MGX 机架，把推理 XPU 并入已大规模部署的液冷架构；并可与 Vera Rubin NVL72 等 GPU 机架做解耦推理。Jensen Huang 称 NVLink Fusion 让定制硅与英伟达算力平台无缝对接。</p>
+      <a class="src" href="https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/">NVIDIA Blog</a>
+    </article>
+
+    <div class="sec"><h2>Grok / xAI</h2></div>
+
+    <article class="card">
+      <h3>Grok Bot Galaxy 定档 9/15–17：旧金山现场 + 全球直播工作坊</h3>
+      <p>活动在 The Howard（661 Howard St）举行，每日约 8:30–18:00 PT；分工程、产品、销售、客服、市场等角色专场，并直播三人用 Grok Bot 三天从零做产品。线上经 Luma 报名。</p>
+      <a class="src" href="https://teslanorth.com/2026/09/10/xai-grok-bot-galaxy-event/">TeslaNorth / xAI Galaxy</a>
+    </article>
+
+    <article class="card">
+      <h3>X Search API 自 9/21 起改按条计费：帖文与用户资料分开计价</h3>
+      <p>开发者邮件称太平洋时间 9 月 21 日中午起，由每千次工具调用 5 美元改为每千条帖文 5 美元、每千个用户资料 10 美元；含父帖与引用帖。广扫社媒的 agent 产品单位经济将更敏感。</p>
+      <a class="src" href="https://runtimewire.com/article/xai-is-changing-the-economics-of-x-search-runtimewire-was-built-for-a-narrower-r">RuntimeWire / xAI Docs</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec"><h2>手机与端侧 SoC</h2></div>
+
+    <article class="card">
+      <h3>高通峰会前再泄 Hexagon NPU：Element Accelerator + 更长上下文端侧 agent</h3>
+      <p>Computerworld 称继 Oryon 5GHz 与 Adreno Matrix Cores 后，公司详述下一代 Hexagon：新增面向 transformer 的 Element Accelerator、共享内存增约 50%，宣称面向最长约 32K 上下文与约 30B MoE（激活约 3B）INT4 预填性能较上代最高提升约 50%。完整 SoC 名与参数留待本月末 Snapdragon Summit。</p>
+      <a class="src" href="https://www.computerworld.com/article/4220719/qualcomms-next-snapdragon-mobile-chip-comes-into-focus-with-on-device-ai.html">Computerworld</a>
+    </article>
+
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+
+    <article class="card">
+      <h3>Windows 11 Release Preview：Copilot 键可改映射为右 Ctrl / 菜单键</h3>
+      <p>Build 26100.9539 / 26200.9539 还加入 Emoji 17.0（含 Bigfoot 等）、资源管理器分区状态记忆与 Tips 小组件；Copilot 键重映射意在保留既有快捷键与无障碍工作流。</p>
+      <a class="src" href="https://www.windowscentral.com/microsoft/windows-11/microsoft-adds-bigfoot-and-copilot-key-remapping-in-latest-windows-11-preview-build">Windows Central</a>
+    </article>
+
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+
+    <article class="card">
+      <h3>Cisco Talos 细化 FMC 在野利用：三簇含疑似 Sandworm 与 Qilin</h3>
+      <p>继午后首报后，Talos 确认 CVE-2026-20079 / 20316 被三组入侵利用：webshell/JAR 凭据窃取、疑似 Sandworm 的 license.tmp 反弹壳与防火墙配置收割，以及 Qilin 系勒索链。敦促立刻打热修复；更完整加固包拟于 9/16 当周放出。</p>
+      <a class="src" href="https://www.helpnetsecurity.com/2026/09/10/cisco-fmc-exploited-cve-2026-20079-cve-2026-20316/">Help Net Security / Cisco Talos</a>
+    </article>
+
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec"><h2>隐私与监管</h2></div>
+
+    <article class="card">
+      <h3>OpenAI 新任董事：失控风险需国内外协调，开发者应可验证地抬高安全标准</h3>
+      <p>Christiano 称若无更稳健对齐就建成超智能，预期将永久失控且多数人可能死亡；主张国内与国际协调，同时前沿实验室可单边加强缓解、透明共享证据并推动共同安全标准。Guardian 亦报道其对「行业未在轨」的公开判断。</p>
+      <a class="src" href="https://www.theguardian.com/technology/2026/sep/10/openai-risk-catastrophic-loss-control-board-member-paul-christiano">The Guardian</a>
+    </article>
+
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；无符合时间范围的新进展。</p>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
