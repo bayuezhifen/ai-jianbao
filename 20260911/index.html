@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 9月11日下午</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-11</span>
+        <span class="dot"></span>
+        <span>周五 14:10</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3>Altman 向员工称 OpenAI 愿放缓前沿开发，希望多实验室同步节奏</h3>
+      <p>Business Times 援引彭博：本周全员会上 Altman 称公司可放缓尖端 AI 研发，并希望与其他实验室协同；但部分同行未必同意。公司近期已因安全顾虑放慢部分模型开发并暂停部分内部训练。</p>
+      <a class="src" href="https://www.businesstimes.com.sg/companies-markets/gambling-our-lives-openai-open-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff">The Business Times</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3>推出 ChatGPT for Financial Services：内置 LSEG / PitchBook 等金融数据</h3>
+      <p>官方称面向投行与股票研究，结合 GPT-6 Astra 与托管索引的 Daloopa、PitchBook、LSEG News、Crunchbase 等数据，并支持 FactSet、S&amp;P Global 等既有订阅接入；与 Morgan Stanley、Evercore 合作打磨，强调企业级权限与引文。</p>
+      <a class="src" href="https://openai.com/index/introducing-chatgpt-financial-services/">OpenAI</a>
+    </article>
+    <article class="card">
+      <h3>Agents API 公测：用 Codex harness 托管云端 agent</h3>
+      <p>官方开放 Agents API，代管编排、长会话与上下文，支持 OpenAI 托管或自托管沙箱，并可并行子 agent；意在让开发者少造 harness、多写业务逻辑。同日亦上线 GPT-Live-1 语音 API（全双工）。</p>
+      <a class="src" href="https://openai.com/index/introducing-the-agents-api/">OpenAI</a>
+    </article>
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3>Huang 在高盛大会重申 2030 年 3–4 万亿美元 AI 基建，并推 Alpamayo「会思考的车」</h3>
+      <p>Goldman Sachs Communacopia 实录中，Huang 称物理 AI 首个杀手级应用仍是自动驾驶，并介绍 Alpamayo 推理架构可对新场景做分解决策；同时继续为 2030 年 3–4 万亿美元 AI 基建展望辩护。</p>
+      <a class="src" href="https://stockanalysis.com/stocks/nvda/transcripts/740955-goldman-sachs-communacopia-technology-conference-2026/">StockAnalysis / Goldman Sachs transcript</a>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec"><h2>Cursor</h2></div>
+    <article class="card">
+      <h3>正式推出 Projects：持久协调器调度数千子 agent 做长周期工程</h3>
+      <p>官方博客称 Projects 面向功能、迁移与整应用级工作，可跨月保持上下文，由云端协调器规划并委派实现/测试子 agent，也可订阅 Slack、PR、CI 或定时任务；现以 beta 向全量用户滚动开放。</p>
+      <a class="src" href="https://cursor.com/blog/projects">Cursor</a>
+    </article>
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec"><h2>开发者工具</h2></div>
+    <article class="card">
+      <h3>VS Code 1.137：Automations 预览可按小时/天/周调度 agent 任务</h3>
+      <p>官方发行说明（9 月 9 日）新增 Automations（Preview），可定时或按需跑周期性 agent 工作；另强化 Agents 窗口内的 GitHub Issue/PR 工作流。需开启 chat.automations.enabled（稳定版默认关）。</p>
+      <a class="src" href="https://code.visualstudio.com/updates/v1_137">Visual Studio Code</a>
+    </article>
+    <div class="sec">
+      <h2>漏洞与勒索</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索后暂无新进展；保留栏目标题与徽章。</p>
+    </article>
+    <div class="sec"><h2>身份与访问</h2></div>
+    <article class="card">
+      <h3>Okta 加码 agent 身份：治理盲区修补 + 零常设特权延伸到 agentic 企业</h3>
+      <p>9 月 9 日新闻稿称在 Identity Governance 与 Privileged Access 上推出新能力，并把 Permiso 威胁检测扩展到人、AI agent 与非人身份；另预告 11 月起商用客户可免费按需生成 SaaS 连接器（约 48 小时）。</p>
+      <a class="src" href="https://www.okta.com/newsroom/press-releases/okta-product-innovations-september-2026/">Okta</a>
+    </article>
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3>OpenAI 公开讨论「自愿放缓」：安全压力与同行协同难并行</h3>
+      <p>在安全研究者离职与「十年内灭顶」言论升温背景下，Altman 向员工释放可与其他实验室同步放缓信号；Anthropic 发言人称有兴趣就发布节奏与业界合作。监管侧仍在观察自愿承诺能否压住军备竞赛。</p>
+      <a class="src" href="https://www.businesstimes.com.sg/companies-markets/gambling-our-lives-openai-open-slowing-cutting-edge-ai-ceo-sam-altman-tells-staff">The Business Times</a>
+    </article>
+    <div class="sec"><h2>消费电子</h2></div>
+    <article class="card">
+      <h3>iPhone Duo 起售约 1999 美元：折叠屏「为谁而买」成舆论焦点</h3>
+      <p>路透系报道梳理 9 月 9 日发布会后反馈：Duo 起价约 1999 美元，分析师质疑受众是否主要是富裕极客；Omdia 等仍预期苹果入场将拉动 2026 折叠机出货。预售/开售节奏因地区而异。</p>
+      <a class="src" href="https://www.thejakartapost.com/culture/2026/09/11/apples-foldable-iphone-poses-a-1999-question-who-is-it-for">The Jakarta Post / Reuters</a>
+    </article>
+    <div class="sec"><h2>大厂平台政策</h2></div>
+    <article class="card">
+      <h3>苹果欧盟 App 条款 10/1 起统一：CTF 改 CTC（数字交易约 5%）</h3>
+      <p>开发者文档称 10 月 1 日起欧盟改用单一商业条款：Core Technology Fee 被 Core Technology Commission 取代，对数字商品/服务交易收取约 5% 佣金；此前并行的外部购买链接等附件将被 Attachment 14 取代。</p>
+      <a class="src" href="https://developer.apple.com/support/apps-in-the-eu/">Apple Developer</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
