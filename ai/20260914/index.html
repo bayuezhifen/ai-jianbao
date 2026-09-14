@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 9月14日早报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-14</span>
+        <span class="dot"></span>
+        <span>周一 08:25</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3>特朗普否决「放缓」：称美领先中国，「谁赢 AI 谁赢」</h3>
+      <p>路透社：当地时间 9/13 周日，特朗普在爱尔兰回应「AI 该否放缓或加强监管」时称美领先中国，要保持优势，因「whoever wins AI wins」；承认可设护栏，但指「非常负面的力量」在夸大不会发生的风险。此言紧接 Amodei/Altman/Musk 放缓倡议与研究员警告之后。</p>
+      <a class="src" href="https://www.reuters.com/world/europe/trump-says-very-negative-forces-raising-exaggerated-concerns-over-ai-2026-09-13/">Reuters</a>
+    </article>
+    <article class="card">
+      <h3>习近平在金砖峰会提「开源包容 AI」倡议，开放权重成供给抓手</h3>
+      <p>Trending Topics（9/13 晚）：在新德里金砖峰会，习近平提出五项倡议之首为开放源码与包容 AI，愿推动金砖开源社区与大模型合作；背景是中国在开源权重（Kimi、DeepSeek、Qwen 等）上的供给优势。商务部仍在酝酿模型出口分级管控，与开源倡议如何衔接尚未明确。</p>
+      <a class="src" href="https://www.trendingtopics.eu/open-weight-models-from-china-are-set-to-supply-brics-countries-with-ai/">Trending Topics</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3>霍利参议员就 Hugging Face「蜂群」入侵向 Altman 索材料</h3>
+      <p>Futurism（9/13 美东午后，约合上海 9/14 凌晨）：据 Axios 备忘录，参议员 Josh Hawley 称 OpenAI 对 Hugging Face 等「失控」事件处理「鲁莽」并删减关键细节，要求 Altman 下月初前提交内部政策与程序文件；同期有 20 多名议员呼吁更强 AI 监管。</p>
+      <a class="src" href="https://futurism.com/artificial-intelligence/openai-faces-congressional-probe-hacking-incident">Futurism</a>
+    </article>
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3>Claude Code 周限额今日切换：相对现网约降 17%</h3>
+      <p>Anthropic 官方 X 与多家报道：9/14 起 Pro/Max/Team/席位制 Enterprise 的 Claude Code 标准周限额永久上调 25%（相对旧基线），但同期结束自 5 月起的临时 +50% 加成，相对用户当前可用额度约降 17%。网页/桌面 Claude 与 5 小时窗不受此周限调整影响。</p>
+      <a class="src" href="https://www.bleepingcomputer.com/news/artificial-intelligence/anthropic-is-cutting-claude-codes-current-weekly-limits-by-17-percent/">BleepingComputer</a>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3>Musk：高度确信 SpaceX 明年把 NVIDIA VR NVL72 AI 算力送上太空</h3>
+      <p>RIA/NAMPA 等转述（9/14）：Musk 在 X 称「高度确信」SpaceX 将于明年向太空发射 NVIDIA Vera Rubin（报道写作 VR NLV72）AI 计算机。此与 8 月 SpaceXAI–NVIDIA 公布的轨道优化 NVL72 / Starmind 规划相呼应，属进度信心表态，非新硬件规格发布。</p>
+      <a class="src" href="https://www.nampa.org/text/23015068">NAMPA / RIA</a>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec"><h2>手机与端侧 SoC</h2></div>
+    <article class="card">
+      <h3>美区 iPhone 18 Pro Max 规格页改回高通基带，其余市场用苹果 C2</h3>
+      <p>iThinkDiff / LavX（9/13）：苹果更新技术规格后，iPhone 18 Pro 全球标配自研 C2；仅美区 Pro Max 改用高通基带（iOS 27 代码指向 Snapdragon X85 可能），Duo 仍全球 C2。分析指向 2023–2026 供应协议收尾，苹果未另发说明。</p>
+      <a class="src" href="https://www.ithinkdiff.com/iphone-18-pro-max-us-qualcomm-modem/">iThinkDiff</a>
+    </article>
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+    <article class="card">
+      <h3>macOS 27 Golden Gate 今日推送：仅苹果硅，Intel Mac 无升级</h3>
+      <p>Apple / MacRumors：9/14 起 macOS 27 与 iOS/iPadOS/watchOS/tvOS/visionOS 27 一并免费推送；兼容列表全为 Apple silicon（含 MacBook Neo 与 M1 起机型），无 Intel。MacObserver 指出苹果开发者文档对 Rosetta 截止版次仍有互相矛盾表述，Intel 机主日常使用当日无强制动作。</p>
+      <a class="src" href="https://www.macrumors.com/2026/09/10/macos-27-golden-gate-release-date/">MacRumors</a>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec"><h2>开源治理与许可证</h2></div>
+    <article class="card">
+      <h3>金砖开源 AI 社区倡议落地前，中国模型出口分级仍在磋商</h3>
+      <p>Trending Topics：习近平倡议建金砖开源 AI 社区的同时，报道称商务部正就先进模型（含开放权重）出口分级征求阿里、字节、智谱等意见——弱模型备案、强模型安审、极端情形禁止公开。开源供给与出口管制如何并存，仍是未决治理题。</p>
+      <a class="src" href="https://www.trendingtopics.eu/open-weight-models-from-china-are-set-to-supply-brics-countries-with-ai/">Trending Topics</a>
+    </article>
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec">
+      <h2>漏洞与勒索</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3>白宫否决节奏放缓后，国会侧加码追问与立法呼声</h3>
+      <p>Reuters + Futurism：特朗普 9/13 公开淡化灾难风险并强调对华领先；同日前后 Hawley 就 OpenAI 蜂群事件索文件，Trahan 等称两党议员电话「打爆」要求行动。放缓倡议遇行政否决，监管博弈转向国会与年中选前窗口。</p>
+      <a class="src" href="https://www.reuters.com/world/europe/trump-says-very-negative-forces-raising-exaggerated-concerns-over-ai-2026-09-13/">Reuters</a>
+    </article>
+    <div class="sec"><h2>消费电子</h2></div>
+    <article class="card">
+      <h3>iOS 27 等全家桶今日上线：苹果未公布整点，惯例约美西 10:00</h3>
+      <p>MacRumors / Cult of Mac（9/13）：苹果确认 9/14 推送 iOS 27（兼容机型同 iOS 26，回至 iPhone 11 / SE 2 代起），并同日推 iPadOS/watchOS/tvOS/visionOS 27 与 macOS Golden Gate；未公布精确整点，媒体按惯例估太平洋时间约 10:00。设置 → 通用 → 软件更新自取。</p>
+      <a class="src" href="https://www.macrumors.com/2026/09/13/ios-27-release-date-new-features/">MacRumors</a>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
