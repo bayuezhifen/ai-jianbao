@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 9月15日午报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-15</span>
+        <span class="dot"></span>
+        <span>周二 14:14</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3>Google 向工程师开放使用竞品 Anthropic Claude Opus 5（Antigravity）</h3>
+      <p>首尔经济日报（9/15，转述 Business Insider）：此前多数团队被要求用 Gemini；现可通过内部开发平台 Antigravity 在配额内使用 Opus 5，公司称 Gemini 仍是旗舰、第三方模型作专项补充。Amazon 亦已允许员工用 Claude/Codex。</p>
+      <a class="src" href="https://en.sedaily.com/international/2026/09/15/google-lets-engineers-use-rival-anthropics-claude">首尔经济日报</a>
+    </article>
+    <article class="card">
+      <h3>DeepMind 前安全研究员 Bilal Chughtai 离职帖：AI「有可能杀光人类」</h3>
+      <p>Bloomberg / India Today（9/15）：Chughtai 称在 DeepMind 做 AGI 安全与对齐，对默认轨迹极度担忧，并呼吁业界协调放缓；同窗 Josh Engels 亦转投 METR。Google 未立即回应。</p>
+      <a class="src" href="https://www.businesstimes.com.sg/startups-tech/technology/google-deepmind-staffer-says-ai-may-kill-us-all-exit-post">The Business Times / Bloomberg</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；欧委会 AI Act 问询与 SB53 指控等多属早报前窗口，本窗无新实质产品进展。</p>
+    </article>
+
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3>谷歌工程侧「用 Claude 补 Gemini」成为公开叙事</h3>
+      <p>承接行业栏：Google 放宽内部 Claude Opus 5 使用，反映编码助手竞争强度与 Anthropic 模型在大厂内的渗透；公司强调 Gemini 仍是内部旗舰。</p>
+      <a class="src" href="https://en.sedaily.com/international/2026/09/15/google-lets-engineers-use-rival-anthropics-claude">首尔经济日报</a>
+    </article>
+
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3>黄仁勋 All-In Summit 把特朗普电话开免提：总统再称 AI 安全担忧是「骗局」</h3>
+      <p>NBC（9/14 晚更新）：特朗普在通话中称机器人/AI 不会接管世界、「whole thing is a hoax」，并赞数据中心；黄称与总统同页。Nvidia 拒评。与早报 Truth Social 口径呼应，属对芯片龙头当面背书的新场景。</p>
+      <a class="src" href="https://www.nbcnews.com/politics/donald-trump/nvidia-ceo-jensen-huang-ai-speakerphone-all-hands-meeting-rcna597761">NBC</a>
+    </article>
+    <article class="card">
+      <h3>OSMO 编排器开源报道：一份 YAML 串训练 / 仿真 / 机器人实机</h3>
+      <p>MarkTechPost（9/14）：称 NVIDIA OSMO 以 Apache-2.0、Kubernetes 原生方式跨数据中心 GPU、RTX 仿真与 Jetson 实机编排；Helm/KIND 可本地起。与早报 CUDA-Q Logical 不同产品线。</p>
+      <a class="src" href="https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/">MarkTechPost</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无新品发布（DDRop 物理攻击见漏洞栏）。</p>
+    </article>
+
+    <div class="sec"><h2>手机与端侧 SoC</h2></div>
+    <article class="card">
+      <h3>联发科天玑 9600 Pro：14:30 发布会尚未开场（关键跟进）</h3>
+      <p>截至本简报约 14:14 上海，官方完整规格与首发机型确认仍未出炉。会前媒体继续转述 2nm（传闻 N2P）、2+3+3、光追/AI 图形与 4K240 慢动作等预告；以发布会后官方为准。</p>
+      <a class="src" href="https://www.gsmarena.com/mediateks_dimensity_9600_pro_soc_now_has_an_official_launch_date-news-74521.php">GSMArena</a>
+    </article>
+
+    <div class="sec"><h2>存储与网络硬件</h2></div>
+    <article class="card">
+      <h3>Lightbits Inferra：Summit 演示日；GA 口径仍不一致</h3>
+      <p>SiliconANGLE（9/9）曾称 Inferra 已宣布 GA；StorageReview（9/14）仍写客户 beta、未给独立测评与明确 GA 日。今日 AI Infra Summit 展台演示按计划进行，本窗未见新测评或定价落地。</p>
+      <a class="src" href="https://www.storagereview.com/news/lightbits-inferra-kv-cache-engine-claims-16x-session-density-and-10m-token-contexts">StorageReview</a>
+    </article>
+
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+    <article class="card">
+      <h3>微软紧急带外补丁修复九月安全更新导致的 RDS 故障</h3>
+      <p>BleepingComputer（9/14）：Win11 24H2/25H2 用 KB5129195、26H1 用 KB5129194，另有 Win10 与 Server 2019/2022/2025 对应包；并修 Hyper-V Plan9 共享文件夹与部分 USB 多声道音频。USB Audio Class 1.0「无法启动」等仍未全部修完。</p>
+      <a class="src" href="https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-windows-updates-to-fix-rds-failures/">BleepingComputer</a>
+    </article>
+
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+
+    <div class="sec"><h2>开发者工具</h2></div>
+    <article class="card">
+      <h3>Trigger.dev v4.6.0：chat.agent 托管 streamText、自有 TranscriptStorage、chat.close()</h3>
+      <p>官方 Changelog（9/14）：默认 Zod 4；run 内直接拿到托管 streamText；可把对话落自有存储；undo/edit/regenerate 可驱动完整 turn；会话 `.in` 读取需 secret key。</p>
+      <a class="src" href="https://trigger.dev/changelog/v4-6-0">Trigger.dev Changelog</a>
+    </article>
+
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3>Cisco Secure Email Gateway 零日 CVE-2026-76461（CVSS 9.8）遭利用，已入 CISA KEV</h3>
+      <p>SecurityWeek（9/15）：AsyncOS 邮件解析缺陷，未认证远程可 root 执行命令；物理/虚拟 SEG 均受影响；联邦机构限期 9/17 前处置。</p>
+      <a class="src" href="https://www.securityweek.com/root-rce-zero-day-in-cisco-secure-email-gateway-under-active-exploitation/">SecurityWeek</a>
+    </article>
+    <article class="card">
+      <h3>DDRop：低成本 DDR5 插板可破坏 Intel TDX / AMD SEV-SNP 机密计算完整性</h3>
+      <p>The Hacker News（9/14）：需物理短暂接触插入 interposer（零件约 &lt;$200），通过丢弃写操作造成陈旧密文被当作最新值；Intel/AMD 称超出公开威胁模型，无简单补丁。</p>
+      <a class="src" href="https://thehackernews.com/2026/09/new-ddrop-attack-breaks-intel-tdx-and.html">The Hacker News</a>
+    </article>
+
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；暂无值得单独成卡的新产品或实质进展。</p>
+    </article>
+
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3>欧盟更新两用物项出口管制清单：纳入先进算力 IC 与半导体制造/检测设备</h3>
+      <p>欧委会贸易与经济安全总司（9/14）：对接瓦森纳等机制，新增含 DPU 等先进计算集成电路、ALD/EUV 掩模检测等设备；经两月审查后公布于公报生效。</p>
+      <a class="src" href="https://policy.trade.ec.europa.eu/news/2026-update-eu-control-list-dual-use-items-2026-09-14_en">European Commission</a>
+    </article>
+
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；iPhone 18 Pro 等仍 9/18 开售。</p>
+    </article>
+
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Cloudflare Training/Agent 默认拦截今日起按文档生效；本窗未见新的大规模站点影响报道，故不单开。</p>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
