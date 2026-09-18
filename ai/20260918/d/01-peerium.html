@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>华为发布 Peerium 架构：宣称百万处理器可「像一台机」协同 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>华为发布 Peerium 架构：宣称百万处理器可「像一台机」协同</h1>
+    <p class="lede">全联接大会上，华为公布 Peerium 计算架构与 UnifiedBus 对等互联口径；TechNode Global 今晨英文跟进。公司称 Atlas 950 SuperCluster（约 25.6 万卡）已在部署，Atlas 960 近封装光互连仍在测试。百万规模为架构目标，非已公开的独立基准实测。</p>
+    <div class="meta">
+      <span>2026-09-18</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>今晨 08:20 简报之后，英文科技媒体开始系统转述华为在 HUAWEI CONNECT 2026 上抛出的 Peerium 计算架构。与昨午已覆盖的「960DT / 昇腾 960PR 定档 2027」产品表不同，本条聚焦系统架构：如何把极多处理器组织成「更像一台计算机」的整体，而不是再报一颗芯片的季度。</p>
+<p>据华为官网新闻稿，Peerium 通过嵌套并行（Nested BSP）、统一内存寻址与对等互联，试图突破长期主从式规模扩展的瓶颈；关键互连是 UnifiedBus（UB）——以单一开放协议连接 CPU、NPU、内存、SSD、网卡与交换机。轮值董事长徐直军口径是：在 AI 时代用 Peerium 持续建设 SuperPoD 与 SuperCluster，让算力与智能「可及」。</p>
+<p>产品落地口径方面，华为称基于 Peerium 的第一代是 Atlas 950 SuperPoD / SuperCluster，其中约 25.6 万卡规模的 Atlas 950 SuperCluster「已在部署」；面向更大规模的 Atlas 960（近封装光学 NPO）「正在测试」。TechNode Global 9 月 18 日报道强调：百万处理器是架构「意图能力」，公司未公布达到该规模的独立第三方基准；需求侧则引用路透此前「国内算力设备供不应求」的叙述。</p>
+<p>写作边界：不与昨午芯片定档混写成「又发两款芯」；不写成公有云 IaaS 产品专栏。百万卡协同、已部署卡数、NPO 测试进度均为公司声明，需与客户侧交付和可复核基准分开看待。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：华为官网与 Media OutReach 通稿均报 Peerium、UnifiedBus、Atlas 950 SuperCluster（约 25.6 万卡）部署中、Atlas 960 NPO 在测。</li>
+<li>一致：TechNode Global（9/18 约 10:48 上海）转述百万处理器架构目标，并明确「无独立基准证明生产部署已达该规模」。</li>
+<li>勿混写：昨午简报已写 960DT（2027Q1）与 960PR（2027Q3）；本条是架构与超节点，不是重复芯片表。</li>
+<li>待确认：百万规模路径、海外可供应性、与 UnifiedBus 生态第三方互操作细节。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.huawei.com/en/news/2026/9/new-computing-architecture-peerium" target="_blank" rel="noopener">Huawei</a><span class="role">官方</span></li>
+        <li><a href="https://technode.global/2026/09/18/huawei-peerium-million-processor-ai-architecture-ascend-roadmap/" target="_blank" rel="noopener">TechNode Global</a><span class="role">主来源</span></li>
+        <li><a href="https://www.media-outreach.com/news/china/2026/09/17/488413/huawei-pioneers-a-new-computing-architecture-for-the-ai-era-making-one-million-processors-work-as-one-computer/" target="_blank" rel="noopener">Media OutReach</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

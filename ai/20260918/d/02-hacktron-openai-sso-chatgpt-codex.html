@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hacktron 披露：论坛图像解码链 + OpenAI SSO，可接管员工 ChatGPT/Codex · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>Hacktron 披露：论坛图像解码链 + OpenAI SSO，可接管员工 ChatGPT/Codex</h1>
+    <p class="lede">独立安全团队 Hacktron 详述 7 月对 community.openai.com 的利用链：Debian 未及时回补的 libheif 堆溢出经 ImageMagick 进 Discourse，再叠加 OpenAI SSO 缺陷，可无交互接管论坛活跃用户的 ChatGPT/Codex，并经由已连接的 GitHub 触达内部仓。美东 9/17 晚间 WSJ 等跟进；团队称已负责任披露并获约 6500 美元赏金。</p>
+    <div class="meta">
+      <span>2026-09-18</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>晨报已写 Cisco ISE 满分漏洞与 Plugin4Shell，本窗增量来自一条「AI 公司本体」供应链故事。Hacktron（Harsh Jaiswal、Mohan Pedhapati、Rahul Maini）于 9 月 13 日公开技术长文，美东时间 9 月 17 日晚间《华尔街日报》等二次报道后，上海时间约 9 月 18 日上午进入本简报窗口。</p>
+<p>技术路径可压缩为：Discourse 对 HEIC/HEIF 走 ImageMagick → 底层 libheif 在 Debian 12 镜像中缺少安全相关回补 → 堆溢出拿到论坛 RCE；再叠加「用 OpenAI 登录」身份流缺陷，把论坛会话抬升到员工 ChatGPT/Codex。团队用员工侧已连接 GitHub 的 Codex，在内部 monorepo 开出无害 PR #1186742 作影响证明，并声称未继续读取敏感源码。时间线显示：7 月 25 日发现并提交 Bugcrowd，约 14 小时后 OpenAI 侧确认修复；Discourse 亦走 HackerOne 并发布 advisory。</p>
+<p>与「用 Claude 写漏洞」相关的部分：作者写明曾用 Claude Opus 系列辅助审查 libheif、生成与移植利用；Opus 5 发布后数小时内完成面向 Discourse 默认配置（含 ASLR）的可用路径。这不等于 Anthropic 产品「被黑」，而是展示前沿模型显著降低内存破坏利用的人力门槛。赏金口径：OpenAI 支付约 6500 美元，并声明对 Discourse 托管社区站的测试本不在赏金范围内，奖励针对 OpenAI 侧身份问题。</p>
+<p>写作边界：不复述可操作利用步骤；不与晨报 Plugin4Shell、ISE 混写。公开材料未证明客户数据被窃或生产合并被篡改；「触达内部仓」以团队自述与 harmless PR 为证，完整影响面仍待双方后续说明。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：Hacktron 长文与 RuntimeWire 对 WSJ 摘要的转述，均指向「员工 ChatGPT 账户 → 私有软件缓存/内部仓」叙事。</li>
+<li>一致：披露时间线（7/25 报告、约 14 小时修复、Discourse GHSA、9/1 赏金结案）来自 Hacktron 自述。</li>
+<li>分歧/待核：WSJ 付费墙原文细节未全量核对；公开材料未独立证明客户数据泄露。</li>
+<li>勿混写：与 OpenAI 7 月 Hugging Face 多智能体逃逸事件、Anthropic 威胁情报报告（主发 9/10）分开。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.hacktron.ai/blog/hacking-openai" target="_blank" rel="noopener">Hacktron</a><span class="role">主来源</span></li>
+        <li><a href="https://runtimewire.com/article/claude-security-researchers-breach-openai-code-system" target="_blank" rel="noopener">RuntimeWire</a><span class="role">次要</span></li>
+        <li><a href="https://www.wsj.com/tech/ai/hackers-used-anthropics-claude-to-break-into-openai-b40ba883" target="_blank" rel="noopener">WSJ</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
