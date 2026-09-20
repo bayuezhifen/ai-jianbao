@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>xAI 发布 Grok Voice Transcribe 2.0：官方称准确度约翻倍、价目不变 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>xAI 发布 Grok Voice Transcribe 2.0：官方称准确度约翻倍、价目不变</h1>
+    <p class="lede">下午版覆盖同日上午 live 页：本窗检索 x.ai/news、二手报道与马斯克相关公开信息，无新产品或版本阶梯新主源；按硬规则保留并加强今早 Voice Transcribe 2.0 卡片，禁止写成「无进展」。</p>
+    <div class="meta">
+      <span>2026-09-19</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>xAI 于 9 月 18 日在官方新闻页发布 Grok Voice Transcribe 2.0。通稿称相对 1.0，真实场景评测准确度约翻倍；批量与流式标价仍约为每小时音频 0.10 / 0.20 美元，说话人分离、词级时间戳、关键词偏置等含在标价内。型号可显式指定为 grok-voice-transcribe-2.0。</p>
+<p>次级媒体 DataNorth 核对文档后提醒：省略型号时默认仍可能落在 1.0，生产环境需钉选；公开的「1.0 对 2.0」对照基准表仍不完整，应用自有样本做 A/B。通稿还提到与 Loom 等场景的衔接，以及可与编程工具串成「录屏→转写→改代码」链路。</p>
+<p>版本阶梯（下午窗复核）：本窗仍未见马斯克 X 新帖确认「4.8 训完进入强化学习」或「正式取消/搁置 4.7」。若二手称「4.8 取代 4.7」，须回到马斯克原话与 xAI 是否官宣取消 4.7——截至本稿，二者均无新的主源确认。更早窗口（约 9/11–9/14）关于 4.7「再煮几天」、4.8 约 2.5 万亿参数与新 C++ 栈的表述，不升格为本窗新突破。</p>
+<p>写作边界：下午简报覆盖 /ai/20260919 时，不得把 Grok 栏改成「这窗口无新产品/无新进展」；本条即保留晨报产品事实并标明阶梯仍无新确认。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：x.ai/news 与 DataNorth 确认 2.0 已上 STT API，价目与 1.0 同档。</li>
+<li>口径差：官方强调准确度大幅提升；DataNorth 提醒默认型号与公开对照表缺口。</li>
+<li>阶梯：下午窗仍无新马斯克 X / xAI 主源确认 4.8 进 RL 或取消 4.7。</li>
+<li>版式：下午覆盖同日 live 页时保留本卡，禁止空栏。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.ai/news/grok-voice-transcribe-2" target="_blank" rel="noopener">xAI News</a><span class="role">官方</span></li>
+        <li><a href="https://datanorth.ai/news/xai-adds-grok-voice-transcribe-2-0" target="_blank" rel="noopener">DataNorth</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

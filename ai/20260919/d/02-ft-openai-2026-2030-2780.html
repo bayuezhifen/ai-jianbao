@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FT：OpenAI 测算 2026–2030 年现金缺口约 2780 亿美元 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>FT：OpenAI 测算 2026–2030 年现金缺口约 2780 亿美元</h1>
+    <p class="lede">《金融时报》援引公司演示材料称，OpenAI 预计五年累计自由现金流约负 2780 亿美元，算力与基建开支约 8560 亿美元；收入则从约 360 亿增至约 3500 亿美元。路透等 9 月 18–19 日转述；今晨 OpenAI 栏为空，本窗补入。</p>
+    <div class="meta">
+      <span>2026-09-19</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>今晨简报 OpenAI 栏无成卡新闻。午后窗口内，路透、安纳多卢通讯社等转述《金融时报》：OpenAI 在对内演示中测算，2026 年至 2030 年累计现金缺口约 2780 亿美元（负自由现金流），低于 5 月时约 3050 亿美元的旧口径。最大开支项是算力与基础设施，累计约 8560 亿美元。</p>
+<p>同一材料称，收入有望从 2026 年约 360 亿美元增至 2030 年约 3500 亿美元，五年累计收入约 8400 亿美元。公司今年 3 月融资约 1220 亿美元、估值约 8520 亿美元；材料暗示若节奏不变，现金可能在 2028 年前后耗尽，从而需要新一轮融资。FT 本周另称，公司正与投资者接触，估值目标可能高于约 1.2 万亿美元。</p>
+<p>背景上，首席执行官萨姆·奥特曼已表示 2026 年不会 IPO，理由包括安全顾虑。报道也提到为与 Anthropic 及更便宜的开源权重模型竞争而降价，以及英伟达、甲骨文、软银数据中心业务与 OpenAI 合约的相互依赖。写作时 OpenAI 未立即置评。</p>
+<p>写作边界：数字全部来自二手对 FT 所见材料的转述，非公司官方财报；不把「寻求超 1.2 万亿估值」写成已敲定的成交价。也不与更早的 Astra for Law、错位披露框架混写成同一条产品新闻。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：路透、安纳多卢、多家转载均指向 FT：2780 亿缺口、8560 亿算力开支、收入十倍级增长口径。</li>
+<li>一致：相对 5 月约 3050 亿缺口口径有所下调。</li>
+<li>待确认：演示材料完整性、融资条款与 1.2 万亿是否仅为谈判目标。</li>
+<li>勿混写：今晨未覆盖；Astra for Law / 错位框架属更早窗口。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.reuters.com/technology/openai-expects-burn-through-almost-280-billion-by-2030-ft-reports-2026-09-18/" target="_blank" rel="noopener">Reuters</a><span class="role">主来源</span></li>
+        <li><a href="https://www.aa.com.tr/en/economy/openai-seeks-12t-valuation-as-projections-show-278b-cash-drain-by-2030-report/4061678" target="_blank" rel="noopener">Anadolu Agency</a><span class="role">次要</span></li>
+        <li><a href="https://www.thestar.com.my/tech/tech-news/2026/09/19/openai-forecasts-cash-burn-near-280-billion-by-2030-ft-reports" target="_blank" rel="noopener">The Star (Reuters)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>消费者起诉 Anthropic、OpenAI、谷歌与 xAI：指「定速」构成反托拉斯合谋 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>消费者起诉 Anthropic、OpenAI、谷歌与 xAI：指「定速」构成反托拉斯合谋</h1>
+    <p class="lede">CBS/美联社等 9 月 19 日美东午后报道：四名付费订户在加州北区法院提起拟制全国集体诉讼，指控四家公司在 9 月 12 日公开表态后协调放缓能力迭代，涉嫌违反《谢尔曼法》并削弱订阅价值。公司方未立即回应。</p>
+    <div class="meta">
+      <span>2026-09-20</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>上海时间 9 月 20 日凌晨前后，CBS News 与美联社等跟进一则周五在加州北区联邦法院立案的拟制集体诉讼：四名分别订阅 ChatGPT、Claude、Grok 或 Gemini 的付费用户，指控 Anthropic、OpenAI、SpaceXAI（xAI 相关主体）与谷歌就「放缓前沿能力」达成非法协调，违反《谢尔曼法》第一条。</p>
+<p>诉状把关键节点落在 9 月 12 日：Anthropic 首席执行官达里奥·阿莫迪发表长文，呼吁行业「定速前沿」（pacing the frontier），并主张嵌入第三方评测、国内协调乃至国际安排；同日 OpenAI 的萨姆·奥特曼、xAI 的埃隆·马斯克与谷歌 DeepMind 的戴密斯·哈萨比斯等公开表态支持其中部分主张。原告律师团认为，竞争对手不得自行约定「竞争太危险所以少竞争」，并主张协调会降低付费订阅的实际价值。</p>
+<p>原告首席律师尼克·罗利把矛头指向「私人营利公司之间的自我服务协议」掌控安全与规程。诉状亦引用阿莫迪文中对反垄断风险的自述——他曾希望政府提供狭窄豁免或至少促成跨实验室安全对话。被告方截至周六报道时未立即置评。写作边界：本案仍为起诉阶段，是否构成违法合谋有待法院审理，不宜写成「已认定卡特尔」。</p>
+<p>同日路透长文《改变 AI 航向的十天》把失控披露、研究员离职、IPO 与募资压力串成背景；与本案形成交叉：一边是安全派推动协调，一边是用户侧用反垄断框架反制。本卡记行业级诉讼与舆论裂隙，不升格为任一实验室的新产品发布。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：CBS/AP、彭博法律、The Hill、India Today 等确认加州北区立案、四名订户、四家被告、9 月 12 日公开表态为诉状关键节点。</li>
+<li>一致：诉讼主张订阅价值受损，寻求禁令与三倍赔偿口径。</li>
+<li>分歧：被告是否实际达成可执行协议，还是仅为公开表态；报道时均未获公司实质回应。</li>
+<li>待确认：法院是否受理集体诉讼、是否与政府反垄断豁免讨论发生联动。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.cbsnews.com/news/ai-slowdown-lawsuit-openai-anthropic-google/" target="_blank" rel="noopener">CBS News / AP</a><span class="role">主来源</span></li>
+        <li><a href="https://news.bloomberglaw.com/litigation/openai-anthropic-google-spacexai-hit-with-antitrust-lawsuit" target="_blank" rel="noopener">Bloomberg Law</a><span class="role">次要</span></li>
+        <li><a href="https://www.reuters.com/business/media-telecom/ten-days-that-changed-course-ai-2026-09-19/" target="_blank" rel="noopener">Reuters</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
