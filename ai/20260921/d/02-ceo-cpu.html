@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英特尔 CEO：CPU 需求过旺，目前只能满足约半数客户要货 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>英特尔 CEO：CPU 需求过旺，目前只能满足约半数客户要货</h1>
+    <p class="lede">Ctech、Motley Fool 等援引英特尔 CEO 陈立武在 Splunk .conf26 的对话：公司目前只能供应客户所要 CPU 的约一半；他把缺口与 AI 推理、智能体负载推高通用算力需求联系起来。</p>
+    <div class="meta">
+      <span>2026-09-21</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>以色列商业媒体 Ctech 于 9 月 20 日英文化报道：英特尔 CEO 陈立武（Lip-Bu Tan）在丹佛 Splunk .conf26 与思科总裁 Jeetu Patel 的对话中称，「CPU 需求太高，我们只能供应客户的 50%」。他还说，有多位 CEO 打电话为「产不出足够产品」向他致歉——语气是产能跟不上，而不是订单消失。</p>
+<p>Motley Fool 9 月 19 日美东傍晚的解读文同样引用「约半数」口径，并把它放进英特尔财报脉络：2026 年二季度营收同比约 +25% 至 161 亿美元，数据中心与 AI 分部同比约 +59%；管理层指引三季度营收约 158–168 亿美元。陈立武把增量需求归因于 AI 从训练走向推理与大规模智能体部署，认为这会重新抬升对通用 CPU 的消耗，而不只砸在 GPU 上。</p>
+<p>同场他还强调先进封装与基板（substrate）约束，称日台厂商通过预付款锁定产能；并警告在复杂系统集成时代「约 95% 依赖单一、且位于台湾的供应商很危险」——这是在为英特尔坚持设计+制造+封装的路径做政策与商业辩护。CFO 此前亦称公司正加大设备、洁净室与基板投入；陈立武提到下一代 14A 工艺计划于 2027 年一季度进入生产（具体量产节奏仍待验证）。</p>
+<p>写作边界：「50%」未说明产品线、客户群、时间窗口与分母算法，不能写成「所有英特尔 CPU 一律短缺一半」。发言发生在 .conf26 会期，英文二手报道主要落在 9 月 19–20 日；本窗按「昨午后仍在流通、且晨午报均未成卡」的实质增量收录。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：Ctech 与 Motley Fool 均转述「约 50% 客户要货」与「CEO 致电致歉」说法，场景为 Splunk .conf26。</li>
+<li>一致：陈立武将需求与推理/智能体、封装与基板瓶颈、foundry 战略绑在一起叙述。</li>
+<li>分歧/边界：50% 统计口径未公开；14A「2027 Q1 投产」为管理层时间表，不等于立刻放量。</li>
+<li>待确认：短缺主要落在客户端还是服务器、对 AMD/外部代工份额的实际转移。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.calcalistech.com/ctechnews/article/6bjuvbxxf" target="_blank" rel="noopener">Ctech</a><span class="role">主来源</span></li>
+        <li><a href="https://www.fool.com/investing/2026/09/19/intel-can-supply-only-about-half-of-what-its-customers-want-that-s-a-better-problem-than-it-sounds/" target="_blank" rel="noopener">Motley Fool</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>开发者演示：A20 Pro 端侧跑 27B，令牌生成约 2× A19 Pro · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">手机与端侧 SoC</div>
+    <h1>开发者演示：A20 Pro 端侧跑 27B，令牌生成约 2× A19 Pro</h1>
+    <p class="lede">Wccftech 9 月 20 日报道开发者 Adrien Grondin 的演示：搭载 A20 Pro 的 iPhone 18 Pro 本地运行约 270 亿参数 Bonsai 模型，令牌生成速度约为 iPhone 17 Pro（A19 Pro）的两倍；双 16 核 Neural Engine 与 12GB LPDDR5X 是关键升级。</p>
+    <div class="meta">
+      <span>2026-09-21</span>
+      <span class="dot"></span>
+      <span>手机与端侧 SoC</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Wccftech 于美东 9 月 20 日清晨转述：开发者 Adrien Grondin（@adrgrondin）在 X 上展示，iPhone 18 Pro 在端侧运行约 27B 参数的 Bonsai 模型时，「比预期好得多」，令牌生成速度约为上一代 iPhone 17 Pro 的两倍，并称「新 A20 Pro 芯片是猛兽」。演示时间戳落在 9 月 19 日。</p>
+<p>报道梳理的硬件背景是：A20 Pro 首次在苹果硅上采用双 16 核 Neural Engine，面向端侧 AI；iPhone 18 Pro / Pro Max 标配 12GB、96-bit LPDDR5X，带宽据称约 115.2GB/s，明显高于 17 Pro 一代。文中还称，在专为 NPU 设计的负载上，该 Neural Engine 峰值吞吐可超过同 SoC 的 7 核 GPU——这是厂商/媒体侧的性能叙事，并非独立实验室跑分。</p>
+<p>边界同样清楚：演示用的是 1-bit 量化的 Bonsai；Grondin 提到更新的 Bonsai 2（2-bit 量化）体积过大，无法舒服地塞进 18 Pro 本地运行。换言之，端侧「能跑 27B」不等于任意精度、任意架构的 27B 都能流畅离线推理，内存与量化策略仍是硬约束。</p>
+<p>本卡只记开发者公开演示与媒体交叉转述的端侧性能增量；不把它写成苹果官方基准，也不与昨晨「美版 Pro Max 仍用高通 X80 基带」的调制解调器新闻混为一谈。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：Wccftech 与开发者原帖均称 18 Pro / A20 Pro 跑 27B Bonsai、相对 17 Pro 约 2× 令牌速度。</li>
+<li>一致：报道强调双 16 核 Neural Engine、12GB LPDDR5X；并指出更重的 2-bit 模型仍受内存限制。</li>
+<li>分歧/边界：具体 tokens/s、功耗与温度曲线未在二手报道中系统公布；「NPU 峰值超 GPU」为叙述性对比。</li>
+<li>待确认：苹果是否发布官方端侧模型规格；不同量化与框架下的可复现数据。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://wccftech.com/apple-a20-pro-demonstrated-run-27b-ai-model-double-speed-a19-pro/" target="_blank" rel="noopener">Wccftech</a><span class="role">主来源</span></li>
+        <li><a href="https://www.igen.fr/iphone/2026/09/liphone-18-pro-peut-faire-tourner-un-modele-de-27-milliards-de-parametres-sans-la-moindre-difficulte-158165" target="_blank" rel="noopener">iGeneration</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

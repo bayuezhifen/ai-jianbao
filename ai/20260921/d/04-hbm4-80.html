@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三星 HBM4 良率约 80%，转向放量争夺份额 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>三星 HBM4 良率约 80%，转向放量争夺份额</h1>
+    <p class="lede">首尔经济日报 9 月 20 日援引业界消息：三星电子第六代高带宽内存 HBM4 良率由量产初期不足 60% 升至约 80%，并加速扩产；Counterpoint 数据显示其二季度 HBM 收入份额约 33%。</p>
+    <div class="meta">
+      <span>2026-09-21</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>首尔经济日报英文版 9 月 20 日报道称，据业界当天消息，三星 HBM4 在量产早期良率低于 60%，近期已升至约 80%。HBM 多层堆叠中任一颗 DRAM 失效即可导致整颗成品报废，因此良率每上一个台阶，同样设备与晶圆投入能转化出的可售颗数就明显增加。报道将此解读为三星敢于把资源进一步押向高单价 HBM4 的底气。</p>
+<p>放量节奏方面，文中称三星预计三季度 HBM4 收入较上一季「不止三倍」；下半年 HBM4 有望占其 HBM 总收入六成以上。公司层面 HBM 月均晶圆投入被预期从今年约 18 万片升至明年约 25 万片（约 +40%）。后端线索包括：高堆叠 HBM 用玻璃载板的委外清洗量或从每月约 2 万片升至约 5 万片。HBM 扩产也可能挤占标准服务器/PC DRAM 供给，从而增强三星在通用 DRAM 定价上的话语权——这是报道的推论，不是已公布的涨价清单。</p>
+<p>竞争格局：Counterpoint 被引述称，三星 HBM 收入份额由一季度约 21% 升至二季度约 33%，同期 SK 海力士由约 58% 降至约 50%，两者差距收窄。技术叙事强调 HBM4 采用约 10 纳米级 1c DRAM 与 4 纳米逻辑基裸片，三星记忆体+晶圆代工+先进封装同集团协同。下一代 HBM4E 的 12 层样品已在客户验证，可靠性评估阶段良率据称逾 70%，量产时点仍取决于认证与需求。</p>
+<p>写作边界：良率与份额数字来自韩媒「业界消息」与第三方研究转述，非三星当日官方新闻稿；勿与昨午长鑫五代 DRAM/LPDDR5X 量产新闻混写。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：首尔经济确认「约 80%」HBM4 良率、早期「&lt;60%」、扩产与份额追赶叙事。</li>
+<li>一致：Counterpoint Q1→Q2 份额 21%→33%（三星）、58%→50%（海力士）被该文引用。</li>
+<li>分歧/边界：三季度收入「三倍以上」、年底百亿美元级展望等为预测或观察者口径。</li>
+<li>待确认：官方良率披露、对英伟达等大客户的实际出货占比、HBM4E 量产日历。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://en.sedaily.com/finance/2026/09/20/samsung-hits-80-percent-yield-on-hbm4-shifts-focus-to-volume" target="_blank" rel="noopener">Seoul Economic Daily</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
