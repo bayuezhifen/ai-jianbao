@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>午报复核：Grok 4.7 仍为现役旗舰，官方页在线；未见 4.8 上线取代 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>午报复核：Grok 4.7 仍为现役旗舰，官方页在线；未见 4.8 上线取代</h1>
+    <p class="lede">午窗再核：x.ai 官方 Grok 4.7 发布页仍在，定价约每百万 token $2/$6；未见 4.8 正式上线或官方取消 4.7。Musk 先前称 4.8 将完成训练并进 RL，并非「4.8 取代下架 4.7」。按站规保留并强化。</p>
+    <div class="meta">
+      <span>2026-09-25</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>午报覆盖同日晨报路径时，按站规对 Grok 栏做保留强化：再次打开 x.ai/news/grok-4-7，发布说明仍在线。官方定位 4.7 为面向编程与知识工作的现役能力，输入/输出定价约每百万 token $2 / $6，并提供两倍输出速度、两倍价格的 fast 变体；页面仍列 Cursor、Grok Build、API 与第三方路由等可用渠道。</p>
+<p>关于「4.8 会不会立刻取代 4.7」：本窗仍未见官方上线页、模型卡、API 标识或 changelog 写明「4.8 取代并下架 4.7」。Musk 此前在 X 勾勒版本阶梯时称，约 2.5T、新 C++ 栈的 4.8 将完成训练并进入强化学习——那是训练进度表述，不是产品换牌公告。二级媒体若写成「4.8 取代 4.7」，需回到 Musk 原话与 x.ai 一手核对；目前官方并未宣布取消 4.7。</p>
+<p>Decrypt 等二次报道确认 4.7 已于 9 月 21 日前后上线。TeslaNorth 等路线图整理把 4.8→4.9→5 写成后续阶梯，只作背景，不能当成「已上线取代」主源。午窗亦未检索到 Musk 当天新帖改写该阶梯。</p>
+<p>简报边界：本卡确认 4.7 仍为现役旗舰与官方页状态；不采信「4.8 已取代 4.7」传言。若后续出现官方 4.8 发布页，再按一手改写。BioNeMo 等未在 nvidia.com 核实的条目不混入本栏。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：x.ai/news/grok-4-7 午窗仍在线，定价 $2/$6；Decrypt 确认 4.7 已发布。</li>
+<li>一致：未见官方「4.8 取代并下架 4.7」；Musk 阶梯表述指向训练/RL，非产品换牌公告；未见 xAI 宣布取消 4.7。</li>
+<li>视角有限：TeslaNorth 等为二级路线图整理；若官方日后调整旗舰，以 x.ai 一手为准。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener">xAI Official</a><span class="role">官方</span></li>
+        <li><a href="https://decrypt.co/378824/xai-launches-grok-4-7" target="_blank" rel="noopener">Decrypt</a><span class="role">次要</span></li>
+        <li><a href="https://teslanorth.com/2026/09/14/elon-grok-roadmap-through-grok-5/" target="_blank" rel="noopener">TeslaNorth (ladder context)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
