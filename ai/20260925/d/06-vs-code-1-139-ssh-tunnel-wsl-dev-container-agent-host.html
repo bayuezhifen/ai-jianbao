@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code 1.139：远程 SSH/Tunnel/WSL 上可在项目 Dev Container 内跑 Agent Host · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>VS Code 1.139：远程 SSH/Tunnel/WSL 上可在项目 Dev Container 内跑 Agent Host</h1>
+    <p class="lede">微软官方更新说明：VS Code 1.139（2026-09-23）把 Dev Container 会话从本地扩展到 SSH、Tunnel、WSL 上的远程项目，可在 Agents 窗口选用「Use Dev Container」；特性实验、渐进推送。</p>
+    <div class="meta">
+      <span>2026-09-25</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>VS Code 1.139 稳定版于 9 月 23 日发布。官方更新页把「在远程主机的项目 Dev Container 里跑 agent 会话」列为亮点：开发者可在 Agents 窗口对符合条件的远程文件夹选择 Use Dev Container，让 Agent Host 进入容器内的工具链与依赖，而不必把整套环境复制到笔记本或裸远程主机。</p>
+<p>启用条件包括：远程机已装并运行 Docker、PATH 上有 Docker CLI、项目含支持的 .devcontainer 配置，以及打开设置 chat.agentHost.devContainer.enabled（渐进推送期间可能需手动打开）。官方注明目前不能与 New Worktree 组合使用。Techgenyz 等二次报道补充：Agents 窗口仍留在本机，容器内跑的是 Agent Host；并提醒匿名 Dev Tunnel 在自动批准开启时风险更大，应要求 GitHub/微软账户鉴权——这与官方安全提示同向。</p>
+<p>同版本还改进大量会话列表的加载：用中央轻量目录代替每次打开全部会话库。微软在约 645 个会话的测试里给出约 12×（首次列表）与约 4×（刷新）的数量级；会话少时体感会弱很多。另有 Compact View、空分组过滤、就地重命名等体验改动。</p>
+<p>简报边界：本卡写 VS Code 官方 IDE 能力，不与 Cursor 栏的 Rollouts/Security Review 混写（后者见昨午）。也不把 Copilot 产品定价或云托管 IDE 当成同一条新闻。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：code.visualstudio.com 与 Techgenyz 均确认 1.139、远程 Dev Container Agent Host、设置项名称与渐进推送。</li>
+<li>一致：官方性能表与二次报道对约 12×/4× 的引用同源。</li>
+<li>视角补充：Techgenyz 更强调 Dev Tunnel 鉴权风险；官方更新页以功能说明为主。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://code.visualstudio.com/updates/v1_139" target="_blank" rel="noopener">VS Code Updates</a><span class="role">官方</span></li>
+        <li><a href="https://techgenyz.com/vs-code-1-139-ai-agents-work-remote-dev-containers/" target="_blank" rel="noopener">Techgenyz</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
