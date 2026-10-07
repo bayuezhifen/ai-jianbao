@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WordPress 7.1.3 安全版修复 7 个漏洞，其中 3 个由 Anthropic 报告 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>WordPress 7.1.3 安全版修复 7 个漏洞，其中 3 个由 Anthropic 报告</h1>
+    <p class="lede">WordPress 10/6 发布 7.1.3，修复评论后台存储型 XSS、WXR 导出二阶 SQL 注入、未登录可读取私密文章评论等 7 个问题；Anthropic 报告了其中 3 个，官方建议立即更新。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>语言 / 运行时 / 框架</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>WordPress 于 10 月 6 日发布 7.1.3 版本，属于安全更新，官方建议所有站点立即升级，后台「仪表盘—更新」即可自动完成。这些修复也同步回移到了受影响的旧分支，但官方提醒只有最新版本处于主动支持状态。</p>
+<p>按官方发布说明，本次共修复 7 个安全问题：</p>
+<p>一是评论管理页面的存储型 XSS，攻击者可借待审核评论植入脚本，由 Trail of Bits 的 Thomas Chauchefoin 报告；二是 WP_Http::make_absolute_url() 方法的拒绝服务问题；三是 WXR 导出功能中的二阶 SQL 注入；四是作者角色用户可以把文章设为置顶的权限缺陷，后三项均由 Anthropic 报告；五是未登录用户可读取私密或未发布文章的评论，由 Patchstack 的 Ananda Dhakal 报告；六是 Imgur 嵌入内容存在 XSS，由三位独立研究者报告；七是传给 {status}_{type} 钩子的参数可被伪造，导致动作名冲突，由 WordPress 安全团队成员发现。</p>
+<p>值得注意的是报告者名单。Anthropic 一家报告了 3 个，延续了近来 AI 公司用自家模型大规模审计开源项目的趋势；本刊晨报提到的 OpenSSH 10.6 也在发布说明中称，AI 生成或辅助的漏洞报告近来明显增多。从利用条件看，评论后台的存储型 XSS 只需提交一条待审核评论，等管理员打开后台就可能触发，对开放评论的站点威胁较直接。</p>
+<p>WordPress 占全球网站相当大的比例，核心漏洞一旦公开，自动化扫描很快就会跟上。已开启小版本自动更新的站点通常会自动升到 7.1.3，关闭了自动更新或使用托管面板锁定版本的站点需手动处理。晨报提到的 Ninja Forms 等插件漏洞属于第三方插件问题，与这次核心更新无关，需要分别升级。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：WordPress 官方版本说明、Patchstack、IT之家对 7 个漏洞及报告者（Anthropic 3 个、Trail of Bits、Patchstack 等）的描述一致。</li><li>小出入：官方说明正文写「一项安全修复」，但列出了 7 项，以列表为准。</li><li>待确认：各漏洞的 CVE 编号与 CVSS 评分尚未全部公布。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://wordpress.org/documentation/wordpress-version/version-7-1-3/" target="_blank" rel="noopener">WordPress.org</a><span class="role">官方</span></li>
+        <li><a href="https://patchstack.com/articles/wordpress-7-1-3-security-release/" target="_blank" rel="noopener">Patchstack</a><span class="role">次要</span></li>
+        <li><a href="https://www.ithome.com/1/010/192.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
