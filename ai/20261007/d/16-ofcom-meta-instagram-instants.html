@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英国 Ofcom 正式调查 Meta：Instagram「Instants」上线前是否做足风险评估 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">隐私与监管</div>
+    <h1>英国 Ofcom 正式调查 Meta：Instagram「Instants」上线前是否做足风险评估</h1>
+    <p class="lede">英国通信管理局 10/6 宣布，调查 Meta 在 5 月推出「阅后即焚」照片功能 Instants 前，是否按《网络安全法》完成违法内容和儿童风险评估；若认定违法，最高可罚 1800 万英镑或全球合格营收的 10%。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>隐私与监管</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英国通信管理局（Ofcom）10 月 6 日宣布，对 Meta 是否违反英国《网络安全法》（Online Safety Act）展开正式调查。焦点是 Instagram 今年 5 月推出的「Instants」功能：用户拍下即时照片分享给好友，对方看过后照片即消失。Ofcom 要查的是，Meta 在上线前是否做了「适当且充分」的违法内容风险评估和儿童风险评估。</p>
+<p>按这部法律，平台必须评估并降低英国用户接触违法内容的风险；儿童可能使用的平台，还要评估未成年人接触特定有害内容的风险。关键在于，平台在对服务设计或运营做出重大改动之前，必须先更新风险评估。Ofcom 称今年早些时候已警告各大平台，未经评估就上线重大改动可能招致执法。</p>
+<p>Ofcom 执法总监 George Lusty 表示，平台的重大改动在上线前必须先做风险评估，「你不会不经充分测试就推出一款新车，网络服务也一样」；他还说，安全设计必须一开始就内置，而不是事后补上。BBC 报道指出，阅后即焚的消息和图片过去一再被认为对儿童和青少年用户风险较高。</p>
+<p>Meta 回应称，公司认真对待《网络安全法》下的监管义务，上线前做过风险分析，并多次向 Ofcom 介绍过这项功能，将配合调查。Meta 还表示，Instants 内置多项保护，青少年账户默认禁止截图、转发和再分享。</p>
+<p>程序上，Ofcom 会先收集分析证据；如果认为存在违规，会向公司发出临时决定，Meta 有机会完整回应后才会作出最终决定。若最终认定违法，Ofcom 可以要求整改，并处最高 1800 万英镑或全球合格营收 10% 的罚款，两者取高。这是 Ofcom 针对 Meta 的首起正式调查。与此同时，Meta、TikTok 和 X 正在法院对 Ofcom 的执法提起司法复核，认为不应被要求提供如此大量的信息；Meta 还主张，罚款不应以全球营收为基数。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Ofcom 官方公告、BBC、IT之家对调查对象（Instagram Instants）、法律依据、Lusty 的表态和罚款上限的描述一致。</li><li>Meta 立场：上线前做过风险分析并多次向 Ofcom 通报，将配合调查。</li><li>待确认：调查周期、是否会扩展到其他功能，Ofcom 未说明。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.ofcom.org.uk/online-safety/illegal-and-harmful-content/ofcom-investigates-metas-compliance-with-uk-online-safety-laws" target="_blank" rel="noopener">Ofcom</a><span class="role">官方</span></li>
+        <li><a href="https://www.bbc.co.uk/news/articles/cq8jzyey8e2ro" target="_blank" rel="noopener">BBC News</a><span class="role">次要</span></li>
+        <li><a href="https://www.ithome.com/1/010/157.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
