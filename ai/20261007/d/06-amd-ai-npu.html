@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苏姿丰访首尔：AMD 年内在韩设 AI 卓越中心，拉韩国 NPU 厂商做异构系统 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>苏姿丰访首尔：AMD 年内在韩设 AI 卓越中心，拉韩国 NPU 厂商做异构系统</h1>
+    <p class="lede">AMD CEO 苏姿丰 10/7 在首尔与韩国科技部官员及十多家 AI 芯片和软件公司会面，宣布年内设立 AI 卓越中心、招募数百名研究人员，用 AMD CPU、GPU 搭配韩国 NPU 做出可出口的参考方案。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>结束台湾行程后，AMD 董事长兼 CEO 苏姿丰 10 月 7 日抵达首尔。据《朝鲜日报》英文版和《每日经济》报道，她当天与韩国科学技术信息通信部次官柳济明会面，并与 13 至 14 家韩国 AI 企业座谈，参会方包括 FuriosaAI、Rebellions、HyperAccel、DEEPX、Mobilint、MangoBoost 和大模型公司 Upstage 等。</p>
+<p>最主要的宣布是：AMD 将在年内于韩国设立「AI 卓越中心」，招募数百名 AI 研究人员，具体选址未定，下个月先成立指导委员会。中心的核心任务是做异构系统，把 AMD 的 CPU、GPU 与韩国本土厂商的 NPU（神经网络处理器）组合在一起，软件层统一用 AMD 的 ROCm，目标是形成一套可以推广到海外市场的参考方案。韩国政府方面计划明年推出大规模示范项目，以公开招标方式选出参与的企业联合体。</p>
+<p>对 AMD 来说，这是在英伟达生态之外找盟友的又一步。韩国的 NPU 公司多数专注推理芯片，单打独斗很难进入数据中心，而 AMD 能提供通用 CPU、GPU 和成熟软件栈；反过来，AMD 也需要更多合作伙伴把 ROCm 做大。对韩国政府来说，借大厂的平台把本土芯片推向海外，是其 AI 产业政策的重点。</p>
+<p>行程方面，苏姿丰原计划在韩停留更久，但因华盛顿有紧急事务，缩短为一天。按报道，她还会与三星电子半导体高管会面，并出席 AMD 面向玩家的活动。外界关心的芯片供货规模、与三星在代工或存储上的合作，此次都没有公布具体数字。</p>
+<p>结合她前一天在台北的表态（明年将大幅增加供货、与伙伴的产能规划拉长到三到五年），这次亚洲之行的主线很清楚：一边锁定台湾的制造和供应链，一边在韩国拓展系统级合作伙伴。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：《朝鲜日报》英文版与《每日经济》对年内设立 AI 卓越中心、招募数百名研究人员、CPU/GPU 搭配韩国 NPU、ROCm 软件栈、13 至 14 家企业参会的说法一致。</li><li>待确认：中心选址、投资金额、与三星会谈的具体内容，均未公开。</li><li>行程缩短原因仅称「华盛顿紧急事务」，未说明详情。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://biz.chosun.com/en/en-it/2026/10/07/6QHHA5EKDJETHC3ZEIGTYOIEEU/" target="_blank" rel="noopener">Chosun Biz</a><span class="role">次要</span></li>
+        <li><a href="https://pulse.mk.co.kr/news/all/12170220" target="_blank" rel="noopener">Maeil Business (Pulse)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
