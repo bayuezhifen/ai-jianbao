@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pwn2Own 爱尔兰站首日：32 个零日、奖金 38.85 万美元，OpenAI Codex 被一个参数注入漏洞攻破 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>Pwn2Own 爱尔兰站首日：32 个零日、奖金 38.85 万美元，OpenAI Codex 被一个参数注入漏洞攻破</h1>
+    <p class="lede">趋势科技 ZDI 主办的 Pwn2Own 爱尔兰 2026 首日，研究者攻破三星 Galaxy S26、飞利浦 Hue 桥接器、Sonos 音箱等设备；新设的 AI 类目首次有人得手，OpenAI Codex、LiteLLM 和甲骨文自治 AI 数据库都被攻破。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>趋势科技零日计划（ZDI）主办的 Pwn2Own 爱尔兰 2026 于 10 月 6 日开赛。据 ZDI 官方赛况和 BleepingComputer 报道，首日共进行 21 场挑战，研究者利用了 32 个此前未公开的零日漏洞，拿走 38.85 万美元奖金。按赛制，厂商有 90 天发布补丁，之后 ZDI 公开漏洞细节。</p>
+<p>今年比赛分七个类目：手机（iPhone 17、三星 Galaxy S26、谷歌 Pixel 10）、打印机、智能家居、即时通讯、AI 基础设施、AI 编程工具，以及新增的健康类可穿戴设备。首日最受关注的是 AI 类目第一次有人得手：Ikotas Labs 只用一个参数注入漏洞就攻破了 OpenAI 的云端编程智能体 Codex，获 4 万美元；开源大模型网关 LiteLLM 被 Xint 团队攻破（4 万美元），Out of Bounds 团队也成功但与他人撞洞（1.5 万美元）；VinSOC 团队串联 5 个零日攻破甲骨文自治 AI 数据库，再得 4 万美元。</p>
+<p>手机方面，三星 Galaxy S26 被多支队伍攻破，包括 Viettel 网络安全的 Nguyen Thanh Dat（3.125 万美元）、Interrupt Labs（1.575 万美元）和 Ikotas Labs（1.1 万美元），但部分漏洞厂商已经知道，奖金因此打折。White Noise Club 尝试攻击谷歌 Pixel 10，未能在规定时间内完成。</p>
+<p>智能家居和办公设备同样失守：VinSOC 串联 7 个零日攻破飞利浦 Hue Bridge Pro 照明网关（4 万美元），并以首日总积分领先；McCaulay Hudson 利用 4 个漏洞再次攻破 Sonos Era 300 音箱（5 万美元）；Interrupt Labs 攻破佳明 Index BPM 血压计（2 万美元）；利盟 CX532adwe 和佳能 imageFORCE 1643F 多功能打印机也被攻破。兄弟打印机等个别项目挑战失败。</p>
+<p>AI 编程工具和模型网关首次成为正式靶标，且首日就被攻破，说明这类产品已经和手机、路由器一样，成了攻防研究的重点。去年爱尔兰站三天共发现 73 个零日、奖金 102 万美元；今年后两天仍将继续攻击 Galaxy S26、Pixel 10 以及 AI 基础设施和智能家居设备。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：ZDI 官方首日赛况与 BleepingComputer 对 32 个零日、38.85 万美元奖金，以及 Codex、LiteLLM、甲骨文自治 AI 数据库、Hue Bridge Pro、Sonos Era 300 被攻破的描述一致。</li><li>细节差异：BleepingComputer 称 Galaxy S26「被攻破两次」，ZDI 赛况列出三支队伍得手（含撞洞），以 ZDI 为准。</li><li>待确认：各漏洞细节将在 90 天补丁期后公开。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.thezdi.com/blog/2026/10/6/pwn2own-ireland-2026-day-one-results" target="_blank" rel="noopener">Zero Day Initiative</a><span class="role">官方</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/hackers-exploit-32-zero-days-on-first-day-of-pwn2own-ireland/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
