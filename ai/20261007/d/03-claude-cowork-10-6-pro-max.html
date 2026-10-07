@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Cowork 10/6 起对 Pro、Max 改为只在云端运行，「仅在本机」选项取消 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude Cowork 10/6 起对 Pro、Max 改为只在云端运行，「仅在本机」选项取消</h1>
+    <p class="lede">Anthropic 帮助中心确认：10 月 6 日起，Pro 和 Max 用户新建的 Cowork 任务一律在 Anthropic 服务器上运行，无法改回本机；想完全在本地干活，官方建议改用 Claude Code。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 在帮助中心更新说明：从 2026 年 10 月 6 日起，Pro 和 Max 套餐新建的 Claude Cowork 任务都在云端运行。设置里原有的「Only on your computer」（仅在本机运行）选项被移除，原先选了本机运行的用户，下次打开桌面版时会被自动切到云端并看到提示，而且没有办法切回去。</p>
+<p>已经在本机开始的任务不受影响，可以继续做完，界面上会标注「仅在此电脑运行」；10 月 6 日前建好、在本机执行的定时任务也会照旧在本机跑，新建的定时任务则放到云端。官方列出的好处是：合上笔记本任务也能继续；定时任务不需要电脑在线；同一会话在桌面、网页和手机上都能接着看。</p>
+<p>用户最关心的是本地文件。帮助中心的说法是：文件夹仍留在用户电脑上，Claude 只能通过桌面版访问用户主动连接的文件夹，而且只在桌面版开着的时候；任务需要某个文件时，只取该文件的一份副本上传到云端，删除会话时这些副本一并删除。本地连接器、浏览器操作和电脑操作等功能同样要求桌面版在线。台湾《数位时代》的报道也提醒，这意味着部分原本完全不离开本机的工作流，现在至少有文件副本会经过云端。</p>
+<p>对于坚持本地运行的用户，Anthropic 给的出路是 Claude Code 桌面版：它在本机运行，文件和历史记录都留在本地。迁移方法是在 Cowork 任务里选「下载任务数据」，解压后用 Claude Code 打开，再运行 /port-task-data 命令接上原来的上下文。</p>
+<p>这次调整还伴随一个更大的变化：Anthropic 正把「聊天」和「Cowork」合并成一个 Claude，用户不再手动选模式，由 Claude 判断是直接回答还是当作任务处理，目前先向 Pro、Max 逐步推送。Team 和企业版的云端 Cowork 仍处于测试阶段，不受这次「强制上云」影响。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Claude 帮助中心与《数位时代》对 10/6 起 Pro、Max 新任务只在云端运行、取消「仅在本机」选项、已有本机任务可继续完成的描述一致。</li><li>官方细节：本地文件只通过桌面版、只取所需文件副本；迁移到 Claude Code 用「下载任务数据」加 /port-task-data。</li><li>待确认：Team、企业版是否会跟进同样安排，官方未表态。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://support.claude.com/en/articles/15520349-use-claude-cowork-on-web-desktop-and-mobile" target="_blank" rel="noopener">Claude Help Center</a><span class="role">官方</span></li>
+        <li><a href="https://www.bnext.com.tw/article/92536/claude-cowork-cloud-pro-max-october-6" target="_blank" rel="noopener">数位时代</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
