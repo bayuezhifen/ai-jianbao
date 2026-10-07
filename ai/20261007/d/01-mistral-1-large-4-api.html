@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mistral 发布约 1 万亿参数的 Large 4，先开预览 API，权重月底前开放 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>Mistral 发布约 1 万亿参数的 Large 4，先开预览 API，权重月底前开放</h1>
+    <p class="lede">法国 Mistral AI 10/6 推出 Mistral Large 4：总参数约 1 万亿、每次激活 490 亿，原生多模态，在自家欧洲机房用约 3800 颗英伟达 Grace Blackwell GPU 从头训练；网安测试成绩突出，权重放出前先请安全公司和政府做红队测试。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Mistral AI 美国时间 10 月 6 日发布新一代旗舰模型 Mistral Large 4。官方博客称，这是一款混合专家（MoE）架构的模型，总参数约 1 万亿，每个词元实际调用约 490 亿参数，文字、图像原生统一处理。模型即日起以公开预览形式上线 Mistral Studio 的 API，开放权重的版本计划在本月底前放出，有媒体报道的日期是 10 月 27 日。</p>
+<p>这次最受关注的是训练方式。Mistral 称 Large 4 是从零训练的，没有在别家开源底座上微调，算力来自它在欧洲自建的数据中心，约 3800 颗英伟达 Grace Blackwell GPU。TechCrunch 指出，这是 Mistral 拿到 30 亿欧元 D 轮融资后的第一款大模型：D 轮由三星领投，估值 210 亿欧元；此前的 C 轮由阿斯麦领投。对一家欧洲公司来说，能在本土机房完成万亿参数级别的训练，本身就是一个信号。</p>
+<p>成绩方面，Mistral 重点强调网络安全和软件工程。官方数据显示，模型在 Cybench 上得分 93%；在一项要求复现漏洞并给出补丁的测试中得分 82%，而 Claude Opus 5.5 和 GPT-6 Astra 在这项测试里几乎得零分，原因是两者大多直接拒绝作答。软件工程测试 DeepSWE 得分 61.7%。VentureBeat 和 The Next Web 都把这一点当作看点：闭源大厂对攻防类请求越来越谨慎，Mistral 则选择把能力放出来，再靠外部审查兜底。</p>
+<p>正因为攻防能力强，Mistral 没有立刻放权重。公司表示，正与多家安全公司和多国政府合作做红队测试，评估模型被滥用于网络攻击的风险，测试结束后再公开权重。这与过去几代 Mistral 模型「发布即开源」的节奏不同，也说明开放权重的模型一旦达到前沿水平，发布前的安全审查正在变成惯例。</p>
+<p>对使用者来说，眼下能做的只是通过预览 API 试用，价格、上下文长度等以 Mistral Studio 页面为准；真正决定影响力的，是月底权重能否如期放出、许可证条款是否宽松。如果按期开放，它将成为目前参数规模最大的开放权重模型之一，直接与美国闭源大厂的前沿模型竞争。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Mistral 官方博客、TechCrunch、VentureBeat 对约 1 万亿总参数、约 490 亿激活参数、3800 颗 Grace Blackwell GPU、自建欧洲机房训练的表述一致。</li><li>待确认：权重开放的具体日期（有报道称 10/27）、许可证条款，以及红队测试的参与方名单，官方尚未逐一公布。</li><li>注意：「Opus 5.5、GPT-6 Astra 接近零分」是 Mistral 自测，原因是对方拒答，并非能力比较。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://mistral.ai/news/mistral-large-4/" target="_blank" rel="noopener">Mistral AI</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/10/06/mistrals-new-1t-model-aims-to-leapfrog-closed-and-open-rivals/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
