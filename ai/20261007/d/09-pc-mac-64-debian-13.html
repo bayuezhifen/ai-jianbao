@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>树莓派桌面版重回 PC 和 Mac：基于 Debian 13，四年来首次大更新 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>树莓派桌面版重回 PC 和 Mac：基于 Debian 13，四年来首次大更新</h1>
+    <p class="lede">树莓派基金会 10/6 发布面向 PC 和 Mac 的 Raspberry Pi Desktop，改为 64 位 Debian Trixie，带上新版 Dock、控制中心和 Raspberry Pi Connect 远程客户端；只支持 x86 电脑和英特尔 Mac。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>树莓派官方 10 月 6 日发文，宣布推出基于 Debian 13「Trixie」的新版 Raspberry Pi Desktop for PC and Mac，也就是把树莓派系统的桌面环境装到普通电脑上的版本。上一版还是基于 Debian Bullseye，此后几年一直没有更新，官方在文章里直接说「很抱歉让大家等了这么久」。</p>
+<p>这个项目缘起于 2016 年。负责桌面环境的工程师 Simon Long 回忆，当时 CEO Eben Upton 随口一问「能不能在我的 Mac 上跑」，他用一个周末做出了原型，后来做成可安装版本，结果比预想的受欢迎得多。但树莓派靠卖硬件赚钱，软件一直免费，很难长期投入人力维护 PC 版，于是停在了 Bullseye。官方称每周仍会收到两三封邮件询问何时更新。</p>
+<p>新版有几处重要变化。一是改为 64 位（amd64），因为 Debian 已不再支持 32 位 PC，过去 15 年左右的大多数 PC 和英特尔芯片 Mac 都能运行；苹果自研芯片的 Mac 不在支持之列，因为 Debian 对其支持仍属实验性质。二是桌面跟进了树莓派系统的最新改动，包括控制中心和新的 Dock；面板改用基于 Wayland 的 wf-panel-pi，不再用老的 lxpanel。三是内置 Raspberry Pi Connect 客户端，可以像管理树莓派一样远程控制这台 PC 或 Mac，区别是首次设置需要手动给设备起名。据 9to5Linux 报道，系统内核为 Linux 6.12 LTS。</p>
+<p>安装方式是把 ISO 镜像写入 U 盘启动，选择「持久化运行」即可把改动保存在 U 盘上；也可以用 Calamares 安装器装到硬盘。官方在评论区说明，旧版是 32 位，不能直接升级，只能全新安装。</p>
+<p>对手头有旧电脑的用户，这是一个轻量、熟悉的选择。树莓派方面表示打算继续维护这个版本，但也坦言要看下载量和实际使用情况。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：树莓派官方博客、9to5Linux、IT之家对基于 Debian Trixie、64 位、支持 PC 与英特尔 Mac、不支持 Apple Silicon、内置 Connect 客户端的描述一致。</li><li>官方补充（评论区）：旧版无法直接升级；面板改为 Wayland 下的 wf-panel-pi。</li><li>待确认：后续是否长期维护，官方称取决于使用量。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.raspberrypi.com/news/raspberry-pi-desktop-now-available-for-pc-and-mac/" target="_blank" rel="noopener">Raspberry Pi</a><span class="role">官方</span></li>
+        <li><a href="https://9to5linux.com/debian-trixie-based-raspberry-pi-desktop-is-now-available-for-pc-and-mac" target="_blank" rel="noopener">9to5Linux</a><span class="role">次要</span></li>
+        <li><a href="https://www.ithome.com/1/010/166.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
