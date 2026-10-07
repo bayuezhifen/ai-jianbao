@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenSSF 在布拉格公布新成员与欧盟《网络韧性法》配套资料，JetBrains 加入 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>OpenSSF 在布拉格公布新成员与欧盟《网络韧性法》配套资料，JetBrains 加入</h1>
+    <p class="lede">开源安全基金会 10/6 在欧洲社区日宣布 JetBrains 等 4 家新成员，发布《网络韧性法》（CRA）合规实操指南和爱立信 1400 多项上游修复的案例；CRA 的漏洞与事件强制上报义务已于上月生效。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>开源治理与许可证</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>开源安全基金会（OpenSSF）10 月 6 日在捷克布拉格举行的欧洲社区日上发布新闻稿，宣布扩充会员并推出一批与欧盟《网络韧性法》相关的资料。新加入的普通会员有 A-Team Systems、Emphere、DACHS IT 和 JetBrains。JetBrains 当天也在官方博客确认加入，理由是编程智能体让写代码越来越便宜、核验代码却越来越贵，而核验的大部分正是安全工作。</p>
+<p>这次发布的重点是欧盟《网络韧性法》（Cyber Resilience Act，简称 CRA）。这部法律要求在欧盟销售的带数字元素产品承担安全义务，其中漏洞和安全事件的强制上报条款已于上个月生效。OpenSSF 在新闻稿中特别提到，AI 让漏洞更容易被找到、上报窗口越来越短，厂商对清晰、易懂的合规指引需求更迫切。</p>
+<p>基金会列出了三季度的几项成果：一是《CRA 准备实操指南》，把政策分析落成维护者和厂商可以照做的步骤，并配套一份「CRA 准备用户路径」，帮助不同起点的机构找到切入点；二是爱立信案例研究，爱立信软件技术公司为满足 CRA 要求取消了私有分支，向上游贡献了 1400 多项依赖更新和安全修复，OpenSSF 以此说明「在上游修，不在分支里修」在大企业也行得通；三是按角色划分的用户路径，分别面向开发者、安全工程师、开源办公室负责人和管理层。</p>
+<p>项目方面，开源密钥管理工具 OpenBao 发布 2.6 版，新增按命名空间封存和跨插件工作流引擎；面向 Kubernetes 的软件物料清单（SBOM）可视化与治理工具 BOMHort 进入 OpenSSF 沙箱。基金会还将在 10 月 9 日举办「CRA 落地」专题研讨会。</p>
+<p>从治理角度看，CRA 正在改变开源生态的分工：商业厂商要对自己产品里每个开源组件的漏洞负责，志愿维护者却不承担法律义务，最现实的办法就是把修复送回上游、大家共用。OpenSSF 把指南、工具和案例集中提供，实际上是在厂商和维护者之间搭桥；JetBrains 这样的开发工具厂商加入，也说明合规和供应链安全的压力已经传到软件工具链。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：OpenSSF 新闻稿与 JetBrains 官方博客对 JetBrains 加入 OpenSSF 的说法一致。</li><li>官方细节：新成员 4 家；CRA 实操指南、用户路径、爱立信 1400 多项上游修复案例；OpenBao 2.6、BOMHort 进入沙箱。</li><li>待确认：CRA 其余义务的适用时间以欧盟官方文本为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openssf.org/press-release/2026/10/06/openssf-shares-expanded-membership-and-new-global-policy-resources-during-community-day-europe/" target="_blank" rel="noopener">OpenSSF</a><span class="role">官方</span></li>
+        <li><a href="https://blog.jetbrains.com/blog/2026/10/06/jetbrains-joins-the-open-source-security-foundation/" target="_blank" rel="noopener">JetBrains Blog</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
