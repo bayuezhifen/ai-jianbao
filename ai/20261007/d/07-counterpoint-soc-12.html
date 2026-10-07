@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Counterpoint：联发科今年在旗舰安卓 SoC 出货中的份额约 12%，四年翻了一倍多 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">手机与端侧 SoC</div>
+    <h1>Counterpoint：联发科今年在旗舰安卓 SoC 出货中的份额约 12%，四年翻了一倍多</h1>
+    <p class="lede">据韩国《Money Today》引述 Counterpoint 数据，今年全球手机 SoC 出货预计两位数下滑，但高端芯片占比从 2024 年的 30% 升到 40%；联发科旗舰份额从 2022 年约 5% 升至约 12%，三星正押注 2nm Exynos 追赶。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>手机与端侧 SoC</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>韩国财经媒体《Money Today》10 月 7 日援引市场研究机构 Counterpoint 的数据称，今年全球智能手机 SoC 出货量预计比去年下降两位数，但高端产品在总出货中的占比将从 2024 年的 30% 提高到今年的 40%。也就是说，手机芯片市场整体在缩小，高端市场却越来越重要。</p>
+<p>在高端安卓芯片领域，高通仍占主导，变化最大的是联发科。Counterpoint 预计，联发科在旗舰安卓 SoC 出货中的份额将从 2022 年的约 5% 升至今年的约 12%，天玑旗舰系列的营收自 2022 年以来增长约五倍。BigGo 财经等媒体的同期报道也提到，联发科在高端应用处理器市场重回第三，以约 1 个百分点的差距压过三星 Exynos。</p>
+<p>推动这一趋势的是新一代天玑 9600 Pro。报道称，这款芯片采用台积电 2nm 工艺，单价最高约 220 美元，是联发科历来最贵的旗舰 SoC，支持 LPDDR6 内存和 UFS 5.0 存储，采用双 NPU 架构，已用于 vivo X500 Pro 系列和 OPPO Find X10 Pro Max。</p>
+<p>三星方面，其整体手机 AP 份额已从去年二季度的 6% 升至今年二季度的 9%，策略是在 Galaxy S27 Ultra 等旗舰上搭载自家 2nm Exynos。这不只关乎芯片设计部门（System LSI）：Exynos 用量增加，也能给三星代工的 2nm 产线带来订单。业内人士在报道中表示，下一代 Exynos 的性能和良率能否稳定，将直接影响三星芯片设计和代工两块业务的复苏。</p>
+<p>需要说明的是，以上份额是 Counterpoint 的全年预测，并非已经发生的实际出货；不同机构对「高端」「旗舰」的划分口径不同，数字之间不宜直接比较。另外，高通与 Arm 的授权官司仍在美国特拉华州审理，本窗没有裁决，结果可能影响今后安卓芯片的授权成本。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：《Money Today》与 BigGo 财经均引述 Counterpoint：高端占比 30%→40%、联发科旗舰份额约 5%→约 12%。</li><li>待确认：天玑 9600 Pro 约 220 美元单价为媒体报道，联发科未公开定价。</li><li>口径提醒：份额为全年预测值，各机构「旗舰」划分不同。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.mt.co.kr/en/industry/2026/10/07/2026100614412696929" target="_blank" rel="noopener">Money Today</a><span class="role">次要</span></li>
+        <li><a href="https://finance.biggo.com/news/b7b3b9b4-6e8a-4460-9898-fff0a0504ca9" target="_blank" rel="noopener">BigGo 财经</a><span class="role">次要</span></li>
+        <li><a href="https://counterpointresearch.com/en/insights/global-smartphone-apsoc-market-share-quarterly" target="_blank" rel="noopener">Counterpoint Research</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
