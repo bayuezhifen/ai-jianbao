@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JetBrains 的 Java/Kotlin LSP 扩展进入候选版：VS Code、Cursor 可用，正式版起需 IDEA Ultimate 订阅 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>JetBrains 的 Java/Kotlin LSP 扩展进入候选版：VS Code、Cursor 可用，正式版起需 IDEA Ultimate 订阅</h1>
+    <p class="lede">JetBrains 10/6 宣布「Java and Kotlin by IntelliJ IDEA」扩展到达候选版（RC），把 IntelliJ 的 Java、Kotlin 代码理解能力带进 VS Code 及 Cursor 等衍生编辑器，Cursor Agent 也能直接调用；正式版很快推出，试用 30 天后收费。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>JetBrains 10 月 6 日在官方博客宣布，基于语言服务器协议（LSP）的扩展「Java and Kotlin by IntelliJ IDEA」进入候选版（Release Candidate）阶段。这款扩展两个月前首次公开预览，目标是把 IntelliJ IDEA 对 Java 和 Kotlin 的代码理解能力搬到第三方编辑器里，第一站就是 VS Code 和 Cursor 等基于 VS Code 的编辑器。官方称稳定的 1.0 版「很快」发布。</p>
+<p>从预览到候选版，JetBrains 发了多个中间版本，主要提升性能和稳定性。扩展在 Visual Studio Marketplace 和 Open VSX 两个市场累计下载已超过 2 万次；JetBrains 自己也在构建 IntelliJ 系列 IDE 的超大代码仓库上内部试用。</p>
+<p>功能上，除了智能补全、跳转、代码检查、快速修复等基础能力，扩展还提供项目级重构、基于调试适配器协议（DAP）的调试、Maven/Gradle/Bazel 项目支持、内置测试运行和 Spring 工具互通。对 AI 编程而言更关键的一点是：在 Cursor 里装上这款扩展后，Cursor Agent 可以调用同一个语言服务器做语义级代码搜索、跳转和分析，JetBrains 称这能让智能体的结果更快、更确定。JetBrains 的帮助文档也专门写了在 Cursor 中通过 Open VSX 安装的步骤。</p>
+<p>授权方面需要留意：候选版属于抢先体验计划（EAP）的最后一个版本，可免许可证使用 30 天；从稳定版开始，新用户有 30 天免费试用，之后必须订阅 IntelliJ IDEA Ultimate 才能继续使用。也就是说，这不是一个免费的社区插件，而是 JetBrains 把付费 IDE 的核心能力拆出来、按订阅卖给不用 JetBrains IDE 的开发者。</p>
+<p>这一步的意义在于，JetBrains 承认了相当一部分开发者已经转向 VS Code 系编辑器和 AI 编辑器，与其守住自家 IDE，不如把最有竞争力的 JVM 代码分析能力输出出去。官方还预告，接下来几周会介绍更多能力，包括完全由智能体驱动的终端工作流。对 Java、Kotlin 项目较多、又在用 Cursor 的团队，正式版定价和与现有 Ultimate 订阅的关系值得关注。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：JetBrains 官方博客与其帮助文档（授权与激活、在 Cursor 中安装）对 RC 阶段、30 天 EAP、正式版起需 IntelliJ IDEA Ultimate 订阅的说法一致。</li><li>官方数字：两个扩展市场累计下载逾 2 万次。</li><li>待确认：1.0 正式版的发布日期与单独定价未公布。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blog.jetbrains.com/idea/2026/10/java-and-kotlin-by-intellij-idea-the-lsp-based-extension-reaches-release-candidate/" target="_blank" rel="noopener">JetBrains Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.jetbrains.com/help/intellij-vscode/get_started_cursor.html" target="_blank" rel="noopener">JetBrains 文档：在 Cursor 中安装</a><span class="role">官方</span></li>
+        <li><a href="https://www.jetbrains.com/help/intellij-vscode/Register.html" target="_blank" rel="noopener">JetBrains 文档：授权与激活</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
