@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cursor 上线「远程控制本地智能体」：用 iOS 应用查看并回复电脑上跑着的智能体 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Cursor</div>
+    <h1>Cursor 上线「远程控制本地智能体」：用 iOS 应用查看并回复电脑上跑着的智能体</h1>
+    <p class="lede">Cursor changelog 10/6 新增功能：在手机上的 Cursor iOS 应用里就能查看、回复本机运行的智能体，不必用云端智能体；默认开启，企业版需管理员手动启用。</p>
+    <div class="meta">
+      <span>2026-10-07</span>
+      <span class="dot"></span>
+      <span>Cursor</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Cursor 在官方更新日志中发布「Remote control for local agents」（远程控制本地智能体），日期标为 2026 年 10 月 6 日，第三方更新追踪站 Releasebot 10 月 7 日收录。功能很直接：用户离开电脑后，可以在 Cursor 的 iOS 应用里查看本机正在运行的智能体进度，并直接回复它的提问或追加指令。</p>
+<p>此前想在手机上盯任务，基本只能用云端智能体：任务跑在 Cursor 的云端虚拟机里，手机和网页随时能看。新功能的区别在于，智能体仍在用户自己的电脑上运行，代码、依赖和本地环境都不用上云，手机只是一个遥控器。对于不方便把代码放到云端、或依赖本机特殊环境的项目，这是一个实用的折中。</p>
+<p>使用方法是先配对：在 iOS 应用里发起连接，再到桌面版里点批准。为了避免电脑睡眠导致任务中断，桌面版提供「保持这台电脑唤醒」选项，但要求电脑接通电源且屏幕打开。功能对个人和团队用户默认开启；企业版默认关闭，需要管理员在组织设置的「安全与身份」下打开「远程控制」。</p>
+<p>从产品方向看，Cursor 最近几个月一直在把本地和云端的界限打通：先是 Projects 统一管理多个智能体，再是手机端查看云端任务，现在手机也能管本地任务。对开发者来说，好处是长任务不用守在电脑前；需要留意的是，远程回复同样能触发本机命令和文件改动，企业把它默认关掉，也是出于这方面的考虑。</p>
+<p>目前更新日志只提到 iOS 应用，没有说明 Android 何时支持；桌面版需更新到包含该功能的版本才能配对。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Cursor 官方 changelog 与 Releasebot 收录内容一致：iOS 应用查看并回复本地智能体、桌面版批准配对、企业版需管理员启用。</li><li>待确认：Android 支持时间、对应的最低桌面版本号，官方未写明。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://cursor.com/changelog" target="_blank" rel="noopener">Cursor Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://releasebot.io/updates/cursor" target="_blank" rel="noopener">Releasebot</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
