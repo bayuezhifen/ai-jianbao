@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AWS 升为 Linux 基金会白金会员，进入基金会董事会 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>AWS 升为 Linux 基金会白金会员，进入基金会董事会</h1>
+    <p class="lede">Linux 基金会 10 月 7 日宣布，亚马逊云科技（AWS）成为其白金会员，这是基金会的最高会员等级，AWS 将因此在基金会董事会拥有席位。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>开源治理与许可证</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Linux 基金会在旧金山发布公告称，AWS 的白金会员身份建立在其十多年来对基金会生态的投入之上，包括技术、工程人力和资金。作为白金会员，AWS 将进入 Linux 基金会董事会，并继续参与基金会旗下的各类项目。</p>
+<p>从现有关系看，AWS 已在基金会体系内的 25 个项目和子基金会拥有会员身份：它是智能体 AI 基金会（AAIF）、云原生计算基金会（CNCF）、PyTorch 基金会和 Yocto 项目的白金会员，也是 OpenSSF、Valkey、OpenSearch 软件基金会、Alpha-Omega、FinOps 基金会、Jupyter 基金会、后量子密码联盟和 x402 基金会等的高级会员。2024 年，AWS 把自己主导的搜索分析套件 OpenSearch 移交出去，成立了 OpenSearch 软件基金会。它还是 Akrites 计划和 AAIF 的创始成员。</p>
+<p>基金会 CEO 吉姆·泽姆林表示，开源是全球技术经济的基础设施，要让它持续下去，需要那些依赖开源并从中获益的公司长期投入。AWS 开源负责人斯托米·彼得斯则说，当 AWS 做出的基础设施能解决自身以外的问题时，就会为它找一个中立的归属，Kubernetes、PyTorch、MCP、OpenSearch 和 Valkey 都是在这种中立托管下发展起来的。</p>
+<p>这条消息放在开源治理语境里值得关注。过去几年，云厂商与开源项目的关系一直有摩擦，Elasticsearch、Redis 等项目都曾以云厂商「只用不回馈」为由改用限制性许可证，OpenSearch 和 Valkey 正是 AWS 参与的社区分叉。AWS 升级会员、进入董事会，一方面是对「回馈不足」批评的回应，另一方面也意味着它在中立基金会里的话语权进一步上升。对开发者来说，这些项目的资金会更充足，但大厂在治理中的分量如何平衡，仍值得持续观察。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手来源：Linux 基金会新闻稿（10/7）与 PR Newswire 通稿内容一致。</li><li>背景说明：Elasticsearch、Redis 改许可证与 OpenSearch、Valkey 分叉属已公开的历史背景，非本次公告内容。</li><li>待确认：AWS 白金会员的具体出资金额未公布。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.linuxfoundation.org/press/aws-becomes-a-platinum-member-of-the-linux-foundation-deepening-commitment-to-open-source" target="_blank" rel="noopener">Linux Foundation</a><span class="role">官方</span></li>
+        <li><a href="https://www.prnewswire.com/news-releases/aws-becomes-a-platinum-member-of-the-linux-foundation-deepening-commitment-to-open-source-302896983.html" target="_blank" rel="noopener">PR Newswire</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
