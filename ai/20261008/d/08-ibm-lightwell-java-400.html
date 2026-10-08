@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IBM 与红帽 Lightwell：在广泛使用的 Java 库中修复 400 多个此前未知漏洞 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>IBM 与红帽 Lightwell：在广泛使用的 Java 库中修复 400 多个此前未知漏洞</h1>
+    <p class="lede">IBM 与红帽 10 月 6 日宣布，Lightwell 项目已在客户仍在生产使用的开源 Java 库中发现并修复 400 多个此前未知漏洞，并把 Lightwell Clearinghouse 对符合条件的企业客户正式开放，可按依赖提交优先审查与回移补丁。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>IBM 新闻稿与红帽新闻稿称，双方通过 Lightwell 在「企业已经跑在生产环境里的」开源 Java 库中找到并修复了 400 多个此前未知的漏洞，同时让 Lightwell Clearinghouse 一般可用：客户可以点名某条开源依赖，申请优先审查、修复，并拿到适配旧版本的回移补丁，而不必先做大版本升级。</p>
+<p>补丁通过加固仓库分发，可接入客户现有的扫描器、制品库、流水线和测试。红帽 Lightwell 负责人 Gunnar Hellekson 强调，自主智能体现在更容易把多个小缺陷串成严重攻击，因此「发现」只是一半，另一半是把修复回移进仍在服役的旧库。Help Net Security、Cybersecurity Dive 等 10 月 8 日跟进报道。Pwn2Own 爱尔兰站第三日结果截至本窗截稿仍未由 ZDI 发文，故漏洞栏以这条厂商披露为主。</p>
+<p>明显的信息缺口是：新闻稿没有公布受影响库名单、CVE 编号或严重级别时间表。红帽称适用于上游的修复会经负责任披露回到开源项目，Clearinghouse 参与方则保留禁运保护——也就是说，未加入计划的用户，往往要等公开上游发布后才能看到对应修复。</p>
+<p>实操建议因而只能写得很克制：若你的 Java 供应链已接入 IBM/红帽相关加固源，按厂商说明拉取更新；若没有，持续跟踪上游安全公告，并假设「稳定多年的库」在智能体辅助审计下仍可能被挖出可利用组合。没有 CVE 清单，就无法在本卡里点名「先打哪几个包」。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：IBM Newsroom、Red Hat 新闻稿 10/6，数字与 Clearinghouse GA 一致。</li><li>次要：Help Net Security、Cybersecurity Dive 10/8 报道确认「未公布库名/CVE/严重级别」。</li><li>待确认：具体库与 CVE 公开时间表；未参与 Clearinghouse 的用户何时能从上游拿到对等修复。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://newsroom.ibm.com/2026-10-06-ibm-and-red-hat-remediate-more-than-400-previously-unknown-open-source-vulnerabilities" target="_blank" rel="noopener">IBM Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.redhat.com/en/about/press-releases/ibm-and-red-hat-remediate-more-400-previously-unknown-open-source-vulnerabilities" target="_blank" rel="noopener">Red Hat</a><span class="role">官方</span></li>
+        <li><a href="https://www.helpnetsecurity.com/2026/10/08/lightwell-java-library-vulnerabilities/" target="_blank" rel="noopener">Help Net Security</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
