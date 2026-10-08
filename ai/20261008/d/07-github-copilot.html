@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Copilot 本地沙箱正式可用，智能体工具调用受文件与网络策略限制 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>GitHub Copilot 本地沙箱正式可用，智能体工具调用受文件与网络策略限制</h1>
+    <p class="lede">GitHub 10 月 7 日宣布 Copilot 本地沙箱在 Copilot CLI、Copilot 应用以及使用 Agent Host 的 VS Code 会话中正式可用。工具执行由微软 Execution Containers 落到操作系统控件，可限制文件系统、网络与凭据访问，无额外收费。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>GitHub Changelog 写道，本地沙箱现已在 GitHub Copilot CLI、Copilot 应用，以及使用 Agent Host 的 VS Code 会话中一般可用。开发者或组织用策略规定智能体发起的命令能读改哪些目录、能否访问互联网与本地网络、以及能否碰到 Git / GitHub CLI 凭据；本地 MCP 与语言服务器在支持范围内也可纳入同一边界。</p>
+<p>底层依赖微软 Execution Containers（MXC）：把一份通用沙箱策略翻译成 Windows、macOS、Linux 上的原生操作系统控制。官方特别区分「模型在哪里跑」和「工具在哪里执行」——无论 Copilot 选用哪家模型，工具侧都走同一套沙箱策略。企业可强制开启并禁止开发者削弱策略。功能包含在 Copilot 订阅内，不另收费。</p>
+<p>文档站点同步提供了「关于云端与本地沙箱」「使用本地沙箱」「配置本地沙箱设置」等页面，CLI 可用 /sandbox 配置。这与晨报 VS Code 1.141 里的「智能体沙箱」是同一波安全方向上的产品化：晨报写的是编辑器侧能力上线，本卡写的是 Copilot 品牌下本地沙箱宣告 GA，并点名 MXC 作为跨平台落地层。</p>
+<p>对日常开发的影响是：想让智能体更自主地改代码、跑命令，组织终于有一条不额外买产品、又能在本机收紧边界的默认路径；代价是要认真写策略，并接受部分本地工具在沙箱外不可用或需显式放行。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：GitHub Changelog 10/7 GA 公告；docs.github.com 沙箱概念与配置页一致。</li><li>与晨报关系：VS Code 1.141 沙箱能力晨报已写；本卡聚焦 Copilot 本地沙箱 GA 与 MXC 说明，不重复 1.141 其他条目。</li><li>待确认：各编辑器/CLI 版本最低要求以文档为准，企业强制策略的管理界面细节需看管理员文档。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://github.blog/changelog/2026-10-07-local-sandboxing-for-github-copilot-now-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://docs.github.com/en/copilot/concepts/about-cloud-and-local-sandboxes" target="_blank" rel="noopener">GitHub Docs：About sandboxes</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
