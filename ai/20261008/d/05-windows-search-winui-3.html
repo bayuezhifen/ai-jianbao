@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windows Search 换上 WinUI 3：预览版可在搜索框里直接改深色模式、蓝牙和窗口布局 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Windows Search 换上 WinUI 3：预览版可在搜索框里直接改深色模式、蓝牙和窗口布局</h1>
+    <p class="lede">微软 10 月 7 日起向 Windows Insider 实验通道推送新版任务栏搜索：基于 WinUI 3，结果改成单列，并加入「行内操作」，可直接开关深色模式、夜间模式、蓝牙，或调整亮度、静音、最小化与并排窗口。首发仅英文。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在 Insider 博客写道，新的 Windows Search 体验从 10 月 7 日起在实验通道任务栏上逐步放开。它改用 WinUI 3，官方称早期测试里性能和内存占用都有明显改善；界面收成单一结果列表，去掉大部分右侧大预览，理由是数据显示用户几乎都点左侧列表。</p>
+<p>更大的变化是「行内操作」（inline actions）：搜索不再只负责「找到」，还可以在当前位置把事做完。官方举例包括「切换到深色模式」「打开夜间模式」「打开蓝牙」「把屏幕调暗」「静音」「最小化全部窗口」「并排排列窗口」。后续还预告了与 Phone Link 相关的手机操作，以及年内加入的行内文件预览、更丰富的网页预览和分类筛选。</p>
+<p>试用条件较窄：需升到实验通道 build 26340.9616 或实验（26H1）通道 28120.3181，再检查更新并重启，必要时在「功能开关」里打开「新 Windows Search 体验」；首发语言为英文。开始菜单里的搜索暂时仍是旧界面。The Verge 等媒体把这一波与前一日发布会的「混合智能」叙事放在一起理解，但强调 Copilot 更深整合仍属后续计划、且将以可选方式出现。</p>
+<p>需要与晨报区分：微软 Execution Containers（系统级智能体容器）已在晨报单独成卡。本卡只覆盖搜索壳层与行内操作，不重复容器与 RTX Spark 硬件新闻。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：Windows Insider 博客 10/7 详述 WinUI 3、单列 UI、行内操作与 Insider 开启步骤。</li><li>次要：The Verge 等将搜索改造放在 10/7 Windows 发布会同日叙事中，并指出 Copilot 整合仍为后续、可选。</li><li>范围：仅实验通道预览，不是向所有 Windows 11 稳定版用户推送。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.windows.com/windows-insider/2026/10/07/from-searching-to-doing-building-a-faster-more-streamlined-windows-search/" target="_blank" rel="noopener">Windows Insider Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.theverge.com/tech/1007113/microsoft-windows-copilot-ai-control-search-hybrid-intelligence" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
