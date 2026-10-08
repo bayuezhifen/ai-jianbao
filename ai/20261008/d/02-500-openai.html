@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>《华尔街日报》：博通筹逾 500 亿美元，为与 OpenAI 合作的定制芯片融资 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>《华尔街日报》：博通筹逾 500 亿美元，为与 OpenAI 合作的定制芯片融资</h1>
+    <p class="lede">据《华尔街日报》报道，博通正为与 OpenAI 共同开发的定制人工智能芯片安排逾 500 亿美元融资，阿波罗与黑石等在洽谈之列；同期甲骨文、SpaceX 也在为采购芯片寻找大规模债务安排。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>《华尔街日报》报道称，博通正为它与 OpenAI 合作开发的定制人工智能芯片安排逾 500 亿美元融资，阿波罗全球管理、黑石等机构出现在早期洽谈名单中。借款主体、抵押品和最终条款尚未披露，交易有望在年底前敲定，但规模仍可能调整。</p>
+<p>《商业时报》等转述同一报道还提到，甲骨文正与阿波罗、高盛商谈为采购芯片筹资；整组交易反映数据中心建设成本飙升后，科技巨头越来越依赖结构化债务而不是仅靠经营现金流。博通今年 6 月已宣布与阿波罗、黑石等成立融资平台，目标是到 2028 年为包括 Anthropic、OpenAI 在内的开发者支撑逾 20 吉瓦算力，首笔约 350 亿美元由阿波罗牵头。</p>
+<p>需要并列说明的是，彭博此前报道博通曾就约 300 亿至逾 600 亿美元不等的人工智能芯片相关债务安排与银行接触，不同稿件对「本轮」额度并不完全一致。在官方未发新闻稿前，应以「早期洽谈、额度可变」理解，不宜写成已签约交割。</p>
+<p>对产业的含义很直接：先进芯片本身不够，还要把几年的集群建设资金一次筹齐。这笔潜在融资若落地，会进一步把「模型公司—定制芯片—私募信贷」绑成一条供应链；同时也与本月早些时候 SpaceX 为采购英伟达芯片寻求约 400 亿美元融资的报道同属一波基础设施金融化浪潮。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>主报道：《华尔街日报》独家；《商业时报》、InvestingLive 等转述「逾 500 亿美元」与阿波罗、黑石参与洽谈。</li><li>分歧：彭博另有约 300 亿或此前逾 600 亿相关融资讨论的说法，额度与「本轮」边界不完全一致。</li><li>官方背景：博通 6 月已公布约 20GW、首笔约 350 亿美元的融资平台，与本轮洽谈可对照，但并非同一份已签署协议。</li><li>待确认：借款人、担保结构、交割时间表及 OpenAI 侧是否并表。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.wsj.com/tech/oracle-broadcom-and-spacex-seek-blockbuster-debt-deals-to-pay-for-ai-chips-848e8032" target="_blank" rel="noopener">Wall Street Journal</a><span class="role">主来源</span></li>
+        <li><a href="https://www.businesstimes.com.sg/startups-tech/technology/broadcom-plans-us50-billion-financing-openai-chips-wsj-says" target="_blank" rel="noopener">The Business Times（转述 WSJ）</a><span class="role">次要</span></li>
+        <li><a href="https://news.bloomberglaw.com/artificial-intelligence/broadcom-holds-early-talks-about-financing-deal-for-openai-chips" target="_blank" rel="noopener">Bloomberg Law</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
