@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arista 发布 Etherlink SU-144：以太网机柜级 scale-up，单域最多 144 颗加速器 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>Arista 发布 Etherlink SU-144：以太网机柜级 scale-up，单域最多 144 颗加速器</h1>
+    <p class="lede">Arista 在 OCP 峰会前公布基于 ESUN 的以太网 scale-up 参考架构 Etherlink SU-144，单跳域最多连 144 颗 XPU、跨机柜可到 1024；伙伴包括 AMD、Arm、博通、Meta、微软和高通。这是参考设计，不是整机柜 SKU。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Arista 于 10 月 7 日发表博客，推出面向人工智能集群的机柜级以太网 scale-up 方案，品牌名为 Etherlink SU-144。它建立在开放计算项目（OCP）的 Ethernet for Scale-Up Networking（ESUN）倡议之上，目标是在机柜内用开放以太网取代或补充专用 scale-up 互联，把「网络」做成机柜背板的一部分。</p>
+<p>三种物理形态分别是：正交机箱（加速器板与交换板直接正交互连，面向训练、支持约 100–400 千瓦液冷、最多约 144 颗 XPU）、线缆背板（交换机居中、铜缆卡匣连接，可维护性更好）、跨机柜（独立交换柜连接多台加速器柜，灵活但要用光模块拉远）。跨机柜方案可将 scale-up 域扩到约 1024 颗加速器。Scale-out 侧则给出 8/12/16 交换机液冷机柜参考设计，围绕 7060EX7 等交换机，并支持超级以太网联盟（UEC）特性。</p>
+<p>Network World、SiliconANGLE 等报道强调：Arista 明确不把「整机柜」做成价目表上的产品，而是卖交换机、软件、设计和验证套件，由系统集成商与代工厂组装交货；诊断层 Netdi 可在 EOS 或 SONiC 等网络操作系统下工作。公司承认，英伟达 NVLink 生态短期难以撼动，真正窗口在非英伟达加速器——微软 Maia、Meta MTIA、AMD、高通、d-Matrix 等。</p>
+<p>对采购方来说，这意味着 scale-up 不再只是服务器内部总线的话题，而变成机柜工程、液冷、光纤管理和验收测试问题。OCP 全球峰会将于 10 月 12–15 日在圣何塞举行，Arista 计划在展台摆出完整液冷机柜，并由联合创始人 Andy Bechtolsheim 演讲。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：Arista 博客（10/7）给出 SU-144、三种形态、ESUN/Netdi 与伙伴名单。</li><li>多方一致：Network World、SiliconANGLE 对「参考架构非整柜 SKU」「瞄准非 NVLink 加速器」表述一致。</li><li>待确认：量产交换机到货时间、合作集成商名单与客户导入节奏均未公布。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.arista.com/blog/next-gen-scale-up-networking-for-ai-fabrics" target="_blank" rel="noopener">Arista Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.networkworld.com/article/4232036/arista-steps-up-its-ethernet-challenge-to-nvidias-ai-scale-up-networking-fabric.html" target="_blank" rel="noopener">Network World</a><span class="role">次要</span></li>
+        <li><a href="https://siliconangle.com/2026/10/07/arista-takes-ethernet-rack-network-becomes-backplane/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
