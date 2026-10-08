@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HPE ClearPass 一次修补 28 个漏洞，10 个严重，多个无需登录即可远程执行代码 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">身份与访问（SSO、零信任）</div>
+    <h1>HPE ClearPass 一次修补 28 个漏洞，10 个严重，多个无需登录即可远程执行代码</h1>
+    <p class="lede">HPE 网络部门 10 月 6 日发布安全公告，一次修补 ClearPass Policy Manager 的 28 个漏洞，其中 10 个严重级，多个可被未登录的远程攻击者用来执行代码或拿到管理员权限。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>身份与访问（SSO、零信任）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>ClearPass Policy Manager（CPPM）是 HPE（原 Aruba）的网络准入控制平台，负责决定哪些用户和设备可以接入企业内网、能访问哪些资源，常与 802.1X 认证、访客网络和终端合规检查配合使用。正因为它处在身份与网络的交界处，一旦被攻破，攻击者就能左右「谁能进来、进来后能去哪」。</p>
+<p>这份编号 HPESBNW05158 的公告共涉及 28 个 CVE：10 个严重、11 个高危、7 个中危。据 SecurityOnline 按 CVSS 向量统计，其中 15 个无需登录、可经网络直接利用。评分最高的是 CVE-2026-79798（9.9 分），一个只需低权限账号即可利用的 SQL 注入，可执行任意数据库命令。9.8 分的有一串：CVE-2026-76750 是网页界面的反序列化漏洞，未登录即可远程执行代码；CVE-2026-76752 和 CVE-2026-79796 可绕过认证拿到管理员权限；CVE-2026-76753 是格式化字符串漏洞，可导致内存破坏和代码执行；CVE-2026-76754 是另一个无需登录的注入类漏洞。</p>
+<p>终端侧同样有风险。CVE-2026-76751 和 CVE-2026-79801 是 OnGuard 等终端代理缺少完整性校验，远程攻击者可能借此向终端推送不可信代码；另有几个本地漏洞可在 Windows 和 Linux 代理上提权。登录后可利用的还有路径穿越、命令注入和存储型跨站脚本。</p>
+<p>受影响版本为 CPPM 6.14.0 及以下、6.11.15 及以下，修复版本为 6.14.1 和 6.11.16；其中 CVE-2026-79800 只在 6.14.1 中修复，不适用于 6.11 分支。HPE 表示截至公告发布，未发现公开讨论或针对性利用代码，多数漏洞由其内部安全研究发现，但仍「强烈敦促」客户尽快升级。暂时无法升级的，应把命令行和网页管理界面放到专用二层网段或 VLAN，或用防火墙策略限制访问，并记录用户操作日志。</p>
+<p>同一天，HPE 还发布了 AOS-Switch 交换机的认证绕过漏洞公告。对企业来说，网络准入和交换机这类「信任根」设备集中出现高危漏洞，提醒管理员不要只盯着服务器和终端补丁。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手来源：HPE 网络部门 CSAF 公告 HPESBNW05158 与 SecurityOnline 的汇总一致。</li><li>多方一致：Forkast 对 28 个 CVE、10 个严重、未登录远程代码执行与认证绕过的报道一致。</li><li>口径差异：CVE-2026-76754 在 SecurityOnline 正文中称 SQL 注入，表格中归为 CWE-77（命令注入），本文统称注入类漏洞。</li><li>待确认：目前无在野利用报告；「15 个无需登录」为媒体按 CVSS 向量统计。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://securityonline.info/clearpass-policy-manager-vulnerabilities/" target="_blank" rel="noopener">SecurityOnline</a><span class="role">次要</span></li>
+        <li><a href="https://csaf.arubanetworking.hpe.com/2026/hpe_networking_-_hpesbnw05158.txt" target="_blank" rel="noopener">HPE Networking CSAF</a><span class="role">官方</span></li>
+        <li><a href="https://forkast.news/clearpass-policy-manager-hit-by-28-cves-including-unauthenticated-rce-and-authentication-bypass-enterprise-nacs-trust-through-defaults-problem/" target="_blank" rel="noopener">Forkast</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
