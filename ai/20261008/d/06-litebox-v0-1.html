@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软开源沙箱库操作系统 LiteBox 放出首个标记版 v0.1 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>微软开源沙箱库操作系统 LiteBox 放出首个标记版 v0.1</h1>
+    <p class="lede">微软 10 月 7 日在 GitHub 为 LiteBox 打上 v0.1 标签。这是一套用 Rust 写的 Library OS，通过缩小应用与宿主之间的接口来降攻击面，可在 Linux/Windows 等环境做沙箱，仍处活跃开发，API 可能变动。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>开源治理与许可证</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Phoronix 与 IT之家报道，微软安全向的开源项目 LiteBox 于 10 月 7 日放出首个 git 标记版本 v0.1。项目定位是 Library OS（库操作系统）：不像完整虚拟机那样带一整套内核，也不像普通容器那样直接共享宿主内核，而是只向底层暴露尽量小的接口集合，用 Rust 与 Linux 虚拟化安全能力把应用关进更窄的沙箱。</p>
+<p>公开材料里的典型场景包括：在 Linux 上沙箱化 Linux 应用、在 Windows 上跑未修改的 Linux 程序、以及在 AMD SEV-SNP、OP-TEE、微软 Linux 虚拟化安全等机密计算环境中运行负载。架构上区分「北向」POSIX 风格接口与「南向」宿主连接，并可在内核态或用户态运行。Windows 运行器目前仅支持 x86-64。</p>
+<p>v0.1 的发布说明很短，微软表示以后版本会给更详细的变更日志，并提醒 API 仍可能变化，不适合把稳定性要求很高的生产系统直接押在当前接口上。IT之家指出，目前还看不到与 gVisor、Firecracker 的公开性能对比，也未说明 LiteBox 是否会进入 Azure 或 WSL 产品线。</p>
+<p>放在本栏是因为这是微软把沙箱运行时以 MIT 许可开源、并完成「从早先公开代码到首个版本标签」这一治理节点；与晨报已写的 Windows Execution Containers（产品级智能体容器 GA）是不同层面——一个是开源 Library OS 实验，一个是 Windows 11 上的策略化容器产品。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Phoronix（10/7）、IT之家（10/8）均确认 v0.1 为首个标记版，且仍在活跃开发。</li><li>项目页：GitHub microsoft/litebox 描述为面向安全的 Library OS。</li><li>待确认：性能数据、产品化路线（是否进入 Azure/WSL）官方均未表态。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.phoronix.com/news/Microsoft-LiteBox-0.1" target="_blank" rel="noopener">Phoronix</a><span class="role">主来源</span></li>
+        <li><a href="https://www.ithome.com/1/010/445.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+        <li><a href="https://github.com/microsoft/litebox" target="_blank" rel="noopener">GitHub microsoft/litebox</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
