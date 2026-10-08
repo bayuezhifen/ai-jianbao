@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Haiku 5.5 当天上线 Cursor，短请求成本约为 Haiku 4.5 的十分之一 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Cursor</div>
+    <h1>Claude Haiku 5.5 当天上线 Cursor，短请求成本约为 Haiku 4.5 的十分之一</h1>
+    <p class="lede">Anthropic 发布 Claude Haiku 5.5 后几小时，Cursor 就把它加入模型列表：10 万词元以内的请求按每百万输入 0.10 美元、输出 0.50 美元计费，约为 Haiku 4.5 单价的十分之一。</p>
+    <div class="meta">
+      <span>2026-10-08</span>
+      <span class="dot"></span>
+      <span>Cursor</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Cursor 官方账号于北京时间 10 月 8 日凌晨 2 点多在 X 上宣布，Claude Haiku 5.5 已可在 Cursor 中使用，并称在较短的请求上，它比 Haiku 4.5 便宜十倍。新模型不会自动出现在选择器里，需要到「Cursor 设置 › 模型」中手动添加。</p>
+<p>Cursor 文档给出了更细的评估。按自家的 CursorBench 编程基准，Haiku 5.5 在最高思考力度下得分 48.4%，低力度时为 30.9%；关闭思考后只有 22.1% 到 26.2%。Cursor 的结论是，它和 Sonnet 5.5、Opus 5.5 落在同一条「成本—性能」曲线上，但更难的任务，后两者得分仍明显更高。Haiku 5.5 是第一款支持分档思考力度的 Haiku，在 Cursor 里也能用上全部智能体工具，上下文窗口最高 100 万词元。</p>
+<p>计费方面，Cursor 套餐有两个用量池，Haiku 5.5 计入第三方的「其他模型」池。10 万输入词元以内：输入每百万 0.10 美元、输出 0.50 美元，缓存写入 0.125 美元，缓存读取 0.01 美元；超过 10 万词元的长上下文请求，各项价格都乘以 5。文档特别提醒，上下文很长的智能体会话一旦越过这条线，单价会明显上升，这是使用时要留意的地方。</p>
+<p>从定位看，Haiku 5.5 在 Cursor 里更像一个「跑腿」模型：适合快速查找、批量改写、给主力模型当子智能体等范围窄、调用多的活。Anthropic 官方也说，复杂的智能体编程仍应交给 Sonnet 或 Opus。对按量付费的团队来说，把这些零碎请求切到 Haiku 5.5，能明显降低月账单。</p>
+<p>另外说明：Cursor 官方 changelog 本窗口没有新的主条目，最新一条仍是昨日午间简报已收录的「远程控制本地智能体」。本条依据的是 Cursor 官方 X 账号公告和模型文档页。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Cursor X 公告、Cursor 模型文档与 Anthropic 发布页对 10 万词元以内 0.10／0.50 美元定价及「约为 Haiku 4.5 十分之一」一致。</li><li>口径说明：「便宜十倍」只适用于 10 万词元以内的请求；超过后按 5 倍计价，与 Haiku 4.5 相比仅便宜一半。</li><li>待确认：CursorBench 为 Cursor 自有基准，暂无第三方复现。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://cursor.com/docs/models/claude-haiku-5-5" target="_blank" rel="noopener">Cursor 文档</a><span class="role">官方</span></li>
+        <li><a href="https://x.com/cursor_ai/status/2107897245282799864" target="_blank" rel="noopener">Cursor X 公告</a><span class="role">官方</span></li>
+        <li><a href="https://www.anthropic.com/claude-haiku-5-5" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
