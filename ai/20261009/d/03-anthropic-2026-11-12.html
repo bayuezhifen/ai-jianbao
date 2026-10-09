@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 公布 2026 年使用政策更新，11 月 12 日生效：合并欺骗性活动专章并禁对模型持续虐待 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 公布 2026 年使用政策更新，11 月 12 日生效：合并欺骗性活动专章并禁对模型持续虐待</h1>
+    <p class="lede">Anthropic 10 月 8 日发布年度使用政策修订，多数条款是把既有执法口径写清楚；新版 11 月 12 日生效，涵盖欺骗性活动专章、武器软件与监控表述、高风险场景人在环路，以及对模型「持续无必要虐待」的禁止。</p>
+    <div class="meta">
+      <span>2026-10-09</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 10 月 8 日在官网发布《2026 Usage Policy update》，称这是对使用政策的年度修订。公司写道，多数改动是澄清既有规则，并针对 Claude 承担更长、更独立任务后出现的新滥用模式给出示例；完整新版将于 11 月 12 日生效。</p>
+<p>政策把原先散落在选举、欺诈、隐私与虚假信息等章节中的限制，合并为「不得从事欺骗性活动或人工放大」专章，覆盖隐瞒信息来源、用假账号放大内容，以及搭建影响行动基础设施。选举相关条款改名为「不得破坏民主程序」，聚焦欺骗选民、假冒官员、压制投票等；同时取消「一刀切」禁止个性化竞选触达，以免误伤非营利翻译选民须知等正当用途。</p>
+<p>武器条款写明：禁止范围包括让武器运转的软件与部件，以及给无人机等自主载具加装武装等行为。监控与刑事司法部分更明确禁止未经同意的跟踪、用 Claude 决定或建议调查/逮捕/起诉对象，以及建造专用监控工具；欺诈监测、内容审核、新闻与法律研究等同意或正当用途仍允许。高风险健康、金融、法律等场景继续要求合格「人在环路」并告知当事人使用了 AI；若模型接到可能伤人的自主物理设备，还需能人工急停并在断连时进入安全状态。</p>
+<p>外界讨论最多的新增点，是禁止对模型「持续、无必要的虐待或残忍行为」。《The Verge》等报道指出，极端情况下 Claude 仍可结束对话，这是主要执行手段；日常抱怨、推回、黑暗题材创作与安全研究不在此列。对本简报读者，这与 OpenAI 同日披露的假身份影响行动形成「一边打假行动、一边改用户条款」的对照。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手来源：Anthropic 2026-10-08 官方说明，生效日 11 月 12 日，专章与禁止项据原文归纳。</li><li>多方一致：The Verge 对「持续虐待」条款、武器软件扩写与监控澄清的报道与官网一致。</li><li>待确认：除结束对话外是否还有封号等额外执行手段，官方未展开。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/news/2026-usage-policy-update" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1008100/anthropic-new-usage-policy-abuse-claude" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
