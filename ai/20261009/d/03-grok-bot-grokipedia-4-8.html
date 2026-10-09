@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>马斯克：将由 Grok Bot 管理 Grokipedia；版本阶梯仍无 4.8 表 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>马斯克：将由 Grok Bot 管理 Grokipedia；版本阶梯仍无 4.8 表</h1>
+    <p class="lede">马斯克北京时间今日上午发帖称「就让 Grok Bot 来管 Grokipedia」；二次报道指百科已由模型侧自主写稿、核验与审阅建议编辑。同期再核：x.ai/news 最新仍为 Grok 4.7，未见 4.8 发布或取消 4.7。</p>
+    <div class="meta">
+      <span>2026-10-09</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>马斯克于 2026-10-09 约 11:19（上海）发帖：「We're just going to have @Grok Bots manage Grokipedia」，并引用展示实时编辑流的帖文。CryptoBriefing 等二次报道称，Grokipedia 现由 Grok 机器人承担写稿、事实核对与「是否接受用户建议修改」的审阅；读者不能直接改页，只能提交建议由模型裁定。报道援引的体量数字包括逾 600 万词条与逾 110 万次已批准编辑，属媒体转述，非 xAI 官方新闻稿。</p>
+<p>背景上，The Verge 曾报道 Grokipedia v0.3（约 9 月 30 日）恢复更新并刷新首页与「最新编辑」页；项目在 2026 年春曾长时间停更。马斯克今日表述把「机器人托管百科」从产品侧观察升格为创始人公开口径，故单列；这与「新模型版本发布」不是同一件事。</p>
+<p>版本阶梯再核（本窗必做）：x.ai/news 最新模型主条仍为 9 月 21 日的 Grok 4.7；文档与发布说明未见 Grok 4.8 模型卡、定价或上线公告。马斯克本窗大量转发 Grok Bot 用例（含 Shopify 连接器等），但没有给出 4.8 新的训练完成或发布日期，也没有「取消 4.7」的说法。昨午「外部后端 + 4.8 极速版待发」表述仍成立，本窗无阶梯增量。</p>
+<p>编辑提示：勿把「Bot 管百科」写成「4.8 已发」；亦勿采信未经官方确认的「4.8 取代 4.7」二手标题。若只有模型列表代码出现 grok-4.8 字样而无 news/docs 公告，仍按未发布处理。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手：马斯克 X 帖 2108396888160387541（上海约 11:19）。</li><li>二次：CryptoBriefing 等描述 Bot 写稿/审阅流程；The Verge 提供 v0.3 设计刷新背景（日期早于本窗）。</li><li>版本：x.ai/news 仍为 Grok 4.7；无 4.8 发布、无 4.7 取消声明。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/elonmusk/status/2108396888160387541" target="_blank" rel="noopener">Elon Musk / X</a><span class="role">主来源</span></li>
+        <li><a href="https://cryptobriefing.com/grok-bots-manage-grokipedia-real-time-updates/" target="_blank" rel="noopener">CryptoBriefing</a><span class="role">次要</span></li>
+        <li><a href="https://x.ai/news" target="_blank" rel="noopener">x.ai/news</a><span class="role">官方</span></li>
+        <li><a href="https://www.theverge.com/tech/1003068/elon-musk-grokipedia-v-0-3-spacexai" target="_blank" rel="noopener">The Verge（v0.3 背景）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
