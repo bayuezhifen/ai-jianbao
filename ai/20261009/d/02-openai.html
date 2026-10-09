@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 披露并封禁俄、伊两起「假身份」影响行动：假智库与七个假记者笔名 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 披露并封禁俄、伊两起「假身份」影响行动：假智库与七个假记者笔名</h1>
+    <p class="lede">OpenAI 10 月 8 日发布报告称，已封禁源自俄罗斯与伊朗的两起隐蔽影响行动账户。俄方「Dark Clark」运作拉美假智库，伊方「Bogus Bylines」用七个假记者笔名向多家媒体投稿；按公司评分尺度分别为 5 级与 4 级。</p>
+    <div class="meta">
+      <span>2026-10-09</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于 10 月 8 日在官网发布《Disrupting AI-enabled “false front” operations》，称近期封禁了两起用 ChatGPT 等工具支撑的隐蔽影响行动：一起来自俄罗斯、一起来自伊朗。公司强调，这些行动在流程上更像「前 AI 时代」的复杂影响战，只是用大模型加快了内参起草、文案润色与投稿邮件等环节。</p>
+<p>俄方行动被命名为「Dark Clark」。操作者主要用俄语提示，经 VPN 访问服务，围绕削弱乌克兰在拉美声誉、并介入阿根廷与玻利维亚等国的本地议题。报告称其通过虚构人设「Mia Clark」控制自称拉美「社会研究中心」（Social Research Center）的实体，当地雇员未必知情；OpenAI 称这是过去两年半里其打断过的最复杂「前台身份」尝试。部分假新闻已引发事实核查与官方否认。按公司使用的影响行动「突破尺度」，该案被评为 5 级——是其开始此类披露以来首个 5 级案例。</p>
+<p>伊方行动被命名为「Bogus Bylines」。操作者用波斯语与英语提示，至少使用七个假冒西方记者笔名，向全球约十几家中小型国际事务类网站投稿并润色长文，主题多与美伊冲突相关；OpenAI 识别到近百篇已发布或转载文章。社媒刷评互动偏弱。整体被评为 4 级。公司称活动形态像「受雇商业影响」，但未能指认具体雇主，并已向有关当局通报。</p>
+<p>NPR、CyberScoop 等媒体同日跟进，要点与官网一致。对本简报读者，这条新闻的产品含义有限，行业含义在于：大模型厂商把「假记者/假智库」路径抬到更高影响等级，并与同期 Anthropic 使用政策里「欺骗性活动」专章形成对照。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手来源：OpenAI 2026-10-08 官方博文，含 Dark Clark / Bogus Bylines 命名、5/4 级评估与近百篇文章等关键数字。</li><li>多方一致：NPR、CyberScoop 对封禁、假智库、假记者笔名与影响等级描述与官方一致。</li><li>待确认：具体国家机构归属（俄案未点名部门；伊案称像商业雇佣），以及各媒体删稿后的残余传播量。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/disrupting-ai-enabled-false-front-operations" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://www.npr.org/2026/10/08/nx-s1-5995576/openai-russia-iran-influence-operations-chatgpt" target="_blank" rel="noopener">NPR</a><span class="role">次要</span></li>
+        <li><a href="https://cyberscoop.com/openai-disrupts-russia-iran-ai-influence-operations/" target="_blank" rel="noopener">CyberScoop</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
