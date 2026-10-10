@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot 可自建邮箱；再核版本阶梯仍为 4.7、无 4.8 表 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>Grok Bot 可自建邮箱；再核版本阶梯仍为 4.7、无 4.8 表</h1>
+    <p class="lede">马斯克北京时间今日凌晨转发并引用 Grok Bot 公告：Bot 现可自建邮箱，用于注册服务、联系商家或约时间。同期再核 x.ai/news：最新模型主条仍为 Grok 4.7。</p>
+    <div class="meta">
+      <span>2026-10-10</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Grok Bot 账号 @bot 于 2026-10-09 约 17:25 UTC（上海 10 月 10 日约 01:25）发帖称：「Grok Bot now has its own email」，并说明可用于注册服务、代用户联系商家，或安排会面时间。马斯克随即转发该帖，并另发「Grok @Bot can now set up its own email」。同日稍晚他还引用 Shopify CEO 托比·吕克提问 Bot 经营网店的体验，属产品侧互动，不构成新模型发布。</p>
+<p>能力含义上，自建邮箱把持久智能体从「只会在聊天里办事」再往外推一步：需要邮箱验证的 SaaS、商务沟通与日程协调可以不再完全依赖用户个人邮箱。这与昨午「由 Grok Bot 管理 Grokipedia」同属智能体产品线扩展，但是不同能力点，故本窗单列邮箱、不重写百科托管。</p>
+<p>版本阶梯再核（必做）：打开 x.ai/news，最新模型主条仍是 2026-09-21 的「Introducing Grok 4.7」；未见 Grok 4.8 模型卡、定价或上线公告，也未见「取消 4.7」声明。若二手标题写「4.8 取代 / 搁置 4.7」，应以马斯克原文与官方新闻页为准：本窗马斯克帖文只谈 Bot 邮箱与 Shopify 反馈，没有给出 4.8 训练完成或发布日期。</p>
+<p>编辑提示：勿把「Bot 有邮箱」写成「4.8 已发」；亦勿把 10/7 前后「外部后端路由到 Claude Opus 等」旧帖当作本窗新阶梯。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手：@bot 2108609764766908772；马斯克 2108612939842511217、2108610275041562862。</li><li>官方：x.ai/news 仍为 Grok 4.7。</li><li>与昨午区分：Grokipedia 托管已收；本窗增量是邮箱能力。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/elonmusk/status/2108612939842511217" target="_blank" rel="noopener">Elon Musk / X</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/bot/status/2108609764766908772" target="_blank" rel="noopener">Grok Bot / X</a><span class="role">官方</span></li>
+        <li><a href="https://x.ai/news" target="_blank" rel="noopener">x.ai/news</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
