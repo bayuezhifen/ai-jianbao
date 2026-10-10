@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AhsayCBS 未彻底修复漏洞已遭利用：webshell + 挖矿 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>AhsayCBS 未彻底修复漏洞已遭利用：webshell + 挖矿</h1>
+    <p class="lede">MSP 常用的 AhsayCBS 备份管理台曝出认证绕过与命令注入链，已有真实入侵落地为 webshell 与 XMRig。更棘手的是：Huntress 认为标称已修的版本线上最新版仍中招。</p>
+    <div class="meta">
+      <span>2026-10-10</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>BleepingComputer 10 月 9 日报道，威胁行为者正在利用 AhsayCBS（备份集中管理平台，常见于 MSP）上的两个漏洞：CVE-2026-105133（认证绕过，已有公开利用）与 CVE-2026-105134（操作系统命令注入）。Huntress 在 10 月 7 日起的事件中观察到至少五家组织中招。攻击链通常是先绕过登录，再注入命令，随后做侦察、投放 JSP webshell，并下载伪装成 edge.exe 的 XMRig 挖矿程序。</p>
+<p>持久化手法偏「假装系统组件」：以名为 MicrosoftEdgeUpdateSvc 的服务拉起改过的 NSSM，再配合 PowerShell 脚本在任务管理器打开时停掉挖矿、关闭后再拉起，甚至在傍晚或深夜强行结束任务管理器。个别案例还试图加载脆弱的 WinRing0x64.sys 驱动，疑似为挖矿挤硬件资源。这类组合说明目标不只是「挖一点币」，也在为长期后门留后手。</p>
+<p>补丁叙事出现裂口。厂商材料称问题在 AhsayCBS 10.3.2 已修复，但 Huntress 更新判断：当前最新的 10.3.4 同样受影响。在厂商尚未给出 Huntress 认可的完整修复前，务实做法是把管理界面限制到可信 IP、排查 IoC，一旦确认失陷则从可信备份整机恢复——因为攻击者可能还埋了别的后门。Huntress 同步提供了 IoC 与 Sigma 规则。</p>
+<p>与晨报关系：SonicWall SMA1000 预认证 SSRF（CVSS 10.0）及蜜罐利用探测晨报已收，不重复。本条是另一条「补丁声明与实战版本不一致」的供应链式运维风险，受众主要是 MSP 与代管备份场景。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手报道：BleepingComputer + Huntress 事件观察。</li><li>分歧：厂商称 10.3.2 已修 vs Huntress 称 10.3.4 仍受影响；截稿时 BC 称厂商未回复。</li><li>与晨报区分：非 SonicWall 条。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/unpatched-ahsaycbs-flaws-exploited-to-deploy-webshells-mine-crypto/" target="_blank" rel="noopener">Huntress（经 BC 转述）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

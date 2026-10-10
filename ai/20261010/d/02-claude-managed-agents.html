@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Python 3.15.0 正式发布：实验性 JIT 提速，UTF-8 默认编码 · IT 行业简报</title>
+<title>Claude Managed Agents 动态工作流进入公开测试 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">语言 / 运行时 / 框架</div>
-    <h1>Python 3.15.0 正式发布：实验性 JIT 提速，UTF-8 默认编码</h1>
-    <p class="lede">Python 发布经理 Hugo van Kemenade 于 10 月 9 日宣布 3.15.0 稳定版可用。昨午简报仍将其视为预发布 / RC，本窗改为正式版节点。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude Managed Agents 动态工作流进入公开测试</h1>
+    <p class="lede">Anthropic 平台发布说明显示：Managed Agents 现可让主智能体编写分阶段、多智能体工作流，在后台跑完再合并结果。这是编排能力上的正式产品节点，而非又一则模型行为通报。</p>
     <div class="meta">
       <span>2026-10-10</span>
       <span class="dot"></span>
-      <span>语言 / 运行时 / 框架</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Python Insider 博文确认：Python 3.15.0 为最新大版本稳定版，相对 3.14 合并逾五千次提交。官方下载页指向 python.org/downloads/release/python-3150/。Phoronix 同日跟进，聚焦实验性 JIT 在 Linux x86-64 上相对标准解释器约 7%–8% 几何平均提速、在 AArch64 macOS 上相对尾调用解释器约 11%–12% 的表述。</p>
-<p>语言与运行时层面的要点包括：PEP 661 引入 sentinel 内置类型；PEP 686 把 UTF-8 定为默认编码；PEP 810 显式惰性导入以加快启动；PEP 814 增加 frozendict；以及理解式解包、包启动配置等。标准库侧有面向剖析工具的整理与高频采样剖析器 Tachyon；类型系统与 C API、默认开启帧指针等也有配套变更。官方 Windows 64 位二进制改用尾调用解释器；macOS 安装包默认带上自由线程支持。</p>
-<p>发布说明特别提醒：macOS 27.0 上 IDLE / tkinter 可能在打开部分对话框时挂起，疑与系统行为变化叠加 Tk 工具包有关；依赖 Tk 图形界面的用户可暂缓升级系统或自行验证工作流。该警告不影响「3.15.0 已正式发布」的判断，但属于运维侧需知风险。</p>
-<p>与前窗关系：昨午简报明确写「python.org 仍显示预发布 / RC，不写已发布」；本窗以 Insider 正式公告与 Phoronix 交叉核对后改判。Go 安全小版本仍属晨报已收，不重复。</p></div>
+      <div class="body"><p>Anthropic Claude Platform 发布说明在 2026-10-09 写入：Claude Managed Agents 现可使用动态工作流（dynamic workflows），目前为公开测试，需带上 `managed-agents-2026-04-01` beta 头。开启方式是把智能体的 `multiagent` 设为 `{"type": "multiagent_20261001", "workflows": {"type": "enabled"}}`。主会话仍可继续交互；工作流作为后台 `workflow_run` 执行，进度通过会话事件流里的 `workflow_run.*` 事件跟踪。</p>
+<p>按官方文档描述，面对「审查数百份文档」这类可拆分任务，主智能体可以先写出一份工作流程序：分阶段拉起多个子智能体，再在收尾阶段合并结果。The Decoder 二次报道补充了 Anthropic 内部测例口径——在约 11.6 万行代码、预埋 70 个缺陷的仓库里，单智能体单次大约揪出 14–27 个，动态工作流则能稳定摸到约 66 个。这类数字属于厂商自测，外推到任意代码库仍要谨慎，但方向清楚：厂商在推销「多智能体并行」时，开始愿意给出可核对的对比实验，而不只是概念演示。</p>
+<p>成本与滥用风险同样被点到。OpenAI 侧工程师近期公开批评「智能体蜂群浪费 token」；Anthropic 文档则提醒动态工作流可能消耗大量 token，建议从小规模起步。产品上，这与晨报已收的「非预期模型行为、切断内部评测公网」是两条线：一条是评测安全与对齐披露，一条是面向客户的编排 API。白宫超级智能部队随后要求事故立即披露，见同期「隐私与监管」条，不在此展开。</p>
+<p>同窗周边：ClaudeDevs 称 Claude Code Projects 候补名单上的 Pro/Max 用户已放行，仍属公开测试、尚未进 Team/Enterprise。Projects 是「一个协调会话拉起多条云端线程」的产品面，与 Managed Agents 动态工作流同属多智能体编排，但入口与计费平面不同，本期以官方平台发布说明的 Dynamic Workflows 为主卡。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>一手：blog.python.org 2026-10-09「Python 3.15.0 (final) is here!」。</li><li>二次：Phoronix 同日性能与特性摘要一致。</li><li>变更点：相对昨午「仍为 RC」口径，本窗改为稳定版。</li></ul>
+      <ul><li>一手：platform.claude.com 发布说明 10/9 明确 dynamic workflows beta。</li><li>二次：The Decoder 转述内部缺陷猎取对比；非独立复现。</li><li>与晨报区分：非预期行为报告已收；本条为产品编排能力。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://blog.python.org/2026/10/python-3150-final-is-here/" target="_blank" rel="noopener">Python Insider</a><span class="role">官方</span></li>
-        <li><a href="https://www.python.org/downloads/release/python-3150/" target="_blank" rel="noopener">python.org 下载</a><span class="role">官方</span></li>
-        <li><a href="https://www.phoronix.com/news/Python-3.15-Released" target="_blank" rel="noopener">Phoronix</a><span class="role">次要</span></li>
+        <li><a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">Claude Platform Release Notes</a><span class="role">官方</span></li>
+        <li><a href="https://the-decoder.com/anthropics-claude-can-now-orchestrate-up-to-1000-ai-agents-in-parallel-through-dynamic-workflows/" target="_blank" rel="noopener">The Decoder</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
