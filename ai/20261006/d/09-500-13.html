@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大阪公立大学遭勒索软件攻击，约 500 台服务器停摆，13 万人信息可能外泄 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索（CVE、大规模攻击）</div>
+    <h1>大阪公立大学遭勒索软件攻击，约 500 台服务器停摆，13 万人信息可能外泄</h1>
+    <p class="lede">大阪公立大学 10/5 宣布，10/2 起的大规模系统故障是勒索软件攻击所致，约 500 台服务器停摆、备份也大多被加密；学生、毕业生和教职员工约 13 万人的个人信息可能外泄，全校停课至 10/8。</p>
+    <div class="meta">
+      <span>2026-10-06</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索（CVE、大规模攻击）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>大阪公立大学由大阪府立大学与大阪市立大学于 2022 年 4 月合并而成。10 月 2 日凌晨起，包括邮件在内的校内系统几乎全部瘫痪，与信息系统相关的约 500 台服务器停止运行。</p>
+<p>校方 10 月 5 日召开记者会说明：与系统管理公司核查后发现数据遭到篡改，判断是勒索软件攻击。关西电视台报道，服务器和备份数据大多被加密，恢复时间没有把握。学校已向大阪府警察求助，也报告了日本个人信息保护委员会。</p>
+<p>系统里存有至少 13 万名学生、毕业生等人的个人信息，可能外泄的包括姓名、住址、电子邮箱、学生证照片，以及教职员工发工资用的银行账户信息，也涉及合并前两所大学的相关数据。是否真的外泄仍在调查。对于是否收到赎金要求，校方称「不确定的地方很多，暂不回答」。</p>
+<p>影响面很大：学生用的校园网和教职员工门户都无法使用，学校决定停课到 10 月 8 日，通过替代手段确保 9 日起按计划陆续复课；原定本月上旬截止的部分入学考试报名和研究生入学手续，延期到 22 日。校长樱木弘之在记者会上道歉，称「没能防住这次事件，十分遗憾」。</p>
+<p>日本近期勒索事件接连发生：京王电铁 9 月 26 日也公告集团服务器遭勒索软件攻击，酒店预订和零售支付等系统受影响，铁路运营因系统独立未受波及。学校和企业的 IT 系统一旦连同备份一起被加密，恢复周期往往以周计。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：《日本时报》（时事通信稿）、读卖新闻、关西电视台（FNN）对 10/2 故障、约 500 台服务器、约 13 万人信息可能外泄的说法一致。</li><li>差异：时事通信稿写「至少 13 万人」，读卖写「13 万人以上」并补充学生证照片和工资账户信息。</li><li>待确认：攻击团伙身份、是否有赎金要求、数据是否已被公开。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.yomiuri.co.jp/local/kansai/news/20261006-GYO1T00037/" target="_blank" rel="noopener">读卖新闻</a><span class="role">主来源</span></li>
+        <li><a href="https://www.japantimes.co.jp/news/2026/10/06/japan/crime-legal/osaka-metro-university-data-leak/" target="_blank" rel="noopener">The Japan Times</a><span class="role">次要</span></li>
+        <li><a href="https://www.fnn.jp/articles/-/1126928" target="_blank" rel="noopener">FNN（关西电视台）</a><span class="role">次要</span></li>
+        <li><a href="https://www.keio.co.jp/news/update/announce/nr260926v13404/" target="_blank" rel="noopener">京王电铁公告</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

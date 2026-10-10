@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 宣布十月开设新加坡办公室，称 Claude 人均用量全球第二 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 宣布十月开设新加坡办公室，称 Claude 人均用量全球第二</h1>
+    <p class="lede">Anthropic 于 9 月 16 日声明，将于十月在新加坡开设亚太地区第五处办公室，并任命 Dale Finlay 为东盟总经理；公司援引 Economic Index 称新加坡 Claude 人均用量位居 121 国第二、约为人口规模预期的 5.81 倍。</p>
+    <div class="meta">
+      <span>2026-09-16</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>在晨报已覆盖 ClaudeForce / Salesforce in Claude 公测之后，Anthropic 于 9 月 16 日另抛出一条区域扩张消息：十月起在新加坡设立办公室，成为继东京、班加罗尔、首尔、悉尼之后的亚太第五落点。海峡时报与《商业时报》均援引公司当日声明。</p>
+<p>官方叙事强调「需求」而非「监管套利」：新加坡被称作 Claude 的「突出市场」；Economic Index 显示当地人均用量全球第二，且约为按人口规模推算预期的 5.81 倍。国际业务董事总经理 Chris Ciauri 称，在用率最高的市场设点是「自然下一步」，以便就近招聘并与客户、伙伴并肩交付。</p>
+<p>人事与选址同步落地。Dale Finlay 出任东盟总经理、常驻新加坡，此前在谷歌云亚太做过多年 go-to-market。办公室位于莱佛士坊（Raffles Place）；《商业时报》追问后，公司确认这一区位，并呼应其八月关于 Ocean Financial Centre / The Executive Centre 约百个工位租赁的报道。招聘页同日可见约九个新加坡岗位，覆盖应用 AI、财务、市场、销售与研究。</p>
+<p>扩张语境里也叠着安全与资本双重背景。报道提到新加坡主权基金 GIC 是 Anthropic 重要出资方；同城已有 OpenAI 应用实验室与 DeepMind 相关布局。Finlay 对外口径把「信任」放在「野心」之前，强调受监管行业（金融、公共部门）需求强——这与晨间 Dreamforce / 标准机构辩论形成对照：一边是全球层谈节奏与立法，一边是亚太层抢本地交付与人才。</p>
+<p>本条不复述晨报 ClaudeForce 产品细节。新加坡办公室是商业落地，不等于新模型或新安全政策；也未改变晨间「三巨头谈标准机构」的叙事。读者应区分：用量指数是公司自家 Economic Index，不是第三方独立审计；「5.81 倍于预期」是相对人口规模的内部比较口径。</p>
+<p>下午窗口的价值在于时间戳清晰：声明日即 9 月 16 日，晨报截稿前未收录。后续可盯十月开业高层访新、公共部门订单，以及与 OpenAI 新加坡实验室的本地竞争态势，而不要把「开办公室」写成「模型发布」。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：Straits Times 与 Business Times 均报道 10 月开新加坡办公室、亚太第五处、Dale Finlay、Raffles Place、Economic Index 人均第二 / 5.81×。</li>
+<li>一致：既有东京、班加罗尔、首尔、悉尼；招聘岗位数量报道为约九个。</li>
+<li>单一来源色彩：用量倍数来自 Anthropic 自家指数，非独立审计。</li>
+<li>背景：GIC 出资、OpenAI 新加坡实验室等为媒体补充语境，非本声明核心承诺。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.straitstimes.com/singapore/anthropic-to-open-singapore-office-will-be-hiring-for-range-of-roles" target="_blank" rel="noopener">The Straits Times</a><span class="role">主来源</span></li>
+        <li><a href="https://www.businesstimes.com.sg/companies-markets/anthropic-open-singapore-office-cites-it-standout-market-ai-tool-claude" target="_blank" rel="noopener">The Business Times</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

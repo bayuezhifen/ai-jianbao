@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrustSink：Entra 外部 MFA 被滥用可在合法登录流中偷密码 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">身份与访问</div>
+    <h1>TrustSink：Entra 外部 MFA 被滥用可在合法登录流中偷密码</h1>
+    <p class="lede">Varonis Threat Labs 演示：攻击者若已拿到高权限 Entra 账户，可注册伪造外部认证方法，在二次验证环节插入仿冒微软密码页并明文截获口令。属事后权限滥用，不是初始入侵。</p>
+    <div class="meta">
+      <span>2026-09-23</span>
+      <span class="dot"></span>
+      <span>身份与访问</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>BleepingComputer 9 月 22 日报道 Varonis Threat Labs 的 TrustSink 研究：微软 Entra 支持把二次验证交给外部 MFA 提供方——用户先在 login.microsoftonline.com 完成第一因子后，会被重定向到外部提供方；若对方返回有效签名令牌，Entra 即视 MFA 已满足。研究人员证明，已控制全局管理员或认证策略管理员的攻击者，可以登记一个恶意 External Authentication Method（EAM），把「看起来像微软密码页」的界面嵌进这条合法跳转。</p>
+<p>攻击流程并不制造登录失败：受害者在微软域名上输入过一次真密码后，以为系统又要一步验证，于是在仿冒页再输一次——口令、时间戳与源 IP 落到攻击者服务器；恶意提供方随即签发「MFA 已完成」的令牌交回 Entra，会话正常进入目标应用。更棘手的是：重置被盗密码<strong>不会</strong>拆掉这个流氓提供方——下次登录仍会再次被捕获。因此处置顺序必须是先移除可疑外部 MFA 与相关应用/密钥/重定向 URI，再轮换凭据。</p>
+<p>边界要写清：TrustSink 不是钓鱼初始入口，前置条件是租户里已有高权限沦陷；注册恶意方法需要改认证方法策略并创建应用、服务主体与同意。Varonis 建议监控认证方法策略变更、压缩常设全局管理员与认证策略管理员、优先 FIDO2 / Windows Hello for Business 等抗钓鱼因子。技术脉络上，它延续 Dirk-Jan Mollema 在 x33fcon 2025 展示的「自带身份 / 流氓外部 MFA 直接放行」思路，把「放行」改成了「顺手偷密码」。</p>
+<p>简报边界：今晨身份栏写的是 Okta Agent Gateway / Agent SSO，与本卡无关。本卡不提供利用步骤，只记威胁模型与缓解优先级；是否影响具体第三方 MFA 厂商，仍取决于该厂商是否走同一外部认证模型。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：BleepingComputer 详述 TrustSink 流程、权限前置与「改密不解绑」风险。</li>
+<li>一致：缓解建议聚焦先删流氓提供方、再轮换凭据，并收紧高权限与监控策略变更。</li>
+<li>待确认：微软是否发布专门检测查询或产品侧硬性防护；公开页以研究报道为主。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/rogue-external-mfa-providers-can-steal-passwords-during-logins/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/rogue-external-mfa-providers-can-steal-passwords-during-logins/" target="_blank" rel="noopener">Microsoft Entra 外部 MFA 文档语境</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

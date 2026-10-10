@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>夏普在日本开售 Foxconn 代工的英伟达 AI 服务器受注 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>夏普在日本开售 Foxconn 代工的英伟达 AI 服务器受注</h1>
+    <p class="lede">夏普 9 月 15 日宣布，面向日本国内企业、自治体、研究机构与数据中心运营商，开始接受由母公司鸿海（Foxconn）代工、搭载英伟达技术的 AI 服务器订单；计划 2027 财年起正式销售，并给出 2030 财年约 2500 亿日元的销售目标。</p>
+    <div class="meta">
+      <span>2026-09-16</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>日本消费电子老牌夏普，正借母公司鸿海的制造与采购能力切入本土 AI 服务器市场。据共同社与夏普官方新闻稿，公司于 9 月 15 日起在日本国内启动 AI 服务器受注；首发产品为面向业务场景的「NVIDIA RTX Pro 服务器」，面向大规模训练与推理的「NVIDIA HGX 系统」将另行开始受注。</p>
+<p>销售启动目标为 2027 财年（自次年 4 月起）。夏普称，将与大和房情报系统、菱洋电子等代理商，以及 Tomorrow Net 等运维伙伴协作，提供从方案到运维的一站式服务。CEO 川村哲二在东京记者会上强调，AI 正进入社会基础设施，需要可靠、可落地的算力底座。</p>
+<p>硬件侧由鸿海负责采购与制造，平台侧绑定英伟达。夏普同时给出激进增长叙事：预计日本国内服务器市场从 2025 财年约 9000 亿日元扩至 2030 财年约 4 万亿、2035 财年约 7 万亿；公司自身 AI 服务器业务目标约 2030 财年 2500 亿日元销售额，并考虑未来与鸿海在龟山工厂等地联合本土生产、再向外扩张。</p>
+<p>本条落在「行业」而非英伟达产品栏：新闻主语是夏普的业务切入与日本本地交付体系，英伟达是平台供应商。晨报未收录该条；共同社英文稿与夏普 PR Times/官网稿可交叉核对受注日、产品线与销售目标。DIGITIMES 等 9 月 16 日跟进稿强化了「Foxconn 代工 + 英伟达」表述，但核心事实以夏普官方与共同社为准。</p>
+<p>需注意：今日起是「受注」而非现货铺货；正式销售仍指向 2027 财年。GPU 与关键料件全球仍紧，夏普自己也承认采购周期与协调成本高——进入市场不等于立刻解决供应瓶颈。读者若只看「夏普卖 AI 服务器」标题，容易忽略时间表与母公司代工结构。</p>
+<p>对下午简报的意义在于：晨间窗口偏重 Dreamforce/安全辩论与芯片发布，日本侧「面板/消费巨头转卖 AI 机架」这条供应链故事在午后更清晰。后续可盯：HGX 线何时开放受注、龟山是否落地组装，以及 2500 亿日元目标是否被后续财报口径稀释。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：夏普官方（PR Times / corporate.jp.sharp）与共同社均确认 9/15 起日本国内受注、Foxconn 代工、NVIDIA 技术、2027 财年销售、2030 财年约 2500 亿日元目标。</li>
+<li>一致：首发 RTX Pro 业务向服务器；HGX 大规模训练/推理线「今后」受注。</li>
+<li>二手强化：DIGITIMES 9/16 等转述「Foxconn-built Nvidia AI servers」，不改变官方时间表。</li>
+<li>待观察：本土联合生产与龟山方案仅为「考虑中」，非已宣布投资决策。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://english.kyodonews.net/articles/-/85154" target="_blank" rel="noopener">Kyodo News</a><span class="role">主来源</span></li>
+        <li><a href="https://prtimes.jp/main/html/rd/p/000001602.000012900.html" target="_blank" rel="noopener">夏普 PR Times</a><span class="role">官方</span></li>
+        <li><a href="https://www.digitimes.com/news/a20260916VL204/sharp-nvidia-2030-foxconn-manufacturing.html" target="_blank" rel="noopener">DIGITIMES</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

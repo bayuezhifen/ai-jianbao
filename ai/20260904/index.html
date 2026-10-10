@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月4日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-04</span>
+        <span class="dot"></span>
+        <span>周五 14:28</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>DLSS 5 解禁评测：5090 上约砍半帧</h3>
+      <p>DSOGaming 在 <strong>NBA 2K27</strong> / RTX 5090 上测：相对原生光追，帧率约掉 <strong>50–60%</strong>；特写与观众席质感明显更真，局中机位提升不如回放夸张。需叠 Super Resolution / Multi Frame Gen 才划算。</p>
+      <a class="src" href="https://www.dsogaming.com/articles/nba-2k27-nvidia-dlss-5-benchmarks-impressions/">DSOGaming</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>Astra 仍在分阶段放量</h3>
+      <p>今早已报 GPT-6 Astra 首发。午后官方无新稿；仍是 Daybreak 先开，Plus / Pro / Business / Enterprise 与 API / AWS「未来几天」。无新产品。</p>
+      <a class="src" href="https://openai.com/index/gpt-6-astra/">OpenAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室无 9/4 新帖</h3>
+      <p>这窗口没有新模型或新产品。在役仍是 <strong>Fable / Mythos 5.1</strong>；零售 Commerce Agents 蓝图已在更早窗口报过。</p>
+      <a class="src" href="https://www.anthropic.com/news">Anthropic News</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>DLSS 5 官方将扩到 RTX 40</h3>
+      <p>发言人向 The Verge 确认：先稳住 RTX 50，<strong>今秋晚些</strong>再官方支持 <strong>RTX 40</strong>。玩家端保持简单开/关，精细艺术控件留给开发者。被问及刺客信条等原定名单时，只说「更多游戏在路上」，未再逐款确认。</p>
+      <a class="src" href="https://www.theverge.com/games/989978/nvidia-dlss-5-rtx-40">The Verge</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Grok Bot 上企业治理（今早未收）</h3>
+      <p>9/3 公告：Enterprise 访问 / 网络 / 审计控件上线。Grok 与 <strong>Cursor Enterprise</strong> 客户未来两周免费，并可邀请无席位同事。在役仍是 <strong>Grok 4.6</strong>；Grok 4.7 仍无官方产品页。</p>
+      <a class="src" href="https://x.ai/news/grok-bot-for-enterprise">xAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>changelog 仍停在 9/2</h3>
+      <p>这窗口无新条目。今早已报的 Vercel Sandbox 无增量；Grok Bot 企业试用见上方 xAI 条。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>

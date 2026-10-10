@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 呼吁共建前沿 AI 共享技术标准 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 呼吁共建前沿 AI 共享技术标准</h1>
+    <p class="lede">官网文《Helping build shared standards for advanced AI》主张经各国安全机构网络推进能力测评、风险与事件通报等可互操作标准，并强调非许可制路径；可与同日多国「人类主导」宣言对照阅读。</p>
+    <div class="meta">
+      <span>2026-09-22</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于官网发布《Helping build shared standards for advanced AI》，主张围绕前沿（advanced）模型建立可共享、可互操作的技术标准，重点包括能力测评、风险分类与严重事件通报等。文中强调应借助各国已有安全机构网络推进，而非另起一套全球「许可制」审批。The Next Web、韩国经济日报英文版等 9 月 22 日转述了这一立场，并常与同日联大期间约 20 国「人类主导」宣言对照报道。</p>
+<p>与监管宣言的对照点：多国宣言侧更突出部署前强制测试、独立评估与探讨国际机制；OpenAI 文更强调技术标准互操作与「非许可制」路径。两者都谈测评与事件通报，但制度偏好并不自动等同——本刊分卡呈现，避免把公司倡议写成已立法，也避免把宣言写成 OpenAI 提案。</p>
+<p>同窗结构提醒：OpenAI 栏另有 BC 省诉讼卡，主题是安全通报与法律责任；本卡是标准倡议。读者勿因同日同栏而混为一谈。对「标准」二字也要保持冷静：官网文是倡议与路径偏好，不等于各司法辖区已采纳同一测评协议，更不等于跨境执法已打通。</p>
+<p>二手报道里常见的并读角度是：在美中未签署多国宣言的背景下，私营实验室提出「经现有安全机构网络推进互操作标准」，可能被解读为对许可制国际机制的替代方案。本刊只陈述文本差异，不做外交动机推断。</p>
+<p>边界：不把官网倡议写成「全球已通过标准」；不臆测美国或中国是否将采纳其路径；联署国数量与未签署方以宣言卡及 Politico 等主源为准。若 OpenAI 后续发布具体测评规范草案或合作备忘录，再另卡跟踪。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：OpenAI 官网文标题与「共享标准 / 非许可制」主线可见。</li>
+<li>一致：TNW、Sedaily 等将此文与同日多国「人类主导」宣言并读。</li>
+<li>分歧：对公司倡议是否足以回应「强制独立评估」诉求，二手评论不一。</li>
+<li>待确认：各国安全机构网络如何落地互操作测评；本卡只记倡议文本。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/helping-build-shared-standards-for-advanced-ai/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://thenextweb.com/news/openai-global-ai-standards-push" target="_blank" rel="noopener">The Next Web</a><span class="role">次要</span></li>
+        <li><a href="https://en.sedaily.com/international/2026/09/22/20-nations-back-ai-oversight-without-us-china-openai-urges" target="_blank" rel="noopener">Sedaily EN</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

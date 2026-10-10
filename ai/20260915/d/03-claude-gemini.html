@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>竞合新常态：谷歌用 Claude 补位 Gemini，编码赛道上的“对手即工具” · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>竞合新常态：谷歌用 Claude 补位 Gemini，编码赛道上的“对手即工具”</h1>
+    <p class="lede">谷歌一边把 Gemini 定为内部开发的旗舰基座，一边按配额把 Anthropic Claude Opus 5 放进 Antigravity。这不只是 IT 采购政策，更折射出 frontier 模型竞赛中“投资对手、使用对手、对外仍讲自家品牌”的竞合结构。</p>
+    <div class="meta">
+      <span>2026-09-15</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>当一家自研旗舰大模型的公司，公开允许工程师调用最直接的编码对手，竞争叙事就从“谁赢榜单”切换到“谁能让组织跑得更快”。谷歌发言人明确说：Gemini 仍是内部开发的首要与基础模型；第三方模型（含 Claude）在 Antigravity 中按用户配额提供，用于专用场景，并与对外出售的 Antigravity 企业能力对齐。官方用词是 complement——补充，而非替换。</p><p>市场听法却往往更刺耳。Business Insider 报道指出，谷歌长期禁止多数员工使用 Claude Code、Codex 等外部编码工具，把 DeepMind 与少数高优项目当成例外；如今全公司工程师可在内部平台调用 Opus 5，被解读为编码赛道上 Gemini 尚未建立不可替代优势的信号。首尔经济日报等转述甚至写到，Gemini 在编码上仍落后 Anthropic 与 OpenAI，部分员工对 Gemini 局限感到挫败。需要强调：性能落后的比较来自媒体与知情人士侧写，并非谷歌新闻稿的自我定性。</p><p>资本结构让这一幕更吊诡也更合理。谷歌是 Anthropic 的重要投资方，媒体广泛引用其今年早些时候“至多约 400 亿美元”的加码意向；亚马逊作为另一大金主，则已在内部把 Claude Code 与 Codex 标准化到 Bedrock 上，同时继续主推自研 agentic 工具 Kiro。换言之，云厂与模型厂之间的关系早已不是零和：投资份额、云上推理、芯片采购与内部生产力工具，可以同时发生。</p><p>对竞争格局的含义有三层。其一，编码助手正在成为“基础设施级”采购——谁不给工程师最好用的模型，谁就承担交付速度与士气成本。其二，对外产品叙事与对内工具选型开始系统性分离：对外仍需讲 Gemini / Nova / Kiro 的品牌故事，对内则用配额制引入对手以对冲短板。其三，Antigravity 这类“多模型网关”本身成为产品：谷歌把内部实践与企业版对外产品对齐，意味着客户未来也可能在受控环境下混用 Gemini 与第三方模型。</p><p>Anthropic 一侧的含义同样双刃。被谷歌、亚马逊大规模内用，是对其编码能力的强背书，也强化“Claude 擅长写代码”的市场心智；但深度嵌入竞争对手工程体系，意味着商业成功与战略依赖并存——金主既是客户又是替代者。若 Gemini 后续在编码上迅速追平，配额可能收紧；若差距持续，内部使用本身会成为最响亮的竞品广告。</p><p>因此，把这次政策仅读成“谷歌认输”过于简化；更贴切的框架是：在超大规模竞赛里，模型品牌忠诚让位于工程吞吐，竞合（coopetition）从投资条款走进了 IDE。真正的未解问题不是谷歌能不能用 Claude，而是这种互补能维持多久，以及对外榜单与对内选型长期分裂，会不会反过来削弱 Gemini 作为“唯一默认选择”的组织惯性。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>与稿 01 共用事实核：BI 报道 + 谷歌发言人“Gemini 首要、第三方配额补充、经 Antigravity”口径一致；SED 英文版转述同向。</li><li>亚马逊平行：BI 2026年5月报道确认 Claude Code / Codex 对公司员工标准化开放，运行于 Bedrock——可交叉印证“大厂内用对手编码模型”趋势。</li><li>冲突 / 解读差：媒体侧强调“Gemini 编码落后、员工挫败”；官方侧只承认“专用场景补充”，不承认旗舰失败。性能排名未在本文中当作已核验事实。</li><li>投资数字为公开意向转述，非本次政策文件附件；是否已全额到位未在本批信源中核实。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/google-finally-lets-all-engineers-use-anthropics-claude-2026-9" target="_blank" rel="noopener">Business Insider</a><span class="role">主来源</span></li>
+        <li><a href="https://en.sedaily.com/international/2026/09/15/google-lets-engineers-use-rival-anthropics-claude" target="_blank" rel="noopener">Seoul Economic Daily (EN)</a><span class="role">次要</span></li>
+        <li><a href="https://www.businessinsider.com/amazon-claude-code-codex-all-employees-after-pushback-2026-5" target="_blank" rel="noopener">Business Insider (Amazon)</a><span class="role">次要</span></li>
+        <li><a href="https://trak.in/stories/google-finally-allows-all-engineers-to-use-anthropics-claude-for-coding/" target="_blank" rel="noopener">Trak.in</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

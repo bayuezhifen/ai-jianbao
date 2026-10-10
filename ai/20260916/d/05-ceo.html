@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英特尔 CEO：存储短缺将更严重，价格已涨约五到七倍 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>英特尔 CEO：存储短缺将更严重，价格已涨约五到七倍</h1>
+    <p class="lede">陈立武在硅谷 AI 基础设施论坛上称，内存已成为他去年就预警、如今兑现且「会更糟」的瓶颈；多项工程因拿不到足够内存而延期，价格上涨约 5 到 7 倍，中低端手机与笔记本亦难拿货。</p>
+    <div class="meta">
+      <span>2026-09-16</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>与「CPU 只够一半客户」同一报道日，陈立武把更锋利的数字留给了内存。《首尔经济》整理其在圣克拉拉 AI Infrastructure Forum（15 日）的问答：当被问及希望 AI 基础设施创业者去解决什么问题时，他直接点名存储短缺。</p>
+<p>「去年初我说内存可能成为大瓶颈时，很多人没当回事。现在它发生了，而且情况会更糟。」他称产能非常有限，许多项目因为拿不到足够内存而推迟，内存价格上涨约五到七倍；建设中低端手机或笔记本时，要锁定内存也「非常困难」。报道将背景指向 HBM 需求暴涨、三星/SK 海力士/美光供给跟不上，以及产线向 HBM 倾斜后通用 DRAM 一并紧张。</p>
+<p>他同时点出电力与冷却：架构与互联要为低功耗服务；气冷之外，液冷与微流道冷却都在投资清单上。系统级机架（把 GPU、CPU、网络与软件捆成一架出售）被他描述为黄仁勋与苏姿丰正在做的事，并预告英特尔将在基板（substrate）领域有所宣布——日本与台湾厂商通过预付款锁定基板供应，也被他视为封装瓶颈的一部分。</p>
+<p>本卡与晨报「美光 512GB DDR5 RDIMM 演示」不重复：晨报是产品演示与 2027H2 量产目标；本卡是终端客户/CPU 厂视角的短缺与涨价口述。两者可并存：一边是超大容量 RDIMM 路线图，一边是现货与产能被 HBM 与 AI 服务器抽走后的价格冲击。</p>
+<p>数字需谨慎使用。「五到七倍」是 CEO 口述区间，未附带具体颗粒（DDR5？HBM？哪一密度哪一渠道）。新闻价值在于方向与严重程度，而非把它写成精确价格指数。电力、冷却、基板与内存被放在同一段「基础设施牢骚」里，说明瓶颈已从「有没有 GPU」扩展到「机架能不能装得动、供得上、冷得住」。</p>
+<p>对下午读者：若只看手机/PC 侧，中低端拿不到内存的抱怨，意味着消费电子 BOM 与出货节奏也会被 AI 服务器挤出效应波及。后续应对照 DRAM 现货指数与原厂财报指引，而不是单独依赖一次论坛口述。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>主源：Seoul Economic Daily 英文版 9/16「Memory Shortage Will Get Worse」。</li>
+<li>与 CPU 卡同源发言人、不同场合（论坛 vs .conf26），可互相参照但勿混为一场。</li>
+<li>「5–7 倍」为口述，缺品种与基期；作方向性引用。</li>
+<li>产业背景（HBM 挤占通用 DRAM）为媒体解释，非英特尔独家数据。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://en.sedaily.com/international/2026/09/16/intel-ceo-warns-memory-shortage-will-get-worse" target="_blank" rel="noopener">Seoul Economic Daily (EN)</a><span class="role">主来源</span></li>
+        <li><a href="https://en.sedaily.com/international/2026/09/16/intel-ceo-warns-of-risk-in-95-percent-reliance-on-one" target="_blank" rel="noopener">Seoul Economic Daily (EN) CPU/代工配套</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

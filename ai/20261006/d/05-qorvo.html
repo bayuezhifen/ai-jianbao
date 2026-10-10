@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>思佳讯完成与 Qorvo 合并，手机射频前端两大供应商合为一家 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">手机与端侧 SoC（高通、联发科、苹果硅）</div>
+    <h1>思佳讯完成与 Qorvo 合并，手机射频前端两大供应商合为一家</h1>
+    <p class="lede">思佳讯（Skyworks）10/5 宣布完成与 Qorvo 的合并，两家主要的手机射频前端供应商合为一家，新公司继续以思佳讯名义在纳斯达克交易，目标每年节省至少 5 亿美元成本。</p>
+    <div class="meta">
+      <span>2026-10-06</span>
+      <span class="dot"></span>
+      <span>手机与端侧 SoC（高通、联发科、苹果硅）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>思佳讯在美东时间 10 月 5 日上午发布公告，确认合并完成。按协议，Qorvo 股东每股获得 32.50 美元现金加 0.960 股思佳讯普通股；按完全稀释计算，原思佳讯股东持有新公司约 63%，原 Qorvo 股东约 37%。公司名称和股票代码 SWKS 均不变。在此之前，思佳讯 9 月 30 日已宣布拿到全部所需的监管许可。</p>
+<p>合并后，公司约有 8000 名工程师、超过 1.2 万项已授权和申请中的专利，业务覆盖射频、电源管理、模拟及混合信号芯片。CEO Phil Brace 说，客户面对的问题越来越复杂，需要有足够能力和规模的伙伴来提供系统级方案。</p>
+<p>手机仍是核心。两家此前都是主要的手机射频前端供应商。思佳讯称合并扩大了其射频前端产品组合：随着 5G-Advanced 演进、行业走向 6G，手机要支持更多频段、新频谱和 AI 功能，对高集成度射频方案的需求会继续上升。</p>
+<p>手机之外，公司称可服务市场扩大一倍以上，覆盖「物理 AI」与边缘连接、国防航天、数据中心与网络以及汽车，并新增射频氮化镓、低压电源和有线宽带等技术，同时强化美国本土制造能力。</p>
+<p>财务上，公司预计在交割后 24 至 36 个月全面整合时，每年实现至少 5 亿美元的成本协同，并称交易会立即增厚非 GAAP 每股收益；合并后的财务指引将在 11 月 3 日的财报电话会上给出。人事上，Brace 继续担任 CEO，前 Qorvo CEO Bob Bruggeworth 以及原 Qorvo 董事 Richard Clemmer、Chris Koopmans 加入思佳讯董事会。公司在风险提示中列出了对少数大客户的依赖、关税与出口管制、整合难度及新增债务等因素。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：GlobeNewswire 公告原文与 Pulse 2 对交易对价、持股比例、工程师与专利数量、5 亿美元协同目标表述一致。</li><li>待确认：具体的裁员或工厂整合计划未披露；合并后营收指引要等 11/3。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.globenewswire.com/news-release/2026/10/05/3374558/0/en/skyworks-completes-combination-with-qorvo.html" target="_blank" rel="noopener">Skyworks（GlobeNewswire）</a><span class="role">官方</span></li>
+        <li><a href="https://pulse2.com/skyworks-completes-qorvo-combination-and-targets-at-least-500-million-in-annual-cost-savings/" target="_blank" rel="noopener">Pulse 2</a><span class="role">次要</span></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/09/30/3371865/0/en/skyworks-receives-all-necessary-clearances-for-proposed-combination-with-qorvo.html" target="_blank" rel="noopener">Skyworks 9/30 监管许可公告</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

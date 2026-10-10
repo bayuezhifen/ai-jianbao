@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软紧急带外补丁修复九月安全更新导致的 RDS 故障 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>微软紧急带外补丁修复九月安全更新导致的 RDS 故障</h1>
+    <p class="lede">九月 Patch Tuesday 安全更新引发远程桌面服务不稳定后，微软于 9 月 14 日发布多款带外累积更新（含 KB5129195 等），修复 RDS，并顺带处理部分 Hyper-V 与 USB 音频回归。</p>
+    <div class="meta">
+      <span>2026-09-15</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在 2026 年 9 月 8 日推送的安全更新上线后，多地管理员反馈 Remote Desktop Services（RDS）出现连接掉线、登录失败，乃至卡在「Please wait for the Remote Desktop Configuration」界面。连带的 MMC、RDS Licensing Diagnoser、资源管理器以及 Windows Update 页面也可能无响应。微软随后在支持文档中确认该已知问题，并曾给出组策略缓解与卸载安全更新等临时手段——后者虽能恢复远程桌面，但会一并失去当月安全修复。</p>
+<p>9 月 14 日，公司以带外（out-of-band）方式发布多条累积更新。面向 Windows 11 24H2/25H2 的是 KB5129195（分别升至约 26100.9457 / 26200.9457）；26H1 对应 KB5129194；Windows 10 21H2/22H2（含 ESU 场景）为 KB5129236；Windows Server 2019/2022/2025 则分别有 KB5129238、KB5129237、KB5129235。BleepingComputer 与 Pureinfotech、Windows Latest 等报道列出的包号基本一致；服务器侧说明指出，回归与 Server 2025 的 KB5122871、Server 2022 的 KB5122882 等相关九月包有关。</p>
+<p>客户端路径上，KB5129195 等可通过 Windows Update、Windows Update for Business、Microsoft Update Catalog 与 WSUS 获取，部分渠道称会按策略自动下载。服务器相关 OOB 包则更依赖 Update Catalog。Windows Latest 还指出，KB5129195 为强制累积包，除 RDS 外还补强了对 CVE-2026-62721（用户态电源服务提权）的修复，因其初版安全更新未完全关闭该漏洞。</p>
+<p>同一批 OOB 也修复了 Hyper-V 上由 Host Compute Service 管理的 Linux 虚拟机通过 Plan9 共享主机文件夹时「看不见或无法访问」的问题，并部分修复 USB Audio Class 1.0 在 8 声道、3D 等对多声道模式下的异常。微软与多家媒体均强调：设备完全无法启动、Device Manager Code 10、无声等更严重的 USB 音频症状仍未在本轮解决，厂商仍在跟进。</p>
+<p>对运维而言，优先安装对应分支的 OOB 累积包，可避免为恢复远程桌面而回退九月安全修复。Windows Latest 另跟踪到 Explorer 崩溃、File History、AMD GPU 等社区报告，微软尚未在本轮 OOB 发行说明中全部确认或修复；若环境仍异常，应保留诊断数据并对照官方已知问题列表，而不是自行假设已被 KB5129195 覆盖。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：BleepingComputer、Pureinfotech、Windows Latest 均确认 9/14 OOB 修复九月更新引入的 RDS 不稳，并列出 KB5129195（Win11 24H2/25H2）等包号。</li><li>一致：微软支持页（KB5124008 已知问题）描述的 RDS 症状与媒体报道吻合；OOB 另含 Hyper-V Plan9 与部分 USB 多声道音频修复。</li><li>单源/待核：Windows Latest 关于 CVE-2026-62721「初版未完全修复」及 Claude Cowork/Plan9 关联叙述，主要来自该站与微软沟通，宜对照 MSRC/发行说明原文。</li><li>未解决：多家来源指出 USB Audio Class 1.0「无法启动/无声」等仍未完全修复；Explorer/File History/AMD GPU 等社区问题未进入本轮官方修复列表。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-releases-emergency-windows-updates-to-fix-rds-failures/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5124008-windows-11-24h2-25h2-security-update" target="_blank" rel="noopener">Microsoft Support (KB5124008 known issues)</a><span class="role">官方</span></li>
+        <li><a href="https://www.windowslatest.com/2026/09/15/windows-11-kb5129195-emergency-update-is-out-after-microsoft-confirms-major-issues-with-the-september-2026-update-but-it-wont-fix-amd-gpu-error/" target="_blank" rel="noopener">Windows Latest</a><span class="role">次要</span></li>
+        <li><a href="https://pureinfotech.com/kb5129195-windows-11-september-2026-oob-updates/" target="_blank" rel="noopener">Pureinfotech</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

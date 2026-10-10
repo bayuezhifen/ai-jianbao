@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>阿里达摩院开源腹部 CT 通才模型 RADAR，论文刊于《Science》 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>阿里达摩院开源腹部 CT 通才模型 RADAR，论文刊于《Science》</h1>
+    <p class="lede">达摩院 RADAR 面向增强腹部 CT，覆盖约 18 个解剖结构、146 项影像发现；近 4 万例真实检查均值 AUC 约 0.913。代码 Apache 2.0，权重可供复现研究；不等于临床准入。</p>
+    <div class="meta">
+      <span>2026-09-20</span>
+      <span class="dot"></span>
+      <span>开源治理与许可证</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>第一财经全球版（Yicai）9 月 18 日报道，阿里巴巴达摩院发布面向增强腹部 CT 的通才影像模型 DAMO RADAR，并同步开源；相关论文约于 9 月 17 日刊于《Science》。AAAS/EurekAlert 同日发布同行评议摘要。Techmeme 等聚合在 9 月 20 日前后抬升可见度，本卡按「论文 + 开源」成套事件记，不把聚合页当成首发日。</p>
+<p>据 AAAS 摘要与 Yicai：RADAR 在约 42.5 万例检查、约 150 万图文对与逾 1500 万解剖相关对上训练，把 CT 体积分成解剖结构并与报告描述对齐。评估覆盖 18 个解剖结构、146 项影像发现；近 4 万例真实检查均值 AUC 约 0.913，优于文中对比的最佳视觉语言模型约 0.776。八家外部中心约 0.895，逾 2.7 万例急诊场景约 0.904。</p>
+<p>Yicai 称，与 26 名放射科医生对比时，模型平均表现超过其中 23 人；辅助阅片可使敏感性提高约 10%、耗时减少逾 30%。写作边界：这是研究团队报告的辅助阅片增益，不等于可独立出报告，更不等于监管批准用于诊疗。</p>
+<p>GitHub 仓库 alibaba-damo-academy/damo-radar 提供训练/推理代码与权重，许可为 Apache 2.0，便于复现与二次研究。RuntimeWire 等二手稿引用南华早报等，强调开放权重与临床准入是两回事。本卡落在「开源治理与许可证」：记论文发表周期与 Apache 2.0 开源动作，不升格为医疗器械获批。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：AAAS/EurekAlert 与 Yicai 确认 Science 论文、146 项发现、均值 AUC≈0.913、18 个解剖结构、辅助阅片敏感性约 +10%、耗时约 −30%。</li>
+<li>一致：开源仓库存在，面向研究复现；Yicai 写明开源发布。</li>
+<li>边界：RuntimeWire 引用 SCMP 作综合，本卡未直接抓取 SCMP 全文，不编造引语。</li>
+<li>待确认：各国药监路径、前瞻性临床终点、真实医院工作流中的假阳性代价。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.eurekalert.org/news-releases/1143748" target="_blank" rel="noopener">AAAS / EurekAlert</a><span class="role">主来源</span></li>
+        <li><a href="https://www.yicaiglobal.com/news/alibabas-damo-academy-debuts-generalist-ai-for-nearly-150-abdominal-conditions" target="_blank" rel="noopener">Yicai Global</a><span class="role">次要</span></li>
+        <li><a href="https://github.com/alibaba-damo-academy/damo-radar" target="_blank" rel="noopener">GitHub (alibaba-damo-academy/damo-radar)</a><span class="role">官方</span></li>
+        <li><a href="https://runtimewire.com/article/alibaba-damo-radar-open-source-abdominal-ct-ai" target="_blank" rel="noopener">RuntimeWire</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

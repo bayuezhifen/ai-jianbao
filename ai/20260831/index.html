@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 8月31日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-08-31</span>
+        <span class="dot"></span>
+        <span>周一 14:16</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>Gemini Co-Scientist 接到真实验室设备</h3>
+      <p>Google DeepMind 把 Co-Scientist 从「纸上假设」接到 CVD 炉：用 Gemini 3 Deep Think 几分钟写出可执行配方，一次生长单层 <strong>MoS₂ / MoSe₂ / WS₂</strong>。人仍负责上料。可靠性模块把论文造假率压到 <strong>4%</strong>。论文 8 月 27 日上 arXiv，报道持续到今天窗口。</p>
+      <a class="src" href="https://arxiv.org/abs/2608.26701">arXiv 2608.26701</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>官方新闻室今天没有新稿</h3>
+      <p>最近一条仍是 8 月 28 日停供 Cursor。Astra 只在那篇里被点名为未发布后续模型。没有 GPT-6，API / 安全 / 企业合作这窗口也没有新公告。</p>
+      <a class="src" href="https://openai.com/news/">OpenAI News</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>补漏：法官裁定五角大楼拉黑违法</h3>
+      <p>8 月 27 日北加州法官 Rita Lin：把 Anthropic 标成供应链风险是非法报复（第一修正案）+ 缺正当程序，责令撤销。公司欢迎裁决，DC 另案还在打。官方新闻室今天没有新稿；Sony / Warner 诉讼今天没有新动作。没有新模型。</p>
+      <a class="src" href="https://www.cnn.com/2026/08/27/tech/anthropic-pentagon-supply-chain-risk-unlawful-hnk">CNN</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新进展</span>
+    </div>
+    <article class="card">
+      <h3>8 月 29–31 日新闻室没有新 AI 稿</h3>
+      <p>最近仍是 8 月 27 日：9 月 10 日高盛会议；AWS 再部署 <strong>200 万</strong> GPU。The Information 等报道拟约 <strong>129 亿美元</strong>买 Hugging Face，双方至今未确认，也无签字协议。</p>
+      <a class="src" href="https://nvidianews.nvidia.com/">NVIDIA Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Grok Bot 接通 X</h3>
+      <p>官方 8 月 29 日：在 Grok Bot 里连 X 账号，没有开发者账号会自动开一个；付费用户送 X API 额度。可搜帖、读时间线、看提及。第一版还不能发帖 / 回复 / 转发。<strong>Grok 5 仍未发布</strong>。</p>
+      <a class="src" href="https://x.ai/news/grok-bot-and-x">xAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>今天 changelog 没有更新</h3>
+      <p>上一条产品是 8 月 27 日：Cloud Agents 可「从零开始」，不绑 GitHub，写完再存成 Origin 仓库，并可把预览端口转到浏览器。停供 GPT 没有新日期。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>为什么要紧：模型正在接到真设备（实验室）和真社交（X），不只是聊天框。<br>搜打撤 · 工作日 09:00 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>

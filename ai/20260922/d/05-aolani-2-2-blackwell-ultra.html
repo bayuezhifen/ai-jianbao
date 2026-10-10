@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aolani 规划在东南亚部署约 2.2 万块 Blackwell Ultra · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>Aolani 规划在东南亚部署约 2.2 万块 Blackwell Ultra</h1>
+    <p class="lede">TechNode 等称拟在马来西亚与菲律宾新建设施，约 2027 年初起部署约 2.2 万块 Blackwell Ultra；完成后总 GPU 或超约 4.8 万、工厂功率超约 100 MW。地点拆分与金额未披露。属规划部署，非已交付。</p>
+    <div class="meta">
+      <span>2026-09-22</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>TechNode Global、Asia Business Outlook 等 9 月 22 日报道：算力运营商 Aolani 规划在东南亚扩张 AI 工厂容量，拟于马来西亚与菲律宾新建或扩建设施，并自约 2027 年初起部署约 2.2 万块 NVIDIA Blackwell Ultra GPU。报道称，完成后其总 GPU 规模或超过约 4.8 万块，相关工厂功率或超过约 100 MW。各国具体机柜拆分、投资金额与供电合同细节，成文中大多未披露。</p>
+<p>措辞必须谨慎：本条是「规划部署」叙事，不是「已交付上架」。未见英伟达官方新闻室将此写成已签署并完成供货的客户案例；二手稿也未给出采购订单号或通关纪录。读者应把它放在区域 AI 基建扩容的预期层理解，并与同窗 LG CDU 认证这类「已公告合格」事实区分开。</p>
+<p>数字边界：2.2 万、4.8 万、100 MW 均来自上述报道的约数，本刊不另行推算机架数或单卡功耗去「验算」功率。马来西亚与菲律宾「两地」只作规划地点集合，不臆造哪一城拿哪一份额，也不把「东南亚」放大成已公告的更多国家清单。</p>
+<p>同刊对照：行业栏 AMD 万亿市值是资本市场事件；本卡是东南亚算力规划。二者都与 AI 基建情绪相关，但可核实材料不同——股价有公开盘口，GPU 规划仍依赖企业与媒体表述。若后续出现英伟达客户故事、地方政府环评或购电协议，再提升证据等级。</p>
+<p>边界：不把 2027 年初写成已开工或已通电；不发明金额；不以「超 4.8 万 GPU」暗示已超过某竞争对手的现网规模。标题与正文均保留「规划」二字。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：TechNode、Asia Business Outlook 均写约 2.2 万 Blackwell Ultra、马来西亚与菲律宾、约 2027 年初起部署。</li>
+<li>一致：完成后总 GPU 或超约 4.8 万、功率或超约 100 MW 的约数口径相近。</li>
+<li>分歧：地点拆分、金额、是否含既有产能并表，各稿详略不一。</li>
+<li>待确认：英伟达官方确认、实际到货节奏；本卡明确为规划而非已交付。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://technode.global/2026/09/22/aolani-nvidia-22000-gpu-ai-infrastructure-southeast-asia/" target="_blank" rel="noopener">TechNode Global</a><span class="role">主来源</span></li>
+        <li><a href="https://www.asiabusinessoutlook.com/news/nvidia-aolani-expand-ai-factory-capacity-across-southeast-asia-push-nwid-12483.html" target="_blank" rel="noopener">Asia Business Outlook</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

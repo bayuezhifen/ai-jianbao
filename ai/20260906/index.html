@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月6日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-06</span>
+        <span class="dot"></span>
+        <span>周日 14:03</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>午后偏静：Gemini Business 可接自定义 MCP</h3>
+      <p>今早主线（西雅图时报诉讼、wiki 披露框架、Anthropic IPO 推迟）无材料级跟进。企业侧增量：Google <strong>Gemini Enterprise / Business</strong> 文档确认管理员可接自定义 <strong>MCP</strong> 服务器（StreamableHTTP、公网 HTTPS、可选 OAuth），把私有数据与内部工具接到 Gemini。</p>
+      <a class="src" href="https://docs.cloud.google.com/gemini/enterprise/docs/connectors/custom-mcp-server/set-up-custom-mcp-server">Google Cloud Docs</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>官方新闻室本窗口无新帖</h3>
+      <p>wiki 披露框架仍是今早 TechCrunch 那条，无材料变更。Astra 放量口径无新官方稿。</p>
+      <a class="src" href="https://techcrunch.com/2026/09/05/openai-confirms-wiki-incident-says-its-working-on-a-framework-for-more-disclosure/">TechCrunch</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室仍停在 9/1 Fable / Mythos 5.1</h3>
+      <p>无新模型稿；IPO 路演时间表本窗口无新口径。</p>
+      <a class="src" href="https://www.anthropic.com/news">Anthropic Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室无新 AI 稿</h3>
+      <p>最新仍是 <strong>9/3</strong> Hugging Face 收购与 IFA PAIR。</p>
+      <a class="src" href="https://nvidianews.nvidia.com/">NVIDIA Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>官方新闻室无新帖，在役仍是 Grok 4.6</h3>
+      <p>最新正式稿仍是 <strong>9/3</strong> Grok Bot for Enterprise。</p>
+      <a class="src" href="https://x.ai/news/grok-bot-for-enterprise">xAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>changelog 仍停在 9/2 Self-hosted</h3>
+      <p>本窗口无新条目。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>

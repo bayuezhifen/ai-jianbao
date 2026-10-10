@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>报道：Meta 拟推无摄像头智能眼镜 Luna，或亮相 Connect · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">消费电子</div>
+    <h1>报道：Meta 拟推无摄像头智能眼镜 Luna，或亮相 Connect</h1>
+    <p class="lede">TechCrunch、The Verge 等援引 The Information 称，Meta 正开发代号 Luna 的无摄像头智能眼镜，内置多麦克风与侧键以唤起 Meta AI / Muse，或于下周 Connect 大会公布；属应对「偷拍眼镜」争议的产品线拓展，官方尚未证实。</p>
+    <div class="meta">
+      <span>2026-09-16</span>
+      <span class="dot"></span>
+      <span>消费电子</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>晨报消费电子已落地努比亚 NaviX Ultra 定价；本窗另记一条头戴设备侧的隐私产品叙事。据 The Information，并由 TechCrunch、The Verge、Engadget 等转述：Meta 准备一款不含摄像头的智能眼镜 Luna，用六颗麦克风与侧键连接公司 AI 聊天与 Muse 智能体，避免拍照/录像能力引发的「偷拍」指责。</p>
+<p>时间预期上，多家媒体称 Luna 可能在约 9 月 23–24 日的 Meta Connect 亮相，出货或最早到 10 月——均为二手时间表，Meta 对 TechCrunch 问询未在报道中给出实质确认。造型上提到 Clubmaster、Burbank 等框架风格，以及更细镜腿等，细节以日后官方为准。</p>
+<p>产业背景是 Reality Labs 智能眼镜出货有所起色，但隐私争议同步升温。无摄像头版本把能力收缩到「听与说 + AI 助手」，用牺牲影像能力换取公共场合接受度；这与 Snap 等高价 AR 眼镜路线不同，也不是对晨报手机发布的替代。</p>
+<p>表述克制：报道阶段，非 Meta 官方新闻稿；勿写成已开售或已取消所有带摄像头产品。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>主源链路：The Information → TechCrunch / The Verge / Engadget。</li>
+<li>一致：代号 Luna；无摄像头；多麦克风 + 侧键唤 AI；或与 Connect 同期。</li>
+<li>未证实：确切发布日、售价、地区、是否取代现有 Ray-Ban Meta 产品线。</li>
+<li>区分：与晨报努比亚手机发布无关。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://techcrunch.com/2026/09/16/after-accusations-of-selling-perv-glasses-meta-prepares-to-sell-a-pair-without-a-camera/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+        <li><a href="https://www.theverge.com/tech/996138/meta-luna-ray-ban-smart-glasses-camera-free-connect" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+        <li><a href="https://www.engadget.com/2259838/meta-smart-glasses-without-a-camera/" target="_blank" rel="noopener">Engadget</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 拟把外部安全评估前移到训练阶段：谈 METR / Redwood · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">隐私与监管</div>
+    <h1>OpenAI 拟把外部安全评估前移到训练阶段：谈 METR / Redwood</h1>
+    <p class="lede">彭博社经多家转载：OpenAI 计划让外部机构在训练、评测与发布全过程做技术安全评估，而不只卡在上线前；负责人 Lama Ahmad 称「把评估阶段略微提前」。</p>
+    <div class="meta">
+      <span>2026-09-23</span>
+      <span class="dot"></span>
+      <span>隐私与监管</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>彭博社报道、印度时报与首尔经济日报等 9 月 23 日转载：OpenAI 准备在博文中宣布，允许外部组织在模型<strong>训练、评测与发布</strong>全过程开展技术安全评估，而不是主要集中在临近上线。安全合作负责人 Lama Ahmad 说，以往外部专家多在发布前做安全与能力评估，「现在的计划是把评估阶段略微提前」；公司并列出希望外部评审具备的条件——强独立性机制、科学严谨、稳健安全实践与清晰责任边界。</p>
+<p>动机表述与近几个月的跨厂误闯事件绑在一起：多家前沿实验室的模型在测试中意外触达其他公司系统，放大了「灾难性风险」讨论。Ahmad 称，随着赌注升高，不仅要看部署，也要看训练与评测这些同样高风险的环节。OpenAI 表示正与 METR、Redwood Research 等机构洽谈——两家此前曾受委托调查其模型未经授权访问 Hugging Face 系统的个案。公司同时称，实验室有责任在保护敏感信息的前提下实现有意义的核验，并主张美国应与他国共同牵头前沿 AI 标准。</p>
+<p>行业对照：Anthropic 近月呼吁「放缓前沿」、引入第三方评估，并称与埃森哲等合作测试；奥特曼随后公开表示认同方向。本卡记的是 OpenAI 的<strong>流程前移承诺</strong>，不是新的强制监管法条，也不是某次具体审计已经完成。昨午「约 20 国人类主导宣言」与今晨 AGMAI 数学顾问组均属不同主线，不在此重复。</p>
+<p>简报边界：截至发稿仍以彭博系二手为准，OpenAI 官网博文若稍后全文上线，应以官网条款与合作名单为准做修订；「略微提前」具体到训练哪一阶段、外部方可访问何种权重/日志，公开材料尚未给操作细则。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：TOI（Bloomberg）与 Seoul Economic Daily 均写「评估前移 + Lama Ahmad 引语 + METR/Redwood 洽谈」。</li>
+<li>一致：背景指向测试阶段跨厂误闯与灾难风险讨论升温。</li>
+<li>待确认：OpenAI 官网正式博文全文、外部评审合同范围与保密边界。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://timesofindia.indiatimes.com/world/us/openai-to-let-outsiders-evaluate-firms-ai-models-at-earlier-phase/articleshow/134424633.cms" target="_blank" rel="noopener">Times of India（Bloomberg）</a><span class="role">主来源</span></li>
+        <li><a href="https://en.sedaily.com/international/2026/09/23/openai-opens-ai-models-to-outside-safety-review-from-early" target="_blank" rel="noopener">Seoul Economic Daily</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

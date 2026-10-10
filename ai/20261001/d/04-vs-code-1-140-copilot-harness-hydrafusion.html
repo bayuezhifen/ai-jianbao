@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code 1.140：Copilot harness、多文件夹会话与 HydraFusion 研究预览 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>VS Code 1.140：Copilot harness、多文件夹会话与 HydraFusion 研究预览</h1>
+    <p class="lede">微软 9 月 30 日发布 Visual Studio Code 1.140 稳定版，强化智能体工作流：引入与 Copilot CLI／独立应用一致的 Copilot harness，实验性支持多文件夹会话与远程主机委派；GitHub 同步把 HydraFusion 多模型编排研究预览带进编辑器与 Copilot 应用。</p>
+    <div class="meta">
+      <span>2026-10-01</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>官方更新说明把 1.140 的重心写在「智能体怎么干活」而不是主题皮肤。Copilot harness 基于 Copilot SDK，目标是与 GitHub Copilot 独立应用、CLI 共用同一套智能体运行时；会话跑在基于 Agent Host Protocol 的独立主机进程里，多个 VS Code 窗口可接回同一会话。文档也提醒：共享运行时不等于设置与工具集完全同步，内置／扩展工具可用性仍可能不同。</p>
+<p>实验能力两条最实用。一是多文件夹会话：同一会话里每个子聊天可绑不同仓库或 worktree，终端、任务、改动与 PR 按文件夹隔离，适合跨仓功能或并行试方案；默认关闭，需在用户级 settings.json 打开对应 harness 的 multiRoot 开关。二是远程委派：智能体可列出已连接主机，按操作系统、内存、逻辑 CPU、模型可用性等条件建远程会话，并回传状态——不自动克隆源工作区，审批规则仍在。</p>
+<p>HydraFusion 同日由 GitHub Changelog 宣布进入 VS Code（需 1.140+）与 Copilot 应用：它不是单一模型，而是按任务选「单模型／级联升级／跨家族批判再改一稿」三种工作流。与 Auto「每请求选一个模型」不同，HydraFusion 把工作流选择也当成优化问题。面向 Pro／Pro+／Business／Enterprise；组织需允许预览功能。用量按参与模型的标准 token 计价。</p>
+<p>企业向新增 autoTier 托管默认（efficiency／balance／intelligence），以及可选的 OpenTelemetry 身份采集（默认关）。Visual Studio Magazine 对上述要点做了二次梳理，与官网一致。本卡不写 Cursor——Cursor 栏本窗仍无新 changelog。</p>
+<p>升级建议：日常编码可直接升 1.140；要用多文件夹或远程委派，先读实验开关与信任文件夹要求。HydraFusion 适合「一条提示里的大块编码任务」，短问答未必更划算。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：code.visualstudio.com v1_140 与 GitHub Changelog、Visual Studio Magazine 均指向 9/30 稳定版、harness、多文件夹／远程委派实验、HydraFusion 研究预览。</li>
+<li>一致：HydraFusion 三种工作流与「非单一模型」表述；组织需开预览。</li>
+<li>待确认：各实验开关默认关闭状态下的企业默认策略差异。</li>
+<li>与今晨：开发者工具栏空窗，属晨报未入库的 9/30 稳定版发布。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://code.visualstudio.com/updates/v1_140" target="_blank" rel="noopener">Visual Studio Code</a><span class="role">官方</span></li>
+        <li><a href="https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://visualstudiomagazine.com/articles/2026/09/30/vs-code-1-140-expands-agent-coordination-across-folders-and-machines.aspx" target="_blank" rel="noopener">Visual Studio Magazine</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

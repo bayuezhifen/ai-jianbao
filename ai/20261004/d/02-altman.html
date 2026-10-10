@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altman 发帖：把宗教意味或放弃人类判断加到模型上，是安全问题 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>Altman 发帖：把宗教意味或放弃人类判断加到模型上，是安全问题</h1>
+    <p class="lede">OpenAI CEO Sam Altman 10 月 3 日在 X 写道，对有人给 AI 模型赋予「宗教力量」或要求交出人类判断感到很不舒服，并称这是切实的安全问题。Axios／Business Insider 跟进；晨报未收。</p>
+    <div class="meta">
+      <span>2026-10-04</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>原话很短、也没点名，但时间点叠在《纽约时报》报道 Anthropic 联合创始人 Chris Olah 与宗教界人士讨论模型意识与道德之后。Altman 10 月 3 日在 X 写道：他对有人试图给 AI 模型赋上「宗教力量」、或让人交出人类判断这件事非常不舒服，并认为这是真正的安全问题。Business Insider 与 Axios 均全文引用该帖，并说明 Altman 未解释触发原因。</p>
+<p>外媒把帖子读成对 Anthropic 路线的侧击：时报称 Olah 等人讨论过模型是否可能具备意识，以及如何把道德行为「养」进系统；其中甚至出现过类似天主教告解、用承认错误影响后续行为的想法。Anthropic 对时报强调，会议主轴未必是模型「受苦」，话题更像自然展开；对 Altman 帖子本身，Axios／BI 称两家公司未见即时官方回复。</p>
+<p>同日舆论场还有 DeepMind 研究员 Jon Barron 等表态，反对把检查点与 harness「抬高道德地位」，呼吁把精力放回解决真实问题、帮助真人。教皇利奥近期也公开提醒勿在「机器天堂」里丢掉人性。把这些声音并排看，争论焦点已从「会不会越权改网站」扩到「该不该把模型当准人格／准灵性对象」——后者更难用现有红队指标直接度量。</p>
+<p>对本站：此帖落在美东周六傍晚，对应上海周日凌晨，晨报未收；Robinson 离职与错位智能体复盘成本见晨报，本条只写意识／宗教话语线上的公开分歧。须注意：侧击 Anthropic 是媒体解读，不是 Altman 帖内具名指控；把「安全问题」等同于「神学争论」也会过度简化，他强调的是人类判断不可外包。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：BI／Axios 均引用 Altman 10/3 X 原帖措辞，并关联时报 Anthropic／宗教界报道。</li>
+<li>一致：Altman 未在帖中具名 Anthropic；「侧击」为媒体解读。</li>
+<li>待确认：Anthropic 是否就该帖单独回应；Olah 会议细节是否另有一手纪要。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.businessinsider.com/sam-altman-dont-treat-ai-like-a-religious-force-2026-10" target="_blank" rel="noopener">Business Insider</a><span class="role">主来源</span></li>
+        <li><a href="https://www.axios.com/2026/10/03/openai-anthropic-altman-amodei-religious-force-models" target="_blank" rel="noopener">Axios</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

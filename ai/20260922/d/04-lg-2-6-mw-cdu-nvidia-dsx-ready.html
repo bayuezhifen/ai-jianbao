@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LG 电子 2.6 MW 液冷 CDU 获 NVIDIA DSX Ready 认证 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>LG 电子 2.6 MW 液冷 CDU 获 NVIDIA DSX Ready 认证</h1>
+    <p class="lede">LG 官方 9 月 22 日：2.6 MW 冷却液分配单元通过 DSX AI Factory 参考设计要求，并列入 Marketplace；此前已有 600 kW、1 MW 机型过审。面向高密度 AI 机房集中液冷。</p>
+    <div class="meta">
+      <span>2026-09-22</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>LG 电子 9 月 22 日在全球新闻室宣布：其约 2.6 MW 级冷却液分配单元（CDU）通过 NVIDIA DSX Ready 认证，满足 DSX AI Factory 参考设计相关要求，并进入相应 Marketplace 列表。官方与韩国经济媒体（Sedaily、Asiae 等）交叉一致：这是继约 600 kW、约 1 MW 机型之后，LG 在同系列液冷产品线上的又一档位过审。</p>
+<p>背景上，DSX Ready 一类认证面向高密度 AI 训练与推理机房的集中液冷链路——CDU 负责在机柜侧与设施侧之间分配与调控冷却液。媒体稿强调大功率档位对应更高机柜密度与更长冷却回路的需求。对本刊而言，认证声明属于「厂商官方合格」事实，不等于已经公布某超算或云厂商的量产交付清单，也不等于 PUE 或能效数据已第三方实测。</p>
+<p>与同窗英伟达另一条（Aolani 东南亚 GPU 规划）的关系：一条是冷却基础设施认证，一条是算力部署规划，均属英伟达生态周边，但主体公司不同、事实类型不同，分卡不合并。读者若关心「AI 工厂」整包，可把液冷、供电与 GPU 到货分列跟踪，避免把认证日写成开业日。</p>
+<p>关于功率数字：部分 URL 路径或标题出现「2.5 megawatt」近似写法，成文与韩媒多写约 2.6 MW。本卡标题与正文统一用约 2.6 MW，并保留「约」字，不在两种写法之间做未经厂商确认的换算。</p>
+<p>边界：不臆造冷却效率、订单金额、首批交付客户或机房地点；不把 Marketplace 上架写成已并网运行。若 LG 或英伟达后续公布参考架构BOM或客户案例，再按增量补写。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：LG 新闻室宣布 CDU 获 NVIDIA DSX Ready，并列入 Marketplace。</li>
+<li>一致：Sedaily、Asiae 等写此前已有 600 kW、1 MW 档过审，本次为大功率档。</li>
+<li>分歧：个别标题用 2.5 MW 近似写法，与 2.6 MW 成文并存——本卡用约 2.6 MW。</li>
+<li>待确认：首批交付客户与机房地点；认证不等于已并网运行。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.lg.com/global/newsroom/news/eco-solution/lg-electronics-2-5-megawatt-coolant-distribution-unit-qualifies-as-nvidia-dsx-ready-cdu/" target="_blank" rel="noopener">LG Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://en.sedaily.com/finance/2026/09/22/lg-electronics-wins-nvidia-certification-for-high-capacity" target="_blank" rel="noopener">Sedaily EN</a><span class="role">次要</span></li>
+        <li><a href="https://www.asiae.co.kr/en/article/2026092208551467232" target="_blank" rel="noopener">Asia Economy</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

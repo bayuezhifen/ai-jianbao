@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Windows 11 26H1 可选预览 KB5124006：任务栏四边摆放与智能体进程标记 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Windows 11 26H1 可选预览 KB5124006：任务栏四边摆放与智能体进程标记</h1>
+    <p class="lede">微软支持文档日期 9/22：面向 26H1（OS Build 28000.3086）的非安全预览包，含任务栏上下左右、精简任务栏、开始菜单尺寸，以及 MXC 进程隔离与 agentic process 标记预览。与今晨 24H2/25H2 的 KB5124010 不是同一条。</p>
+    <div class="meta">
+      <span>2026-09-23</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在支持站点发布「2026 年 9 月 22 日—KB5124006（OS Build 28000.3086）预览」，适用范围写明 Windows 11 版本 26H1 各版本。这与今晨已报、面向 24H2/25H2 的 KB5124010 是两条线：构建号、功能清单与已知问题都不相同，下午窗单独成卡。</p>
+<p>桌面侧「新体验」集中在可发现性：任务栏可摆到屏幕上、下、左、右（搜索框与更小任务栏暂只支持上下）；可开更小任务栏以省纵向空间；开始菜单可选小/大尺寸，并把「Recommended」改名为「Recent」，还可隐藏姓名与头像。Windows 搜索主页简化、结果来源标注更清楚，并新增是否显示网页与商店建议的开关。</p>
+<p>对 IT 与智能体场景更扎眼的是平台预览：Microsoft Execution Containers（MXC）引入进程隔离，用来给编码智能体、模型生成代码一类负载划轻量边界；另有 agentic processes 预览——授权组件可给进程令牌打上不透明的智能体标识，并随子进程传递，经 Web Account Manager 认证时会带上该标识。密码学侧新增可把后量子 ML-KEM 作为独立 TLS 密钥交换算法使用。管理面则写明：自 2026 年 9 月起，26H1 将不再包含 WMIC 命令行工具（WMI 本身仍保留）。</p>
+<p>已知问题需单独读：9 月 8 日安全更新 KB5124012 及之后包启用后，部分 Credential Guard 保护的机器账户可能与本地 AD 失信，根因与 Machine Identity Isolation 策略有关，微软给出 Intune/GPO/注册表回退与修复安全通道步骤，并称将在后续更新里临时挡住该强制。另有 USB Audio Class 1.0 设备 Code 10 / 无声问题仍在跟进。简报边界：只记可选预览与平台预览能力，不写成「已全面推送」；部署仍以组织环与已知问题章节为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：微软支持页 KB5124006 日期、构建号、任务栏四边与 MXC/agentic 预览原文可核。</li>
+<li>一致：与 KB5124010（24H2/25H2）分列，今晨卡不覆盖本条。</li>
+<li>待确认：agentic 标识格式仍可能变更；生产环境是否启用 Machine Identity Isolation 需按域控功能级别自查。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/09/kb5124006-windows-11-26h1-update" target="_blank" rel="noopener">Microsoft Support</a><span class="role">官方</span></li>
+        <li><a href="https://www.windowslatest.com/2026/09/23/windows-11-kb5124010-is-out-with-major-changes-direct-download-links-for-offline-installer-msu/" target="_blank" rel="noopener">WindowsLatest（KB5124010 对照）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

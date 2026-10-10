@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三星高管：明年 HBM 或占行业 DRAM 晶圆产能近三成，与标准 DRAM 抢产能 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>三星高管：明年 HBM 或占行业 DRAM 晶圆产能近三成，与标准 DRAM 抢产能</h1>
+    <p class="lede">9 月 29 日首尔，三星电子执行副总裁金泰佑称，高带宽内存（HBM）明年料占 DRAM 厂商总晶圆产能近 30%，较目前约 20% 抬升；并指出 HBM 与标准 DRAM 争夺同一晶圆产能，扩 HBM 可能挤压通用 DRAM 供给。</p>
+    <div class="meta">
+      <span>2026-09-29</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>存储栏本窗主线是三星管理层对行业产能结构的公开判断，而不是晨报已写的 SK 海力士获台积电「年度合作伙伴」授奖。CNA 转路透 9 月 29 日首尔电：三星电子执行副总裁金泰佑（Kim Taewoo）表示，HBM 明年料占 DRAM 芯片厂商总晶圆产能近三成，目前约两成。</p>
+<p>金泰佑强调，HBM 与标准 DRAM 使用同一池晶圆产能，扩大 HBM 产出可能约束标准 DRAM 供给。HBM 以多层堆叠为 AI 加速器提供高带宽，市场主要参与者仍是韩国的 SK 海力士、三星，以及美国美光。这一表述与近月分析师「HBM 抢产能 → 通用 DRAM 更紧、交期拉长」的叙事同向，但本卡只采用当日高管原话量级（约 20%→近 30%），不把 9 月 22 日前后券商对「HBM 占 40%」等更高预测混写成三星官方口径。</p>
+<p>对产业链的含义是直白的：AI 服务器侧对 HBM 的需求继续抽走前道产能，手机与 PC 用的通用 DRAM 更难靠「总产能扩张」自动松绑。晨报 SK 海力士—台积电 HBM5／CoWoS 早期联合验证受表彰，讲的是先进封装协同；本窗三星则从行业晶圆份额角度提醒「此长彼消」。两者互补，不宜互相替代。</p>
+<p>边界：这是管理层展望，不是新的供货合同、报价表或产线投产仪式；「近 30%」为行业层面口径，不等于三星自家产能结构已披露到同一精度。亦勿把美光或 SK 的份额变动写进本卡——原文未给出分厂商拆分。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：CNA 路透线与多家转载均写 Kim Taewoo、明年近 30%、目前约 20%、HBM 与标准 DRAM 争产能。</li>
+<li>区分：KB 证券等更早报告曾给出更高 HBM 占比情景；与本窗三星高管「近三成」表述勿混为同一数字。</li>
+<li>与晨报：晨报存储卡为 SK 海力士—TSMC 授奖；本窗为三星产能结构展望，非重复。</li>
+<li>待确认：分厂商晶圆投入拆分、明年实际达成比例，需后续财报或产经统计。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.channelnewsasia.com/business/samsung-electronics-says-hbm-account-nearly-30-industry-dram-capacity-next-year-6417091" target="_blank" rel="noopener">CNA / Reuters</a><span class="role">主来源</span></li>
+        <li><a href="https://www.933thedrive.com/2026/09/28/samsung-electronics-says-hbm-to-account-for-nearly-30-of-industry-dram-capacity-next-year/" target="_blank" rel="noopener">93.3 The Drive（路透转载）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

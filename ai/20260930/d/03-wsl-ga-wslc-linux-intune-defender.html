@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软宣布 WSL 容器正式 GA：wslc 原生跑 Linux 容器，Intune／Defender 可管 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>微软宣布 WSL 容器正式 GA：wslc 原生跑 Linux 容器，Intune／Defender 可管</h1>
+    <p class="lede">Windows 开发者博客：WSL containers 结束预览、全面可用；命令行 wslc／别名 container，并开放 Windows 应用调用容器的 API。企业侧可接 Intune 镜像白名单与 Defender 遥测。</p>
+    <div class="meta">
+      <span>2026-09-30</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>晨报操作系统栏为空徽章，写到 iOS 补丁与 CoreGraphics 属窗外。本窗补上微软 9 月 29 日（上海时区已入 30 日）的正式稿：WSL 容器（WSL containers）结束预览、宣布一般可用。官方口径不是另起一套「虚拟机产品」，而是让开发者在 Windows 11 上直接构建、运行、部署 Linux 容器——终端执行 <code>wsl --update</code> 或安装最新 GitHub 发行版，即可使用 <code>wslc.exe</code>（及 <code>container.exe</code> 别名），并开放一套供原生 Windows 程序调用的容器 API。本地跑 AI 工作负载、把云侧容器化应用拉回本机调试，是文中点名的场景。</p>
+<p>相对预览版，GA 补齐了日常运维缺口：容器重启、经 tar 进出拷贝文件、一眼看环境状态的系统信息、网络挂接与断开、事件流、健康检查、创建／运行时的挂载与停止超时（含无限等待）等；默认会话的存储路径也可改到指定盘。性能与网络上，官方称借助 virtiofs 等改进，从 Linux 环境访问 Windows 文件最高可约翻倍；并引入面向容器工作流的 <code>consomme</code> 网络模式，让流量经 Windows 主机转发，改善代理与企业策略兼容。路线图把 compose 列为下一优先：目标是现有 <code>compose.yaml</code> 少改甚至不改就能拉起。</p>
+<p>企业治理是本条与「个人装个 Docker Desktop」的差别所在。Intune 可开关整个 WSL 容器功能，并用镜像仓库白名单限制只从批准源拉取；Microsoft Defender for Endpoint 既有的 WSL 插件扩展到容器内的进程、文件与网络活动，并回挂到 Windows 主机调查视图，避免两套安全流程。生态侧，VS Code Dev Containers、Aspire、社区 TUI 与桌面管理器等已陆续接 wslc。IT之家等中文报道同步提到 3.0.1 包装与内核 6.18 等细节，版本号以微软发行说明与 GitHub release 为准。</p>
+<p>边界：不做公有云 IaaS／PaaS 专栏；不把英伟达 OpenShell 或「Windows PC 上的个人智能体」技术博文塞进本卡。苹果 CoreGraphics 零日见漏洞栏的 KEV 增量，不在操作系统产品卡里展开。对开发者，这是本机 Linux 容器工作流的正式化；对企业，关键看 Intune 与 Defender 策略是否跟得上启用节奏。</p>
+<p>对习惯 Docker Desktop 或远程 Linux 开发机的人，GA 的意义是少一层「再装一套引擎」的摩擦，并把容器活动纳入 Windows 既有的安全与合规工具链。预览用户可直接升级验证命令是否齐全；尚未启用的团队，建议先在 Intune 里定白名单策略，再对开发机组放开，避免「先全开、再补治理」。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：微软 Windows Developer Blog 写明 WSL containers GA、wslc CLI／API、Intune 与 MDE、compose 在路上。</li>
+<li>一致：IT之家等转述同日／次日包装为 WSL 3.0.1 与原生 Linux 容器能力。</li>
+<li>分歧／待确认：「访问 Win 文件速度翻倍」为官方宣传区间；具体内核小版本以 GitHub release 为准。</li>
+<li>与晨报：晨报 OS 为空；本窗为 GA 主源，不重复昨晨 iOS 27.0.1。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/" target="_blank" rel="noopener">Windows Developer Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.ithome.com/1/008/537.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/microsoft/microsoft-is-rolling-out-linux-container-support-to-wsl/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

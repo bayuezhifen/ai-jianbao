@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ZITADEL 补充预警：外部身份源绑定漏洞无需登录即可接管账号，需升到 4.17.3，3.x 不再修 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">身份与访问</div>
+    <h1>ZITADEL 补充预警：外部身份源绑定漏洞无需登录即可接管账号，需升到 4.17.3，3.x 不再修</h1>
+    <p class="lede">晨报所写的 ZITADEL 通行密钥越权漏洞之外，同批公布的 CVE-2026-105207（CVSS 3.1 评分 9.8）更危险：只要知道受害者登录名，未登录的攻击者就能把自己的外部身份源绑到对方账号上。晨报给的 4.17.1 并不够，4.x 需升至 4.17.3；3.x 已停止维护，不会出补丁。</p>
+    <div class="meta">
+      <span>2026-10-05</span>
+      <span class="dot"></span>
+      <span>身份与访问</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>开源身份认证平台 ZITADEL 的一批漏洞于 10 月 4 日集中获得 CVE 编号并收录进美国国家漏洞库（NVD）。今天晨报写了其中的跨组织通行密钥越权漏洞 CVE-2026-105209，修复版本为 3.4.15 和 4.17.1。午间复核发现，同批公布的 CVE-2026-105207 危害更大、修复门槛也更高：仅升级到 4.17.1 仍然受影响。</p>
+<p>按 ZITADEL 官方安全通告，问题出在账号与外部身份提供方（IdP，例如企业的 Google、微软或其他 OIDC／SAML 登录源）建立绑定关系的环节。系统在创建绑定之前，没有检查请求方是否已经通过了第一道身份验证，也没有核对其权限。具体有两条攻击路径：其一是托管的 Login V2 登录界面，攻击者只需输入受害者的登录名，得到一个「只识别了用户名、尚未验证任何因素」的会话，就能走显式绑定流程，把自己的外部身份挂到受害者账号上，此后便可以通过那个身份源直接以受害者身份登录，完全不需要知道对方的密码或多因素凭据；其二是 User Service V2 的 AddIDPLink 接口，调用者针对自己账号操作时会跳过权限检查，任何已登录用户都能抢先认领任意外部身份，由于外部身份绑定是「先到先得」，这会截走或阻断受害者今后的联合登录。</p>
+<p>受影响版本为 4.0.0 至 4.17.2（含 RC 版）和 3.0.0 至 3.4.15。修复版本只有 4.17.3。官方明确表示，3.x 版本线已于 2026 年 8 月 31 日停止维护，不会为此漏洞出补丁，3.x 用户必须迁移到已修复的 4.x 版本。Login V1 不受第一条路径影响，因为它要求先完成主因素和多因素验证才执行绑定。临时缓解方面，在受影响组织的登录策略里关闭外部 IdP 账号绑定可以堵住 Login V2 路径，但堵不住 API 路径，官方称没有任何配置能在未打补丁的版本上彻底关上这个口子。</p>
+<p>值得注意的是，GitHub 上的官方通告早在 9 月 4 日就已发布，CVE 编号和 NVD 条目则到 10 月 4 日才补齐，这让依赖 CVE 订阅的团队可能一个月后才收到提醒。NVD 给出的评分为 CVSS 3.1 的 9.8 分和 CVSS 4.0 的 9.3 分，漏洞由 InfoGuard Labs 的卢卡斯·道奇森与 Ada Logics 的亚当·科尔琴斯基报告。同批收录的还有 CVE-2026-105215：Login V1 的「外部账号不存在」注册端点信任客户端提交的身份字段，攻击者可预先建好一个绑定受害者外部身份的账号，修复版本为 3.4.14 和 4.16.2。</p>
+<p>对自建 ZITADEL 的团队，最稳妥的做法是直接升到 4.17.3 或更新版本，一次覆盖这批漏洞；同时排查近一个月内新增的外部身份绑定记录，留意是否有来历不明的 IdP 关联。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：NVD 与 VulnCheck 均列明受影响范围为 3.0.0–3.4.15 和 4.0.0–4.17.2（即 4.17.3 之前），评分 CVSS 3.1 为 9.8、CVSS 4.0 为 9.3。</li><li>一致：ZITADEL GitHub 通告 GHSA-g8gj-gq47-xgf4 给出唯一修复版 4.17.3，并说明 3.x 已于 8/31 停止维护。</li><li>时间差：官方通告 9/4 发布，CVE 与 NVD 条目 10/4 才公布。</li><li>未见：公开的在野利用报告，CISA 未将其列入 KEV。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://github.com/zitadel/zitadel/security/advisories/GHSA-g8gj-gq47-xgf4" target="_blank" rel="noopener">ZITADEL 安全通告 GHSA-g8gj-gq47-xgf4</a><span class="role">官方</span></li>
+        <li><a href="https://nvd.nist.gov/vuln/detail/CVE-2026-105207" target="_blank" rel="noopener">NVD：CVE-2026-105207</a><span class="role">主来源</span></li>
+        <li><a href="https://www.vulncheck.com/advisories/zitadel-before-4.17.3-account-takeover-via-external-idp-linking" target="_blank" rel="noopener">VulnCheck</a><span class="role">次要</span></li>
+        <li><a href="https://github.com/zitadel/zitadel/security/advisories/GHSA-738m-7888-jfv8" target="_blank" rel="noopener">ZITADEL 安全通告 GHSA-738m-7888-jfv8（CVE-2026-105215）</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

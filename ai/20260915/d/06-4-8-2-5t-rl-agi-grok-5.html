@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>马斯克勾勒 Grok 4.8/4.9/5 阶梯：4.8 本周完成训练进 RL；“搁置 4.7”系二次解读 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>马斯克勾勒 Grok 4.8/4.9/5 阶梯：4.8 本周完成训练进 RL；“搁置 4.7”系二次解读</h1>
+    <p class="lede">埃隆·马斯克于 9月13–14日在 X 上公布 xAI 的 Grok 型号阶梯：4.8 为约 2.5 万亿参数、新 C++ 软件栈训练，将于本周完成训练并开始强化学习；4.9 对标 Astra/Fable 档；AGI 问题指向 Grok 5。他并未宣布取消 Grok 4.7。</p>
+    <div class="meta">
+      <span>2026-09-15</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>在 xAI 仍未发布 Grok 4.7 的当口，马斯克先把更后面的型号写进了公开时间表。9月13日美东晚间，有人在 X 上问“除了 Grok 4.7，九月还能期待 xAI 什么”；马斯克回复：“Grok 4.8，一个用我们新的 C++ 软件栈训练的 2.5T 模型，将于本周完成训练并开始 RL。”约十小时后他给出整条阶梯：Grok 4.7“大致与 Opus 5.0 持平，而不是 5.1”，多模态仍需修好；“Grok 4.8 会是明显改进”；“Grok 4.9 大概是 Astra/Fable 这一档”；“Grok 5 也许比任何东西都好。走着瞧。”被问及 4.8 离 AGI 有多近时，他只答：“那会是 Grok 5。”</p><p>关键边界需要划清。截至 9月15日，xAI 官方模型列表与新闻页仍以已发布的 Grok 4.6 为旗舰；Grok 4.7、4.8 均无官方模型卡、API ID、定价或独立榜单分数。参数量、软件栈与档位全部来自马斯克个人帖文，属创始人主张，而非 xAI 规格书。TeslaNorth、CellCog、OrcaRouter 等追踪文均强调：4.8 目前是“被命名的训练运行”，不是可调用产品。</p><p>关于 Grok 4.7，马斯克的原话是继续把它放在阶梯里评级，并在回答“除了 4.7 之外九月还有什么”时引出 4.8——这本身默认 4.7 仍在预期中。9月11日他曾称 4.7 还需要“再烤几天”，指强化学习设定可能过度惩罚回复长度。一手表述是延期与调参，不是“取消”。部分二次标题（如 Startup Fortune 的 “Shelves Grok 4.7”）把“接连跳票 + 点名后继型号”读成“搁置”，属于标题级推断，文中并未出示马斯克宣布砍掉 4.7 的原话。</p><p>阶梯的竞争含义很直白：他把未发布的 Grok 逐级锚定到已上市对手——4.7≈Claude Opus 5.0，4.9≈GPT-6 Astra / Claude Fable 档，把“超过一切”留给更远的 Grok 5。这降低了 4.8 的预期（“明显改进”而非跃迁）。与此同时，他周末公开支持 Anthropic CEO Dario Amodei“放缓前沿”的呼吁；特朗普政府同日在政治侧反对新增护栏。一边画激进型号梯子，一边口头支持放缓，构成本周醒目张力，但两者都还停留在社媒表态。</p><p>近期可核验节点比口号重要：4.8 是否如期结束初始训练并进入 RL；4.7 是否先以产品形态上线；以及任何 Grok 5 日期是否出现。历史节奏显示，“训练完成”帖文到正式发布往往还有数周，且 4.x 系列已多次滑点。在官方文档更新之前，把“搁置 4.7”写成既成事实，会高估二次标题、低估一手措辞。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致（一手）：马斯克 X 帖（经 TeslaNorth / CellCog / OrcaRouter 引述）确认 4.8＝2.5T、新 C++ 栈、本周训完进 RL；4.7≈Opus 5.0；4.8＝明显改进；4.9≈Astra/Fable；AGI→Grok 5。</li><li>一致（负面核实）：截至报道日，xAI 文档无 4.7/4.8 模型页；已发布旗舰仍为 4.6。</li><li>冲突：Startup Fortune 等标题写 “Shelves Grok 4.7”，但马斯克未宣布取消；同日仍给 4.7 评级并讨论多模态修复。正确表述应为“4.7 未发布且多次延期，同时点名后继型号”，而非官方搁置。</li><li>未证实：2.5T 参数、C++ 栈性能收益、4.8/4.9/5 的任何发布日与基准分数——均无 xAI 规格或第三方复测。</li><li>语境：马斯克支持 Amodei“放缓”与同日激进路线图并存，属公开表态张力，非政策文件冲突。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://teslanorth.com/2026/09/14/elon-grok-roadmap-through-grok-5/" target="_blank" rel="noopener">TeslaNorth</a><span class="role">主来源</span></li>
+        <li><a href="https://cellcog.ai/blog/grok-4-8-release-date/" target="_blank" rel="noopener">CellCog (Grok 4.8 tracker)</a><span class="role">次要</span></li>
+        <li><a href="https://www.orcarouter.ai/blog/grok-4-8-leak" target="_blank" rel="noopener">OrcaRouter</a><span class="role">次要</span></li>
+        <li><a href="https://startupfortune.com/elon-musk-shelves-grok-47-and-unveils-grok-48-instead/" target="_blank" rel="noopener">Startup Fortune (shelves 标题二次解读)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

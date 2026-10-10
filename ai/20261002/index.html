@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-10-02 14:13</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sub {
+    margin: .45rem 0 0;
+    color: var(--muted);
+    font-size: .86rem;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-10-02</span>
+        <span class="dot"></span>
+        <span>周五 14:13</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+      <p class="sub">覆盖窗口：今晨约 08:35 至约 14:13 · 午报（覆盖同日晨报）· 路径 /ai/20261002</p>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-project-suncatcher.html">谷歌 Project Suncatcher 原型卫星入轨：探测太空部署机器学习基础设施的可行性</a></h3>
+      <p>官方 10/1：与 Planet 合作的原型星随 SpaceX Transporter-18 升空并建立通信；将在轨测试 TPU 在辐射与热极端下的表现。《Joule》论文已刊。</p>
+      <a class="src detail" href="d/01-project-suncatcher.html" data-original="https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/02-openai-albertsons-safeway-chatgpt.html">OpenAI 与 Albertsons 加深零售合作：Safeway 购物体验接入 ChatGPT</a></h3>
+      <p>官方 10/1：Enterprise／API 提效门店与数字流程；ChatGPT 内可从菜谱／清单组 Safeway 购物车并导向结账，计划扩到集团更多品牌。</p>
+      <a class="src detail" href="d/02-openai-albertsons-safeway-chatgpt.html" data-original="https://openai.com/index/albertsons-reimagining-retail">阅读详情</a>
+    </article>
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3><a href="d/03-anthropic-claude-code-mods-typescript.html">Anthropic 推出 Claude Code Mods：用 TypeScript 改写行为与界面</a></h3>
+      <p>官方 10/1：以事件钩子改提示、拦截工具调用并定制 UI；插件分发，CLI／桌面可用。无沙箱，须信任来源；企业侧有 sec-default。</p>
+      <a class="src detail" href="d/03-anthropic-claude-code-mods-typescript.html" data-original="https://claude.com/blog/claude-code-mods">阅读详情</a>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3><a href="d/04-gpt-6-astra-ultrafast-blackwell-8.html">英伟达：GPT-6 Astra Ultrafast 跑在 Blackwell 上，标称最高约 8 倍令牌生成加速</a></h3>
+      <p>博客 10/1：API 及符合条件的 ChatGPT Work／Codex 可用；面向智能体循环降时延。不复述 9/28 Open Agent Safety；Ultrafast 不等于 Astra 全面公开放行。</p>
+      <a class="src detail" href="d/04-gpt-6-astra-ultrafast-blackwell-8.html" data-original="https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>午报再核 x.ai/news：最新旗舰仍为 9/21 Grok 4.7；未见 4.8 上线或官方取消 4.7；本窗未见 Musk 训练／版本阶梯新主帖。</p>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；changelog 最近主条仍为 9/23 Rollouts／Security Review；二手称接入 GLM 5.3 无官方 changelog，不单列。</p>
+    </article>
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；HPE×Vultr Helios／Venice 渠道二手见更早窗口；Intel 十月涨价为 9/8 DigiTimes 渠道说，无本窗官方一手。</p>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Summit／8 Elite Gen 6 与 X2 Linux 预览为 9/22–24；麒麟 Tau／Mate 90 见消费电子，避免拆成重复卡。</p>
+    </article>
+    <div class="sec"><h2>存储与网络硬件</h2></div>
+    <article class="card">
+      <h3><a href="d/05-counterpoint-dram-38-sk.html">Counterpoint：二季度 DRAM 营收份额三星 38%，美光逼近第二的 SK 海力士</a></h3>
+      <p>Asia Business Daily 10/2 引 Counterpoint：海力士 25%、美光 24%，差距约 1 个百分点。不复述晨报美光 CEO 紧缺原话。</p>
+      <a class="src detail" href="d/05-counterpoint-dram-38-sk.html" data-original="https://www.asiae.co.kr/en/article/2026100211253213787">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；WSL 容器 GA 见昨午；Arch 2026.10.01 月度 ISO 为常规节奏，不单列。</p>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Rust 1.99.0 见晨报，无本窗新主源。</p>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；OSI SPDX 等为更早窗口；Anthropic 客座 BootLoops 开源工具偏研究展示，不升列为许可证治理主条。</p>
+    </article>
+    <div class="sec"><h2>开发者工具</h2></div>
+    <article class="card">
+      <h3><a href="d/06-github-api-pr.html">GitHub 异步合并 API 正式可用：支撑堆叠 PR 与合并队列自动化</a></h3>
+      <p>Changelog 10/1：PUT 提交、GET 轮询；可合并堆叠 PR 或入合并队列，成官方推荐程序化合并路径。不复述晨报 Copilot／Air。</p>
+      <a class="src detail" href="d/06-github-api-pr.html" data-original="https://github.blog/changelog/2026-10-01-github-async-merge-api-generally-available/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>漏洞与勒索</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；FortiMail KEV 见晨报，联邦截止仍为 10/4；CISA 本窗无新 KEV 主条；Chrome 154 大版本为 9/23。</p>
+    </article>
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Okta Policy Branches 为 9/29，无本窗新一手。</p>
+    </article>
+    <div class="sec">
+      <h2>隐私与监管</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；加州 AG 传票见晨报；FTC 调查为更早窗口复述，不单列。</p>
+    </article>
+    <div class="sec"><h2>消费电子</h2></div>
+    <article class="card">
+      <h3><a href="d/07-mate-90-tau-pro-max-9050-pro.html">华为 Mate 90 系列国行发布：全系搭载麒麟 Tau，Pro Max 上逻辑折叠 9050 Pro</a></h3>
+      <p>通稿／环球时报 10/1：起售约 5999 元；宣称量产逻辑折叠旗舰 SoC 与 HarmonyOS 7。不复述晨报 S26 涨价。</p>
+      <a class="src detail" href="d/07-mate-90-tau-pro-max-9050-pro.html" data-original="https://en.prnasia.com/releases/global/huawei-launches-the-huawei-mate-90-series-equipped-with-the-flagship-tau-chipset-across-the-entire-series-550335.shtml">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；苹果欧盟佣金／Play 外付费等为既有条款，无本窗新政策文本。</p>
+    </article>
+
+    <footer>
+      搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上<br>
+      资料窗口截至 2026-10-02T14:13:00+08:00（Asia/Shanghai）。卡片为标题概览；「阅读详情」为多源交叉核对后的站内原创报道，非原文转载。今晨归档见 archive/2026-10-02-0835；本期路径 /ai/20261002。
+    </footer>
+  </div>
+</body>
+</html>

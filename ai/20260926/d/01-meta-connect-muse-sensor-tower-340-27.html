@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta Connect 后 Muse 下载与日活再冲高，Sensor Tower 估超 340 万次、会后日活约 +27% · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>Meta Connect 后 Muse 下载与日活再冲高，Sensor Tower 估超 340 万次、会后日活约 +27%</h1>
+    <p class="lede">TechCrunch 援引 Sensor Tower：Muse 自 9/8 上线后下载已超约 340 万次，Connect 结束后次日日活约升 27%；仍限美国与加拿大。Meta 在大会上预告视频通话、Mac 计算机使用、专属邮箱与智能眼镜联动等能力。</p>
+    <div class="meta">
+      <span>2026-09-26</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>个人 AI 代理产品 Muse 在 Meta Connect 周的表现，成为本窗行业侧最醒目的消费级代理信号。TechCrunch 9 月 25 日（美西）报道称，Sensor Tower 最新估算显示，该应用自 9 月 8 日上线以来累计下载已超过约 340 万次；Connect 结束后的周三，日活跃用户约上升 27%。另有 Apptopia、Appfigures 等机构给出的累计下载数字并不完全一致（约 230 万至 430 万不等），但方向上都指向强劲早期牵引。</p>
+<p>产品仍仅在美国与加拿大提供。Connect 上，Meta 预告了一系列即将落地的能力，包括与 Muse 形象的视频通话、在 Mac 上的计算机使用（computer use）、专属邮箱、更多合作方与连接器，以及智能眼镜联动。早前，Muse 已于 9 月 18 日前后登上美区 App Store 免费榜首位，并在 Google Play 保持高位。</p>
+<p>增长并不只靠自然传播。Sensor Tower 称，Meta 自 9 月 9 日起在自家平台投放推广，十天内 Muse 获得的内部广告曝光份额一度超过 Facebook、Instagram 与 WhatsApp；同时也出现在 Reddit、TikTok、YouTube 等外部渠道。报道强调，广告并非全部故事：截至 9 月 19 日，推广广告只占相关曝光的约 6%，说明口碑与产品体验仍是主因。</p>
+<p>简报边界：本卡写下载、日活与 Connect 产品路线的可核事实，不把首尔经济等二次专栏的股价推演当作一手结论。公有云 IaaS 大单不在本期范围。若后续官方公布全球开放时间表或付费分成细则，再单独更新。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：TechCrunch 引 Sensor Tower 给出 340 万+ 下载与 Connect 后日活约 +27%；Muse 仍限美加。</li>
+<li>视角差异：Apptopia（约 430 万）、Appfigures（约 230 万）累计下载口径不同，不宜写成单一精确数。</li>
+<li>背景：NYT 等确认 Muse 于 9/8 发布；Connect 为当周大会，属同一产品周期的增量报道。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://techcrunch.com/2026/09/25/meta-is-putting-its-muscle-behind-muse-as-the-ai-app-takes-off/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+        <li><a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" target="_blank" rel="noopener">Meta (about.fb.com Muse intro)</a><span class="role">官方</span></li>
+        <li><a href="https://www.nytimes.com/2026/09/08/technology/meta-muse-ai-agent.html" target="_blank" rel="noopener">The New York Times</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

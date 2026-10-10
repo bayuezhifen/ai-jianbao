@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三星推 zHBM：HBM 直叠加速器，称较 HBM5 最高约 8× 性能 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>三星推 zHBM：HBM 直叠加速器，称较 HBM5 最高约 8× 性能</h1>
+    <p class="lede">据韩媒 Asia Business Daily，三星电子在美国 AI Infrastructure Summit 介绍 zHBM——把高带宽内存以 3D 方式直接叠在 AI 加速器上，宣称相对 HBM5 最高约 8 倍性能、逾 3 倍能效，并同步勾勒面向端侧大模型的 zNAND-O 路线。</p>
+    <div class="meta">
+      <span>2026-09-17</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>晨报存储栏已写 SK 海力士与英特尔磋商在美造内存；午后补三星在同一周 AI 基础设施峰会上的架构叙事。Asia Business Daily 报道，三星美国内存产品规划负责人金仁东（音）在圣克拉拉演讲中提出：对话式 AI 大约每用户百级 tokens/秒的响应，难支撑代理式 AI，公司瞄准把单用户响应推到约千级 tokens/秒。</p>
+<p>核心方案是 zHBM：现行主流把 HBM 与加速器在 2.5D 封装里「并排放」，互连距离与通路成为瓶颈；zHBM 改为把 HBM 垂直叠在加速器上方，缩短数据路径。三星称相对 HBM5 最高约 8 倍性能、逾 3 倍能效，并承认垂直叠放会把加速器热量传到内存，需与客户从设计初期协同做定制热管理。</p>
+<p>端侧方面，三星还介绍 zNAND-O：面向 2030 年前后在工作站等环境跑万亿参数级模型的设想，称若全用 DRAM 成本过高，引入该 NAND 方案可把相关成本压到约六分之一，并计划约 2028 年起向客户规模送样。这与晨报「短缺/涨价/赴美建厂磋商」是不同维度——本条是产品架构愿景，不是即期报价。</p>
+<p>需谨慎：峰会演讲口径不等于量产时间表或第三方实测；亦勿把 zHBM 写成已替代 HBM4/HBM5 供货。与晨报 SK–英特尔磋商并存，分别对应「怎么做出新结构」与「产能放在哪」。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>主源：Asia Business Daily 2026-09-17（KST）对峰会演讲的报道。</li>
+<li>一致：zHBM＝3D 直叠；相对 HBM5 约 8× 性能 / &gt;3× 能效；千 tokens/秒目标；zNAND-O 与约 2028 送样口径。</li>
+<li>待第三方验证：性能倍数来自厂商演讲，未见独立基准。</li>
+<li>区分：晨报 SK 海力士–英特尔美造内存是产能/地缘，本条是三星架构愿景。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.asiae.co.kr/en/article/2026091708324292373" target="_blank" rel="noopener">Asia Business Daily</a><span class="role">主来源</span></li>
+        <li><a href="https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/" target="_blank" rel="noopener">NVIDIA AI Infra Summit 相关博客（同周峰会）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

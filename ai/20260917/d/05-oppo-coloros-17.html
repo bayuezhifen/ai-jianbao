@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OPPO ColorOS 17 发布：流体设计与「记忆后台」 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>OPPO ColorOS 17 发布：流体设计与「记忆后台」</h1>
+    <p class="lede">9 月 17 日珠海 OPPO 开发者大会上，ColorOS 17 正式亮相，口号「超流畅，更懂你」。系统引入流体设计、潮汐引擎个性化调度（官方称记忆后台，后台稳定保活率宣称提升 55.6%），并升级小布助手与端侧 AI；Find X10 系列、一加 16 等首发。</p>
+    <div class="meta">
+      <span>2026-09-17</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>今晨 08:35 简报未写入本条——发布会在当日上午珠海举行，属本午窗新进展。锋潮科技等现场稿与 IT之家转述称，ColorOS 17 在 ODC 2026 正式发布，OPPO、一加、realme 三大品牌将同步升级该系统；官方称 ColorOS 全球活跃用户已超 7.7 亿。</p>
+<p>体验主轴是「流畅 + 主动智能」。流体设计覆盖凝光视效、流体动效与柔性反馈；新一代极光引擎深入渲染层做融合渲染，潮汐引擎则按用机习惯做个性化调度，前台性能倾斜、重要后台保活、次要应用冷存，官方给出后台稳定保活率较上代提升 55.6% 的数据。AI 侧强调 On-Device Compute 端侧大模型、Persona X 记忆引擎与 Agent Matrix 智能体框架，并展示新一代小布、一键闪记扩场景、AI 修图师与 AI 笔记等。</p>
+<p>首发与升级节奏：现场口径指向 OPPO Find X10 系列、一加 16、OPPO Watch S2 等首发搭载；另有报道提及三大品牌首批数十款机型内测、正式版自 10 月起陆续推送——具体机型清单以官网升级计划为准。关怀模式、AI 防诈与无障碍读屏也被作为「有温度」能力一并发布。</p>
+<p>定位提醒：这是 Android 深度定制系统的大版本，不是桌面 Linux/Windows 发行；晨报 GNOME 51 仍是桌面 Linux 主线，本条专写移动 OS。勿把「内测/首发」写成全量覆盖所有旧机。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：9/17 珠海 ODC 发布；流体设计；记忆后台/保活率 +55.6%；小布与端侧 AI；Find X10 / 一加 16 首发口径。</li>
+<li>来源：锋潮科技大会稿、网易转 IT之家、多家中文科技媒体互证。</li>
+<li>待官宣清单：完整升级机型表与各地推送日期以 OPPO 官网为准。</li>
+<li>区分：与晨报努比亚 NaviX Ultra 定价、GNOME 51 均不同产品线。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anzhuo.cn/news/p_68210" target="_blank" rel="noopener">锋潮科技</a><span class="role">主来源</span></li>
+        <li><a href="https://www.163.com/dy/article/L71BG3E40511B8LM.html" target="_blank" rel="noopener">IT之家（网易转载）</a><span class="role">次要</span></li>
+        <li><a href="https://www.ithome.com/0/999/336.htm" target="_blank" rel="noopener">IT之家（流体设计预热）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

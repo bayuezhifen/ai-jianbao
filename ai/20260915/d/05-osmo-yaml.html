@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NVIDIA 开源 OSMO：一份 YAML 编排物理 AI 训练、仿真与实机测试 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>NVIDIA 开源 OSMO：一份 YAML 编排物理 AI 训练、仿真与实机测试</h1>
+    <p class="lede">面向机器人与物理 AI 的「三台计算机」碎片化问题，NVIDIA 将 OSMO 以 Apache-2.0 开源：用单一 YAML 跨异构 Kubernetes 后端串联数据生成、训练、仿真与硬件在环（HIL）。</p>
+    <div class="meta">
+      <span>2026-09-15</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>机器人策略往往要在三类算力之间辗转：数据中心 GPU 上训练、工作站级 RTX 上做 Isaac Sim 等仿真，再到 Jetson 等边缘设备做软件在环（SIL）或硬件在环（HIL）验证。业界常称这是物理 AI 的「三台计算机」问题——每一层通常各自有集群、调度器与胶水脚本，交接处最容易堆积不可移植的定制逻辑。NVIDIA 官方开发者页把 OSMO 定位为面向物理 AI 的开源、代理友好编排器：用一份 YAML 定义整条流水线，由控制面负责任务依赖、内容寻址数据集与跨云/本地调度。</p>
+<p>MarkTechPost（9/14）报道称，OSMO 以 Kubernetes 原生方式把上述三层都登记为后端：工作流不写死具体集群名，而是声明平台能力（如 gb200、rtx-pro-6000、jetson-agx-thor），由调度把任务路由到对应资源池。官方部署文档进一步说明架构拆成控制面（API/UI、存储配置、生命周期）与计算面 Operator：Operator 主动出站注册，控制面不必打入客户集群，便于防火墙后或气隙环境接入。后端可覆盖 EKS/AKS/GKE、本地 DGX/OVX，以及 Jetson 边缘，并支持在同一工作流里混用。</p>
+<p>许可与交付侧，多方口径一致指向 Apache-2.0 开源，配套 Helm 与 NGC 容器；本地可用 KIND/Docker 拉起完整控制面做试跑，同一份 YAML 也可落到生产级云或本地集群。GitHub 仓库 NVIDIA/OSMO 强调「零代码工作流」：任务用镜像、命令、资源与 inputs/outputs 串成 DAG，支持串行、并行与需网络互通的 group（每组恰好一个 lead 任务）。规范文档列出 name、image、command、resources、超时与标签等字段，标签会复制到任务 Pod，但与系统保留标签冲突时以系统为准。</p>
+<p>能力边界上，NVIDIA FAQ 写明 OSMO 不替代 Isaac Sim、PyTorch 或强化学习框架，也不直接把模型部署进量产机器人；它编排这些组件并产出策略、数据集与制品。它也不是带实验看板与制品注册表的通用 MLOps 平台，焦点在物理 AI 工作流执行、数据血缘与异构算力编排。相较 SLURM，官方主张其优势在仿真器集成、多阶段流水线与边缘 HIL，而非通用 HPC 批调度。交互开发方面，项目宣传可远程拉起 VS Code、Jupyter 或 SSH，并在任务间传递上游输出或对象存储数据而不改写工作流。</p>
+<p>MarkTechPost 还转述了近期版本线索：默认 NVIDIA KAI Scheduler、NVLink 拓扑感知放置、按组超时、RBAC/OAuth2、面向 Claude Code、Codex、Cursor 等编码代理的 AGENTS.md/MCP 指南，以及 6.3 起逐步弃用独立 dataset CLI、改由工作流托管输出。官方产品页则强调「提示词到运行中流水线」：编码代理可查询工作流状态与 GPU 容量。这些版本与代理集成细节以项目发行说明为准；本篇交叉核对以官方产品页、部署指南与第三方报道的交集为主。</p>
+<p>对 IT 简报读者而言，OSMO 与同期 CUDA-Q Logical 等量子/逻辑相关产品线不同：它落在机器人与物理 AI 研发基础设施。若团队已有多套 K8s 与对象存储，可把「训练—仿真—实机」从脚本丛林收成可复用 YAML；若尚无 K8s，官方仍宣称用户不必手写清单，但落地仍需运维理解后端注册、存储接线与权限模型。评估时可优先对照官方 Cookbook/文档中的 Isaac 生态示例，并单独验证气隙与多租户场景下的 Operator 出站与身份映射。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：OSMO 为面向物理 AI 的开源编排器；YAML 定义工作流；跨异构 Kubernetes（云/本地/边缘 Jetson）；Apache-2.0；不替代仿真器/训练框架。</li><li>官方独有或更细：控制面+Operator 出站注册、OIDC/密钥与「编码代理可查询 GPU 容量」等产品叙述；部署指南中的存储对接（S3 兼容、Azure Blob）。</li><li>MarkTechPost 单源偏多：具体发行号（如 6.3.1）、NVLink 放置、dataset CLI 弃用时间表、GTC 2026 代理集成表述——未在本轮对官方发行说明逐条复核，采用时请对照 GitHub Releases / docs。</li><li>「内容寻址数据集可节省 10–100× 存储」属项目/报道表述，非独立测评。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.marktechpost.com/2026/09/14/nvidia-open-sources-osmo-one-yaml-orchestrates-physical-ai-training-simulation-and-robot-testing/" target="_blank" rel="noopener">MarkTechPost</a><span class="role">主来源</span></li>
+        <li><a href="https://developer.nvidia.com/osmo" target="_blank" rel="noopener">NVIDIA Developer — OSMO</a><span class="role">官方</span></li>
+        <li><a href="https://nvidia.github.io/OSMO/main/deployment_guide/index.html" target="_blank" rel="noopener">OSMO Deployment Guide</a><span class="role">官方</span></li>
+        <li><a href="https://github.com/NVIDIA/OSMO/" target="_blank" rel="noopener">GitHub NVIDIA/OSMO</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

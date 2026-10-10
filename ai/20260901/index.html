@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月1日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-01</span>
+        <span class="dot"></span>
+        <span>周二 14:52</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+
+    <article class="card">
+      <h3>G20 北卡开会，美国要推「卡罗来纳原则」</h3>
+      <p>AFP 今天 06:19：美国以 G20 轮值主席在 Chapel Hill 开两天创新部长会（周二至周三）。OSTP 主任 Kratsios + 商务部长 Lutnick 要各国签轻监管承诺：<strong>不新设 AI 监管机构</strong>，靠现有行业监管。马斯克周二视频；黄仁勋、Altman 周三当面和 Lutnick 围炉；Hassabis 也参加。非约束，谈成了才进 12 月领导人峰会联合声明。没有新产品。</p>
+      <a class="src" href="https://www.france24.com/en/live-news/20260901-us-to-press-g20-on-light-touch-ai-regulation">AFP / France24</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>补上午漏掉的：支持加州青少年 AI 法案</h3>
+      <p>官方 8 月 31 日（新闻室和广告那篇并列，今早没写）：全球政策 VP Ann O’Leary 发文支持加州 <strong>SB 1119</strong>，请 Newsom 签字。要点：验年龄、上线前做青少年风险评估、独立审计、家长管控、危机资源、限制定向广告。点名 ChatGPT for Teens：估到未满 18 或自报 13–17 会自动进这套，关不掉。没有新产品、没有 GPT-6。</p>
+      <a class="src" href="https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/">OpenAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>新闻室仍停在 8 月 31 日沙箱长文</h3>
+      <p>今早已写过的 alignment / 沙箱补丁仍是最新一条。这窗口没有新模型、没有新官方稿。Sonnet 5 的 $2/$10 已在 8/10 改成永久价，今天并没有涨价。</p>
+      <a class="src" href="https://www.anthropic.com/news">Anthropic Newsroom</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新进展</span>
+    </div>
+    <article class="card">
+      <h3>新闻室没有 9 月 1 日新稿</h3>
+      <p>最新仍是今早写过的 8 月 31 日联发科 <strong>35 亿美元</strong>可转债 + NVLink Fusion。黄仁勋人在 G20，但那是行业会，不是产品发布。</p>
+      <a class="src" href="https://nvidianews.nvidia.com/">NVIDIA 新闻室</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>官方新闻仍停在 Grok 4.6</h3>
+      <p>x.ai/news 这窗口没有新稿。开发者文档模型表只有 Grok 4.6，没有 Grok 4.7 / Grok 5 的模型卡、价格或 API 名。<strong>Grok 5 仍未发布</strong>。</p>
+      <a class="src" href="https://x.ai/news">xAI News</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品</span>
+    </div>
+    <article class="card">
+      <h3>changelog 仍停在 8 月 27 日</h3>
+      <p>今天下午再打开仍是上一条：Cloud Agents 可「从零开始」、不绑 GitHub。没有新版本、没有新模型接入公告。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>为什么要紧：美国把「别新设 AI 监管机构」拿到 G20 去推销，和欧盟昨天把 ChatGPT 按搜索引擎监管是两条线。<br>搜打撤 · 工作日 09:00 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>

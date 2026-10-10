@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英伟达与鸿海用机器人组装 GB300 测试托盘，关键工序成功率过九成 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达与鸿海用机器人组装 GB300 测试托盘，关键工序成功率过九成</h1>
+    <p class="lede">英伟达 10 月 2 日在技术博客披露，与鸿海一起训练机器人组装 GB300 NVL72 计算模块的测试托盘：汇流排装配成功率超过 95%，多连接器插接在 90% 至 95% 之间，目标是 99.5%。台湾中央社 10 月 5 日跟进报道，此前各期未收。</p>
+    <div class="meta">
+      <span>2026-10-05</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英伟达 10 月 2 日在官方技术博客发表题为《制造机器的机器》（The Machines that Make the Machines）的文章，介绍其运营团队与代工伙伴鸿海如何训练机器人，完成 GB300 NVL72 机架级 AI 平台的部分关键装配工序。台湾《工商时报》10 月 4 日、中央社英文版 10 月 5 日先后跟进报道，把这件事带进了更多读者视野。</p>
+<p>这次自动化的对象不是 GPU 本身，而是 GB300 计算模块出厂前用来验证功能和性能的「测试托盘」。英伟达挑了两道最难做的工序：一是汇流排装配，机器人要抓起一根承载大电流的金属排，放进托盘并在 16 个位置拧上螺丝；二是多连接器插接，机器人要从托盘里拎起两大两小、各自连着线缆的连接器，插进间隙很窄的插座里。线缆会变形、公差只有毫米级，这是难点所在。</p>
+<p>按英伟达公布的最新测试数据，汇流排装配成功率已超过 95%，目标节拍是 124 秒内完成；多连接器插接成功率在 90% 至 95% 之间，目标是 72 秒内插完四个连接器。双方给自己定的最终目标是成功率 99.5%，节拍不超过熟练工人的两倍。台湾财经媒体的技术梳理提到，汇流排装配采用三台机械臂分工的模块化架构；连接器插接则从最初的端到端学习，改成了专门的位姿估计方案，说明纯靠「大模型式」端到端训练在这类精细装配上还不够稳。</p>
+<p>英伟达在文中解释了为什么不用传统的固定自动化产线：GB300 设计迭代快、单一型号产量相对不高，专门做一条固定产线不划算，所以需要能适应变化的柔性机器人。这也是英伟达一直推销的「物理 AI」思路在自家供应链上的落地示范。鸿海去年已宣布与英伟达在美国休斯敦合建智能工厂、用人形机器人生产 AI 服务器，并计划扩展到得州、威斯康星和加州的其他工厂；鸿海目前占全球 AI 服务器市场四成以上，8 月曾预测今年 AI 机柜出货量将比去年翻倍以上。</p>
+<p>需要说明的是，这些数字是英伟达与鸿海自报的测试数据，并非量产良率；成功率能否在不同批次、不同产线之间保持，以及最终能否转化为 GB300 出货效率的提升，还要看后续实际交付情况。上游封装、基板和散热等环节的供应压力，也仍是 AI 服务器出货的现实瓶颈。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：中央社与 BigGo 财经都引用英伟达 10/2 技术博客，给出汇流排成功率超 95%、连接器插接 90%–95%、节拍目标 124 秒与 72 秒。</li><li>一致：目标成功率 99.5%（BigGo、MoneyDJ 等台湾财经媒体）。</li><li>仅一方：三机械臂架构与改用位姿估计的细节来自台湾财经媒体对博文的梳理，本刊未直接取得英伟达博文全文。</li><li>注意：均为测试阶段数据，非量产良率。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://focustaiwan.tw/sci-tech/202610050008" target="_blank" rel="noopener">Focus Taiwan（中央社英文）</a><span class="role">主来源</span></li>
+        <li><a href="https://finance.biggo.com/news/5f99bc2f-60e4-4596-bff1-c631e482493d" target="_blank" rel="noopener">BigGo Finance</a><span class="role">次要</span></li>
+        <li><a href="https://www.ctee.com.tw/news/20261004700640-430502" target="_blank" rel="noopener">工商时报</a><span class="role">次要</span></li>
+        <li><a href="https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=dc9ec18a-b851-42c3-b94b-d5412c97c0ac" target="_blank" rel="noopener">MoneyDJ 理财网</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

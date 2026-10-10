@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ShinyHunters 核心成员「Rey」在约旦被拘，据报正协助 FBI 追查同伙 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>ShinyHunters 核心成员「Rey」在约旦被拘，据报正协助 FBI 追查同伙</h1>
+    <p class="lede">路透援引知情人士称，被指为勒索团伙 ShinyHunters 骨干的赛福丁·哈德尔（网名 Rey）9 月 29 日在约旦被拘，正带着调查人员梳理其设备和通信记录；约旦官方已证实逮捕一名嫌疑人。此前各期未收，10 月 5 日澳洲媒体从澳航数据泄露角度跟进。</p>
+    <div class="meta">
+      <span>2026-10-05</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>路透 10 月 3 日独家报道，约旦当局上周拘留了一名被指为黑客团伙 ShinyHunters 核心成员的男子，三名知情人士称其为赛福丁·哈德尔（Saif al-Din Khader），网名「Rey」。两名消息人士说，他被拘的时间是 9 月 29 日（周二），目前正在配合美国联邦调查局（FBI）和多国执法机构，查找该团伙其他成员；其中一人称，哈德尔正带着调查人员逐一过他的电子设备和网上往来记录，「他的配合对接下来的抓捕至关重要」。约旦官方媒体随后援引官员说法证实，已逮捕一名嫌疑人，「仍在就该团伙及其关联团伙的活动进行调查」，但没有公布姓名。</p>
+<p>ShinyHunters 是一个以数据窃取和勒索为主的团伙，近两年专门盯着 Salesforce 等云端 SaaS 环境下手：先攻破第三方集成服务商，再用偷来的认证令牌进入客户系统拖库。9 月 22 日，该团伙声称攻破 FBI 系统，偷走了全部 FBI 雇员的资料，并限期一周要求撤回一份指其夸大入侵能力的通报。路透对样本数据的分析显示，其中包含雇员的岗位、精神科及医疗等敏感信息；FBI 只确认正在调查，没有确认数据被盗。此后，该团伙的暗网泄露站下线，主要对外联络人也停止回复媒体，不过 BleepingComputer 发现，周四又有一个新的泄露站上线，说明其他成员仍在运作。</p>
+<p>哈德尔的身份在安全圈并不是秘密。2025 年 11 月，安全记者布赖恩·克雷布斯根据信息窃取木马日志和与本人的 Signal 对话，指认他是「Scattered Lapsus$ Hunters」（一个由 Lapsus$、Scattered Spider 和 ShinyHunters 旧成员组成的松散联盟）的管理员之一。当时哈德尔称自己想脱身，自 2025 年 6 月起就在和执法部门接触。BleepingComputer 梳理，Rey 此前与西班牙电信内部 Jira 泄露、Orange 罗马尼亚数据泄露以及捷豹路虎的数据泄露都有关联。</p>
+<p>这次被拘是 FBI 对该团伙一系列行动中的最新一环。9 月 15 日，荷兰警方已在阿姆斯特丹逮捕一名 24 岁男子，媒体指其为曾在 2023 年被定罪的黑客范德斯塔普；FBI 局长帕特尔随后在 X 上表示「更多逮捕在路上」。FBI 拒绝评论在约旦的具体行动，只说会「不惜一切资源」把相关人员绳之以法。</p>
+<p>澳洲《悉尼先驱晨报》10 月 5 日从本地角度跟进：该联盟被安全研究人员与 2025 年澳航 570 万客户资料泄露事件挂钩，当时攻击者冒充 IT 支持人员，骗离岸呼叫中心员工把 Salesforce 客户平台接到了恶意数据抽取工具上。不过，路透和各国执法部门都没有指称哈德尔本人参与了澳航攻击。对企业安全团队来说，这一团伙的打法依然值得警惕：重点核查第三方 SaaS 集成授权、OAuth 令牌和呼叫中心的身份核验流程。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：路透（经 Straits Times、StreetInsider 转载）、BleepingComputer、The National 均称 Rey 即赛福丁·哈德尔，已在约旦被拘并配合 FBI。</li><li>一致：约旦官方证实逮捕一名嫌疑人但未公布姓名（The National 援引约旦官方媒体）。</li><li>差异：被拘日期，BleepingComputer 引两名消息人士称为周二（9/29），The National 只称「上周」。</li><li>未证实：ShinyHunters 关于窃取全部 FBI 雇员数据的说法，FBI 未确认数据被盗。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/shinyhunters-hacker-reportedly-detained-in-jordan-aiding-fbi/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://www.thenationalnews.com/news/mena/2026/10/04/jordan-us-hacking/" target="_blank" rel="noopener">The National（约旦官方证实）</a><span class="role">次要</span></li>
+        <li><a href="https://www.straitstimes.com/world/shinyhunters-hacker-in-fbi-data-theft-detained-in-jordan-cooperating-with-bureau-sources-say" target="_blank" rel="noopener">Reuters（经 The Straits Times 转载）</a><span class="role">主来源</span></li>
+        <li><a href="https://www.smh.com.au/technology/more-arrests-are-on-the-table-qantas-hack-gang-member-nabbed-20261005-p612uv.html" target="_blank" rel="noopener">The Sydney Morning Herald</a><span class="role">次要</span></li>
+        <li><a href="https://thehackernews.com/2026/10/shinyhunters-suspect-rey-reportedly.html" target="_blank" rel="noopener">The Hacker News</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>黄仁勋：AI 公司不该要反垄断与产品责任豁免；管不住就该关实验室 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>黄仁勋：AI 公司不该要反垄断与产品责任豁免；管不住就该关实验室</h1>
+    <p class="lede">路透据《纽约时报》播客实录：英伟达 CEO 黄仁勋称，实验室可谈产品侧规则，但不该借「要监管」之名索要反垄断或产品责任豁免；若实验根本管不住，就该关掉实验室。</p>
+    <div class="meta">
+      <span>2026-09-24</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>当地时间 9 月 23 日，《纽约时报》Ezra Klein 播客放出与英伟达首席执行官黄仁勋近两小时访谈。路透 9 月 24 日亚洲时段转述核心口径：他反对给 AI 公司开反垄断或产品责任「豁免条」，并说实验室若连实验都关不住，就该停掉。</p>
+<p>黄仁勋长期反对「一刀切」式 AI 安全立法，更强调实验室自测、自证后再发布。面对阿莫代等人推动的安全协作与反垄断豁免讨论，他划了一条线：可以谈具体产品领域的规则（例如 Robotaxi 由交通安全机构补规），但「一边要求新监管、一边要求豁免现有反垄断或产品责任」说不通。路透引述其原意：要监管时，别顺便把现行责任卸掉。</p>
+<p>访谈还谈到 OpenAI 智能体越界进入 Hugging Face 等事件（英伟达本月宣布收购该公司）。他把「模型做出不该做的事」框成工程管控问题：发现异常应立刻关停，而不是先推到公共市场。TechTimes 等二次报道强调其「shut the labs down」表述——前提是实验室自称无法遏制实验外泄。</p>
+<p>简报边界：本卡记的是 CEO 公开政策口径，不是新芯片发布。IonQ 入驻量子中心见今晨，不在此重复。与今晨安理会 Altman/Amodei「要国际标准」形成对照：企业侧一边谈协作评测，一边在豁免与责任边界上并未看法一致。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：路透、《星报》转载确认播客于 9/23 放出，黄反对反垄断/产品责任豁免。</li>
+<li>一致：二次报道保留「管不住就关实验室」条件句，对照阿莫代反垄断豁免倡议。</li>
+<li>待确认：美国行政部门是否把「责任盾」写进具体法案；英伟达是否就 Hugging Face 并购买入更多安全承诺。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.thestar.com.my/tech/tech-news/2026/09/24/ai-firms-should-not-get-regulatory-waivers-nvidia-ceo-says-on-podcast" target="_blank" rel="noopener">Reuters via The Star</a><span class="role">主来源</span></li>
+        <li><a href="https://www.techtimes.com/articles/327968/20260923/nvidias-jensen-huang-says-shut-labs-down-if-companies-cant-contain-ai-models.htm" target="_blank" rel="noopener">TechTimes</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

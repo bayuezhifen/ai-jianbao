@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 行业简报 · 9月2日 下午</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-09-02</span>
+        <span class="dot"></span>
+        <span>周三 14:16</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>AI 行业简报</h1>
+    </header>
+
+    <div class="sec">
+      <h2>行业</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>Gemini Notebook 今天起改按算力计限额</h3>
+      <p>Google 官方：消费端 web / mobile 从<strong>9 月 2 日</strong>滚动上线 compute-specific 限额，按提示复杂度、会话长度、来源数和功能用量计；限额<strong>每 5 小时</strong>刷新（另有周上限）。触顶可延后生成 Video Overview / Slide Deck。</p>
+      <a class="src" href="https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/">Google Blog</a>
+    </article>
+    <article class="card">
+      <h3>美欧 AI 监管继续对向：G20 放松 vs 欧盟取证</h3>
+      <p>Al Jazeera（9/2）：美国在 Chapel Hill G20 创新部长会上推「不单点盯 AI」的 Carolina Principles；同日欧委会确认已向全球 <strong>30+</strong> 家 AI 公司发 AI Act 信息请求，聚焦安全与版权合规，可能升级正式调查。</p>
+      <a class="src" href="https://www.aljazeera.com/news/2026/9/2/us-pushes-looser-approach-to-ai-regulation-while-eu-pushes-new-law">Al Jazeera</a>
+    </article>
+
+    <div class="sec">
+      <h2>OpenAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>核对过：仍是今早的 Path to Astra</h3>
+      <p>openai.com/index 最新安全/产品稿仍是 <strong>9 月 1 日</strong> Path to Astra。Astra 未发布，没有 GPT-6；这窗口无新产品。</p>
+      <a class="src" href="https://openai.com/index/path-to-astra/">OpenAI</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>核对过：新闻室仍停在 Fable / Mythos 5.1</h3>
+      <p>anthropic.com/news 头条仍是 <strong>9 月 1 日</strong> Claude Fable 5.1 / Mythos 5.1。MHS 等更早稿未变；这窗口无新产品。</p>
+      <a class="src" href="https://www.anthropic.com/news">Anthropic News</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge warn">有新进展</span>
+    </div>
+    <article class="card">
+      <h3>DLSS 5 明天首发：3D-Guided Neural Rendering</h3>
+      <p>GeForce 官方：<strong>9 月 3 日 21:00 PT</strong> 在 NBA 2K27 上线 DLSS 5，给 RTX 50 系与 GeForce NOW Ultimate；需同日 Game Ready 驱动，游戏内开「DLSS Neural Rendering」。新闻室无 9/2 新稿，最新仍是 9/1 联发科合作。</p>
+      <a class="src" href="https://www.nvidia.com/en-us/geforce/news/dlss-5-3d-guided-neural-rendering/">NVIDIA GeForce</a>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>核对过：仍是 grok-4.6 + LatchBio 评测</h3>
+      <p>x.ai/news 最新仍是 <strong>9 月 1 日</strong> LatchBio 生物安全评测；开发者文档模型名仍是 <code>grok-4.6</code>。没有 Grok 4.7 / Grok 5。</p>
+      <a class="src" href="https://x.ai/news">xAI News</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>核对过：changelog 仍停在 8/27</h3>
+      <p>cursor.com/changelog 最新仍是 <strong>8 月 27 日</strong> Cloud Agents「从零开始、无需已有仓库」。blog 无 9 月新稿；这窗口无新产品。</p>
+      <a class="src" href="https://cursor.com/changelog">Cursor Changelog</a>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>

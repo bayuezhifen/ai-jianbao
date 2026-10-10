@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>npm 包 @subql/common 5.8.3 被植入窃密后门，安装或引用即触发 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具（IDE、CI、包管理，Cursor 以外）</div>
+    <h1>npm 包 @subql/common 5.8.3 被植入窃密后门，安装或引用即触发</h1>
+    <p class="lede">Web3 索引框架 SubQuery 的共享库 @subql/common 5.8.3 于 10/5 被发布成带窃密后门的恶意版本，安装和被引用时都会触发；它会搜刮开发机与 CI 上的各类凭据，还会试图在受害者其他仓库植入窃取 secrets 的工作流。</p>
+    <div class="meta">
+      <span>2026-10-06</span>
+      <span class="dot"></span>
+      <span>开发者工具（IDE、CI、包管理，Cursor 以外）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>10 月 5 日，StepSecurity 的自动包分析系统把 npm 上的 @subql/common 5.8.3 标为可疑。调查确认，这个版本藏有能窃取凭据并提供远程 shell 的载荷：安装时（postinstall 脚本）和被 import 时都会启动，因此只禁用安装脚本不够。GitHub 安全公告 GHSA-9333-3c4x-x3h5、OSV 的 MAL-2026-17571 已收录，亚马逊 Inspector 也独立确认了恶意代码。</p>
+<p>发布过程很有代表性。UTC 11:23，有人在官方仓库建了临时分支，提交把发布工作流换成一个「红队金丝雀（无害）」版本，发布测试包 5.8.3-onf-rt1 后删掉分支；11:52 又用同名分支提交「[release] 5.8.3」，在构建之后、发布之前插入一步：从外部域名 ci-artifacts.dev 下载压缩包覆盖 packages/common，没有任何哈希或签名校验；11:56 带载荷的 5.8.3 上了 npm。提交署名对应一位维护者账号但没有签名，StepSecurity 强调这只能说明是哪个账号，不能断定是谁、是否获授权；main 分支也没有合入恶意改动。</p>
+<p>载荷经过三层混淆，会读取 .npmrc、.env、AWS 凭据、SSH 密钥、kubeconfig、钱包路径，以及 .claude.json 等 AI 工具配置；在 Linux 版 GitHub Actions 运行器上用 sudo 读取 Runner.Worker 进程内存找密钥；尝试横扫 17 个区域的 AWS Secrets Manager 和 SSM 参数、集群内的 Kubernetes secret 和 Vault。拿到带 workflow 权限的 GitHub 令牌后，它会在可推送的仓库里建一个伪装成 Dependabot 的分支和名为 CodeQL 的工作流，把全部 secrets 打包成构件取走再删痕迹。数据加密后发往 ci-artifacts.dev，另有远程命令通道；检测到俄语环境会直接退出。</p>
+<p>波及面不只这一个包。@subql/cli、@subql/node-core 等用 ~5.8.2、^5.8.2 这类版本范围依赖它，父包不发新版也会解析到 5.8.3。StepSecurity 按 10/5 的快照检查了 77 个 @subql 包，有 19 个最新版存在通往 5.8.3 的依赖路径。该版本随后已从 npm 下架。</p>
+<p>处置建议：在锁文件和传递依赖中排除 5.8.3，固定到 5.8.2 等已核实版本；装过或引用过的主机和 CI 运行器先隔离取证，再用可信镜像重建——卸载停不掉已分离的后台进程；轮换所有可能暴露的凭据；封锁 ci-artifacts.dev，排查名为 codeql_analysis.yml 的工作流和 dependabot/github_actions/format/setup-formatter 分支。GitHub 公告措辞更重：装过这个包的机器应视为完全失陷。</p>
+<p>这次攻击没有改源代码，而是在 CI 构建和发布之间替换产物，npm 的来源证明照样生成，源映射也被刻意删减。只审源码或源映射的做法会漏掉这类问题。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：StepSecurity 与 OSV（汇总 GitHub 与亚马逊 Inspector）对受影响版本 5.8.3、安装加引用双重触发、隐藏加载器的描述一致。</li><li>待确认：维护者账号是被盗还是内部人员所为；StepSecurity 称尚未观察到有受害仓库真的被注入工作流。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.stepsecurity.io/blog/subql-ecosystem-compromised" target="_blank" rel="noopener">StepSecurity</a><span class="role">主来源</span></li>
+        <li><a href="https://osv.dev/vulnerability/MAL-2026-17571" target="_blank" rel="noopener">OSV MAL-2026-17571</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

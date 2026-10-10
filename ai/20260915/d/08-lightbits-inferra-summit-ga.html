@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lightbits Inferra：AI Infra Summit 演示日，GA 与 beta 口径仍打架 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>Lightbits Inferra：AI Infra Summit 演示日，GA 与 beta 口径仍打架</h1>
+    <p class="lede">KV Cache 分层与预测预取引擎 Inferra 在圣克拉拉 AI Infra Summit 公开展示；SiliconANGLE 曾写「已宣布 GA」，StorageReview 会前仍称客户 beta，官方文档则把 GA 标在 9 月 15 日。</p>
+    <div class="meta">
+      <span>2026-09-15</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Lightbits Labs（NVMe over TCP 协议发明方）把 Inferra 定位为推理侧 KV Cache 编排/加速引擎：把注意力状态的键值缓存从 GPU HBM 延伸到服务器 DRAM 与 NVMe，并用预测预取尽量在 GPU 需要前把块搬回近端，避免因缓存挤出而整段重算 prefill。公司面向的典型买家是 neocloud 与要跑长上下文、多会话 LLM 的企业；SiliconANGLE 引述亦承认，对「私有 GPU 很多、上下文本就塞得进 HBM」的组织，收益会更有限。产品最早在今年 3 月前后已有公开技术叙事，本次是面向 AI Infra Summit 的集中亮相窗口。</p>
+<p>性能叙事高度一致但均属厂商基准：最高约 16× 并发会话密度、部分长上下文场景相对重算的 TTFT 改善「超过 100×」、商品硬件上宣称可达约 1000 万 token 上下文。SiliconANGLE（9/9）与 StorageReview（9/14）均强调这些数字未经独立复测。Blocks & Files 另刊出公司公开的样例（如 Qwen2.5-7B、DeepSeek-R1-70B、Llama-4-Scout@10M 的 TTFT 对比），同样是厂商数据，可作量级参考但不可当验收标准。公司还声称在 commodity L40S 上演示过 10M-token 上下文，并对比部分竞品为线性或反应式取数——该「唯一性」主张同样未经第三方裁定。</p>
+<p><strong>GA vs beta 不一致是本条核心交叉点。</strong>SiliconANGLE 9/9 标题与正文写 Lightbits「today announced the general availability of Inferra」。StorageReview 9/14 则明确：稿件未给出定价、包装与 GA 日期，引擎「今天仍在客户 beta」，并点名 OVH 为具名 beta 客户、Solidigm AI Central Lab 有配合测试。Lightbits 文档站时间线写着 Design Availability（DA）2026-08-31、General Availability（GA）2026-09-15，GA 特性描述含生产加固、可观测性与 10M-token 上下文。AI Infra Summit / StorageNewsletter 通稿则把 9/15 写成「公开首秀（public debut）」并邀请参观 Booth 219，同时保留「已在客户 beta 成功」措辞——「首秀」并不自动等于「可全面商用下单」。</p>
+<p>产品形态上，报道称 Inferra 介于推理框架与 NVMe 池之间，含智能预取、分层管理、日志结构 KV 存储与多租户隔离/加密；对接名单常见 vLLM、SGLang、TensorRT-LLM，另有 LMCache 桥接叙述。技术叙事借用 CPU 时代「算力跑赢内存」的缓存思路，把上下文切块、按需近置，并用 RDMA 等路径降低跨层延迟；SiliconANGLE 引述称测试场景缓存命中率可接近 99.9%——仍为单方说法。日志结构存储意在把频繁更新的缓存写成顺序追加，减轻随机写对盘的压力，但仍依赖盘型耐久与负载画像。</p>
+<p>今日（9/15）按计划是 Summit 演示与 Spotlight 演讲窗口（StorageReview 写「明天」时相对其 9/14 发稿日）；本简报检索窗内未见新的第三方测评或公开价目落地。对采购与架构评估，更稳妥的读法是：把 9/15 当作「公开演示 + 文档标称 GA 日」的交汇点，同时保留 StorageReview 会前「仍在 beta、缺独立验证」的警示，直到厂商给出可核对的发行说明、支持矩阵与参考架构。</p>
+<p>若团队自测，Lightbits 提供 Pod Efficiency Analyzer 等自助估算工具；真正落地仍需看与现有推理栈的连接器成熟度、跨租户 QoS、会话迁移时缓存跟随，以及 NVMe 池成本模型。在独立复测出现前，16×/100×/10M token 宜标为「厂商声称」，并与自有 RAG/多会话负载对照，而不是直接换算成机柜 ROI。简报建议：把 SiliconANGLE 的「GA」与文档站「GA — Sep 15」记为口径线索，把 StorageReview 的 beta 描述记为同期反证，二者并存直至一手发行说明澄清。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：Inferra 做 HBM/DRAM/NVMe 上的 KV Cache 分层与预测预取；宣称 16× 会话密度、&gt;100× 延迟改善（相对重算）、最高约 10M token；OVH 具名试点/演示；Summit Booth 219 演示。</li><li>分歧：SiliconANGLE（9/9）称已宣布 GA；StorageReview（9/14）称仍客户 beta 且未给 GA 日；官方文档站将 GA 标为 2026-09-15；通稿多用「public debut」。</li><li>单源/厂商数据：具体 TTFT 样例表、99.9% 命中率、「唯一亚线性 TTFT」竞争表述、定价与包装——未见独立测评。</li><li>本窗薄点：Summit 当日现场是否同步「正式 GA 可下载/可下单」的一手确认，公开网页尚未形成统一表述。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.storagereview.com/news/lightbits-inferra-kv-cache-engine-claims-16x-session-density-and-10m-token-contexts" target="_blank" rel="noopener">StorageReview</a><span class="role">主来源</span></li>
+        <li><a href="https://siliconangle.com/2026/09/09/lightbits-set-to-release-kv-cache-engine-to-boost-gpu-performance/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">次要</span></li>
+        <li><a href="https://www.lightbitslabs.com/documentation/" target="_blank" rel="noopener">Lightbits Documentation</a><span class="role">官方</span></li>
+        <li><a href="https://www.storagenewsletter.com/2026/09/10/ai-infra-summit-2026-lightbits-rewrites-tokenomics-with-inferra-the-worlds-first-kv-cache-orchestration-engine/" target="_blank" rel="noopener">StorageNewsletter / AI Infra Summit PR</a><span class="role">次要</span></li>
+        <li><a href="https://www.blocksandfiles.com/ai-ml/2026/09/09/inferra-is-lightbits-inferencing-memory-wall-buster/5295282" target="_blank" rel="noopener">Blocks &amp; Files</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

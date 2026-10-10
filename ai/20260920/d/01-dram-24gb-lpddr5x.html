@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>长鑫存储：第五代 DRAM 工艺平台量产，并推出两款 24Gb LPDDR5X · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>长鑫存储：第五代 DRAM 工艺平台量产，并推出两款 24Gb LPDDR5X</h1>
+    <p class="lede">路透 9 月 20 日报道，合肥长鑫称第五代 DRAM 技术平台已进入量产，关键特征尺寸约 11.95 纳米、采用四重曝光；同日推出两款 24Gb LPDDR5X，容量较上一代同类产品高约 50%。</p>
+    <div class="meta">
+      <span>2026-09-20</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>上海时间 9 月 20 日，路透社自北京报道：中国主流 DRAM 厂商长鑫存储（CXMT，上交所科创板代码 688825.SS）称，其第五代工艺平台已进入量产。公司方面表示，新平台面向更高密度、更低成本与更低功耗的存储器设计，可为智能手机等整机厂提供除三星、SK 海力士、美光之外的又一路供应选择。</p>
+<p>据长鑫在合肥举行的 2026 世界制造业大会上披露，新平台把存储阵列关键特征间距压到约 11.95 纳米，并借助「四重曝光」（quadruple patterning）反复叠套光刻步骤以做出更细线宽。营销中心负责人、副总裁罗晓东称，公司工艺能力「已与业界最先进的量产节点相当」。写作边界：这是厂商自述与路透转述，不宜写成已获第三方工艺节点认证。</p>
+<p>同日，长鑫还发布两款基于该平台的 24Gb LPDDR5X 产品，面向手机与便携设备，提供两种封装形态，并称已进入量产。相对公司上一代同类产品，单颗容量高出约 50%。以 8Gb 粗晶圆 die 为基准，公司称单晶圆可产出的粗 die 数较第四代平台至少多约 50%；该指标统计的是剔除良率前的潜在颗数，不等于最终合格率。</p>
+<p>长鑫称平台研发依赖仿真，并与国内设备商在关键工序上联合攻关。背景是 2022 年以来出口管制收紧先进设备与软件获取，北京推动降低对外依存。本卡只记「五代平台量产 + 24Gb LPDDR5X」这一窗增量；勿与公司 2025 年前后已有的 LPDDR5X 产品页混淆，后者并非今天的五代 24Gb 主张。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：路透确认「第五代 DRAM 平台进入量产」、特征间距约 11.95 nm、四重曝光、两款 24Gb LPDDR5X、容量较上一代同类约 +50%、相对第四代至少多约 50% 粗 die（8Gb 基准）。</li>
+<li>一致：报道落点为合肥长鑫、STAR 上市主体、面向手机等移动端。</li>
+<li>分歧/边界：工艺「对标业界最先进量产节点」为公司高管口径，非独立评测。</li>
+<li>待确认：实际良率、客户导入节奏、与三星/海力士/美光同期节点的客观对比数据。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.reuters.com/world/asia-pacific/chinas-cxmt-says-new-memory-chip-platform-enters-mass-production-2026-09-20/" target="_blank" rel="noopener">Reuters</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
