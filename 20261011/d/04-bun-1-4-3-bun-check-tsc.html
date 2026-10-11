@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bun 1.4.3 内置 bun check 类型检查 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>Bun 1.4.3 内置 bun check 类型检查</h1>
+    <p class="lede">Bun 官方 10 月 10 日发布 1.4.3，主打内置 TypeScript 类型检查器 `bun check`，称通过 tsc 7.0.2 全量一致性测试，并在多项目上快于 tsc 数倍。</p>
+    <div class="meta">
+      <span>2026-10-11</span>
+      <span class="dot"></span>
+      <span>语言 / 运行时 / 框架</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>JavaScript 运行时 Bun 于 10 月 10 日发布 v1.4.3。博客头条是 `bun check`：把 TypeScript 类型检查直接做进 Bun，读取项目 `tsconfig.json`，报错形态对齐 `tsc`，并可吃满多核。官方给出的对照表显示，在 VS Code 源码、Next.js、mikro-orm 等仓库上，相对 TypeScript 7.0.2 的 `tsc` 约有 3–6.4 倍耗时优势，内存占用亦明显更低。团队称其通过 tsc 7.0.2 全部一致性测试（错误、类型、符号、声明、模块解析等合计五万余项）。</p>
+<p>配套开关把类型检查嵌进日常命令：`bun run --check`、`bun test --check`、`bun build --check`（以及 `Bun.build({ check: true })`）都会在执行/打包前先过类型关，有错则不跑、不写出产物。官方强调：它只做检查，不发射 JS 或 `.d.ts`，也不替代编辑器里的语言服务——IDE 仍用 TypeScript。</p>
+<p>同版还有 `Bun.FetchSession`（独立 TLS/代理/连接池）、实验性 `Bun.ModuleGraph`（同进程多实例隔离模块状态）、空闲时 CPU 占用下降、大响应在 `node:http` 路径上的吞吐改进，以及一批针对 CVE 与 Node 兼容性的加固。对「语言/运行时」栏目而言，真正改变开发者日常的是：类型检查从「另开一条 tsc 流水线」变成「Bun 自带的一道闸」。</p>
+<p>边界：性能数字来自官方博客在苹果硅机器上的自测；一致性测试通过不等于所有真实仓库零差异（官方亦公开了少数边界 mismatch 与模糊测试未对齐项）。晨报 Python 3.15.0 不在此重复。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>主源：bun.com/blog/bun-v1.4.3（10/10）。</li><li>次要聚合站日期与版本号一致。</li><li>速度/内存对比为官方基准，宜用自有仓库复核。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://bun.com/blog/bun-v1.4.3" target="_blank" rel="noopener">Bun Blog</a><span class="role">官方</span></li>
+        <li><a href="https://devfeed.tech/articles/bun-v1-4-3-84465" target="_blank" rel="noopener">DevFeed（二次）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
