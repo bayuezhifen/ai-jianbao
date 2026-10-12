@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrendForce：AI 中介层持续放大，HBM4E 散热成量产前关卡 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>TrendForce：AI 中介层持续放大，HBM4E 散热成量产前关卡</h1>
+    <p class="lede">10 月 12 日 TrendForce 转引韩媒：承载算力芯片与 HBM 的中介层面积相对 EUV 单次曝光上限已约 5.5 倍，还可能继续放大；三星以 HCB/HPB、SK 海力士以 iHBM 应对 HBM4E 散热。</p>
+    <div class="meta">
+      <span>2026-10-12</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>存储栏本窗有一条可核实的新日报道。TrendForce 10 月 12 日整理朝鲜日报经济版（Chosun Biz）等来源称：AI 封装为塞进更多算力与内存，中介层（interposer）面积持续放大——当前已约相当于 EUV 光刻单次最大曝光面积（858 mm²）的 5.5 倍；设备业人士预期后续还可能到 9 倍、12 倍乃至约 40 倍。背景是先进制程单颗芯片算力不够用，业界更多用 chiplet + 多堆 HBM 的 2.5D 拼装，中介层成了「底板」，面积跟着算力与内存堆叠一起涨。</p>
+<p>散热因此从「堆得越高」变成「底板越大、热源越集中」。三星方面，报道点出混合铜键合（HCB）与热路径块（HPB）：HCB 用铜对铜直连替代微凸点，堆叠更薄、导热路径更短，公司在 NVIDIA GTC 2026 已展示；HPB 则针对 HBM 基片上负责高速互连的 D2D PHY 热点，做局部热路径，拟在 HBM4E 验证、并计划随 HBM5 导入。SK 海力士侧，ETNews 称其 iHBM 在 D2D PHY 周围铺高导热、电绝缘材料，预期热阻大约降三成，思路同样是「热点局部导出」而非只靠整栈降功率。</p>
+<p>这与前窗「NVHBM 基片外协」「Chipflation」不是同一条：前窗偏产能、基板外协与材料涨价；本卡偏封装热学与量产前工程。同日 VLSI.kr 等汇总里，HBM4 合约价传闻约 4.50–4.90 美元/Gb、约为 HBM3E 的三倍，属券商/媒体谈判口径，非原厂官宣，本卡只作背景，不单独开价。</p>
+<p>结论：HBM4E 量产叙事里，「中介层放大 → 局部散热方案」成为今日可核的增量；三星、SK 海力士路径不同，目标都是把热从 PHY 热点导走。勿把媒体转述写成原厂量产时间表已锁死。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>TrendForce 10/12 主条，引 Chosun Biz / ETNews。</li><li>NVHBM/Chipflation 前窗已收，本卡不重复外协与涨价主叙事。</li><li>HBM4 合约价为券商/媒体估计，非三星官方确认。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.trendforce.com/news/2026/10/12/news-ai-interposers-grow-larger-raising-hbm4e-cooling-challenges-how-samsung-sk-hynix-are-responding/" target="_blank" rel="noopener">TrendForce</a><span class="role">主来源</span></li>
+        <li><a href="https://www.vlsi.kr/en/daily-silicon-2026-10-12-en/" target="_blank" rel="noopener">VLSI.kr Daily Silicon（HBM4 价背景）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ReliaQuest：勒索团伙借 Palo Alto GlobalProtect 认证绕过建非法 VPN · IT 行业简报</title>
+<title>传亚马逊洽谈约 70 亿美元收购以色列 AI 初创 Decart · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>ReliaQuest：勒索团伙借 Palo Alto GlobalProtect 认证绕过建非法 VPN</h1>
-    <p class="lede">安全媒体 10/11 援引 ReliaQuest：勒索组织 Qilin、Settra 正利用 CVE-2026-0257，在 GlobalProtect / Prisma Access 上绕过认证、建立看似「正常远程办公」的 VPN 会话。漏洞本身 5 月已披露，本窗增量是勒索侧利用名单扩大。</p>
+    <div class="sec-label">行业</div>
+    <h1>传亚马逊洽谈约 70 亿美元收购以色列 AI 初创 Decart</h1>
+    <p class="lede">华尔街日报消息称亚马逊与 Decart 讨论收购，金额约 70 亿美元；交易尚未签约，可能谈崩或出现竞买方。晨报未收，本窗补录。</p>
     <div class="meta">
       <span>2026-10-12</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>行业</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>CybersecurityNews 等 10 月 11 日报道称，威胁情报公司 ReliaQuest 观察到多个勒索团伙——包括 Qilin 与 Settra——正在利用 Palo Alto Networks PAN-OS GlobalProtect 与 Prisma Access 上的认证绕过漏洞 CVE-2026-0257，创建未授权 VPN 会话，再借「自家 VPN」通道进入内网。这类流量容易被当成远程办公，给凭据窃取、横向移动和勒索部署留出时间窗。</p>
-<p>厂商侧事实要分开看。官方安全公告显示：CVE-2026-0257 于 2026 年 5 月 13 日首次发布，CVSS 约 7.8，影响在开启 authentication override cookie 且证书配置特定时的 GlobalProtect 门户/网关；Panorama 与 Cloud NGFW 不受影响。修复路径是升级到公告列出的维护版本，或禁用认证覆盖 cookie，并为 cookie 单独生成专用证书、勿与门户证书混用。Unit 42 早前威胁简报已确认野外探测与有限利用，并给出 IoC。</p>
-<p>本窗为何仍单列：昨午简报已收 AhsayCBS 利用与更早的 SonicWall / NetScaler，但未覆盖「勒索团伙借 GlobalProtect 伪装成合法 VPN」这条 ReliaQuest 增量。报道强调补丁后仍需终止活跃会话、排查异常主机名（如 kali）等连接，避免「只打补丁、不清理既有会话」。</p>
-<p>编辑提示：勿把 5 月披露写成「今晨零日首曝」；本卡重点是 10/11 ReliaQuest 将 Qilin、Settra 点名为活跃利用方，以及防御上「补丁 + 会话清理 + 事后狩猎」要一起做。</p></div>
+      <div class="body"><p>本窗补录一条晨报漏收、但落在覆盖窗口边缘的并购线索。硅角网（SiliconANGLE）10 月 11 日晚（美东约 20:31，对应上海 10 月 12 日约 08:31）更新称，据华尔街日报引述知情人士，亚马逊正与以色列 AI 初创 Decart 讨论潜在收购，交易估值可能约 70 亿美元。报道同时划清边界：协议尚未签署；若谈判破裂，或出现出价更高的竞买方，结果仍可能翻盘。印度《印度教徒报商业线》等转述同一条 WSJ 线，口径一致。</p>
+<p>Decart 的业务通常被拆成两块。一块是名为 DOS 的软件：把神经网络适配到特定处理器上的流程，从以往常见的数月量级压缩到大约数周，方便在芯片紧缺或路线切换时换算力底座。另一块是 Lucy、Oasis 等「世界模型」，面向游戏、机器人训练等三维环境生成与仿真。公司 2023 年由 Dean、Orian Leitersdorf 兄弟与 Moshe Shalev 创立；5 月一轮融资约 3 亿美元、估值约 40 亿美元，累计融资逾 4 亿美元，投资方包括 Radical Ventures、Nvidia Ventures、Adobe Ventures、Sequoia、Benchmark 等。</p>
+<p>买卖双方的动机被写成两层。对亚马逊云（AWS）而言，自研 Trainium 系列需要更多「跨芯片可移植」工具链，报道称 Decart 曾较早接触 Trainium3，并与 AWS 工程师有过接触。对卖方而言，上月彭博曾传 Anthropic 一度洽谈约 60 亿美元收购后又在尽调后退出；亚马逊若接盘，会把「模型公司收购基础设施软件」的叙事再推进一步，也解释为何估值讨论能从约 40 亿跳到约 70 亿量级。</p>
+<p>编辑边界：这是媒体引述的洽谈，不是已交割交易；勿写成「亚马逊已买下 Decart」。英伟达与 Reflection AI 洽谈昨晨/晨报已收，本卡不重复。公有云 IaaS 细节不单开专栏，只在并购动机里点到为止。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>一手厂商：Palo Alto CVE-2026-0257 公告（5 月披露，修复表与缓解措施仍有效）。</li><li>威胁情报：ReliaQuest 经 CybersecurityNews / RedSide 等 10/11 二次报道，点名 Qilin、Settra。</li><li>Unit 42：更早确认野外探测；本卡不把旧简报日期写成新零日。</li></ul>
+      <ul><li>SiliconANGLE 10/11 更新，引 WSJ；强调尚未签约、可能竞购。</li><li>彭博此前报道 Anthropic 曾洽谈约 60 亿美元后退出，可作背景，非本窗新主条。</li><li>晨报未收；Reflection 洽谈另卡已覆盖，不混写。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://cybersecuritynews.com/palo-alto-globalprotect-flaw-vpn-access/" target="_blank" rel="noopener">CybersecurityNews</a><span class="role">主来源</span></li>
-        <li><a href="https://security.paloaltonetworks.com/CVE-2026-0257" target="_blank" rel="noopener">Palo Alto Networks · CVE-2026-0257</a><span class="role">官方</span></li>
-        <li><a href="https://unit42.paloaltonetworks.com/active-exploitation-of-pan-os-cve-2026-0257/" target="_blank" rel="noopener">Unit 42 Threat Brief</a><span class="role">官方</span></li>
+        <li><a href="https://siliconangle.com/2026/10/11/report-amazon-in-talks-with-ai-startup-decart-over-possible-7b-acquisition/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">主来源</span></li>
+        <li><a href="https://www.calcalistech.com/ctechnews/article/ec25jzet0" target="_blank" rel="noopener">CTech / Calcalist</a><span class="role">次要</span></li>
+        <li><a href="https://news.bloomberglaw.com/mergers-and-acquisitions/amazon-is-in-talks-to-buy-ai-startup-decart-wsj-reports" target="_blank" rel="noopener">Bloomberg Law（标题摘要）</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
