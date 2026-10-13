@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英伟达 OCP：向开源贡献 Vera Rubin 机架设计，并推进 400G 光模块与 Spectrum-6 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达 OCP：向开源贡献 Vera Rubin 机架设计，并推进 400G 光模块与 Spectrum-6</h1>
+    <p class="lede">10 月 12 日圣何塞 OCP 峰会上，英伟达经 MGX 向 OCP 贡献 Vera Rubin 机架与计算托盘设计，并公布与思科 USFP、Meta Spectrum-6、谷歌 Falcon 等合作。</p>
+    <div class="meta">
+      <span>2026-10-13</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>昨午简报之后、本窗内，英伟达在 2026 OCP Global Summit（圣何塞）放出一整套「AI 工厂」开源与合作动作。官方博客写明：经开放的 NVIDIA MGX 架构，向 Open Compute Project 贡献 Vera Rubin 机架与计算托盘关键设计，给系统厂商共同蓝图。SiliconANGLE 等同步报道称，目标是把机架布局、液冷、供电与互连从「各家私有规格」推成可制造、可复用的产业标准。</p>
+<p>MGX 1.2 规格侧增量包括：机架级盲插液冷、可互操作的机架级互连、面向更高功率的液冷 5000A 汇流排、原生 19 英寸设备支持，以及无风扇液冷计算托盘等。官方称可支持最高约 250 kW 机架部署，并缩短组装、测试与现场维护时间。另单独给出 Vera CPU 机架规格，面向智能体时代的工具调用、编排与沙箱执行——与侧重训练/推理的 Vera Rubin NVL72 形成分工。</p>
+<p>网络与生态同步铺开：Meta 宣布采用 Spectrum-6（102.4 Tb/s）以太网交换机建设更大规模 Vera Rubin 网络，并推进 Spectrum-X Multiplane；英伟达与思科公布 USFP（Ultra-Dense Small Form Factor Pluggable）规划，面向每通道约 400 Gb/s 光模块，宣称相对现行每通道 200 Gb/s 可插拔方案有约 4 倍带宽密度与约 1.3 倍能效；与谷歌则宣布未来 ConnectX-10 / BlueField 将支持 Falcon Transport。另还有 DSX OS 开源组件、与超大规模厂商的 Open Data Center / Grid Resilience 规范等，本卡不逐条展开。</p>
+<p>口径提醒：此前简报已写过 CoreWeave / Vera Rubin 更早主体与 Reflection 洽谈，不回炒。本窗新意是「OCP 开源机架蓝图 + 液冷/供电规格 + 与 Meta/思科/谷歌的组网落地」。是否立刻改变供货节奏，仍取决于代工与机柜生态跟进速度。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：blogs.nvidia.com OCP 文列出 MGX 1.2、Vera CPU 机架、USFP、Spectrum-6、Falcon 等要点。</li><li>媒体：SiliconANGLE、SDxCentral、aiaffairs 等对机架开源与 400G USFP 叙述一致。</li><li>与昨午 TrendForce 中介层/HBM4E 散热条不同线：本卡是机架与网络标准，不重复存储热管理。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/" target="_blank" rel="noopener">NVIDIA Blog · OCP Vera Rubin</a><span class="role">官方</span></li>
+        <li><a href="https://siliconangle.com/2026/10/12/nvidia-tackles-ai-factory-scaling-bottlenecks-with-open-rack-designs-and-networking-advances/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">次要</span></li>
+        <li><a href="https://www.sdxcentral.com/news/nvidia-opens-up-vera-rubin-rack-and-tray-designs-to-ocp/" target="_blank" rel="noopener">SDxCentral</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

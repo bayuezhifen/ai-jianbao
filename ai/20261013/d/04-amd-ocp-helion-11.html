@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD 在 OCP 发布 Helion：面向智能体的机架参考设计，伙伴机约 11 月到 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>AMD 在 OCP 发布 Helion：面向智能体的机架参考设计，伙伴机约 11 月到</h1>
+    <p class="lede">与英伟达同场的 OCP 上，AMD 推出 Helion 机架蓝图：可纯 EPYC 或 EPYC+Instinct 混部，空气/液冷可选；规格拟贡献 OCP，伙伴整机目标 2026 年 11 月。</p>
+    <div class="meta">
+      <span>2026-10-13</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>同一届 OCP Summit（10 月 12 日），AMD 公布面向智能体负载的机架参考设计 Helion，与既有面向大规模训练/推理的 Helios 线区分。官方新闻稿与 The Register、Tom's Hardware 等报道要点一致：这是开放、可按 OCP 规格落地的机架蓝图，强调「智能体不是单一负载」，需要能在编排、推理与配套工作负载之间灵活配比算力。</p>
+<p>配置选项写得具体：超大规模侧可做纯 CPU（EPYC）机架，把智能体执行与独立的模型推理基础设施相连；企业侧则可在同一机架混部 CPU 与 GPU。宣传规格包括最高约 32,768 个 Zen 6「Venice」EPYC 核心（256 核节点）、最高 16 颗 Instinct MI350P，以及最高约 102 Tbps 网络带宽。刀片上还有稠密（约 400 W EPYC 9006）、均衡（256 核约 600 W）与高性能（96 核、约 5 GHz）等细分，并提供 5U 八卡 MI350P 推理刀片与通用刀片。</p>
+<p>落地节奏：AMD 称计划把 Helion 规格贡献给 OCP；思科、戴尔、HPE、富士康、联想、超微等被点名为跟进伙伴，伙伴整机目标约 2026 年 11 月。SVP Dan McNamara 公开说法强调「按客户需求与可用电力做柔性机架」，而非再推一款只堆训练 FLOPS 的机柜。</p>
+<p>阅读边界：本卡是 CPU/服务器机架参考设计，与同窗英伟达 Vera Rubin MGX 开源是并行产业动作，勿写成「AMD 取代英伟达」。TrendForce 同日另有「CPU 涨价潮」转述（英特尔高端等），属价格传闻线，证据链弱于官方产品稿，本期不单列，以免与 Helion 新品混淆。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>官方：AMD Newsroom / IR 通稿「Introducing AMD Helion」与 OCP 时间线一致。</li><li>媒体：The Register（规格与 11 月伙伴机）、Tom's Hardware（Zen 6 Venice 核心数）与官方数字大致对齐。</li><li>与英伟达 OCP 条分工：本卡写 AMD Helion；Vera Rubin/MGX 见英伟达栏目。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://newsroom.amd.com/news/open-rack-blueprint-scale-agentic-ai/" target="_blank" rel="noopener">AMD Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.theregister.com/systems/2026/10/12/amd-unveils-helion-racks-for-ai-agents-at-ocp-summit/5302652" target="_blank" rel="noopener">The Register</a><span class="role">次要</span></li>
+        <li><a href="https://www.tomshardware.com/pc-components/cpus/amd-debuts-helion-reference-design-for-agentic-ai-servers-with-up-to-32-768-zen-6-venice-cores-rack-design-ships-next-year-in-cpu-only-and-all-in-one-configurations" target="_blank" rel="noopener">Tom&#x27;s Hardware</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
