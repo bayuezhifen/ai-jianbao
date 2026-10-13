@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic：新蒸馏防护称可使 Claude 被偷学的推理数据下降约九成至九成九 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic：新蒸馏防护称可使 Claude 被偷学的推理数据下降约九成至九成九</h1>
+    <p class="lede">10 月 12 日研究帖称，通过「保留思考」、两级分类器与封号限流，蒸馏方在自家平台上能抽到的推理 token 已降到原先的约 1/10 到 1/100。晨报 Claude 栏未收，午后补录。</p>
+    <div class="meta">
+      <span>2026-10-13</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 于 2026-10-12 在官网研究频道发布《Strengthening our defenses against distillation attacks》。文中把蒸馏攻击定义为：用大量假账号、代理网络，系统性抽取前沿模型能力，再用来训练另一家模型，且未经原开发方授权。公司称，早期证据显示新方法已使蒸馏方收获的数据量大约下降 90%–99%；这是自家度量，尚未经第三方审计。经济时报等英文媒体同日转述，数字与三层措施口径基本一致。</p>
+<p>防护重点是推理过程（thinking），而不是最终回答。Anthropic 解释，完整推理轨迹对仿制模型更有价值：他们内部用「完整推理」与「摘要推理」分别蒸馏后，在 SWE-bench Verified 上约 80.4% 对 71.8%。措施分三层：一是控制推理「能去哪」——在 Claude Fable 5.1、Opus 5.5 等上引入 preserved thinking，8 月 31 日之后新建的 API 账号不能再随意改写先前上下文，也限制较弱旧模型去读新模型的推理；Sonnet 5.5 的推理仅对本组织请求方可见。二是两级分类器拦截抽取话术，公司称误报率低于 0.1%，强度对标其生物/网安拒答体系，并已针对「把先前推理译成外语」「夹在标签里输出」等绕过手法打补丁。三是对反复抽取的账号加严限额、封禁，并自 9 月 24 日起对部分被拦截请求恢复计费。</p>
+<p>效果侧，Anthropic 写：分类器上线后，蒸馏方在自家平台能抽到的推理 token 量级常降到原先的 10–100 倍以下，有些日子小到测不出；并称已封禁数以万计相关账号，不少在启动后两小时内。代价也写明：合法开发者有时要改集成；极少数良性请求会被拦并计费；公司承认未完全达到二月时「不影响正经用户」的目标，也不知道这些收益能撑多久，还没撞上「高度老练且长期」的对抗。</p>
+<p>动机与风险叙事：文中点到海外实验室借蒸馏追赶美国公司，举例称智谱在 GLM-5.3 研发中曾蒸馏美方模型网安能力，并提及 Moonshot/Kimi 相关蒸馏流量中出现疑似解放军用户的监控分析请求——这些是公司单方说法，读者宜对照其九月披露与 CAISSI 等外部评估。午后检索 anthropic.com/news 列表仍无更新的新产品日主帖；本条是安全研究与平台治理，不是新模型发布。晨报 Claude 栏写空窗且未收此帖，属晨报窗口漏项，按「补收有实质信息」规则写入午后页。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一手：anthropic.com/research/distillation-defenses（2026-10-12）。</li><li>二手：Economic Times、madrobot、bytefwd 等同日转述，数字与三层措施口径一致。</li><li>边界：90%–99% 与封号量为 Anthropic 自报；非新产品/非版本发布；晨报未收故午后补录。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research/distillation-defenses" target="_blank" rel="noopener">Anthropic Research</a><span class="role">官方</span></li>
+        <li><a href="https://economictimes.indiatimes.com/tech/artificial-intelligence/anthropic-strengthens-defences-against-distillation-attacks-against-claude-cuts-data-harvesting-by-upto-99/articleshow/134909042.cms" target="_blank" rel="noopener">Economic Times</a><span class="role">次要</span></li>
+        <li><a href="https://madrobot.blog/2026/10/13/anthropic-distillation-defenses-claude-reasoning-99-percent/" target="_blank" rel="noopener">madrobot</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
