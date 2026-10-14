@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Workday 与 Anthropic 合作：Claude 与 Sana 经 MCP 互通，权限仍走 Workday 规则 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Workday 与 Anthropic 合作：Claude 与 Sana 经 MCP 互通，权限仍走 Workday 规则</h1>
+    <p class="lede">Workday Rising 2026 上双方宣布：人可在 Claude 或 Sana 任一入口开工，任务与上下文经 Model Context Protocol 往返，审批与可见范围仍按客户在 Workday 里已有的权限与审计控制。</p>
+    <div class="meta">
+      <span>2026-10-14</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Workday 于 2026-10-13（拉斯维加斯 Rising）与 Anthropic 联合发稿：把 Claude 的推理能力接到 Workday 的 Sana 智能体编排层，以及 HR/财务域数据与业务规则。官方强调两条路径——在 Sana 里跑长流程（薪酬周期、结账等），需要推理时再调用 Claude 并只传该步所需上下文；或在 Claude 里直接唤起 Sana 智能体，查看编制/预算、处理发票例外，但「每一步仍服从客户既有权限与审计」，Claude 只展示该用户有权看见的内容。</p>
+<p>技术胶水写明为开源标准 Model Context Protocol（MCP）。联名客户还可在 Claude 侧用 Workday Agent-Ready Tools 自建智能体，权限模型不另起炉灶。可用性：Sana in Claude 插件已对早鸟客户开放，预计 2026 年末前后正式；Agent-Ready Tools 已通过 Workday Extend AI 对全体客户正式可用。双方互为客户的叙事也写进稿：Anthropic 财务与人事跑在 Workday 上，Workday 工程与市场侧使用 Claude Enterprise / Claude Code。</p>
+<p>本条是企业集成与产品通道，不是新模型版本。昨午已收录的蒸馏防护（自报推理数据被偷学下降约 90%–99%）属安全研究帖，晨报不回炒。媒体侧 PR Newswire 与 Workday 新闻室稿件一致；目前未见 Anthropic 官网独立长文覆盖同一合作，交叉核对以 Workday 官方稿 + 通讯社转发为准。</p>
+<p>对采购与安全团队：重点看 MCP 连接的数据驻留（稿称复杂流程数据留在 Workday 内）、审批是否必须人工确认，以及插件 GA 时间表是否滑动。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致：Rising 当日发布、MCP、双入口、早鸟插件、Agent-Ready Tools 已 GA。</li><li>边界：非新 Claude 模型；蒸馏防护昨午已收。</li><li>待确认：正式 GA 具体周次、各区域合规附录。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://en-sg.newsroom.workday.com/2026-10-13-Workday-and-Anthropic-Announce-New-Partnership-to-Connect-Reasoning-to-the-Rules-That-Run-the-Business,-Wherever-People-Choose-to-Work" target="_blank" rel="noopener">Workday Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.prnewswire.com/news-releases/workday-and-anthropic-announce-new-partnership-to-connect-reasoning-to-the-rules-that-run-the-business-wherever-people-choose-to-work-302906752.html" target="_blank" rel="noopener">PR Newswire</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
