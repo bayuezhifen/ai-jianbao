@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA：Windows Shell CVE-2026-96951（绕过 MotW）与 Ivanti 同日列入 KEV · IT 行业简报</title>
+<title>Ubuntu 26.10 日程日已到：发行说明与日程标 10/15，午后复查 releases.ubuntu.com 镜像文件名仍为 Beta · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA：Windows Shell CVE-2026-96951（绕过 MotW）与 Ivanti 同日列入 KEV</h1>
-    <p class="lede">十月补丁日同日，CISA 把 Windows Shell 命令注入/MotW 绕过与 Ivanti Connect Secure 认证绕过一并写入已知在野利用目录；联邦处置窗口极短。</p>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Ubuntu 26.10 日程日已到：发行说明与日程标 10/15，午后复查 releases.ubuntu.com 镜像文件名仍为 Beta</h1>
+    <p class="lede">晨报已提示下载页仍 Beta；午后再次抓取确认页面标题与 ISO 仍带 beta，勿写成「已正式可下载」。属状态卡，非新功能发布。</p>
     <div class="meta">
-      <span>2026-10-14</span>
+      <span>2026-10-15</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>操作系统与桌面</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>美国网络与基础设施安全局（CISA）在 2026-10-13 警报中宣布，向已知被利用漏洞目录（KEV）新增两条：CVE-2026-96951（Microsoft Windows 命令注入）与 CVE-2026-104935（Ivanti Connect Secure 认证绕过）。后者晨报已据 Volexity/厂商详述，午报不重复展开利用链，只强调它与 MotW 洞同日进入 KEV、联邦机构须按 BOD 26-04 加速处置。</p>
-<p>CVE-2026-96951 的实质是 Windows Shell 侧缺陷，可让特制文件绕过「来自互联网」的 Mark of the Web（MotW）标记所触发的 SmartScreen/受保护视图等提示。MotW 本是把浏览器或邮件下来的附件标成不受信任的一道闸；闸没了，钓鱼附件更容易「看起来像本地文件」。公开操作向解读（如 HOL）称微软标注已检测到利用，攻击路径需用户打开附件或点击链接，不是零点击蠕虫；修复随十月累积更新下发，例如 Windows 11 24H2/25H2/26H2 的 KB5127648 等，联邦截止日期约 10 月 16 日。</p>
-<p>晨报操作系统栏已写 KB5127648 与 24H2 消费版结束更新，但未把 MotW 绕过单列为漏洞主条。午报补上 KEV 视角：同一补丁包既是「例行补丁日」，也是「在野利用目录里的紧急项」。运维上除打补丁，还应确认重启真正完成，并用构建号核对是否到达修复水位；邮件网关与终端仍要把来自互联网的附件当高风险。</p>
-<p>边界：不复述 Ivanti UTA0576 细节；不把 CISA「勒索活动关联未知」写成已确认勒索战役。对读者：优先给读邮件的笔记本/跳板机打十月包，再扫服务器。</p></div>
+      <div class="body"><p>按 Ubuntu 发行日程，26.10（Stonking Stingray）最终发布日为 2026 年 10 月 15 日；documentation.ubuntu.com 上的发行说明与日程页均指向该日。晨报已写「发行说明已上线、下载页仍 Beta」。午后约 14:10（上海）再次抓取 https://releases.ubuntu.com/26.10/ ：页面标题仍为「Ubuntu 26.10 (Stonking Stingray) Beta」，目录内桌面/服务器 ISO 文件名仍为 <code>ubuntu-26.10-beta-*.iso</code>，SHA256SUMS 时间戳仍停在 10/01 附近，未见去掉 beta 字样的最终镜像上架。</p>
+<p>因此本期结论保持克制：日程日已到，但面向公众的下载镜像在复查时刻仍标注 Beta，不能写成「已正式发布可下载」。若晚间或次日 final ISO 上线，应在后续窗口另开增量卡。本条不展开桌面特性清单（发行说明晨报窗口已可参阅），仅作发布状态核对。</p>
+<p>交叉来源为 releases.ubuntu.com 实抓页面与官方发行说明/日程。待确认：final 镜像实际上架时刻与公告博客是否同步。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>官方：CISA 10/13 警报同时列入 CVE-2026-96951 与 CVE-2026-104935。</li><li>操作向：HOL 等整理 KB 对照表与 MotW 含义；需用户交互，非零点击。</li><li>与晨报关系：Ivanti 细节晨报已收；OS 栏已提 KB5127648，本条补 KEV/MotW。</li></ul>
+      <ul><li>多方一致：日程与发行说明指向 10/15；午后下载页仍 Beta 文件名。</li><li>分歧：meta-release 等元数据是否已切「Released」与镜像不同步——以可下载 ISO 为准。</li><li>待确认：最终 ISO 何时替换 beta 包。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/13/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert</a><span class="role">官方</span></li>
-        <li><a href="https://hol.org/blog/cve-2026-96951-windows-shell-mark-of-the-web-bypass" target="_blank" rel="noopener">HOL / MotW CVE read</a><span class="role">次要</span></li>
-        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://releases.ubuntu.com/26.10/" target="_blank" rel="noopener">releases.ubuntu.com/26.10</a><span class="role">官方</span></li>
+        <li><a href="https://documentation.ubuntu.com/release-notes/26.10/" target="_blank" rel="noopener">Ubuntu 26.10 release notes</a><span class="role">官方</span></li>
+        <li><a href="https://documentation.ubuntu.com/release-notes/26.10/schedule/" target="_blank" rel="noopener">Ubuntu 26.10 schedule</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
