@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>（保留并强化晨报）午后马斯克续推 Grok Bot；再核仍为 4.7、无 4.8、未取消 4.7 · IT 行业简报</title>
+<title>CISA 10/14 再添四条 KEV：Palo Alto PAN-OS、Cisco 安全邮件网关、Ahsay 双洞 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,32 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>（保留并强化晨报）午后马斯克续推 Grok Bot；再核仍为 4.7、无 4.8、未取消 4.7</h1>
-    <p class="lede">下午窗口无新模型发版主帖；马斯克继续转发/引用 Bot 剪辑、报税、互邮等用例。官方新闻与文档旗舰仍是 Grok 4.7。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 10/14 再添四条 KEV：Palo Alto PAN-OS、Cisco 安全邮件网关、Ahsay 双洞</h1>
+    <p class="lede">在昨午已收 Windows MotW/Ivanti 入 KEV 之后，CISA 10 月 14 日又把四条在野利用漏洞写入目录，敦促联邦机构按 BOD 26-04 优先修补。</p>
     <div class="meta">
-      <span>2026-10-14</span>
+      <span>2026-10-15</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>午报覆盖同日路径 /ai/20261014，规则要求：若无更新的 Grok 主条，须保留或强化晨报卡，不得改成空徽章。晨报已写隔夜 Bot 0.70.2 能力波（独立邮箱、机侧快捷键、到货停查物流等）。本窗增量是上海时间午间前后，马斯克继续密集互动：例如引用用户用 Bot 串联 Suno/Midjourney/Opus 做音乐短片并写「用 Grok Bot 轻松做音乐视频」、转发「Bot 协助复杂报税」、以及员工帖里「Bot 与 Bot 互发邮件」等用例。产品叙事仍是「全天候雇员式 Bot」，不是新旗舰模型上线。</p>
-<p>版本梯子再核（午报必做）：打开 x.ai/news，《Introducing Grok 4.7》仍是最新旗舰模型介绍帖；docs.x.ai 发行说明在十月条目下仅有语音转写 1.0 退役，九月才写入 Grok 4.7，全文未见 Grok 4.8 正式条目或 API 标识。公开检索仍无 4.8 模型卡、定价页或 Cursor/API 的正式开放公告。马斯克早前「等闪电般的 4.8 出来之后」再把多数简单 Bot 请求交给它——仍是未到货的未来时，不是「4.8 已取代/下架 4.7」。未见 xAI 宣布取消 4.7。</p>
-<p>因此口径与晨报一致并略加强：旗舰仍为 Grok 4.7；无 4.8 公开发布；未取消 4.7。二手若写「4.8 替换 4.7」，与一手不符。统一订阅（The X Subscription）前窗已收，午报不整段回炒，只在版本核验中带过。</p>
-<p>对读者：想叫到 4.8，答案仍是还不能；想看 Bot 能不能帮剪片子、理税表、互相发邮件，午后演示给出的是能力与传播热度，计费与额度仍跟各订阅档走。</p></div>
+      <div class="body"><p>美国网络安全与基础设施安全局（CISA）于 10 月 14 日发布警报，向 Known Exploited Vulnerabilities（KEV）目录新增四条已有在野利用证据的漏洞：CVE-2026-0322（Palo Alto Networks PAN-OS 代码注入）、CVE-2026-76519（Cisco Secure Email Gateway 相对路径遍历）、CVE-2026-105133（Ahsay AhsayCBS 不当认证）、CVE-2026-105134（Ahsay AhsayCBS 命令注入）。警报重申此类洞常被用于初始访问，对联邦企业风险高；并指向 Binding Operational Directive 26-04：联邦民用行政机构须对暴露面、利用后可完全控制资产的高风险 KEV 优先修补，并评估补丁前是否已被入侵。</p>
+<p>与昨午简报中的 CVE-2026-96951（Windows Shell 绕过 MotW）及 Ivanti 入 KEV 形成连续两天的目录扩容，但条目不同，不属回炒。公开警报正文未逐条展开利用团伙或勒索软件家族；社区 KEV 数据源有报道将 CVE-2026-105134 标为与勒索活动相关，其余三条利用背景标注不一，读者应以厂商公告与 CISA 后续更新为准。</p>
+<p>处置建议按资产暴露面排序：对外的 GlobalProtect/PAN-OS、邮件安全网关、备份管理控制台（AhsayCBS）应立即核对版本与补丁，并检查补丁前日志是否已有异常登录或命令执行痕迹。BOD 对联邦有强制力，对其他组织则是强烈建议的风险管理基线。</p>
+<p>交叉来源为 CISA 官方警报与 KEV 目录；厂商安全公告应作为补丁版本的最终依据。待确认：各 CVE 的 CVSS/利用细节、是否扩写入更多勒索情报，以及联邦截止修复日。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>一手：马斯克午后 X 帖（音乐视频、报税、Bot 互邮等转发/引用）。</li><li>官方：x.ai/news 仍列 4.7；docs.x.ai release notes 无 4.8 条目。</li><li>4.8：仅有「出来之后」类表述；无取消 4.7 的官方声明。</li></ul>
+      <ul><li>多方一致：CISA 10/14 警报列出上述四 CVE；KEV 扩容与 BOD 26-04 叙事。</li><li>分歧：第三方对「是否勒索相关」的标注不完全一致，官方警报未逐条定性。</li><li>待确认：各厂商修复版本号与利用报告全文。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://x.com/elonmusk/status/2110244638900773147" target="_blank" rel="noopener">Elon Musk / X</a><span class="role">主来源</span></li>
-        <li><a href="https://x.com/elonmusk/status/2110223110003982788" target="_blank" rel="noopener">Elon Musk / X (taxes)</a><span class="role">主来源</span></li>
-        <li><a href="https://x.ai/news/grok-4-7" target="_blank" rel="noopener">x.ai News Grok 4.7</a><span class="role">官方</span></li>
-        <li><a href="https://docs.x.ai/developers/release-notes" target="_blank" rel="noopener">xAI Docs Release Notes</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/14/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

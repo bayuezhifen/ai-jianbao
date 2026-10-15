@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英伟达 SEMICON：推出 cuPotential，CUDA-X 深入芯片设计与制造「AI 定义工厂」 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达 SEMICON：推出 cuPotential，CUDA-X 深入芯片设计与制造「AI 定义工厂」</h1>
+    <p class="lede">10/14 新闻稿：新库 cuPotential 供开发者构建模拟原子/分子相互作用的 AI Agent；早期访问称可在已 GPU 优化流程上再提速约 2–3 倍；西门子 cuLitho 协作亦同日有进展。</p>
+    <div class="meta">
+      <span>2026-10-15</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英伟达 10 月 14 日于 SEMICON West 相关节点发布新闻：半导体厂商正更广泛采用 CUDA-X 库，推进「AI 定义的晶圆厂」。其中新品 cuPotential 面向原子与分子尺度模拟，提供可嵌入现有软件的 GPU 加速函数，帮助研究者更快建模电作用等大规模原子相互作用；早期访问测试称，在已经 GPU 优化的工作流上还可再加速约 2–3 倍。Synopsys 等被列为早期采用方。把这类建模能力交给 AI Agent，意味着 Agent 可以跑、评、迭代分子模拟，而不只是调用黑盒脚本。</p>
+<p>同一叙事下，检测图像与测试数据要用得够快才能抓缺陷、养设备、提良率：新闻稿点名 NPP（图像）与 RAPIDS cuDF（表格）等库加速测试与质控。NanoVDB 以开源形式存在于 OpenVDB，NPP 随 CUDA Toolkit 提供；Lam Research 基于 NanoVDB 加速的 SEMulator3D 能力拟年内推出。cuPotential 目前为早期访问。</p>
+<p>同日西门子亦宣布 Calibre 与英伟达 cuLitho 协作深化：全芯片光学邻近校正等光刻仿真关键负载宣称可获至少约 10 倍、部分场景更高加速，意在让 High-NA EUV 下的全芯片优化与逆光刻更可落地。这与「算力不够、光刻仿真跑不动」长期矛盾直接相关，服务对象是先进制程的 AI 算力与存储芯片制造。</p>
+<p>本窗不回炒晨报已收的 Run:ai 开源与 RTX Spark 10/16 发售预告（无隔夜实质新发售信息则不单开）。消费侧 Frame Generation Preset C 等实验开关若无官方新闻稿级确认，亦不抢作主卡。读者关注点：EDA/制造仿真加速库，而非新消费 GPU 型号。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：10/14 英伟达新闻稿推出 cuPotential；CUDA-X 用于设计/制造；西门子 cuLitho 加速叙事同日出现。</li><li>分歧：加速倍数来自厂商测试/早期访问，第三方独立复现数据未见。</li><li>待确认：cuPotential 普遍可用时间、Lam SEMulator3D 年底节点、西门子客户量产采用面。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://nvidianews.nvidia.com/news/nvidia-and-semiconductor-leaders-advance-ai-across-chip-design-and-manufacturing-for-ai-defined-fabs" target="_blank" rel="noopener">NVIDIA Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://news.siemens.com/en-us/siemens-calibre-nvidia-culitho/" target="_blank" rel="noopener">Siemens</a><span class="role">次要</span></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/10/14/3380979/0/en/nvidia-and-semiconductor-leaders-advance-ai-across-chip-design-and-manufacturing-for-ai-defined-fabs.html" target="_blank" rel="noopener">GlobeNewswire / NVIDIA</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
