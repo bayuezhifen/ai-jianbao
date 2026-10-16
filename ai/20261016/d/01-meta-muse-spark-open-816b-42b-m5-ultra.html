@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>（补录）Meta 开源 Muse Spark Open：816B 总参、42B 激活、原生多模态；两台 M5 Ultra Mac Studio 可本机跑 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>（补录）Meta 开源 Muse Spark Open：816B 总参、42B 激活、原生多模态；两台 M5 Ultra Mac Studio 可本机跑</h1>
+    <p class="lede">Meta 研究博客 10/15 发布权重：面向编程与智能体长程任务，1M 上下文；多家推理平台与 Hugging Face 可取。晨报漏收，午后补录。</p>
+    <div class="meta">
+      <span>2026-10-16</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Meta 于 10 月 15 日发布开源权重模型 Muse Spark Open，自称是迄今最强的美国开源权重模型之一。官方给出的规格是：总参数约 8160 亿、每 token 激活约 420 亿的混合专家结构，原生多模态（文本、图像、视频、音频输入，文本输出），上下文窗口约 100 万 token，定位偏编程、智能体与长程推理。</p>
+<p>可用性上，权重可在 Hugging Face、Amazon SageMaker AI、Google Cloud Model Garden、Microsoft Foundry Models 等渠道获取；托管推理合作方包括 Together AI、Fireworks、Baseten、Modal、Groq、Nebius、OpenRouter。推理栈覆盖 SGLang、vLLM、TensorRT-LLM、Transformers、Apple MLX、llama.cpp、Unsloth 等。官方特别强调：借助最新 MLX，两台搭载 M5 Ultra 的 Mac Studio 可把整模放进统一内存里本机跑，并演示过驱动 iOS 客户端改动与 DaVinci Resolve 剪辑等本机智能体流程。</p>
+<p>许可证为 Muse Model License，带有限商业条款，许多开发者可免费使用；安全侧称按 Meta Superintelligence Scaling Framework 做过开源权重额外后训练，模型卡有摘要，完整评测报告称将随后公开。本条为晨报漏收补录：官方稿日期为 10/15，落在晨报覆盖窗内但未写入。不回炒今晨 Simons 数学资助。</p>
+<p>交叉来源以 Meta 研究博客与 Hugging Face 集合页为主。待观察：NVFP4/BF16 磁盘与显存门槛、实际本机吞吐，以及许可证「有限商业」对大厂二次分发的边界。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：816B/42B、1M 上下文、10/15 开源权重、多家托管与 HF 可下。</li><li>分歧：「最强美国开源权重」为 Meta 自述，独立榜单口径不一。</li><li>待确认：完整安全评测报告与商业条款细则。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://research.meta.ai/blog/muse-spark-open" target="_blank" rel="noopener">Meta AI Research</a><span class="role">官方</span></li>
+        <li><a href="https://huggingface.co/collections/meta-models/muse-spark-open" target="_blank" rel="noopener">Hugging Face</a><span class="role">次要</span></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/meta-releases-openweight-muse-spark-model-for-coding-agentic-tasks-4952713" target="_blank" rel="noopener">Reuters via Investing.com</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
