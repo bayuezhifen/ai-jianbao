@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隔夜马斯克称 Bot「从未见过长这么快」；SpaceX 与 NVIDIA 共研 Star Mind；再核仍 4.7、无 4.8 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>隔夜马斯克称 Bot「从未见过长这么快」；SpaceX 与 NVIDIA 共研 Star Mind；再核仍 4.7、无 4.8</h1>
+    <p class="lede">马斯克称无免费档说明用户付费感知价值；并指 Star Mind 服务器明年量产。x.ai/news 最新仍为 Voice 3.0；docs 仍列 grok-4.7，未见取消 4.7 或官宣 4.8。</p>
+    <div class="meta">
+      <span>2026-10-16</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>覆盖窗口内，马斯克在 X 上多条帖子强化 Grok Bot 叙事：约 10 月 15 日 22:52 UTC（上海 10/16 06:52）写道「从未见过任何东西像 Grok Bot 长得这么快」，并强调没有免费档，意味着用户感知价值高于所付费用；稍早称 Bot「每天都在明显变好」，并转引/呼应用户用 Bot 处理垃圾电话名单等用例。约 17:48 UTC，他评价与黄仁勋的合作，称 SpaceX 与 NVIDIA 工程师共同设计的 Star Mind 计算机「比绝大多数人预期的好得多」，并将于明年进入量产。</p>
+<p>版本梯队再核：截至晨报抓取，https://x.ai/news 置顶仍为 10 月 14 日 Introducing Grok Voice 3.0，无 4.8 产品稿；docs.x.ai 发布说明十月节仍列 Grok Voice 3.0 与九月 Grok 4.7（API 模型名 grok-4.7），未见「取消 4.7」或「4.8 取代 4.7」的官方表述。若二手媒体把代码里出现的 4.8 字符串写成已替换 4.7，应以马斯克/xAI 官宣与 docs 为准，本期结论仍是：公开产品线仍是 4.7，4.8 未官宣，4.7 未取消。</p>
+<p>昨午已收 Voice 3.0 与 Bot 购物/SpaceX 兜底，本条只写隔夜增量与再核，不整段回炒。交叉来源为马斯克帖文、x.ai/news 与 docs 发布说明。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：隔夜马斯克强调 Bot 增速与付费价值；docs 仍 grok-4.7；news 最新 Voice 3.0。</li><li>分歧：部分二手称「代码已见 4.8」——非官宣，不等于已取代 4.7。</li><li>待确认：Star Mind 与 Colossus/机架产品线的公开规格时间表。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/elonmusk/status/2110866513955868924" target="_blank" rel="noopener">Elon Musk on X</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2110789964430786745" target="_blank" rel="noopener">Elon Musk on X (Star Mind)</a><span class="role">主来源</span></li>
+        <li><a href="https://x.ai/news" target="_blank" rel="noopener">x.ai/news</a><span class="role">官方</span></li>
+        <li><a href="https://docs.x.ai/developers/release-notes" target="_blank" rel="noopener">xAI docs release notes</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
