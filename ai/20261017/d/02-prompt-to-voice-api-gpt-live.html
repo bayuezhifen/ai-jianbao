@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI：Prompt-to-voice 对 API 全面开放，GPT-Live 新增多语种音色 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI：Prompt-to-voice 对 API 全面开放，GPT-Live 新增多语种音色</h1>
+    <p class="lede">10/16 产品发布说明：可用文字描述生成自定义音色并复用到 GPT-Live；同步上线德/法/印地/日/韩等九个自然音色。昨午已收的 ChatGPT Voice 1.1/Quip 不回炒。</p>
+    <div class="meta">
+      <span>2026-10-17</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 在 10 月 16 日的产品发布说明里，把 Prompt-to-voice 扩到全体 API 客户：开发者可在 API 或 Voice Playground 用一段文字描述生成自定义音色，再放到 GPT-Live 会话里反复使用。官方写明「生成音色本身免费，真正开口说话仍按常规 GPT-Live 会话计费」。这对要做品牌声线、客服人设或本地化口播的团队，比只能从固定列表里挑声线更灵活。</p>
+<p>同日还为 GPT-Live 增加九个自然语言音色：德语 Nuri、Juni、Flitz；法语 Brise、Sillage；印地语 Nira；日语 Harema、Shida；韩语 Noeul。命名偏生活化，方向是「听起来像真人说话」而不是机械播报。</p>
+<p>与昨午补录的 ChatGPT Voice「GPT-Live-1.1 / Quip + 多语种 Live 音色」是同一产品线的不同落点：昨条侧重 ChatGPT 客户端体验与口音；本条是 API 侧 Prompt-to-voice 与又一批命名音色。读者不必把两条当成重复换皮，但采购或评测时应分清「ChatGPT 设置里选声」和「API 用描述造声」两条路径。</p>
+<p>发布说明未在本窗另给模型换代新闻；算力人事、Rosalind 申请等昨午或更早已覆盖的条目本期不展开。若只关心语音产品，优先读 openai.com/products/release-notes 10/16 两节原文。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官方 release notes 10/16 写明 Prompt-to-voice 与九音色名单。</li><li>分歧：无独立第三方实测延迟/音质对比。</li><li>待确认：各地区账户可见音色是否完全一致。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/products/release-notes/" target="_blank" rel="noopener">OpenAI Release Notes</a><span class="role">官方</span></li>
+        <li><a href="https://openai.com/products/release-notes/" target="_blank" rel="noopener">OpenAI Release Notes (Prompt-to-voice section)</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

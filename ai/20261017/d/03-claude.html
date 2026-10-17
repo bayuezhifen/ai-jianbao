@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic：Claude 闭路优化量子电路，部分方案较文献少一个数量级资源 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic：Claude 闭路优化量子电路，部分方案较文献少一个数量级资源</h1>
+    <p class="lede">10/16 研究博客：给 Claude 自然语言规格与自动评分器，在八类原语上自主迭代；与哈佛、QuEra 合作，全文见 arXiv。不回炒昨午 Fast mode GA。</p>
+    <div class="meta">
+      <span>2026-10-17</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 于 10 月 16 日发布研究文章，介绍用 Claude 设计更省资源的量子电路。团队给出八类来自化学、优化、物理模拟与数论的电路规格，外加自动检查正确性并按「量子比特数 × 门数」打分的评估程序；模型在回路里提案、收反馈、再改，中间基本不靠人工逐步教。</p>
+<p>官方表述是：在多条任务上，Claude 找到的新设计比此前已发表的最好方案同时更省比特、更省门；有的改进达到一个数量级以上。文章举了椭圆曲线点加里的模逆（divsteps 可逆实现）以及解码量子干涉（DQI）里 Reed–Solomon 解码器约 12 倍门数下降等例子，强调收益来自结构洞察，而不是在旧电路上微调参数。</p>
+<p>合作方包括哈佛的 Susanne Yelin、Mikhail Lukin（兼 QuEra），工作由 STEM Fellows 项目下的 Andi Gu 主导。文中写明使用 Claude Mythos 5 做闭路实验，并提醒早期实验里模型偏保守、有时过度复核，需用「并行多路线」与偶尔拓宽搜索的提示来推动探索。</p>
+<p>阅读时注意边界：这是算法/电路综合层面的资源估计改善，不等于今天的量子硬件已经能跑这些电路；也不应把「数量级」理解成所有八个任务都同幅度。昨午已收的 Opus 5.5 Fast mode 结束研究预览本期不回炒；Claude Code 请求 gzip 加速属同窗旁证，主条以该研究博客为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：anthropic.com 研究页 10/16；写明闭路评估与合作方。</li><li>分歧：媒体可能夸大「量子计算机更早到来」——官方是资源需求下降的条件句。</li><li>待确认：arXiv 全文与博客摘要在数值表上是否完全对齐。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research/designing-efficient-quantum-circuits" target="_blank" rel="noopener">Anthropic Research</a><span class="role">官方</span></li>
+        <li><a href="https://www.techcityauthority.com/2026/10/claude-code-faster-response-start.html" target="_blank" rel="noopener">Tech City Authority (Claude Code speed, same window)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
