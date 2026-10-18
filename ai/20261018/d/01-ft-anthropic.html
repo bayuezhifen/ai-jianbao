@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FT：Anthropic 向律所咨询智能体代人谈判的规则与伦理边界 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>FT：Anthropic 向律所咨询智能体代人谈判的规则与伦理边界</h1>
+    <p class="lede">知情人士称公司在研究智能体彼此议价时如何既替用户争取有利条件，又保持公平结果，并权衡何时请示人类、对其他智能体保持何种警惕。</p>
+    <div class="meta">
+      <span>2026-10-18</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英国《金融时报》记者 Cristina Criddle 10 月 18 日报道（Techmeme、深潮 TechFlow 等当日转述）：Anthropic 正就「个人智能体如何代表人类谈判、并与其他智能体打交道」向律所征求意见。两名知情人士称，公司希望弄清律师在谈判中如何既维护当事人利益、又促成可接受的公平结果，并把这类经验转成智能体之间应遵守的「谈判协议」。</p>
+<p>背景是智能体能力抬升后，代表不同用户、目标可能冲突的智能体将更频繁直接交涉。报道称 Anthropic 还在权衡：谈判过程中智能体应在多大程度上请示人类；对其他智能体保持多少警惕，才不至于陷入过度猜忌或「阴谋论」式推理。这与晨报已收的职场研究报告（初级技术岗占比下降、会议时间上升）同属「人机协作边界」话题，但本窗焦点是商业议价规则，而非编制结构，故单列本条、不回炒晨报就业稿。</p>
+<p>需要划清边界：这是媒体引述的内部讨论与外聘咨询，不是 Claude 产品页已上线的新谈判功能，也未见 Anthropic 官方博客同日发布对应产品说明。估值、IPO 传闻等二手解读不宜与本条绑成「已定战略」；简报只采信「正在向律所请教谈判伦理与协议」这一可交叉核对的事实主张。</p>
+<p>对开发者与企业客户的含义更偏治理前瞻：若智能体将代下订单、改合同或谈 SLA，平台方迟早要回答「谁授权、何时打断、对方智能体不可信时如何降级」。Anthropic 把问题交给法律专业人士，说明其把「安全与治理」当作与能力并进的产品差异化，而不是事后补丁。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：FT 报道经 Techmeme 置顶；TechFlow（10/18 05:03 UTC）与多家中文快讯复述同一核心：向律所咨询智能体谈判规则。</li><li>分歧：部分二手稿把 IPO/估值数字与本条强绑——原报道焦点是谈判伦理，估值属并行市场叙事。</li><li>待确认：咨询范围是否写入公开安全政策或即将发布的 Agent 产品条款；Anthropic 官方是否会发声。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.techmeme.com/261018/p2" target="_blank" rel="noopener">Techmeme (FT / Cristina Criddle)</a><span class="role">主来源</span></li>
+        <li><a href="https://techflowpost.com/en-US/newsletter/140380" target="_blank" rel="noopener">TechFlow</a><span class="role">次要</span></li>
+        <li><a href="https://cryptobriefing.com/ft-anthropic-wants-lawyers-negotiating-ethics-built-into-claude-agents-that/" target="_blank" rel="noopener">Crypto Briefing (FT relay)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
