@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek 发布 V4.1-Flash-1017：编程智能体更强、输出更短，Search &amp; Fetch API 同步开放 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>DeepSeek 发布 V4.1-Flash-1017：编程智能体更强、输出更短，Search &amp; Fetch API 同步开放</h1>
+    <p class="lede">10/17 官方上线小版本更新：端到端项目与智能体任务表现提升，单任务成本下降；自研搜索接口对全体开放，权重同步开源。</p>
+    <div class="meta">
+      <span>2026-10-18</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>DeepSeek 于 10 月 17 日发布 DeepSeek-V4.1-Flash-1017，并在官网、App 与 API 同步上线。官方将其描述为相对上一版 Flash 的「帕累托改进」：基准表现更强，任务完成更快，输出更短，从而压低单次任务成本。文档特别提到面向 DeepSeek Harness、腾讯 CodeBuddy、WorkBuddy 等编程壳的优化，并建议将 Harness 升到 v0.2.1-rc.1 或更新以获得最佳体验。</p>
+<p>产品叙事上，公司强调用带自我反馈的强化学习，改善「从零搭完整项目」的能力，并放出紫禁城三维建模、网页赛车、Godot 版 Portal 2 复刻等演示。媒体侧（如 The Decoder、X 上的技术讨论）把重点放在智能体编码基准与成本曲线：在相近或更高通过率下，单任务花费明显低于部分闭源旗舰，这与官方「更短输出、更快收尾」的说法相互印证。</p>
+<p>同期开放 Search & Fetch 两个接口，宣称基于自研搜索引擎、日均服务上亿次请求，定价各为每千次调用 0.75 美元。文档写明：经 DeepSeek Harness、Claude Code、Codex 等服务端工具走 Search & Fetch 的调用，对 DeepSeek API 用户暂免，计费自 2026-10-31 16:00 UTC 起。权重同时放到 Hugging Face 与 ModelScope，便于本地与第三方网关接入；Vercel AI Gateway 等也在同日附近宣布上架。</p>
+<p>对本窗口的意义：这是昨午简报之后、隔夜到今晨最明确的一条开源侧模型发布，且把「编程壳适配 + 搜索工具变现时间表 + 权重开源」捆在一起，而不是只发一张基准图。是否在真实仓库里稳定超过闭源旗舰，仍需看后续第三方复现与生产负载反馈。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官方 news261017 与 HF/ModelScope 权重页同日出现；第三方报道聚焦成本与智能体编码。</li><li>分歧：X 摘要偶见「7630 亿参数」等外推数字，应以官方卡片与模型卡为准。</li><li>待确认：Search & Fetch 免费期结束后企业账单冲击；Harness 旧版兼容边界。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://api-docs.deepseek.com/news/news261017/" target="_blank" rel="noopener">DeepSeek API Docs</a><span class="role">官方</span></li>
+        <li><a href="https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017" target="_blank" rel="noopener">Hugging Face model card</a><span class="role">官方</span></li>
+        <li><a href="https://the-decoder.com/deepseek-v4-1-flash-1017-beats-larger-rivals-in-agentic-tasks-while-once-again-massively-cutting-per-task-costs/" target="_blank" rel="noopener">The Decoder</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

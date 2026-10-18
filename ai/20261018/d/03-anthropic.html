@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 职场报告：初级技术招聘锐减，会议时间上升，人类注意力成瓶颈 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 职场报告：初级技术招聘锐减，会议时间上升，人类注意力成瓶颈</h1>
+    <p class="lede">官方研究称技术部门初级占比与初级技术招聘占比双降；日历数据显示人均会议约增两成；部分员工工作转向「管理多个 Claude」。</p>
+    <div class="meta">
+      <span>2026-10-18</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 于 10 月 16 日前后发布《How employment is changing at Anthropic》等系列经济学科研文章，TechCrunch 于 10 月 17 日跟进。核心观察是：自 2025 年初以来，技术部门初级员工占比从约 21% 降到 14%，初级技术招聘占比从约 27% 降到 9%；技术条线在全体员工中的占比从约 61% 降到 56%。公司把后者部分归因于销售、财务、招聘等业务职能自然扩张，以及「非技术同事也能靠编程工具自己写软件」。</p>
+  <p>报告与相关综述还描述内部工作方式变化：有人感到「事事都要用 Claude、永远要更快」；2026 年 4 月调查里，约 27% 员工称因 Claude 更高效，约 20% 称岗位从「亲手干活」转向「管理多个 Claude」，有人把这比作同时照顾一群孩子——每个智能体都要抢注意力。研究写道，Claude 产出的大量文本需要人类阅读与整理，于是「人类注意力与判断」反成吞吐瓶颈。</p>
+  <p>生产率指标上，公司列举人均代码量、销售成交与合同处理量上升，并承认「更多代码不等于更好代码或更大业务影响」，但称尚未看到质量下滑迹象。日历数据则显示人均会议时间同比约增 20%（技术贡献者约增 16%），解释是面对面协调对信任与问责「不可或缺」。另有摘要称智能体工时相对员工可达约 6 倍——该数字多见于二手综述，细节以官方 PDF/正文为准。</p>
+  <p>本条不回炒昨午量子电路研究。它回答的是另一问题：当实验室自己深度接入 Claude 后，组织形态会发生什么。对读者的实用含义是——初级岗位压缩、评审与会议变重、人机分工从「写代码」转向「管智能体」——可能先在头部实验室出现，再向其他行业扩散。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官方 employment-at-anthropic 与 TechCrunch 对初级招聘、会议时长数字口径一致。</li><li>分歧：智能体「6 倍工时」等传播数字需回查 PDF 定义（训练/推理/内部工具是否计入）。</li><li>待确认：初级招聘下降是否外推到全行业，还是 Anthropic 特有扩张阶段现象。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research/employment-at-anthropic" target="_blank" rel="noopener">Anthropic Research</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/10/17/anthropic-says-its-workforce-has-become-less-junior-and-is-spending-more-time-in-meetings/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
