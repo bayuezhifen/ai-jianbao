@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英伟达要求 NVHBM 底板走台积电 3nm；三星接受，标准 HBM 仍自产 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达要求 NVHBM 底板走台积电 3nm；三星接受，标准 HBM 仍自产</h1>
+    <p class="lede">韩媒与路透转述：为统一校验并抬升带宽，英伟达让三星、海力士、美光的 NVHBM 底板改用台积电 3nm；三星将保留标准 HBM 交钥匙模式。</p>
+    <div class="meta">
+      <span>2026-10-19</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>10 月 18 日晚间（首尔），《首尔经济》报道称，英伟达正在推动下一代定制高带宽内存 NVHBM 的底板（base die）统一采用台积电 3 纳米逻辑工艺；三星电子已内部评估并接受该要求。路透经 Business Standard 等转述同一消息。晨报英伟达栏为空，属窗口内漏收，午后补录。</p>
+<p>NVHBM 于 2026 年 8 月前后亮相，核心变化是把原先放在 GPU 侧的内存控制器下沉到 HBM 底板，从而给计算裸片腾出面积，并宣称相对标准 HBM4E 可提升约 30% 带宽、降低约 15% 功耗。底板一旦变成「带控制器的逻辑片」，工艺选择就更接近先进逻辑代工，而不是传统存储厂的交钥匙底板；不同供应商各做各的底板，还会让同一套设计反复验证。</p>
+<p>按报道口径，英伟达对三家存储供应商提出同一套组合：底板走台积电 3nm，核心裸片（core die）统一第六代 1c DRAM。三星方面称：NVHBM 跟进该要求，但标准 HBM 以及面向其他客户的定制产品仍维持自产交钥匙；若台积电产能吃紧，也会评估用自家代工产线做 NVHBM 底板备援。三家公司官方截至发稿多未逐条评论。</p>
+<p>对供应链的含义有两层。一层是「存储厂与逻辑代工厂在 HBM 制造环节首次深度绑在一起」——三星与台积电在先进封装上本有合作先例，但把竞争对手的 3nm 拉进自家 HBM 堆栈，说明瓶颈已经从「会不会堆」转到「底板逻辑能不能按统一规格量产」。另一层是产能：韩媒引用投行观点称明年 HBM 需求仍可能明显快于供给，底板成为新的卡点。</p>
+<p>读者取舍：这不是新的消费级显卡发布，而是 AI 工厂侧的内存规格政治。若只关心 RTX 桌面卡，本条可跳过；若关心训练集群 BOM 与交期，应把「NVHBM 是否按计划上量」和「台积电 3nm 产能如何在手机/HPC/底板之间切分」一并跟踪。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：报道称英伟达要求 NVHBM 底板走台积电 3nm；三星接受；标准 HBM 仍自产；核心裸片指向 1c DRAM。</li><li>分歧：产能数字与「首个合作」表述依赖韩媒匿名信源；三家官方未同步发新闻稿。</li><li>待确认：量产时间表、亚马逊 Annapurna/Trainium4 等首发客户节奏、三星自家代工备援是否量产。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://en.sedaily.com/finance/2026/10/18/samsung-to-tap-tsmc-3-nanometer-lines-for-nvidia-custom-hbm" target="_blank" rel="noopener">Seoul Economic Daily</a><span class="role">主来源</span></li>
+        <li><a href="https://www.business-standard.com/technology/tech-news/samsung-to-tap-tsmc-technology-for-nvidia-s-custom-memory-chips-report-126101800775_1.html" target="_blank" rel="noopener">Business Standard / Reuters</a><span class="role">次要</span></li>
+        <li><a href="https://www.channelnewsasia.com/business/samsung-use-tsmc-technology-nvidias-next-generation-memory-chips-seoul-newspaper-reports-6469576" target="_blank" rel="noopener">CNA</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

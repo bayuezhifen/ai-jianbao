@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Linux 7.3 正式发布：I/O 提速、Zen 6 预备，7.4 合并窗开启 · IT 行业简报</title>
+<title>Plex2Shell：公开 PoC 后蜜罐被打，植入挖矿与住宅代理；请升至 1.43.3.10861+ · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,33 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">操作系统与桌面</div>
-    <h1>Linux 7.3 正式发布：I/O 提速、Zen 6 预备，7.4 合并窗开启</h1>
-    <p class="lede">Linus Torvalds 在夏威夷时间 10 月 18 日下午打上 v7.3 标签；昨午简报截稿时 kernel.org 仍显示 7.3-rc7，本窗落地为正式版。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>Plex2Shell：公开 PoC 后蜜罐被打，植入挖矿与住宅代理；请升至 1.43.3.10861+</h1>
+    <p class="lede">研究者 10/16 公开利用链后，10/17 起有蜜罐遭未授权接管。影响 1.43.3.10861 之前版本；当前建议升到 1.43.4.10903，并检查 Codecs 与异常外连。</p>
     <div class="meta">
       <span>2026-10-19</span>
       <span class="dot"></span>
-      <span>操作系统与桌面</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Phoronix、LWN 于 10 月 18 日晚间（美东）先后报道：Linux 7.3 已按计划发布。git.kernel.org 上 v7.3 标签时间为 2026-10-18 13:14:58 -1000（夏威夷），对应北京时间约 10 月 19 日 07:14，落在本晨报窗口内。昨午简报明确写过「截至午后 kernel.org 仍为 7.3-rc7」——因此正式版属于本窗新事实，不是回炒。个别镜像或首页短时间仍可能显示 rc7、cdn 上的完整 tarball 尚未齐套，应以 git 标签与权威报道为准。</p>
-<p>按 Phoronix 综述，7.3 亮点包括现代平台上的 I/O 性能改进、AMD Zen 6 平台预备、Steam Controller 2026 内核驱动、较老 AMD GPU 改进，以及显存紧张场景下的 vRAM 管理等；合并窗口末期还修了部分罕见 SMP 启动挂死、以及个别三星 990 PRO / 990 EVO Plus 固件「谎报能力」的变通处理。LWN 则强调本发布周期的提交体量破纪录：约 1.8765 万个非合并提交、3021 名开发者（其中约 807 人为首次提交），并点出 binfmt_misc 扩展、大系统组调度、failfs、fchroot()、BPF 全局每 CPU 数据、sched_ext 收尾、NTFS3 备选数据流、SMB 服务端改进等。</p>
-<p>Torvalds 在发布说明里写：周日下午总算没搞错星期几，所以没有随机延期；本周没有特别意外，7.3 如约而出，次日开启 7.4 合并窗。他同时提醒：自己在年度家庭假期，当天多数时间在船上潜水，合并会偏晚开始、节奏暂时不规律。Phoronix 还提到，7.3 是否定为今年 LTS，还是留给年底前可能放出的 7.4，仍待 Greg Kroah-Hartman 等维护者后续表态。</p>
-<p>运维注意：发行版跟进稳定内核需要时间；生产环境若无硬需求，仍宜盯住各自长期支持分支，而不是立刻把主线 7.3 推进关键路径。本窗检索未见 Windows Insider / macOS 正式版在截稿前另有必须单列的新构建；Fedora 45 首个目标日被宣布「NO-GO」是 10 月 15 日旧闻，不补炒。对桌面用户而言，更实际的路径仍是等待发行版点名合入，而不是自行编译主线凑热闹。</p>
-<p>一句话收束：7.3 的「新」在于正式冻结与合并窗切换，而不是突然冒出与 rc 阶段完全不同的故事；但相对昨午「还在 rc7」的状态，标签落地本身就值得在操作系统栏记一笔。</p>
-<p>对桌面与服务器两侧的含义略有不同：游戏/手柄与 AMD 新平台预备更贴近桌面与 DIY；组调度、SMB、sched_ext 与大机 I/O 则更贴近云与虚拟化运维。无论哪一侧，rc7 到正式版的跳变本身不改变「先看发行版再上生产」的保守策略，但给了厂商镜像与云内核团队一个可以开始合入测试的锚点。</p></div>
+      <div class="body"><p>晨报漏洞栏写「无本窗新增 KEV」，但漏掉了正被社区热传的 Plex Media Server 利用链「Plex2Shell」。午后补录：研究者 ZM 于 10 月 16 日公开 write-up 与 PoC，将 CVE-2026-96652/96654/96655/96656 串成无需登录的远程代码执行；10 月 17 日起，BoredHackerBlog 的脆弱蜜罐观察到真实利用，载荷包括 XMRig 门罗币挖矿程序，随后还出现名为 myawesomeproxy 的住宅代理工具。</p>
+<p>利用大致路径是：借 /player/timeline 等接口做回环 SSRF，从仅本机可访问的插件接口偷出管理员令牌，再改写转码相关配置，把恶意库丢进 Codecs 目录，在下一次转码时以 Plex 用户身份执行。单条 CVE 的 CVSS 并不都「看起来很吓人」，但链式组合后对暴露在公网 32400 端口的家庭/NAS 实例足够致命。</p>
+<p>修复线要写清楚：必须升到 1.43.3.10861 或更高；「1.43.3」字样不够，因为 1.43.3.10828 仍属受影响。社区与汇总页目前多推荐直接升到公开版 1.43.4.10903。Plex 早在 9 月发过「请更新」公告，但细节与 CVE 映射滞后；截至整理时，相关 CVE 尚未进入 CISA KEV。</p>
+<p>处置建议（面向自建用户，而非教人攻击）：核对服务器版本；更新后不需要远程访问就关掉 Remote Access 与 32400 端口映射；检查 Codecs 目录异常文件、TranscoderH264Options 是否含可疑参数、是否有 xmrig / 陌生子进程与异常上行流量；轮换 Plex 账号密码并启用两步验证。Docker/Unraid 用户注意镜像标签是否钉死旧版。</p>
+<p>与昨午 OpenCode Console 密钥事件分开：那是第三方 API 密钥暴露；本条是媒体服务器远程接管。两者都提醒「家用/开发者常开的高权限软件」一旦暴露公网，补丁窗口可以短到「PoC 次日就有蜜罐中招」。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：Phoronix 与 LWN 均报道 7.3 已发布；git 标签 v7.3 存在且时间戳可核。</li><li>分歧：部分镜像/首页在短时间内仍可能显示 7.3-rc7 或 tarball 尚未同步到 cdn.kernel.org——以 git 标签与权威报道为准。</li><li>待确认：7.3 是否被定为 2026 年 LTS；各大发行版合入时间表。</li></ul>
+      <ul><li>多方一致：PoC 于 10/16 公开；10/17 起有蜜罐利用报告；修复门槛为 1.43.3.10861+；出现挖矿与代理类载荷。</li><li>分歧：大规模「在野感染数量」尚无权威统计；个别社媒把时间线写成「先在野后 PoC」，与公开时间线相反。</li><li>待确认：是否进入 KEV、厂商是否对仍脆弱实例主动通知、代理载荷后续用途。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.phoronix.com/news/Linux-7.3-Released" target="_blank" rel="noopener">Phoronix</a><span class="role">主来源</span></li>
-        <li><a href="https://lwn.net/Articles/1101143/" target="_blank" rel="noopener">LWN</a><span class="role">次要</span></li>
-        <li><a href="https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tag/?h=v7.3" target="_blank" rel="noopener">git.kernel.org v7.3 tag</a><span class="role">官方</span></li>
+        <li><a href="https://zmain.info/blog/plex2shell" target="_blank" rel="noopener">ZM / Plex2Shell</a><span class="role">主来源</span></li>
+        <li><a href="http://www.boredhackerblog.info/2026/10/plex-vulnerabilities-being-exploited-in.html" target="_blank" rel="noopener">BoredHackerBlog</a><span class="role">次要</span></li>
+        <li><a href="https://ctxsec.com/items/plex-media-server-plex2shell-exploited-2026-10" target="_blank" rel="noopener">ctxsec summary</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
