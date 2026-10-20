@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grok Bot 上 iPhone 操作按钮；马斯克称或成「最爱员工」；再核仍 4.7、无 4.8 · IT 行业简报</title>
+<title>AI 代理借暴露的 Cairn 实例攻入百余企业站点；Deere 等公开回应 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,33 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>Grok Bot 上 iPhone 操作按钮；马斯克称或成「最爱员工」；再核仍 4.7、无 4.8</h1>
-    <p class="lede">@bot 官宣可把 Grok Bot 设为 iPhone Action Button 一键语音；马斯克本窗称「maybe your favorite employee」并多次转发用户案例。docs.x.ai 再核仍列 grok-4.7，未见 4.8，未取消 4.7。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>AI 代理借暴露的 Cairn 实例攻入百余企业站点；Deere 等公开回应</h1>
+    <p class="lede">路透据安全公司 NorForge：说中文攻击者利用暴露的开源 Cairn 任务引擎，用 AI 代理自主探测并攻破百余网站；The Verge 等跟进，公开点名涉及 Deere、SharkNinja、Cummins 等确认侧。</p>
     <div class="meta">
       <span>2026-10-20</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>北京时间 10 月 20 日凌晨前后（世界时 10 月 19 日晚），官方账号 @bot 发帖：「Grok Bot is now one step closer. Set it as your iPhone's Action Button and press it to talk with Bot.」附演示视频：侧键一按，灵动岛出现呼叫态，再进入与 Bot 的语音会话。后续说明帖写明：需 iPhone 15 Pro 或更新机型，将 Grok Bot 升级到 1.16，再到「设置 → 操作按钮 → 快捷指令」选「Grok Bot → Start Voice Chat」。</p>
-<p>同窗马斯克本人继续给代理产品加压：世界时约 16:27 发「Grok @Bot might turn out to be your favorite employee」并引用用户长文；更早还有「Hire Grok @Bot today. You won’t regret it.」以及转发「笔记本上几乎什么都能干」等用户反馈。这些帖子谈的是 Bot 代理能力与使用体验，不是 API 主型号换代。昨午已收的「自有电脑 / 特性清单 / 电话订座」叙事在本窗被 Action Button 这条硬件捷径接上——少解锁、少找 App，更接近「想到就丢给代理」。</p>
-<p>版本档位按惯例再核：截至今晨，docs.x.ai 模型与定价页仍列出 grok-4.7，并写「For everything else, including code, use Grok 4.7」；全文未见 grok-4.8 / grok-4-8。文档中另有 grok-4.20 等既有条目，不能写成「4.8 已上线」或「4.7 已取消」。xAI 官方新闻页本窗无新的旗舰模型稿；马斯克本窗也未见关于训练进度或「4.8 取代 4.7」的定量新帖。</p>
-<p>对读者的取舍：若只盯 API 版本号，本窗仍无阶梯变更；若关心代理产品，Action Button + 马斯克背书说明 Bot 继续往「语音优先、少打开网站」推进。Android 是否有对等捷径、一键通话挂断后长任务是否续跑，官方尚未说明。支付与连接器授权风险并未因侧键消失。</p>
-<p>交叉阅读：把本条与昨午「自有电脑」帖连起来，看到的是入口（侧键）与执行环境（云端电脑）同时加厚；把本条与 docs 再核连起来，看到的仍是「产品很吵、型号很静」。在没有 xAI 新闻稿或 docs 变更日志宣布 4.8 之前，简报拒绝被二手「4.8 取代 4.7」带节奏。</p></div>
+      <div class="body"><p>路透 10 月 19 日独家报道，安全公司 NorForge 首席威胁研究员 Snorre Fagerland 在扫描意外暴露的 Cairn（开源「通用问题解决」引擎）实例时，旁观到多名攻击者把 AI 代理当成主力劳动力。其中最活跃的是一名说中文的攻击者：自约 9 月 25 日起，用不足百字中文指令描述偏好入侵手法，让代理对美加澳日等地电商与企业站点长时间探测；截至报道前一周，尝试目标逾 1200 个，成功闯入逾 100 个站点，单次成功常见耗时约 23 小时。Fagerland 估算该战役代币花费约 5000 美元量级，折合每次成功约 50 美元；代理栈似混用 DeepSeek 与 Anthropic Claude Code 一类工具。</p>
+<p>路透独立核对活动日志后点出部分受害者身份；The Verge 同日综述并补充企业回应：John Deere 称已采取必要处置、暂无迹象表明敏感信息被访问；SharkNinja 称命中的是仅含产品支持信息的独立站点且威胁已遏制；Cummins 称正调查涉及第三方供应商站点的潜在事件。路透写明无法确认各起入侵是否都伴随未授权数据外泄。NorForge 还称发现约二十余个「很可能恶意」的暴露 Cairn 实例，并在推动下线；Cairn 作者强调「误用是人的决定，不是引擎功能」。</p>
+<p>这件事的警讯不在「又一个 CVE 编号」，而在经济学与分工：人类只写短目标，代理负责侦察、找面板、拼利用链，一人可并行铺开大规模试探。这与晨报已收的「把企业内部 AI 代理当内部人管」形成对照——攻防两侧都在代理化。暴露的调试/编排面板本身也是攻击面：没锁好的任务引擎等于直播犯罪过程。</p>
+<p>与边界：昨午 Plex2Shell、此前 OpenCode Console 密钥事件不回炒。本条是晨报漏收的代理化入侵实证，午后补录。尚非某一单一产品的官方紧急补丁公告，企业应按自身暴露面做 Cairn/同类编排面板清点、密钥轮换与 WAF/漏洞扫描。</p>
+<p>对读者的取舍：不要把「AI 自动黑进约翰迪尔」读成科幻；要读成「低成本、可并行、少人值守」的入侵流水线已经出现在公开报道里。防御方需要同时管好人用的代理权限，和互联网上误暴露的代理控制台。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：@bot 官宣 Action Button；需 15 Pro+ 与 App 1.16；马斯克本窗多次力挺 Bot；docs 仍含 grok-4.7；未见 grok-4.8；未见取消 4.7。</li><li>分歧：二手偶发把 4.20 或内部标识写成「4.8 已取代」——与官方文档不符，不采纳。</li><li>待确认：全量套餐是否默认开放、Android 对等捷径、通话结束后任务是否续跑。</li></ul>
+      <ul><li>多方一致：Reuters 独家 + Verge 跟进；NorForge 观察暴露 Cairn；逾 100 站成功、逾 1200 尝试；Deere/SharkNinja/Cummins 有公开回应口径。</li><li>分歧：部分标题暗示「核心业务全面失陷」——公开回应多指向支持站/第三方站或「无敏感数据迹象」，程度因实体而异。</li><li>待确认：各受害者是否确有数据外泄、Cairn 暴露实例下线进度、代理具体模型版本与提示全文。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://x.com/bot/status/2112252507762368684" target="_blank" rel="noopener">Grok Bot @bot (Action Button)</a><span class="role">主来源</span></li>
-        <li><a href="https://x.com/elonmusk/status/2112219181500281276" target="_blank" rel="noopener">Elon Musk (favorite employee)</a><span class="role">主来源</span></li>
-        <li><a href="https://x.com/elonmusk/status/2112083685872644421" target="_blank" rel="noopener">Elon Musk (hire Bot)</a><span class="role">次要</span></li>
-        <li><a href="https://docs.x.ai/developers/models" target="_blank" rel="noopener">xAI Docs models</a><span class="role">官方</span></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins" target="_blank" rel="noopener">The Verge</a><span class="role">主来源</span></li>
+        <li><a href="https://www.yahoo.com/news/us/articles/exclusive-one-hacker-used-ai-100625247.html" target="_blank" rel="noopener">Yahoo News (Reuters)</a><span class="role">主来源</span></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/a-chinese-hacker-used-ai-agents-to-break-into-more-than-100-company-websites-deere-and-sharkninja-among-websites-hit-by-open-source-ai-powered-problem-solving-platform-demo" target="_blank" rel="noopener">Tom&#x27;s Hardware</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

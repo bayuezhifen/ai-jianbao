@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>微软：把 AI 代理当「内部人」管——独立身份、动态权限与条件访问 · IT 行业简报</title>
+<title>Nscale 与 Anthropic 再谈约 450 亿美元算力：Monarch 二号楼、Vera Rubin、约 460MW · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">身份与访问</div>
-    <h1>微软：把 AI 代理当「内部人」管——独立身份、动态权限与条件访问</h1>
-    <p class="lede">Microsoft Security 10/19 博客扩展 Project Perception：本地代理发现扩至约 60 种，Entra Agent ID、任务级动态权限与 Dynamic Conditional Access 把「模型供给智能、控制面保留权威」落到产品叙事。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Nscale 与 Anthropic 再谈约 450 亿美元算力：Monarch 二号楼、Vera Rubin、约 460MW</h1>
+    <p class="lede">彭博率先、路透跟进：英伟达系云厂商 Nscale 正与 Anthropic 洽谈新的约 450 亿美元算力供应，指向西弗吉尼亚 Monarch 园区第二栋、约 460 兆瓦、搭载英伟达 Vera Rubin；条款仍可变。</p>
     <div class="meta">
       <span>2026-10-20</span>
       <span class="dot"></span>
-      <span>身份与访问</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>微软身份与网络访问 CVP Nadim Abdo 于 10 月 19 日在 Security Blog 发文《Agents are your newest insiders》。立论很直接：代理会写代码、批报销、调工具，能力来自对公司数据与系统的访问；访问一开，风险画像就接近「内部人」——未必恶意，但可被提示注入、配置漂移或凭证滥用带偏，且以机器速度连续动作。</p>
-<p>Satya Nadella 被引述的原则是：把「智能供给」与「权威控制」拆开，不要让模型当自己的安保官；能访问什么、能做什么、该不该继续跑，必须放在模型够不着的控制面。文中据此展开 Know / Contain / Protect / Adapt 四条连续责任，并宣布把 Project Perception 从「用代理做防御」扩到「防代理成为失控内部人」。</p>
-<p>产品增量包括：本地代理发现再加约 35 类，合计支持约 60 种本地代理（点名含 Claude Code、OpenAI Codex、GitHub Copilot 等），纳入统一注册表；扩展 Microsoft Entra Agent ID，让代理拥有与赞助员工分离的一等身份；引入 Dynamic Permissions（默认无权限或最小权限，按任务授权、限时收回，高影响动作可要求可证明的人类批准）；以及 Dynamic Agent Risk + Dynamic Conditional Access——风险升高时可按梯度收权限、保读禁写、缩网络、要求人工批准，直至隔离运行时或停跑，而不是只会「一刀关掉」。</p>
-<p>Guardian Agents 与 Playbooks 被描述为「人定目标与审批边界、代理执行连续安全操作」。文末指向 Ignite 进一步讲解。这是官方安全叙事与能力路线图，不是客户环境已默认全开的变更说明；具体许可与滚动节奏需对照 Entra / Agent 365 文档。</p>
-<p>本窗边界：ConnectWise Cloud Backup OAuth 供应链晨报（10/19）已收，不回炒。本条只覆盖微软「代理身份与动态控制」这一官方增量。</p></div>
+      <div class="body"><p>彭博 10 月 19 日报道、路透同日转述：Nscale 正与 Anthropic 洽谈一笔可能价值约 450 亿美元的算力供应，目标是其西弗吉尼亚 Monarch 数据中心园区的第二栋设施。知情人士称，该楼规划约 460 兆瓦算力，拟采用英伟达新一代 Vera Rubin AI 芯片。Nscale 与 Anthropic 未立即回应路透置评；路透写明未能独立核实彭博细节。</p>
+<p>这不是双方第一次大手笔绑定。今年 8 月，路透/彭博已报道 Anthropic 将向 Nscale 在 Monarch 的算力租约投入约 450 亿美元量级。本次新闻的增量是「第二栋」与「再谈一笔同量级合同」；另有说法称 Anthropic 对预计第三栋楼还握有优先购买权，讨论仍在进行、条款可改。对 Anthropic 而言，这是在 Google TPU 等既有路径之外，继续用英伟达系第三方云锁长期供给；对 Nscale 而言，则是在微软因供电接入延期退出某旗舰锚租之后，用 Claude 需求稳住园区与 IPO 叙事。</p>
+<p>读数时要克制：450 亿美元是「可能价值」与洽谈口径，不是已签字的公开合同全文；功率、芯片代际、交割年份都可能随供电与供应链滑动。市场情绪上，CoreWeave 等 AI 云商的高杠杆近来被投资人盯得很紧，巨额远期算力承诺容易同时被解读成「需求坚挺」和「表外风险堆积」。</p>
+<p>与栏目边界：公有云 IaaS/PaaS 本身不单开专栏，本条落在 Claude/Anthropic 侧的算力采购与 IPO 前扩容。昨午已收的 NVHBM/台积电 3nm 是存储供应链，不与本条混写。晨报未收本条，午后补录。</p>
+<p>对读者的取舍：若只关心 Claude 产品版本，本窗仍无新模型发布；若关心实验室资本开支与上市前锁定供给，Monarch 二号楼谈判是目前最硬的公开增量。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：10/19 官方博客；代理独立身份 + 动态权限 + 条件访问叙事；本地代理发现扩至约 60 种；Nadella「信任控制面多于信任模型」原则被引用。</li><li>分歧：媒体标题或写成「全面发布新产品」，原文是能力扩展与 Ignite 预热，落地节奏因租户而异。</li><li>待确认：各 SKU 默认开通范围、与第三方 MCP 的策略粒度、Guardian Agents 对客户的实际 GA 日。</li></ul>
+      <ul><li>多方一致：彭博首发、路透转述「约 450 亿美元」洽谈；指向 Monarch 二号楼；Vera Rubin；约 460MW；双方未确认。</li><li>分歧：部分标题写成「已签约」——原文是 in talks / 细节可变。</li><li>待确认：最终金额、交割年份、是否含优先权行权、与 8 月租约如何叠加计价。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.microsoft.com/en-us/security/blog/2026/10/19/agents-are-your-newest-insiders-security-must-move-at-their-speed/" target="_blank" rel="noopener">Microsoft Security Blog</a><span class="role">官方</span></li>
+        <li><a href="https://finance.yahoo.com/technology/ai/articles/nscale-anthropic-talks-45-billion-193754631.html" target="_blank" rel="noopener">Yahoo Finance (Reuters)</a><span class="role">主来源</span></li>
+        <li><a href="https://www.channelnewsasia.com/business/nvidia-backed-nscale-anthropic-in-talks-new-45-billion-ai-cloud-deal-source-says-6473376" target="_blank" rel="noopener">CNA (Reuters)</a><span class="role">次要</span></li>
+        <li><a href="https://news.bloomberglaw.com/capital-markets/nscale-anthropic-in-talks-for-45-billion-cloud-computing-deal" target="_blank" rel="noopener">Bloomberg Law</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI：低资源语言编码大跃升，GPT-6 Astra 在 20 语种平均通过率约 87% · IT 行业简报</title>
+<title>Cloudflare 推出 Clairic：Workers AI 预览抽取模型，类型化字段带置信度 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI：低资源语言编码大跃升，GPT-6 Astra 在 20 语种平均通过率约 87%</h1>
-    <p class="lede">官方发布 MultiLangBench 与 COBOL 迁移评测：面向 COBOL、Fortran、Visual Basic 等「训练语料少」的语言，新一代模型在从零实现与行为保持迁移上均显著高于上一代。</p>
+    <div class="sec-label">开发者工具</div>
+    <h1>Cloudflare 推出 Clairic：Workers AI 预览抽取模型，类型化字段带置信度</h1>
+    <p class="lede">Cloudflare 博客宣布 System One 类抽取模型 Clairic 登陆 Workers AI 预览：输入非结构化文本/图片与字段 schema，单次前向返回带跨度、置信度与区间的类型化值；拟稍后开源权重。</p>
     <div class="meta">
       <span>2026-10-20</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>开发者工具</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 于 10 月 19 日（约世界时正午，上海晚间）在官网发布《Advancing Coding in Low-Resource Programming Languages》。核心不是新聊天功能，而是承认：COBOL、Fortran、OCaml、Visual Basic 等语言在开源与文档上远少于 Python/JavaScript，却撑着银行、柜员机、天气预报与核安全分析等关键系统；客户反馈里，编码模型在这些语言上经常「够不着」。</p>
-<p>公司为此公开两套评测。MultiLangBench 要求模型在指定语言里从零搭出一套与 SQLite 兼容的数据库引擎，用同一套库文件接口跨语言对照；官方称 GPT-6 Astra 在 20 种语言上平均测试通过率约 87.4%，对比 GPT-5.6 Sol 约 26.8%，且每种语言都有提升——例如 COBOL 约 10.9%→72.1%，Fortran 约 21.4%→83.5%。成本更低的 GPT-6 Luna 平均约 40.3%，估算 API 成本大约低 78%。评测设置与测试套件已放到 GitHub。</p>
-<p>第二条是 COBOL 迁移：把程序迁到 C++/Java/Kotlin/Python/Rust，要求在隐藏测试上做到可观察输出的字节级一致，以保住定点运算、缺省记录处理等「写在代码里的业务规则」。官方称 GPT-6.1 Sol 在低推理力度下准确率约 86.6%（上一代同设置约 5.4%），高推理力度下约 97.9%。文中明确：评测进步不等于生产可直接上线，仍须专家复核与业务规则测试。</p>
-<p>本窗边界：昨午已收的 Dots 欧盟可用性、八州诉讼等不回炒；GPT-Live 语音等更早窗口亦不展开。本条只覆盖「低资源语言编码评测 + 官方数字」这一增量。二手稿若把 Astra/Luna 写成「全面取代旗舰聊天模型」，与原文「编码能力进展」不符，本简报不采纳。</p>
-<p>对运维与现代化团队：若仓库里仍有 COBOL/Fortran 债，可以把 MultiLangBench 与迁移评测当作「模型能不能碰」的参照，而不是「一键重写合规」的许可证。</p></div>
+      <div class="body"><p>Cloudflare 于 10 月 19 日在官方博客宣布推出抽取模型 Clairic，并在 Workers AI 以 <code>@cf/cloudflare/clairic</code> 提供预览。团队把其归入「System One」：一次前向、不生成 token，面向「发票总额是多少、哪天送达、维修大概花多少」这类需要类型化数值而非长文推理的任务；决策类仍交给既有的 Clef 等，长文写作仍交给 LLM。</p>
+<p>调用形态是 <code>state</code>（文本，最多四张图）加一组命名 <code>fields</code>。字段类型覆盖 text、number、date/time/datetime、duration、list、estimate、forecast 等。返回值带 <code>confidence</code>、<code>p_null</code>；估计/预测还带中位数与约 80% 区间。博客用客服邮件与小票照片演示：可把单价与税加总、从两个日期算出间隔天数，缺失字段返回 null 而不是一本正经地瞎编；官方也坦承多步算术、陌生域估计与长程预测仍弱，建议复杂计算放代码层。</p>
+<p>他们还给出与「全程 LLM」流水线的对照：抽取→决策→回信的级联在演示里约 19 秒对约 62 秒，成本约低一半。这是厂商自测，读者应自行复现。定价叙事是「只按输入计费、通常亚秒级」，具体以 Workers AI 价目为准。权重开源时间表写的是「soon」，预览端点被标为早期检查点，后续会迭代。</p>
+<p>与栏目边界：本条落在开发者工具/边缘推理 API，不单开公有云专栏。Cursor、JetBrains 等本窗无新 changelog，不回炒。晨报未收 Clairic，午后补录。</p>
+<p>对工程团队的提醒：类型化输出不等于永远正确——要用置信度与人工复核门槛决定哪些字段能自动入账；把抽取模型塞进代理链时，仍需防提示注入与越权写回。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：官方 10/19 博客发布；MultiLangBench 与 COBOL 迁移两套评测；Astra/Luna/6.1 Sol 数字与官网一致；评测已开源。</li><li>分歧：部分转述突出「87% 全能」，原文是 20 语种平均通过率，COBOL 仍是最难一档。</li><li>待确认：API 上各模型对上述语言的默认路由、企业 SLA、与真实遗留仓库差距。</li></ul>
+      <ul><li>多方一致：Cloudflare 官方博客与 Workers AI changelog/文档均出现 Clairic；预览托管；拟开源权重；强调抽取/估计/预测与决策模型分工。</li><li>分歧：第三方「已全面开源」说法超前——官博仍写 intend to release open-weights soon。</li><li>待确认：开源许可证与日期、生产 SLA、多图/长表场景质量上限。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/low-resource-programming-languages/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://zglg.work/en/ai/news/2026-10-19-openai-publishes-new-evaluations-for-coding-in-low-resource-languages-like-co" target="_blank" rel="noopener">zglg.work 转述</a><span class="role">次要</span></li>
+        <li><a href="https://blog.cloudflare.com/clairic-extraction-model/" target="_blank" rel="noopener">Cloudflare Blog</a><span class="role">官方</span></li>
+        <li><a href="https://developers.cloudflare.com/changelog/post/2026-10-19-clairic-workers-ai/" target="_blank" rel="noopener">Workers AI Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://developers.cloudflare.com/workers-ai/models/clairic/" target="_blank" rel="noopener">Clairic model docs</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
