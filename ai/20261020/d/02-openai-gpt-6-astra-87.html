@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI：低资源语言编码大跃升，GPT-6 Astra 在 20 语种平均通过率约 87% · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI：低资源语言编码大跃升，GPT-6 Astra 在 20 语种平均通过率约 87%</h1>
+    <p class="lede">官方发布 MultiLangBench 与 COBOL 迁移评测：面向 COBOL、Fortran、Visual Basic 等「训练语料少」的语言，新一代模型在从零实现与行为保持迁移上均显著高于上一代。</p>
+    <div class="meta">
+      <span>2026-10-20</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于 10 月 19 日（约世界时正午，上海晚间）在官网发布《Advancing Coding in Low-Resource Programming Languages》。核心不是新聊天功能，而是承认：COBOL、Fortran、OCaml、Visual Basic 等语言在开源与文档上远少于 Python/JavaScript，却撑着银行、柜员机、天气预报与核安全分析等关键系统；客户反馈里，编码模型在这些语言上经常「够不着」。</p>
+<p>公司为此公开两套评测。MultiLangBench 要求模型在指定语言里从零搭出一套与 SQLite 兼容的数据库引擎，用同一套库文件接口跨语言对照；官方称 GPT-6 Astra 在 20 种语言上平均测试通过率约 87.4%，对比 GPT-5.6 Sol 约 26.8%，且每种语言都有提升——例如 COBOL 约 10.9%→72.1%，Fortran 约 21.4%→83.5%。成本更低的 GPT-6 Luna 平均约 40.3%，估算 API 成本大约低 78%。评测设置与测试套件已放到 GitHub。</p>
+<p>第二条是 COBOL 迁移：把程序迁到 C++/Java/Kotlin/Python/Rust，要求在隐藏测试上做到可观察输出的字节级一致，以保住定点运算、缺省记录处理等「写在代码里的业务规则」。官方称 GPT-6.1 Sol 在低推理力度下准确率约 86.6%（上一代同设置约 5.4%），高推理力度下约 97.9%。文中明确：评测进步不等于生产可直接上线，仍须专家复核与业务规则测试。</p>
+<p>本窗边界：昨午已收的 Dots 欧盟可用性、八州诉讼等不回炒；GPT-Live 语音等更早窗口亦不展开。本条只覆盖「低资源语言编码评测 + 官方数字」这一增量。二手稿若把 Astra/Luna 写成「全面取代旗舰聊天模型」，与原文「编码能力进展」不符，本简报不采纳。</p>
+<p>对运维与现代化团队：若仓库里仍有 COBOL/Fortran 债，可以把 MultiLangBench 与迁移评测当作「模型能不能碰」的参照，而不是「一键重写合规」的许可证。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官方 10/19 博客发布；MultiLangBench 与 COBOL 迁移两套评测；Astra/Luna/6.1 Sol 数字与官网一致；评测已开源。</li><li>分歧：部分转述突出「87% 全能」，原文是 20 语种平均通过率，COBOL 仍是最难一档。</li><li>待确认：API 上各模型对上述语言的默认路由、企业 SLA、与真实遗留仓库差距。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/low-resource-programming-languages/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://zglg.work/en/ai/news/2026-10-19-openai-publishes-new-evaluations-for-coding-in-low-resource-languages-like-co" target="_blank" rel="noopener">zglg.work 转述</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
