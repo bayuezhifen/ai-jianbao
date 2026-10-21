@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI 收购 Orchestra Bio，并入 Rosalind 生命科学栈 · IT 行业简报</title>
+<title>eMudhra 八张中级 CA 私钥熵不足遭吊销；Firefox/Chrome/Android 已拦截 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI 收购 Orchestra Bio，并入 Rosalind 生命科学栈</h1>
-    <p class="lede">10 月 20 日 OpenAI 官宣收购药物开发协调平台 Orchestra Bio，团队与技术并入 Rosalind；Axios 同步独家。财务条款未披露。不回炒昨午约 300 亿融资传闻。</p>
+    <div class="sec-label">身份与访问</div>
+    <h1>eMudhra 八张中级 CA 私钥熵不足遭吊销；Firefox/Chrome/Android 已拦截</h1>
+    <p class="lede">10 月 17 日报告后，Mozilla 用 OneCRL、Chrome 用 CRLSet 拦下受影响中级 CA；Firefox 另发 158.0.1 与 ESR 补丁。晨报身份栏未收，午后补录。</p>
     <div class="meta">
       <span>2026-10-21</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>身份与访问</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>覆盖窗口内，OpenAI 在生命科学方向落下明确并购：公司官宣收购 Orchestra Bio，把其团队与平台并入 Rosalind——面向生命科学研究的模型与工具套件。Axios 同日以独家形式确认此事，并强调财务条款未公开。这与昨午简报已收的「加速融资、估值或超 1.4 万亿」不是同一条：本窗谈的是产品与组织落地，不是估值叙事。</p>
-<p>OpenAI 自己的表述很直白：新药从靶点发现到获批，在美国平均大约要 10 到 15 年；科学之外，项目还要在内部部门与外部伙伴之间协调，系统往往割裂。Orchestra 做的是「人与 AI 代理一起推进药物项目」：科学家与项目负责人把监测研究、跟踪时间线、识别延误等工作交给代理，自己腾出手做判断。举例说，一批生产失败可能拖累临床试验启动，代理要帮忙找出受影响的活动与日程，汇总信息并比较应对方案。</p>
-<p>与 Rosalind 的拼图也对得上。GPT-Rosalind 面向生物与化学推理，Rosalind Workbench 把模型接到科学工具与数据上。OpenAI 写明目标是：把科学发现与推进潜在药物所需的研究、决策、下一步动作连起来。官宣还点到与 Novo Nordisk、Moderna 的既有合作，说明并购是在既有药企关系上加一层「开发协调」能力，而不是从零跳进生物医药。</p>
-<p>行业对照上，Axios 提到 Anthropic 今年 4 月以约 4 亿美元收购 AI 生物科技初创 Coefficient Bio，又在 Claude Science、生物实验室等方向加码。两边都在把「写代码、做安全」之外的科学应用做成可讲述的产品故事。对本窗读者更有用的事实仍是：Orchestra 并入 Rosalind；条款未披露；未宣称已缩短某款上市药物的真实临床周期。</p>
-<p>需要留心的边界：收购新闻不是疗效证明。OpenAI 没有给出 Orchestra 在真实管线上已缩短多少个月、或已帮助哪款分子进入 IND。读者若把「协调代理」听成「AI 已在做药」，会夸大本窗材料。下一步应看整合后的对外产品形态、对既有 Rosalind 用户的权限与数据边界，以及条款是否在后续 SEC 或融资材料中间接披露。</p></div>
+      <div class="body"><p>印度证书机构 eMudhra 的八张中级 CA 私钥在密钥仪式脚本失误后熵不足（有公开复盘称私钥长度异常到只有一字节量级），使攻击者有可能伪造仍被信任链承认的 HTTPS 证书。Mozilla 安全博客写：10 月 17 日世界时约 20:06 接到报告后，不到三小时用 OneCRL 把拦截推到标准配置的 Firefox 用户；10 月 20 日再发 Firefox 158.0.1（桌面与 Android）以及 ESR 115.43.1、153.5.1，照顾那些关掉自动更新、收不到 OneCRL 的少数人，并更新 NSS 3.131.1 移除签发这些中级证书的根。</p>
+<p>Chrome 与 Android 安全团队同步说明：Chrome Root Program 同日约 18:05 UTC 接到报告，约 19:45 UTC 完成 CRLSet，按 SPKI 哈希拦下受影响中级 CA，用户不必重启浏览器。Android 与 Chromebook 约在 10 月 19 日世界时 22:00 经 Google Play 服务拿到等价更新，重启设备可立刻触发。Google 还写：在拦截前，这些中级 CA 链上的证书没有进证书透明（CT）日志，因此对默认强制 CT 的 Chrome 客户端，尚未观察到可落地的欺诈证书滥用；计划约 10 月 27 日从 Chrome 根存储移除 emSign ECC Root CA - G3，并提示仍挂在该根下的站点尽快换证。</p>
+<p>eMudhra 公开声明承认事故并配合吊销；Sectigo 等对交叉签名副本也有跟进吊销。浏览器侧动作快，但自带 CA 包、不查吊销的软件（例如某些 curl/旧系统信任库）仍可能滞后——SANS 等提醒运维检查本地信任库。Chrome Root Program 还表示将继续评估 eMudhra 其余证书是否留在根存储，后续更新会走公共讨论渠道。</p>
+<p>边界：晨报身份栏写「微软代理身份昨晨已收」未提本条；波兰 UOKiK/ATT 见晨报大厂平台政策，不混写。本条只覆盖中级 CA 熵事故与浏览器信任链应急。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：OpenAI 官网与 Axios 均确认收购 Orchestra Bio 并入 Rosalind；条款未披露。</li><li>分歧：二手偶发把并购与昨午融资估值写成「同一笔交易」——时间线与题材均不同，不采纳。</li><li>待确认：对价、关闭时间、Orchestra 品牌是否保留、对 Novo Nordisk / Moderna 工作流的具体接入方式。</li></ul>
+      <ul><li>多方一致：八张中级 CA 私钥问题；Mozilla OneCRL + 158.0.1；Chrome CRLSet + Android Play 服务；拟移除 emSign ECC Root CA - G3。</li><li>分歧：报告时间戳 Mozilla/Google 略有出入（约 20:06 vs 18:05 UTC）——以各家自述响应链为准，不影响「已拦截」事实。</li><li>待确认：受影响公网 TLS 订户迁移进度、eMudhra 其余根是否被进一步移出各家根存储。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/openai-to-acquire-orchestra-bio" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://www.axios.com/2026/10/20/exclusive-openai-biotech-startup-drug-development" target="_blank" rel="noopener">Axios</a><span class="role">主来源</span></li>
+        <li><a href="https://blog.mozilla.org/security/2026/10/20/protecting-firefox-users-following-the-compromise-of-emudhra-intermediate-certificates/" target="_blank" rel="noopener">Mozilla Security Blog</a><span class="role">官方</span></li>
+        <li><a href="https://blog.google/security/protecting-chrome-and-android-users-from-compromised-emudhra-intermediate-ca-certificates/" target="_blank" rel="noopener">Google Chrome/Android Security</a><span class="role">官方</span></li>
+        <li><a href="https://emudhra.com/en/post/certificate-security-incident" target="_blank" rel="noopener">eMudhra statement</a><span class="role">官方</span></li>
+        <li><a href="https://www.openwall.com/lists/oss-security/2026/10/20/1" target="_blank" rel="noopener">oss-security / openwall</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

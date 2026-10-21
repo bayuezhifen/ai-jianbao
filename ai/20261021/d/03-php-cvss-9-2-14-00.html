@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grok Bot 上 IncidentWatch/IncidentSweep；马斯克再推升级；再核仍 4.7、无 4.8 · IT 行业简报</title>
+<title>PHP 预告两枚 CVSS 9.2 严重漏洞：紧急安全版约世界时 14:00 发布，细节已提前泄露 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,32 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>Grok Bot 上 IncidentWatch/IncidentSweep；马斯克再推升级；再核仍 4.7、无 4.8</h1>
-    <p class="lede">xAI 10 月 20 日官宣用 Grok Bot 做工单尖峰发现与结案批处理；马斯克同日转发「Big Grok Bot update」。docs.x.ai 再核仍列 grok-4.7，未见 4.8，未取消 4.7。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>PHP 预告两枚 CVSS 9.2 严重漏洞：紧急安全版约世界时 14:00 发布，细节已提前泄露</h1>
+    <p class="lede">php.net 10 月 20 日公告：10 月 21 日世界时 14:00 出安全版。watchTowr 称 CVE-2026-109618/109619 为影响 PHP 5–8 的远程代码执行且细节已泄露。晨报漏洞栏未收。</p>
     <div class="meta">
       <span>2026-10-21</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>昨午已收 Action Button 与马斯克「True, try Grok @Bot」。本窗增量来自官方产品稿与马斯克再推：x.ai 发布《Using Grok Bot to detect and respond to incidents》，介绍客服场景里两名「AI 队友」——IncidentWatch 每五分钟扫近十五分钟工单，抓相似问题尖峰并提醒值班；确认事件后由 Support Bot 回复匹配用户。事件结束后，IncidentSweep 在工程师指定范围、排除规则与确切文案后，筛出相关工单、剔除不确定匹配，经人工批准再小批量发送；文中举例 9 月 18 日一次事件约 10 分钟清掉 204 张工单。要点是「批处理但仍要人批」，不是无人自动群发。</p>
-<p>马斯克在世界时约 16:57（上海约 10 月 21 日 00:57）发帖「Big Grok @Bot update」并引用用户汇总的新能力清单（聊天卡片、速度、草稿编辑、邮箱别名、X 私信、@bot 提及、连接器、语音通话、通知、Android Assistant 等）；稍早还有「Grok @Bot upgrades」引用 0.71.2 大文件上传等说明。另转发用户称 Bot 可订机票、买票、读新闻、协调日程、处理发票与账单。这些表态继续给代理产品背书，谈的是入口与工作流，不是 API 主型号换代公告。</p>
-<p>版本档位按惯例再核：截至今晨，docs.x.ai 模型与定价页仍列出 grok-4.7，并写编码等场景优先用 Grok 4.7；全文未见 grok-4.8。文档中另有 grok-4.20、grok-4.6 等既有条目，不能写成「4.8 已上线」或「4.7 已取消」。xAI 新闻页本窗新稿是 IncidentSweep 这类 Bot 运维故事，不是旗舰模型发布。马斯克本窗亦无「4.8 取代 4.7」的定量新帖。</p>
-<p>对下午可能覆写同日路径的提醒：本条同时覆盖官方 Incident 工作流与马斯克再推，并写明阶梯再核，避免午报若压缩 Grok 栏时留下空白。对读者的取舍：若只盯 API 版本号，本窗仍无阶梯变更；若关心代理产品，Bot 继续往「拥有整段运维工作」走。支付授权、连接器权限与批量邮件误伤风险，并不因批处理审批界面而消失。</p></div>
+      <div class="body"><p>PHP 安全组 10 月 20 日在 php.net 发《Upcoming Critical PHP Security Release》：定于 10 月 21 日世界时 14:00（上海当日 22:00）发布安全更新，修复两枚均按 CVSS v4.0 打 9.2 的严重漏洞；若细节公开或出现在野利用，可提前放版。公告要求管理员现在就准备好升级通道，完整受影响版本与修复版本号随正式版公布。</p>
+<p>BleepingComputer 援引 watchTowr：漏洞编号为 CVE-2026-109618、CVE-2026-109619，被认为是远程代码执行，影响面覆盖 PHP 5、6、7、8；CEO Benjamin Harris 称本应周四美东时间披露的禁运信息已泄露，团队确认漏洞真实，并称已复现其一但暂不公开技术细节，亦未观察到在野利用。Hacker News 上曾出现后被删的帖文，声称 CVSS 10.0、回溯到 PHP 5——与官方 9.2 打分、以及原定周四/现提前到周三的时间表并不完全一致，应以 php.net 公告为准。</p>
+<p>SANS Internet Storm Center 10 月 21 日 Stormcast 也将本条列入当日要点，提醒补丁放出后很快会出现利用。对本简报截稿（上海约 14:15，世界时约 06:15）而言，正式安全包尚未到达公告时刻；价值在于「提前备好升级」与「细节已泄露、窗口在收窄」。运维应盯 php.net 下载页与发行说明，优先覆盖对外暴露的 PHP 应用与共享主机。</p>
+<p>边界：晨报写漏洞栏空窗，并点名不补炒 PAN-OS CVE-2026-0257、Cairn、Clairic、Plex2Shell。本条只覆盖 PHP 紧急安全版预告与泄露节奏，不把勒索团伙利用 PAN-OS 的旧线再炒一遍。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：x.ai IncidentWatch/IncidentSweep 官宣；马斯克再推 Bot 升级；docs 仍含 grok-4.7；未见 grok-4.8；未见取消 4.7。</li><li>分歧：二手偶发把 4.20 或内部标识写成「4.8 已取代」——与官方文档不符，不采纳。</li><li>待确认：IncidentSweep 对外部客户是否开放同款模板、0.71.2 大文件上限是否全量套餐默认、Android Assistant 地区可用性。</li></ul>
+      <ul><li>多方一致：php.net 定世界时 14:00 发两枚 CVSS 9.2；鼓励提前准备；可因泄露/利用提前。</li><li>分歧：watchTowr/论坛称 CVSS 10.0 与影响 PHP 5–8——官方目前只公布 9.2，未在预告里点名版本与编号。</li><li>待确认：正式版修复分支列表、是否与编号 CVE-2026-109618/109619 一一对应、补丁后 24 小时利用情况。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://x.ai/news/incident-sweep" target="_blank" rel="noopener">xAI News (incident-sweep)</a><span class="role">官方</span></li>
-        <li><a href="https://x.com/elonmusk/status/2112589019380875714" target="_blank" rel="noopener">Elon Musk (Big Grok Bot update)</a><span class="role">主来源</span></li>
-        <li><a href="https://x.com/elonmusk/status/2112588854691594371" target="_blank" rel="noopener">Elon Musk (Grok Bot upgrades)</a><span class="role">次要</span></li>
-        <li><a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener">xAI Docs models</a><span class="role">官方</span></li>
+        <li><a href="https://www.php.net/archive/2026.php#2026-10-20-1" target="_blank" rel="noopener">php.net archive</a><span class="role">官方</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/php-warns-admins-of-two-critical-flaws-emergency-patches-coming-tomorrow/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://isc.sans.edu/podcastdetail/10144" target="_blank" rel="noopener">SANS ISC Stormcast</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
