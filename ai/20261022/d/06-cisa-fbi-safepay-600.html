@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI 前沿模型与 Codex 将进入 Google Cloud Model Garden · IT 行业简报</title>
+<title>CISA/FBI 等发 SafePay 勒索联合通告：约 600 名受害者，跨多关键基础设施行业 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,29 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI 前沿模型与 Codex 将进入 Google Cloud Model Garden</h1>
-    <p class="lede">OpenAI 与 Google Cloud 于 10 月 21 日宣布合作：前沿模型与 Codex 代理工作流将进入 Model Garden，经 Marketplace 结算，数周内正式上线。微软仍是主要云合作方。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA/FBI 等发 SafePay 勒索联合通告：约 600 名受害者，跨多关键基础设施行业</h1>
+    <p class="lede">美国 CISA、FBI、特勤局与国际伙伴发布 #StopRansomware: SafePay 通告，称该团伙为 2026 年最活跃勒索组织之一，约 600 名受害者分布于美洲、欧洲与澳大利亚多行业。</p>
     <div class="meta">
       <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 10 月 21 日（约世界时 12:00，上海当晚约 20:00）发文称，公司与 Google Cloud 合作，把 OpenAI 的前沿模型以及 Codex 代理式工作流接入 Google Cloud 的 Model Garden。企业客户可在既有 Google Cloud 环境里直接调用这些模型，并把采购计入 Google Cloud Marketplace 与既有消费承诺。双方表示，面向受监管行业的客户，将叠加 Google Cloud 的访问控制与数据治理能力。</p>
-<p>文中还提到，OpenAI 模型随后也会进入 Google Antigravity 与 Gemini Agent，方便按任务挑模型。OpenAI 总裁 Greg Brockman 与 Google Cloud CEO Thomas Kurian 均有表态：前者强调把最强模型与 Codex 放到客户已经在用的平台上；后者强调给客户更广的模型选择。页面明确写：微软仍是 OpenAI 的主要云合作方——这不是换掉 Azure 主渠道，而是多一条分发与部署路径。</p>
-<p>对工程与采购团队，眼下重点是「即将 GA」而非「今天就能全量切流量」：公开材料只说数周内上线，并提供申请试用入口。本简报把这条放在 OpenAI 栏目，是因为新闻主体是 OpenAI 的产品分发与 Codex 落地，而不是去写公有云 IaaS/PaaS 扩容本身。</p>
-<p>边界：昨午已收内部编码代理关闭/削弱错位监控与 Auto-Review 更新，以及更早的 Orchestra Bio 并购、约 300 亿美元融资传闻，本窗不回炒。同日另有 Rosalind/PerturbAI 脑细胞图谱代理研究与「Patch the Planet」协调披露 PHP 漏洞等文，分别偏科研与安全协作，主产品新闻仍以 Model Garden 合作为首。</p></div>
+      <div class="body"><p>相对今晨已收的 PHP 紧急安全版（CVE-2026-109618/109619），本窗补一条国家级联合勒索通告。CISA 新闻稿署 10 月 21 日：SafePay 常靠失窃/猜中的凭证、互联网暴露面已知漏洞，并经 VPN 进入；横向移动多用合法运维工具，删或废备份后窃取数据再加密，以公开数据甚至直接致电施压。官方敦促：系统与固件及时更新、强制多因素认证、优先修补通告所列已知被利用漏洞、保留并演练离线备份、网络分段以限制蔓延。</p>
+<p>对防守方的读法：这不是单点 CVE 热修，而是「凭据 + 暴露面 + 备份失效」组合拳的操作化总结。与今晨 PHP 补丁、更早的 PAN-OS 活跃利用可对照——公共暴露设备与过期 VPN 仍是入口高频项。通告附 TTPs、IOC 与缓解建议，宜按行业与资产清单做对表，而不是只盯单一产品版本号。</p>
+<p>边界：不回炒 PHP 两枚 CVSS 9.2 细节、Plex2Shell、Cairn 或 eMudhra。若后续出现 SafePay 与特定产品零日的新绑定，再开独立 CVE 条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：OpenAI 官方与 Google Cloud 同日口径一致；Model Garden + Marketplace + 数周内 GA；微软仍是主要云伙伴。</li><li>分歧：无公开价目与具体可用模型清单；「Antigravity / Gemini Agent」上线节奏未给日期。</li><li>待确认：首批上架模型 ID、区域可用性、与 Azure OpenAI 服务的合同并行条款。</li></ul>
+      <ul><li>多方一致：CISA 新闻稿与 AA26-293a 联合通告；约 600 受害者；凭据/暴露面/VPN 入口；删备份后加密勒索。</li><li>分歧：媒体对「最活跃之一」的排行口径不一，以联合通告表述为准。</li><li>待确认：通告所列具体 KEV/CVE 与各厂商补丁映射的国内镜像更新速度。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/openai-models-google-cloud" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener">OpenAI（同日生物代理）</a><span class="role">次要</span></li>
+        <li><a href="https://www.cisa.gov/news-events/news/cisa-fbi-and-partners-warn-organizations-safepay-ransomware-actors-targeting-multiple-critical" target="_blank" rel="noopener">CISA news</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/news-events/cybersecurity-advisories/aa26-293a" target="_blank" rel="noopener">CISA advisory AA26-293a</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GTC Berlin：英伟达发布 OpenShell 安全智能体参考架构 · IT 行业简报</title>
+<title>Anthropic 推出 Claude Duet：主动式工作代理，美区 Pro/Max 候补预览 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">英伟达 / NVIDIA</div>
-    <h1>GTC Berlin：英伟达发布 OpenShell 安全智能体参考架构</h1>
-    <p class="lede">黄仁勋柏林主题演讲宣布 OpenShell Reference Architecture：智能体在 Vera Rubin 上推理、在 Vera CPU 上编排工具，BlueField 上的 Sentry 做内核级沙箱外监视。开源运行时称 Apache 2.0。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 推出 Claude Duet：主动式工作代理，美区 Pro/Max 候补预览</h1>
+    <p class="lede">Anthropic 开放 Claude Duet 研究预览：独立 App（iOS/Android）与 claude.ai，基于 Opus 5.5，会先找需要你关注的事、后台继续干活，敏感操作须你批准。首批面向美国 Pro 与 Max，候补制，用量与 Claude 共用配额。</p>
     <div class="meta">
       <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>英伟达 / NVIDIA</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>GTC Berlin 上，英伟达把「智能体安全」写成可落地的全栈参考架构。官方直播博文与现场口径强调：代理不止是模型问答，还包括编排/记忆的 harness、隔离沙箱、知识与工具；权限必须随每次启动变化，并由策略与监控约束。OpenShell 被描述为开源、策略可控、带内核级沙箱的运行时，夹在代理与其可触达系统之间。</p>
-<p>The Next Web 等二次报道补充硬件切分：模型跑在 Vera Rubin；驱动代理与工具的软件跑在 Vera CPU；BlueField-4 DPU 上跑 Nvidia Sentry，从主系统外侧观察行为，越界则在毫秒级隔离/阻断，并称可提升代理容量约两成。边缘侧覆盖 RTX Spark、DGX Spark、DGX Station。许可证方面，黄仁勋在主题演讲中称 OpenShell 以 Apache 2.0 发布。合作方名单很长：模型侧点到 Anthropic、OpenAI、Meta、Google 等；安全厂商与 SAP、ServiceNow、欧洲银行探索也有公开表述。</p>
-<p>同场还有 DSX POD（Vera Rubin AI 工厂集装箱化参考设计，宣称公用就绪后约 14 天可部署）、Agent Knowledge Foundation、Agile ONE SN 人形参考机、Hyperion 车载等。本简报主条取 OpenShell，因昨午截稿时主题演讲尚未带来「可写进产品栏」的官宣，本窗属于柏林演讲后的实质产品新闻。</p>
-<p>边界：不回炒更早的 NVHBM 工艺要求；公有云托管扩容本身不单开行业栏。价格官方未公布。</p></div>
+      <div class="body"><p>今晨 Claude 栏收的是 Claude Security 持续扫库与修跟踪；本窗主条换成产品侧更大的一步——Claude Duet。官方定位是「主动找上门」的工作伙伴：每天给简报、盯已连接应用、你走开后仍可在虚拟机与自带浏览器里推进任务，发消息、付款、签字、删除前会摊开动作等你点头。证券交易、账户间转账等即便批准也不做。</p>
+<p>能力面：承接 Claude 账号里的记忆、技能与连接器；Marketplace 逾 6000 个连接器（Gmail、Slack、QuickBooks、Stripe、Gusto、LinkedIn、DocuSign、HubSpot、Canva、Shopify 等被点名）；可用 Stripe Link 虚拟卡与 Shopify Shop Pay 做企业采购，真卡号不外泄。安全叙事沿用可信代理框架、Managed Agents 凭证隔离、auto mode 分类器，以及浏览器场景下的注入防护；另称做过红队与外部渗透，并纳入公开漏洞赏金。官方也坦言：早期版可能误判紧急程度，个人杂务（订票等）还不强，尚不能把浏览器画面给你看，且独立于主 Claude App。</p>
+<p>同窗旁证：Messages API 新版本号 2026-10-21 去掉 temperature、top_p、top_k——传参会 400；旧版 2023-06-01 暂未废弃。这是开发者破坏性变更，宜另作迁移，不与 Duet 混成一条产品故事。不回炒今晨 Security 持续扫描细节与更早的蝎毒蛋白、Monarch 融资传闻。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：GTC Berlin 10/21 主题演讲宣布 OpenShell RA；Rubin / Vera / BlueField+Sentry 分层；Apache 2.0 口径见演讲与 TNW。</li><li>分歧：DSX POD、人形参考机等并列发布，不同媒体主标题不同；容量「+20%」来自厂商表述。</li><li>待确认：参考架构文档完整清单、各云/发行版认证矩阵、对外报价。</li></ul>
+      <ul><li>多方一致：claude.com 官宣 Duet；Reuters/CNBC 报道美区 Pro/Max 候补、Opus 5.5、敏感操作需批准。</li><li>分歧：媒体强调「与 OpenAI Dots、Meta Muse 竞速」；官方文案更偏职场与小企业，少提消费对标。</li><li>待确认：候补放量节奏、非美区开放时间、与主 Claude App 何时合并体验。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/" target="_blank" rel="noopener">NVIDIA Blog</a><span class="role">官方</span></li>
-        <li><a href="https://thenextweb.com/news/nvidia-openshell-ai-agents-safety-anthropic-openai" target="_blank" rel="noopener">The Next Web</a><span class="role">主来源</span></li>
+        <li><a href="https://claude.com/resources/articles/claude-duet" target="_blank" rel="noopener">Anthropic / Claude</a><span class="role">官方</span></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/anthropic-unveils-claude-duet-ai-agent-app-4964042" target="_blank" rel="noopener">Reuters (via Investing.com)</a><span class="role">次要</span></li>
+        <li><a href="https://platform.claude.com/docs/en/api/migration-2026-10-21" target="_blank" rel="noopener">Claude API migration 2026-10-21</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

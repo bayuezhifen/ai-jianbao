@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>PHP 紧急安全版已出：8.5.12 等四线；CVE-2026-109618/109619 CVSS 9.2 · IT 行业简报</title>
+<title>GTC Berlin：Cosmos 扩充世界模型数据工厂、训练框架与 Nano 仿真变体 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,29 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>PHP 紧急安全版已出：8.5.12 等四线；CVE-2026-109618/109619 CVSS 9.2</h1>
-    <p class="lede">相对昨午「预告世界时 14:00 发版」，本窗为实质更新：安全包已发布，CISA 敦促立即升级到 8.5.12 / 8.4.27 / 8.3.36 / 8.2.35。两洞合称 php2shell，可未认证远程代码执行。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>GTC Berlin：Cosmos 扩充世界模型数据工厂、训练框架与 Nano 仿真变体</h1>
+    <p class="lede">英伟达在 GTC Berlin 窗口扩展 Cosmos：Data Factory 五套云原生蓝图、Framework 面向开源骨干的微调/蒸馏/部署技能，以及 Cosmos 3 Nano 多视角仿真变体。相对今晨 OpenShell，这是物理 AI 数据与训练侧另一条主线。</p>
     <div class="meta">
       <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>PHP 项目于 10 月 21 日世界时约 14:00 放出紧急安全版：8.5.12、8.4.27、8.3.36、8.2.35。美国 CISA 同日警报称漏洞 CVE-2026-109618 与 CVE-2026-109619（俗称 php2shell）可对提供 Web 请求的 PHP 安装造成未认证远程代码执行，强烈建议优先给对外暴露系统打补丁；若无法立即升级或仍用 8.1 及更早无官方修复线，应考虑下线直至补齐。CISA 称发稿时尚未观察到利用，但风险高。</p>
-<p>PHP Foundation 博文说明两洞机理大意：一为内存耗尽边界上的部分初始化/内存破坏（在 Apache mod_php 默认配置下可在应用代码运行前触发，并已演示完整 RCE；PHP-FPM 亦有经应用路径的确认）；二为致命错误后残留全局状态导致的释放后使用。二者都落在几乎每个请求都会碰到的内存与错误处理路径。披露过程曾因 CVE 编号提前流传、视频 PoC 误发与发行商提前破禁运而收紧时间表，最终把发版从原定 22 日提前到 21 日。</p>
-<p>OpenAI 同日「Patch the Planet」文承认其代理研究与 Calif、Wiz 等参与了发现与协调，并提供 Codex 技能做 PHP 版本检查；这不改变「立刻升级」这一运维动作。昨午简报只写到预告与泄露节奏——本晨条覆盖「包已出、版本号已定、CISA 已喊」。</p>
-<p>边界：不回炒 eMudhra CA、Cairn、Clairic、Plex2Shell。GitLab 另有 CVSS 10.0 补丁同日流传，本窗篇幅让给 PHP 实质发版与 LiteLLM 供应链，GitLab 不单开卡片。</p></div>
+      <div class="body"><p>今晨已收 OpenShell 安全智能体参考架构；午后同场 Cosmos 工具链更值得单独成条。官方称世界模型帮助物理 AI 理解并模拟真实世界，Cosmos 在开源榜单上多项进前五，并配套数据、训练与优化配方。Cosmos Data Factory 现提供五套蓝图（自动驾驶数据集生成、图像属性增广、事件视频生成、缺陷图像生成、视频天气光照增广），经 GitHub 与 Azure、Nebius、CoreWeave 等渠道可得；Cosmos Curator 也扩到多模态多传感输入。</p>
+<p>落地举例：保时捷借 Voxel51 在 Azure 上用 Data Factory 做大众集团共享自动驾驶数据飞轮，官方称有望少做约九成重复实车路测、缩短约八成五开发周期；ANYbotics 用合成视频训练巡检机器人识别泄漏等变化；Ultralytics 用真实图加定向合成缺陷重训 YOLO。训练侧，Framework 以智能体技能形式覆盖 GR00T、Alpamayo、QWEN、Pi0.5 等开源骨干的微调、强化学习、蒸馏量化与推理部署；MicroAGI 把 Cosmos 3 蒸馏到约 80 亿参数 Nano 且称精度不掉。仿真侧新增 Cosmos 3 Nano 变体与配套代码，便于在闭环仿真里测自动驾驶与双臂策略；Cosmos 3 NIM 称在验证配置下推理最高约快一倍，Metropolis VSS 3.3 蓝图称同 GPU 可多盯约四成视频流。</p>
+<p>边界：不把 DSX 水电节能、Hyperion 出行联盟或今晨 OpenShell 硬件栈再写一遍；也不把「欧洲金融开源模型」客户案例当成 Cosmos 本体发布。GTC Berlin 会期至 10 月 22 日，后续若有独立硬件或软件大单再开新条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA、PHP Foundation、php.net 口径均为立即升级到所列四版本；CVSS 9.2；两 CVE 编号一致。</li><li>分歧：泄露阶段曾误传 CVSS 10.0；部分发行商破禁运时间早于正式披露。</li><li>待确认：发稿后 24–48 小时在野利用是否出现；各 Linux 发行版软件源同步进度。</li></ul>
+      <ul><li>多方一致：NVIDIA Blog 10/21 发 Cosmos 工具与 Data Factory 蓝图；GTC Berlin 滚动页同日置顶。</li><li>分歧：客户侧「少路测 90%/周期短 85%」为预期表述，非第三方审计结果。</li><li>待确认：各蓝图在国内云与本地化部署的可用性、NIM 加速适用的精确模型清单。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/" target="_blank" rel="noopener">PHP Foundation</a><span class="role">官方</span></li>
-        <li><a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities" target="_blank" rel="noopener">OpenAI Patch the Planet</a><span class="role">次要</span></li>
+        <li><a href="https://blogs.nvidia.com/blog/cosmos-open-train-evaluate-deploy-world-models/" target="_blank" rel="noopener">NVIDIA Blog (Cosmos)</a><span class="role">官方</span></li>
+        <li><a href="https://blogs.nvidia.com/gtc-berlin-2026-news/" target="_blank" rel="noopener">NVIDIA GTC Berlin live updates</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

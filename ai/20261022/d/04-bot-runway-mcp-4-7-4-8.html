@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claude Security：持续扫代码库并跟踪修复，Enterprise 公测升级 · IT 行业简报</title>
+<title>保留强化：马斯克夜间再推 Bot + 转发 Runway MCP；再核仍 4.7、无 4.8 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Claude Security：持续扫代码库并跟踪修复，Enterprise 公测升级</h1>
-    <p class="lede">Anthropic 更新 Claude Security：仓库变更后自动跟扫、发现项随修复关闭、可写威胁模型与知识库，并提供 API/MCP。面向 Claude Enterprise，附两月每月 2.5 万美元用量额度。</p>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>保留强化：马斯克夜间再推 Bot + 转发 Runway MCP；再核仍 4.7、无 4.8</h1>
+    <p class="lede">下午覆写不得空窗。增量：马斯克于世界时约 20:51–20:56（上海今晨约 04:51–04:56）再写「Try Grok @Bot」与「像雇了一个又聪明又好玩的员工」；午间转发 Runway MCP 已接入 Grok Bot。docs.x.ai 再核仍列并推荐 grok-4.7，未见 grok-4.8，未见取消 4.7。</p>
     <div class="meta">
       <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>Grok / xAI</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Anthropic 在 claude.com 发文称，Claude Security 不再依赖「有人点一下才扫」：接入 GitHub（含 GitHub Enterprise Server）或 GitLab 等仓库后，先做基线深扫，再按变更风险与复杂度持续跟扫，使发现列表尽量贴近当前代码状态。一个项目可挂多个仓库，便于抓住跨服务信任边界一类问题。</p>
-<p>另一处落地是「修完就关掉」：多数修复发生在扫描工具之外，Claude Security 会对照后续提交，把已修的发现标为已修复；若同类问题再现则自动重开。团队可在项目知识库里写入部署方式、安全策略等上下文，并审阅/编辑由系统生成的威胁模型，后续扫描按威胁模型判断严重度与可达攻击路径。新 API 与 MCP 连接器可把发现拉进既有工单或 Claude Code 会话；另有基于角色的访问控制，方便扩大使用面而不放开建项目权限。</p>
-<p>产品仍标为 Claude Enterprise 公测。文中称自 4 月公测以来已有数千组织、累计发现超百万漏洞；本次升级使用含 Claude Mythos 在内的全系列模型，且不要求 Cyber Verification Program 资格。促销口径：每月 2.5 万美元免费用量额度，连续两个月，适用至 2026-12-31（以帮助中心条款为准）。</p>
-<p>边界：不回炒昨晨蝎神经毒素蛋白结合体、昨午前 Monarch/Nscale 基建谈判，以及 Claude Duet 个人代理预览（若作独立消费向产品可另窗再收）。本条只覆盖企业向安全扫描产品的持续监控能力。</p></div>
+      <div class="body"><p>按覆写规则，Grok 栏须保留或加码晨报主线，不得改成空徽章。晨报已收马斯克午后连推 Bot（信用修复、勿扰名单、报告看板等）。本窗再核时间线：世界时 10 月 21 日约 20:51，马斯克引用用户长文写「Try Grok @Bot, you will love it!」；约 20:56 又写道「Grok @Bot is like hiring a super smart and fun employee!」。世界时 10 月 22 日约 04:39（上海约 12:39）他转发 @runwayml：「Runway MCP is now in Grok Bot」，把生成视频能力直接接进聊天。这些都是代理入口与生态连接的加码，不是 API 主型号换代。</p>
+<p>版本阶梯（截至今午 docs.x.ai/docs/models）：文本定价表仍列 grok-4.7（长短上下文两档），选型建议明确代码与聊天用 Grok 4.7；全文未见 grok-4.8。同页仍有 grok-4.6、4.5、4.20 系列与 grok-build-0.1 等旧条目。x.ai/news 近期仍以 Grok 4.7 介绍与既有产品文为主，无「取消 4.7」或「4.8 已取代」官宣。马斯克本窗亦无关于 4.8 训练/上线的新定量陈述；外媒若再把内部代号或旧帖写成「4.8 已替 4.7」，与当前官方文档不符，不采纳。</p>
+<p>边界：不单复述昨午 IncidentWatch/IncidentSweep 与更早 Action Button；不把 Optimus、Robotaxi、德州政治转发写成 xAI 模型新闻。若 docs 日后出现 grok-4.8 或下架 4.7，再单开新条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：官方页面与产品说明一致——持续扫描、修复跟踪、威胁模型、API/MCP、Enterprise 公测。</li><li>分歧：第三方媒体对 Claude Duet 报道更热，与本条安全产品线不同，勿混为一谈。</li><li>待确认：跟扫默认频率、GitLab 以外提供商完整列表、额度与计费在帮助中心的最终条款。</li></ul>
+      <ul><li>多方一致：马斯克夜间两帖力推 Bot；转发 Runway MCP；docs 仍含并推荐 grok-4.7；未见 grok-4.8；未见取消 4.7。</li><li>分歧：二手时间线文偶发把「训练中的 4.8」写成已上线——与 docs 不符。</li><li>待确认：Runway MCP 在 Bot 内的默认开通范围与计费；下一次公开版号节点。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://claude.com/resources/articles/claude-security-now-scans-continuously-and-tracks-fixes" target="_blank" rel="noopener">Claude by Anthropic</a><span class="role">官方</span></li>
-        <li><a href="https://www.anthropic.com/news" target="_blank" rel="noopener">Anthropic Newsroom</a><span class="role">次要</span></li>
+        <li><a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener">docs.x.ai Models</a><span class="role">官方</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113010364178964616" target="_blank" rel="noopener">Elon Musk (Try Grok @Bot)</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113011511429902609" target="_blank" rel="noopener">Elon Musk (fun employee)</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113127998157189281" target="_blank" rel="noopener">Elon Musk RT Runway MCP</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
