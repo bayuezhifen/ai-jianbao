@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LiteLLM 1.107.0 供应链投毒：PyPI/Docker 恶意包约两小时下架 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>LiteLLM 1.107.0 供应链投毒：PyPI/Docker 恶意包约两小时下架</h1>
+    <p class="lede">LiteLLM 官方确认 10 月 21 日发布管线被攻破，v1.107.0 轮子与若干 Docker 标签含窃凭据与远程加载逻辑；约两小时内从 PyPI 撤包。请钉 1.106.2 并轮换密钥。</p>
+    <div class="meta">
+      <span>2026-10-22</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>LiteLLM（常用 LLM 代理/路由库）10 月 21 日发布事故说明：当日清晨发布管线被攻破，向 PyPI 推送 litellm==1.107.0（七个 wheel，约世界时 11:39–13:23 在架），并向 Docker Hub / GHCR 推送带毒的 v1.107.0 以及曾指向同一脏索引的 latest、main-latest、main-stable 等标签。载荷会在 Python 启动时经 cook.pth / sitecustomize.py 等执行，窃取云、浏览器、开发者与 AI 相关凭据，并可加载远程代码。官方称此前版本安全，企业私有 registry 未受影响；GitHub 上的官方 1.107.0 源码标签并不含恶意文件，脏制品来自攻击者控制的仿造仓库。</p>
+<p>官方复盘要点：攻击者拿到多枚开发者 GitHub CLI OAuth 凭据后，一度用组织所有者权限关掉分支保护并改发布工作流，把构建源指到 Berri-AI/litellm（注意连字符）仿造仓，再走 Trusted Publisher 签发。团队怀疑凭据来自内部 LiteLLM 部署日志里被写入响应体的 GitHub CLI token。处置建议：不要在已中招环境里直接 pip；先删 site-packages 里的 cook.* 与 sitecustomize.py，杀掉相关守护进程，重建环境并钉 litellm==1.106.2，轮换实例角色、代理库里的供应商密钥、DATABASE_URL 等一切可能被读到的秘密。</p>
+<p>Datadog、JFrog、Wiz 等安全研究同步跟进，时间线与官方大体一致。本条放在开发者工具栏，强调的是包管理/发布管线供应链，而不是应用层 CVE 编号本身。</p>
+<p>边界：与同日 PHP 紧急安全版、GitLab 高危补丁分列；不把「AI 写代码导致泄 token」扩写成对某一 IDE 的点名指控——官方只写到观察到 Claude Code 在特定情形把 GitHub CLI OAuth 写入响应体、若响应被记日志则可能曝光。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官方事故文与 Datadog/JFrog/Wiz 均确认 1.107.0 短窗投毒、已撤包、钉 1.106.2。</li><li>分歧：攻击链中「内部部署如何被进」官方仍标为调查中；第三方文对恶意文件名细节略有出入，以官方清单为准。</li><li>待确认：完整 IoC 与 CloudTrail 排查手册后续更新；是否还有未被官方点名的镜像标签。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://docs.litellm.ai/blog/security-incident-oct-21-2026" target="_blank" rel="noopener">LiteLLM Docs</a><span class="role">官方</span></li>
+        <li><a href="https://securitylabs.datadoghq.com/articles/litellm-compromised-pypi-docker/" target="_blank" rel="noopener">Datadog Security Labs</a><span class="role">次要</span></li>
+        <li><a href="https://www.wiz.io/blog/litellm-compromised-steals-credentials" target="_blank" rel="noopener">Wiz Blog</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

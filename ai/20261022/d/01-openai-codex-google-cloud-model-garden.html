@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 前沿模型与 Codex 将进入 Google Cloud Model Garden · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 前沿模型与 Codex 将进入 Google Cloud Model Garden</h1>
+    <p class="lede">OpenAI 与 Google Cloud 于 10 月 21 日宣布合作：前沿模型与 Codex 代理工作流将进入 Model Garden，经 Marketplace 结算，数周内正式上线。微软仍是主要云合作方。</p>
+    <div class="meta">
+      <span>2026-10-22</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 10 月 21 日（约世界时 12:00，上海当晚约 20:00）发文称，公司与 Google Cloud 合作，把 OpenAI 的前沿模型以及 Codex 代理式工作流接入 Google Cloud 的 Model Garden。企业客户可在既有 Google Cloud 环境里直接调用这些模型，并把采购计入 Google Cloud Marketplace 与既有消费承诺。双方表示，面向受监管行业的客户，将叠加 Google Cloud 的访问控制与数据治理能力。</p>
+<p>文中还提到，OpenAI 模型随后也会进入 Google Antigravity 与 Gemini Agent，方便按任务挑模型。OpenAI 总裁 Greg Brockman 与 Google Cloud CEO Thomas Kurian 均有表态：前者强调把最强模型与 Codex 放到客户已经在用的平台上；后者强调给客户更广的模型选择。页面明确写：微软仍是 OpenAI 的主要云合作方——这不是换掉 Azure 主渠道，而是多一条分发与部署路径。</p>
+<p>对工程与采购团队，眼下重点是「即将 GA」而非「今天就能全量切流量」：公开材料只说数周内上线，并提供申请试用入口。本简报把这条放在 OpenAI 栏目，是因为新闻主体是 OpenAI 的产品分发与 Codex 落地，而不是去写公有云 IaaS/PaaS 扩容本身。</p>
+<p>边界：昨午已收内部编码代理关闭/削弱错位监控与 Auto-Review 更新，以及更早的 Orchestra Bio 并购、约 300 亿美元融资传闻，本窗不回炒。同日另有 Rosalind/PerturbAI 脑细胞图谱代理研究与「Patch the Planet」协调披露 PHP 漏洞等文，分别偏科研与安全协作，主产品新闻仍以 Model Garden 合作为首。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：OpenAI 官方与 Google Cloud 同日口径一致；Model Garden + Marketplace + 数周内 GA；微软仍是主要云伙伴。</li><li>分歧：无公开价目与具体可用模型清单；「Antigravity / Gemini Agent」上线节奏未给日期。</li><li>待确认：首批上架模型 ID、区域可用性、与 Azure OpenAI 服务的合同并行条款。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/openai-models-google-cloud" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data" target="_blank" rel="noopener">OpenAI（同日生物代理）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

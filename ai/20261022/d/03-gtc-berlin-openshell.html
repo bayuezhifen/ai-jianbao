@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GTC Berlin：英伟达发布 OpenShell 安全智能体参考架构 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>GTC Berlin：英伟达发布 OpenShell 安全智能体参考架构</h1>
+    <p class="lede">黄仁勋柏林主题演讲宣布 OpenShell Reference Architecture：智能体在 Vera Rubin 上推理、在 Vera CPU 上编排工具，BlueField 上的 Sentry 做内核级沙箱外监视。开源运行时称 Apache 2.0。</p>
+    <div class="meta">
+      <span>2026-10-22</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>GTC Berlin 上，英伟达把「智能体安全」写成可落地的全栈参考架构。官方直播博文与现场口径强调：代理不止是模型问答，还包括编排/记忆的 harness、隔离沙箱、知识与工具；权限必须随每次启动变化，并由策略与监控约束。OpenShell 被描述为开源、策略可控、带内核级沙箱的运行时，夹在代理与其可触达系统之间。</p>
+<p>The Next Web 等二次报道补充硬件切分：模型跑在 Vera Rubin；驱动代理与工具的软件跑在 Vera CPU；BlueField-4 DPU 上跑 Nvidia Sentry，从主系统外侧观察行为，越界则在毫秒级隔离/阻断，并称可提升代理容量约两成。边缘侧覆盖 RTX Spark、DGX Spark、DGX Station。许可证方面，黄仁勋在主题演讲中称 OpenShell 以 Apache 2.0 发布。合作方名单很长：模型侧点到 Anthropic、OpenAI、Meta、Google 等；安全厂商与 SAP、ServiceNow、欧洲银行探索也有公开表述。</p>
+<p>同场还有 DSX POD（Vera Rubin AI 工厂集装箱化参考设计，宣称公用就绪后约 14 天可部署）、Agent Knowledge Foundation、Agile ONE SN 人形参考机、Hyperion 车载等。本简报主条取 OpenShell，因昨午截稿时主题演讲尚未带来「可写进产品栏」的官宣，本窗属于柏林演讲后的实质产品新闻。</p>
+<p>边界：不回炒更早的 NVHBM 工艺要求；公有云托管扩容本身不单开行业栏。价格官方未公布。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：GTC Berlin 10/21 主题演讲宣布 OpenShell RA；Rubin / Vera / BlueField+Sentry 分层；Apache 2.0 口径见演讲与 TNW。</li><li>分歧：DSX POD、人形参考机等并列发布，不同媒体主标题不同；容量「+20%」来自厂商表述。</li><li>待确认：参考架构文档完整清单、各云/发行版认证矩阵、对外报价。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.nvidia.com/blog/gtc-berlin-2026-keynote/" target="_blank" rel="noopener">NVIDIA Blog</a><span class="role">官方</span></li>
+        <li><a href="https://thenextweb.com/news/nvidia-openshell-ai-agents-safety-anthropic-openai" target="_blank" rel="noopener">The Next Web</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
