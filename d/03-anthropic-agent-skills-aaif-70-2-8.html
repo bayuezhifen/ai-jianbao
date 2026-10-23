@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>英伟达 SEMICON：推出 cuPotential，CUDA-X 深入芯片设计与制造「AI 定义工厂」 · IT 行业简报</title>
+<title>Anthropic 把 Agent Skills 捐赠给 AAIF：超 70 平台接入，约百万技能、近 2.8 亿次安装 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">英伟达 / NVIDIA</div>
-    <h1>英伟达 SEMICON：推出 cuPotential，CUDA-X 深入芯片设计与制造「AI 定义工厂」</h1>
-    <p class="lede">10/14 新闻稿：新库 cuPotential 供开发者构建模拟原子/分子相互作用的 AI Agent；早期访问称可在已 GPU 优化流程上再提速约 2–3 倍；西门子 cuLitho 协作亦同日有进展。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 把 Agent Skills 捐赠给 AAIF：超 70 平台接入，约百万技能、近 2.8 亿次安装</h1>
+    <p class="lede">继捐赠 MCP 之后，Anthropic 于 10 月 22 日把 Agent Skills 名称、标识、GitHub 组织与 agentskills.io 一并交给 AAIF。官方称已有超 70 个代理平台接入，含 ChatGPT、Cursor、Copilot、VS Code；约 100 万技能发布、近 2.8 亿次安装。</p>
     <div class="meta">
-      <span>2026-10-15</span>
+      <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>英伟达 / NVIDIA</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>英伟达 10 月 14 日于 SEMICON West 相关节点发布新闻：半导体厂商正更广泛采用 CUDA-X 库，推进「AI 定义的晶圆厂」。其中新品 cuPotential 面向原子与分子尺度模拟，提供可嵌入现有软件的 GPU 加速函数，帮助研究者更快建模电作用等大规模原子相互作用；早期访问测试称，在已经 GPU 优化的工作流上还可再加速约 2–3 倍。Synopsys 等被列为早期采用方。把这类建模能力交给 AI Agent，意味着 Agent 可以跑、评、迭代分子模拟，而不只是调用黑盒脚本。</p>
-<p>同一叙事下，检测图像与测试数据要用得够快才能抓缺陷、养设备、提良率：新闻稿点名 NPP（图像）与 RAPIDS cuDF（表格）等库加速测试与质控。NanoVDB 以开源形式存在于 OpenVDB，NPP 随 CUDA Toolkit 提供；Lam Research 基于 NanoVDB 加速的 SEMulator3D 能力拟年内推出。cuPotential 目前为早期访问。</p>
-<p>同日西门子亦宣布 Calibre 与英伟达 cuLitho 协作深化：全芯片光学邻近校正等光刻仿真关键负载宣称可获至少约 10 倍、部分场景更高加速，意在让 High-NA EUV 下的全芯片优化与逆光刻更可落地。这与「算力不够、光刻仿真跑不动」长期矛盾直接相关，服务对象是先进制程的 AI 算力与存储芯片制造。</p>
-<p>本窗不回炒晨报已收的 Run:ai 开源与 RTX Spark 10/16 发售预告（无隔夜实质新发售信息则不单开）。消费侧 Frame Generation Preset C 等实验开关若无官方新闻稿级确认，亦不抢作主卡。读者关注点：EDA/制造仿真加速库，而非新消费 GPU 型号。</p></div>
+      <div class="body"><p>Agent Skills 是一套开放格式：一个文件夹里放 SKILL.md 与脚本/参考资料，让代理按需加载领域流程。Anthropic 写明：从 Claude Code 实践起步，2025 年 10 月前后在内部与社区推开，同年 12 月以开放标准发布后，接入面扩到 ChatGPT、Cursor、GitHub Copilot、VS Code 等逾 70 个平台；累计约 100 万技能发布、近 2.8 亿次安装。今日捐赠覆盖名称与标识、GitHub 组织以及 agentskills.io 域名；不加入 AAIF 也可继续使用与贡献。</p>
+<p>维护上，Lead Maintainers 为 David Soria Parra 与 Mahesh Murag；工程师以个人身份参与，来自 Anthropic、Google、OpenAI 等。路线图草案包括版本化发布、正式提案流程与编写/安装技能的安全指引。这与同日 AAIF「四项目入驻」新闻互证：Skills 是四件之一，也是 Anthropic 继 MCP 之后又一次把关键栈交给 Linux 基金会中立家园。官方强调：社区对规范往哪走要有发言权，避免单一厂商锁死演进方向。</p>
+<p>对开发者的即时含义是治理归属变了，调用方式不必推倒重来——现有技能包与加载器仍可按 agentskills.io 规范继续用。边界：不回炒昨午 Claude Duet 研究预览，也不把「捐赠」写成 Claude 客户端某次功能上线。本条记的是标准与生态规模，不是新模型或新订阅档。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：10/14 英伟达新闻稿推出 cuPotential；CUDA-X 用于设计/制造；西门子 cuLitho 加速叙事同日出现。</li><li>分歧：加速倍数来自厂商测试/早期访问，第三方独立复现数据未见。</li><li>待确认：cuPotential 普遍可用时间、Lam SEMulator3D 年底节点、西门子客户量产采用面。</li></ul>
+      <ul><li>多方一致：捐赠日 10/22；对象 AAIF；名称/logo/GitHub/域名；&gt;70 平台；约 1M 技能、约 280M 安装；Lead Maintainers 两名；此前捐过 MCP。</li><li>分歧：平台名单只点名部分头部产品，完整目录未在新闻稿逐一列出。</li><li>待确认：版本化发布与安全指引的首个公开里程碑日期。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://nvidianews.nvidia.com/news/nvidia-and-semiconductor-leaders-advance-ai-across-chip-design-and-manufacturing-for-ai-defined-fabs" target="_blank" rel="noopener">NVIDIA Newsroom</a><span class="role">官方</span></li>
-        <li><a href="https://news.siemens.com/en-us/siemens-calibre-nvidia-culitho/" target="_blank" rel="noopener">Siemens</a><span class="role">次要</span></li>
-        <li><a href="https://www.globenewswire.com/news-release/2026/10/14/3380979/0/en/nvidia-and-semiconductor-leaders-advance-ai-across-chip-design-and-manufacturing-for-ai-defined-fabs.html" target="_blank" rel="noopener">GlobeNewswire / NVIDIA</a><span class="role">次要</span></li>
+        <li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://aaif.io/news/agentic-ai-foundation-announces-four-new-projects" target="_blank" rel="noopener">AAIF</a><span class="role">次要</span></li>
+        <li><a href="https://siliconangle.com/2026/10/22/agentic-ai-foundation-adds-four-more-open-source-ai-tools/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

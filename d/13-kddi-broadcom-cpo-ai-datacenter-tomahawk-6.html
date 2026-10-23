@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 10/14 再添四条 KEV：Palo Alto PAN-OS、Cisco 安全邮件网关、Ahsay 双洞 · IT 行业简报</title>
+<title>KDDI×Broadcom：AI 数据中心启动 CPO（共封装光学）联合验证，搭 Tomahawk 6 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,28 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 10/14 再添四条 KEV：Palo Alto PAN-OS、Cisco 安全邮件网关、Ahsay 双洞</h1>
-    <p class="lede">在昨午已收 Windows MotW/Ivanti 入 KEV 之后，CISA 10 月 14 日又把四条在野利用漏洞写入目录，敦促联邦机构按 BOD 26-04 优先修补。</p>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>KDDI×Broadcom：AI 数据中心启动 CPO（共封装光学）联合验证，搭 Tomahawk 6</h1>
+    <p class="lede">KDDI 10/22 宣布与 Broadcom 就 AI 社会落地所需网络基础设施技术合作：即日起在 KDDI AI 数据中心联合验证共封装光学（CPO），交换机侧采用 Broadcom 最新一代以太网交换芯片 Tomahawk 6（单芯片 102.4 Tbps）与 Davisson 光引擎，目标降低 GPU 互联功耗；并探索家庭侧下一代 FTTH。</p>
     <div class="meta">
-      <span>2026-10-15</span>
+      <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>存储与网络硬件</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>美国网络安全与基础设施安全局（CISA）于 10 月 14 日发布警报，向 Known Exploited Vulnerabilities（KEV）目录新增四条已有在野利用证据的漏洞：CVE-2026-0322（Palo Alto Networks PAN-OS 代码注入）、CVE-2026-76519（Cisco Secure Email Gateway 相对路径遍历）、CVE-2026-105133（Ahsay AhsayCBS 不当认证）、CVE-2026-105134（Ahsay AhsayCBS 命令注入）。警报重申此类洞常被用于初始访问，对联邦企业风险高；并指向 Binding Operational Directive 26-04：联邦民用行政机构须对暴露面、利用后可完全控制资产的高风险 KEV 优先修补，并评估补丁前是否已被入侵。</p>
-<p>与昨午简报中的 CVE-2026-96951（Windows Shell 绕过 MotW）及 Ivanti 入 KEV 形成连续两天的目录扩容，但条目不同，不属回炒。公开警报正文未逐条展开利用团伙或勒索软件家族；社区 KEV 数据源有报道将 CVE-2026-105134 标为与勒索活动相关，其余三条利用背景标注不一，读者应以厂商公告与 CISA 后续更新为准。</p>
-<p>处置建议按资产暴露面排序：对外的 GlobalProtect/PAN-OS、邮件安全网关、备份管理控制台（AhsayCBS）应立即核对版本与补丁，并检查补丁前日志是否已有异常登录或命令执行痕迹。BOD 对联邦有强制力，对其他组织则是强烈建议的风险管理基线。</p>
-<p>交叉来源为 CISA 官方警报与 KEV 目录；厂商安全公告应作为补丁版本的最终依据。待确认：各 CVE 的 CVSS/利用细节、是否扩写入更多勒索情报，以及联邦截止修复日。</p></div>
+      <div class="body"><p>KDDI 10 月 22 日英文新闻稿：与 Broadcom 就面向 AI 社会落地的网络基础设施技术展开合作。核心一档是数据中心 GPU 互联的光电融合——双方即日起启动共封装光学（Co-Packaged Optics, CPO）联合验证：在 KDDI AI 数据中心搭建试验环境，导入搭载 Broadcom 最新一代以太网交换芯片 Tomahawk 6（单芯片交换容量 102.4 Tbps）与 Davisson 光引擎的 CPO 交换机，验证降耗效果，并在模拟分布式训练/推理负载下评估丢包、拥塞控制与有效吞吐。</p>
+<p>另一档面向「最后一公里」：借助 Broadcom 光电转换能力，探索家庭宽带迁往下一代 FTTH，意图把数据中心到家庭的通信环境整体抬升，支撑 AI 服务到户。背景口径强调：AI 训练/推理与到家服务都依赖高带宽低时延底座；KDDI 亦在推其「Digital Belt」构想。相关合作将于 10 月 27–28 日 KDDI SUMMIT 2026 展出。</p>
+<p>边界：这是联合验证启动，不是量产交付或商用 SLA。CPO 降耗幅度、是否导入生产 POD 均待验证结果。不把 Tomahawk 6「已出货」写成 KDDI 已全网部署。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 10/14 警报列出上述四 CVE；KEV 扩容与 BOD 26-04 叙事。</li><li>分歧：第三方对「是否勒索相关」的标注不完全一致，官方警报未逐条定性。</li><li>待确认：各厂商修复版本号与利用报告全文。</li></ul>
+      <ul><li>官方一致：KDDI×Broadcom、CPO 验证启动、Tomahawk 6 + Davisson、AI DC 降耗、FTTH 探索、SUMMIT 展出。</li><li>待确认：验证周期、功耗对比基线、量产导入时间表。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/14/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA Alert</a><span class="role">官方</span></li>
-        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://newsroom.kddi.com/english/news/detail/kddi_nr-1208_4775.html" target="_blank" rel="noopener">KDDI Newsroom</a><span class="role">主来源</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

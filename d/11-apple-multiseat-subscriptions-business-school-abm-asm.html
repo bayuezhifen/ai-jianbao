@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apple 企业/学校订阅多席位批量购买上线：ABM/ASM 经 IAP 买席，MDM 分配；Sandbox 团购自 10/28 可测 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">大厂平台政策</div>
+    <h1>Apple 企业/学校订阅多席位批量购买上线：ABM/ASM 经 IAP 买席，MDM 分配；Sandbox 团购自 10/28 可测</h1>
+    <p class="lede">Apple Developer News 10/22：使用 Apple Business Manager / Apple School Manager 的组织可通过一笔 Apple 应用内购买批量采购自动续期订阅席位，再用现有 MDM 分配与增减。App Store Connect 默认开启多席位；面向「小组」的团购 Sandbox 自 10/28 可配置测试，正式上架预计今冬。</p>
+    <div class="meta">
+      <span>2026-10-22</span>
+      <span class="dot"></span>
+      <span>大厂平台政策</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>苹果 10 月 22 日在 Developer News 发布 <em>Offer your subscriptions to businesses and schools</em>：即日起，企业和教育机构可用多席位购买（multiseat purchasing）批量采购 App 的自动续期订阅。走 Apple Business Manager（ABM）或 Apple School Manager（ASM）的组织，可在一次 Apple In-App Purchase 里买下所需席位，再通过既有设备管理（MDM）工具分配与管理，并随时加席或减席。</p>
+<p>开发者侧：除非此前改过设置，App Store Connect 默认打开多席位，使订阅可在 Apple Business、Apple School Manager 与 App Store 侧被发现与购买；可用性选项可随时改。帮助文档与 App Store Connect API 已补「为组织配置多席位订阅」指引。另有一条并行能力：多席位也支持「小组」订阅——自 <strong>2026 年 10 月 28 日</strong>起可在 Sandbox Apple 账户配置并测试团购；今冬向 App Store 用户开放，个人可一次买多席并邀请他人加入。</p>
+<p>边界：这是面向开发者的上线公告，不是新硬件或定价调整。Volume Purchasing（组织批量）与 Group Purchases（小组团购）时间表不同：前者 10/22 起可用，后者 Sandbox 10/28、正式今冬。不把「默认开启」写成强制；开发者仍可关闭或按渠道裁剪。二报以苹果帮助页与 WWDC26 相关 Session 为机制旁证。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致（官方族）：10/22 组织多席位可用；ABM/ASM；单笔 IAP；MDM 分配；ASC 默认开；小组 Sandbox 10/28、今冬正式。</li><li>分歧：媒体跟进稿较少，以 Developer News + Help 为准。</li><li>待确认：各国店面开通节奏、税务开票细则、与既有 Volume Purchase Program 旧流程的迁移说明。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://developer.apple.com/news/?id=yfo21auu" target="_blank" rel="noopener">Apple Developer News</a><span class="role">主来源</span></li>
+        <li><a href="https://developer.apple.com/help/app-store-connect/manage-subscriptions/manage-purchase-options-for-auto-renewable-subscriptions/" target="_blank" rel="noopener">App Store Connect Help</a><span class="role">次要</span></li>
+        <li><a href="https://developer.apple.com/videos/play/wwdc2026/391/" target="_blank" rel="noopener">WWDC26 Session</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

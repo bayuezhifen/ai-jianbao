@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ubuntu 26.10 日程日已到：发行说明与日程标 10/15，午后复查 releases.ubuntu.com 镜像文件名仍为 Beta · IT 行业简报</title>
+<title>KDDI×Broadcom：AI 数据中心启动 CPO（共封装光学）联合验证，搭 Tomahawk 6 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,28 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">操作系统与桌面</div>
-    <h1>Ubuntu 26.10 日程日已到：发行说明与日程标 10/15，午后复查 releases.ubuntu.com 镜像文件名仍为 Beta</h1>
-    <p class="lede">晨报已提示下载页仍 Beta；午后再次抓取确认页面标题与 ISO 仍带 beta，勿写成「已正式可下载」。属状态卡，非新功能发布。</p>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>KDDI×Broadcom：AI 数据中心启动 CPO（共封装光学）联合验证，搭 Tomahawk 6</h1>
+    <p class="lede">KDDI 10/22 宣布与 Broadcom 就 AI 社会落地所需网络基础设施技术合作：即日起在 KDDI AI 数据中心联合验证共封装光学（CPO），交换机侧采用 Broadcom 最新一代以太网交换芯片 Tomahawk 6（单芯片 102.4 Tbps）与 Davisson 光引擎，目标降低 GPU 互联功耗；并探索家庭侧下一代 FTTH。</p>
     <div class="meta">
-      <span>2026-10-15</span>
+      <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>操作系统与桌面</span>
+      <span>存储与网络硬件</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>按 Ubuntu 发行日程，26.10（Stonking Stingray）最终发布日为 2026 年 10 月 15 日；documentation.ubuntu.com 上的发行说明与日程页均指向该日。晨报已写「发行说明已上线、下载页仍 Beta」。午后约 14:10（上海）再次抓取 https://releases.ubuntu.com/26.10/ ：页面标题仍为「Ubuntu 26.10 (Stonking Stingray) Beta」，目录内桌面/服务器 ISO 文件名仍为 <code>ubuntu-26.10-beta-*.iso</code>，SHA256SUMS 时间戳仍停在 10/01 附近，未见去掉 beta 字样的最终镜像上架。</p>
-<p>因此本期结论保持克制：日程日已到，但面向公众的下载镜像在复查时刻仍标注 Beta，不能写成「已正式发布可下载」。若晚间或次日 final ISO 上线，应在后续窗口另开增量卡。本条不展开桌面特性清单（发行说明晨报窗口已可参阅），仅作发布状态核对。</p>
-<p>交叉来源为 releases.ubuntu.com 实抓页面与官方发行说明/日程。待确认：final 镜像实际上架时刻与公告博客是否同步。</p></div>
+      <div class="body"><p>KDDI 10 月 22 日英文新闻稿：与 Broadcom 就面向 AI 社会落地的网络基础设施技术展开合作。核心一档是数据中心 GPU 互联的光电融合——双方即日起启动共封装光学（Co-Packaged Optics, CPO）联合验证：在 KDDI AI 数据中心搭建试验环境，导入搭载 Broadcom 最新一代以太网交换芯片 Tomahawk 6（单芯片交换容量 102.4 Tbps）与 Davisson 光引擎的 CPO 交换机，验证降耗效果，并在模拟分布式训练/推理负载下评估丢包、拥塞控制与有效吞吐。</p>
+<p>另一档面向「最后一公里」：借助 Broadcom 光电转换能力，探索家庭宽带迁往下一代 FTTH，意图把数据中心到家庭的通信环境整体抬升，支撑 AI 服务到户。背景口径强调：AI 训练/推理与到家服务都依赖高带宽低时延底座；KDDI 亦在推其「Digital Belt」构想。相关合作将于 10 月 27–28 日 KDDI SUMMIT 2026 展出。</p>
+<p>边界：这是联合验证启动，不是量产交付或商用 SLA。CPO 降耗幅度、是否导入生产 POD 均待验证结果。不把 Tomahawk 6「已出货」写成 KDDI 已全网部署。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：日程与发行说明指向 10/15；午后下载页仍 Beta 文件名。</li><li>分歧：meta-release 等元数据是否已切「Released」与镜像不同步——以可下载 ISO 为准。</li><li>待确认：最终 ISO 何时替换 beta 包。</li></ul>
+      <ul><li>官方一致：KDDI×Broadcom、CPO 验证启动、Tomahawk 6 + Davisson、AI DC 降耗、FTTH 探索、SUMMIT 展出。</li><li>待确认：验证周期、功耗对比基线、量产导入时间表。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://releases.ubuntu.com/26.10/" target="_blank" rel="noopener">releases.ubuntu.com/26.10</a><span class="role">官方</span></li>
-        <li><a href="https://documentation.ubuntu.com/release-notes/26.10/" target="_blank" rel="noopener">Ubuntu 26.10 release notes</a><span class="role">官方</span></li>
-        <li><a href="https://documentation.ubuntu.com/release-notes/26.10/schedule/" target="_blank" rel="noopener">Ubuntu 26.10 schedule</a><span class="role">官方</span></li>
+        <li><a href="https://newsroom.kddi.com/english/news/detail/kddi_nr-1208_4775.html" target="_blank" rel="noopener">KDDI Newsroom</a><span class="role">主来源</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

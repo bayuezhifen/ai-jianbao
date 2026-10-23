@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dynatrace 上 Cursor Marketplace：把生产可观测直接拉进编辑器 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Cursor</div>
+    <h1>Dynatrace 上 Cursor Marketplace：把生产可观测直接拉进编辑器</h1>
+    <p class="lede">Dynatrace 10 月 22 日发文：作为 SpaceX Super Intelligence Partner Network 启动伙伴之一，推出经校验的 Cursor Marketplace 插件，经 Grail/Smartscape 把生产上下文送进编辑器；配套 MCP 服务、技能包与 dtctl。Cursor 官方 Changelog 本窗无自有产品大更新，伙伴集成为本窗主条。</p>
+    <div class="meta">
+      <span>2026-10-22</span>
+      <span class="dot"></span>
+      <span>Cursor</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>AI 写代码快了，但线上故障上下文往往还在另一套可观测控制台。Dynatrace 10 月 22 日发文称：作为 SpaceX Super Intelligence Partner Network 的启动伙伴之一，在 Cursor Marketplace 上架经验证插件，把环境里的拓扑、日志、指标与事件（经 Grail 与 Smartscape）接到编辑器会话；再配 MCP 服务与一批面向 DQL、仪表盘、告警、日志与事件分析的技能。技术侧配套提到 dtctl，用于仪表盘、工作流与 DQL 变更等写操作，并可识别 Cursor/代理模式。</p>
+<p>官方博客把叙事写成「闭合 AI 原生开发回路」：从写代码到查生产问题不必来回切工具。Hub 与 Marketplace 条目（cursor.com/marketplace/mcp/dynatrace）可交叉核对安装路径：在 Cursor 里打开 Customize → Marketplace 搜 Dynatrace，再配置环境地址与平台令牌。配套技术博文还写了从 Cursor 内调查生产问题的流程示例。Cursor 官方发布说明在本覆盖窗口没有独立的 10 月 22 日产品大版本；因此本窗 Cursor 栏以这家伙伴集成为主，而不是虚构「Cursor 自有新功能日」。</p>
+<p>边界：不回炒更早的 Canvases 等已收条目。插件能力边界、令牌权限与企业租户开通以 Dynatrace 与 Cursor 文档为准；独立科技媒体深度二手稿本窗偏少，故以厂商博客加市场页互证。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Dynatrace 博客宣布 Cursor 插件；Marketplace/Hub 有对应条目；提到 MCP、技能与 dtctl；SpaceX SIPN 启动伙伴表述出自 Dynatrace。</li><li>分歧：独立科技媒体深度二手稿本窗偏少，主要靠厂商博客+市场页互证。</li><li>待确认：默认捆绑技能数量与企业版权限模板的最终公开清单。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.dynatrace.com/news/blog/dynatrace-and-cursor-close-the-loop-on-ai-native-development/" target="_blank" rel="noopener">Dynatrace Blog</a><span class="role">主来源</span></li>
+        <li><a href="https://www.dynatrace.com/news/blog/investigate-production-issues-from-cursor-with-the-dynatrace-plugin/" target="_blank" rel="noopener">Dynatrace (Cursor plugin)</a><span class="role">次要</span></li>
+        <li><a href="https://cursor.com/marketplace/mcp/dynatrace" target="_blank" rel="noopener">Cursor Marketplace</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

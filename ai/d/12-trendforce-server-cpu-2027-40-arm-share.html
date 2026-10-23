@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claude 平台 OpenTelemetry 追踪公开测试：托管 Agent、Messages API 与 SDK 可导出 · IT 行业简报</title>
+<title>TrendForce：2027 年服务器 CPU 出货料增逾 40%，Arm 份额继续抬升 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,28 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Claude 平台 OpenTelemetry 追踪公开测试：托管 Agent、Messages API 与 SDK 可导出</h1>
-    <p class="lede">Anthropic 宣布公测：把 Agent 回合、模型调用、工具与 MCP 调用以标准 OTel 轨迹送到 Grafana、Langfuse、Sentry 等，便于与业务日志同屏排障。</p>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>TrendForce：2027 年服务器 CPU 出货料增逾 40%，Arm 份额继续抬升</h1>
+    <p class="lede">TrendForce 10/22：受 AI 推理与智能体负载推动，2026 年服务器 CPU 出货同比约 +31%，2027 年料再增逾 40%；机架 CPU:GPU/ASIC 比或从传统 1:8 走向 1:2 乃至 1:1。预计 Arm 服务器 CPU 2026 年份额破 20%、2027 年约 30%。</p>
     <div class="meta">
-      <span>2026-10-15</span>
+      <span>2026-10-22</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>CPU / 服务器</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Anthropic 于 10 月 14 日宣布，Claude 平台上的 OpenTelemetry（OTel）轨迹导出进入公开测试，覆盖 Claude Managed Agents、Messages API 与 Claude SDK。开发者在 Claude Console 配置导出目的地后，每个 Agent 回合、模型调用与工具使用会以标准 OTel 轨迹到达可观测性系统，并携带延迟、token 与轨迹 ID；SDK 侧可自动导出。若团队已把 Claude Code / Cowork 轨迹接到同一工具，平台上新建的 Agent 也可落在同一视图。</p>
-<p>官方强调轨迹遵循 OpenTelemetry GenAI 语义约定，便于与其他厂商数据进同一仪表盘。文档按场景举例：在 Grafana Cloud、Honeycomb、Sentry、Splunk 旁路排障；用 Arize、Braintrust、Datadog、Langfuse、LangSmith、New Relic、PostHog 等把生产轨迹做成评测；用 Databricks Unity Gateway 做组织级用量与异常告警。轨迹也可发往任意接受标准 OTLP 的端点。工具与 MCP 服务器调用同样会出现在轨迹里。</p>
-<p>多家客户引言强调「看得见才能改」：Foxglove 把轨迹与 PostHog 产品数据并排；Ramp 用 Reflect 扫 Langfuse 轨迹降 token、加速会话；财务类 Agent 则把模型调用与对账工作流放进 Grafana 同一时间线以备审计。功能仍为公测，Anthropic 未公布定价变更或全面可用时间表。对本窗读者：这是开发者可观测性能力，不是新聊天模型；与同窗选举防护长文分开成卡，避免混为一谈。</p>
-<p>交叉核对以 Claude.com 官方文章与平台文档为准，Unite.AI、TokenPost 等转述与官方要点一致。后续需盯：是否默认导出提示全文、企业合规开关，以及公测转正式的时间。</p></div>
+      <div class="body"><p>TrendForce 10 月 22 日发布服务器 CPU 展望：自 2025 下半年 AI 服务商加推智能体应用以来，服务器 CPU 需求走稳；预计 2026 年出货同比增约 31%，2027 年在推理与 agentic 服务带动下再增逾 40%，有望改写长期由 x86 主导的格局。研究指，云数据中心推理占比上升将改变机架内 CPU 与 GPU/ASIC 配比——按头部云商规划，比例可能从传统约 1:8 转向 1:2 甚至 1:1，从而额外拉动 CPU 出货。</p>
+<p>结构：2025 年 x86（英特尔+AMD）仍占近九成，Arm 刚越过约 10%。2026 年英特尔新品制程/封装受挫，仍依赖 Emerald/Granite Rapids，份额承压；AMD Venice 小规模量产，主出货仍靠 Genoa/Turin，份额料升至约 27%。Arm 侧 AWS Graviton、英伟达 Grace、谷歌 Axion 放量，微软 Cobalt 100 与 Arm 自研 AGI 进入出货，增速料快于 x86，份额 2026 年有望破 20%。2027 年 Arm 份额展望约 30%，驱动包括英伟达 Vera、谷歌/AWS/微软/OpenAI/Arm/华为新品，以及阿里倚天 720/730 等。</p>
+<p>边界：这是机构展望而非厂商出货实绩；份额与同比增速随样本修订可能调整。不把展望写成「已发生」，也不把 Minerva（见英伟达栏）并入本条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：10/14 公测；覆盖 Managed Agents / Messages API / SDK；OTel GenAI 约定与主流可观测工具。</li><li>分歧：无实质分歧；第三方报道未另给独立基准数据。</li><li>待确认：GA 时间表、提示/响应全文默认是否开启、计费影响。</li></ul>
+      <ul><li>单源机构稿：TrendForce 官方新闻稿；关键数字 2026 +31%、2027 +40%、Arm 2026&gt;20%/2027~30%、AMD 2026~27%。</li><li>待确认：各厂实际出货与制程爬坡是否兑现展望。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://claude.com/resources/articles/agent-observability-on-the-claude-platform" target="_blank" rel="noopener">Claude / Anthropic</a><span class="role">官方</span></li>
-        <li><a href="https://www.unite.ai/anthropic-adds-opentelemetry-trace-export-to-the-claude-platform/" target="_blank" rel="noopener">Unite.AI</a><span class="role">次要</span></li>
+        <li><a href="https://www.trendforce.com/presscenter/news/20261022-13279.html" target="_blank" rel="noopener">TrendForce</a><span class="role">主来源</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
