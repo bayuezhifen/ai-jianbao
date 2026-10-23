@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MiniMax 开源 M3.1 Flash 权重：总参约 428B、激活约 23B，1M 上下文 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>MiniMax 开源 M3.1 Flash 权重：总参约 428B、激活约 23B，1M 上下文</h1>
+    <p class="lede">稀宇科技今日把已于 10 月 19 日上线 API 的 M3.1 Flash 权重放到 Hugging Face 与魔搭；原生多模态 MoE，面向代理、编程、计算机操作与网络安全。</p>
+    <div class="meta">
+      <span>2026-10-23</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>相对今晨已收的 AAIF 四项目入驻与 DeepSeek 据报再融，本窗行业增量落在开源权重侧。IT之家 10 月 23 日约 09:08 报道，MiniMax 宣布开源 MiniMax M3.1 Flash 模型权重：总参数约 428B、每 token 激活约 23B。官方模型卡与 Hugging Face 仓库 MiniMaxAI/MiniMax-M3.1-Flash 写明：文本/图像/视频输入、文本输出，上下文最长约 100 万 token；相对 M3，全模型稀疏注意力、量化感知训练与 DSpark 投机解码是三项主改动。</p>
+<p>能力口径以官方与第三方基准表为准：Automation-Bench v1.0.6 约 62.8、DeepSWE v1.1 约 73.7%、OSWorld 2.0 约 61.7、CyberGym 约 82.2 等；API 侧更早给出的单价约为输入 $0.15/百万 token、输出 $0.60、缓存输入 $0.015。IT之家称模型 19 日上线后 72 小时内真实用户处理逾 100 万亿 token，并点名与多家国产及海外芯片、推理框架做开源首日接入。注意：社区许可与 OSI 开源定义并不等同，部署前应核对 MiniMax Community License 条款。</p>
+<p>边界：不回炒今晨 AAIF/DeepSeek 融资传闻，也不把 API 上线日（19 日）当成今日新闻主条——今日可核的是权重放出与开源仓库。权重体量、量化变体与多卡菜谱以 HF/魔搭页面滚动更新为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：IT之家 10/23 开源权重报道；HF MiniMaxAI/MiniMax-M3.1-Flash 模型卡约 428B/23B、1M 上下文；官方博客 10/19 已述能力与定价。</li><li>分歧：部分二手稿写「开源协议」口径不一，应以仓库许可文件为准。</li><li>待确认：各芯片厂商与 vLLM/SGLang 等「首日接入」的实际可用镜像与性能数字。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash" target="_blank" rel="noopener">Hugging Face</a><span class="role">官方</span></li>
+        <li><a href="https://www.ithome.com/0/1016/800.htm" target="_blank" rel="noopener">IT之家</a><span class="role">主来源</span></li>
+        <li><a href="https://www.minimax.io/blog/minimax-m31f" target="_blank" rel="noopener">MiniMax Blog</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
