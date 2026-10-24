@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>美光放弃 4F² DRAM，路线改押晶圆键合与 3D 堆叠 · IT 行业简报</title>
+<title>Cursor 代理可操控本机桌面应用：含 iOS 模拟器点选与键入，自托管需显式开启 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">存储与网络硬件</div>
-    <h1>美光放弃 4F² DRAM，路线改押晶圆键合与 3D 堆叠</h1>
-    <p class="lede">电子时报 10 月 23 日独家：美光在 10 月 21 日技术网络研讨会上明确，研究 4F² 二十余年仍「看不到可行缩放路径」，将延续 6F²，并把晶圆键合与 3D DRAM 推到路线图前沿；1δ 计划 2027 下半年在爱达荷州博伊西量产。</p>
+    <div class="sec-label">Cursor</div>
+    <h1>Cursor 代理可操控本机桌面应用：含 iOS 模拟器点选与键入，自托管需显式开启</h1>
+    <p class="lede">@cursor_ai 世界时 10 月 23 日 15:59（上海约 23:59）宣布 Computer Use：代理可在桌面应用里点击、键入并测试自己写出的功能；今晨未收。</p>
     <div class="meta">
       <span>2026-10-24</span>
       <span class="dot"></span>
-      <span>存储与网络硬件</span>
+      <span>Cursor</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>相对昨晨已收的 KDDI×Broadcom 共封装光学合作，本窗存储硬件主条是美光主动改写二维缩小剧本。韩国电子时报 10 月 23 日独家援引美光路线图材料称，三星与 SK 海力士仍把基于垂直沟道晶体管的 4F² 视为突破亚 10 纳米密度的关键一步；美光 CTPO Scott DeBoer 则在 10 月 21 日技术网络研讨会上称，公司研究 4F² 二十余年仍「看不到可行缩放路径」，相对 6F² 的密度优势「有点像神话」，存在「根本问题」。</p>
-<p>替代路径写进多代路线图：在主流 1γ 之后，下一代 1δ 计划 2027 年下半年于爱达荷州博伊西开始量产；再往后的 1ε 全面导入晶圆键合，同时仍基于 6F²，且报道称该节点研发推进顺利。更远期在 1ζ 与 1η 之间插入代号 3D1、3D2 的 3D DRAM，并搭配高数值孔径 EUV 与新材料评估，一旦经济账算得过来就推进商业产线。</p>
-<p>封装与高带宽内存侧还抛出 Vertical HBM 概念：传统 HBM 多与处理器并排放在转接板上，Vertical HBM 则把存储器直接叠在处理器之上，用细间距混合键合互联，意在把三维堆叠吃到极致。这与「放弃在二维单元上死磕 4F²」的叙事一致——先改互连与堆叠规则，再谈密度。</p>
-<p>报道把此举解读为：与其在 4F² 上与韩系正面硬拼，不如先改比赛规则。文中亦提到长鑫近期宣称推进 4F² 服务器 DRAM、曾引发存储股波动，用来解释市场为何对「谁先量产下一代单元」格外敏感。同日另有景气周期评论称 DRAM 报价仍紧，但与本次架构路线选择是两条线。</p>
-<p>边界：研讨会本身在 10 月 21 日，本条依据是 10 月 23 日独家整理稿；未独立核实美光内部幻灯每一页。不把 Vertical HBM 写成已出货产品，也不回炒更早的 HBM 报价传闻或 KDDI CPO。</p></div>
+      <div class="body"><p>今晨 Cursor 栏为空，本窗补收隔夜官方帖。@cursor_ai 写明：「Cursor can now control your computer. Agents can drive desktop apps like the iOS Simulator to test the features they build。」时间戳为世界时 10 月 23 日 15:59，落在昨午 14:15 简报之后、今晨 08:20 之前。RuntimeWire 等二手稿同日跟进，强调代理可从写代码扩展到通过图形界面自测。</p>
+<p>官方文档「Computer use and desktop sharing」写得更细：自托管 worker 需显式加 <code>--computer-use</code>，服务端不会默认打开；macOS 走 Cursor Computer Use 辅助应用，需辅助功能与屏幕录制权限；Linux 依赖 X11，可复用已有显示或由 worker 拉起 TigerVNC+Xfce。桌面共享（<code>--share-desktop</code>）仅 Linux，与 Computer Use 分开。托管 Cloud Agents 的能力说明另见 Capabilities 文档。</p>
+<p>边界：不回炒今晨已写明空窗的口径，也不把自托管权限配置写成「一键全开」；企业机对辅助功能/录屏的 MDM 策略差异，以实际放量为准。与昨晨 Dynatrace Marketplace 插件无直接关系，本窗不合并叙述。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：电子时报独家引述美光放弃 4F²、转向键合与 3D；1δ 2027 下半年博伊西量产。</li><li>分歧：韩系是否仍坚定 4F²，本条仅转述报道对比，未获三星/海力士同日回应。</li><li>待确认：1ε 键合导入的具体工艺节点编号与 Vertical HBM 客户样片时间。</li></ul>
+      <ul><li>多方一致：@cursor_ai 10/23 15:59 UTC 官方帖；cursor.com 自托管 Computer Use 文档；RuntimeWire 同日报道。</li><li>分歧：产品端「自动选用」与自托管「显式 flag」路径不同，勿混为一谈。</li><li>待确认：托管 Cloud Agents 与本地 IDE 代理在 Computer Use 上的默认策略是否完全一致。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://en.etnews.com/20261023200002" target="_blank" rel="noopener">Electronic Times</a><span class="role">主来源</span></li>
-        <li><a href="https://siliconangle.com/2026/10/23/microns-memory-boom-is-the-cyclicality-really-ending/" target="_blank" rel="noopener">SiliconANGLE (memory cycle)</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/cursor_ai/status/2113661506634305834" target="_blank" rel="noopener">@cursor_ai</a><span class="role">主来源</span></li>
+        <li><a href="https://cursor.com/docs/cloud-agent/self-hosted/computer-use" target="_blank" rel="noopener">Cursor Docs</a><span class="role">官方</span></li>
+        <li><a href="https://runtimewire.com/article/cursor-agents-computer-use-desktop-apps" target="_blank" rel="noopener">RuntimeWire</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

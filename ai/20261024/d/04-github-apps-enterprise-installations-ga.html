@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA KEV 新增 Collabora Online 内置 CODE Server 命令注入 CVE-2026-110447 · IT 行业简报</title>
+<title>GitHub Apps 企业级安装正式可用：治理/安全/管理权限扩围，可更多替代经典 PAT · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,29 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA KEV 新增 Collabora Online 内置 CODE Server 命令注入 CVE-2026-110447</h1>
-    <p class="lede">CISA 10 月 23 日告警：基于在野利用证据，将 Collabora Online 内置 CODE Server 操作系统命令注入漏洞 CVE-2026-110447 写入已知被利用漏洞目录；联邦机构须按 BOD 26-04 风险优先级处置，并鼓励全社会跟进。</p>
+    <div class="sec-label">开发者工具</div>
+    <h1>GitHub Apps 企业级安装正式可用：治理/安全/管理权限扩围，可更多替代经典 PAT</h1>
+    <p class="lede">GitHub Changelog 10 月 23 日宣布企业账户安装 GitHub Apps 正式 GA，并扩大企业治理、安全与管理类 API/GraphQL 覆盖；今晨只收了 Copilot 进 Teams，本窗补这条。</p>
     <div class="meta">
       <span>2026-10-24</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>开发者工具</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>相对昨晨 Arista VeloCloud、昨午 Plex2Shell 联邦截止，以及更早 PHP2Shell 紧急版，本窗漏洞主条是 CISA 已知被利用漏洞（KEV）目录里的新条目，而不是回炒旧链。2026 年 10 月 23 日告警标题写明只新增一枚：CVE-2026-110447，描述为 Collabora Online 内置 CODE Server 的操作系统命令注入，且已有活跃利用证据。</p>
-<p>CISA 重申约束性指令 BOD 26-04：联邦民用行政机构须按 KEV 风险优先级，优先修补「利用后可完全控制对外暴露资产」的条目，并在补丁前后做是否已失陷的基本排查。文中强调这类命令注入是常见攻击入口，对联邦企业风险显著。虽指令只约束联邦机构，文末仍鼓励所有组织采用同类风险管理，并开放 KEV 提名表供报送「已在野但未入目录」的漏洞。</p>
-<p>公开告警摘要段未列出具体受影响版本号与补丁包名，实操需回到 Collabora Online / CODE 厂商安全公告与 NVD/CVE 记录核对修复版本，并检查对外暴露的在线文档与协作组件。同日另有媒体整理 SafePay 勒索、PAN-OS 旧洞持续被利用等周报材料，均非本窗新 KEV 主条，故不展开。</p>
-<p>边界：不提供利用步骤或概念验证；不把「写入 KEV」自动等同于大规模勒索活动已用该洞作主入口。修复、缓解与取证排查以厂商公告和 CISA 后续更新为准；若联邦截止日期在完整 KEV 条目中另行公布，以目录字段为准。</p></div>
+      <div class="body"><p>今晨开发者工具栏已收「GitHub 应用进 Microsoft Teams、频道通知可拉调查并开 PR」。同日 Changelog 还有一条更偏企业治理的更新，今晨未单列：企业级安装 GitHub Apps 正式可用。官方写明，可在更多企业与组织自动化里用 GitHub Apps 替代经典个人访问令牌（PAT），并补上一批此前缺口的权限。</p>
+<p>新增与扩围权限按三类归纳：治理侧可管理企业级仓库策略与 ruleset、读取委托绕过请求；安全侧可配置双因素要求、校验域名、管理 IP 允许列表与企业访问限制；管理侧可更新企业资料、成员特权与跨企业仓库访问设置。文档表格还列出企业组织/仓库策略、bypass 请求、IP allowlist、可验证域名等对应的 REST/GraphQL 能力。这些更新亦将进入 GHES 3.24。</p>
+<p>边界：企业安装只管企业账户本身，组织或仓库仍需另行安装才能拿到对应范围权限；企业安装令牌不能再收窄范围。不回炒今晨 Copilot×Teams，也不把「Public monitoring 分诊/有效性检查」与本条混写成同一产品——后者可另文，本窗主条落在企业 Apps GA。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 10/23 告警新增 CVE-2026-110447；KEV + BOD 26-04 口径。</li><li>分歧：第三方周报同日还列其他洞，与本条「仅一枚新 KEV」不矛盾。</li><li>待确认：Collabora 官方修复版本矩阵与联邦截止日期（告警摘要未写死）。</li></ul>
+      <ul><li>多方一致：GitHub Changelog 10/23「Enterprise installations for GitHub Apps generally available」；Docs「Installing a GitHub App on your enterprise」。</li><li>分歧：无实质口径冲突；部分二手稿把同日多条 Changelog 揉成一条，本窗拆开只收企业 Apps。</li><li>待确认：各企业现有经典 PAT 迁移清单与 GHES 3.24 落地节奏。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/23/cisa-adds-one-known-exploited-vulnerability-catalog-0" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.outpostdaily.com/cves/" target="_blank" rel="noopener">Outpost KEV digest</a><span class="role">次要</span></li>
+        <li><a href="https://github.blog/changelog/2026-10-23-enterprise-installations-for-github-apps-generally-available/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://docs.github.com/en/enterprise-cloud@latest/apps/using-github-apps/installing-a-github-app-on-your-enterprise" target="_blank" rel="noopener">GitHub Docs</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

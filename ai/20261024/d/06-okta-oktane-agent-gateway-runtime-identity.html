@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claude Enterprise：Chat 与 Cowork 正式合并为统一体验，新增 Efficient 模式 · IT 行业简报</title>
+<title>Okta Oktane 再谈 Agent Gateway：运行时校验「用户+代理」双身份，堵住糊涂代理人 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Claude Enterprise：Chat 与 Cowork 正式合并为统一体验，新增 Efficient 模式</h1>
-    <p class="lede">Pro/Max 九月已合并的体验，现对 Enterprise 正式可用：网页/桌面/手机同一会话里既能快问快答，也能把要跑代码、处理文件的工作丢到 Anthropic 托管的云端继续跑。管理员可按角色授权，并用 Efficient 模式把统一体验锁在 Sonnet/Haiku 以控成本。</p>
+    <div class="sec-label">身份与访问</div>
+    <h1>Okta Oktane 再谈 Agent Gateway：运行时校验「用户+代理」双身份，堵住糊涂代理人</h1>
+    <p class="lede">SiliconANGLE 10 月 23 日晚更新 Oktane 现场综述：Okta 把身份从登录门禁推到代理调工具的运行时路径；Agent Gateway 要求凭证同时点名终端用户与代理。今晨身份栏为空，本窗补收。</p>
     <div class="meta">
       <span>2026-10-24</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>身份与访问</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>相对昨晨 Agent Skills 捐赠 AAIF、昨午 Anthropic 托管 Claude 在 Google Cloud 正式可用，本窗 Anthropic 产品主条是面向企业客户的体验合并。官方写明：Chat 与 Cowork 九月已先在 Pro/Max 打通，现在同样能力对 Claude Enterprise 计划正式开放。</p>
-<p>合并后的逻辑很直白：对话默认从聊天开始；简单问题仍即时回答；一旦任务需要跑代码或处理文件，Claude 转到公司托管的云端会话继续干，人合上笔记本也不会中断，之后可在网页、桌面或手机接着看结果。既有聊天、项目、连接器、skills 与插件会迁到新体验。</p>
-<p>安全口径延续企业侧已有控制：SSO、Compliance API、传输与静态加密，默认不用客户数据训模型。代理式工作在隔离虚拟机里跑，Enterprise 默认关闭网络出口，连接器凭证放在沙箱外。零数据保留（Claude Code）、HIPAA 就绪或客户自管密钥的组织，官方称暂时留在现有配置，不自动切到新体验。</p>
-<p>成本方面，计价仍按用量。文中给出效率对照：典型负载下 Opus 5.5 比 Opus 5 约低 40% 账单，Sonnet 5.5 比 Sonnet 5 最多约低 30%。管理员新增四类闸门：Efficient 模式（统一体验只用 Sonnet/Haiku）、按角色的模型授权、组织/组/成员消费上限，以及组级共享月度预算。</p>
-<p>边界：不回炒研究预览中的 Claude Duet，也不把形式化验证长文（10/22）塞进本条。企业管理员在组织设置里控制放量；现有客户会收到邮件说明。</p></div>
+      <div class="body"><p>今晨身份与访问栏为空。本窗主条落在 Okta Oktane 期间被现场与官方材料反复强调的 Agent Gateway。SiliconANGLE/theCUBE 10 月 23 日晚间综述写明：随着代理跨应用调用工具，企业关心的不再只是「能不能登录」，而是「这次动作代表谁、被允许做什么」；Okta 产品与技术总裁 Ric Smith 称，公司正从非行内决策走向行内授权。</p>
+<p>Okta 官方博客（产品页称 Agent Gateway 已随 Okta for AI Agents 提供）解释技术要点：传统 MCP 网关常用共享服务密钥或只能携带单一身份的 bearer token，容易出现「代理有权限、用户其实不该看」的糊涂代理人问题。Agent Gateway 按 RFC 8693 做令牌交换，要求每次调工具的凭证同时包含 subject（终端用户）与 actor（已注册代理）；网关按策略校验后，再向下游换取绑定同一用户的短时凭证，并留下可归因审计。Kill Switch 扩到网关、可吊销已签发令牌等能力，官方材料仍标为规划/分阶段，落地以控制台实际开关为准。</p>
+<p>边界：不回炒更早的 Vercel OIDC、eMudhra 中级 CA 事件；不把 Blueprint Alliance 行业倡议写成已强制的合规标准。现场「多厂商谁说了算」的张力，SiliconANGLE 已点出，属开放问题。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：Anthropic 官方产品文；企业客户引言强调「不再先选 Chat 还是 Cowork」。</li><li>分歧：无独立二手稿质疑 GA 范围；Duet 仍是预览，与本条企业合并分开。</li><li>待确认：零数据保留/HIPAA/CMEK 组织切到统一体验的时间表。</li></ul>
+      <ul><li>多方一致：SiliconANGLE 10/23 Oktane 综述强调 Agent Gateway 运行时；Okta 博客阐述 RFC 8693 双身份与糊涂代理人；新闻稿将 Agent Gateway 列入 Okta for AI Agents 能力组合。</li><li>分歧：新闻稿可用性表曾写 Agent Gateway「计划 Q3 GA」，博客称现已可用——以控制台开通状态与客户经理口径为准。</li><li>待确认：与 1Password Credential Broker、ServiceNow 等合作的生产部署案例规模。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://claude.com/resources/articles/unified-claude-enterprise" target="_blank" rel="noopener">Claude by Anthropic</a><span class="role">官方</span></li>
-        <li><a href="https://claude.com/resources/product-announcements" target="_blank" rel="noopener">Anthropic product announcements</a><span class="role">官方</span></li>
+        <li><a href="https://siliconangle.com/2026/10/23/ai-agent-governance-takes-shape-oktas-oktane-event-oktane/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">主来源</span></li>
+        <li><a href="https://www.okta.com/blog/product-innovation/okta-agent-gateway-runtime-security/" target="_blank" rel="noopener">Okta Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.okta.com/newsroom/press-releases/ai-innovations-oktane-2026/" target="_blank" rel="noopener">Okta Newsroom</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
