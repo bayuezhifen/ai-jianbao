@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Enterprise：Chat 与 Cowork 正式合并为统一体验，新增 Efficient 模式 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude Enterprise：Chat 与 Cowork 正式合并为统一体验，新增 Efficient 模式</h1>
+    <p class="lede">Pro/Max 九月已合并的体验，现对 Enterprise 正式可用：网页/桌面/手机同一会话里既能快问快答，也能把要跑代码、处理文件的工作丢到 Anthropic 托管的云端继续跑。管理员可按角色授权，并用 Efficient 模式把统一体验锁在 Sonnet/Haiku 以控成本。</p>
+    <div class="meta">
+      <span>2026-10-24</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>相对昨晨 Agent Skills 捐赠 AAIF、昨午 Anthropic 托管 Claude 在 Google Cloud 正式可用，本窗 Anthropic 产品主条是面向企业客户的体验合并。官方写明：Chat 与 Cowork 九月已先在 Pro/Max 打通，现在同样能力对 Claude Enterprise 计划正式开放。</p>
+<p>合并后的逻辑很直白：对话默认从聊天开始；简单问题仍即时回答；一旦任务需要跑代码或处理文件，Claude 转到公司托管的云端会话继续干，人合上笔记本也不会中断，之后可在网页、桌面或手机接着看结果。既有聊天、项目、连接器、skills 与插件会迁到新体验。</p>
+<p>安全口径延续企业侧已有控制：SSO、Compliance API、传输与静态加密，默认不用客户数据训模型。代理式工作在隔离虚拟机里跑，Enterprise 默认关闭网络出口，连接器凭证放在沙箱外。零数据保留（Claude Code）、HIPAA 就绪或客户自管密钥的组织，官方称暂时留在现有配置，不自动切到新体验。</p>
+<p>成本方面，计价仍按用量。文中给出效率对照：典型负载下 Opus 5.5 比 Opus 5 约低 40% 账单，Sonnet 5.5 比 Sonnet 5 最多约低 30%。管理员新增四类闸门：Efficient 模式（统一体验只用 Sonnet/Haiku）、按角色的模型授权、组织/组/成员消费上限，以及组级共享月度预算。</p>
+<p>边界：不回炒研究预览中的 Claude Duet，也不把形式化验证长文（10/22）塞进本条。企业管理员在组织设置里控制放量；现有客户会收到邮件说明。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Anthropic 官方产品文；企业客户引言强调「不再先选 Chat 还是 Cowork」。</li><li>分歧：无独立二手稿质疑 GA 范围；Duet 仍是预览，与本条企业合并分开。</li><li>待确认：零数据保留/HIPAA/CMEK 组织切到统一体验的时间表。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://claude.com/resources/articles/unified-claude-enterprise" target="_blank" rel="noopener">Claude by Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://claude.com/resources/product-announcements" target="_blank" rel="noopener">Anthropic product announcements</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

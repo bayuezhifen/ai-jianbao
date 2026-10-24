@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot 可安全记住登录/卡/联系人；马斯克傍晚再推；再核仍 4.7、无 4.8、未取消 4.7 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>Grok Bot 可安全记住登录/卡/联系人；马斯克傍晚再推；再核仍 4.7、无 4.8、未取消 4.7</h1>
+    <p class="lede">@bot 世界时 10 月 23 日 19:43（上海 10 月 24 日 03:43）宣布可保存登录、卡与联系人信息并在后续任务里安全复用。马斯克同日傍晚连续转发用户对 Bot 的夸赞。docs.x.ai 今晨再核：仍列并推荐 grok-4.7，未见 grok-4.8，未见取消 4.7。</p>
+    <div class="meta">
+      <span>2026-10-24</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>昨晨与昨午已分别写过 1Password 授权登录，以及手机日历/提醒/通讯录直连；按规则本窗不把这些旧能力再当「新发布」复述，只收隔夜真正新露出的一层：凭据与支付信息的安全记忆。@bot 原文：「Grok Bot can now save your logins, cards, and contact information. Add them once, and Bot securely remembers them for the future。」时间戳为世界时 10 月 23 日 19:43，落在昨午 14:15 简报之后。</p>
+<p>传播侧，马斯克在世界时约 17:21–17:29（上海约 01:21–01:29，已过昨午截稿）连续转发多条用户帖，内容包括「addicted to Grok Bot」「best AI agent」「every day more impressed」等，属于对 Bot 产品线的持续站台，而非版本号公告。本窗未见到马斯克就 grok-4.8 训练进度或「取代 4.7」发表新的定量表述。</p>
+<p>版本再核（截至今晨 docs.x.ai/docs/models）：文本定价表仍列 grok-4.7（长短上下文两档），选型建议明确代码与聊天用 Grok 4.7；全文未见 grok-4.8 模型行。同页仍有 4.6、4.5、4.20 系列与 grok-build-0.1 等。知识截止日期写的是 2026 年 5 月。因此维持口径：仍推荐 4.7、无 4.8 上架、未见取消 4.7；若二手稿写「4.8 已取代/搁置 4.7」，与当前官方文档不符，不采纳。</p>
+<p>边界：不把「记住登录/卡」写成已取代 1Password 集成，也不回炒更早 Runway MCP、Action Button。企业机与各 Android 厂商对自动填充/凭证库的系统权限弹窗差异，以实际放量为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：@bot 凭据记忆帖；马斯克傍晚多条 RT 夸赞 Bot；docs 仍含并推荐 grok-4.7；未见 4.8；未见取消 4.7。</li><li>分歧：本窗无「4.8 取代 4.7」可信二手稿。</li><li>待确认：卡号/登录保存的加密与生物识别解锁细节、以及与 1Password 流程的优先级。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/bot/status/2113717946019397910" target="_blank" rel="noopener">@bot (save logins/cards)</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113684126360629466" target="_blank" rel="noopener">Elon Musk RT (impressed by grok bot)</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113683508153434147" target="_blank" rel="noopener">Elon Musk RT (addicted to Grok Bot)</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/elonmusk/status/2113682305961095246" target="_blank" rel="noopener">Elon Musk RT (best AI agent)</a><span class="role">次要</span></li>
+        <li><a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener">docs.x.ai Models</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

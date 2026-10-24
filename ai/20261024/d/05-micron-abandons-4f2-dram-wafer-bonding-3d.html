@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>美光放弃 4F² DRAM，路线改押晶圆键合与 3D 堆叠 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>美光放弃 4F² DRAM，路线改押晶圆键合与 3D 堆叠</h1>
+    <p class="lede">电子时报 10 月 23 日独家：美光在 10 月 21 日技术网络研讨会上明确，研究 4F² 二十余年仍「看不到可行缩放路径」，将延续 6F²，并把晶圆键合与 3D DRAM 推到路线图前沿；1δ 计划 2027 下半年在爱达荷州博伊西量产。</p>
+    <div class="meta">
+      <span>2026-10-24</span>
+      <span class="dot"></span>
+      <span>存储与网络硬件</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>相对昨晨已收的 KDDI×Broadcom 共封装光学合作，本窗存储硬件主条是美光主动改写二维缩小剧本。韩国电子时报 10 月 23 日独家援引美光路线图材料称，三星与 SK 海力士仍把基于垂直沟道晶体管的 4F² 视为突破亚 10 纳米密度的关键一步；美光 CTPO Scott DeBoer 则在 10 月 21 日技术网络研讨会上称，公司研究 4F² 二十余年仍「看不到可行缩放路径」，相对 6F² 的密度优势「有点像神话」，存在「根本问题」。</p>
+<p>替代路径写进多代路线图：在主流 1γ 之后，下一代 1δ 计划 2027 年下半年于爱达荷州博伊西开始量产；再往后的 1ε 全面导入晶圆键合，同时仍基于 6F²，且报道称该节点研发推进顺利。更远期在 1ζ 与 1η 之间插入代号 3D1、3D2 的 3D DRAM，并搭配高数值孔径 EUV 与新材料评估，一旦经济账算得过来就推进商业产线。</p>
+<p>封装与高带宽内存侧还抛出 Vertical HBM 概念：传统 HBM 多与处理器并排放在转接板上，Vertical HBM 则把存储器直接叠在处理器之上，用细间距混合键合互联，意在把三维堆叠吃到极致。这与「放弃在二维单元上死磕 4F²」的叙事一致——先改互连与堆叠规则，再谈密度。</p>
+<p>报道把此举解读为：与其在 4F² 上与韩系正面硬拼，不如先改比赛规则。文中亦提到长鑫近期宣称推进 4F² 服务器 DRAM、曾引发存储股波动，用来解释市场为何对「谁先量产下一代单元」格外敏感。同日另有景气周期评论称 DRAM 报价仍紧，但与本次架构路线选择是两条线。</p>
+<p>边界：研讨会本身在 10 月 21 日，本条依据是 10 月 23 日独家整理稿；未独立核实美光内部幻灯每一页。不把 Vertical HBM 写成已出货产品，也不回炒更早的 HBM 报价传闻或 KDDI CPO。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：电子时报独家引述美光放弃 4F²、转向键合与 3D；1δ 2027 下半年博伊西量产。</li><li>分歧：韩系是否仍坚定 4F²，本条仅转述报道对比，未获三星/海力士同日回应。</li><li>待确认：1ε 键合导入的具体工艺节点编号与 Vertical HBM 客户样片时间。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://en.etnews.com/20261023200002" target="_blank" rel="noopener">Electronic Times</a><span class="role">主来源</span></li>
+        <li><a href="https://siliconangle.com/2026/10/23/microns-memory-boom-is-the-cyclicality-really-ending/" target="_blank" rel="noopener">SiliconANGLE (memory cycle)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
