@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gurman：本周三或发 M6 版 iMac 与 14 英寸 MacBook Pro；「Pro and tell」体验会 · IT 行业简报</title>
+<title>模组解锁 RTX 20/30/40 Tensor 吞吐：最高近翻倍；非官方产品、非游戏帧率 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">消费电子</div>
-    <h1>Gurman：本周三或发 M6 版 iMac 与 14 英寸 MacBook Pro；「Pro and tell」体验会</h1>
-    <p class="lede">MacRumors 援引彭博 Mark Gurman 10 月 25 日再确认：苹果计划周三公布搭载 M6 的新 iMac 与 14 英寸 MacBook Pro；洛杉矶「Pro and tell」体验会邀请已发出，关键升级料为 8 月已在 Mac mini 亮相的 M6，外观传闻无大改。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>模组解锁 RTX 20/30/40 Tensor 吞吐：最高近翻倍；非官方产品、非游戏帧率</h1>
+    <p class="lede">VideoCardz / TechPowerUp 10 月 25 日：开源 Linux 向模组在驱动加载前改寄存器，抬高 Tensor Core 发令率；4090 FP16 约 165.6→331.6 TFLOPS。今晨漏收、午间仍在发酵，故本窗补收。非英伟达官方发布。</p>
     <div class="meta">
       <span>2026-10-26</span>
       <span class="dot"></span>
-      <span>消费电子</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>消费电子栏本窗主条是苹果硬件节奏，不是已开卖清单。MacRumors 10 月 25 日（美西约 07:30，约合上海 22:30）报道：彭博 Mark Gurman 当日再次确认，苹果计划在周三发布新款 iMac 与 14 英寸 MacBook Pro；两机关键升级预期都是 M6——该芯片 8 月已随新 Mac mini 首发。苹果同日发出洛杉矶体验会邀请，标语为「Pro and tell」，日期落在 10 月 28 日周三。</p>
-<p>设计侧，现有传闻不支持外观大改，更像「换芯出货」；触控 OLED 版 MacBook Pro 的叙事仍在，但「Pro and tell」被解读为高端机型大概率继续用 MacBook Pro 品牌，而不是一度流传的 MacBook Ultra。iPhone 线此前把传闻中的 Ultra 最终定名 Duo，也给了品牌命名的旁证，但本条不展开手机。</p>
-<p>边界必须写清：这是可靠爆料加邀请函佐证，不是新闻稿已上线。开售价、起售配置、是否同步 16 英寸或彩色 iMac 刷新，公开材料尚未锁死。MacRumors 读者评论区期待配色与存储起步容量，属于情绪而非官方规格。周三若苹果 Newsroom 发文，下午简报再改写为「已发布」口径。</p>
-<p>与本窗其他栏的关系：不回炒已过窗的 iPhone Duo 开售叙事；本条只服务「本周 Mac 换芯预期」。若体验会仅限受邀、无线上直播，也符合近期苹果部分发布改走邀请体验 + 通稿的做法，但同样有待周三核实。</p></div>
+      <div class="body"><p>英伟达栏本窗不是公司新品，而是社区模组对消费级 RTX 算力限制的破解。VideoCardz 世界时 10 月 25 日 08:54、TechPowerUp 同日跟进：开源项目（GPU-Unlock / Ada 变体、Turing 向等）在 NVIDIA 驱动加载前改写底层配置寄存器，抬高部分 Tensor Core 指令发令率。改动断电即失效，不必刷 VBIOS；目前以 Linux 为主，Windows 仍属实验。</p>
+<p>公开基准摘录：RTX 4090 上测得的 FP16 Tensor 吞吐约从 165.6 提到 331.6 TFLOPS；3090 Ti 的 BF16 矩阵乘约从 87.5 提到 157.4 TFLOPS；2080 Ti 等也有近翻倍演示。影响面主要是带 FP32 累加的 FP16/BF16，以及部分架构上的 TF32/FP8；对 LLM 提示处理可有约一到三成量级收益，但生成阶段常受显存带宽卡住。游戏帧率基本不动——这不是「免费 2× FPS」。</p>
+<p>风险与边界：须在驱动前绑定；不支持配置可能导致无法开机；保修与稳定性自负；Blackwell 50 系尚未见确认可用解锁。有人呼吁英伟达正式放开已停产卡限制，也有人担心二手 3090/4090 被 AI 买家进一步抬价——这些都是社区讨论，不是官方路线图。</p>
+<p>编注：该条世界时 10/25 清晨已出，今晨 08:20 简报漏收；午间仍在硬件圈发酵，故按「本窗补收」写入，不回溯改今晨档。不得写成英伟达官方性能翻倍或新品发布。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：MacRumors 援引 Gurman 再确认周三 M6 iMac + 14 英寸 MacBook Pro；苹果已发洛杉矶「Pro and tell」邀请；M6 已于 8 月在 Mac mini 首发。</li><li>分歧：外观「无大改」、品牌是否放弃 Ultra 名等仍属推断。</li><li>待确认：周三正式配置表、价格、是否含更多尺寸/彩色款。</li></ul>
+      <ul><li>多方一致：VideoCardz 与 TechPowerUp 数字与机制描述一致；临时、驱动前、主攻 Tensor 而非游戏；50 系未确认。</li><li>分歧：各卡型验证完整度不一；实测 LLM 收益远小于峰值 TFLOPS 翻倍。</li><li>待确认：英伟达是否回应、驱动未来是否封堵、Windows 稳定版时间。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.macrumors.com/2026/10/25/new-imac-and-14-inch-macbook-pro-m6-chip-rumors/" target="_blank" rel="noopener">MacRumors</a><span class="role">主来源</span></li>
-        <li><a href="https://www.macrumors.com/archive/2026/10/" target="_blank" rel="noopener">MacRumors archive Oct 2026</a><span class="role">次要</span></li>
+        <li><a href="https://videocardz.com/newz/modders-unlock-hidden-ai-performance-on-nvidia-rtx-20-30-and-40-series-gpus-with-up-to-2x-tensor-throughput" target="_blank" rel="noopener">VideoCardz</a><span class="role">主来源</span></li>
+        <li><a href="https://www.techpowerup.com/354110/geforce-unlocked-modders-boost-rtx-20-rtx-30-and-rtx-40-compute-performance-by-up-to-2x" target="_blank" rel="noopener">TechPowerUp</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
