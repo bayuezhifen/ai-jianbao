@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英特尔拟收购 Classiq：量子软件合成平台 + 自旋量子比特，打造全栈量子业务 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>英特尔拟收购 Classiq：量子软件合成平台 + 自旋量子比特，打造全栈量子业务</h1>
+    <p class="lede">英特尔 10 月 26 日宣布达成收购以色列量子软件公司 Classiq 的最终协议；官方稿强调全栈能力，未写对价。以色列与国际媒体报道交易作价约 23 亿美元。</p>
+    <div class="meta">
+      <span>2026-10-27</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英特尔宣布已与 Classiq 达成最终收购协议，拟把对方的量子算法合成平台与英特尔的自旋量子比特制造、既有软件能力合并，目标是成为「全栈」量子计算方案提供商，并把量子处理单元（QPU）加入其已有的 CPU/GPU/ASIC 组合。新闻稿把 Classiq 类比为当年 EDA/CAD 对经典芯片设计的抽象：用与底层量子比特模态无关的高层平台，降低手写线路门槛。</p>
+<p>英特尔称自 2015 年起投入量子，并强调可在与常规硅工艺相近的设备与流程上规模化生产量子比特芯片与低温控制电子。交易完成后，公司表示仍计划支持 Classiq 现有的多平台集成，保持模态与硬件无关的软件方案。交易尚待监管批准等交割条件，预期 2027 上半年完成；交割前双方继续独立运营。CEO Lip-Bu Tan 欢迎创始团队加入；Classiq CEO Nir Minerbi 强调目标是让开发者无需深耕线路设计即可做可扩展应用。</p>
+<p>对价方面：英特尔官方新闻稿未披露金额。以色列 Ctech 与彭博等报道作价约 23 亿美元（现金加股票），并称这将是量子领域迄今最大宗收购之一。报道还提及 Tan 个人曾投资 Classiq、收购讨论中回避等细节，属媒体侧写，正式条款以交割文件为准。</p>
+<p>边界：CPU/服务器栏收录是因为买方是英特尔且明确把 QPU 并入其计算平台叙事；不把它写成「通用服务器 CPU 新品」。金额以「媒体报道约 23 亿、官方未披露」并列。不回炒无关的数据中心或云 IaaS 条目。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：英特尔官方确认最终协议、全栈叙事、2027 上半年目标交割、交割前独立运营。</li><li>分歧：约 23 亿美元来自 Ctech/Bloomberg 等，官方稿无对价；估值与股权结构细节以交割为准。</li><li>待确认：监管审批结果、交割后 Classiq 品牌与多硬件后端支持范围。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.intel.com/content/www/us/en/newsroom/news/corporate/intel-classiq-accelerate-scalable-quantum-computing.html" target="_blank" rel="noopener">Intel Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.calcalistech.com/ctechnews/article/rygzvmpngg" target="_blank" rel="noopener">Ctech</a><span class="role">主来源</span></li>
+        <li><a href="https://www.bloomberg.com/news/articles/2026-10-26/intel-to-buy-israeli-startup-classiq-in-quantum-computing-push" target="_blank" rel="noopener">Bloomberg</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

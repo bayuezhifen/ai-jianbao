@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 公布三项科学结果：调和分析全维证明、证伪 ETH、QCD 存在性；试外部「牧羊人」发布 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 公布三项科学结果：调和分析全维证明、证伪 ETH、QCD 存在性；试外部「牧羊人」发布</h1>
+    <p class="lede">今晨已收 GPT-6.1 Terra。本窗补收仍在发酵的科学合作稿：模型产出三项数学/计科/物理结果，并按外部专家建议用三种不同开放策略；半岛电视台等 10/27 跟进。</p>
+    <div class="meta">
+      <span>2026-10-27</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 在官网发文称，其模型在调和分析、复杂性理论与量子场论方向产出三项新结果，并强调这些手稿更宜视为「原始研究数据」，需经学界消化才能变成科学理解。公司邀请外部专家担任「牧羊人（shepherds）」，组织协作并建议了三种不同的材料公开策略：数学结果直接公开 AI 产出，由学界自行组织解释；计算机科学结果在公开 AI 产出的同时组建外部协作组；物理结果 defer 材料发布、先由协作组自行撰稿。</p>
+<p>数学侧：模型给出局部光滑猜想（local smoothing conjecture）在所有空间维数的证明，并因而可推出各维 Kakeya 猜想与 Stein 限制猜想；公司称 AI 自然语言稿与 Lean 形式化已放进公开 GitHub。计科侧：系统给出指数时间假设（ETH）为假的结果，并经 Lean 校验；牧羊人组由 Impagliazzo、Paturi（ETH 原始提出者之一线）与 MIT 的 Ryan Williams 等领衔。物理侧：称给出含规范场与费米子的四维相互作用量子场论——含 QCD 及一种标准模型大统一完备——的数学存在性证明，并涉及纯杨–米尔斯存在性（千禧年问题相关子问题）；David Gross 等领衔的组选择暂缓公开 AI 原材料。</p>
+<p>与今晨关系：今晨 OpenAI 栏是 GPT-6.1 Terra（更便宜更快的计算机操控与视觉推理）。科学合作稿落在昨晚至今晨窗口、今晨未单列，午间媒体（如半岛电视台 10/27）与社交仍在发酵，故按「漏收补收」写入本窗，不回炒 Terra 价目与基准。</p>
+<p>边界：标题与正文写「公司宣称 / 模型产出 / 外部牧羊」，不写成学界已一致认定的最终定理；物理材料尚未按组方意愿公开。ETH 被证伪若成立，将牵动大量以 ETH 为条件的硬度推论，但仍待社区独立复核。不把三项结果与 GPT-6.1 Terra 产品发布混成同一条产品新闻。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官网列三项方向与三种 shepherd 策略；数学与计科材料已公开；物理组 defer；Al Jazeera 10/27 跟进并引述数学家反应。</li><li>分歧：科学共同体对「AI 发现」的认定标准不一；物理结果尚未公开原文，外界无法独立验算。</li><li>待确认：Lean 证明的社区审查结论、ETH 反例的算法含义、Yang–Mills/QCD 手稿最终公开时间。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/building-scientific-understanding-with-academic-communities/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://www.aljazeera.com/economy/2026/10/27/ai-makes-discoveries-in-mathematics-computer-science-physics-openai-says" target="_blank" rel="noopener">Al Jazeera</a><span class="role">主来源</span></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1019143/openai-eth-kaseya-science-math-physics" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
