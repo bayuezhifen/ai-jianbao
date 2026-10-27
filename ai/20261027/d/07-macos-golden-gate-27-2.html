@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苹果推送 macOS Golden Gate 27.2：Siri AI 语境记忆与多语言等 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>苹果推送 macOS Golden Gate 27.2：Siri AI 语境记忆与多语言等</h1>
+    <p class="lede">MacRumors、Ars Technica 10 月 26 日：苹果正式推送 macOS Golden Gate 27.2；官方说明强调 Siri AI 可保留既往交互有用语境、扩大个人语境来源，并带来信息 App 情境建议等。</p>
+    <div class="meta">
+      <span>2026-10-27</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>据 MacRumors 报道，苹果于 10 月 26 日推送 macOS Golden Gate 27.2，为 9 月推出的 macOS 27 首个重大点更新，可在系统设置 → 软件更新获取。苹果发布说明原文要点：增强 Siri AI，使其能保留先前 Siri 交互中的有用语境，并从更广的个人语境中取用信息；信息 App 新增 Suggestions，可依据对话情境在日历、提醒事项等 App 中快速行动；另含其他功能、错误修复与安全更新。MacRumors 还提到亮度与音量滑块界面调整，以及 Siri AI 语言扩展至法、日、韩、葡、西等。</p>
+<p>Ars Technica 同日综述 iOS / macOS 等 27.2 家族：Siri AI 增加「回忆过往对话」能力，并扩展可引用的数据源（如信息附件、语音邮件、日历与会者等）；新增 Excluded Apps，可限制 Siri、搜索与建议可访问的 App；Siri AI 语言扩展同上，且仍写明欧盟与中国大陆不可用。macOS 侧与系统家族共享语境记忆、多语言等主线；信息建议在 Mac 上同样指向日历与提醒。</p>
+<p>写作纪律：不臆造未出现在发布说明或可靠报道中的功能清单。Ars 提及测试版残留的手势识别字符串、以及与「下一代触控 MacBook」传闻的联想，目前仅为猜测，本卡不作确认。安全更新存在，但具体 CVE 数量以 Apple 安全内容支持页为准，不在此夸张列举。</p>
+<p>对本窗读者：若关注桌面生产力，重点是 Siri 语境记忆与信息→日程/提醒的快捷建议；若关注隐私，Excluded Apps 与地区可用性限制同样重要。与 iPad mini / A20 Pro 发布同日，系统点更新与硬件发布形成「软硬同日」节奏，但不把硬件发售节奏写进本卡。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>MacRumors：27.2 正式推送；引用苹果说明（语境记忆、Messages Suggestions）。</li><li>Ars：同日确认 Siri 记忆/多语言/Excluded Apps 等家族级变化。</li><li>勿臆造：未在稿内的功能不写进正文清单。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.macrumors.com/2026/10/26/apple-releases-macos-golden-gate-27-2/" target="_blank" rel="noopener">MacRumors</a><span class="role">主来源</span></li>
+        <li><a href="https://arstechnica.com/apple/2026/10/apple-releases-ios-and-macos-27-2-with-new-siri-ai-features-new-music-logo/" target="_blank" rel="noopener">Ars Technica</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苹果 A20 Pro 登场：2nm、GPU 核内 Neural Accelerators，驱动新 iPad mini · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">手机与端侧 SoC</div>
+    <h1>苹果 A20 Pro 登场：2nm、GPU 核内 Neural Accelerators，驱动新 iPad mini</h1>
+    <p class="lede">苹果 Newsroom 10 月 26 日：全新 iPad mini 搭载 A20 Pro——采用最新 2 纳米工艺；GPU 每核含 Neural Accelerators；相对上代，苹果自测 AI 最高约 4.5×、图形约 2.7×、多线程约 60%。</p>
+    <div class="meta">
+      <span>2026-10-27</span>
+      <span class="dot"></span>
+      <span>手机与端侧 SoC</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>本卡只写 SoC。苹果 10 月 26 日新闻稿宣布新一代 iPad mini 由 A20 Pro 驱动：采用苹果最新 2 纳米工艺，封装思路借鉴 M 系列。图形侧为最多 7 核 GPU，且每个 GPU 核内置 Neural Accelerators；CPU 最多 6 核。苹果称相对上一代，AI 性能最高约 4.5 倍、图形最高约 2.7 倍、多线程性能最高约 60%——测试时间标注 2026 年 9 月，属厂商自测口径，横向对比第三方跑分需另等。</p>
+<p>神经网络方面，512GB 配置配备 Dual 16-core Neural Engine（合计 32 核参与），苹果称较上代处理能力翻倍，面向 Draw Things、Detail 等端侧生成与视觉应用；统一内存带宽亦宣称提升逾一倍，服务图形与 AI 密集负载。无线侧首次为 mini 引入 N1（Wi-Fi 7 / Bluetooth 6 / Thread）与蜂窝机型的 C2 调制解调系统，官方称蜂窝峰值速率最高可提升约 50%，具体视运营商与环境而定。</p>
+<p>产品叙事上，A20 Pro 把「GPU 核内神经加速」从更高端线进一步铺到掌上平板，意味着本地大模型、扩散与实时视觉管线有了更明确的硬件借口。苹果同时强调 iPadOS 27 与下一代 Apple Intelligence / Siri AI 的组合，但智能功能可用性受语言、地区与年龄限制，欧盟等市场限制以官方脚注为准。</p>
+<p>与消费电子栏分工：整机 OLED、厚度、IP67、售价与发售日程见「全新 iPad mini」卡；本卡不重复屏幕参数清单。对开发者与端侧推理关注点：核内 Neural Accelerators 加双 Neural Engine 是硬件信号，具体框架、配额与 Private Cloud Compute 边界仍以系统条款为准，不宜把营销倍率直接写成「本地模型速度实测」。</p>
+<p>一句话收束：本窗 SoC 主条就是 A20 Pro 随新 mini 亮相；若后续有独立芯片技术白皮书或第三方拆解确认工艺节点细节，再补核。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>唯一官方主源：Apple Newsroom 10/26。</li><li>数字均为苹果自测相对上代；512GB 才强调 Dual 16-core Neural Engine。</li><li>与卡 10 分工：本卡 SoC，彼卡整机。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/" target="_blank" rel="noopener">Apple Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.apple.com/newsroom/2026/10/apple-gives-ipad-mini-its-biggest-update-ever/" target="_blank" rel="noopener">Apple Newsroom (same)</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

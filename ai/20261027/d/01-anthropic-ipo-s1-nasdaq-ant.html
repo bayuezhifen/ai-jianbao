@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 公开提交 IPO S-1，拟纳斯达克代码 ANT · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>Anthropic 公开提交 IPO S-1，拟纳斯达克代码 ANT</h1>
+    <p class="lede">10 月 26 日 Anthropic 向 SEC 公开 Form S-1，拟在纳斯达克以 ANT 上市；H1 2026 收入约 162.9 亿美元，净亏损披露含估值相关会计项约 807 亿美元量级——多为可转债公允价值变动，不宜写成「经营现金亏 800 亿」。</p>
+    <div class="meta">
+      <span>2026-10-27</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 于 2026 年 10 月 26 日向美国证券交易委员会公开提交 Form S-1，公司官方新闻稿与 CNBC、美联社等同步报道。拟议发行 A 类普通股，并计划在纳斯达克全球精选市场挂牌，交易代码拟定为 ANT；发行股数与价格区间尚未确定。牵头承销商为高盛与摩根士丹利，名单中还包含摩根大通、花旗等一长串投行。此前公司约在 6 月曾向 SEC 保密提交，此次是财务与风险披露对公众放开。官方新闻稿按标准免责声明强调：登记声明尚未生效，不得据此售股。</p>
+<p>增长数字极为醒目。招股书称截至 6 月 30 日的六个月收入约 162.9 亿美元，同比增约 1304%；全年 2025 收入约 45.9 亿美元。净收入留存率（NRR）截至 9 月 30 日约 900%，意味着存量客户年消费约九倍扩张——远高于一般公有云软件公司中位数。企业侧截至 9 月 30 日 trailing 十二个月收入达 10 万美元及以上的客户逾 1.19 万；消费型收入约占 H1 总收入八成。员工约 5300 人，公司自称内部仍以「Ants」相称；海外收入 H1 约 45 亿美元量级，占比约三成。</p>
+<p>亏损数字必须拆开写。H1 2026 净亏损约 807 亿美元，同比扩大；CNBC 等援引招股书指出，其中约 720 亿美元量级来自可转债等工具因企业估值上升而产生的公允价值会计影响，并非等额经营现金流出。全年 2025 净亏损约 419 亿美元。隐含毛利率因算力成本结构变化大幅抬升，但公司也警告：当新增算力集中交付时，经营利润率会剧烈波动。风险因素章节超过 90 页，覆盖算力供给、安全判断、与政府关系、气候与数据中心禁令等。</p>
+<p>资本与治理结构同样特殊。创始人 LLC 将持有约 50.1% 投票权；亚马逊、Alphabet、微软等既是客户通道也是战略出资方，招股书披露对 AWS Trainium、谷歌 TPU、微软 Azure 以及 SpaceX AI 算力等均有巨额长期承诺。竞争对象在招股书中主要点名 OpenAI 与谷歌。本条只写 IPO 公开披露本身；训练暂停与评测沙箱逃逸见 Claude 栏，FTC 作证要求见隐私与监管栏，佐治亚选票汇总访问已于昨晨收过、此处不展开。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：10/26 公开 S-1；拟 Nasdaq ANT；H1 收入约 $16.29B；净亏损约 $80.7B 且多数为估值相关会计项；NRR 约 900%；高盛/摩企牵头；风险因素 90+ 页。</li><li>官方确认：anthropic.com/news/s1-sec 确认提交与 ANT 代码；股数与价格区间未定。</li><li>待确认：最终发行规模、定价窗口、锁定期细则落地节奏。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.cnbc.com/2026/10/26/anthropic-ipo-live-updates-ai-s-1-filing.html" target="_blank" rel="noopener">CNBC</a><span class="role">主来源</span></li>
+        <li><a href="https://www.anthropic.com/news/s1-sec" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://apnews.com/article/anthropic-ipo-shares-public-ca2f4c282bef3201a392e59e3df2300c" target="_blank" rel="noopener">AP News</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
