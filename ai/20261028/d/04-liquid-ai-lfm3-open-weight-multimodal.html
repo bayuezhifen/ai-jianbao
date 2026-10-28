@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 Adobe Commerce / Magento CVE-2026-48356 列入 KEV：危险类型文件任意上传 · IT 行业简报</title>
+<title>Liquid AI 开源 LFM3：约 2B 级六模型家族，文本/视觉/音频/全能/决策共用骨干 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 Adobe Commerce / Magento CVE-2026-48356 列入 KEV：危险类型文件任意上传</h1>
-    <p class="lede">CISA 10 月 27 日把 Adobe Commerce 与 Magento 的 CVE-2026-48356（危险类型文件无限制上传）列入已知被利用漏洞目录；联邦民用机构须按 BOD 26-04 优先处置，截止日期约 11 月 10 日。</p>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>Liquid AI 开源 LFM3：约 2B 级六模型家族，文本/视觉/音频/全能/决策共用骨干</h1>
+    <p class="lede">10 月 27 日官方博客发布 LFM3：开权重大约 17 亿参数骨干，衍生文本、VL、音频、Omni 与决策模型；HF / Playground / API 可取。今晨开源栏为空，午间仍在发酵，本窗补收。</p>
     <div class="meta">
       <span>2026-10-28</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>开源治理与许可证</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>CISA 警报写明，基于活跃利用证据，将两漏洞加入 KEV：一是 Adobe Commerce / Magento 的 CVE-2026-48356（Unrestricted Upload of File with Dangerous Type），二是 Google Brotli 的 CVE-2026-111497。Brotli 条目在 10 月 24 日下午简报已收过，本窗不回炒为主条，只交代同日「搭车」入库；首页主条聚焦 Magento/Commerce 上传漏洞。</p>
-<p>Adobe 安全公告 APSB26-73（2026 年 7 月发布补丁批次）中，CVE-2026-48356 归类为 CWE-434，影响任意代码执行路径上的权限提升风险，CVSS 约 9.6，标注利用无需认证但需用户交互（UI:R）。受影响产品线覆盖 Adobe Commerce、Magento Open Source 多个 2.4.x 维护分支及 B2B 扩展等。CISA 要求联邦民用行政机构按 BOD 26-04 对公开暴露、利用后可拿总控的资产优先修补，并评估补丁前是否已被入侵；KEV 表所列截止日期为 2026-11-10，勒索活动字段为 Unknown。</p>
-<p>运营含义：电商与数字体验栈若仍跑未打 2026-jul 安全包的 Commerce/Magento，应视为高优先级。公告发布时 Adobe 称「未知野外部署利用」，与 10 月 27 日 CISA「已有活跃利用证据」的时差说明威胁情报已更新——处置以 KEV 为准，不以数月前公告的「未知在野」自我安慰。</p>
-<p>边界：不提供利用步骤或 PoC；php2shell（今晨已收）与 Brotli（昨已收）均不重复展开。</p></div>
+      <div class="body"><p>Liquid AI 宣布新一代 Liquid Foundation Models——LFM3。首发落在约 20 亿参数量级：共享 LFM3-1.7B-Base 骨干，再分出文本（256K 上下文）、视觉（含视频）、音频（约 18 语种）、Omni（视听一体）以及两款决策模型 d1-2B / d1-Omni-2B。权重开源，Hugging Face、自家 Playground 与 API 同步可下；宣称可在单卡上微调，并适配 llama.cpp、MLX、vLLM、高通 AI Hub 等。</p>
+<p>架构上，LFM3 用「三混合」层：门控短卷积、滑动窗口注意力与全局注意力；预训练约 22 万亿 token。官方基准表显示，1.7B 文本模型在部分智能体与工具调用榜上能接近更大开源模型；视觉模型自报在同尺寸档领先。AMD、高通、Ambarella、奔驰等以合作伙伴名义站台，强调端侧与车机场景。VentureBeat 等 27–28 日跟进，强调「浏览器智能体、语音、识图可落在企业可控设备上」。</p>
+<p>与百度 Unlimited OCR 2（昨午已收）不同，LFM3 是通用多模态小模型家族，不是 OCR 专用。蚂蚁开源 Ling-3.1-flash-1019 等同窗亦有讨论，但本窗首页只立 Liquid 官方首发一条，避免堆砌。</p>
+<p>边界：基准为厂商标称，待社区复现；「开源」此处指开权重可下载，许可证以 HF 卡片为准；不把合作伙伴引语写成已量产上车。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 警报确认 CVE-2026-48356 入 KEV；Adobe APSB26-73 确认漏洞类别与补丁分支。</li><li>分歧/二手：Adobe 七月稿写「未知在野」，CISA 十月基于新证据入库——以 KEV 为准。</li><li>待确认：具体威胁行为体与是否进入勒索套件（KEV 标 Unknown）。</li></ul>
+      <ul><li>多方一致：liquid.ai 博客与 HF 模型卡确认 LFM3 发布与开权重；VentureBeat 等复述多模态与端侧定位。</li><li>分歧/二手：具体榜单分数依赖官方表格；部分社媒把「2B」与竞品参数口径混比。</li><li>待确认：各模态独立许可证条款；车机/手机量产时间表（目前为合作与评测表述）。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.adobe.com/trust/security/products/commerce/apsb26-73.html" target="_blank" rel="noopener">Adobe APSB26-73</a><span class="role">官方</span></li>
-        <li><a href="https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.csv" target="_blank" rel="noopener">CISA KEV CSV</a><span class="role">次要</span></li>
+        <li><a href="https://www.liquid.ai/blog/lfm3" target="_blank" rel="noopener">Liquid AI Blog</a><span class="role">官方</span></li>
+        <li><a href="https://huggingface.co/blog/LiquidAI/lfm3" target="_blank" rel="noopener">Hugging Face Blog</a><span class="role">次要</span></li>
+        <li><a href="https://venturebeat.com/technology/liquid-ais-new-lfm3-models-put-browser-agents-voice-commands-and-image-recognition-onto-enterprise-controlled-devices" target="_blank" rel="noopener">VentureBeat</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
