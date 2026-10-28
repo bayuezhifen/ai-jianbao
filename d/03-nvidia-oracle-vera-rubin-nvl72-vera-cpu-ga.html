@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TrendForce：2027 年服务器 CPU 出货料增逾 40%，Arm 份额继续抬升 · IT 行业简报</title>
+<title>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,28 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">CPU / 服务器</div>
-    <h1>TrendForce：2027 年服务器 CPU 出货料增逾 40%，Arm 份额继续抬升</h1>
-    <p class="lede">TrendForce 10/22：受 AI 推理与智能体负载推动，2026 年服务器 CPU 出货同比约 +31%，2027 年料再增逾 40%；机架 CPU:GPU/ASIC 比或从传统 1:8 走向 1:2 乃至 1:1。预计 Arm 服务器 CPU 2026 年份额破 20%、2027 年约 30%。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦</h1>
+    <p class="lede">在 Oracle AI World，英伟达与 Oracle 宣布 Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，并计划把 Supercluster 扩到多吉瓦级；另规划 HGX Rubin NVL8。</p>
     <div class="meta">
-      <span>2026-10-22</span>
+      <span>2026-10-28</span>
       <span class="dot"></span>
-      <span>CPU / 服务器</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>TrendForce 10 月 22 日发布服务器 CPU 展望：自 2025 下半年 AI 服务商加推智能体应用以来，服务器 CPU 需求走稳；预计 2026 年出货同比增约 31%，2027 年在推理与 agentic 服务带动下再增逾 40%，有望改写长期由 x86 主导的格局。研究指，云数据中心推理占比上升将改变机架内 CPU 与 GPU/ASIC 配比——按头部云商规划，比例可能从传统约 1:8 转向 1:2 甚至 1:1，从而额外拉动 CPU 出货。</p>
-<p>结构：2025 年 x86（英特尔+AMD）仍占近九成，Arm 刚越过约 10%。2026 年英特尔新品制程/封装受挫，仍依赖 Emerald/Granite Rapids，份额承压；AMD Venice 小规模量产，主出货仍靠 Genoa/Turin，份额料升至约 27%。Arm 侧 AWS Graviton、英伟达 Grace、谷歌 Axion 放量，微软 Cobalt 100 与 Arm 自研 AGI 进入出货，增速料快于 x86，份额 2026 年有望破 20%。2027 年 Arm 份额展望约 30%，驱动包括英伟达 Vera、谷歌/AWS/微软/OpenAI/Arm/华为新品，以及阿里倚天 720/730 等。</p>
-<p>边界：这是机构展望而非厂商出货实绩；份额与同比增速随样本修订可能调整。不把展望写成「已发生」，也不把 Minerva（见英伟达栏）并入本条。</p></div>
+      <div class="body"><p>英伟达新闻稿与 Oracle 同日通稿写明：OCI Supercluster 计划引入 Vera Rubin NVL72，规模瞄向多吉瓦，服务训练、推理与智能体负载；Vera Rubin NVL72 与 Vera CPU 已在 OCI 正式可用。叙事重点是「GPU 吃重训练/服务，CPU 吃重工具调用、跑代码、取数」——客户可把 CPU 与 GPU 资源分开扩缩，减少智能体步骤之间 GPU 空转。</p>
+<p>技术栈摘要：NVL72 机柜经 NVLink 互联 72 块 GPU；网络侧提到 Oracle Acceleron 与 Spectrum-X（含 Spectrum-6 交换机）以及 BlueField-4 DPU。平台还将引入 HGX Rubin NVL8：八块 Rubin GPU 的 x86 服务器形态，稿中写配备两颗 64 核 Intel Xeon 6、4TB DDR5 与 6.4 Tbps 级高速 RDMA。OpenAI 工程负责人引语称 Abilene 已有超过 10 万块 Blackwell 的 OCI Supercluster 训练并服务 GPT-6 Astra；另有引语称 Vera CPU 正进入生产，支撑智能体沙箱类负载。</p>
+<p>与今晨关系：不回炒上周 OpenShell 参考架构；本窗是 Rubin/Vera 在 OCI 的可用性与扩容规划。公开云容量本身不单开云厂商栏，但英伟达硬件产品与机柜形态归英伟达栏。</p>
+<p>边界：多吉瓦为规划表述；HGX Rubin NVL8 为「计划引入」。客户名单除引语中的 OpenAI 外，勿擅自扩写未具名大客户。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>单源机构稿：TrendForce 官方新闻稿；关键数字 2026 +31%、2027 +40%、Arm 2026&gt;20%/2027~30%、AMD 2026~27%。</li><li>待确认：各厂实际出货与制程爬坡是否兑现展望。</li></ul>
+      <ul><li>多方一致：NVIDIA Newsroom 与 Oracle 通稿均确认 NVL72/Vera CPU GA、多吉瓦扩容规划、HGX Rubin NVL8 计划。</li><li>分歧/二手：OpenAI 引语中的 GPU 规模与 Astra 部署为合作方表述，非第三方审计。</li><li>待确认：多吉瓦落地节奏、NVL8 公开定价与区域可用性。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.trendforce.com/presscenter/news/20261022-13279.html" target="_blank" rel="noopener">TrendForce</a><span class="role">主来源</span></li>
+        <li><a href="https://nvidianews.nvidia.com/news/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure" target="_blank" rel="noopener">NVIDIA Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.oracle.com/news/announcement/ai-world-nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-2026-10-27/" target="_blank" rel="noopener">Oracle</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

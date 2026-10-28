@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anthropic 把 Agent Skills 捐赠给 AAIF：超 70 平台接入，约百万技能、近 2.8 亿次安装 · IT 行业简报</title>
+<title>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Anthropic 把 Agent Skills 捐赠给 AAIF：超 70 平台接入，约百万技能、近 2.8 亿次安装</h1>
-    <p class="lede">继捐赠 MCP 之后，Anthropic 于 10 月 22 日把 Agent Skills 名称、标识、GitHub 组织与 agentskills.io 一并交给 AAIF。官方称已有超 70 个代理平台接入，含 ChatGPT、Cursor、Copilot、VS Code；约 100 万技能发布、近 2.8 亿次安装。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦</h1>
+    <p class="lede">在 Oracle AI World，英伟达与 Oracle 宣布 Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，并计划把 Supercluster 扩到多吉瓦级；另规划 HGX Rubin NVL8。</p>
     <div class="meta">
-      <span>2026-10-22</span>
+      <span>2026-10-28</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Agent Skills 是一套开放格式：一个文件夹里放 SKILL.md 与脚本/参考资料，让代理按需加载领域流程。Anthropic 写明：从 Claude Code 实践起步，2025 年 10 月前后在内部与社区推开，同年 12 月以开放标准发布后，接入面扩到 ChatGPT、Cursor、GitHub Copilot、VS Code 等逾 70 个平台；累计约 100 万技能发布、近 2.8 亿次安装。今日捐赠覆盖名称与标识、GitHub 组织以及 agentskills.io 域名；不加入 AAIF 也可继续使用与贡献。</p>
-<p>维护上，Lead Maintainers 为 David Soria Parra 与 Mahesh Murag；工程师以个人身份参与，来自 Anthropic、Google、OpenAI 等。路线图草案包括版本化发布、正式提案流程与编写/安装技能的安全指引。这与同日 AAIF「四项目入驻」新闻互证：Skills 是四件之一，也是 Anthropic 继 MCP 之后又一次把关键栈交给 Linux 基金会中立家园。官方强调：社区对规范往哪走要有发言权，避免单一厂商锁死演进方向。</p>
-<p>对开发者的即时含义是治理归属变了，调用方式不必推倒重来——现有技能包与加载器仍可按 agentskills.io 规范继续用。边界：不回炒昨午 Claude Duet 研究预览，也不把「捐赠」写成 Claude 客户端某次功能上线。本条记的是标准与生态规模，不是新模型或新订阅档。</p></div>
+      <div class="body"><p>英伟达新闻稿与 Oracle 同日通稿写明：OCI Supercluster 计划引入 Vera Rubin NVL72，规模瞄向多吉瓦，服务训练、推理与智能体负载；Vera Rubin NVL72 与 Vera CPU 已在 OCI 正式可用。叙事重点是「GPU 吃重训练/服务，CPU 吃重工具调用、跑代码、取数」——客户可把 CPU 与 GPU 资源分开扩缩，减少智能体步骤之间 GPU 空转。</p>
+<p>技术栈摘要：NVL72 机柜经 NVLink 互联 72 块 GPU；网络侧提到 Oracle Acceleron 与 Spectrum-X（含 Spectrum-6 交换机）以及 BlueField-4 DPU。平台还将引入 HGX Rubin NVL8：八块 Rubin GPU 的 x86 服务器形态，稿中写配备两颗 64 核 Intel Xeon 6、4TB DDR5 与 6.4 Tbps 级高速 RDMA。OpenAI 工程负责人引语称 Abilene 已有超过 10 万块 Blackwell 的 OCI Supercluster 训练并服务 GPT-6 Astra；另有引语称 Vera CPU 正进入生产，支撑智能体沙箱类负载。</p>
+<p>与今晨关系：不回炒上周 OpenShell 参考架构；本窗是 Rubin/Vera 在 OCI 的可用性与扩容规划。公开云容量本身不单开云厂商栏，但英伟达硬件产品与机柜形态归英伟达栏。</p>
+<p>边界：多吉瓦为规划表述；HGX Rubin NVL8 为「计划引入」。客户名单除引语中的 OpenAI 外，勿擅自扩写未具名大客户。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：捐赠日 10/22；对象 AAIF；名称/logo/GitHub/域名；&gt;70 平台；约 1M 技能、约 280M 安装；Lead Maintainers 两名；此前捐过 MCP。</li><li>分歧：平台名单只点名部分头部产品，完整目录未在新闻稿逐一列出。</li><li>待确认：版本化发布与安全指引的首个公开里程碑日期。</li></ul>
+      <ul><li>多方一致：NVIDIA Newsroom 与 Oracle 通稿均确认 NVL72/Vera CPU GA、多吉瓦扩容规划、HGX Rubin NVL8 计划。</li><li>分歧/二手：OpenAI 引语中的 GPU 规模与 Astra 部署为合作方表述，非第三方审计。</li><li>待确认：多吉瓦落地节奏、NVL8 公开定价与区域可用性。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
-        <li><a href="https://aaif.io/news/agentic-ai-foundation-announces-four-new-projects" target="_blank" rel="noopener">AAIF</a><span class="role">次要</span></li>
-        <li><a href="https://siliconangle.com/2026/10/22/agentic-ai-foundation-adds-four-more-open-source-ai-tools/" target="_blank" rel="noopener">SiliconANGLE</a><span class="role">次要</span></li>
+        <li><a href="https://nvidianews.nvidia.com/news/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure" target="_blank" rel="noopener">NVIDIA Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://www.oracle.com/news/announcement/ai-world-nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-2026-10-27/" target="_blank" rel="noopener">Oracle</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
