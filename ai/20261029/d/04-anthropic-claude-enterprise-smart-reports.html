@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦 · IT 行业简报</title>
+<title>Claude Enterprise：智能报告、应用内调研与团队共用额度正式上线 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">英伟达 / NVIDIA</div>
-    <h1>英伟达与 Oracle：Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，Supercluster 规划多吉瓦</h1>
-    <p class="lede">在 Oracle AI World，英伟达与 Oracle 宣布 Vera Rubin NVL72 与 Vera CPU 在 OCI 正式可用，并计划把 Supercluster 扩到多吉瓦级；另规划 HGX Rubin NVL8。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude Enterprise：智能报告、应用内调研与团队共用额度正式上线</h1>
+    <p class="lede">Anthropic 宣布 Claude Enterprise 三项能力全面可用：智能报告汇总团队用 Claude 做了什么、花了多少；应用内调研收集员工反馈；团队共用额度在个人限额之外再设池子。官方写明报告默认不用于个人绩效评价。</p>
     <div class="meta">
-      <span>2026-10-28</span>
+      <span>2026-10-29</span>
       <span class="dot"></span>
-      <span>英伟达 / NVIDIA</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>英伟达新闻稿与 Oracle 同日通稿写明：OCI Supercluster 计划引入 Vera Rubin NVL72，规模瞄向多吉瓦，服务训练、推理与智能体负载；Vera Rubin NVL72 与 Vera CPU 已在 OCI 正式可用。叙事重点是「GPU 吃重训练/服务，CPU 吃重工具调用、跑代码、取数」——客户可把 CPU 与 GPU 资源分开扩缩，减少智能体步骤之间 GPU 空转。</p>
-<p>技术栈摘要：NVL72 机柜经 NVLink 互联 72 块 GPU；网络侧提到 Oracle Acceleron 与 Spectrum-X（含 Spectrum-6 交换机）以及 BlueField-4 DPU。平台还将引入 HGX Rubin NVL8：八块 Rubin GPU 的 x86 服务器形态，稿中写配备两颗 64 核 Intel Xeon 6、4TB DDR5 与 6.4 Tbps 级高速 RDMA。OpenAI 工程负责人引语称 Abilene 已有超过 10 万块 Blackwell 的 OCI Supercluster 训练并服务 GPT-6 Astra；另有引语称 Vera CPU 正进入生产，支撑智能体沙箱类负载。</p>
-<p>与今晨关系：不回炒上周 OpenShell 参考架构；本窗是 Rubin/Vera 在 OCI 的可用性与扩容规划。公开云容量本身不单开云厂商栏，但英伟达硬件产品与机柜形态归英伟达栏。</p>
-<p>边界：多吉瓦为规划表述；HGX Rubin NVL8 为「计划引入」。客户名单除引语中的 OpenAI 外，勿擅自扩写未具名大客户。</p></div>
+      <div class="body"><p>10 月 28 日，Anthropic 产品页与 TechCrunch、Unite.AI 等同步：企业客户可围绕「钱花在哪、产出是什么」做更细的可见性。智能报告可选团队、日期区间与产品范围，对抽样会话归类成工作流，展示花费、交付物与常见摩擦（例如缺连接器、工具调用失败），并给出可落成技能或仓库规则的建议清单。</p>
+<p>应用内调研以短卡片形式出现在员工正在用的工具里，默认问「最近最有价值的一次使用」「省了多少时间」「同事该抄哪招」「若明天没了 Claude 先崩哪」等；管理员可改题、选受众与出现位置，结果可导出表格。调研内容按客户数据对待，Anthropic 称仅在运营服务必要时访问。</p>
+<p>团队共用额度给小组一个共享月度池，减轻「有人月初打满、有人额度闲置」；个人限额仍作护栏，请求同时扣两边，先触顶的一边生效。管理员可按用量建议设池，并在 50%/75%/95%/100% 收邮件告警；成员可在产品内申请加额度。</p>
+<p>背景上，TechCrunch 援引 Anthropic 向投资人披露的口径：编码工具 Claude Code 等带动客户留存与支出扩张，企业侧更关心「投入是否看得见回报」。昨午已收药物研发早期进展与 Mithril，属科研合作；本条属企业产品运营工具，分开立条。HIPAA 或客户自管密钥等配置下可用性可能不同，以帮助中心为准。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：NVIDIA Newsroom 与 Oracle 通稿均确认 NVL72/Vera CPU GA、多吉瓦扩容规划、HGX Rubin NVL8 计划。</li><li>分歧/二手：OpenAI 引语中的 GPU 规模与 Astra 部署为合作方表述，非第三方审计。</li><li>待确认：多吉瓦落地节奏、NVL8 公开定价与区域可用性。</li></ul>
+      <ul><li>多方一致：官方产品页 GA；TechCrunch/Unite.AI 描述报告、调研、共用额度三件套；明确非个人绩效工具。</li><li>分歧：媒体把「900% NRR」等财务口径与产品稿混写，财务数字来自投资人材料转述，非本产品页承诺。</li><li>待确认：各数据驻留区与 CMEK 场景的功能差；报告抽样比例与保留策略细则。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://nvidianews.nvidia.com/news/nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-and-bring-nvidia-vera-cpu-to-oracle-cloud-infrastructure" target="_blank" rel="noopener">NVIDIA Newsroom</a><span class="role">官方</span></li>
-        <li><a href="https://www.oracle.com/news/announcement/ai-world-nvidia-and-oracle-expand-nvidia-vera-rubin-to-multi-gigawatt-scale-2026-10-27/" target="_blank" rel="noopener">Oracle</a><span class="role">官方</span></li>
+        <li><a href="https://claude.com/resources/articles/smart-reports-surveys-pooled-budgets" target="_blank" rel="noopener">Anthropic / Claude</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/10/28/anthropic-just-launched-tools-to-show-companies-what-their-ai-spending-is-buying/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+        <li><a href="https://www.unite.ai/anthropic-adds-smart-reports-surveys-pooled-budgets-to-claude-enterprise/" target="_blank" rel="noopener">Unite.AI</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

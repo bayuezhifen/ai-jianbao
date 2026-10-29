@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 Adobe Commerce / Magento CVE-2026-48356 列入 KEV：危险类型文件任意上传 · IT 行业简报</title>
+<title>Windows 11 十月可选预览更新 KB5127936：右键菜单可定制、云重建等 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 Adobe Commerce / Magento CVE-2026-48356 列入 KEV：危险类型文件任意上传</h1>
-    <p class="lede">CISA 10 月 27 日把 Adobe Commerce 与 Magento 的 CVE-2026-48356（危险类型文件无限制上传）列入已知被利用漏洞目录；联邦民用机构须按 BOD 26-04 优先处置，截止日期约 11 月 10 日。</p>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Windows 11 十月可选预览更新 KB5127936：右键菜单可定制、云重建等</h1>
+    <p class="lede">微软于 10 月 28 日发布面向 Windows 11 25H2/26H2 的可选非安全预览更新 KB5127936（内部版本 26200.9818 / 26300.9818）。亮点包括可自定义的资源管理器右键菜单、云重建恢复、放大镜与讲述人增强等。</p>
     <div class="meta">
-      <span>2026-10-28</span>
+      <span>2026-10-29</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>操作系统与桌面</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>CISA 警报写明，基于活跃利用证据，将两漏洞加入 KEV：一是 Adobe Commerce / Magento 的 CVE-2026-48356（Unrestricted Upload of File with Dangerous Type），二是 Google Brotli 的 CVE-2026-111497。Brotli 条目在 10 月 24 日下午简报已收过，本窗不回炒为主条，只交代同日「搭车」入库；首页主条聚焦 Magento/Commerce 上传漏洞。</p>
-<p>Adobe 安全公告 APSB26-73（2026 年 7 月发布补丁批次）中，CVE-2026-48356 归类为 CWE-434，影响任意代码执行路径上的权限提升风险，CVSS 约 9.6，标注利用无需认证但需用户交互（UI:R）。受影响产品线覆盖 Adobe Commerce、Magento Open Source 多个 2.4.x 维护分支及 B2B 扩展等。CISA 要求联邦民用行政机构按 BOD 26-04 对公开暴露、利用后可拿总控的资产优先修补，并评估补丁前是否已被入侵；KEV 表所列截止日期为 2026-11-10，勒索活动字段为 Unknown。</p>
-<p>运营含义：电商与数字体验栈若仍跑未打 2026-jul 安全包的 Commerce/Magento，应视为高优先级。公告发布时 Adobe 称「未知野外部署利用」，与 10 月 27 日 CISA「已有活跃利用证据」的时差说明威胁情报已更新——处置以 KEV 为准，不以数月前公告的「未知在野」自我安慰。</p>
-<p>边界：不提供利用步骤或 PoC；php2shell（今晨已收）与 Brotli（昨已收）均不重复展开。</p></div>
+      <div class="body"><p>支持页写明这是生产质量改进包，经「渐进推送」与「正常推送」两阶段。渐进部分里，资源管理器右键菜单可更快打开，并提供「自定义菜单」：开关内置命令、调整扩展位置、把剪切/复制等从图标行改回文字项等。地址栏支持用 ~ 直达用户配置目录；文件夹选项对话框补上深色模式。</p>
+<p>恢复侧，「云重建」允许用 Windows Update 拉取映像与驱动重装，不必自备 U 盘；可在设置的恢复页发起，或在反复启动失败进入 WinRE 后选择。还支持驱动器清理/硬件擦除、以及 IT 通过 Recovery CSP 远程触发。WinRE 可自动复用本机已存 Wi-Fi 配置以便恢复时联网。</p>
+<p>无障碍与其他：放大镜增加对比主题与每显示器缩放、视口锁定；讲述人支持在受支持的 Office 与浏览器中读数学公式；实时字幕可选择是否收录读屏软件声音。另有任务栏预览动画、Phone Link 在开始菜单悬停预览、IPv6 CLAT、内存完整性扩大启用等。正常推送部分含 Edge 加速启动、远程桌面与 Smart App Control 等已知问题修复。</p>
+<p>边界：可选预览，不是强制安全补丁星期二包；部分功能视设备与市场渐进到达。已知问题仍列出部分 USB Audio Class 1.0 设备在更早安全更新后的异常，微软称仍在处理。昨晨已收 macOS 27.2，本窗只收 Windows 侧。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 警报确认 CVE-2026-48356 入 KEV；Adobe APSB26-73 确认漏洞类别与补丁分支。</li><li>分歧/二手：Adobe 七月稿写「未知在野」，CISA 十月基于新证据入库——以 KEV 为准。</li><li>待确认：具体威胁行为体与是否进入勒索套件（KEV 标 Unknown）。</li></ul>
+      <ul><li>多方一致：微软支持页日期 10-28、KB5127936、25H2/26H2；右键菜单定制与云重建为官方亮点。</li><li>分歧：Insider 更早预览构建与正式可选包版本号不同，以支持页 26200.9818/26300.9818 为准。</li><li>待确认：各功能在渐进环的到达比例；USB 音频已知问题的后续修复包。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/27/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.adobe.com/trust/security/products/commerce/apsb26-73.html" target="_blank" rel="noopener">Adobe APSB26-73</a><span class="role">官方</span></li>
-        <li><a href="https://raw.githubusercontent.com/cisagov/kev-data/main/known_exploited_vulnerabilities.csv" target="_blank" rel="noopener">CISA KEV CSV</a><span class="role">次要</span></li>
+        <li><a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127936-windows-11-25h2-26h2-update" target="_blank" rel="noopener">Microsoft Support</a><span class="role">官方</span></li>
+        <li><a href="https://www.thurrott.com/windows/windows-11/343340/microsoft-ships-the-week-d-preview-updates-for-windows-11" target="_blank" rel="noopener">Thurrott</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
