@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Windows 11 十月可选预览更新 KB5127936：右键菜单可定制、云重建等 · IT 行业简报</title>
+<title>LlamaIndex 发布文档解析协议 DPP 0.1：140 条规则统一「正确解析」答案 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">操作系统与桌面</div>
-    <h1>Windows 11 十月可选预览更新 KB5127936：右键菜单可定制、云重建等</h1>
-    <p class="lede">微软于 10 月 28 日发布面向 Windows 11 25H2/26H2 的可选非安全预览更新 KB5127936（内部版本 26200.9818 / 26300.9818）。亮点包括可自定义的资源管理器右键菜单、云重建恢复、放大镜与讲述人增强等。</p>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>LlamaIndex 发布文档解析协议 DPP 0.1：140 条规则统一「正确解析」答案</h1>
+    <p class="lede">LlamaIndex 公布 Document Parsing Protocol 工作草稿 0.1：用 140 条规则约定表格、表单、图表、图示等如何落到结构化 Markdown/HTML，避免不同解析器「字都对、结构各异」导致智能体答错。</p>
     <div class="meta">
       <span>2026-10-29</span>
       <span class="dot"></span>
-      <span>操作系统与桌面</span>
+      <span>语言 / 运行时 / 框架</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>支持页写明这是生产质量改进包，经「渐进推送」与「正常推送」两阶段。渐进部分里，资源管理器右键菜单可更快打开，并提供「自定义菜单」：开关内置命令、调整扩展位置、把剪切/复制等从图标行改回文字项等。地址栏支持用 ~ 直达用户配置目录；文件夹选项对话框补上深色模式。</p>
-<p>恢复侧，「云重建」允许用 Windows Update 拉取映像与驱动重装，不必自备 U 盘；可在设置的恢复页发起，或在反复启动失败进入 WinRE 后选择。还支持驱动器清理/硬件擦除、以及 IT 通过 Recovery CSP 远程触发。WinRE 可自动复用本机已存 Wi-Fi 配置以便恢复时联网。</p>
-<p>无障碍与其他：放大镜增加对比主题与每显示器缩放、视口锁定；讲述人支持在受支持的 Office 与浏览器中读数学公式；实时字幕可选择是否收录读屏软件声音。另有任务栏预览动画、Phone Link 在开始菜单悬停预览、IPv6 CLAT、内存完整性扩大启用等。正常推送部分含 Edge 加速启动、远程桌面与 Smart App Control 等已知问题修复。</p>
-<p>边界：可选预览，不是强制安全补丁星期二包；部分功能视设备与市场渐进到达。已知问题仍列出部分 USB Audio Class 1.0 设备在更早安全更新后的异常，微软称仍在处理。昨晨已收 macOS 27.2，本窗只收 Windows 侧。</p></div>
+      <div class="body"><p>LlamaIndex 10 月 28 日发文介绍 Document Parsing Protocol（DPP）。问题很具体：同一张带双层表头的销售表，三个解析器可能分别把季度挤进表体、丢掉年份、或发明页面上没有的「2024 Q2」标签——智能体只看见解析结果，表头一错答案就错。行业此前缺少「怎样才算正确解析」的公开约定。</p>
+<p>DPP 0.1 给出 140 条规则与示例页，覆盖文本、表格、表单、图表、图示、隐藏/不可读文字与可选坐标。表格保留页面印刷的多层表头，必要时用 HTML 表达跨列；空表单字段标 <code>[blank]</code>；勾选框用 <code>[x]</code>/<code>[ ]</code>；图表尽量落成数值表；图示能转 Mermaid 则转，否则保留标签并描述。协议文本与示例以 CC BY 4.0 发布，仓库 MIT；站点 parseprotocol.com 可对照源页与期望输出，也可用 Claude Skill 或 ChatGPT 参考文件试跑。</p>
+<p>动机来自团队给 ParseBench 标注时的内部规则，现在公开以便基准、标注与评审站在同一套答案键上，并欢迎用真实坏例提 Issue/PR。边界：这是工作草稿不是强制国标；并不替代版面分析模型本身，只约定「对错」口径。</p>
+<p>今晨语言/框架栏为空，本窗补收。Liquid AI LFM3 昨午已收，不回炒。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：微软支持页日期 10-28、KB5127936、25H2/26H2；右键菜单定制与云重建为官方亮点。</li><li>分歧：Insider 更早预览构建与正式可选包版本号不同，以支持页 26200.9818/26300.9818 为准。</li><li>待确认：各功能在渐进环的到达比例；USB 音频已知问题的后续修复包。</li></ul>
+      <ul><li>多方一致：官方博客与二次报道均确认 DPP 0.1、140 规则、parseprotocol.com。</li><li>分歧：有的媒体把它写成「解析器产品」，实际是规范/答案键。</li><li>待确认：主流 OCR/解析厂商是否声明对齐；0.1 之后的修订节奏。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/10/kb5127936-windows-11-25h2-26h2-update" target="_blank" rel="noopener">Microsoft Support</a><span class="role">官方</span></li>
-        <li><a href="https://www.thurrott.com/windows/windows-11/343340/microsoft-ships-the-week-d-preview-updates-for-windows-11" target="_blank" rel="noopener">Thurrott</a><span class="role">次要</span></li>
+        <li><a href="https://www.llamaindex.ai/blog/introducing-the-document-parsing-protocol" target="_blank" rel="noopener">LlamaIndex Blog</a><span class="role">官方</span></li>
+        <li><a href="https://parseprotocol.com" target="_blank" rel="noopener">parseprotocol.com</a><span class="role">官方</span></li>
+        <li><a href="https://aipolix.com/en-us/news/llamaindex-document-parsing-protocol-dpp-working-draft" target="_blank" rel="noopener">Aipolix 转述</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 VMware ESX 与 Linux 内核两漏洞列入已知在野利用目录 · IT 行业简报</title>
+<title>Claude for Legal 上线法律工作 Artifacts：合同表审、引文核对、监管扫描可分享 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 VMware ESX 与 Linux 内核两漏洞列入已知在野利用目录</h1>
-    <p class="lede">CISA 于 10 月 28 日把 CVE-2026-41709（Broadcom VMware ESX 日志不足）与 CVE-2026-46300（Linux 内核变量未初始化）加入 KEV。联邦民用机构须按 BOD 26-04 对公开暴露资产优先处置。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude for Legal 上线法律工作 Artifacts：合同表审、引文核对、监管扫描可分享</h1>
+    <p class="lede">Anthropic 官方：在 Claude for Legal 画廊提供可定制、可分享的交互式 Artifacts；覆盖合同表格化审阅、引文核对、辖区对照、事项看板、playbook 偏差与监管时间线等，输出带源链接。</p>
     <div class="meta">
       <span>2026-10-29</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>CISA 警报写明：两漏洞均有活跃利用证据。CVE-2026-41709 指向 Broadcom VMware ESX 的日志不足问题，可能削弱取证与告警；CVE-2026-46300 为 Linux 内核缺失变量初始化。KEV 目录要求联邦民用行政分支按约束性运营指令 BOD 26-04，对「利用后可完全控制资产」的高风险项加快修补，并在补丁前评估是否已被入侵。</p>
-<p>公开二次报道中，BleepingComputer 等近期还跟踪过其他在野链（含与 PHP webshell 相关的组合利用讨论）；本窗主条以 CISA 10-28 警报列出的两枚 CVE 为准，不把更早 Magento KEV（昨晨已收）再炒一遍。勒索软件字段在部分汇总表中仍标 Unknown，不等于「已确认大规模勒索活动」，但也不排除后续改判。</p>
-<p>对运营方：虚拟化集群与 Linux 服务器资产应对照厂商公告与发行版安全公告，确认补丁或缓解；ESX 日志类问题还要检查是否影响既有 SIEM 取证假设。CISA 鼓励所有组织按 KEV 做风险排序，而不仅是联邦机构。</p>
-<p>边界：列入 KEV = 有在野利用证据 + 有缓解指导，不自动等于「全网爆发勒索」。具体 CVSS、利用前提与补丁包以 NVD/厂商公告为准。</p></div>
+      <div class="body"><p>Anthropic 于 10 月 28 日宣布，Claude for Legal 新增一批开箱即用的法律工作 Artifacts。形态是可交互的跟踪板与仪表盘：律师带入自有文档与连接器，Claude 做第一遍整理，人再做判断。官方强调每条答案或输出带源链接，并可用分享设置做伦理墙隔离。</p>
+<p>画廊主打六类：Cite check（核对引文是否对得上页码与主张）、Jurisdiction survey matrix（跨州/跨国法规对照表）、Matter board（从委托信/邮件/表格生成事项看板）、Playbook deviation board（对照公司标准条款标出偏差并路由审批人）、Regulatory horizon scan（按业务与属地排监管时间线）、Tabular review（按提问字段把一批合同摊成表）。另有 Goodwin、Harvey、Foley &amp; Lardner、PwC 等伙伴共建的 AI 治理基准、法务收件、义务核对、传票响应等模板。</p>
+<p>同期还资助公益组织做诉诸司法工具（如纽约量刑现实核对、移民材料初读、华盛顿特区房租账本与封存资格筛查），并启动 Legal Ambassadors 社区。连接器方面称 Claude for Legal 已超过 60 个法律向集成。</p>
+<p>今晨已收 Enterprise 智能报告 / 调研 / 共用额度，本窗不回炒报表治理，单独立法律 Artifacts 产品条。边界：Artifacts 是工作流模板，不是新模型；法庭与客户材料仍须律师把关。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 10-28 警报两 CVE；KEV + BOD 26-04 框架。</li><li>分歧：二级媒体对 Linux 洞「可与 webshell 链」的细节深度不一，本简报以警报点名为准。</li><li>待确认：联邦修复截止日期字段、勒索活动是否改判 Known、厂商补丁全面覆盖发行版列表。</li></ul>
+      <ul><li>多方一致：Anthropic 产品公告页与 Legal IT Insider、Law.com 报道口径对齐。</li><li>分歧：媒体侧更突出「合同审查」叙事，官方列表更广（监管扫描、事项看板等）。</li><li>待确认：各 Artifacts 在不同套餐的可用性与计费；伙伴模板是否需额外授权。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
-        <li><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/" target="_blank" rel="noopener">BleepingComputer (related exploitation context)</a><span class="role">次要</span></li>
+        <li><a href="https://claude.com/resources/articles/introducing-artifacts-for-legal-work" target="_blank" rel="noopener">Anthropic / Claude</a><span class="role">官方</span></li>
+        <li><a href="https://legaltechnology.com/anthropic-moves-further-up-the-legal-tech-stack-with-launch-of-claude-for-legal-artifacts/" target="_blank" rel="noopener">Legal IT Insider</a><span class="role">次要</span></li>
+        <li><a href="https://www.law.com/legaltechnews/2026/10/28/anthropic-releases-claude-for-legal-artifacts-a-set-of-new-interactive-tools-for-legal-users-/" target="_blank" rel="noopener">Law.com</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
