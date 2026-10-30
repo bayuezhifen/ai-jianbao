@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI Dot 可短信：美国 Pro 用户试 iMessage / RCS · IT 行业简报</title>
+<title>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI Dot 可短信：美国 Pro 用户试 iMessage / RCS</h1>
-    <p class="lede">OpenAI 向美国 ChatGPT Pro 用户推出有限预览：可通过 iMessage（iPhone）或 RCS（Android）给个人 Dot 发短信、照片与语音，Dot 也可主动发进展提醒。Business/Enterprise 工作区暂不支持。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用</h1>
+    <p class="lede">Anthropic 平台发布说明记载：10 月 29 日推出 Usage and Cost Analytics API（beta），为 Claude Console 与 Claude Enterprise 组织提供按维度汇总的用量与费用查询；旧 Usage and Cost API 改标为遗留接口但仍继续支持。</p>
     <div class="meta">
-      <span>2026-10-29</span>
+      <span>2026-10-30</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>The Verge 在 10 月 28 日晚间（UTC）报道，OpenAI 兑现早前对「给 AI 代理发短信」的承诺：符合条件的美国 Pro 用户可在预览中用手机短信通道联系 Dot。Engadget 与 OpenAI 帮助中心/学习文档口径一致——支持文本、照片、语音留言，并可接收 Dot 主动推送的更新。</p>
-<p>设置入口在 Dot 个人资料或桌面端，按提示完成绑定。官方强调这是预览、名额可能受限；ChatGPT Business 与 Enterprise 工作区目前不可用。帮助中心「Getting started with your Dot」把短信列为与应用内对话并列的触达方式之一，而不是替换原有聊天。</p>
-<p>产品意义上，这把代理从「打开 App 才说话」推到「手机短信线程里待命」，和昨午已收的「拟购谷歌 TPU」、本窗 ServiceNow 企业集成形成消费侧与企业侧对照：一边是个人代理触达，一边是企业系统动作。</p>
-<p>边界：仅美国 Pro 预览，不要写成全球全量；也不要写成 Dot 已具备不受限的任意系统操作——短信通道仍受账号、地区与产品护栏约束。具体资费是否计入既有 Pro 额度，以帮助中心当期说明为准。</p></div>
+      <div class="body"><p>Claude 平台发布说明写到，Usage and Cost Analytics API 以 beta 头 `analytics-usage-cost-2026-08-24` 开放，路径包括 `/v1/organizations/analytics/usage` 与 `/v1/organizations/analytics/cost`，面向 Claude Console 与 Claude Enterprise 组织，可按模型、工作区、API 密钥以及背后的用户或服务账号等维度过滤、分组，查看 token 用量与费用。</p>
+<p>同一天说明把既有 Usage and Cost API，以及 Claude Enterprise Analytics API 里若干 `usage_report` / `cost_report` 类端点标成遗留（legacy），并表示短期内仍支持，同时给出迁移指引。对财务与平台团队来说，这意味着「报表」从偏一次性导出，往可脚本化、可按组织维度切片的分析接口靠拢，方便对账、分摊与异常用量巡检。</p>
+<p>背景上，本周稍早 Messages / Token Counting 请求体上限已从 32 MB 提到 128 MB，主要缓解截图、PDF 等体积敏感工作负载；那是 10 月 28 日条目，本条不展开。昨午已收 Claude for Legal 的 Artifacts 画廊与企业侧智能报告等产品向更新，本窗不回炒，只补平台侧分析 API。</p>
+<p>边界：beta 头与字段集合仍可能变；零留存（ZDR）等特殊合约流量是否完整进入分析维度，要以文档与合同为准。印度今日科技稿热议的「self-assessment」官方长文日期为 10 月 16 日，不纳入本窗主条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：Verge / Engadget 报道预览；官方学习页与帮助中心写明 iMessage/RCS、美国 Pro、非 Business/Enterprise。</li><li>分歧：上线「今日」与分批到账时间因账号而异。</li><li>待确认：预览结束时间、是否扩到 Plus/Go、主动短信的频率上限。</li></ul>
+      <ul><li>多方一致：platform.claude.com 发布说明与 Usage and Cost Analytics API 文档页描述一致；第三方技术笔记复述 10 月 29 日 beta。</li><li>分歧：媒体偶发把「请求体 128 MB」与 Analytics API 捆成一条产品发布，官方是分日条目。</li><li>待确认：GA 时间表；Enterprise 与 Console 在维度覆盖上是否完全对齐。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1021183/openai-now-lets-you-text-your-dot" target="_blank" rel="noopener">The Verge</a><span class="role">主来源</span></li>
-        <li><a href="https://learn.chatgpt.com/docs/whats-new/dots-october-28-2026" target="_blank" rel="noopener">OpenAI Learn</a><span class="role">官方</span></li>
-        <li><a href="https://www.engadget.com/2300235/openai-now-lets-you-text-your-dot-agent/" target="_blank" rel="noopener">Engadget</a><span class="role">次要</span></li>
+        <li><a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">Claude Platform release notes</a><span class="role">官方</span></li>
+        <li><a href="https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api" target="_blank" rel="noopener">Usage and Cost Analytics API</a><span class="role">主来源</span></li>
+        <li><a href="https://www.datastudios.org/post/claude-api-128-mb-request-limit-usage-cost-analytics-api-beta" target="_blank" rel="noopener">DataStudios 汇总</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

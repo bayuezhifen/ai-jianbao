@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI 与 ServiceNow 扩大合作：ChatGPT 内接工作流，Codex/安全/语音分阶段落地 · IT 行业简报</title>
+<title>Topcoat：Tokio 作者演示用 Rust 做服务端组件渲染的 Web 框架 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI 与 ServiceNow 扩大合作：ChatGPT 内接工作流，Codex/安全/语音分阶段落地</h1>
-    <p class="lede">OpenAI 于 10 月 28 日宣布扩大与 ServiceNow 的合作：把模型与代理嵌入 ServiceNow 产品，同时把 ServiceNow 业务上下文与动作接到 ChatGPT 与 Codex。MCP 插件已可在 OpenAI 市场取用。</p>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>Topcoat：Tokio 作者演示用 Rust 做服务端组件渲染的 Web 框架</h1>
+    <p class="lede">The Register 10 月 29 日报道：Tokio 作者 Carl Lerche 在 P99 会议上演示 Topcoat——把多数 Web 应用逻辑放在服务端用 Rust 执行，向浏览器回传组件级 HTML 片段，并用编译出的 JavaScript 与 DOM 交互。</p>
     <div class="meta">
-      <span>2026-10-29</span>
+      <span>2026-10-30</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>语言 / 运行时 / 框架</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 官方稿写明：双方在今年 1 月合作基础上加码。一侧是 ServiceNow 产品更多用上 OpenAI 模型与代理；另一侧是客户可把自有 ServiceNow 实例连进 ChatGPT，在对话里查相似事件、评估变更风险、更新工单，权限仍走 ServiceNow Action Fabric 既有规则。</p>
-<p>路线图分三块：应用开发——计划把 Codex 接进 AI Workflow Factory，并给 Build Agent、Autonomous Engineer 供模型；网络安全——结合 OpenAI 安全能力与 ServiceNow 资产/身份/业务上下文，协助排漏洞与协同修复；语音——在 Super Intelligence Control Tower 里用语音描述用例、补全评估字段。ServiceNow 还预览在 ChatGPT 内做交互式值班体验。</p>
-<p>人员侧，ServiceNow 打算把 ChatGPT Work 与 Codex 扩到全员，而不只是工程团队；OpenAI 自身也在用 ServiceNow 工作流。可用性：ServiceNow MCP 插件「今天」可在 OpenAI 市场使用，增强能力预计 2026 年底前后；语音能力约 2027 年一季度；安全能力 2027 年 1 月早鸟、二季度 GA；Codex 进 Workflow Factory 约 2027 年。</p>
-<p>边界：这是产品集成与路线图，不是新一代基础模型发布。昨晨已收 Oracle 应用进 ChatGPT、昨午已收拟购谷歌 TPU，同属 OpenAI 生态铺开，本条只收 ServiceNow 这一侧。不要把「计划中」的安全/语音写成已全面上线。</p></div>
+      <div class="body"><p>Rust 在系统与后端异步栈里已很常见，但浏览器端仍多用 JS/TS。Lerche 的论点是：在 AI 分担样板代码之后，开发者更应看重运行时性能与内存安全，而 Topcoat 试图把「常见的数据库驱动网站」写成 Rust 服务端应用，而不是再堆一套重客户端状态机。</p>
+<p>技术路径上，Topcoat 不走 Leptos / Dioxus 那种整页编译成 WebAssembly 的路线（算力重活合适，但首包代价高），而是把 Rust 编译出更贴近浏览器的 JavaScript，以便操作 DOM；用户点击后，服务端只返回需要刷新的组件 HTML，而不是整页重载。这与 HTMX、Datastar、Phoenix LiveView 等「服务端保留真相」思路同族，只是语言与工具链换成 Rust，并与 Lerche 早前的 Toasty 异步 ORM 衔接，让组件在服务端直接碰库，少一轮序列化来回。</p>
+<p>作者自己划界：不适合做 Figma 那种极重前端；适合占大多数的 CRUD / 仪表盘类站点。演示还强调流式与占位：先把页面骨架和可预加载资源送到浏览器，数据稍后填入。社区视频评论称上手曲线对「不太会 Rust 的人」相对友好，但语法子集也意味着复杂前端仍可能不够用。</p>
+<p>边界：这是会议演示与报道级曝光，不是某一基金会背书的「Rust 官方 Web 标准」；生产成熟度、授权与生态插件要以项目仓库为准。Node 24/26 安全小版本等更早窗已有记录，本条单独立框架向新进展。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：OpenAI 官方 10-28 稿；MCP 插件已上架；安全/语音/Codex 多为 2027 节奏。</li><li>分歧：媒体对「企业工作流」与「全员 Codex」强调不一，实质同稿。</li><li>待确认：增强 MCP 能力的具体功能清单与区域限制；联合安全方案的客户早鸟名单。</li></ul>
+      <ul><li>多方一致：Register 报道要点与 Code to the Moon 等二次解说一致：服务端渲染、组件片段、Toasty、非 WASM 主路径。</li><li>分歧：对「Rust 是否适合做 Web」仍属观点战；报道本身也引用「三年前说这话会被当成疯」的自嘲。</li><li>待确认：开源许可、稳定 API 时间表、与主流托管平台的部署模板。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/openai-servicenow-partnership-expansion/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://oriel.today/updates?publisher=openai" target="_blank" rel="noopener">Oriel updates index</a><span class="role">次要</span></li>
+        <li><a href="https://www.theregister.com/devops/2026/10/29/topcoat-enables-rust-to-render-server-side-web-apps/5306470" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://www.theregister.com/devops/2026/10/29/topcoat-enables-rust-to-render-server-side-web-apps/5306470" target="_blank" rel="noopener">ScyllaDB P99（会议语境）</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>再核仍 4.7、无 4.8、未取消 4.7；Grok Bot 昨夜短时故障后恢复 · IT 行业简报</title>
+<title>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>再核仍 4.7、无 4.8、未取消 4.7；Grok Bot 昨夜短时故障后恢复</h1>
-    <p class="lede">今晨核对 docs.x.ai 模型页：仍列出并推荐 grok-4.7，未见 grok-4.8，未见取消 4.7；知识截止仍约 2026 年 5 月。马斯克本窗无新的版本阶梯官宣。X 动态显示 Grok Bot 10 月 28 日晚间一度故障后逐步恢复。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用</h1>
+    <p class="lede">Anthropic 平台发布说明记载：10 月 29 日推出 Usage and Cost Analytics API（beta），为 Claude Console 与 Claude Enterprise 组织提供按维度汇总的用量与费用查询；旧 Usage and Cost API 改标为遗留接口但仍继续支持。</p>
     <div class="meta">
-      <span>2026-10-29</span>
+      <span>2026-10-30</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>按既定规则再核版本阶梯：docs.x.ai 模型文档今晨仍以 Grok 4.7 为代码与对话首选，价目表有 grok-4.7 / 4.6 / 4.5 等，没有 grok-4.8 条目；「Which model should I choose」写明用 Grok 4.7。知识截止日期注释仍为 2026 年 5 月。二次转述若写「4.8 已取代/搁置 4.7」，与官方文档不符。</p>
-<p>马斯克本窗公开帖以转发与短评为主（含对谷歌 Gemini 4 Carbon 的「Impressive」），未见新的「4.8 何时发布 / 4.7 取消」表述。其 10 月 7 日旧帖仍把「闪电版 Grok 4.8」说成未来时（when that comes out），不能当成已上线。用户侧「when grok 4.8」追问仍多，属舆论而非官宣。</p>
-<p>产品运营上，X 新闻摘要与用户反馈显示 10 月 28 日晚间（约 GMT 21:15 前后）Grok Bot、部分 Cloud Agents 出现过不可用或严重降级，官方状态页与 Downdetector 有对应波动，约数小时后好转。这不改变模型版本结论，但说明 Bot 依赖面已够大，故障会被立刻感知。</p>
-<p>昨午已收 Imagine《奥德赛》试播与再核 4.7，本窗不回炒影片本身，只保留版本再核并附 Bot 故障事实。边界：故障时长与根因以官方状态页为准；不要把短时故障写成「服务下线」或「4.8 借机切换」。</p></div>
+      <div class="body"><p>Claude 平台发布说明写到，Usage and Cost Analytics API 以 beta 头 `analytics-usage-cost-2026-08-24` 开放，路径包括 `/v1/organizations/analytics/usage` 与 `/v1/organizations/analytics/cost`，面向 Claude Console 与 Claude Enterprise 组织，可按模型、工作区、API 密钥以及背后的用户或服务账号等维度过滤、分组，查看 token 用量与费用。</p>
+<p>同一天说明把既有 Usage and Cost API，以及 Claude Enterprise Analytics API 里若干 `usage_report` / `cost_report` 类端点标成遗留（legacy），并表示短期内仍支持，同时给出迁移指引。对财务与平台团队来说，这意味着「报表」从偏一次性导出，往可脚本化、可按组织维度切片的分析接口靠拢，方便对账、分摊与异常用量巡检。</p>
+<p>背景上，本周稍早 Messages / Token Counting 请求体上限已从 32 MB 提到 128 MB，主要缓解截图、PDF 等体积敏感工作负载；那是 10 月 28 日条目，本条不展开。昨午已收 Claude for Legal 的 Artifacts 画廊与企业侧智能报告等产品向更新，本窗不回炒，只补平台侧分析 API。</p>
+<p>边界：beta 头与字段集合仍可能变；零留存（ZDR）等特殊合约流量是否完整进入分析维度，要以文档与合同为准。印度今日科技稿热议的「self-assessment」官方长文日期为 10 月 16 日，不纳入本窗主条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：docs.x.ai 仍推 4.7、无 4.8 条目；马斯克本窗无取消 4.7 表述；Bot 昨夜有短时故障讨论。</li><li>分歧：自媒体常把马斯克旧「4.8 在训」说成即将替换 4.7；官方未取消 4.7。</li><li>待确认：4.8 发布窗口；昨夜故障的官方复盘与是否影响 API 侧。</li></ul>
+      <ul><li>多方一致：platform.claude.com 发布说明与 Usage and Cost Analytics API 文档页描述一致；第三方技术笔记复述 10 月 29 日 beta。</li><li>分歧：媒体偶发把「请求体 128 MB」与 Analytics API 捆成一条产品发布，官方是分日条目。</li><li>待确认：GA 时间表；Enterprise 与 Console 在维度覆盖上是否完全对齐。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://docs.x.ai/docs/models" target="_blank" rel="noopener">xAI Docs — Models</a><span class="role">官方</span></li>
-        <li><a href="https://x.com/i/trending/2115556128025198745" target="_blank" rel="noopener">X news — Grok Bot outage</a><span class="role">次要</span></li>
-        <li><a href="https://x.com/elonmusk/status/2107894231922876510" target="_blank" rel="noopener">Elon Musk on X (Oct 7, 4.8 future tense)</a><span class="role">次要</span></li>
+        <li><a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">Claude Platform release notes</a><span class="role">官方</span></li>
+        <li><a href="https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api" target="_blank" rel="noopener">Usage and Cost Analytics API</a><span class="role">主来源</span></li>
+        <li><a href="https://www.datastudios.org/post/claude-api-128-mb-request-limit-usage-cost-analytics-api-beta" target="_blank" rel="noopener">DataStudios 汇总</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

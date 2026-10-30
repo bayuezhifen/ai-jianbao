@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>谷歌发布 Gemini 4 Carbon：网络安全与长程任务，AA Index v5 暂居第一 · IT 行业简报</title>
+<title>CISA 将 GitLab 整数溢出与 Cisco ASA/FTD 空指针漏洞列入 KEV · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,32 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">行业</div>
-    <h1>谷歌发布 Gemini 4 Carbon：网络安全与长程任务，AA Index v5 暂居第一</h1>
-    <p class="lede">Google DeepMind 于 10 月 28 日宣布 Gemini 4 Carbon。官方称其在网络安全与长程代理任务上显著加强，Artificial Analysis Intelligence Index v5.0 暂列第一；先经 Fairwind 面向部分网络防御方开放。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 GitLab 整数溢出与 Cisco ASA/FTD 空指针漏洞列入 KEV</h1>
+    <p class="lede">美国网络安全与基础设施安全局 10 月 29 日公告：基于已遭利用的证据，将 CVE-2026-97229（GitLab CE/EE 整数溢出）与 CVE-2026-76418（Cisco Secure Firewall ASA / FTD 未检查返回值导致空指针解引用）列入已知被利用漏洞目录。</p>
     <div class="meta">
-      <span>2026-10-29</span>
+      <span>2026-10-30</span>
       <span class="dot"></span>
-      <span>行业</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>谷歌 DeepMind 在 10 月 28 日发布 Gemini 4 Carbon，定位为继约两周前 Gemini 4 Argon 之后的下一档前沿模型。官方强调两点：一是网络安全全链路——找漏洞、验证可利用性、打补丁；二是能撑住多日、多步骤的工程与代理任务。The Verge、9to5Google、路透等当日跟进。</p>
-<p>公开基准上，Carbon 在 Artificial Analysis 更新后的 Intelligence Index v5.0 拿到 59 分，暂居榜首。网络安全侧，官方给出 SEC-bench Pro 88.2%、ExploitGym 54.8%、CWE-bench 71.0% 等数字；并称内部「生成更安全代码」成功率较 Argon 有明显抬升，Chrome 团队反馈打补丁质量优于对照的其他实验室模型。编码与代理侧，WebDev Arena 提升约 89 Elo 至约第 4。</p>
-<p>部署节奏刻意放缓：本周起先向部分网络防御方开放，再经 Fairwind 计划逐步扩到可信伙伴；面向开发者、企业与消费者的产品面「尽快」跟进。谷歌称正参与美国政府自愿性预发布测试。入门价与 Argon 相同：每百万输入代币 2 美元、输出 10 美元；优惠期后升至 4 / 20 美元。</p>
-<p>安全对齐方面，官方称 Terminal-Bench 4.0 上成功作弊降至 0.0%，间接提示注入基准攻击成功率从 Argon 的 0.7% 降至 0.0%；并减少无依据断言与越权执行。马斯克当日在 X 上转评 Sundar Pichai 相关帖，仅写「Impressive」，不构成 xAI 产品对照结论。</p>
-<p>边界：这是官宣模型发布，不是全面 GA；网络安全分数多在「无防护」评测设定下报出，实战仍受部署护栏约束。昨午已收 OpenAI 拟购谷歌 TPU，与本条分属算力采购与模型发布，分开立条。</p></div>
+      <div class="body"><p>CISA 例行 KEV 更新写明两条新条目，理由是「已有活跃利用证据」。GitLab 这条属于整数溢出 / 回绕类缺陷，影响社区版与企业版；Cisco 这条落在 Secure Firewall ASA 软件与 Secure FTD 软件，属于未检查返回值后对空指针解引用。两类问题都是联邦与大型企业外网资产上的高频攻击面。</p>
+<p>公告再次指向约束性行动指令 BOD 26-04：联邦民用行政部门须按风险优先修补，对 KEV 中「利用后可完全控制公网暴露资产」的漏洞加快处置，并明确补丁前是否已被入侵的核查预期。CISA 同时鼓励所有组织采用同样的风险排序，而不是只跟 CVSS 分数走。</p>
+<p>对运维的直接含义：GitLab 自托管实例应核对版本与官方安全通告，优先升级或临时限制公网暴露的 Git 服务；Cisco ASA/FTD 则按厂商公告升级固件或启用推荐缓解，尤其是边缘 VPN / 防火墙管理面。KEV 本身不代替厂商补丁说明，但改变了「能不能拖」的优先级。</p>
+<p>窗口边界：10 月 28 日另有 Linux 内核与 VMware ESX 条目，昨晨窗已收相关 KEV，本条只写 29 日这两则，不回炒。PHP 紧急通告属更早日期，亦不展开。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：DeepMind 官宣 Carbon；AA Index v5 暂第一；先 Fairwind / 网络防御方再扩面；入门价与 Argon 同档。</li><li>分歧/口径：媒体侧「网络安全跃升」与「编码长程」权重不同；部分稿件把 Argon 两周节奏写成「加速军备」属评论。</li><li>待确认：面向开发者与 Chat/API 的具体上架日；企业 SLA 与区域可用性。</li></ul>
+      <ul><li>多方一致：CISA 公告原文列出两条 CVE 与日期；第三方 KEV 镜像目录同步收录。</li><li>分歧：利用细节与 PoC 不在 CISA 短公告里，需看 GitLab / Cisco 安全通告；本简报不转述攻击步骤。</li><li>待确认：联邦机构的具体整改时限字段以 KEV 行内 due date 为准；民间企业无强制日。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/" target="_blank" rel="noopener">Google DeepMind Blog</a><span class="role">官方</span></li>
-        <li><a href="https://www.theverge.com/tech/1021339/google-gemini-4-carbon-cybersecurity-frontier" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
-        <li><a href="https://artificialanalysis.ai/articles/gemini-4-carbon-new-number-1" target="_blank" rel="noopener">Artificial Analysis</a><span class="role">次要</span></li>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/29/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">主来源</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 VMware ESX 与 Linux 内核两漏洞列入已知在野利用目录 · IT 行业简报</title>
+<title>下周完成对 Naver 约 10 亿美元增资，将成为第三大股东 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 VMware ESX 与 Linux 内核两漏洞列入已知在野利用目录</h1>
-    <p class="lede">CISA 于 10 月 28 日把 CVE-2026-41709（Broadcom VMware ESX 日志不足）与 CVE-2026-46300（Linux 内核变量未初始化）加入 KEV。联邦民用机构须按 BOD 26-04 对公开暴露资产优先处置。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>下周完成对 Naver 约 10 亿美元增资，将成为第三大股东</h1>
+    <p class="lede">联合通讯社 10 月 30 日援引 Naver 监管披露：英伟达定于下周五落实约 10 亿美元增资，完成后将成为这家韩国互联网公司第三大股东；配套表述称已锁定至少约 90 亿美元算力基建相关意向。</p>
     <div class="meta">
-      <span>2026-10-29</span>
+      <span>2026-10-30</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>CISA 警报写明：两漏洞均有活跃利用证据。CVE-2026-41709 指向 Broadcom VMware ESX 的日志不足问题，可能削弱取证与告警；CVE-2026-46300 为 Linux 内核缺失变量初始化。KEV 目录要求联邦民用行政分支按约束性运营指令 BOD 26-04，对「利用后可完全控制资产」的高风险项加快修补，并在补丁前评估是否已被入侵。</p>
-<p>公开二次报道中，BleepingComputer 等近期还跟踪过其他在野链（含与 PHP webshell 相关的组合利用讨论）；本窗主条以 CISA 10-28 警报列出的两枚 CVE 为准，不把更早 Magento KEV（昨晨已收）再炒一遍。勒索软件字段在部分汇总表中仍标 Unknown，不等于「已确认大规模勒索活动」，但也不排除后续改判。</p>
-<p>对运营方：虚拟化集群与 Linux 服务器资产应对照厂商公告与发行版安全公告，确认补丁或缓解；ESX 日志类问题还要检查是否影响既有 SIEM 取证假设。CISA 鼓励所有组织按 KEV 做风险排序，而不仅是联邦机构。</p>
-<p>边界：列入 KEV = 有在野利用证据 + 有缓解指导，不自动等于「全网爆发勒索」。具体 CVSS、利用前提与补丁包以 NVD/厂商公告为准。</p></div>
+      <div class="body"><p>据联合通讯社报道，Naver 周五提交的监管文件显示，英伟达计划于下周五完成约 10 亿美元增资认购；Naver 将于下周二确定英伟达通过配股取得的普通股数量。完成后，英伟达持股预计升至第三大股东位置——目前第一大股东为韩国国民年金（约 9.49%），其次为贝莱德（约 7.31%）。</p>
+<p>披露同时提到，这笔交易推进时，Naver 已能确认至少约 90 亿美元量级的算力基础设施相关安排。双方战略合作在今年 7 月已公开，口径是共建大规模全球 AI 工厂；本次增资是协议落地中的股权环节，而不是全新合作故事。</p>
+<p>对英伟达而言，这是继对多家云与平台伙伴股权或战略绑定之外，又一次把「卖卡 + 入股 + 共建集群」捆在一起的区域落子；对 Naver 而言，则是用股权换取长期 GPU 与系统供给确定性，支撑搜索、云与生成式业务的训练推理扩容。股价与表决权细节以最终认购股数为准，报道未给出完成后精确百分比。</p>
+<p>边界：金额与时间表来自 Naver 单方披露与韩联社转述，英伟达新闻稿未在本窗检索到同题同步稿；「至少 90 亿美元算力」是基建意向量级，不等于已全部资本开支入账。昨午已收 Nemotron 3.5 Transcribe 开源，本窗不回炒产品条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 10-28 警报两 CVE；KEV + BOD 26-04 框架。</li><li>分歧：二级媒体对 Linux 洞「可与 webshell 链」的细节深度不一，本简报以警报点名为准。</li><li>待确认：联邦修复截止日期字段、勒索活动是否改判 Known、厂商补丁全面覆盖发行版列表。</li></ul>
+      <ul><li>多方一致：Yonhap 英文章与韩语监管披露口径一致：10 亿美元、下周五交割、第三大股东、7 月战略合作背景。</li><li>分歧：部分二手稿把「90 亿美元算力」写成已签约采购总额，原文更偏「secured … infrastructure」意向表述。</li><li>待确认：确切持股比例；算力落地的机房地点与交付节奏。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/10/28/cisa-adds-two-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
-        <li><a href="https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/" target="_blank" rel="noopener">BleepingComputer (related exploitation context)</a><span class="role">次要</span></li>
+        <li><a href="https://en.yna.co.kr/view/AEN20261030002900320" target="_blank" rel="noopener">Yonhap News Agency</a><span class="role">主来源</span></li>
+        <li><a href="https://nvidianews.nvidia.com/news/latest" target="_blank" rel="noopener">NVIDIA Newsroom（近期基础设施合作背景）</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
