@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>群晖：过时 DSM 遭勒索利用，催更系统；PHP2Shell 补丁扩至停服版本 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">群晖 / Synology</div>
+    <h1>群晖：过时 DSM 遭勒索利用，催更系统；PHP2Shell 补丁扩至停服版本</h1>
+    <p class="lede">群晖称在排查 PHP2Shell 影响时，发现攻击者正利用 2024 年 12 月已修补的旧漏洞打击停服/过时 DSM，意图加密勒索；同时把 PHP2Shell 修复包扩到 DSM 7.2–6.2，并另就 Brotli/Node 相关风险发布 Node2Shell 通告。</p>
+    <div class="meta">
+      <span>2026-10-31</span>
+      <span class="dot"></span>
+      <span>群晖 / Synology</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>官方新闻稿（10 月 29 日）写明：威胁活动瞄准仍跑旧版 DSM 的设备，利用早在 2024 年 12 月就应打上的漏洞，目标是加密数据并勒索。群晖强烈建议立即升级 DSM，并打开自动更新。PHP2Shell（CVE-2026-109618 / CVE-2026-109619）影响面被 PSIRT 限定在依赖 PHP 的套件：Calendar、IDrive（第三方）、Joomla、KodExplorer、MailStation、MediaWiki、phpMyAdmin、vtigerCRM、Web Station、WordPress 等；Synology Drive 不在列。</p>
+<p>修复路径：在套件中心升级 PHP（DSM 7.4 / 7.3 以及已停服的 7.2、7.1、7.0、6.2 均有对应包）。多数依赖套件会在 PHP 升级后自动重启生效；MailStation 需手动再升一次。DSM 低于 6.2 时，官方建议先暂时停用受影响套件，再升到受支持系统。系统内置、不对外暴露模块的 PHP 组件被评估为风险很低，后续系统版本会再补一刀以满足扫描合规。</p>
+<p>安全通告 Synology-SA-26:14 在 10 月 29 日修订中补齐了更老 DSM 的修复表。另有 Synology-SA-26:15 Node2Shell（对应 Google Brotli CVE-2026-111497 一类问题），10 月 29 日首发、30 日晨间仍标 Ongoing；目前列表里多数套件标「不受影响」，Synology Chat Client 标 Moderate / Ongoing。用户侧优先动作仍是：DSM 升到受支持版本、套件中心打 PHP 补丁、打开自动更新，并复核是否误装第三方 PHP Web 套件。</p>
+<p>专栏说明：昨午简报漏放「群晖」栏，本窗起按模板固定恢复。QNAP 的 PHP2Shell 对照通告若单独立卡，仍归「漏洞与勒索」；本条以群晖自有 NAS 用户处置为主。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：群晖新闻稿与 SA-26:14 均强调过时 DSM 勒索风险与 PHP 套件升级路径。</li><li>分歧：勒索具体利用的是 SA-24:20 所指旧洞，与 PHP2Shell 是并行提醒，不宜写成「PHP2Shell 已在野打群晖」。</li><li>待确认：Node2Shell 对 Chat Client 的最终修复包版本号以 SA-26:15 后续修订为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.synology.com/en-us/company/news/article/C3RB3R" target="_blank" rel="noopener">Synology News</a><span class="role">官方</span></li>
+        <li><a href="https://www.synology.com/en-us/security/advisory/Synology_SA_26_14" target="_blank" rel="noopener">Synology-SA-26:14 PHP2Shell</a><span class="role">官方</span></li>
+        <li><a href="https://www.synology.com/en-us/security/advisory/Synology_SA_26_15" target="_blank" rel="noopener">Synology-SA-26:15 Node2Shell</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
