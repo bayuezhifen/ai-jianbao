@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>奥尔特曼谈内存短缺：DRAM 闲置在个人电脑「相当糟糕」，应优先高利用率云端 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>奥尔特曼谈内存短缺：DRAM 闲置在个人电脑「相当糟糕」，应优先高利用率云端</h1>
+    <p class="lede">OpenAI CEO 萨姆·奥尔特曼在播客中称，全球 DRAM 供应紧张时，让大量内存躺在个人电脑里、利用率只有约 5%，从全球资源配置看「相当糟糕」；应优先提高云端利用率。言论经 The Verge、Tom&#x27;s Hardware 与 IT之家等周末跟进，引发对本地推理与消费级内存价格的讨论。</p>
+    <div class="meta">
+      <span>2026-11-01</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>奥尔特曼近日做客 YouTube 节目 Cheeky Pint，谈到供应链与本地推理。他转述一种常见直觉：开源模型成熟后，大家可以在自己电脑上跑推理，似乎就不那么依赖数据中心。他反驳说，在 DRAM 极度紧缺的环境下，若人人电脑里都囤着世界有限的内存、却只有约 5% 时间真正用上，从全球配置角度「相当糟糕」；更合理的是把稀缺资源放在利用率更高的云端。</p>
+<p>The Verge 与 Tom's Hardware 指出，这番话出现在存储厂商与云厂商、Stargate 一类项目签下多年包销、消费级内存与整机涨价的背景下。三星等此前已公开预期，AI 基建拉动的存储紧张可能延续到 2028 年前后。批评意见则强调：个人电脑买内存不只为了跑本地模型，游戏、专业软件和系统本身都要占用；把「家用内存」和「数据中心采购」简单当成可互相替代的同一池资源，逻辑并不成立。</p>
+<p>IT之家 10 月 31 日午后跟进该访谈，并引用奥尔特曼原文大意：供应链运作往往违反直觉，许多人以为本地推理就能绕开数据中心，但从全局看，稀缺 DRAM 更应集中到高利用率节点。国内转述同时提醒读者，PC 采购动机与云厂商囤货不可混为一谈。本窗不回炒 OpenAI 融资目标下调等昨午主条，仅收这条围绕内存配置的公开表态。</p>
+<p>需要分清三层：一是客观存在的 DRAM/HBM 供需紧张；二是奥尔特曼作为大型算力买家的立场性建议；三是本地开源推理是否「浪费内存」仍属价值判断，并非行业标准。简报以 Verge、Tom's Hardware 与 IT之家交叉核对播客口径，不以情绪化标题代替原话。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Cheeky Pint 访谈；「quite terrible」/「相当糟糕」指向低利用率 PC 侧 DRAM；主张云端更高利用率；出现在内存短缺与涨价语境。</li><li>分歧：英文稿侧重本地推理与订阅商业模式张力；IT之家补充对「PC 内存≠可替代云采购」的批注。</li><li>待确认：访谈完整时间线、OpenAI 是否调整采购或产品口径，以官方后续说明为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1023820/sam-altman-ram-shortage-cloud-servers" target="_blank" rel="noopener">The Verge</a><span class="role">主来源</span></li>
+        <li><a href="https://www.tomshardware.com/tech-industry/data-centers/openai-ceo-says-its-quite-terrible-for-your-pc-to-have-ram-sam-altman-says-data-centers-offer-better-utilization" target="_blank" rel="noopener">Tom&#x27;s Hardware</a><span class="role">次要</span></li>
+        <li><a href="https://www.ithome.com/1/020/483.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

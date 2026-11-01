@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek 公布 Super-agent 架构：双层调度 + 事件驱动，并开源研究原型 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>DeepSeek 公布 Super-agent 架构：双层调度 + 事件驱动，并开源研究原型</h1>
+    <p class="lede">10 月 31 日晚，DeepSeek Harness 团队发表《Super-agent 设计探索》技术长文，并同日在 GitHub 开源 MIT 许可的 dsh-superagent-prototype；官方明确其为研究原型，不等于正式产品，也不等同内部系统。</p>
+    <div class="meta">
+      <span>2026-11-01</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>据第一财经报道，DeepSeek Harness 团队于 10 月 31 日晚在官方公众号发布《Super-agent 设计探索：迈向更自主的 Agent 系统》。文章指出，模型单任务能力增强后，瓶颈正从「会不会做」转向「人的注意力够不够」：现有以单一会话为单位的 Agent，很难在多任务与团队协作规模上支撑持续在线的个人助手形态。</p>
+<p>团队把目标形态称为 Super-agent，并概括四个特征：跨信道保持连续上下文、能并行推进互不干扰的多任务、能主动响应环境事件、异常时可自愈并长期在线。支撑框架包括五块：Router/Worker 双层架构、事件驱动、异步多信道交互、存算分离，以及系统外独立的 Watchdog。Router 只负责对外交互与任务分派，Worker 在隔离会话里执行具体工作；群聊消息、代码评审、CI 结果等被当作 Trigger，经过程序快筛与模型慢判后再路由。</p>
+<p>文章称，基于该思路的内部实例已在持续运行，日常参与问题复现与修复、代码审查响应以及 Harness 自身迭代；当成员在群聊反馈缺陷时，即便无人主动 @，系统也可能在后台尝试复现并寻找修复方案。智东西同日跟进称，初步合成负载实验里，Super-agent 任务完成时间的中位数与 95 分位分别约 12.4 分钟与 15.7 分钟，显著快于带 Subagent 工具的单会话方案；但实验环境简化，不能当作正式产品结论。</p>
+<p>同日开源的 <code>deepseek-ai/dsh-superagent-prototype</code> 以 MIT 许可发布。README 写明：这是研究原型、仅供参考，不是官方 DeepSeek 产品；代码为适配公开发布做过改动，与内部版本及长文描述并不完全一致；部分文中方向仍属未来规划、原型未实现。该原型面向单个 GitHub 仓库，可监听 GitHub 与可选的飞书，按授权规则开工作项并在独立会话中推进，最终以拉取请求等形式回原对话。读新闻时宜把「架构探索 + 研究开源」与「正式产品上线」分开，避免把原型当成现成可用的商用助手。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：10-31 晚发文；Super-agent 双层/事件驱动等框架；内部实例已在跑；GitHub 研究原型 MIT 开源且声明非正式产品。</li><li>分歧：第一财经侧重公众号长文与内部实例场景；智东西补充实验数字与架构拆解；README 强调原型≠文中全部设计。</li><li>待确认：公众号原文全文细节、内部实例覆盖范围、原型后续是否产品化，以官方后续披露为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.yicai.com/news/103419784.html" target="_blank" rel="noopener">第一财经</a><span class="role">主来源</span></li>
+        <li><a href="https://www.zhidx.com/p/606311.html" target="_blank" rel="noopener">智东西</a><span class="role">次要</span></li>
+        <li><a href="https://github.com/deepseek-ai/dsh-superagent-prototype" target="_blank" rel="noopener">GitHub dsh-superagent-prototype</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
