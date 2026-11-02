@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux 7.4-rc1 如期释出：合并窗近 2 万提交，含 Zen 6 预备与多款 SoC 使能 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Linux 7.4-rc1 如期释出：合并窗近 2 万提交，含 Zen 6 预备与多款 SoC 使能</h1>
+    <p class="lede">Phoronix：Linus 发布 Linux 7.4-rc1，合并窗约近 2 万次提交，有望成为年内 LTS 候选；变更含 AMD Zen 6 预备、AMDGPU 默认开 HDMI 2.1、Intel IPU8、更多骁龙 X2 与基础 Apple M4 使能等。</p>
+    <div class="meta">
+      <span>2026-11-02</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Linus Torvalds 如期打出 Linux 7.4-rc1。据 Phoronix 报道，本合并窗汇入约近 2 万次提交，显著高于常年约 1.5 万的量级；若后续稳定周期顺利，7.4 有望成为年内长期支持（LTS）候选之一。体量偏大通常意味着驱动、架构与子系统同步推进面更广，也意味着 rc 周期里需要更仔细地盯回归。</p>
+<p>硬件使能是本窗看点。AMD 侧出现 Zen 6 相关预备补丁，AMDGPU 默认打开 HDMI 2.1 相关路径；Intel 侧有 IPU8 进展；高通骁龙 X2 系列获得更多使能；Apple M4 也有「基础使能」合入——Phoronix 明确提醒，这尚不可面向普通终端用户当作「Mac 上开箱即用的主线桌面」。把这些条目读成「已可日常使用」会过度引申。</p>
+<p>发行版与云镜像维护者宜按惯例跟踪 rc2 之后的稳定性信号，再决定是否把 7.4 纳入下一轮 LTS 跟踪名单。桌面与笔记本用户则更宜关注 HDMI 2.1 默认策略、IP 摄像头（IPU）与 Arm/Apple silicon 使能在后续 rc 中的打磨，而不是在生产机上抢跑 -rc1。</p>
+<p>Phoronix 另文专门讨论了「massive window」的统计对比，与 rc1 发布稿互相补充：一边给变更清单，一边给提交量级背景。两者合读，更能理解为什么社区会提前讨论 LTS 候选资格——不是因为 rc1 已经冻结，而是因为合并窗的广度暗示了接下来一年个版本的硬件覆盖面。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：7.4-rc1 已释出；合并窗约近 2 万提交（常年约 1.5 万）；含 Zen 6 预备、AMDGPU 默认 HDMI 2.1、Intel IPU8、更多骁龙 X2、基础 Apple M4 使能；有望成年内 LTS 候选。</li><li>分歧：Phoronix 分篇分别强调 rc1 发布与「massive window」体量统计，细节侧重略有不同。</li><li>待确认：最终是否被发行版选定为 LTS、M4 使能何时达到可用桌面体验，以后续 rc 与稳定版公告为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.phoronix.com/news/Linux-7.4-rc1" target="_blank" rel="noopener">Phoronix</a><span class="role">主来源</span></li>
+        <li><a href="https://www.phoronix.com/news/Linux-7.4-Massive-Window" target="_blank" rel="noopener">Phoronix (merge window)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

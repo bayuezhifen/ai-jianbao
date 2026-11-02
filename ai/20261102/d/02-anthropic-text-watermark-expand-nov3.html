@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude 文本水印扩至 Mythos 5、Opus 4.7/4.6、Sonnet 4.6，11 月 3 日起生效 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude 文本水印扩至 Mythos 5、Opus 4.7/4.6、Sonnet 4.6，11 月 3 日起生效</h1>
+    <p class="lede">与 Opus 5.5 同款的不可感知文本水印，将自 2026-11-03 起覆盖 Mythos 5、Opus 4.7/4.6、Sonnet 4.6；Bedrock 部署或再晚数日。检测 API 仍为受限预览。</p>
+    <div class="meta">
+      <span>2026-11-02</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 正把已在 Claude Opus 5.5 上线的不可感知文本水印，扩展到更多仍在服务的旧版型号。Mashable 东南亚站等媒体报道称，自 2026 年 11 月 3 日起，Mythos 5、Opus 4.7、Opus 4.6 与 Sonnet 4.6 的默认文本输出将带上同款水印；公司新闻稿与支持文档同步说明，此举与欧盟《AI 法案》对生成内容透明度义务的对接有关。</p>
+<p>按官方口径，水印对终端用户「不可感知」——不改变可见文案，而是在统计层面留下可供检测器识别的痕迹。Anthropic 提供的检测接口目前仍处于受限预览，并非面向所有开发者开放的通用查重 API。Amazon Bedrock 上的对应型号，报道称可能比直连 Claude 再晚数日才完成同一开关。</p>
+<p>扩展名单刻意覆盖「仍被大量调用的旧代」，说明公司不愿只在最新旗舰上做合规示范，而要把存量流量一并纳入可声明的生成标记体系。支持页「How Claude marks AI-generated content」把水印定位为多信号方案的一部分，而不是唯一防伪手段。</p>
+<p>需要谨慎看待的一点是：社区与安全研究者此前指出，在 Opus 4.6 / Sonnet 4.6 上若大幅改动采样参数，检测器可能出现漏检（所谓 Decoder loophole）。官方尚未把「任意参数下绝对可检出」写成硬保证。对企业合规团队而言，宜把 11 月 3 日开关当作默认路径变更，同时保留日志、内容策略与人工抽检，而不是把水印检测当成唯一证据链。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：11-03 起扩至 Mythos 5、Opus 4.7/4.6、Sonnet 4.6；与 Opus 5.5 同款不可感知水印；对接欧盟 AI 法案透明度；检测 API 仍为受限预览。</li><li>分歧：Mashable 等强调覆盖时间表与 Bedrock 可能滞后；Anthropic 官方页更偏机制与合规动机说明。</li><li>待确认：Bedrock 精确上线日、Decoder loophole 在扩覆盖后是否仍可复现、检测 API 何时转正式商用，以官方后续通告为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://sea.mashable.com/tech/56556/anthropic-expands-text-watermarking-to-older-claude-versions-beginning-november-3" target="_blank" rel="noopener">Mashable SEA</a><span class="role">主来源</span></li>
+        <li><a href="https://www.anthropic.com/news/claude-text-watermark" target="_blank" rel="noopener">Anthropic News</a><span class="role">官方</span></li>
+        <li><a href="https://support.claude.com/en/articles/16266773-how-claude-marks-ai-generated-content" target="_blank" rel="noopener">Claude Support</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Actions 正式退役 macOS 14 运行镜像 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>GitHub Actions 正式退役 macOS 14 运行镜像</h1>
+    <p class="lede">按计划于 2026-11-02 退役 macos-14 / macos-14-large / macos-14-xlarge；工作流若仍指定这些标签将失败，需改用 macos-15、macos-latest（macos-26）及对应 large/xlarge。</p>
+    <div class="meta">
+      <span>2026-11-02</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>GitHub Actions 的 macOS 14（Sonoma）托管镜像按计划于 2026 年 11 月 2 日正式退役。官方 Changelog 与 runner-images 议题写明：标签 <code>macos-14</code>、<code>macos-14-large</code>、<code>macos-14-xlarge</code> 即日起不可再用于新的作业排队；继续写这些 runs-on 值的工作流会直接失败。这是预告到期，不是临时故障。</p>
+<p>迁移目标是 <code>macos-15</code> 以及 <code>macos-latest</code>（当前指向 macos-26）和各自的 large / xlarge 规格。早在 10 月 1 日的预告帖里，GitHub 已给出时间表与替换对照；议题 #13518 跟踪社区反馈与边缘案例（例如仍钉死在 14 的第三方 Action）。组织内部若有封装层——可复用 workflow 或自建 runner 标签别名——需要同步改别名，避免「仓库 YAML 已改、封装层仍指向 macos-14」的二次故障。</p>
+<p>对 iOS/macOS CI 来说，镜像大版本跳跃往往伴随 Xcode 默认版本、SDK 与模拟器列表变化。除了改 YAML 标签，还应在暂存分支跑一遍签名、测试与归档任务，确认证书与依赖缓存键仍然命中。缓存键若硬编码了旧镜像名，也会在迁移后出现「看似跑通、实则用了过期工具链」的隐性问题。</p>
+<p>本条是日历到期型变更：没有可拖延的灰度，错过即红灯。建议在组织文档里把 macos-14 从推荐矩阵删除，并在失败日志里准备好「标签已退役」的说明，减少值班误判为 GitHub 全局故障。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：2026-11-02 退役 macos-14 / large / xlarge；需改用 macos-15、macos-latest（macos-26）及对应 large/xlarge；官方 Changelog 10-01 已预告。</li><li>分歧：Changelog 给官方时间表与标签对照；runner-images 议题承载迁移问答与个案。</li><li>待确认：个别第三方 Action 钉死 macos-14 的修复进度，以各 Action 仓库为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://github.blog/changelog/2026-10-01-github-actions-macos-14-runner-image-retirement/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">主来源</span></li>
+        <li><a href="https://github.com/actions/runner-images/issues/13518" target="_blank" rel="noopener">runner-images #13518</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
