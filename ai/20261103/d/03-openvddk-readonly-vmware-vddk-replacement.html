@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用 · IT 行业简报</title>
+<title>开源 OpenVDDK：从零重写只读替代，缓解 VMware 收回公开 VDDK 下载后的迁移难题 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Usage and Cost Analytics API 进 beta：按模型、工作区、密钥汇总用量与费用</h1>
-    <p class="lede">Anthropic 平台发布说明记载：10 月 29 日推出 Usage and Cost Analytics API（beta），为 Claude Console 与 Claude Enterprise 组织提供按维度汇总的用量与费用查询；旧 Usage and Cost API 改标为遗留接口但仍继续支持。</p>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>开源 OpenVDDK：从零重写只读替代，缓解 VMware 收回公开 VDDK 下载后的迁移难题</h1>
+    <p class="lede">云架构师 Andrija Panić 发布 Apache 许可的 OpenVDDK：从零重写、无 VMware 代码的只读替代，兼容 libvixDiskLib.so.8.0.3 的 C ABI/SONAME；Register 11 月 3 日 04:45 UTC 报道。</p>
     <div class="meta">
-      <span>2026-10-30</span>
+      <span>2026-11-03</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>开源治理与许可证</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Claude 平台发布说明写到，Usage and Cost Analytics API 以 beta 头 `analytics-usage-cost-2026-08-24` 开放，路径包括 `/v1/organizations/analytics/usage` 与 `/v1/organizations/analytics/cost`，面向 Claude Console 与 Claude Enterprise 组织，可按模型、工作区、API 密钥以及背后的用户或服务账号等维度过滤、分组，查看 token 用量与费用。</p>
-<p>同一天说明把既有 Usage and Cost API，以及 Claude Enterprise Analytics API 里若干 `usage_report` / `cost_report` 类端点标成遗留（legacy），并表示短期内仍支持，同时给出迁移指引。对财务与平台团队来说，这意味着「报表」从偏一次性导出，往可脚本化、可按组织维度切片的分析接口靠拢，方便对账、分摊与异常用量巡检。</p>
-<p>背景上，本周稍早 Messages / Token Counting 请求体上限已从 32 MB 提到 128 MB，主要缓解截图、PDF 等体积敏感工作负载；那是 10 月 28 日条目，本条不展开。昨午已收 Claude for Legal 的 Artifacts 画廊与企业侧智能报告等产品向更新，本窗不回炒，只补平台侧分析 API。</p>
-<p>边界：beta 头与字段集合仍可能变；零留存（ZDR）等特殊合约流量是否完整进入分析维度，要以文档与合同为准。印度今日科技稿热议的「self-assessment」官方长文日期为 10 月 16 日，不纳入本窗主条。</p></div>
+      <div class="body"><p>VMware 于 2026 年 8 月把 Virtual Disk Development Kit（VDDK）公开下载收窄到合作伙伴通道后，依赖该库读取虚拟磁盘的迁移与备份工具链纷纷变难装、难跑。云架构师 Andrija Panić 因此从零写出 OpenVDDK：自称是 libvixDiskLib.so.8.0.3 的独立即插替代，仅依据公开文档与黑盒测试，不含任何 VMware 代码；主体用 Go，外加一层薄 C 暴露相同 C 接口、库名与符号版本（SONAME）。许可证为 Apache；功能上只读、不写盘，面向备份与迁出场景。项目站点为 openvddk.com。The Register 于 11 月 3 日 04:45 UTC 报道。</p>
+<p>Panić 告诉 Register：virt-v2v、nbdkit、Forklift/MTV、Proxmox VE、Apache CloudStack 以及大量内部脚本都靠同一小库读盘；公开下载一断，整条迁出路径受阻——「人们迁移或保护自己数据的能力，不该取决于某个下载页」。他称已在 vSphere 6.7 U3、7.0.3、8.0.3、9.1.1 上测试成功，实验室里经 vCenter 访问独立 ESXi 时读盘结果一致。独立测试者报告可在 Forklift（VMware→KubeVirt，冷/热）、OpenShift MTV（冷/热）、Proxmox 流水线与自研 nbdkit 工具中使用；另有德国云商用 V2K Migrate 迁大型文件服务器、美国公司迁往 CloudStack/KVM 的生产侧反馈。他同时强调：这些并非经独立审计的客户背书，也不保证适合每一套生产环境。</p>
+<p>迁出 VMware 并非只有这一条路：基于 KVM 的 OpenNebula 提供 OneSwap（自称成功率约 96%），Nutanix 调整后的 Move 可不再依赖 VDDK，红帽亦在推进修复并提供了权宜方案。OpenVDDK 的价值在于把「读盘 ABI」重新放回开源可分发状态，降低工具链对厂商下载页与伙伴资格的依赖；Apache 许可也便于发行版或商业迁出产品吸收。</p>
+<p>读这条宜分清「ABI 兼容声明」与「全场景生产保证」：目前是只读替代；写入、全版本矩阵、厂商支持与性能基线仍不在范围内。是否被红帽等纳入官方迁出工具，要看后续集成节奏。对仍卡在「装不上官方 VDDK」的团队，这是可立即试用的社区选项，但上生产前仍应在目标 vSphere 版本与存储路径上做回归。</p>
+<p>交叉来源方面：Register 采访与 openvddk.com 项目说明互相印证 ABI 目标、只读范围与测试版本；社区生产用例仍属作者转述。把它放在「开源治理与许可证」栏，是因为事件触发点是厂商收回公开下载、社区用宽松许可重写替代，而不只是又一个运维小工具发布。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：platform.claude.com 发布说明与 Usage and Cost Analytics API 文档页描述一致；第三方技术笔记复述 10 月 29 日 beta。</li><li>分歧：媒体偶发把「请求体 128 MB」与 Analytics API 捆成一条产品发布，官方是分日条目。</li><li>待确认：GA 时间表；Enterprise 与 Console 在维度覆盖上是否完全对齐。</li></ul>
+      <ul><li>多方一致：作者 Andrija Panić；从零重写、无 VMware 代码；Go + 薄 C；兼容 libvixDiskLib.so.8.0.3 ABI/SONAME；Apache；只读；测过 vSphere 6.7 U3–9.1.1；Forklift/MTV/Proxmox/CloudStack 有使用报告；VMware 8 月收窄公开下载；站点 openvddk.com。</li><li>分歧：Register 同时列举 OneSwap、Nutanix Move、红帽权宜方案等并列路径；项目方更强调「公平迁出自己的数据」动机。</li><li>待确认：更广生产矩阵、写入能力路线图、发行版打包，以 openvddk.com 与后续发布为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://platform.claude.com/docs/en/release-notes/overview" target="_blank" rel="noopener">Claude Platform release notes</a><span class="role">官方</span></li>
-        <li><a href="https://platform.claude.com/docs/en/manage-claude/usage-cost-analytics-api" target="_blank" rel="noopener">Usage and Cost Analytics API</a><span class="role">主来源</span></li>
-        <li><a href="https://www.datastudios.org/post/claude-api-128-mb-request-limit-usage-cost-analytics-api-beta" target="_blank" rel="noopener">DataStudios 汇总</a><span class="role">次要</span></li>
+        <li><a href="https://www.theregister.com/virtualization/2026/11/03/architect-creates-open-source-replacement-for-vm-migration-tool-vmware-has-hidden/5307124" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://openvddk.com/" target="_blank" rel="noopener">OpenVDDK</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

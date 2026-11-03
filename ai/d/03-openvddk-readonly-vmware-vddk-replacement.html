@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Claude Messages API 推出 message threads 公测：长会话少传历史、首 token 更快 · IT 行业简报</title>
+<title>开源 OpenVDDK：从零重写只读替代，缓解 VMware 收回公开 VDDK 下载后的迁移难题 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Claude Messages API 推出 message threads 公测：长会话少传历史、首 token 更快</h1>
-    <p class="lede">Anthropic 11 月 2 日称 Messages API 的 message threads 已公测：首轮传完整对话，之后只传新增消息；多数 Claude Code 用户默认开启，50 万–100 万 token 请求中位 TTFT 约降 35%。</p>
+    <div class="sec-label">开源治理与许可证</div>
+    <h1>开源 OpenVDDK：从零重写只读替代，缓解 VMware 收回公开 VDDK 下载后的迁移难题</h1>
+    <p class="lede">云架构师 Andrija Panić 发布 Apache 许可的 OpenVDDK：从零重写、无 VMware 代码的只读替代，兼容 libvixDiskLib.so.8.0.3 的 C ABI/SONAME；Register 11 月 3 日 04:45 UTC 报道。</p>
     <div class="meta">
-      <span>2026-11-02</span>
+      <span>2026-11-03</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>开源治理与许可证</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Anthropic 于 2026 年 11 月 2 日通过 Claude 资源中心宣布：Messages API 新增 message threads，并已进入公测。长程智能体（尤其编程代理）以往每一轮都要把整段对话与工具结果重新提交；上下文到数十万乃至近百万 token 时，仅重传就会拖长「首个 token 时间」（TTFT）。开启线程后，首轮仍提交完整对话并创建 thread，后续请求只带新增消息与上一轮响应 ID；官方称多数 Claude Code 用户已默认走线程，在约 50 万至 100 万 token 的请求上，中位 TTFT 约下降 35%。</p>
-<p>实现边界写得很清楚：线程驻留内存、加密且不落盘，距上一请求约 5 分钟无活动即过期，客户端需自行保留完整对话以便重建；Claude 每轮仍会读完整上下文，因此计费 token 与现有速率限制不变——省的是等待，不是账单。适用场景包括长程编程代理、带截图的 computer use、以及文档/图片很重的工作流。平台覆盖原生 Claude Platform，以及 AWS、Microsoft Foundry 与 Google Cloud 上由 Anthropic 托管的 Claude 模型。</p>
-<p>The Next Web 等二次报道补充：开发者通过请求里的 <code>thread</code> 参数创建/继续；公测覆盖各 Claude 型号；线程不适用于零数据保留或 HIPAA 等特殊合规配置。平台文档侧亦给出 beta 头与 create/continue 形态说明。对代理框架作者来说，这是延迟路径上的基础设施改动，需要处理 404（线程过期）后的全量重传，并继续自管会话持久化。</p>
-<p>读产品新闻时把它和「降价」分开：Anthropic 强调价格与限速不变，此前缓存降价才是成本侧动作。若你的代理本就短会话，收益有限；真正吃到红利的是工具轮次极多、历史动辄数十万 token 的长跑任务。是否全量默认、各云厂商上线节奏，仍以控制台与发布说明为准。</p></div>
+      <div class="body"><p>VMware 于 2026 年 8 月把 Virtual Disk Development Kit（VDDK）公开下载收窄到合作伙伴通道后，依赖该库读取虚拟磁盘的迁移与备份工具链纷纷变难装、难跑。云架构师 Andrija Panić 因此从零写出 OpenVDDK：自称是 libvixDiskLib.so.8.0.3 的独立即插替代，仅依据公开文档与黑盒测试，不含任何 VMware 代码；主体用 Go，外加一层薄 C 暴露相同 C 接口、库名与符号版本（SONAME）。许可证为 Apache；功能上只读、不写盘，面向备份与迁出场景。项目站点为 openvddk.com。The Register 于 11 月 3 日 04:45 UTC 报道。</p>
+<p>Panić 告诉 Register：virt-v2v、nbdkit、Forklift/MTV、Proxmox VE、Apache CloudStack 以及大量内部脚本都靠同一小库读盘；公开下载一断，整条迁出路径受阻——「人们迁移或保护自己数据的能力，不该取决于某个下载页」。他称已在 vSphere 6.7 U3、7.0.3、8.0.3、9.1.1 上测试成功，实验室里经 vCenter 访问独立 ESXi 时读盘结果一致。独立测试者报告可在 Forklift（VMware→KubeVirt，冷/热）、OpenShift MTV（冷/热）、Proxmox 流水线与自研 nbdkit 工具中使用；另有德国云商用 V2K Migrate 迁大型文件服务器、美国公司迁往 CloudStack/KVM 的生产侧反馈。他同时强调：这些并非经独立审计的客户背书，也不保证适合每一套生产环境。</p>
+<p>迁出 VMware 并非只有这一条路：基于 KVM 的 OpenNebula 提供 OneSwap（自称成功率约 96%），Nutanix 调整后的 Move 可不再依赖 VDDK，红帽亦在推进修复并提供了权宜方案。OpenVDDK 的价值在于把「读盘 ABI」重新放回开源可分发状态，降低工具链对厂商下载页与伙伴资格的依赖；Apache 许可也便于发行版或商业迁出产品吸收。</p>
+<p>读这条宜分清「ABI 兼容声明」与「全场景生产保证」：目前是只读替代；写入、全版本矩阵、厂商支持与性能基线仍不在范围内。是否被红帽等纳入官方迁出工具，要看后续集成节奏。对仍卡在「装不上官方 VDDK」的团队，这是可立即试用的社区选项，但上生产前仍应在目标 vSphere 版本与存储路径上做回归。</p>
+<p>交叉来源方面：Register 采访与 openvddk.com 项目说明互相印证 ABI 目标、只读范围与测试版本；社区生产用例仍属作者转述。把它放在「开源治理与许可证」栏，是因为事件触发点是厂商收回公开下载、社区用宽松许可重写替代，而不只是又一个运维小工具发布。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：11-02 前后公测；首轮全量、后续只传增量；约 5 分钟过期；TTFT 在超长请求上约降 35%；token 计费不变；多云可用。</li><li>分歧：官方文章侧重 Claude Code 默认开启与场景清单；TNW 更强调「省时间不省钱」与不合规特殊保留套餐。</li><li>待确认：各云区域全量进度、beta 头最终命名冻结、与 prompt caching 叠加时的最佳实践，以平台文档与 release notes 为准。</li></ul>
+      <ul><li>多方一致：作者 Andrija Panić；从零重写、无 VMware 代码；Go + 薄 C；兼容 libvixDiskLib.so.8.0.3 ABI/SONAME；Apache；只读；测过 vSphere 6.7 U3–9.1.1；Forklift/MTV/Proxmox/CloudStack 有使用报告；VMware 8 月收窄公开下载；站点 openvddk.com。</li><li>分歧：Register 同时列举 OneSwap、Nutanix Move、红帽权宜方案等并列路径；项目方更强调「公平迁出自己的数据」动机。</li><li>待确认：更广生产矩阵、写入能力路线图、发行版打包，以 openvddk.com 与后续发布为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://claude.com/resources/articles/message-threads" target="_blank" rel="noopener">Claude 资源中心</a><span class="role">主来源</span></li>
-        <li><a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" target="_blank" rel="noopener">Claude 平台文档</a><span class="role">官方</span></li>
-        <li><a href="https://thenextweb.com/news/anthropic-message-threads-beta-claude-api-agents" target="_blank" rel="noopener">The Next Web</a><span class="role">次要</span></li>
+        <li><a href="https://www.theregister.com/virtualization/2026/11/03/architect-creates-open-source-replacement-for-vm-migration-tool-vmware-has-hidden/5307124" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://openvddk.com/" target="_blank" rel="noopener">OpenVDDK</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

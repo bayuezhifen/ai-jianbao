@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI 发布 LifeVal：用日常事务衡量智能体，Astra 约 80.6% · IT 行业简报</title>
+<title>爱信与东北大学展示 16nm AI SoC：片上 STT-MRAM 存模型与系统，开机约 65.7 毫秒可起内核 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,32 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">OpenAI</div>
-    <h1>OpenAI 发布 LifeVal：用日常事务衡量智能体，Astra 约 80.6%</h1>
-    <p class="lede">11 月 2 日官网推出 LifeVal，基于时间使用调查与 3995 人问卷，覆盖托育、健康、教育、家务行政、理财、购物与政务等；官方称 GPT-6 Astra 平均奖励约 80.6%，对照 GPT-5.2 约 49.3%。</p>
+    <div class="sec-label">手机与端侧 SoC</div>
+    <h1>爱信与东北大学展示 16nm AI SoC：片上 STT-MRAM 存模型与系统，开机约 65.7 毫秒可起内核</h1>
+    <p class="lede">丰田系零部件巨头爱信（AISIN）联合东北大学展示 16nm FinFET AI SoC：片上 STT-MRAM 同时存放模型权重与操作系统，上电至内核约 65.7 毫秒，约为外置内存路径的 38 倍；尚未公布量产时间。</p>
     <div class="meta">
-      <span>2026-11-02</span>
+      <span>2026-11-03</span>
       <span class="dot"></span>
-      <span>OpenAI</span>
+      <span>手机与端侧 SoC</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 于 2026 年 11 月 2 日在官网发布 LifeVal，用来衡量模型在「日常生活里真正想要助手帮忙」的任务上的表现。公司称使命仍是让通用人工智能惠及普通人，而不止于学术知识问答：对每周超过十亿活跃用户的 ChatGPT 而言，更需要能在托育入学、健康照护、教育、家务行政、个人理财、购物与办理政务等场景里真正把事办完。</p>
-<p>选题来源分两层。一层是美国时间使用调查（ATUS）与跨国时间使用研究（MTUS），用来摸清人们一天时间花在哪些事务上；另一层是面向约 3995 名人口统计代表性受访者的新问卷，询问最希望个人助理帮忙的环节。官网示例包括搬家后择园报名、洪灾前组织志愿者、按预算与通学距离找房、远程陪家人看比赛、为新确诊糖尿病的家人做一周膳食与提醒等，并展示部分任务的高分样例。</p>
-<p>据 AI Affairs 等跟进报道与官方口径，GPT-6 Astra 在 LifeVal 上的未加权平均奖励约 80.6%，对照 GPT-5.2 约 49.3%。OpenAI 称过去一年持续在浏览器使用、计算机使用与连接器类任务上训练，并把这些能力逐步接到 ChatGPT，推动产品从「会聊」走向「能代办」。需要注意：完整题量、评分细则与独立复现套件并未公开，分数出自公司自建自跑，外界无法按同样标准复核。</p>
-<p>因此读这条宜把它当作「公司内部日常事务评测的阶段性成绩单」，而不是可横向对标的第三方排行榜。它补上了偏学术基准之外的生活向坐标，但透明度仍有限；后续仍需看 OpenAI 是否公开更多任务说明、是否引入外部审计，以及 ChatGPT 产品侧代办能力是否与榜上分数同向改善。</p></div>
+      <div class="body"><p>日本汽车零部件厂商爱信（AISIN，丰田为主要股东）与东北大学于 2026 年 11 月初公开一款面向车载与「物理 AI」场景的系统级芯片原型。芯片采用 16nm FinFET 工艺，集成双核 Arm Cortex-A53 与 Mali-G31 GPU，关键差异在于片上嵌入式 STT-MRAM：模型权重与操作系统可同存于片内非易失存储，意图减少对昂贵外置 DRAM 的往返流量。The Register 于 11 月 3 日 03:25 UTC（对应上海约 11:25，落在晨报窗口之后）报道此事，并援引爱信与东北大学新闻稿。</p>
+<p>双方给出的演示数据是：从上电到内核启动约 65.7 毫秒，相对外置内存路径约快 38 倍；片上可运行 Tiny YOLOv3 目标检测。为挤进有限片上容量，团队采用 8 位与 16 位混合乘法架构（组合 16×16、16×8、8×8），把 AI 模型权重数据量从约 17.7MB 压到约 9.36MB（约减 53%），同时宣称仍保持 16 位精度。叙事核心是：现有算力芯片过度依赖外存读权重，总线流量拖慢图像识别与机器人控制；在 DRAM 价格高企时，把模型与系统「钉」在片上非易失存储，是另一条工程取舍。</p>
+<p>产业语境上，英伟达、高通等正加力向车厂推销算力与软件平台；爱信作为既有供应链玩家，试图用「模型与系统都放片上」证明传统零部件商也能切入端侧 AI。爱信已向丰田及其他车厂供货，但官方尚未宣布该 SoC 的量产日程、封装规格或客户导入时间表，仍属研究与演示阶段。Register 亦提醒：车厂既要性能，也要成本与供货确定性，演示加速比 alone 不足以改写定点格局。</p>
+<p>读这条宜把「演示加速比」与「量产可行性」分开：65.7 毫秒、38 倍、权重减半都是实验室/原型口径；STT-MRAM 的良率、可量产容量上限、车规认证周期，以及相对「成熟 NPU + 外置 LPDDR」方案的总拥有成本，要等正式规格书与客户样片节奏。本窗未把它写成「丰田自研替代英伟达」叙事，只记技术路径与公开数据。</p>
+<p>交叉来源方面：爱信日文新闻稿与东北大学 11 月 2 日新闻发布会材料提供了工艺、CPU/GPU 配置与混合乘法压缩数据；Register 补充了相对外存的 38 倍口径，并把故事放进车载 AI 供应链竞争。三者在「片上 STT-MRAM 存模型与 OS、尚未量产」上看法一致，无互相矛盾的关键数字。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：官网 11-02 发布；基于 ATUS/MTUS 与约 3995 人问卷；覆盖托育/健康/教育/家务行政/理财/购物/政务；Astra 约 80.6%、GPT-5.2 约 49.3%（媒体跟进）。</li><li>分歧：官网主文强调动机与样例任务，未在首屏写明总分；AI Affairs 等二次报道补齐 Astra/5.2 对照分。</li><li>待确认：题量、评分细则、是否开放第三方复现，以 OpenAI 后续披露为准。</li></ul>
+      <ul><li>多方一致：AISIN + 东北大学；16nm FinFET；Cortex-A53 双核 + Mali-G31；片上 STT-MRAM 存权重与 OS；上电至内核约 65.7ms（约 38×）；Tiny YOLOv3；混合 8/16 位乘法使权重约 17.7MB→9.36MB（约 −53%）；未公布量产日。</li><li>分歧：Register 更突出相对英伟达/高通车载叙事与 DRAM 成本；爱信/东北大新闻稿更偏技术路径与物理 AI 定位。</li><li>待确认：量产节点、车规认证、容量规格与客户导入，以爱信后续产品公告为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/lifeval/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://www.aiaffairs.com/technology/openai-lifeval-everyday-tasks-benchmark/" target="_blank" rel="noopener">AI Affairs</a><span class="role">次要</span></li>
+        <li><a href="https://www.theregister.com/systems/2026/11/03/toyota-shows-off-soc-that-stores-model-weights-and-its-os-on-integrated-memory/5307117" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://www.aisin.com/jp/news/2026/010739.html" target="_blank" rel="noopener">AISIN</a><span class="role">官方</span></li>
+        <li><a href="https://www.tohoku.ac.jp/japanese/2026/11/press20261102-03-emram.html" target="_blank" rel="noopener">东北大学</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
