@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-11-03 08:20</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sub {
+    margin: .45rem 0 0;
+    color: var(--muted);
+    font-size: .86rem;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-03</span>
+        <span class="dot"></span>
+        <span>周二 08:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+      <p class="sub">覆盖窗口：昨午约 14:00 至今晨约 08:20（上海） · 晨报 · 路径 /ai/20261103</p>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-gdpx-semianalysis-agentic-benchmark.html">SemiAnalysis 发布 GDPx：11 域智能体基准，顶尖模型总分仅约 12%</a></h3>
+      <p>11 月 2 日 SemiAnalysis 与 14 家领域伙伴推出 GDPx（206 题），覆盖芯片设计、网安、生物、金融、法律、量化、RSI、硬件、材料、对齐与软件工程；Claude Opus 5.5 约 12.0% 居首，Gemini 4 Carbon、GPT-6 Astra 跟进，金融/法律多题接近零分。</p>
+      <a class="src detail" href="d/01-gdpx-semianalysis-agentic-benchmark.html" data-original="https://newsletter.semianalysis.com/p/gdpx-measuring-frontier-model-capabilities">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/02-openai-lifeval-everyday-tasks.html">OpenAI 发布 LifeVal：用日常事务衡量智能体，Astra 约 80.6%</a></h3>
+      <p>11 月 2 日官网推出 LifeVal，基于时间使用调查与 3995 人问卷，覆盖托育、健康、教育、家务行政、理财、购物与政务等；官方称 GPT-6 Astra 平均奖励约 80.6%，对照 GPT-5.2 约 49.3%；题目与评分细则未公开。</p>
+      <a class="src detail" href="d/02-openai-lifeval-everyday-tasks.html" data-original="https://openai.com/index/lifeval/">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3><a href="d/03-anthropic-amended-s1-q3-revenue-compute.html">Anthropic 修订 S-1 披露三季报：营收近 170 亿美元，算力承诺约 8950 亿</a></h3>
+      <p>11 月 2 日修订招股书补齐 Q3：当季营收约 170 亿美元（同比约 +1127%，环比约 +47%），经营亏损约 5.67 亿美元；九个月营收约 332 亿美元；披露算力/基础设施采购与租赁承诺合计约 8950 亿美元。</p>
+      <a class="src detail" href="d/03-anthropic-amended-s1-q3-revenue-compute.html" data-original="https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Nscale/Naver 等既有条不回炒。</p>
+    </article>
+
+    <div class="sec"><h2>Grok / xAI</h2></div>
+    <article class="card">
+      <h3><a href="d/04-xai-grok-api-text-watermark-nov7.html">xAI 文档：Grok API 文本水印 11 月 7 日起默认开启</a></h3>
+      <p>SpaceXSI/xAI 开发者文档写明，自 2026-11-07 起 grok-4.7 及所列 4.x/4.20 型号 API 文本输出默认含水印，响应可带 x-watermark 头；团队管理员可按模型选择退出；对接欧盟 AI 法案透明度义务。</p>
+      <a class="src detail" href="d/04-xai-grok-api-text-watermark-nov7.html" data-original="https://docs.x.ai/developers/advanced-api-usage/watermarking">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；恶意扩展通告不回炒。</p>
+    </article>
+
+    <div class="sec"><h2>CPU / 服务器</h2></div>
+    <article class="card">
+      <h3><a href="d/05-intel-foundry-18a-capacity-shift-stock-plunge.html">英特尔股价重挫后：把部分 18A 产能改做 Intel 3 服务器芯片</a></h3>
+      <p>CNBC 11 月 2 日：10 月股价累计约跌 45%，指引暗示本季营收可能少 10–20 亿美元；数据中心 Q3 仍同比大增，但晶圆/基板/内存紧缺；公司称将把俄勒冈部分 18A 产能转向 Intel 3 以供应服务器 CPU，外界担忧代工客户信心。</p>
+      <a class="src detail" href="d/05-intel-foundry-18a-capacity-shift-stock-plunge.html" data-original="https://www.cnbc.com/2026/11/02/intel-foundry-faces-critical-test-after-stocks-45percent-plunge-in-october.html">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>手机与端侧 SoC</h2></div>
+    <article class="card">
+      <h3><a href="d/06-counterpoint-smartphone-soc-q3-2026-down-21.html">Counterpoint：2026Q3 智能手机 SoC 出货同比跌 21%，苹果市占逼近高通</a></h3>
+      <p>IT之家 11 月 2 日下午转 Counterpoint：全球智能手机 SoC 出货同比跌 21%；联发科 28%、高通 22%、苹果 21%、展锐 13%、三星 8%；机构预计 2026 全年约再跌 20%。</p>
+      <a class="src detail" href="d/06-counterpoint-smartphone-soc-q3-2026-down-21.html" data-original="https://www.ithome.com/1/021/118.htm">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；SK海力士美国总部不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>群晖 / Synology</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已查 synology.com 新闻仍止于 10-29 勒索催更与 SA-26:15；BC 11-02 C3RB3R 报道为同战役跟进，不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Linux 7.4-rc1 不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Incus/LXD AGPL 不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；Actions macos-14 不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>漏洞与勒索</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；KEV 无 11-02/03 新添；Alpine GitLab、QNAP PHP2Shell 属既有/上月底，不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索。</p>
+    </article>
+
+    <div class="sec">
+      <h2>隐私与监管</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索。</p>
+    </article>
+
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索；REDMI/一加上架不回炒。</p>
+    </article>
+
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口已检索。</p>
+    </article>
+
+    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+  </div>
+</body>
+</html>
