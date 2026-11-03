@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>xAI 文档：Grok API 文本水印 11 月 7 日起默认开启 · IT 行业简报</title>
+<title>Claude Messages API 推出 message threads 公测：长会话少传历史、首 token 更快 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>xAI 文档：Grok API 文本水印 11 月 7 日起默认开启</h1>
-    <p class="lede">SpaceXSI/xAI 开发者文档写明，自 2026-11-07 起 grok-4.7 及所列 4.x/4.20 型号 API 文本输出默认含水印，响应可带 x-watermark 头；团队管理员可按模型选择退出，以对接欧盟 AI 法案透明度义务。</p>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Claude Messages API 推出 message threads 公测：长会话少传历史、首 token 更快</h1>
+    <p class="lede">Anthropic 11 月 2 日称 Messages API 的 message threads 已公测：首轮传完整对话，之后只传新增消息；多数 Claude Code 用户默认开启，50 万–100 万 token 请求中位 TTFT 约降 35%。</p>
     <div class="meta">
-      <span>2026-11-03</span>
+      <span>2026-11-02</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>Claude / Anthropic</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>xAI（文档品牌亦写作 SpaceXSI）在开发者文档「Output Watermarking」中明确：自 2026 年 11 月 7 日起，所列文本生成模型的 API 输出将默认带上不可见水印。覆盖型号包括 grok-4.7、grok-4.6、grok-4.5、grok-4.3，以及 grok-4.20-reasoning、grok-4.20-non-reasoning、grok-4.20-multi-agent。适用范围含全球与区域端点，以及 Responses API 与 Chat Completions API；普通文本、结构化输出与工具调用参数中的生成文本均在列。</p>
-<p>机制上，水印在生成时微调 token 选择，不额外插入字符或隐藏标记，官方称不影响回复长度、质量与速度。调用方无需改请求参数；可通过响应头 <code>x-watermark</code> 判断当次是否加水印（值为 true 表示已加水印）。检测侧为统计判定，较长文本信号更强；检测 API 需另行申请。</p>
-<p>退出权放在团队管理员：控制台可按模型开关，变更约五分钟内对新请求生效，并写入审计日志。选择退出需确认适用法律下的例外，并由使用方自行承担标记或披露义务；部分型号可能对团队锁定为开启。CryptoBriefing、Neural Brew 等二次报道指出，此举对接欧盟 AI 法案透明度要求，且主要针对 API/企业接入，消费端产品不在本轮说明范围内。</p>
-<p>对开发者而言，这是合规与对接方式的变更预告，而不是新模型发布。读文档时宜关注默认开启日、型号清单与控制台退出流程；是否影响下游内容审核、版权争议取证，仍取决于检测接口开放范围与各国执法实践。本文不讨论版本排期例行核验。</p></div>
+      <div class="body"><p>Anthropic 于 2026 年 11 月 2 日通过 Claude 资源中心宣布：Messages API 新增 message threads，并已进入公测。长程智能体（尤其编程代理）以往每一轮都要把整段对话与工具结果重新提交；上下文到数十万乃至近百万 token 时，仅重传就会拖长「首个 token 时间」（TTFT）。开启线程后，首轮仍提交完整对话并创建 thread，后续请求只带新增消息与上一轮响应 ID；官方称多数 Claude Code 用户已默认走线程，在约 50 万至 100 万 token 的请求上，中位 TTFT 约下降 35%。</p>
+<p>实现边界写得很清楚：线程驻留内存、加密且不落盘，距上一请求约 5 分钟无活动即过期，客户端需自行保留完整对话以便重建；Claude 每轮仍会读完整上下文，因此计费 token 与现有速率限制不变——省的是等待，不是账单。适用场景包括长程编程代理、带截图的 computer use、以及文档/图片很重的工作流。平台覆盖原生 Claude Platform，以及 AWS、Microsoft Foundry 与 Google Cloud 上由 Anthropic 托管的 Claude 模型。</p>
+<p>The Next Web 等二次报道补充：开发者通过请求里的 <code>thread</code> 参数创建/继续；公测覆盖各 Claude 型号；线程不适用于零数据保留或 HIPAA 等特殊合规配置。平台文档侧亦给出 beta 头与 create/continue 形态说明。对代理框架作者来说，这是延迟路径上的基础设施改动，需要处理 404（线程过期）后的全量重传，并继续自管会话持久化。</p>
+<p>读产品新闻时把它和「降价」分开：Anthropic 强调价格与限速不变，此前缓存降价才是成本侧动作。若你的代理本就短会话，收益有限；真正吃到红利的是工具轮次极多、历史动辄数十万 token 的长跑任务。是否全量默认、各云厂商上线节奏，仍以控制台与发布说明为准。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：官方文档写明 11-07 起默认开启；型号清单含 4.7/4.6/4.5/4.3 与 4.20 系列；x-watermark 头；团队管理员可按模型退出；对接欧盟 AI 法案。</li><li>分歧：CryptoBriefing 等更强调「北美仅 ChatGPT 尚未文本水印」的行业对照；官方文档聚焦接口行为与退出流程。</li><li>待确认：检测 API 审批进度、锁定型号名单、消费端是否另行安排，以控制台与后续文档为准。</li></ul>
+      <ul><li>多方一致：11-02 前后公测；首轮全量、后续只传增量；约 5 分钟过期；TTFT 在超长请求上约降 35%；token 计费不变；多云可用。</li><li>分歧：官方文章侧重 Claude Code 默认开启与场景清单；TNW 更强调「省时间不省钱」与不合规特殊保留套餐。</li><li>待确认：各云区域全量进度、beta 头最终命名冻结、与 prompt caching 叠加时的最佳实践，以平台文档与 release notes 为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://docs.x.ai/developers/advanced-api-usage/watermarking" target="_blank" rel="noopener">xAI Docs</a><span class="role">官方</span></li>
-        <li><a href="https://cryptobriefing.com/xai-grok-text-watermarking-api/" target="_blank" rel="noopener">CryptoBriefing</a><span class="role">次要</span></li>
-        <li><a href="https://neuralbrew.ai/en/articles/2026/11/xai-grok-api-text-watermarking-november-7/" target="_blank" rel="noopener">Neural Brew</a><span class="role">次要</span></li>
+        <li><a href="https://claude.com/resources/articles/message-threads" target="_blank" rel="noopener">Claude 资源中心</a><span class="role">主来源</span></li>
+        <li><a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" target="_blank" rel="noopener">Claude 平台文档</a><span class="role">官方</span></li>
+        <li><a href="https://thenextweb.com/news/anthropic-message-threads-beta-claude-api-agents" target="_blank" rel="noopener">The Next Web</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
