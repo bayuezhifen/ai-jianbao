@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anthropic 开源 FlashProve：用 zkSNARK 证明「回复来自承诺模型」 · IT 行业简报</title>
+<title>高通 HBC 初验：带宽每瓦据称超 HBM4 五倍以上，AI250 计划 2027 上半年送样 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Claude / Anthropic</div>
-    <h1>Anthropic 开源 FlashProve：用 zkSNARK 证明「回复来自承诺模型」</h1>
-    <p class="lede">Anthropic 研究帖标注 11 月 2 日发布 FlashProve（晨/午报漏收，本窗按 TechCrunch 11 月 3 日报道放大补入）：用 zkSNARK 做「可证明推理」，证明回复来自已承诺权重；Llama 4 Maverick 400B 4-bit 单卡 H100 约 110 tok/s、约 19MB/1024 token；Apache 2.0 + Lean，明确为研究原型、暂无部署计划。</p>
+    <div class="sec-label">存储与网络硬件</div>
+    <h1>高通 HBC 初验：带宽每瓦据称超 HBM4 五倍以上，AI250 计划 2027 上半年送样</h1>
+    <p class="lede">ServeTheHome 11 月 2 日：高通完成一代 High Bandwidth Compute（HBC）硬件初验，在存储上叠近存算；相对 HBM4 规格测得带宽每瓦效率超 5×，相对外置 LPDDR5X 带宽约 18×。Dragonfly AI250 为首先采用 HBC 的加速器，计划 2027 上半年送样。TrendForce 11 月 4 日跟进。</p>
     <div class="meta">
-      <span>2026-11-02</span>
+      <span>2026-11-04</span>
       <span class="dot"></span>
-      <span>Claude / Anthropic</span>
+      <span>存储与网络硬件</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>Anthropic Frontier Red Team 在官网研究频道发布《Progress on provable inference for large language models》（页面标注 Published Nov 2, 2026）。晨报与昨午报窗口未收入；本窗依据 TechCrunch 11 月 3 日跟进报道将其放大补入，并回看 Anthropic 原文交叉核对。系统名 FlashProve：模型提供方先对权重做承诺（commitment），再为每次（或批量）推理生成零知识简洁证明（zkSNARK），让用户在不知权重的前提下，验证「这段输出确实由所承诺模型算出」——用于防路由偷换便宜模型、防篡改 token 流，以及给审计/监管提供可核验证据。</p>
-<p>性能数字来自官方评测：在 Meta Llama 4 Maverick（约 4000 亿参数 MoE、公开 4-bit 权重）上，单张 H100 证明吞吐约 110 tokens/秒，每 1024 token 请求的证明大小约 19MB；相对同模型用 vLLM 做普通推理，证明侧 GPU 时间约高 70–95 倍。发布物含技术报告、协议说明、证明器与两套验证器（快速 C++ 与可形式化的 Lean），以及顶层安全性陈述的 Lean 证明；代码与文档以 Apache 2.0 开源。TechCrunch 同日强调：指纹不泄露权重，故闭源厂商也可理论上发布承诺；并写明研究仍在进行，Anthropic「暂无在本实验室或其他实验室部署的计划」。</p>
-<p>官方亦列出局限：当前证明的是整数化、贪心解码下的精确计算，浮点或采样解码可能在某些位置偏离；架构本身不隐藏；上下文目前约到 1024 token；快速可执行代码与 Lean 规范之间仍有审计缺口。Anthropic 把它放在「信任挑战」框架下讨论：监管 pacing、入侵检测、文本出处与「只允许上架已批准模型」等场景，并区分硬件 TEE 与纯密码学路径。此前公司曾在安全路线图中设下可证明/可验证推理原型节点；本帖走的是密码学证明路线，与另一条「可信服务器重算签名」路径并列。</p>
-<p>读这条宜分清「开源研究原型」与「生产级推理证明」：110 tok/s 相对历史 zkML 已是数量级进步，但对在线服务仍是事后批处理、高开销路径。用户侧价值取决于大厂是否愿意发布权重承诺并附带证明；在部署计划明确为「无」的当下，更现实的影响是给学术界与合规工具链一块可复现基线。标题里的「证明模型身份」是媒体概括，技术上证明的是「输出由某承诺权重生成」，并不自动开源权重或公开架构细节。</p></div>
+      <div class="body"><p>高通向 ServeTheHome 展示：其第一代 High Bandwidth Compute（HBC）已在圣地亚哥实验室完成初步硬件验证。与传统 HBM「存储堆叠 + 超宽总线连主算力」不同，HBC 把一层小型算力裸片放在 LPDDR 堆叠底部，让带宽最吃紧的运算尽量在近存侧完成，再把结果送回主处理器，以换能耗与封装成本。</p>
+<p>初验样品为两层 DRAM（量产目标四层）。高通称在自动测试设备上同时按 LPDDR5X 与 HBC 模式测量：带宽每瓦效率相对 HBM4 公开规格超过五倍（略低于早前「约 6×」展望）；相对外置 LPDDR5X 的带宽量级约 18×，但未公布绝对 GB/s。公司强调「能跑通」本身是里程碑，并称做了热行为验证，细节未公开——近存算力底片发热，仍是后续量产关键。</p>
+<p>产品落点是数据中心推理加速器 Dragonfly：AI250 将是首款集成 HBC 的型号，送样窗口指向 2027 上半年；再下一代 AI300 规划二代 HBC。叙事上，HBC 试图在 HBM 成本、SRAM 容量上限与外置 LPDDR 带宽之间找折中，并可能用更便宜的 2D 有机基板替代部分 CoWoS/EMIB 需求。The Elec 等此前传闻三星、SK 海力士与台积电参与，官方尚未点名量产分工。</p>
+<p>TrendForce 11 月 4 日摘要与 ServeTheHome 主文一致，并提醒高通亦曾暗示未来把 HBC 带进骁龙消费产品，但无时间表。对存储产业链，这是「用 LPDDR 晶粒做类 HBM 堆叠 + 近存算」的路线验证，短期不改变 HBM 短缺叙事，却给推理侧 TCO 多了一条候选技术。</p>
+<p>注意：5× / 18× 均为高通实验室对比口径，不是第三方基准；初验两层 ≠ 量产四层；送样不等于商用上架。晨报未收，午报按芯片/存储热点补入。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：研究帖标 11-02；FlashProve／zkSNARK 可证明推理；Llama 4 Maverick 400B 4-bit 单 H100 ~110 tok/s、~19MB/1024 token；Apache 2.0 + Lean；研究原型、暂无部署计划；TechCrunch 11-03 放大报道。</li><li>分歧：TechCrunch 侧重「证明模型身份／防偷换」叙事；Anthropic 原文更长，含 pacing、形式化验证与局限清单。</li><li>待确认：第三方复现吞吐、对稠密／更长上下文的扩展、以及是否纳入 Anthropic 自身推理栈，以后续论文与 GitHub 迭代为准。</li></ul>
+      <ul><li>多方一致：HBC 初验完成；近存算力底片 + LPDDR 堆叠；带宽每瓦相对 HBM4 规格 &gt;5×；相对外置 LPDDR5X 带宽约 18×；AI250 为先发产品，送样目标 2027 上半年；初验两层、量产目标四层。</li><li>分歧：绝对带宽数字未披露；供应商分工仍为传闻。</li><li>待确认：量产良率、热设计、AI250 客户送样名单，以高通后续发布为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Anthropic Research</a><span class="role">主来源</span></li>
-        <li><a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+        <li><a href="https://www.servethehome.com/qualcomm-validates-hbc-stacked-memory-ahead-of-2027-dragonfly-ai250-sampling/" target="_blank" rel="noopener">ServeTheHome</a><span class="role">主来源</span></li>
+        <li><a href="https://www.trendforce.com/news/2026/11/04/news-qualcomm-completes-hbc-validation-claims-5x-hbm4-bandwidth-efficiency-ai250-sampling-in-1h27/" target="_blank" rel="noopener">TrendForce</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

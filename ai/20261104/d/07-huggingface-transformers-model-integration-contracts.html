@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AMD 三季报：营收约 134 亿美元，数据中心同比近翻倍，四季指引约 170 亿 · IT 行业简报</title>
+<title>Hugging Face 提 Transformers MIC：缩模型固件在 PR 上抓行为回归 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">CPU / 服务器</div>
-    <h1>AMD 三季报：营收约 134 亿美元，数据中心同比近翻倍，四季指引约 170 亿</h1>
-    <p class="lede">AMD 11 月 3 日 16:15 ET 公布 2026 年三季报：营收约 133.77 亿美元同比 +45%，数据中心约 85.46 亿同比 +97%；非 GAAP EPS 2.09；预计四季营收约 170 亿美元 ±3%。CNBC 称盘后股价约涨 8%。</p>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>Hugging Face 提 Transformers MIC：缩模型固件在 PR 上抓行为回归</h1>
+    <p class="lede">Hugging Face 11 月 3 日博文提出 Model Integration Contracts（MIC）：为架构固化「缩小版固件 + 可运行用法路径 + 人工审过的输出基线」，在廉价 CPU 上于 PR 阶段做行为回归；起因包括 UMT5 在启用 SDPA 后静默「偷看未来 token」近两月才被发现。</p>
     <div class="meta">
-      <span>2026-11-03</span>
+      <span>2026-11-04</span>
       <span class="dot"></span>
-      <span>CPU / 服务器</span>
+      <span>语言 / 运行时 / 框架</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>超威半导体（AMD）于 2026 年 11 月 3 日美股盘后发布三季度业绩（新闻稿时间 4:15 p.m. ET）。当季营收 133.77 亿美元，同比约 +45%、环比约 +16%；GAAP 稀释 EPS 1.46，非 GAAP 稀释 EPS 2.09。数据中心部门营收创纪录的 85.46 亿美元，同比约 +97%，公司归因于 EPYC CPU 与 Instinct MI450 系列 GPU 需求。客户端与游戏合计约 37.2 亿、同比约 -8%（其中游戏约 7.73 亿、同比约 -40%）；嵌入式约 11.1 亿、同比约 +29%。</p>
-<p>前瞻指引：四季营收约 170 亿美元，上下浮动 3%；指引中值意味着同比约 +66%、环比约 +27%；非 GAAP 毛利率展望约 55%。CEO 苏姿丰称需求继续走强，并预期随着 Helios 机架方案与「Venice」量产爬坡，四季增长还会加快；Anthropic、Meta、Microsoft、OpenAI 与 Oracle Cloud 等已被点名为 Helios／MI450 相关客户或工作负载方。CNBC 报道称业绩与指引双双高于华尔街预期，盘后股价约涨 8%。</p>
-<p>财报「近期亮点」还重申了对 World Labs、Taalas 的既有收购协议——分别指向世界模型研究与推理硅技术——本报仅作一句背景，不把它当成本窗新宣布的并购。ROCm 10、Helion 参考架构、LUMI-AI 超算选型等亦出现在亮点列表，说明软件栈与欧洲超算仍在叙事里，但市场当日定价主轴仍是数据中心收入与四季指引。</p>
-<p>读数时注意：85.46 亿是部门收入，含 AI 加速器与服务器 CPU 等，不宜直接当成「GPU 销售额」；游戏下滑与 PC 相关承压仍在，和英特尔近期数据中心强、指引弱的对照叙事被多家媒体并行引用。供应链（晶圆、基板、先进封装、内存）能否支撑 2027 年更高出货，是苏姿丰电话会上强调、也是后续需要跟踪的执行风险。</p></div>
+      <div class="body"><p>Transformers 库维护者 Tarek Ziadé 写道：2026 年 7 月 30 日为 T5 打开 PyTorch SDPA 时，连带让 UMT5 解码器能注意到未来 token；训练时等于偷看答案，进程不崩，漏洞在 main 上留了近两个月。事后用缩小版 UMT5 固件在 CPU 上重放，每个引入提交都能打出偏离基线的损失与 log-prob。</p>
+<p>MIC 提案把这类检查标准化为三件套：从真实 checkpoint 配置缩出来的 fixture（层数/宽度变小但保留关键层类型，分词器与处理器原样拷贝）、一段用户真实会跑的 Markdown 用法（生成、训练步等）、以及人工审过的期望输出。合约在「架构 + 用法路径」粒度生效，兼容 checkpoint 可共享固件、各自保留基线。固件发在 huggingface-mic，fleet 数据集钉死版本与依赖，便于复现。</p>
+<p>缩小配方现分四步：缩配置并保留混合注意力/MoE 等层种；预处理文件字节级保留；随机或「过拟合」少量样本以增强灵敏度；冻结并人工审基线。Llama 4 Scout 示例称千亿参数可缩到约数千万级仍保留关键结构。CLI `tmic` 可本地起草、构建、记录基线；大模型只负责草稿，基线变更须人审。</p>
+<p>截至 11 月 1 日，Transformers CI 里的 MIC 任务「报失败但不阻断 PR」——是否改成硬门禁，还要看真实缺陷捕获率、误报与基线维护成本。官方也承认：有的缺陷（如 Whisper 辅助解码）只有全尺寸权重才暴露，固件不能替代夜间全量 GPU 集成测试。</p>
+<p>对开源 ML 栈，这是把「行为契约」前移到 PR 的一次工程化尝试，和传统单测、全尺寸集成测试互补。是否在社区铺开，取决于覆盖率与维护负担。本窗晨报未收，午报按框架工具热点补入。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：营收 133.77 亿 +45%；DC 85.46 亿 +97%；非 GAAP EPS 2.09；Q4 营收约 170 亿 ±3%；Helios／MI450 客户叙述；CNBC 盘后约 +8%。</li><li>分歧：媒体对「服务器收入 2027 再翻倍」等电话会前瞻引用程度不同；收购 World Labs／Taalas 为财报重申。</li><li>待确认：四季实际交货、Helios 收入确认节奏、游戏业务是否止跌，以 Q4 财报与 SEC 文件为准。</li></ul>
+      <ul><li>多方一致：HF 11-03 博文；MIC = 固件 + 用法路径 + 基线；UMT5/SDPA 案例；CI 目前报告失败不阻断 PR；`tmic` CLI。</li><li>分歧：随机权重 vs 过拟合固件谁更能抓真缺陷，文中称尚未定论。</li><li>待确认：阻断门禁时间表、各模型族覆盖率，以后续 CI 政策为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results" target="_blank" rel="noopener">AMD IR</a><span class="role">主来源</span></li>
-        <li><a href="https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html" target="_blank" rel="noopener">CNBC</a><span class="role">次要</span></li>
+        <li><a href="https://huggingface.co/blog/transformers-mic" target="_blank" rel="noopener">Hugging Face Blog</a><span class="role">官方</span></li>
+        <li><a href="https://e-acc.ai/daily/2026-11-04" target="_blank" rel="noopener">e/acc Daily</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

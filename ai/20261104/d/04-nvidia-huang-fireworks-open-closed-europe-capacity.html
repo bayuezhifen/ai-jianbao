@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Barracuda 警告 ESG 等产品两洞可链式拿 root · IT 行业简报</title>
+<title>黄仁勋 Fireworks：开闭源都欢迎；Fireworks 欧洲扩容 Rubin/Blackwell · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>Barracuda 警告 ESG 等产品两洞可链式拿 root</h1>
-    <p class="lede">Barracuda 11 月 3 日警告：CVE-2026-116606（预认证授权绕过）与 CVE-2026-111560（命令注入）可链式获得设备 root；补丁已发布。利用需能访问管理接口，厂商呼吁勿把管理口暴露公网。</p>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>黄仁勋 Fireworks：开闭源都欢迎；Fireworks 欧洲扩容 Rubin/Blackwell</h1>
+    <p class="lede">英伟达 CEO 黄仁勋 11 月 3 日在 Fireworks Forge 称闭源前沿模型与开源权重「都有位置」，并强调领域特化智能；同期 Fireworks 宣布以 Vera Rubin 与 Grace Blackwell 平台扩建欧洲算力，部署面向 2027 年。</p>
     <div class="meta">
-      <span>2026-11-03</span>
+      <span>2026-11-04</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>英伟达 / NVIDIA</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>网络安全厂商 Barracuda Networks 于近日向客户警告两处漏洞，经 BleepingComputer、The Hacker News 等 11 月 3 日报道扩散：CVE-2026-116606 为 Email Security Gateway（ESG）相关的认证／授权弱点，攻击者可借此修改设备全局配置；CVE-2026-111560 允许已具备管理权限的攻击者注入以 root 运行的操作系统命令。两洞组合时，可绕过授权控制并拿到设备 root。Barracuda 称已启动修复并发布补丁，客户应升级到列明的固件版本。</p>
-<p>受影响产品与补丁号（据 BC 整理的厂商表）：ESG 两洞皆中，补丁 BNSF-40425（9.4.017+）或 BNSF-40430（&lt;9.4.017）；Load Balancer ADC、Message Archiver、WAF／WAF Control Center、Web Security Gateway 等主要中命令注入洞，各有对应补丁编号。厂商强调：成功利用需要能访问管理接口；应使用网络访问控制，把管理面限制在可信内网，避免对公网暴露。</p>
-<p>历史上下文上，Barracuda ESG 在 2023 年曾连续曝出被 UNC4841 等利用的零日（如 CVE-2023-7102、CVE-2023-2868），与邮件网关暴露面过大有关。本次通告虽未宣称已遭大规模在野利用，但「可链式 root」足以让邮件安全与 WAF 用户按紧急补丁节奏处理，并复查管理口是否误开。Campus 文档 wiki 提供官方安全更新说明，应与邮件通告对照执行。</p>
-<p>处置建议按厂商口径：先确认资产清单与版本，再打对应补丁；同步收紧管理面 ACL／VPN，监控异常配置变更。不要把「需要管理接口」理解成低风险——一旦管理口可达，预认证绕过会显著降低攻击门槛。本报不提供利用细节，只转述厂商已披露的影响面与缓解方向。</p></div>
+      <div class="body"><p>在 Fireworks.ai 于旧金山举办的 Forge 活动上，黄仁勋与 Fireworks CEO 乔琳（Lin Qiao）对谈。据 The Register 11 月 3 日报道，黄仁勋表示「我们喜欢闭源模型」，认为闭源前沿模型仍有坚实位置，但「全世界都建立在同一种通用智能上并不合理」；把开源前沿权重配上领域数据、专用工具与评估，就有机会做出「近乎超级智能」的特化系统。这与他今年以来多次为开源权重辩护、同时不放弃向 OpenAI/Anthropic 云客户供货的立场一致。</p>
+<p>Fireworks 同日新闻稿称，将与英伟达合作扩建欧洲容量，采用 Vera Rubin 与 Grace Blackwell 平台，并提到 DSX AI 工厂与 Spectrum-X 网络；规划部署自 2027 年起。稿中还预告 Ultrafast 推理预览（称 Blackwell 上可超约 1500 token/s）、多日 prompt 缓存与后台模式（服务长时智能体）以及更高速率限制。黄仁勋在稿中祝贺需求「暴增」，称开源模型智能已到拐点。</p>
+<p>对谈里黄仁勋还被问到「明年看似平常、今天看似夸张」的事：他点名智能体编排（agent harness）已是今年突破，并预期明年谈得更多的是安全部署智能体的「Open Shell」叙事，以及「硬件在环」的机器人系统——后者与英伟达机器人布局同向，Register 也标明「略带自卖」。</p>
+<p>读法上，这是英伟达在开源推理云/特化模型阵营的站台，而不是新产品发布会。与晨报「据报要求云客户 51% 非中国买家」不同线：那边是供应链与出口合规传闻，这边是产品哲学与欧洲产能叙事。Fireworks 自称日处理万亿级 token，具体欧洲机房地点与 MW 规模未在稿中展开。</p>
+<p>交叉核对：开闭源「都欢迎」、特化智能、欧洲 Rubin/Blackwell 扩容，Register 与 Fireworks 稿一致；「25000 GPU」等数字见部分二手摘要，官网稿未写死该整数，正文以官方表述为准。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CVE-2026-116606 预认证授权绕过 + CVE-2026-111560 命令注入；可链式 root；需管理接口可达；补丁已发；ESG 等产品在列。</li><li>分歧：各媒体对「critical」措辞与历史 UNC4841 回顾篇幅不同；完整产品矩阵以 Barracuda 文档为准。</li><li>待确认：是否出现在野利用、CVSS 终分与各型号验证结果，以厂商安全通告与后续 KEV／NVD 为准。</li></ul>
+      <ul><li>多方一致：11-03 Forge；黄仁勋称闭源与开源权重皆有价值、强调特化；Fireworks 宣布欧洲 Vera Rubin / Grace Blackwell 扩容，部署面向 2027；推 Ultrafast / 长时缓存等推理能力。</li><li>分歧：二手稿「25000 GPU」等细节与官网措辞不完全一致。</li><li>待确认：欧洲具体区位、上架时间表与合同客户，以后续披露为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
-        <li><a href="https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html" target="_blank" rel="noopener">The Hacker News</a><span class="role">次要</span></li>
-        <li><a href="https://documentation.campus.barracuda.com/wiki/spaces/CP/pages/960921759/Security+Updates+Available+for+Certain+Barracuda+Products" target="_blank" rel="noopener">Barracuda Docs</a><span class="role">官方</span></li>
+        <li><a href="https://www.theregister.com/ai-and-ml/2026/11/03/nvidia-is-happy-to-take-your-money-whether-youre-using-open-or-closed-models-says-jensen-huang/5307368" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://fireworks.ai/news/fireworks-expands-european-capacity-nvidia-rubin-blackwell" target="_blank" rel="noopener">Fireworks</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

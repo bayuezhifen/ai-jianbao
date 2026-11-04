@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 WordPress 升级窗口竞态 CVE-2026-119977 列入 KEV · IT 行业简报</title>
+<title>SemiAnalysis：SpaceX/xAI 云端上修约 13GW/2027；马斯克转发 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,30 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 WordPress 升级窗口竞态 CVE-2026-119977 列入 KEV</h1>
-    <p class="lede">CISA 11 月 3 日把 WordPress 核心「检查—使用」竞态漏洞 CVE-2026-119977 列入已知被利用漏洞目录（KEV）；影响约 4.7–7.1.3，已有修复分支；联邦民事行政机构整改期限为 11 月 6 日。</p>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>SemiAnalysis：SpaceX/xAI 云端上修约 13GW/2027；马斯克转发</h1>
+    <p class="lede">午报保留加强：SemiAnalysis 11 月 3 日长文称 SpaceX／xAI 相关云容量目标已上修至约 13GW（2027），在建约 3.6GW；马斯克转发该文。本午无更新版产品／训练主帖，故保留晨条并加强，不作空徽章。</p>
     <div class="meta">
       <span>2026-11-03</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>Grok / xAI</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>美国网络安全与基础设施安全局（CISA）在 2026 年 11 月 3 日警报中宣布，向已知被利用漏洞（KEV）目录新增一条：CVE-2026-119977——WordPress 核心的时间检查／时间使用（TOCTOU）竞态条件漏洞。KEV 入库意味着 CISA 认定存在实际利用证据，并依 BOD 26-04 要求联邦民事行政分支机构对公开暴露、利用后可完全控制资产的高风险项优先处置；该条整改期限为 11 月 6 日，窗口短于常见期限，且条目要求做取证分诊，而非只打补丁。</p>
-<p>按 HOL 等安全研究交叉说明：攻击者需赶在站点执行完整核心升级、且 <code>wp-content/upgrade/</code> 可被 Web 访问的短暂窗口内，抢先触达解压后的安装程序，从而劫持升级、植入自身代码。影响范围约 WordPress 4.7.0 至 7.1.3；修复版本包括 7.1.4 及向后移植到各分支（如 7.0.8、6.9.11 等直至 4.7.39）。Wordfence 作为 CVE 编号机构于 10 月 31 日公布该 CVE，CVSS 3.1 评为 8.1；WordPress 自身公告曾标低危，CISA 入库后应以「已被利用」来排期。</p>
-<p>运维要点：先升级到已修复核心并校验校验和；在 Web 服务器层拒绝访问升级目录，避免下一轮更新再被竞态。补丁不能回答「上一轮升级是否已被抢跑」——KEV 的取证要求正是要查升级时间点前后，是否有对 <code>setup-config</code>／<code>install</code> 等路径的成功请求。Composer／git 部署且禁用文件修改的环境通常不走内置升级器，但仍应更新到修复版本。</p>
-<p>对站长与主机商，这条提醒的是「升级窗口」本身也是攻击面：自动更新并不自动等于安全，尤其当升级目录对公网可见时。CISA 未公开利用样本细节；Wordfence 曾观察到大量对暂存安装路径的探测请求，但截至 11 月 3 日公开报道仍缺少「某具体站点已被接管」的点名案例。处理优先级应按 KEV 执行，同时避免把「目录扫描」一律等同于失陷。</p></div>
+      <div class="body"><p>半导体与数据中心研究机构 SemiAnalysis 于 2026 年 11 月 3 日发布《Elon Is Doing It Again: SpaceX Will Be The World’s Biggest AI Cloud》。文章称，继早前「2027 年约 10GW」讨论后，SpaceX／马斯克体系相关规划已上修至约 13GW；团队观察到多处工地合计约 3.6GW 已在建设，并声称已识别逾 9GW 潜在容量。作者把这一速度类比为「约 1.5 年内建出约等于谷歌 1999–2026 全部数据中心容量」的量级——这是分析师修辞，不是 SpaceX 官方新闻稿。</p>
+<p>文中点名 Colossus 2（含 MiniHard、密西西比侧「Gun Range」、中部代号 Project SPAM 等扩建）、得州 Starbase 由火箭园区转作数据中心、以及 TeraFab 场地可能附带机房等线索，并讨论表后燃气轮机、大型 BESS（文称 Colossus 2 侧近 6GWh 级部署）与部分向电网申请接入等供电组合。公开可见段落强调建造周期被压到约数月量级；更深的场址坐标、合同定价与资金模型放在付费墙后。马斯克约在 20:55 UTC 转发该帖，放大传播，但转发本身不等于 xAI 产品发布。</p>
+<p>与 x.ai 官方「产品／功能」帖不同，本条属于第三方产能跟踪：把 SpaceX 云叙事、xAI 训练集群与马斯克旗下跨公司工地拼在同一张电力—土建图上。读者若只关心 Grok 产品，这里没有新的模型版本或 API 说明；价值在于 2027 年算力供给预期是否被卖方与分析师同步上修。供电许可、环评与实际上架 MW 仍可能大幅滑移，SemiAnalysis 自己也写到电力方案常「边建边定」。</p>
+<p>交叉阅读时建议：把「约 13GW／2027」「在建约 3.6GW」标为 SemiAnalysis 估计；把马斯克转发标为社交层确认「看到了」而非财务指引；具体机房是否服务 xAI 训练、对外 neocloud 出租或二者兼有，仍要以后续卫星图、用电申请与客户合同披露为准。本报不在此复述模型版本梯队或历史成本讨论。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：CISA 11-03 入库 CVE-2026-119977；TOCTOU／升级劫持；影响约 4.7–7.1.3；已有修复分支；联邦期限 11-06；需取证分诊。</li><li>分歧：WordPress 公告曾标 Low，Wordfence 标 High；NVD 记录曾标 Deferred。</li><li>待确认：公开利用细节与大规模失陷证据，以 CISA／Wordfence／WordPress 后续更新为准。</li></ul>
+      <ul><li>多方一致：SemiAnalysis 11-03 发文；目标上修约 13GW/2027；在建约 3.6GW；点名 Colossus 2 等；马斯克转发放大。</li><li>分歧：公开摘要与付费墙后场址细节深度不同；「世界最大 AI 云」为标题判断。</li><li>待确认：13GW 统计口径（IT MW vs 设施总负荷）、各工地并网时间、对外出租占比，以后续行业模型更新与官方披露为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA</a><span class="role">主来源</span></li>
-        <li><a href="https://hol.org/blog/cve-2026-119977-wordpress-update-hijack-cisa-kev" target="_blank" rel="noopener">HOL</a><span class="role">次要</span></li>
+        <li><a href="https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will" target="_blank" rel="noopener">SemiAnalysis</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2117722468257529958" target="_blank" rel="noopener">X / @elonmusk</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
