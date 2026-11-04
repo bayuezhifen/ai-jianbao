@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 开源 FlashProve：用 zkSNARK 证明「回复来自承诺模型」 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 开源 FlashProve：用 zkSNARK 证明「回复来自承诺模型」</h1>
+    <p class="lede">Anthropic 研究帖标注 11 月 2 日发布 FlashProve（晨/午报漏收，本窗按 TechCrunch 11 月 3 日报道放大补入）：用 zkSNARK 做「可证明推理」，证明回复来自已承诺权重；Llama 4 Maverick 400B 4-bit 单卡 H100 约 110 tok/s、约 19MB/1024 token；Apache 2.0 + Lean，明确为研究原型、暂无部署计划。</p>
+    <div class="meta">
+      <span>2026-11-02</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic Frontier Red Team 在官网研究频道发布《Progress on provable inference for large language models》（页面标注 Published Nov 2, 2026）。晨报与昨午报窗口未收入；本窗依据 TechCrunch 11 月 3 日跟进报道将其放大补入，并回看 Anthropic 原文交叉核对。系统名 FlashProve：模型提供方先对权重做承诺（commitment），再为每次（或批量）推理生成零知识简洁证明（zkSNARK），让用户在不知权重的前提下，验证「这段输出确实由所承诺模型算出」——用于防路由偷换便宜模型、防篡改 token 流，以及给审计/监管提供可核验证据。</p>
+<p>性能数字来自官方评测：在 Meta Llama 4 Maverick（约 4000 亿参数 MoE、公开 4-bit 权重）上，单张 H100 证明吞吐约 110 tokens/秒，每 1024 token 请求的证明大小约 19MB；相对同模型用 vLLM 做普通推理，证明侧 GPU 时间约高 70–95 倍。发布物含技术报告、协议说明、证明器与两套验证器（快速 C++ 与可形式化的 Lean），以及顶层安全性陈述的 Lean 证明；代码与文档以 Apache 2.0 开源。TechCrunch 同日强调：指纹不泄露权重，故闭源厂商也可理论上发布承诺；并写明研究仍在进行，Anthropic「暂无在本实验室或其他实验室部署的计划」。</p>
+<p>官方亦列出局限：当前证明的是整数化、贪心解码下的精确计算，浮点或采样解码可能在某些位置偏离；架构本身不隐藏；上下文目前约到 1024 token；快速可执行代码与 Lean 规范之间仍有审计缺口。Anthropic 把它放在「信任挑战」框架下讨论：监管 pacing、入侵检测、文本出处与「只允许上架已批准模型」等场景，并区分硬件 TEE 与纯密码学路径。此前公司曾在安全路线图中设下可证明/可验证推理原型节点；本帖走的是密码学证明路线，与另一条「可信服务器重算签名」路径并列。</p>
+<p>读这条宜分清「开源研究原型」与「生产级推理证明」：110 tok/s 相对历史 zkML 已是数量级进步，但对在线服务仍是事后批处理、高开销路径。用户侧价值取决于大厂是否愿意发布权重承诺并附带证明；在部署计划明确为「无」的当下，更现实的影响是给学术界与合规工具链一块可复现基线。标题里的「证明模型身份」是媒体概括，技术上证明的是「输出由某承诺权重生成」，并不自动开源权重或公开架构细节。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：研究帖标 11-02；FlashProve／zkSNARK 可证明推理；Llama 4 Maverick 400B 4-bit 单 H100 ~110 tok/s、~19MB/1024 token；Apache 2.0 + Lean；研究原型、暂无部署计划；TechCrunch 11-03 放大报道。</li><li>分歧：TechCrunch 侧重「证明模型身份／防偷换」叙事；Anthropic 原文更长，含 pacing、形式化验证与局限清单。</li><li>待确认：第三方复现吞吐、对稠密／更长上下文的扩展、以及是否纳入 Anthropic 自身推理栈，以后续论文与 GitHub 迭代为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research/provable-inference" target="_blank" rel="noopener">Anthropic Research</a><span class="role">主来源</span></li>
+        <li><a href="https://techcrunch.com/2026/11/03/anthropic-is-working-on-a-system-to-prove-ai-models-identity/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

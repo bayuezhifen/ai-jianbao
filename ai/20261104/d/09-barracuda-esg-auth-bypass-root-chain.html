@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barracuda 警告 ESG 等产品两洞可链式拿 root · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>Barracuda 警告 ESG 等产品两洞可链式拿 root</h1>
+    <p class="lede">Barracuda 11 月 3 日警告：CVE-2026-116606（预认证授权绕过）与 CVE-2026-111560（命令注入）可链式获得设备 root；补丁已发布。利用需能访问管理接口，厂商呼吁勿把管理口暴露公网。</p>
+    <div class="meta">
+      <span>2026-11-03</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>网络安全厂商 Barracuda Networks 于近日向客户警告两处漏洞，经 BleepingComputer、The Hacker News 等 11 月 3 日报道扩散：CVE-2026-116606 为 Email Security Gateway（ESG）相关的认证／授权弱点，攻击者可借此修改设备全局配置；CVE-2026-111560 允许已具备管理权限的攻击者注入以 root 运行的操作系统命令。两洞组合时，可绕过授权控制并拿到设备 root。Barracuda 称已启动修复并发布补丁，客户应升级到列明的固件版本。</p>
+<p>受影响产品与补丁号（据 BC 整理的厂商表）：ESG 两洞皆中，补丁 BNSF-40425（9.4.017+）或 BNSF-40430（&lt;9.4.017）；Load Balancer ADC、Message Archiver、WAF／WAF Control Center、Web Security Gateway 等主要中命令注入洞，各有对应补丁编号。厂商强调：成功利用需要能访问管理接口；应使用网络访问控制，把管理面限制在可信内网，避免对公网暴露。</p>
+<p>历史上下文上，Barracuda ESG 在 2023 年曾连续曝出被 UNC4841 等利用的零日（如 CVE-2023-7102、CVE-2023-2868），与邮件网关暴露面过大有关。本次通告虽未宣称已遭大规模在野利用，但「可链式 root」足以让邮件安全与 WAF 用户按紧急补丁节奏处理，并复查管理口是否误开。Campus 文档 wiki 提供官方安全更新说明，应与邮件通告对照执行。</p>
+<p>处置建议按厂商口径：先确认资产清单与版本，再打对应补丁；同步收紧管理面 ACL／VPN，监控异常配置变更。不要把「需要管理接口」理解成低风险——一旦管理口可达，预认证绕过会显著降低攻击门槛。本报不提供利用细节，只转述厂商已披露的影响面与缓解方向。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：CVE-2026-116606 预认证授权绕过 + CVE-2026-111560 命令注入；可链式 root；需管理接口可达；补丁已发；ESG 等产品在列。</li><li>分歧：各媒体对「critical」措辞与历史 UNC4841 回顾篇幅不同；完整产品矩阵以 Barracuda 文档为准。</li><li>待确认：是否出现在野利用、CVSS 终分与各型号验证结果，以厂商安全通告与后续 KEV／NVD 为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/barracuda-warns-of-critical-flaws-allowing-root-access-to-devices/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://thehackernews.com/2026/11/barracuda-flaws-could-be-chained-to.html" target="_blank" rel="noopener">The Hacker News</a><span class="role">次要</span></li>
+        <li><a href="https://documentation.campus.barracuda.com/wiki/spaces/CP/pages/960921759/Security+Updates+Available+for+Certain+Barracuda+Products" target="_blank" rel="noopener">Barracuda Docs</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD 三季报：营收约 134 亿美元，数据中心同比近翻倍，四季指引约 170 亿 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>AMD 三季报：营收约 134 亿美元，数据中心同比近翻倍，四季指引约 170 亿</h1>
+    <p class="lede">AMD 11 月 3 日 16:15 ET 公布 2026 年三季报：营收约 133.77 亿美元同比 +45%，数据中心约 85.46 亿同比 +97%；非 GAAP EPS 2.09；预计四季营收约 170 亿美元 ±3%。CNBC 称盘后股价约涨 8%。</p>
+    <div class="meta">
+      <span>2026-11-03</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>超威半导体（AMD）于 2026 年 11 月 3 日美股盘后发布三季度业绩（新闻稿时间 4:15 p.m. ET）。当季营收 133.77 亿美元，同比约 +45%、环比约 +16%；GAAP 稀释 EPS 1.46，非 GAAP 稀释 EPS 2.09。数据中心部门营收创纪录的 85.46 亿美元，同比约 +97%，公司归因于 EPYC CPU 与 Instinct MI450 系列 GPU 需求。客户端与游戏合计约 37.2 亿、同比约 -8%（其中游戏约 7.73 亿、同比约 -40%）；嵌入式约 11.1 亿、同比约 +29%。</p>
+<p>前瞻指引：四季营收约 170 亿美元，上下浮动 3%；指引中值意味着同比约 +66%、环比约 +27%；非 GAAP 毛利率展望约 55%。CEO 苏姿丰称需求继续走强，并预期随着 Helios 机架方案与「Venice」量产爬坡，四季增长还会加快；Anthropic、Meta、Microsoft、OpenAI 与 Oracle Cloud 等已被点名为 Helios／MI450 相关客户或工作负载方。CNBC 报道称业绩与指引双双高于华尔街预期，盘后股价约涨 8%。</p>
+<p>财报「近期亮点」还重申了对 World Labs、Taalas 的既有收购协议——分别指向世界模型研究与推理硅技术——本报仅作一句背景，不把它当成本窗新宣布的并购。ROCm 10、Helion 参考架构、LUMI-AI 超算选型等亦出现在亮点列表，说明软件栈与欧洲超算仍在叙事里，但市场当日定价主轴仍是数据中心收入与四季指引。</p>
+<p>读数时注意：85.46 亿是部门收入，含 AI 加速器与服务器 CPU 等，不宜直接当成「GPU 销售额」；游戏下滑与 PC 相关承压仍在，和英特尔近期数据中心强、指引弱的对照叙事被多家媒体并行引用。供应链（晶圆、基板、先进封装、内存）能否支撑 2027 年更高出货，是苏姿丰电话会上强调、也是后续需要跟踪的执行风险。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：营收 133.77 亿 +45%；DC 85.46 亿 +97%；非 GAAP EPS 2.09；Q4 营收约 170 亿 ±3%；Helios／MI450 客户叙述；CNBC 盘后约 +8%。</li><li>分歧：媒体对「服务器收入 2027 再翻倍」等电话会前瞻引用程度不同；收购 World Labs／Taalas 为财报重申。</li><li>待确认：四季实际交货、Helios 收入确认节奏、游戏业务是否止跌，以 Q4 财报与 SEC 文件为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://ir.amd.com/news-events/press-releases/detail/1303/amd-reports-third-quarter-2026-financial-results" target="_blank" rel="noopener">AMD IR</a><span class="role">主来源</span></li>
+        <li><a href="https://www.cnbc.com/2026/11/03/amd-amd-q3-earnings-report-2026-.html" target="_blank" rel="noopener">CNBC</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

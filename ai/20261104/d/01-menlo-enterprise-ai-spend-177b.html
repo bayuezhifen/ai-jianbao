@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menlo：2026 企业 AI 部署花费约 1770 亿美元，同比约 5.4 倍 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>Menlo：2026 企业 AI 部署花费约 1770 亿美元，同比约 5.4 倍</h1>
+    <p class="lede">Menlo Ventures 11 月 3 日发布《2026: The State of Enterprise AI》：截至 9 月企业 AI 部署花费约 1768 亿美元，较上年约 330 亿增约 5.4 倍；应用层约 773 亿，Anthropic/OpenAI/Google 合计占部署约 69%。</p>
+    <div class="meta">
+      <span>2026-11-03</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>风投机构 Menlo Ventures 于 2026 年 11 月 3 日发布第四份年度《State of Enterprise AI》报告。按其对美国近 400 名企业决策者、合计逾 40 亿美元 AI 预算的调查，并结合公开财报与第三方口径估算：截至 2026 年 9 月，企业「部署侧」生成式 AI 花费约 1768 亿美元，较 2025 年的约 330 亿美元增长约 5.4 倍；增速高于上年的约 3.9 倍。同期「建设侧」（训练算力与数据服务）约 1025 亿美元，约等于每投入 1 美元训练，企业端花约 1.70 美元把模型用起来。</p>
+<p>应用层约 773 亿美元，其中编码约 340 亿、职场助手/聊天机器人约 250 亿，合计约占应用市场的 76%。报告把增长主因归因于智能体：在 OpenRouter 等通道上，智能体流量已远超真人调用；企业实际花费平均约达上年的 4.7 倍，显著高于年初预算的约 1.9 倍。增量支出约 55% 来自新增预算，而非简单挪走既有软件或人力预算——Menlo 据此认为 AI 在扩大软件市场，而非全面「吃掉」传统 SaaS。</p>
+<p>模型与 API 侧，Anthropic、OpenAI 与 Google 合计约占部署花费的 69%（上年约 50%）。企业 LLM API 份额上，Anthropic 由约 40% 升至约 55%，OpenAI 由约 27% 至约 31%，Google 由约 21% 降至约 9%。开源模型用量份额升至约 19%，但花费份额仍约 4%。GlobeNewswire 通稿与官网长文数字一致；须注意 Menlo 同时是 Anthropic、OpenRouter 等被点名公司的投资方，读数时应把利益关系一并放进交叉核对。</p>
+<p>产业含义上，这条把「智能体是否真在花真钱」从轶事推到了年度规模估算：编码与助手仍是现金池，前沿实验室份额继续集中。局限也清楚：1768 亿是机构 bottoms-up 估计与年化 run-rate，不是统一审计口径；OpenRouter 偏开发者与初创，不能直接等同全体企业；API 份额按生产用量加权估算，亦非厂商财报拆分。后续宜对照三大云与 Anthropic/OpenAI 的后续披露，看部署侧增速能否延续。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：11-03 发布；部署花费约 1768/1770 亿美元、同比约 5.4x；上年约 330 亿；应用约 773 亿；编码约 340 亿、助手约 250 亿；三大实验室部署约占 69%；API Anthropic~55%、OpenAI~31%、Google~9%。</li><li>分歧：通稿多用整数 1770 亿叙事，正文图表写 176.8B；职场助手在文中亦称 enterprise chatbots / productivity。</li><li>待确认：估计方法对训练/部署边界的重分类、OpenRouter 样本偏差，以及 Menlo 组合公司对份额叙述的潜在影响，以完整报告与后续第三方复核为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://menlovc.com/perspective/2026-the-state-of-enterprise-ai/" target="_blank" rel="noopener">Menlo Ventures</a><span class="role">主来源</span></li>
+        <li><a href="https://www.globenewswire.com/news-release/2026/11/03/3394279/0/en/menlo-ventures-2026-state-of-enterprise-ai-report-enterprise-ai-spending-hits-177b-up-5-4x-in-one-year-as-agents-take-over.html" target="_blank" rel="noopener">GlobeNewswire</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>百度首公开 Apollo World：面向物理 AI 的全模态世界模型 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>百度首公开 Apollo World：面向物理 AI 的全模态世界模型</h1>
+    <p class="lede">11 月 3 日百度 AI Day·Apollo 专场首次披露 Apollo World：面向物理 AI 的智能体驱动全模态世界模型，并提出「2+3」判断标准；称已用于萝卜快跑全球化测试与验证。</p>
+    <div class="meta">
+      <span>2026-11-03</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>2026 年 11 月 3 日，在深圳举行的百度 AI Day·Apollo 专场上，百度 Apollo 首次公开面向物理 AI 的智能体驱动全模态世界模型 Apollo World。按官方与 IT之家、21 经济网／每日经济新闻等交叉报道，该模型不只生成逼真画面，还要按现实规律推演环境如何随无人车动作变化，并给出相机画面、激光雷达点云等多模态观测，供驾驶系统像在真实道路上一样感知、决策，再把动作回灌进虚拟世界，形成感知—决策—行动—反馈闭环。</p>
+<p>百度为此提出世界模型「2+3」标准：「2」为基础门槛——因果性（由过去决定未来，而非拼画面反推）与交互性（能响应外部干预）；「3」为进阶指标——物理准确性、持久性与实时性。Apollo World 构建的虚拟城市里，车辆、行人等交通参与者被建模为可决策、可交互的 AI 智能体，而非按固定脚本走动的道具；系统支持从任意起点到任意终点的完整出行任务，把复杂路况与风险场景转成可重复的虚拟测试，再反哺真实道路验证。</p>
+<p>落地口径上，百度称萝卜快跑是「中国唯一以端到端技术规模化运行 L4 无人驾驶的出行平台」，已覆盖全球 28 个城市，累计自动驾驶里程超 3.5 亿公里，其中全无人驾驶里程超 2.4 亿公里；Apollo World「已用于萝卜快跑全球化测试与验证」。21 经济网转述每日经济新闻还提到，百度 IDG 杰出架构师、世界模型负责人杨泽称技术栈可拓展至机器人等更广物理 AI 场景。这些运营数字均为百度口径，第三方尚未逐项审计。</p>
+<p>读这条宜分清「产品首秀叙事」与「可独立复核的能力边界」：「2+3」是厂商提出的评价框架，不是行业标准；闭环演示与「任意起终点」能力仍以官方介绍为主。物理准确性、长时漂移与实时性是否达到量产级仿真门槛，要等后续论文、基准或第三方测评。对关心自动驾驶验证成本的读者，价值在于把高风险场景前移到虚拟订单；对关心「世界模型」炒作的读者，则需盯住它是否真改变了萝卜快跑的测试覆盖与事故率，而不是停留在发布会视频。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：11-03 AI Day Apollo 专场首公开；智能体驱动全模态世界模型；提出「2+3」标准；虚拟交通参与者为可决策智能体；已用于萝卜快跑测试；覆盖 28 城、累计里程超 3.5 亿／全无人超 2.4 亿公里（百度口径）。</li><li>分歧：IT之家更细写因果/交互与多模态观测闭环；21 经济网／每经更短，并点名杨泽与机器人拓展。</li><li>待确认：仿真保真度、与真实路测的对照指标、对外 API/合作节奏，以百度后续技术披露与第三方测评为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.ithome.com/0/1021/808.htm" target="_blank" rel="noopener">IT之家</a><span class="role">主来源</span></li>
+        <li><a href="https://www.21jingji.com/article/20261103/herald/26d9379f9299d841c2175fe44b40297b.html" target="_blank" rel="noopener">21经济网</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
