@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fedora Linux 45 正式发布 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>Fedora Linux 45 正式发布</h1>
+    <p class="lede">Fedora 项目宣布 Fedora Linux 45 正式可用：默认强制 RPM 签名校验、更新 GNU 工具链与语言运行时，Workstation 含 GNOME 51，KDE 版为 Plasma 6.8。</p>
+    <div class="meta">
+      <span>2026-11-05</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Fedora 项目负责人 Jef Spaleta 于 2026 年 11 月 3 日在红帽博客宣布 Fedora Linux 45 正式发布。升级前需先把现有系统更新到最新。本版将 RPM 6.1 默认包校验模式改为强制签名校验，未通过验证的包默认不可装（除非显式覆盖），与上游 RPM 默认行为对齐。</p>
+<p>安全与网络：默认限制非特权用户的内核 ptrace，安装调试诊断包时可经 sysctl 恢复；NetworkManager 默认启用 IPv6-mostly（RFC 8925）。工具链含 GCC 16.2、binutils 2.47、glibc 2.44、GDB 17.2，以及 LLVM 23、Go 1.27、Perl 5.44、Lua 5.5、Erlang 27 等。OpenPGP 校验引入基于 Sequoia 的 <code>%openpgpverify</code> 宏。</p>
+<p>桌面与变体：Workstation 为 GNOME 51，并带 encapsule 容器化跑不可信脚本的 CLI；KDE 版升级到 Plasma 6.8。Atomic 桌面默认现代化 Anaconda WebUI，并支持带 PIN 的浏览器远程安装。Server/Cloud 支持在首次启动用 Butane 配置直接进 Ignition。注意：NetworkManager-vpnc 与 NetworkManager-fortisslvpn 两个遗留 VPN 插件自 45 起退役，需按迁移说明改用受支持方案。</p>
+<p>下载与发行说明见 Fedora 官方渠道；Phoronix 等亦有跟进报道。生产环境请先在测试机验证签名强制与 VPN 插件退役影响。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Red Hat/Fedora 官方博客宣布 GA；强制 RPM 签名、GNOME 51、Plasma 6.8、Go 1.27 等要点与稿一致。</li><li>次要：Phoronix 有发布跟进，细节以官方发行说明为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.redhat.com/en/blog/announcing-fedora-45" target="_blank" rel="noopener">Red Hat / Fedora Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.phoronix.com/news/Fedora-45-Released" target="_blank" rel="noopener">Phoronix</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
