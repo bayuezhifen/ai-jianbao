@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>据报英伟达接触 Apollo，拟改造 Brightspeed 电信机房做小型 AI 推理机房 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>据报英伟达接触 Apollo，拟改造 Brightspeed 电信机房做小型 AI 推理机房</h1>
+    <p class="lede">The Information 等称英伟达已接触阿波罗，拟把其旗下宽带商 Brightspeed 逾 130 处电信机房改造成小型 AI 推理网络；组合约 1GW 现有电力，并讨论 2027 年一季度起用 Vera Rubin 机架改造，以规避新建数据中心阻力。</p>
+    <div class="meta">
+      <span>2026-11-06</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>《The Information》2026 年 11 月 5 日报道、Yahoo Finance / Investing / Techmeme 等转述：英伟达据报已接触私募股权公司 Apollo Global Management，探讨将其支持的宽带运营商 Brightspeed 旗下逾 130 处原用于话音与数据业务的电信机房，改造成覆盖最多约 20 个州的小型 AI 数据中心网络。Brightspeed 据报经营承压、接近破产边缘；机房组合现有电力合计约 1 吉瓦。</p>
+<p>报道称英伟达已于周三向 Brightspeed 提交书面方案，并要求更多站点数据与实地考察；内部还与供应商讨论最早 2027 年一季度用 Vera Rubin 机架启动改造，方案还可能纳入此前获授权的 Groq 相关技术。定位被描述为「推理网络」、跑已训练好的模型，而非大规模训练集群；最终谁买或租这些算力仍不清晰，潜在用户名单仅属猜测。</p>
+<p>动机叙事与中期选举后多地反新建数据中心、呼吁暂停相关。改造老楼仍要办制冷等许可，但通常少于全新拿地建设。阿波罗另据报已同意采购数百亿美元级 Vera Rubin 芯片租给 SpaceX，与本条「接触改造」是不同交易线，不可并成一笔。</p>
+<p>证据层级：主源为 The Information 付费独家，公开页多转述；英伟达、Apollo、Brightspeed 未见同步官方确认。本条一律写作「据报」，不以成交或签约论。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Yahoo/Investing/Techmeme 均指向 The Information：接触 Apollo/Brightspeed、约 1GW、小型推理机房、Vera Rubin、规避新建阻力。</li><li>分歧/局限：原报付费墙，细节以转述为准；改造座数、最终租户未定。</li><li>待确认：是否签约、哪些站点入围、与 SpaceX/阿波罗芯片租赁是否有关。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://finance.yahoo.com/technology/ai/articles/nvidia-eyes-apollo-struggling-telecom-213127832.html" target="_blank" rel="noopener">Yahoo Finance (Stocktwits / The Information)</a><span class="role">次要</span></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/nvidia-explores-retrofitting-old-telecom-buildings-for-ai-data-centers--information-93CH-5005447" target="_blank" rel="noopener">Investing.com</a><span class="role">次要</span></li>
+        <li><a href="https://www.techmeme.com/261105/p50" target="_blank" rel="noopener">Techmeme</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

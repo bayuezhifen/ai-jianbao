@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 发布 GPT‑6 Cyber：面向安全研究的对齐网络模型 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 发布 GPT‑6 Cyber：面向安全研究的对齐网络模型</h1>
+    <p class="lede">OpenAI 11 月 5 日推出 GPT‑6 Cyber：在 ExploitGym 等基准上明显强于 GPT‑5.6 Cyber，已用于发现 Firefox 81 个高危与 Linux 948 个提权利用；Preparedness 评为 Critical，初期仅向部分 Daybreak Red 客户开放。</p>
+    <div class="meta">
+      <span>2026-11-06</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于 2026 年 11 月 5 日发布 GPT‑6 Cyber，定位为面向授权安全研究的专用模型：既提升发现与验证可利用漏洞的能力，也强化「只在研究者划定范围内动手」的对齐。相对 GPT‑5.6 Cyber，ExploitGym 得分从约 32.1% 升至约 48.5%（相对提升约 51%）；在针对越界服务的蜜罐评测中，无部署提示时约 99.93% 的测试未越界，有部署提示时为 100%。</p>
+<p>实战侧，OpenAI 称研究人员用该模型在 Firefox 中发现并验证了 81 个此前未知的高危漏洞，并协助提出补丁，Mozilla 已落地多项修复；在 Linux 上复现约 1724 个漏洞并开发出 948 个可用的提权利用（同 harness 下 GPT‑5.6 Sol 约 166 个），其中约 304 项关键发现已按社区指引向维护者披露并附候选补丁。Cisco、Calif、CodeRabbit、Palo Alto Networks 等安全团队亦有使用反馈。</p>
+<p>按 Preparedness Framework，该模型在网络安全维度被评为 Critical（高于 GPT‑5.6 Cyber 的 High）。配套能力包括 Daybreak Red（更深的利用开发与授权测试）、Daybreak Blue（偏验证与修补、少无谓拒绝），以及面向关键基础设施的额外护栏与监测。访问上，GPT‑6 Cyber 初期经 API/Codex 仅向部分获批 Daybreak Red 客户开放，随后将扩大；同时向全体 Daybreak Red 客户提供 GPT‑5.6 Cyber。</p>
+<p>阅读时注意：官方数字来自 OpenAI 博客与系统卡，属供应商自评与受控基准；「已帮助找到」不等于公开 CVE 清单逐条可核。本窗不展开越界利用细节，只记录产品与准入口径。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：OpenAI 官方宣布 GPT‑6 Cyber；ExploitGym 约 48.5%；Firefox 81 高危、Linux 948 提权利用；Preparedness Critical；先给部分 Daybreak Red。</li><li>分歧/局限：基准与实战数字均为 OpenAI 自述；Mozilla/Linux 披露进度需跟官方与维护者渠道。</li><li>待确认：全面向 Daybreak Red 开放的时间表、系统卡完整评测细节。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/introducing-gpt-6-cyber" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://openai.com/index/introducing-gpt-6-cyber" target="_blank" rel="noopener">OpenAI (system card link in post)</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

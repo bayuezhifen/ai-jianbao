@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meta、Google、TikTok 分别起诉加州总检察长，挑战 AB 1709 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">隐私与监管</div>
+    <h1>Meta、Google、TikTok 分别起诉加州总检察长，挑战 AB 1709</h1>
+    <p class="lede">三家平台分别起诉加州总检察长 Bonta，试图阻断 AB 1709：该法限制未满 16 岁用户的个性化信息流与自动播放等，计划 2027 年起生效；平台主张违宪并受 Section 230 先占。</p>
+    <div class="meta">
+      <span>2026-11-06</span>
+      <span class="dot"></span>
+      <span>隐私与监管</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>TechCrunch、Politico、洛杉矶时报等 2026 年 11 月 5 日报道：Meta、Google、TikTok 分别向法院起诉加州总检察长 Rob Bonta，挑战州长纽森 9 月签署的 AB 1709。该法禁止社交平台向未满 16 岁用户提供自动播放与个性化推荐等信息流功能，若用户不关闭相关功能则需删除账户；违规最高可按每名受影响未成年用户处以最高约 5 万美元罚款。生效时点媒体称面向 2027 年初。</p>
+<p>平台主张主要是：该法干预其内容编排的编辑判断，违反第一修正案，且被联邦 Section 230 先占。TikTok 称策展内容本是书店、电视与流媒体也在用的受保护做法；Google 强调 YouTube 对未成年人默认关自动播放、家长可关 Shorts，认为过宽立法反而破坏已有保护工具。加州总检察长办公室称正在审阅诉状，将捍卫「保护儿童上网」的法律。</p>
+<p>民权侧，EFF 等批评强制年龄核验可能让平台收集更多全用户信息，损害包括成年人在内的匿名与隐私，并把权力进一步集中到科技公司。全球对照包括澳大利亚未满 16 禁止社交媒体、法国类似法被最高司法机构以表达自由为由推翻等。</p>
+<p>本条归「隐私与监管」，不放入大厂平台政策栏。诉讼刚立案，是否获得初步禁令、法条最终文本与生效细节以法院与州政府后续文件为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：TechCrunch/Politico/LA Times 确认三家分别起诉、挑战 AB 1709 对未满 16 个性化流/自动播放等限制。</li><li>分歧/局限：罚款上限、精确生效日以法条与法院文件为准；「功能禁令是否等于变相禁未成年人」属解释争议。</li><li>待确认：初步禁令申请结果、Bonta 正式答辩要点。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://techcrunch.com/2026/11/05/meta-google-and-tiktok-sue-california-ag-over-teen-social-media-law/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+        <li><a href="https://www.politico.com/news/2026/11/05/meta-tiktok-google-sue-to-block-california-teen-social-media-law-championed-by-newsom-01151171" target="_blank" rel="noopener">POLITICO</a><span class="role">次要</span></li>
+        <li><a href="https://www.latimes.com/california/story/2026-11-05/meta-social-media-companies-sue-california-over-new-restrictions" target="_blank" rel="noopener">Los Angeles Times</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
