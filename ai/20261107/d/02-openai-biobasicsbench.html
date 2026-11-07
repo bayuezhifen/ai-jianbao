@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 发布 BioBasicsBench：100 项湿实验室日常任务基准 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 发布 BioBasicsBench：100 项湿实验室日常任务基准</h1>
+    <p class="lede">与酶设计公司 Ligo 合作，用凝胶、显微、测序等原始实验数据测代理能否读数、找错、承认证据不足；GPT‑6 Astra 在最高推理档均分约 66.7%。</p>
+    <div class="meta">
+      <span>2026-11-07</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于 11 月 6 日官宣 BioBasicsBench：与专注酶设计的生物技术公司 Ligo 合作，围绕 100 项「日常湿实验室」任务，衡量 AI 代理能否解读原始实验证据、识别差错，以及在证据不足以支撑结论时如实承认。公司强调，论文图表往往已经过挑选，而真实台面工作充满失败实验、模糊图像与互相矛盾的观察，现有基准容易低估这类麻烦。</p>
+<p>任务覆盖蛋白质方法、成像与流式、定量与检测、核酸方法、分子克隆五大方向；输入包括凝胶与印迹、协议与实验笔记、仪器导出表、台面照片、显微与时序视频、测序文件等。每题由科学家用自己的实验数据出题并写评分细则，再经内部未参与命题的科学家、外部拥有博士学位的湿实验室研究者与终审三轮核对。代理需返回结构化答案，按细则分项计分。</p>
+<p>评测涵盖 GPT‑5.2 至 GPT‑6 Astra 等七个模型、共 37 组模型与推理力度组合，每题五次尝试。在允许更多推理的「xhigh」档，GPT‑6 Astra 平均拿到约 66.7% 可用分数，高于 GPT‑5.6 Sol 的约 43.8%。官方举例称，Astra 更擅长发现通道串扰、读错抗生素平板标签、把焦平面扫描当成「细胞消失」等问题；同时也仍会在菌落计数、对照组解读上出错，说明高分还不等于能在真实实验室里独立下可靠判断。</p>
+<p>同日 OpenAI 还宣布与 Hacktron 合作，聚焦自身系统与第三方服务交界处的漏洞挖掘，并通过 Daybreak Red 扩大其对前沿模型的访问；本条主报 BioBasicsBench，安全合作另见公司博文。本窗口不回炒晨报 GPT‑6 Cyber 与数据中心社区契约。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：官网给出任务规模、数据形态、Astra 66.7% / Sol 43.8% 等核心数字；X 等讨论亦指向同日基准发布而非新模型发版。</li><li>官方并列：Hacktron 合作同日官宣，属安全侧加料，不改变基准本身的事实陈述。</li><li>待确认：基准公开下载与外部复现细节以官方后续仓库/论文为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://openai.com/index/partnering-with-hacktron/" target="_blank" rel="noopener">OpenAI Hacktron</a><span class="role">官方</span></li>
+        <li><a href="https://x.com/i/trending/2118800545532039264" target="_blank" rel="noopener">X News summary</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

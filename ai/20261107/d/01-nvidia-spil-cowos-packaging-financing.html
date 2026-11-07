@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>路透：英伟达据报向 ASE 旗下 SPIL 先进封装注资数十亿美元 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>路透：英伟达据报向 ASE 旗下 SPIL 先进封装注资数十亿美元</h1>
+    <p class="lede">据路透援引不愿具名业内人士，资金用于扩建 CoWoS 厂房与设备；英伟达未回应，ASE 称不评论客户相关市场传闻。先进封装已成 AI 芯片出货瓶颈。</p>
+    <div class="meta">
+      <span>2026-11-07</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>路透社 11 月 6 日报道称，英伟达正在向台湾日月光（ASE Technology）旗下矽品精密（SPIL）提供数十亿美元资金，用于扩建先进封装产能。报道援引一名不愿具名的业内人士称，款项将用于新建厂房空间与设备，重点是把 AI 处理器与高带宽内存封装在同一封装内的 CoWoS（chip-on-wafer-on-substrate）工艺。英伟达未回应置评请求；ASE 则表示不评论涉及客户的市场传闻。金额、付款结构与时间表均未披露。</p>
+<p>先进封装把算力芯片与 HBM 等高带宽内存贴合在一起，是当前大模型加速卡能否按计划出货的关键环节之一。台积电在该领域仍占主导，但 TrendForce 等机构指出，产能紧张正把更多订单推向 ASE 等外包封装厂。ASE 财务长 Tung 在 10 月底业绩会上曾提到，2027 年资本开支可能更高、现金流承压，并可能借助客户预付款等方式为扩产筹资；公司亦把 2026 年资本开支预算从约 105 亿美元上调至约 115 亿美元。</p>
+<p>英伟达此前已对供应链多点注资或预付，包括向测试厂 KYEC 约 11 亿美元预付、向日本基板材料商 Ibiden 的数十亿美元级预付等。首席执行官黄仁勋在 10 月下旬公开称「需求极高，产能才是约束」。多家转述指出，即便封装产能扩张，下一道瓶颈仍可能落在晶圆制造或扩产所需设备上。</p>
+<p>本条仅报道路透匿名信源所称的融资安排与公开可核的 ASE 扩产口径，不把未证实金额写成既成交易。若双方后续披露合同细节，以正式公告为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>多方一致：Yahoo Finance、Times of India 等转述与路透口径一致——英伟达向 SPIL/ASE 提供数十亿美元级资金扩 CoWoS；双方未官方确认。</li><li>可核公开信息：ASE 上调资本开支、谈及客户融资；英伟达对 KYEC、Ibiden 等供应链预付已有公开报道。</li><li>待确认：确切金额、付款节奏、对应工厂地点与产能规模，需等公司或监管披露。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.reuters.com/world/asia-pacific/ai-boom-turns-chip-packaging-into-next-battleground-semiconductors-2026-11-06/" target="_blank" rel="noopener">Reuters</a><span class="role">主来源</span></li>
+        <li><a href="https://finance.yahoo.com/technology/ai/articles/nvidia-reportedly-pouring-billions-ais-203007740.html" target="_blank" rel="noopener">Yahoo Finance / Benzinga</a><span class="role">次要</span></li>
+        <li><a href="https://news.nakoda.ai/article/nvidia-financing-spil-cowos-advanced-packaging-capacity" target="_blank" rel="noopener">Nakoda News</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
