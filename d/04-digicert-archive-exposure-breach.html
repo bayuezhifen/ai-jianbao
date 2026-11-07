@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>英伟达完成对 Naver 约 10 亿美元入股，持股约 4.13% · IT 行业简报</title>
+<title>DigiCert：内网业务系统误暴露逾 16 个月，归档客户身份件被未授权访问 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">英伟达 / NVIDIA</div>
-    <h1>英伟达完成对 Naver 约 10 亿美元入股，持股约 4.13%</h1>
-    <p class="lede">韩联社：Naver 周五收到约 1.3 万亿韩元私募款，向英伟达发行逾 650 万股；双方将推进以世宗数据中心为起点的 AI 工厂与 GPU 即服务。</p>
+    <div class="sec-label">身份与访问</div>
+    <h1>DigiCert：内网业务系统误暴露逾 16 个月，归档客户身份件被未授权访问</h1>
+    <p class="lede">2025 年 2 月迁移后业务系统对公网开放逾 16 个月；自助注册叠加权限缺陷可浏览归档材料。公司称证书签发与 CertCentral 未受影响。</p>
     <div class="meta">
-      <span>2026-11-07</span>
+      <span>2026-11-06</span>
       <span class="dot"></span>
-      <span>英伟达 / NVIDIA</span>
+      <span>身份与访问</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>据韩联社 11 月 6 日报道，英伟达已于周五完成向韩国互联网公司 Naver 约 10 亿美元（约 1.3 万亿韩元）的投资付款，并通过第三方定向增发取得约 4.13% 股份。Naver 监管文件显示，公司向该美国芯片厂商私募发行逾 650 万股，并已收到相应价款。</p>
-<p>这笔入股旨在加快双方于今年 6 月前后宣布的联合「AI 工厂」计划。Naver 计划以中部世宗的 Gak Sejong 数据中心为起点建设基于 GPU 的基础设施，拓展 GPU 即服务等业务。韩联社配发的资料照片显示，英伟达首席执行官黄仁勋与 Naver 创始人李海珍曾于 2026 年 7 月在加州签署战略协议。</p>
-<p>对本简报读者而言，要点是：这是已落地的股权交割与资金到账，而不仅是意向书；与同窗口「据报向 ASE/SPIL 注资扩封装」属于供应链不同环节——前者是韩国云与门户侧算力合作，后者是台湾先进封装瓶颈。</p>
-<p>本条依据韩联社对监管披露的转述；持股比例与股数以 Naver 正式披露为准。不回炒昨午 Vera Rubin 内存全栈共设与晨报电信机房改造据报。</p></div>
+      <div class="body"><p>The Register、The Record 与 SecurityWeek 等报道：证书颁发机构 DigiCert 披露，一套原本应留在内网的业务系统在 2025 年 2 月迁移后被误暴露到公网，持续时间超过 16 个月。攻击面不止「端口开着」——系统允许自助注册，再叠加权限控制缺陷，未授权访客可浏览本应受限的归档客户信息。这把一次配置失误放大成可被持续窥探的身份件仓库。</p>
+<p>受影响材料据报包括护照、驾照等身份证明扫描件及其他业务客户资料，属于高敏感个人身份信息。公司对外强调：证书签发链路与 CertCentral 客户门户称未受此次暴露影响，亦即「发证系统」与「被误开的业务归档系统」被分开表述。媒体普遍提醒：即便签发链路未沦陷，身份件泄露本身已构成严重隐私与身份欺诈风险，不能用「证书还安全」一笔带过。</p>
+<p>时间线跨度长（逾 16 个月）意味着潜在访问窗口大；完整访客日志、是否发生批量下载、以及是否已有黑市流转，公开材料尚未给出最终审计结论。处置上，DigiCert 已关闭暴露面并启动客户通知；具体通知范围、监管报备地区、是否要求客户轮换相关凭证，各篇报道细节不一，需以官方通知函为准。</p>
+<p>对依赖 DigiCert 证书的企业：优先核对本组织是否收到正式通知、归档身份件是否曾提交至相关业务系统，并按通知完成监控与凭证轮换；安全团队可把「迁移后内网系统是否仍仅内网可达」列入变更复查清单。本条只做事件与影响面摘要，不复述可被滥用的访问路径细节。不涉及晨报其他安全主条。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>主源：Yonhap 明确「付款完成」「4.13%」「逾 650 万股」「1.3 万亿韩元」。</li><li>背景一致：6 月联合 AI 工厂、世宗数据中心起点等与此前公开合作叙事相符。</li><li>待确认：GPU 集群具体规模与上线时间表以双方后续工程披露为准。</li></ul>
+      <ul><li>多方一致：Register、The Record、SecurityWeek 均确认约 16 个月公网暴露、自助注册+权限缺陷、归档客户身份件可被未授权访问。</li><li>多方一致：DigiCert 称证书签发与 CertCentral 未受影响。</li><li>待确认：完整访问日志、受影响客户精确名单与各地监管报备进度以官方后续通报为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://en.yna.co.kr/view/AEN20261106010300320" target="_blank" rel="noopener">Yonhap</a><span class="role">主来源</span></li>
-        <li><a href="https://en.yna.co.kr/view/AEN20261106010300320" target="_blank" rel="noopener">Naver / NVIDIA 合作背景（同文配图说明）</a><span class="role">次要</span></li>
+        <li><a href="https://www.theregister.com/security/2026/11/06/digicert-admits-16-month-security-lapse-exposed-customer-information/5308097" target="_blank" rel="noopener">The Register</a><span class="role">主来源</span></li>
+        <li><a href="https://therecord.media/digicert-certificate-authority-reports-data-breach" target="_blank" rel="noopener">The Record</a><span class="role">次要</span></li>
+        <li><a href="https://www.securityweek.com/digicert-data-breach-impacts-business-customer-information/" target="_blank" rel="noopener">SecurityWeek</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
