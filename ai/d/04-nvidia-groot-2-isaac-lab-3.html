@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>英伟达在 CoRL 推出 GR00T 2 与 Isaac Lab 3.0 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>英伟达在 CoRL 推出 GR00T 2 与 Isaac Lab 3.0</h1>
+    <p class="lede">在奥斯汀举行的机器人学习会议上，英伟达发布开源的世界动作模型 GR00T 2，以及开源训练框架 Isaac Lab 的 3.0 版，把重点从机器人怎么走路，转到怎么在仿真里练细活。</p>
+    <div class="meta">
+      <span>2026-11-09</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>英伟达在 11 月 9 日于得克萨斯州奥斯汀举行的机器人学习会议（CoRL）上，推出开源前沿世界动作模型 GR00T 2，以及开源机器人学习框架 Isaac Lab 3.0。官方博客把这次发布写成仿真用途的转变：过去仿真更多用来教机器人走路、滚动和跳跃，现在则用来练对齿、插线、组装小零件这类更细的动作。The Robot Report 同一天根据英伟达材料作了转述，并点出 RLWRLD、Skild AI、Flexion 等开发者已经在用这些工具。</p>
+<p>GR00T 2 建立在英伟达的 Cosmos 之上，训练数据里包括机器人数据、人体数据，以及约 10 万小时英伟达开源的第一人称人体视频。公司给出的几组数字是：在 50 项评测任务里，有 40 项至少成功过一次，而且不需要针对该任务的示范；只看一次示范时平均成功率约 71%，看到五次则升到约 95%；它还能把从人体示范里学到的技能迁到不同的机器人身体上，不必再为每种机体单独示范。智能体可以通过应用程序接口把技能串起来，并在出错后尝试恢复。英伟达称，该模型在 RoboCasa365、RoboLab、RoboDojo 和 MolmoSpaces 等榜单的视觉—语言—动作及世界动作类别里进入前三，并拿下其中多项第一。这些成绩目前主要来自厂家自评。</p>
+<p>Isaac Lab 3.0 则把训练环境的搭建交给智能体，研究者可以在英伟达 PhysX 和开源物理引擎 Newton 之间切换，挑选适合感知训练的渲染器，并对 GR00T 这类基础模型做强化学习后训练。与 Newton 绑得更紧之后，仿真能处理电缆、布料等可变形物体，以及关节很多的灵巧手。英伟达给出的对比是：在一项基于视觉的灵巧操作基准上，Isaac Lab 3.0 搭配 Newton 的训练吞吐大约是 2.3 版搭配 PhysX 的 2.5 倍。现场还有 Skild AI 基于 Newton 的刚体求解器 STEEL，以及 Flexion、FieldAI、Dyna Robotics 等把仿真用于全身控制或非结构化环境的展示。</p>
+<p>为了衡量“学会”之后能不能换场景还能做对，英伟达同时推出评测框架 Isaac Lab-Arena 的 0.4 开发者预览，以及两个偏工业场景的公开基准：与 RLWRLD 合作的 DexBench 覆盖零售、物流、制造和酒店里的 15 项任务；与加州大学伯克利分校合作的 VABAR 则针对 6 项工业任务，带统一的变化、难度和成功标准。应用侧，Nexuni 在测试用它处理衣物，富士康把它用于服务器制造产线，西门子在评估工业场景，MicroAGI 则在仿真里后训练，让机械臂练习插拔以太网线。</p>
+<p>对机器人实验室和产线集成商来说，这条发布的意义是把“世界模型 + 可变形物体仿真 + 工业基准”一次铺开，降低从演示视频走到可重复训练的门槛。它并不能自动证明这些技能已经能稳定搬到真实工厂——厂家自己也把评测和失败分析写成下一轮训练的输入。董事会就黄仁勋相关报道启动的独立调查见 11 月 9 日晨报，股价波动属于同一事件的市场反应，这里不展开。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：英伟达官网与 The Robot Report 均确认 11 月 9 日在 CoRL 发布 GR00T 2 和 Isaac Lab 3.0，并转述 10 万小时第一人称数据、40/50 项任务、一次示范约 71% / 五次约 95% 等厂家数字。</li>
+<li>Isaac Lab 3.0 可在 PhysX 与 Newton 间切换、能仿真可变形物体、训练吞吐约提升到 2.5 倍，以及 DexBench、VABAR 两个新基准，两边叙述一致。</li>
+<li>The Robot Report 额外写到英伟达同一天在韩国宣布对 Point2 的投资、并计划投资 Motif、RLWRLD 和 Upstage；本条聚焦机器人工具，不把投资单独写成第二张卡片。</li>
+<li>待确认：榜单名次和产线试点效果目前主要来自英伟达及合作方陈述，缺少独立复测；仿真到真机的迁移率仍有待后续公开数据。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blogs.nvidia.com/blog/robotics-simulation-advancements-corl/" target="_blank" rel="noopener">NVIDIA Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.therobotreport.com/nvidia-launches-gr00t-2-isaac-lab-3-0-corl/" target="_blank" rel="noopener">The Robot Report</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

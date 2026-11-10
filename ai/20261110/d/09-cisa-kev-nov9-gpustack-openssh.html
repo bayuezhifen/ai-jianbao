@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>英伟达：Vera Rubin 全栈共设，HBM 约增 3%、智能体吞吐/美元可达约 30 倍 · IT 行业简报</title>
+<title>CISA 将 GPUStack、OpenSSH 等 4 个漏洞列入 KEV · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,36 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">英伟达 / NVIDIA</div>
-    <h1>英伟达：Vera Rubin 全栈共设，HBM 约增 3%、智能体吞吐/美元可达约 30 倍</h1>
-    <p class="lede">11 月 5 日官方博客称，相对 Blackwell Ultra，Vera Rubin 每 GPU 的 HBM 容量大约只增 3%，但在 SemiAnalysis AgentX 上智能体吞吐/美元最高可提升约 30 倍，靠的是内存层次与软件协同而非堆容量。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 GPUStack、OpenSSH 等 4 个漏洞列入 KEV</h1>
+    <p class="lede">美国网络安全与基础设施安全局周一把四个已遭利用的漏洞写入已知被利用漏洞目录，联邦民事机构的修补截止日期只有三天，到 11 月 12 日。目前均未标明是否已进入勒索活动。</p>
     <div class="meta">
-      <span>2026-11-06</span>
+      <span>2026-11-09</span>
       <span class="dot"></span>
-      <span>英伟达 / NVIDIA</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>英伟达公司博客与开发者技术博文同日阐述「全栈共设」：AI 工厂的内存是分层的——GPU HBM 最快最贵，模型权重与 KV cache 争抢容量；其下是 CPU 内存、本地 SSD 与共享存储。公司称从 Blackwell Ultra 到 Vera Rubin，每 GPU 的 HBM 容量大约只增加约 3%，但在 SemiAnalysis AgentX（DeepSeek V4 Pro 等工作负载）上，智能体吞吐/美元最高可提升约 30 倍（相对 GB300 NVL72、在约 125 tokens/秒/用户条件下的官方对比口径）。</p>
-<p>具体手段包括：NVFP4 压缩权重与 KV cache；在 NVL72 域内把权重摊到最多 72 块 GPU；Vera CPU 以大容量 LPDDR 经 NVLink-C2C 暂存工具调用间隙的闲置上下文；Dynamo 把不活跃 KV 下沉到面向容量的 CMX 上下文存储，并在复用前拉回；RAG 嵌入与索引尽量留在 HBM 之外。技术博文还列举宽专家并行、KV-aware 路由等配套能力，并给出 GB300 相对 H200 约 10 倍吞吐/美元等代际对比数字。</p>
-<p>StartupHub 等第三方摘要转述了同一组「约 3% HBM / 约 30 倍吞吐」数字。本条为厂商营销加基准口径，实际客户侧结果取决于工作负载、功耗与软件版本；不回炒晨报据传的电信机房改造题材。</p></div>
+      <div class="body"><p>美国网络安全与基础设施安全局（CISA）在 11 月 9 日向已知被利用漏洞目录新增四条记录：CVE-2026-102895、CVE-2026-123158、CVE-2026-116779 和 CVE-2026-123218。写入该目录意味着局方掌握了野外利用的证据。对应的联邦民事机构修补截止日期都是 11 月 12 日，只留三天；四条目前在“是否用于勒索活动”一栏都标为未知，并按 BOD 26-04 要求做取证分诊。East Bay Cyber 同一天按目录做了汇总，条目与官方一致。</p>
+<p>CVE-2026-102895 影响开源 GPU 集群管理系统 GPUStack，属于不当身份验证。CISA 的描述是：未认证者可能取得管理权限，包括改用户和模型、持久写入管理员接口密钥、读出工作节点和云厂商的机密，以及通过 <code>POST /v2/inference-backends/from-yaml</code> 执行代码。官方备注指向 GPUStack 的 GitHub 安全通告。对正在用这套工具管理图形处理器机房的团队，这相当于暴露在网上的控制面被当成了未关门的后台。</p>
+<p>CVE-2026-123158 写的是“Linux 上的 OpenBSD OpenSSH”出现意外状态码或返回值，可能导致身份验证被绕过。CISA 同时列出 OpenSSH 发行说明、Alpine Linux 在 11 月 5 日发布的口令验证绕过说明，以及便携版 OpenSSH 的一则提交。这与本月稍早讨论过的 OpenSSH 在 Linux / musl 环境下的身份验证问题是同一条线索；11 月 6 日简报曾从厂商不受影响声明的角度写过相关情况。今天的新事实是：CISA 确认它已被实际利用，并给联邦机构下达了 11 月 12 日的修补期限。</p>
+<p>另外两条分别打在通信和文件传输软件上。CVE-2026-116779 是 SignalWire FreeSwitch 的代码注入，可导致配置和凭据泄露、任意呼叫控制以及命令执行，备注指向项目的 GitHub 安全通告。CVE-2026-123218 是 IBM Aspera Faspex 的错误授权，已通过身份验证的用户可能构造特定消息绕过授权并提升权限，IBM 支持页面给出了厂商说明。这四条都不是“新披露当天就被利用”的零日故事集，而是把已经公开、现在又被证实遭到利用的漏洞提升到必须优先修补的位置。</p>
+<p>对联邦机构以外的组织，KEV 目录没有直接的法律约束力，但它仍是一套被广泛采用的优先顺序：先处理已有利用证据的漏洞。截止日期短、且要求取证分诊，说明局方认为这四条不应再按常规补丁周期慢慢消化。群晖和威联通围绕 Plex2Shell 的通告、以及 11 月 6 日列入目录的 SonicWall SSL-VPN 漏洞，均已在此前几期写过，这里不重复。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：NVIDIA Blog 与 Developer Blog 数字口径一致；第三方报道复述 3%/30x。</li><li>待确认：AgentX 工作负载之外的通用推理性价比、CMX 合作伙伴落地进度以客户实测为准。</li></ul>
+      <ul>
+<li>CISA 官方目录与 East Bay Cyber 11 月 9 日汇总均列出同一组四个 CVE、同一加入日期和同一联邦截止日期 2026-11-12；勒索活动栏均为 Unknown。</li>
+<li>各条影响与利用后果的措辞以 CISA 目录原文为准：GPUStack 不当认证、OpenSSH 在 Linux 上的验证绕过、FreeSwitch 代码注入、Aspera Faspex 错误授权。</li>
+<li>OpenSSH 一条的外部参照包括 Alpine Linux 11 月 5 日说明和上游提交，与本月稍早的 OpenSSH / Linux 验证问题报道相符；本条只把“已遭利用并列入 KEV”视为新进展。</li>
+<li>待确认：野外利用的规模、是否与已知勒索团伙有关，目录本身未提供更多细节。</li>
+</ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://blogs.nvidia.com/blog/memory-full-stack-codesign/" target="_blank" rel="noopener">NVIDIA Blog</a><span class="role">官方</span></li>
-        <li><a href="https://developer.nvidia.com/blog/five-ways-nvidia-co-design-maximizes-the-value-of-every-byte-in-the-ai-factory/" target="_blank" rel="noopener">NVIDIA Developer Blog</a><span class="role">官方</span></li>
-        <li><a href="https://www.startuphub.ai/hardware/gpus/nvidia-vera-rubin-nvl72-platform-squeezes-more-from-memory" target="_blank" rel="noopener">StartupHub.ai</a><span class="role">次要</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://eastbaycyber.com/kev/added/2026-11-09/" target="_blank" rel="noopener">East Bay Cyber</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

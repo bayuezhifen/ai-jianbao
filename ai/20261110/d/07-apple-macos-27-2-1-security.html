@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苹果发布 macOS 27.2.1 等三则安全更新 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>苹果发布 macOS 27.2.1 等三则安全更新</h1>
+    <p class="lede">苹果周一正式推出 macOS Golden Gate 27.2.1，并为两个旧版本系统提供对应补丁。官方安全说明列出蓝牙、隔空播放和 iMessage 群聊等漏洞，建议用户尽快升级。</p>
+    <div class="meta">
+      <span>2026-11-09</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>苹果在 11 月 9 日正式发布 macOS Golden Gate 27.2.1，同时把旧版系统的补丁推到 macOS Tahoe 26.7.3 和 macOS Sequoia 15.8.3。9to5Mac 在美西时间当天上午 10 点 25 分报道，约合上海时间 11 月 10 日凌晨 2 点 25 分，并给出三个正式版的内部编号：Sequoia 15.8.3 为 24H241，Tahoe 26.7.3 为 25G342，Golden Gate 27.2.1 为 26B131；搭载 PROLED XDR 显示屏的新款 MacBook Pro 则使用 26B8132。两个旧版本上周已经有过候选版，今天是正式推出。</p>
+<p>苹果支持文档《macOS Golden Gate 27.2.1 的安全性内容》列出了八个条目。蓝牙一侧有两处值得注意：近距离攻击者可能破坏进程内存（CVE-2026-113970，释放后使用），也可能绕过配对码尝试的速率限制，甚至在用户无感知的情况下完成配对（CVE-2026-113964、CVE-2026-113965）。隔空播放和负责同网络发现的 rapportd 也修了配对码速率限制被绕过的问题（CVE-2026-113968、CVE-2026-113969）。信息应用则修了两处授权缺陷：远程攻击者可能加入 iMessage 群聊并收到消息（CVE-2026-113961）；新加入群聊的人可能看到自己入群之前的消息（CVE-2026-113960）。此外还有 brotli 组件在处理恶意输入时的越界写入（CVE-2026-111497）。</p>
+<p>这些问题大多需要攻击者进入蓝牙范围或同一网络，或者已经能够向对话发起某种请求，并不是“连上互联网就会自动中招”的远程利用。但蓝牙配对被绕过、以及群聊消息可能泄漏给不该看到的人，对随身携带电脑的人仍然有实际影响。苹果的安全说明强调，在调查完成并且补丁可用之前，公司不会讨论未公开的漏洞；今天这份清单就是补丁落地后的说明。</p>
+<p>MacRumors 同一天另文称，27.2.1 也堵住了命令行工具仍接受 eMudhra 问题证书的缺口。该文回顾：苹果今年 10 月已在 Safari、邮件和走系统框架的应用里拦截这批证书，但 curl、git 等命令行工具仍可能接受它们；在此之前，苹果只提供过手工从 <code>/etc/ssl/cert.pem</code> 删除相关根证书的办法。我们检索到的 27.2.1 官方安全说明没有单独列出 eMudhra 这一条，因此把它视为媒体补充，而不是官方 CVE 清单里的原文。对暂时无法升级的用户，苹果仍保留那份手工处理说明。</p>
+<p>三个版本都可以在“系统设置 → 通用 → 软件更新”里获取。这不是功能版，也没有在发布说明里夹带新的桌面特性；它的意义就是把蓝牙、隔空播放和群聊这几处已经写进 CVE 的漏洞补上，并给还停在 Tahoe 或 Sequoia 上的机器提供对等修复。Linux 7.4-rc2 见昨午简报，本条不回炒。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：9to5Mac、苹果支持文档与 MacRumors 均确认 11 月 9 日发布 macOS 27.2.1、26.7.3 和 15.8.3。内部编号见 9to5Mac。</li>
+<li>官方安全说明列出蓝牙内存破坏与配对限制、隔空播放 / rapportd 配对限制、iMessage 群聊授权，以及 brotli 越界写入，共八条。</li>
+<li>MacRumors 称此次同时让命令行工具拒绝 eMudhra 问题证书；该细节未出现在我们打开的 27.2.1 官方说明正文中，本条单独标注来源，不以官方 CVE 原文对待。</li>
+<li>时间：苹果支持文档发布日期为 2026 年 11 月 9 日；9to5Mac 标注美西时间 10:25（上海 11 月 10 日 02:25）。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://support.apple.com/en-us/149718" target="_blank" rel="noopener">Apple Support</a><span class="role">官方</span></li>
+        <li><a href="https://9to5mac.com/2026/11/09/apple-releases-macos-27-2-1-golden-gate-tahoe-26-7-3-and-sequoia-15-8-3/" target="_blank" rel="noopener">9to5Mac</a><span class="role">主来源</span></li>
+        <li><a href="https://www.macrumors.com/2026/11/09/macos-27-2-1-emudhra-fix/" target="_blank" rel="noopener">MacRumors</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

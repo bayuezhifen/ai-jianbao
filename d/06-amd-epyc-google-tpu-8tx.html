@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD：第五代 EPYC 为谷歌云 TPU 8tx 提供主机与机密计算 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器（Intel、AMD）</div>
+    <h1>AMD：第五代 EPYC 为谷歌云 TPU 8tx 提供主机与机密计算</h1>
+    <p class="lede">AMD 周一宣布，第五代 EPYC 处理器成为谷歌云新款 TPU 8tx 的主机，并借助安全加密虚拟化，把机密计算从中央处理器延伸到加速器一侧。谷歌同日把 8tx 称作首款带硬件级机密计算的云端 TPU 系统。</p>
+    <div class="meta">
+      <span>2026-11-09</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器（Intel、AMD）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>AMD 在 11 月 9 日的新闻稿里说，第五代 EPYC 处理器正在为谷歌云的 TPU 8tx 提供主机基础设施。这是 AMD 对自身定位的一次强调：在越来越多以图形处理器或定制加速器为核心的人工智能机柜里，主机中央处理器仍负责准备数据、调度任务，以及和加速器之间的高速通信。新闻稿称，EPYC 已经出现在十多家大型云厂商和前沿实验室的主机选型里，横跨图形处理器和各种定制芯片。</p>
+<p>和往常“某块加速器又选了 EPYC 做配套”不同，这次的卖点是安全。AMD 说，TPU 8tx 是首款带硬件强制机密计算的云端张量处理系统。主机侧使用 EPYC 的安全加密虚拟化（SEV）能力，并与 TPU 一起，把保护范围从中央处理器内存延伸到相连的加速器：在把受保护内存直接交给加速器之前，先核验对方的身份和安全配置，从而使提示词、模型权重和中间结果在主机内存里以及在主机与加速器之间传输时保持加密，执行阶段再靠硬件隔离。AMD 计算与企业人工智能高级副总裁 Dan McNamara 把主机性能、内存带宽和输入输出写成加速器能否吃饱的前提；谷歌云人工智能与计算基础设施副总裁 Mark Lohmeyer 则说，企业把智能体投入生产时，需要相信数据和知识产权即便对底层基础设施也保持私密。</p>
+<p>谷歌同日自己的博客把 TPU 8tx 和另一款 8i Max 一起发布，作为第八代 TPU 家族的两款新系统。涉及主机的部分与 AMD 口径一致：8tx 建立在与训练取向的 8t 相同的硅片上，搭配第五代 EPYC 主机，把安全做进硬件层，并采用为实时推理准备的低延迟网络，称延迟可比 TPU 8t 低约一倍，同时性能损失接近于零。谷歌还说，这种组合让机构可以在同一套系统上做小规模训练、用私有数据微调、把大模型蒸馏成小模型，以及用强化学习训练智能体，而不必把敏感数据在不同集群之间搬来搬去。8i Max 面向超长上下文和机柜密度，与本次主机选型关系较远，这里不展开成单独的云计算产品条。</p>
+<p>AMD 也回顾了和谷歌云已有的协作：双方已在多代 EPYC 上合作，覆盖通用、计算密集型、存储密集型和加速负载，并延伸到 Compute Engine 的 C4D、N4D、H4D、Z4D、G4 等虚拟机；谷歌安全团队还长期审阅过 AMD 安全处理器固件。TPU 8tx 被写成把这套合作推进到机密人工智能加速。需要记下的限定是：Infinity Guard 相关能力因处理器代际和系列而异，必须由服务器厂商或云厂商打开才会生效。</p>
+<p>对服务器采购来说，这条新闻说明 AMD 仍在用主机位置绑定下一代加速器机柜，而且机密计算已经从“加密虚拟机”扩到“连加速器一起加密”。它还不是一款新的 EPYC 芯片发布，公开材料也没有给出这套主机的具体型号、插槽数或内存配比。能确定的是：谷歌把硬件级机密推理当成 8tx 的差异化功能，而这块差异化功能的主机一侧写着第五代 EPYC。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：AMD 新闻稿与谷歌云同日博客均确认 TPU 8tx 采用第五代 EPYC 做主机，并宣传这是首款带硬件级机密计算的云端 TPU 系统；SEV 从主机延伸到加速器的说法两边能对上。</li>
+<li>时间：AMD 新闻稿与谷歌博客均标注 2026 年 11 月 9 日。谷歌还预告当天美西时间上午 9 点有直播，约合上海时间 11 月 10 日 01:00，仍在本窗口内。</li>
+<li>补充：McNamara 与 Lohmeyer 的引言见 AMD 新闻稿；8tx 相对 8t 约一半延迟、可在同一系统上微调和强化学习，见谷歌博客。本条按中央处理器栏目来写，不把 8i Max 写成公有云新品主条。</li>
+<li>待确认：具体主机型号、插槽与内存配置，以及机密计算开启后的真实性能损失，公开材料未给出第三方测试。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://newsroom.amd.com/news/amd-epyc-expands-leadership-foundation-ai/" target="_blank" rel="noopener">AMD Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/tpu-8i-max-and-8tx/" target="_blank" rel="noopener">Google Blog</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

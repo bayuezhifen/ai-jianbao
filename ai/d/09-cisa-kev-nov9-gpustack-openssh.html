@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Windows 画图 CVE-2026-83844：高危 RCE，补丁只走 Microsoft Store · IT 行业简报</title>
+<title>CISA 将 GPUStack、OpenSSH 等 4 个漏洞列入 KEV · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,31 +171,36 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">操作系统与桌面</div>
-    <h1>Windows 画图 CVE-2026-83844：高危 RCE，补丁只走 Microsoft Store</h1>
-    <p class="lede">CVSS 约 8.1，属越界读导致的远程代码执行；修复版需 11.2609.401.0 及以上，且不通过 Windows Update 推送，须按用户或预配包逐份核对。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 GPUStack、OpenSSH 等 4 个漏洞列入 KEV</h1>
+    <p class="lede">美国网络安全与基础设施安全局周一把四个已遭利用的漏洞写入已知被利用漏洞目录，联邦民事机构的修补截止日期只有三天，到 11 月 12 日。目前均未标明是否已进入勒索活动。</p>
     <div class="meta">
-      <span>2026-11-06</span>
+      <span>2026-11-09</span>
       <span class="dot"></span>
-      <span>操作系统与桌面</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>微软安全响应中心（MSRC）列出 CVE-2026-83844：Windows 画图（Microsoft Paint）中的高危远程代码执行漏洞，公开评分约 CVSS 8.1，根因描述为越界读。The Hacker News 与 Gigazine 等跟进强调同一操作要点——修复不是随每月累积更新自动上门，而是通过 Microsoft Store 分发的画图应用版本升级。对习惯「只看 Windows Update」的管理员，这是容易漏掉的渠道差异。</p>
-<p>安全版本门槛为 11.2609.401.0 及以上。企业环境常见「金镜像预装 + 用户本地 Store 账户」双路径：设备级预配包可能停在旧版，用户侧 Store 又可能未自动更新，两端都要核。只确认「系统补丁已装齐」并不能等价于「画图已升到修复版」；清点清单里应单独列出 Paint 版本号。</p>
-<p>威胁模型上，越界读类缺陷在打开特制图片或相关文件时可能触发代码执行；具体利用条件与攻击复杂度以 MSRC 公告为准。本窗口公开报道聚焦「有补丁、补丁渠道特殊」，尚未把野外大规模利用写成已确认事实。对桌面安全运营，优先动作是清点并强制升到阈值，其次才是邮件网关与终端对异常图片附件的策略加严。</p>
-<p>家庭用户可在 Microsoft Store 检查「画图」更新；IT 可用终端管理或脚本核对版本号是否 ≥ 11.2609.401.0，并对离线/长期未登录 Store 的账户做补救预配。本条只做漏洞与补丁渠道说明，不提供可复现的攻击步骤。不回炒晨报操作系统栏的空窗叙述。</p></div>
+      <div class="body"><p>美国网络安全与基础设施安全局（CISA）在 11 月 9 日向已知被利用漏洞目录新增四条记录：CVE-2026-102895、CVE-2026-123158、CVE-2026-116779 和 CVE-2026-123218。写入该目录意味着局方掌握了野外利用的证据。对应的联邦民事机构修补截止日期都是 11 月 12 日，只留三天；四条目前在“是否用于勒索活动”一栏都标为未知，并按 BOD 26-04 要求做取证分诊。East Bay Cyber 同一天按目录做了汇总，条目与官方一致。</p>
+<p>CVE-2026-102895 影响开源 GPU 集群管理系统 GPUStack，属于不当身份验证。CISA 的描述是：未认证者可能取得管理权限，包括改用户和模型、持久写入管理员接口密钥、读出工作节点和云厂商的机密，以及通过 <code>POST /v2/inference-backends/from-yaml</code> 执行代码。官方备注指向 GPUStack 的 GitHub 安全通告。对正在用这套工具管理图形处理器机房的团队，这相当于暴露在网上的控制面被当成了未关门的后台。</p>
+<p>CVE-2026-123158 写的是“Linux 上的 OpenBSD OpenSSH”出现意外状态码或返回值，可能导致身份验证被绕过。CISA 同时列出 OpenSSH 发行说明、Alpine Linux 在 11 月 5 日发布的口令验证绕过说明，以及便携版 OpenSSH 的一则提交。这与本月稍早讨论过的 OpenSSH 在 Linux / musl 环境下的身份验证问题是同一条线索；11 月 6 日简报曾从厂商不受影响声明的角度写过相关情况。今天的新事实是：CISA 确认它已被实际利用，并给联邦机构下达了 11 月 12 日的修补期限。</p>
+<p>另外两条分别打在通信和文件传输软件上。CVE-2026-116779 是 SignalWire FreeSwitch 的代码注入，可导致配置和凭据泄露、任意呼叫控制以及命令执行，备注指向项目的 GitHub 安全通告。CVE-2026-123218 是 IBM Aspera Faspex 的错误授权，已通过身份验证的用户可能构造特定消息绕过授权并提升权限，IBM 支持页面给出了厂商说明。这四条都不是“新披露当天就被利用”的零日故事集，而是把已经公开、现在又被证实遭到利用的漏洞提升到必须优先修补的位置。</p>
+<p>对联邦机构以外的组织，KEV 目录没有直接的法律约束力，但它仍是一套被广泛采用的优先顺序：先处理已有利用证据的漏洞。截止日期短、且要求取证分诊，说明局方认为这四条不应再按常规补丁周期慢慢消化。群晖和威联通围绕 Plex2Shell 的通告、以及 11 月 6 日列入目录的 SonicWall SSL-VPN 漏洞，均已在此前几期写过，这里不重复。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>多方一致：MSRC、The Hacker News、Gigazine 均确认 CVE-2026-83844 为画图高危 RCE，CVSS 约 8.1，修复版 11.2609.401.0+。</li><li>多方一致：补丁经 Microsoft Store 分发，Windows Update 不推送该应用修复。</li><li>待确认：野外利用规模与企业预配包默认版本分布，需各组织自行清点。</li></ul>
+      <ul>
+<li>CISA 官方目录与 East Bay Cyber 11 月 9 日汇总均列出同一组四个 CVE、同一加入日期和同一联邦截止日期 2026-11-12；勒索活动栏均为 Unknown。</li>
+<li>各条影响与利用后果的措辞以 CISA 目录原文为准：GPUStack 不当认证、OpenSSH 在 Linux 上的验证绕过、FreeSwitch 代码注入、Aspera Faspex 错误授权。</li>
+<li>OpenSSH 一条的外部参照包括 Alpine Linux 11 月 5 日说明和上游提交，与本月稍早的 OpenSSH / Linux 验证问题报道相符；本条只把“已遭利用并列入 KEV”视为新进展。</li>
+<li>待确认：野外利用的规模、是否与已知勒索团伙有关，目录本身未提供更多细节。</li>
+</ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://thehackernews.com/2026/11/microsoft-paint-rce-fix-now-available.html" target="_blank" rel="noopener">The Hacker News</a><span class="role">主来源</span></li>
-        <li><a href="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2026-83844" target="_blank" rel="noopener">Microsoft MSRC</a><span class="role">官方</span></li>
-        <li><a href="https://gigazine.net/news/20261106-ms-paint-remote-code-execution-vulnerability/" target="_blank" rel="noopener">Gigazine</a><span class="role">次要</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://eastbaycyber.com/kev/added/2026-11-09/" target="_blank" rel="noopener">East Bay Cyber</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

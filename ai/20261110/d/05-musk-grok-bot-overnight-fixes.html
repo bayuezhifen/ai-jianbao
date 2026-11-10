@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>马斯克：Grok Bot 连夜修复用量与表现 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>马斯克：Grok Bot 连夜修复用量与表现</h1>
+    <p class="lede">付费用户近两日集中反映 Grok Bot 同样工作要消耗更多额度、一度能顺利跑完的流程变得反复出错。马斯克 9 日称已和工程团队开会，修复会在当夜推送，第二天应能明显好转。</p>
+    <div class="meta">
+      <span>2026-11-09</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>埃隆·马斯克 11 月 9 日在 X 发帖说，他刚和 Grok Bot 工程团队开完圆桌检讨会，修复会在当天夜里落实，用户第二天应当感到明显好转；如果没有，可以直接回复该帖，团队会马上处理。科技新报 11 月 10 日早晨 7 点 10 分（上海）据此写成报道，并引述了帖文原文。Sulat 同一天也记录了这次表态，同时提醒：帖文既没有列出具体改动，也不能证明修复已经覆盖每一个账户。</p>
+<p>直接触发这次检讨的，是过去几天付费用户的公开抱怨。用户 Zane Campbell 在 11 月 8 日发了一段约三分半钟的视频，说自己已把 Ultra 降到每月 30 美元的入门付费档，因为同样的任务、同样的脚本，用量突然变成以前的大约四倍；拍视频时当周额度已经用尽，距离重置还有三天。自称在 Vixxo 任技术总监的 Derek Neighbors 则对马斯克说，上周 200 美元档位在高负载下还能用满 7 天，这周中等负载只撑了约 14 小时。马斯克当天先回复“今天会深入调查”，约 16 分钟后又发帖称，正在改进 token 效率和让机器人表现得更聪明。11 月 9 日下午简报曾认为后一条还太薄、未单列；隔天这篇圆桌检讨把时间表说死到“连夜修复、第二天见效”，才构成可以独立成条的新进展。</p>
+<p>抱怨并不止于额度。科技新报汇编的回复里，有人说最近几次更新后，以前一次就能做完的事现在要来回改好几轮，也有人要求回到两周前的设置，或者重新提供自己点名的模型。与此同时，也有 Ultra 用户表示自己带着几十个机器人做社交媒体和网页，并未碰到用量问题。Sulat 还记录到个别网友称，用量条曾从 50% 多跳到 100%，后来又跳回去，说明有些耗尽可能是计量故障而不是额度真的被改过。这些都是用户自述，两家媒体都写明：它们不能证明问题有多普遍，也不能证明公司更换了底层模型。</p>
+<p>经济背景是马斯克自己先说出口的。他在 11 月初回应用户要求重置额度时表示，Grok Bot 的服务成本相对收入已经高到难以持续。Sulat 核对官方页面后的价格是：Premium 每月 30 美元、Super 100 美元、Ultra 200 美元，后两档分别宣称拥有 Premium 的 3.5 倍和 12 倍用量，并说明订阅含每周额度，额外用量按 token 计费。科技新报另引 SpaceXSI 文档，称 Grok Bot 从 Premium 起可用，三档相对不含该服务的 Plus 分别是 4 倍、15 倍和 50 倍。两套倍数的参照基准不同，不宜直接对打；可以确定的是，官方并没有把额度换算成“保证能完成多少件工作”。</p>
+<p>到本次简报截稿时，我们没有独立验证 10 日早晨用户是否已经感到“明显好转”，两篇报道也没有测试结果。马斯克的帖文同样没有承诺重置已经消耗的额度，或调整套餐本身。对订户来说，接下来可核对的只有一件事：同样的工作，错误是否变少、额度是否不再成倍跳涨。本条不讨论 Grok 模型版本阶梯。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：科技新报与 Sulat 均确认马斯克 11 月 9 日发帖，称已与 Grok Bot 工程团队圆桌检讨，修复连夜实施、次日应有明显改善；此前 11 月 8 日已有“今天会查”和“正在改进效率和行为”两则更短的帖文。</li>
+<li>用户个例：Zane Campbell 称同等任务用量约增至四倍并降级订阅、Derek Neighbors 称 200 美元档从 7 天降到约 14 小时，两家均作为用户自述记录，未查账单或复现负载。</li>
+<li>价格与倍数：Sulat 记官方页面为 30 / 100 / 200 美元，Super 为 Premium 的 3.5 倍、Ultra 为 12 倍；科技新报引 SpaceXSI 文档称相对 Plus 为 4 / 15 / 50 倍。参照系不同，本条并存而不折算。</li>
+<li>待确认：修复内容、是否覆盖全部账户、会否重置已消耗额度，官方均未说明；本简报截稿时未见独立实测。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://technews.tw/2026/11/10/elon-musk-pledges-to-improve-grok-bot/" target="_blank" rel="noopener">科技新报</a><span class="role">主来源</span></li>
+        <li><a href="https://news.sulat.com/2026/11/09/grok-bot-overnight-fixes-usage-quality-complaints/" target="_blank" rel="noopener">Sulat</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

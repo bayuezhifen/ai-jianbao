@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Copilot 上线 Claude Fable 5.2 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具（IDE、CI、包管理，Cursor以外）</div>
+    <h1>GitHub Copilot 上线 Claude Fable 5.2</h1>
+    <p class="lede">GitHub 周一把 Anthropic 当天发布的 Claude Fable 5.2 接到 Copilot 的模型选择器里，覆盖 VS Code、JetBrains 和命令行等多个入口。企业管理员默认关闭，并且必须接受 Anthropic 为安全分类器保留数据。</p>
+    <div class="meta">
+      <span>2026-11-09</span>
+      <span class="dot"></span>
+      <span>开发者工具（IDE、CI、包管理，Cursor以外）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>GitHub 在 11 月 9 日的更新日志里宣布，Claude Fable 5.2 已在 GitHub Copilot 中正式可用，面向需要跨大型代码库做复杂、多步编程任务的用户。日志称，早期测试里它比 Claude Fable 5.1 解决了更多任务，用的步骤和工具调用也更少，并完成过一些旧模型没做出来的难题。计费按供应商目录价、走用量计费，具体数字指向 Copilot 的模型与定价说明。</p>
+<p>可用范围写得很宽：Copilot Pro+、Max、Business 和 Enterprise 用户可以在模型选择器里看到它，入口包括 Visual Studio Code、Visual Studio、Copilot 命令行、编程智能体、Copilot 应用、github.com、iOS 与 Android 上的 GitHub Mobile，以及 JetBrains 集成开发环境、Xcode 和 Eclipse。GitHub 提醒推送是逐步展开的，如果暂时看不见，过几天再看。对企业来说有一道明确的闸门：Business 和 Enterprise 的管理员必须在 Copilot 设置里打开 “Claude Fable 5.2” 策略，该策略默认关闭。</p>
+<p>比“能不能选到这款模型”更需要注意的，是数据留存。日志写明，Fable 5.2 默认要求保留数据，以便 Anthropic 运行用于发现有害用途的安全分类器；保留的提示词和输出不会用来训练 Anthropic 的模型。其他 Claude 模型——除了 Fable 5、Fable 5.1 和 Fable 5.2——仍按零数据留存运作。打开上述策略，就等于承认这一要求；不打开，组织里就没有这款模型。</p>
+<p>对部分符合条件的企业，GitHub 提供了有时限的例外：在日历年结束前，可以继续按零数据留存使用 Fable 5、5.1 和 5.2，以便 Anthropic 推开 Enterprise Frontier Safeguards。那套机制打算在客户自己控制的存储和密钥上做自动安全监测。过了这个窗口，继续使用这些模型将需要接入该机制。是否符合例外资格，要问 GitHub 客户经理，技术支持无法查询或开通；即便批下来，也不会自动打开模型，管理员仍须再去打开策略。</p>
+<p>把这则更新和 Anthropic 自己的发布放到一起看，Fable 5.2 从第一天起就不只出现在 Claude 官方接口里，也直接进了相当一部分开发者每天打开的编辑器。对已经在 Copilot 里用 Opus 或 Sonnet 做日常补全的人，它更像是一个需要管理员点头、专门留给难题的更高档位，而不是默认模型被整体换掉。代价是企业安全团队必须在“用更新的模型”和“接受为分类器留存提示词”之间做一次书面选择。这与 Anthropic 官网把企业零数据留存绑到 Enterprise Frontier Safeguards 的说法是对齐的，并不是 GitHub 单方面加码。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>GitHub 官方更新日志是本条唯一的产品说明来源，发布日期为 2026 年 11 月 9 日，与 Anthropic 发布 Fable 5.2 为同一天。</li>
+<li>与 Anthropic 官网交叉：两者都把强大的 Fable 模型与安全监测、数据留存联系在一起，并把企业零数据留存指向仍在推开的 Enterprise Frontier Safeguards。</li>
+<li>可用性、默认关闭的企业策略、分类器留存、年终前有时限的零数据留存例外，均直接来自 GitHub 日志，未见相反报道。</li>
+<li>待确认：“比 5.1 解决更多任务、步骤更少”目前是 GitHub 的早期测试陈述，没有附上公开题目集或对照表。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://github.blog/changelog/2026-11-09-claude-fable-5-2-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://www.anthropic.com/claude-fable-and-mythos-5-2" target="_blank" rel="noopener">Anthropic</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
