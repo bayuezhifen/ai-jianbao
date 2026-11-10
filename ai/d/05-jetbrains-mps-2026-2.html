@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JetBrains 发布 MPS 2026.2：新增 Linux ARM64，投影式智能体工具包显著降耗 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具（IDE、CI、包管理，Cursor以外）</div>
+    <h1>JetBrains 发布 MPS 2026.2：新增 Linux ARM64，投影式智能体工具包显著降耗</h1>
+    <p class="lede">JetBrains 今天发布语言工作台 MPS 2026.2，首次提供面向 Linux ARM64 的发行版，构建向导也可生成该架构的独立应用。投影式智能体工具包重做了 MCP 接口，公司称用 Claude Code 搭配 Opus 5 / 5.5 测量时，常见建模与语言定义任务的 token 消耗下降超过 50%。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>开发者工具（IDE、CI、包管理，Cursor以外）</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>JetBrains 今天发布语言工作台 MPS 2026.2。官方博客由瓦茨拉夫·佩赫（Vaclav Pech）撰写，页面上的更新时间标记为 2026-11-10 06:39（中欧时间），对应上海时间 13 点 39 分。这是一次正式版本发布，主要内容集中在新的处理器架构支持、构建与打包方式，以及对投影式智能体工具包的改动。</p>
+<p>MPS 2026.2 首次提供面向 Linux ARM64（AArch64）的发行版，并搭配相应的 JetBrains Java 运行环境。构建脚本向导现在也可以为基于 MPS 的独立桌面应用（RCP）生成 Linux ARM64 发行包。构建语言新增了从 tar 导入文件、以及「tar 中的文件」这类条目，支持普通 TAR 以及 gzip、bzip2 压缩，来源可以是一个归档文件，也可以是另一套 TAR 布局；导入到 TAR 布局时，符号链接和文件权限会被保留。苹果系统上的归档发行包改用 .tar.gz，不再用 .zip，同样是为了保住符号链接。启动脚本和元数据也改成与当前 IntelliJ 平台一致：引导类路径与 MPS 扩展类路径分开；共用的 --add-opens 参数来自平台元数据；只在对应系统的启动器上带上该系统的软件包。</p>
+<p>投影式智能体工具包对 MPS 的 MCP 接口做了大幅度重写。JetBrains 称，公司用 Claude Code 搭配 Opus 5 和 5.5 自行测量，在领域特定语言建模、实现语言定义这类常见任务上，token 消耗下降超过 50%。需要标明的是，这是公司自己的测量，并不是第三方评测，也没有公布完整的测试集或对照条件。新的 MCP 工具可以查询类型系统：理解节点类型和提示信息、比较类型、追踪类型计算，并找出导致错误的那条规则；还可以调用意图动作和快速修复，读取并过滤 MPS 日志，打开、关闭或新建 MPS 项目，以及自动修正已解析 Java 语句里的 SModel 表达式。</p>
+<p>界面上也有几处调整。查找用法现在可以按虚拟包分组，而且在「查找用法」里默认打开；向上选择（Ctrl+Up）在列表里会先选中同级节点，作为中间步骤；导入对话框已重做，只会导入当前选中的模型和语言——以前这个对话框会忽略选择。差异对照对话框也有修复，例如窗口缩放时，滚动条上的变更标记会保持在相应位置。编辑器测试现在允许自定义节点匹配函数。</p>
+<p>下载与更新说明见 MPS 的「新特性」页面。需要分清的是：Linux ARM64 支持是这次新提供的官方发行方式，构建向导里的对应选项面向基于 MPS 做出的独立应用，并不等于旧项目会自动获得该架构的安装包。token 降耗数字只适用于公司自行测量的那类常见任务，不能直接外推到所有智能体工作流。本条只依据官方博客已经写明的内容，不外推未在上述说明里出现的性能数字或其他平台包。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：JetBrains 官方博客与 MPS「新特性」页面均记录 MPS 2026.2 发布，首次提供 Linux ARM64 发行版，构建向导也可生成该架构的独立应用；投影式智能体工具包重做了 MCP 接口。</li>
+<li>测量口径：token 消耗下降超过 50%，出自公司用 Claude Code 搭配 Opus 5 和 5.5 的自行测量，针对常见建模与语言定义任务；不能当成第三方评测。</li>
+<li>待确认：完整测试集、对照条件和是否可在其他模型或任务上复现，官方未另给说明。本条未声称比页面更新时间 13 点 39 分（上海）更精确的发布时间。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blog.jetbrains.com/mps/2026/11/mps-2026-2-released/" target="_blank" rel="noopener">JetBrains Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.jetbrains.com/mps/whatsnew/" target="_blank" rel="noopener">MPS What&#x27;s New</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
