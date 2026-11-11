@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>马斯克称 Grok 4.8 预训练已完成，本周将向 Bot 用户软发布 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>马斯克称 Grok 4.8 预训练已完成，本周将向 Bot 用户软发布</h1>
+    <p class="lede">他在 10 日下午说，团队已弃用 JAX 和 SGLang，用 C/C++ 重写了强化学习与推理栈；预训练结束，正在做强化学习和评测，本周晚些时候会先给 Bot 用户试用。他同时说 4.8 还不如 Claude Opus 5.5，并预期 Grok 5 可能在两三个月后超过它。这是个人陈述，不是 xAI 新闻稿，也没有给出评测分数。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>埃隆·马斯克今天在 X 上回答「4.8 何时推出」时说，团队已经弃用 JAX 和 SGLang，用 C/C++ 从零重写了整套强化学习和推理栈，「这多花了一些时间」。该帖发表于 17:35（上海时间）。他接着写道：训练，也就是预训练，已经完成；监督微调数据做了不少清理，才大体弄对；现在 4.8 正在做强化学习，「评测分数开始往上走」；本周晚些时候会先向 Bot 用户做一次软发布，「看看效果如何」。他还说，Grok 4.8 和 4.7「不会有相似之处（幸好）」；「它现在还谈不上出色，但这次根基打对了，我预期它会成长为很特别的东西。」</p>
+<p>随后几条帖子补了技术细节。18:14（上海时间），他把新栈说成「以 C 为主，带一点 C++，但不会太多」。另有一条写道，新的训练和推理栈「源自工程师们为打造星链所做的出色工作」；原文英语句法不完整，这里只按字面转述。这些说明都来自他的个人账号，xAI 官网新闻频道今天没有发出对应的正式稿，也没有公布任何评测分数或确切的公开上线日期。所谓软发布，按他自己的话说，是先给 Bot 用户试用，再看情况，并不是已经面向所有人的正式推出。</p>
+<p>关于和同期模型的比较，有人问 4.8 会怎样对照 Claude Opus 5.5。马斯克在 18:22（上海时间）回复：「还不如它。Opus 5.5 是杰作。但 Grok 5 应当会超过 Opus 5.5，也许就在两三个月后，之后还会继续加速。」需要分清时间：Claude Opus 5.5 已在 2026 年 9 月 22 日发布，并不是今天的新模型；今天的新闻是马斯克本人的对比和他对 Grok 5 时间的预期，而不是 Anthropic 又发布了新产品。他没有给出 4.8 或 5 的评测分数，也没有列出对照的基准名称。</p>
+<p>综合来看，这是创始人在社交平台上的进度说明和个人判断：预训练结束、强化学习进行中、本周晚些时候向 Bot 用户软发布，以及他认为 4.8 尚不如 Opus 5.5、Grok 5 可能在两三个月后超过它。在公司发布正式说明或评测报告之前，这些都只能当作他的个人陈述来读，不能写成已经完成的公开上线，也不能外推成已经验证的能力对比。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：上述进度、技术栈和对比说法，均来自马斯克 10 日下午（上海时间）在 X 上的帖子；主帖时间是 17:35，后续补充分别在 18:14 和 18:22 左右。</li>
+<li>性质：这是个人陈述，不是 xAI 新闻稿。帖中没有给出评测分数、基准名称或面向全体用户的确切公开日期。「本周晚些时候软发布」也只是他本人的安排，实施范围和效果仍待观察。</li>
+<li>待确认：软发布是否如期、实际体验如何、Grok 5「两三个月后超过 Opus 5.5」是否兑现，目前都没有公司侧的书面确认。Claude Opus 5.5 的发布日期是 2026 年 9 月 22 日，与今天这条不是同一件事。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/elonmusk/status/2120088070443655190" target="_blank" rel="noopener">Elon Musk</a><span class="role">主来源</span></li>
+        <li><a href="https://x.com/elonmusk/status/2120090704043200865" target="_blank" rel="noopener">Elon Musk</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/elonmusk/status/2120097663794483601" target="_blank" rel="noopener">Elon Musk</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/elonmusk/status/2120099798078656909" target="_blank" rel="noopener">Elon Musk</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软发布 11 月补丁星期二，Windows 11 23H2 企业版和教育版以此为最后一次月度更新 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>微软发布 11 月补丁星期二，Windows 11 23H2 企业版和教育版以此为最后一次月度更新</h1>
+    <p class="lede">各源统计本月约修复 1,093 至 1,095 个漏洞，其中约 63 至 64 个被标为严重；已遭利用的 Outlook 零日 CVE-2026-124194 会在用户打开特制邮件文件时泄露 NTLMv2 哈希，不能通过预览窗格触发。Windows 11 24H2 及更新版本的汇总包是 KB5132061；23H2 企业版和教育版的支持将在今天结束，需升级到仍受支持的版本。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在 11 月补丁星期二放出本月安全更新。按这类更新通常在太平洋时间上午 10 时前后推出的惯例，换算到上海大约是 11 月 11 日凌晨 2 时。Windows 11 24H2、25H2 和 26H2 的汇总包是 KB5132061，对应系统版本号为 26300.9974、26200.9974 和 26100.9974。微软在说明里还写了几件运维上的事：因西方假期，2026 年 12 月不会再出月末的非安全预览更新，正常服务将在 2027 年 1 月恢复；安全启动证书替换仍在进行；默认开启 NTLM 报文签名，以降低中继风险；还修了 10 月引入的 Active Directory 打印机错误 87、部分 USB Audio 1.0 问题，以及远程桌面证书不匹配，并收紧了 PowerShell 已签名脚本的 UTF-8 校验。官方同时表示，目前未发现这次更新存在问题。</p>
+<p>各家对漏洞数量的统计并不完全相同，不宜合成一个「官方整数」。Krebs on Security 在 11 月 10 日的报道里写的是修复 1,093 个漏洞，其中 63 个被标为严重，535 个可提升权限，并称目前只有 CVE-2026-124194 已出现活跃利用。The Record 同样采用 1,093 个、其中 63 个严重的说法，并写道微软今年以来披露的漏洞已超过 5,160 个。SecurityWeek 的爱德华·科瓦奇则写修复 1,094 个，并按产品拆开：Windows 726 个、Office 174 个、SQL Server 59 个、开发者工具 53 个、SharePoint Server 27 个、Azure 20 个、Exchange Server 9 个；另外还提到重新发布了 165 个来自第三方的 CVE，Chrome 相关漏洞未列入此次清单，而上月创下的纪录是 1,413 个。该文时间戳为美东时间下午 2 时 19 分，换算到上海是 11 月 11 日 3 时 19 分。ZeroDayWatch 给出的数字是 1,095 个修复、64 个严重、1 个已遭利用的零日。本条不以未经核验的第三方更高数字为准。</p>
+<p>已遭利用的是 Outlook 漏洞 CVE-2026-124194。SecurityWeek 转述微软的说明：未经身份验证的攻击者可以发送特制邮件文件，并诱使使用者在受影响的 Outlook 中打开；打开后，Outlook 可能在不弹出通常那种外部内容警告的情况下，连接到攻击者控制的网络位置，从而泄露可用于冒充该用户的认证信息。报道还写明，这会把用户的 NTLMv2 哈希交给攻击者，对方可用来冒充登录。该漏洞不能通过预览窗格触发，严重程度为中等，CVSS 分为 6.5，影响 Microsoft 365 Apps for Enterprise、Office LTSC 2021 和 Office LTSC 2024。发现者包括名为 nono 的研究人士，以及贝诺瓦·塞文斯（Benoît Sevens）；报道提到塞文斯在致谢中写到使用了 Anthropic 的 Claude。该漏洞在补丁发布前没有被公开披露。美国网络安全与基础设施安全局（CISA）已于同一天将其列入已知被利用漏洞目录，联邦机构的修补期限是 2026 年 11 月 24 日。</p>
+<p>Windows 11 23H2 企业版和教育版的支持将在这次更新后结束。Windows Central 引述微软的话：这些版本已经到达更新终点，2026 年 11 月的 Windows 安全更新是它们能拿到的最后一次更新；此后将不再按月收到针对最新安全威胁的保护。微软生命周期页面给出的 23H2 结束时间是太平洋时间 2026 年 11 月 11 日 6:59:59，换算到上海是当天 22:59:59。家庭版和专业版的 23H2 已在大约一年前结束支持。仍在使用这些版本的设备，需要升级到仍受支持的 24H2、25H2、26H1 或 26H2；其中 26H2 企业版的支持期到 2029 年 10 月 9 日。ZeroDayWatch 还给出 23H2 对应的更新包为 KB5131087，系统版本 22631.7711。另有报道提到 Windows 10（含扩展安全更新）的包号是 KB5131096，版本为 19045.7846 和 19044.7846，但这是二手转述，本条未能完整打开官方知识库正文，采用时需谨慎。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：微软知识库确认 Windows 11 24H2、25H2、26H2 本月汇总包为 KB5132061；各源均报道已遭利用的 Outlook 漏洞 CVE-2026-124194，打开特制邮件文件可能泄露 NTLMv2 哈希，且不能通过预览窗格触发。Windows Central 与微软生命周期页面均确认 23H2 企业版和教育版以此为最后一次月度安全更新，结束时间为太平洋时间 11 月 11 日 6:59:59（上海 22:59:59）。</li>
+<li>分歧：漏洞总数与「严重」条目的统计并不统一。Krebs on Security 与 The Record 写 1,093 个、其中 63 个严重；SecurityWeek 写 1,094 个；ZeroDayWatch 写 1,095 个、64 个严重。本条并列各源，不合成一个官方整数。The Record 另称微软今年以来披露已超过 5,160 个，为该报统计，并非各源共同核对后的数字。</li>
+<li>待确认：Windows 10（含扩展安全更新）的 KB5131096 及版本号来自二手转述，官方知识库正文未能完整打开。23H2 的 KB5131087 与版本 22631.7711 来自 ZeroDayWatch。本条未采用未经核验的更高统计数字。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://support.microsoft.com/en-gb/servicing/os/windows-11/2026/11/kb5132061-windows-11-24h2-25h2-26h2-security-update" target="_blank" rel="noopener">微软 KB5132061</a><span class="role">官方</span></li>
+        <li><a href="https://learn.microsoft.com/en-us/lifecycle/products/windows-11-enterprise-and-education" target="_blank" rel="noopener">微软生命周期（Windows 11 企业版和教育版）</a><span class="role">官方</span></li>
+        <li><a href="https://www.windowscentral.com/microsoft/windows-11/microsoft-confirms-final-security-update-kb5131087-for-windows-11-version-23h2-as-support-comes-to-an-end-after-3-years" target="_blank" rel="noopener">Windows Central</a><span class="role">主来源</span></li>
+        <li><a href="https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/" target="_blank" rel="noopener">Krebs on Security</a><span class="role">次要</span></li>
+        <li><a href="https://therecord.media/patch-tuesday-microsoft-1000-bugs-again" target="_blank" rel="noopener">The Record</a><span class="role">次要</span></li>
+        <li><a href="https://www.securityweek.com/exploited-outlook-zero-day-among-1094-flaws-patched-by-microsoft/" target="_blank" rel="noopener">SecurityWeek</a><span class="role">次要</span></li>
+        <li><a href="https://zerodaywatch.org/patch-tuesday/" target="_blank" rel="noopener">ZeroDayWatch</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

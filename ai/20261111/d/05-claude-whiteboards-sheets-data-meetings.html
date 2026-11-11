@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 上线 Whiteboards、Sheets，Data 转正；多家媒体称 Meetings 已对团队版开放测试 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 上线 Whiteboards、Sheets，Data 转正；多家媒体称 Meetings 已对团队版开放测试</h1>
+    <p class="lede">付费方案可在网页、桌面和手机上使用协作白板和表格，原仪表盘产品改名为 Claude Data 并正式推出。发布会和多家媒体称，Claude Meetings 已对 Team 与 Enterprise 开放测试，先接入 Google Meet；公司另一篇产品说明仍写「即将推出」，两端口径还没有完全对齐。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 今天在产品说明中宣布，以测试版推出 Claude Whiteboards 和 Claude Sheets，并把原先的 Claude Dashboards 正式推出、更名为 Claude Data。这些功能面向付费方案，可在网页、桌面和手机上使用。需要先说清楚：同一天公司还正式启动了 IPO 路演，新闻稿以路演为主；白板、表格和会议相关能力，主要写在产品页面和当天旧金山的发布会上，并被多家媒体报道。此前一天发布的 Fable 5.2 和 Mythos 5.2 不在本条范围内。</p>
+<p>Whiteboards 让团队和 Claude 在同一块白板上实时协作，讨论可以整理成带时间线、负责人和日期的看板，最后再导出为文档或幻灯片，也可以从 Lucid、Miro 等工具导入，还可以在开会过程中当场把白板搭起来。Sheets 则用于生成带有多个工作表、公式、格式和下拉菜单的电子表格，可在单元格里编辑，每次改动都会被标记，并能导出为 .xlsx 或 CSV，或配合 Claude for Excel 使用。互动连接器方面，官方称可以在对话旁或全屏打开完整应用，例如 Adobe、Atlassian、Box、Notion、HubSpot 等，Claude 能在这些应用内部直接编辑。</p>
+<p>Claude Data 由今年 10 月进入测试的 Dashboards 转正，可连接 Redshift、BigQuery、ClickHouse 等。新内容包括已认证查询、实时共享（这两项仍是测试版），以及数据故事或讲解视频、设计系统、缓存与刷新周期、变更追踪。企业版将从 2026 年 11 月 19 日起默认打开 Data，Whiteboards 和 Sheets 在企业版默认关闭；在 Team 方案里，这三项默认都打开。</p>
+<p>争议更大的是 Meetings。当天旧金山发布会上，首席产品官阿米·沃拉与知识工作产品负责人尼古拉斯·林到场；《财富》称，会上对公司能力的描述是：Claude 作为「可见的参与者」加入视频会议，边听边着手整理计划和时间线，在会议聊天里作答，并调用已连接的工作应用；会后，纪要、待办和材料会出现在 claude.ai。TechCrunch、Axios 和路透社均报道，该功能已对 Team 与 Enterprise 开放测试，先支持 Google Meet，并计划扩展。TechCrunch 还写道，它会表明自己是参与者并在聊天中发言；除非管理员另行授权，否则不会加入有外部客人的会议，若中途有外部客人进入，它会退出。Axios 援引林的话说，公司内部用了大约两个月，几乎所有会议都有 Claude；眼下它多半是在等指令，后续希望能更主动一些。</p>
+<p>但官方口径还没有完全对齐。一篇产品说明把 Whiteboards、Sheets 和 Data 写得很清楚，另一篇却仍写「Claude Meetings 即将推出」。Anthropic 当天的新闻室头条是 IPO 路演，并没有单独发出 Meetings 已全面开放的新闻稿。因此不宜把 Meetings 写成已经正式向所有付费用户开放，更准确的说法是：发布会和多家媒体称，Team 与 Enterprise 的测试已经开始，先接入 Google Meet；公司自己的一篇产品说明仍写「即将推出」。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：官方产品页确认今天以测试版推出 Whiteboards 和 Sheets，Dashboards 更名为 Data 并正式推出，面向付费方案，可用于网页、桌面和手机。企业版 Data 将于 11 月 19 日默认打开，Whiteboards 和 Sheets 在企业版默认关闭，Team 方案三项默认打开。</li>
+<li>分歧：发布会以及 TechCrunch、Axios、路透社、《财富》均称 Meetings 已对 Team 与 Enterprise 开放测试，并先支持 Google Meet；另有一篇官方产品说明仍写「即将推出」。新闻室当天并未单独发 Meetings 新闻稿。</li>
+<li>待确认：Meetings 的准确开放范围和官方文案何时改口，仍需看后续产品页或正式说明。本条不把该功能写成已经全面开放。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://claude.com/resources/articles/sheets-whiteboards-data" target="_blank" rel="noopener">Claude</a><span class="role">官方</span></li>
+        <li><a href="https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors" target="_blank" rel="noopener">Claude</a><span class="role">官方</span></li>
+        <li><a href="https://claude.com/resources/articles/interactive-connectors-full-tool" target="_blank" rel="noopener">Claude</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/11/10/anthropic-launches-claude-meetings-to-turn-workplace-discussions-into-plans-and-tasks/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/anthropic-brings-claude-to-google-meet-to-tackle-tasks-live-5016423" target="_blank" rel="noopener">Reuters</a><span class="role">次要</span></li>
+        <li><a href="https://www.axios.com/2026/11/10/anthropic-claude-meetings-knowledge-work" target="_blank" rel="noopener">Axios</a><span class="role">次要</span></li>
+        <li><a href="https://fortune.com/2026/11/10/anthropic-launches-office-knowledge-worker-product-launch-ahead-of-ipo/" target="_blank" rel="noopener">Fortune</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

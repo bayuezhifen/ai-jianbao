@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>群晖发布 SA-26:19（严重）与 SA-26:18，修复 DSM 未授权 SQL 注入等漏洞，须升级 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">群晖 / Synology</div>
+    <h1>群晖发布 SA-26:19（严重）与 SA-26:18，修复 DSM 未授权 SQL 注入等漏洞，须升级</h1>
+    <p class="lede">昨天下午 17:06（上海）同时公布两份通告。SA-26:19 含一枚 CVSS 9.8、无需登录的 Auth API SQL 注入，影响 DSM 7.2.1 至 7.4，须升到公告给出的补丁版本；SA-26:18 另列 25 个漏洞，主要覆盖 7.3 和 7.4。官方没有提供缓解措施，也没有说已经出现在野利用。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>群晖 / Synology</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>群晖在 11 月 10 日下午几乎同时公布了两份针对 DSM 的安全通告。英文和中文站点都写明，SA-26:19 的发布时间为当天 17:06:42（上海），严重程度为「严重」，状态为已解决，目前是第 1 版，也就是首次对外公布；官方在缓解措施一栏写的是「无」。同一分钟稍早，17:06:33，还发布了重要性为「重要」的 SA-26:18。法国国家网络安全局下属的 CERT-FR 当天发出 CERTFR-2026-AVI-1493，把两份通告一并概述，合计 27 个漏洞编号，受影响版本与官方表格一致。需要说清楚的是：官方和 CERT-FR 都没有写这些漏洞已经出现在野利用，不能据此写成大规模爆发。两份通告修的是 DSM 系统本身的问题，和本周早些时候围绕第三方套件的通告不是同一回事。</p>
+<p>SA-26:19 里最要紧的是 CVE-2026-76954。官方将其标为严重，CVSS 3.1 分为 9.8，类型是 SQL 注入，出在 DSM 的认证接口（Auth API）。通告的意思是：在列出的补丁版本之前，远程攻击者可利用这处对 SQL 命令中特殊元素处理不当的问题，读取或写入任意文件，并实施拒绝服务。该条攻击从网络即可发起，复杂度低，不需要登录，也不需要使用者再点一次确认。同份通告还有 CVE-2026-85101，标为重要，CVSS 3.1 分为 8.6，属于通过另一条路径或通道绕过认证，出现在 rsync 相关实现里。官方描述是：远程攻击者可以读取特定文件、写入任意文件，并实施有限度的拒绝服务。群晖致谢了越南 Viettel 网络安全研究实验室的 Nguyễn Bá Nam Dũng、Hà Thế Long，以及 Warisse Valentin（Aytio）。</p>
+<p>还在使用受影响 DSM 的设备，升级目标应严格对照官方表格。SA-26:19 把 7.2.1 到 7.4 都标为严重：DSM 7.4 须升到 7.4.1-90080-1 或更高；DSM 7.3 须升到 7.3.2-86009-5 或更高；DSM 7.2.2 须升到 7.2.2-72806-10 或更高；DSM 7.2.1 须升到 7.2.1-69057-13 或更高。中文用户可以直接看 synology.cn 上的通告。SA-26:18 另列 25 个漏洞，产品表只覆盖 DSM 7.4 和 7.3，升级目标同样分别是 7.4.1-90080-1 或更高、7.3.2-86009-5 或更高；7.2.x 并未出现在这份通告的产品表里，这一点与 SA-26:19 不同，两份名单不能混着看。</p>
+<p>在 SA-26:18 分数较高的条目中，官方细节包括：CVE-2026-13672（8.8 分，SSOAuth 越权，需要已登录用户）、CVE-2026-18792（8.8 分，Sharing API 路径遍历，需要已登录）、CVE-2026-74857（8.8 分，Auth API 缺少关键认证步骤，需要已登录）、CVE-2026-18596（8.1 分，一次性密码认证绕过，官方写的是持有有效用户凭据的远程攻击者）、CVE-2026-19048（8.1 分，缩略图链接解析）、CVE-2026-81584（8.1 分，User API 的 SQL 注入，前提是能够控制已被攻陷的 LDAP 或 AD）、CVE-2026-18633（7.5 分，nfsd 未初始化指针导致远程拒绝服务，且无需登录）、CVE-2026-75785（7.2 分，VPN API 命令注入，需要管理员权限）。其余多为中等，大致在 4.3 到 6.8 分之间，涉及 SNMP、WebDAV、媒体解析、支持表单的证书校验、跨站脚本、Security Advisor 授权错误、服务端请求伪造、任务计划等。完整清单应以官方通告或 CERT-FR 公告为准。</p>
+<p>因为官方没有给出补丁之外的缓解办法，能做的就是尽快升到上述版本，并在升级后确认服务与备份仍正常。若设备暂时无法升级，自行收紧管理面暴露范围并不能代替补丁，也不是官方给出的正式缓解措施。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：群晖中英文通告与 CERT-FR 的 CERTFR-2026-AVI-1493 均确认两份通告于 11 月 10 日下午发布；SA-26:19 为严重、已解决、第 1 版，无缓解措施；补丁版本号与受影响产品表一致；两份通告合计 27 个漏洞编号（2 个加 25 个）。各方均未声称这些漏洞已出现在野利用。</li>
+<li>范围差异：SA-26:19 覆盖 DSM 7.2.1 至 7.4；SA-26:18 的产品表只列出 DSM 7.3 与 7.4，不含 7.2.x。两份通告不能当成同一张升级名单。</li>
+<li>待确认：是否已有在野利用，官方与 CERT-FR 均未表态；SA-26:18 其余中等漏洞的完整编号与评分，本条未逐一罗列，应以官方通告或 CERT-FR 公告为准。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.synology.cn/zh-cn/security/advisory/Synology_SA_26_19" target="_blank" rel="noopener">群晖 SA-26:19（中文）</a><span class="role">官方</span></li>
+        <li><a href="https://www.synology.com/en-global/security/advisory/Synology_SA_26_19" target="_blank" rel="noopener">群晖 SA-26:19</a><span class="role">官方</span></li>
+        <li><a href="https://www.synology.com/en-global/security/advisory/Synology_SA_26_18" target="_blank" rel="noopener">群晖 SA-26:18</a><span class="role">官方</span></li>
+        <li><a href="https://www.cert.cyber.gouv.fr/avis/CERTFR-2026-AVI-1493/" target="_blank" rel="noopener">CERT-FR CERTFR-2026-AVI-1493</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

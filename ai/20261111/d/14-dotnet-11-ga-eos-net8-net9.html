@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软正式发布 .NET 11（标准支持期两年），.NET 8 与 9 于同一天结束支持 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>微软正式发布 .NET 11（标准支持期两年），.NET 8 与 9 于同一天结束支持</h1>
+    <p class="lede">这是为期两年的 STS 版本，长期支持仍看 .NET 10。默认语言是 C# 15，.NET MAUI 改为默认使用 CoreCLR。同日还发布了 11 月安全服务更新；仍在使用 8 或 9 的项目需要迁到受支持的版本，才能继续拿到修复。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>语言 / 运行时 / 框架</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软开发博客在 2026 年 11 月 10 日 16:11（协调世界时）宣布正式发布 .NET 11，换算到上海是 11 月 11 日 0 时 11 分。同一时刻稍早一分钟，还发布了 11 月的 .NET 与 .NET Framework 安全服务更新。官方写道，今天宣布 .NET 11 发布。按支持政策，.NET 11 是标准支持期（STS）版本，支持两年；长期支持仍然看 .NET 10。Visual Studio Magazine 的戴维·拉梅尔和 Thurrott 当天都做了报道。11 月 10 日至 13 日正值 .NET Conf 2026，发布出现在大会首日。</p>
+<p>默认语言版本是 C# 15，面向 net11.0。官方介绍的语言能力包括联合类型、封闭层次结构，以及扩展索引器和带标签的 break/continue。同一天还发布了 F# 11 的改进。工具链方面，SDK 默认启用面向本机的预编译（Native AOT）命令行宿主，MSBuild 服务器也会在多次命令行调用之间保持热身。ASP.NET Core 增加了异步校验，生成的接口文档默认采用 OpenAPI 3.2，并带来新的 Blazor 与 SignalR 能力；官方同时写明，Blazor 的人工智能组件和 Runtime Async 仍处于实验或预览阶段。.NET MAUI 则改为默认使用 CoreCLR 作为运行时。</p>
+<p>需要立即面对的，是支持周期的切换。官方明确写道：.NET 8 与 .NET 9 于 2026 年 11 月 10 日结束支持，要继续拿到修复，须迁到仍受支持的版本。11 月服务更新覆盖 .NET 8、9、10、11，对应版本分别是 .NET 11.0.0（正式版已包含本月修复）、.NET 10.0.15、.NET 9.0.23 和 .NET 8.0.34。官方博文列出的漏洞包括：CVE-2026-114146（ASP.NET Core 权限提升，影响 8 至 11）、CVE-2026-109475（.NET 拒绝服务，8 至 11）、CVE-2026-105544（.NET 权限提升，8 至 11）、CVE-2026-114151、114152、118745、114158、114159（Visual Studio 远程代码执行，8 至 11）、CVE-2026-70175（ASP.NET Core 权限提升，8 至 11），以及多条 ASP.NET Core 的拒绝服务、信息泄露和安全功能绕过。具体哪些版本受哪一条影响，应以官方博文为准，这里不自行扩写。</p>
+<p>有两条不能只升运行时。官方特别说明：CVE-2026-118747 需要单独更新 System.Formats.Cbor 这个 NuGet 包；在 .NET 9 这条产品线上，修复版本是 9.0.24，而不是 9.0.23，只安装运行时 9.0.23 并不能补上这个漏洞。另一条 CVE-2026-118741 影响 ASP.NET Core Identity 的脚手架和模板，只更新运行时并不能修好已经生成出来的代码。同一天还发布了 Visual Studio 2026 18.11.4，其中包含上述部分修复，以及 Git for Windows / MinGit 相关漏洞的补丁。仍在使用 .NET 8 或 9 的项目，应把迁移和本月补丁一并安排，不要只看到新版本发布、却把已结束支持的运行时留在生产环境里。标准支持期为两年，意味着 .NET 11 仍会在一段时间内收到修复；若生产环境更看重更长的支持窗口，官方给出的长期支持选项仍是 .NET 10。完整的漏洞说明和受影响版本，以 11 月服务更新博文为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：微软开发博客、Visual Studio Magazine 与 Thurrott 均确认 .NET 11 于 11 月 10 日正式发布；它是为期两年的标准支持期版本，长期支持仍看 .NET 10；默认语言为 C# 15，.NET MAUI 改为默认使用 CoreCLR。官方同时写明 .NET 8 与 .NET 9 于同一天结束支持。</li>
+<li>服务更新：官方 11 月服务博文给出的版本为 .NET 11.0.0、10.0.15、9.0.23、8.0.34，并特别指出 CVE-2026-118747 在 .NET 9 线上须另升 System.Formats.Cbor 至 9.0.24，以及 CVE-2026-118741 不能只靠更新运行时修复已生成的脚手架代码。</li>
+<li>待确认：各 CVE 在 8 至 11 各版本上的精确受影响范围，应以官方服务博文中的表格为准，本条未自行补充未给出的分版本细节。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/" target="_blank" rel="noopener">微软开发博客（.NET 11）</a><span class="role">官方</span></li>
+        <li><a href="https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-november-2026-servicing-updates/" target="_blank" rel="noopener">微软开发博客（11 月服务更新）</a><span class="role">官方</span></li>
+        <li><a href="https://visualstudiomagazine.com/articles/2026/11/10/net-11-ships-with-csharp-15-unions-faster-tools-and-coreclr-for-maui.aspx" target="_blank" rel="noopener">Visual Studio Magazine</a><span class="role">次要</span></li>
+        <li><a href="https://www.thurrott.com/dev/343717/microsoft-releases-net-11" target="_blank" rel="noopener">Thurrott</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

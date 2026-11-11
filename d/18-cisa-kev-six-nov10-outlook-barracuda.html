@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA 将 Outlook、Barracuda 等 6 个已利用漏洞列入已知被利用目录 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 Outlook、Barracuda 等 6 个已利用漏洞列入已知被利用目录</h1>
+    <p class="lede">11 月 10 日新增的条目包括已遭利用的 Outlook 漏洞 CVE-2026-124194，以及 Barracuda 邮件网关等相关产品的两枚漏洞；后两枚的联邦修补期限是 11 月 13 日，并被要求做妥协调查。其余还有思科 BroadWorks、Openwave Messaging 和 Chrome/Chromium 的 XML 组件释放后使用。昨晨已报的是 9 日那 4 条，不是同一批。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>美国网络安全与基础设施安全局（CISA）在 11 月 10 日宣布，向已知被利用漏洞目录（KEV）新增 6 个条目。这与本刊昨晨已经报道的 11 月 9 日那 4 条（当时涉及 GPUStack、OpenSSH 等）不是同一批，需要分开看待。目录页标注的加入日期是 2026 年 11 月 10 日。The Record 当天也做了报道。</p>
+<p>新增条目如下。CVE-2026-20320 是思科 BroadWorks 的 XML 外部实体问题，未经身份验证的远程攻击者可读取敏感配置，联邦修补期限是 2026 年 11 月 24 日，不要求按 BOD 26-04 做妥协调查。CVE-2026-111793 出在 Openwave Messaging 的 Webtop Media Transcoder，属于资源转移不正确，期限同样是 11 月 24 日，也不要求妥协调查。CVE-2026-124194 是微软 Outlook 的问题，目录归类为对可能不安全的操作缺少应有的用户交互，并涉及网络欺骗；期限是 11 月 24 日，不要求妥协调查。该漏洞的技术细节见本期操作系统栏关于 11 月补丁星期二的报道：使用者打开特制邮件文件时，可能泄露 NTLMv2 哈希，且不能通过预览窗格触发。CVE-2026-125350 是谷歌 Chromium 在 XML 组件中的释放后使用，官方目录的说明是：远程攻击者可通过特制网页，在沙箱内执行任意代码；受影响的不限于 Chrome，Edge、Opera 等基于 Chromium 的浏览器也可能被波及，期限是 11 月 24 日，不要求妥协调查。</p>
+<p>Barracuda 相关的两枚被单独加压。CVE-2026-111560 是跨多款产品的操作系统命令注入，涉及邮件安全网关（ESG）、负载均衡、应用交付控制器、BMA、WCC、WAF、WSG 等；目录写明，已认证的管理员可注入时区设置，进而以 root 身份执行命令，并可能与 CVE-2026-116606 串联。CVE-2026-116606 是邮件安全网关的认证绕过，类型为通过另一条路径或通道。这两枚的联邦修补期限都是 2026 年 11 月 13 日，并且要求按 BOD 26-04 做妥协调查。The Record 写道，CISA 要求联邦机构在 11 月 13 日星期五前完成这两枚的修补，并开展妥协调查。</p>
+<p>Krebs on Security 补充说，Chrome 157.0.8103.50 修了 9 个安全问题，其中包含 CVE-2026-125350，并称这是 Chrome 今年的第六个零日漏洞；这里采用「第六个」的说法，不以更高序数表述。同日还有 Firefox 160 以及 Adobe 至少 110 项修复等其他厂商补丁，仅作为背景，不另开条目。对各机构来说，Barracuda 那两枚期限更紧，而且被明确要求做妥协调查；Outlook 与 Chrome 相关条目则应随本月补丁和浏览器更新一并处理。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：CISA 11 月 10 日公告与已知被利用漏洞目录均列出当天新增的 6 个条目；Barracuda 的 CVE-2026-111560 与 CVE-2026-116606 联邦修补期限为 11 月 13 日，并要求按 BOD 26-04 做妥协调查，其余四条期限为 11 月 24 日、不要求该项调查。The Record 的转述与官方期限一致。这与 11 月 9 日列入的 4 条不是同一批。</li>
+<li>交叉参见：Outlook 的 CVE-2026-124194 技术细节以本期补丁星期二报道为准，本条只简述打开特制邮件文件可能泄露 NTLMv2 哈希、且不能通过预览窗格触发。</li>
+<li>待确认：Krebs 称 CVE-2026-125350 是 Chrome 今年第六个零日，本条沿用这一表述，不以未经核验的更高序数改写。Firefox 160 与 Adobe「至少 110 项」修复仅作同日背景，未独立展开核对。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA 公告</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA 已知被利用漏洞目录</a><span class="role">官方</span></li>
+        <li><a href="https://therecord.media/patch-tuesday-microsoft-1000-bugs-again" target="_blank" rel="noopener">The Record</a><span class="role">次要</span></li>
+        <li><a href="https://krebsonsecurity.com/2026/11/microsoft-fixes-nearly-1100-security-vulnerabilities/" target="_blank" rel="noopener">Krebs on Security</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

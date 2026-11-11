@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VS Code 发布 1.145.3 安全更新，修复多个远程代码执行和工作区信任漏洞 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>VS Code 发布 1.145.3 安全更新，修复多个远程代码执行和工作区信任漏洞</h1>
+    <p class="lede">官方安全通告列出至少 10 个漏洞，受影响范围是低于 1.145.3 的版本，其中多条被标为高危，涉及 MCP 安装与通知、调试器自动附加，以及工作区信任被绕过。这是安全补丁，不是新功能版本；请尽快升级。</p>
+    <div class="meta">
+      <span>2026-11-10</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在 11 月 10 日为 Visual Studio Code 发布了 1.145.3 安全更新。GitHub 发布记录的时间为当天 18:53:52（协调世界时），换算到上海是 11 月 11 日 2 时 53 分。1.145 稳定版本身是 11 月 4 日发布的，已不在本窗口的新功能新闻范围内；今天这条是随后的安全补丁，发行说明写的是：1.145.3 更新用于解决这些安全问题。受影响范围是低于 1.145.3 的版本，请尽快升级，不要把它当成一次功能迭代。</p>
+<p>官方安全通告（GitHub Security Advisory）至少列出 10 个漏洞，评分一律以这些通告为准，不以转述中的更高分数替代。被标为高危且给出 CVSS 的有：CVE-2026-120779（GHSA-66hq-jw93-462h，通过 MCP 征询通知实现远程代码执行，高危，8.3 分）；CVE-2026-119983（通过未校验的 MCP SSE 端点实现远程代码执行，高危，7.7 分）；CVE-2026-114171（通过恶意 MCP 安装链接实现远程代码执行，高危，7.7 分）；CVE-2026-70094（通过 JavaScript 调试器自动附加实现远程代码执行，高危，7.7 分）；CVE-2026-119985（通过网络工作区信任被绕过实现远程代码执行，高危，7.2 分）；CVE-2026-120780（通过 serve-web 发布通道降级实现远程代码执行，高危，7.2 分）。其中第一项的官方评分是 8.3、级别为高危，不能写成与官方通告不符的「严重、9.6 分」。</p>
+<p>另外还有三条被标为高危、但此次查询官方接口时没有给出 CVSS 分数的条目：CVE-2026-121662，通过工作区配置里的原型污染绕过工作区信任；CVE-2026-121663，通过设置分组键覆盖绕过工作区信任；CVE-2026-102230，集成浏览器在上传文件时造成信息泄露。再有一条是 CVE-2026-120782，经由智能体发起的本地命令造成命令执行，级别为中等，CVSS 分为 6.8。完整标题和说明见各条 GHSA 与官方更新说明。</p>
+<p>从类型上看，这批问题主要集中在三类场景：一是模型上下文协议（MCP）的安装、通知和端点校验；二是调试器自动附加；三是工作区信任被绕过，包括网络工作区、配置原型污染和设置键覆盖。对日常打开未完全信任的仓库、或会安装第三方 MCP 服务器的使用者来说，应把升级放到优先位置，并在升级前避免点击不明的 MCP 安装链接，谨慎对待自动附加调试器和工作区信任提示。具体利用条件和官方评分，仍以 GitHub 通告原文为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：VS Code 官方更新说明与 GitHub 发布记录均确认 1.145.3 于 11 月 10 日发布，用于修复安全问题；受影响范围为低于 1.145.3 的版本。1.145 稳定版的功能更新发布于 11 月 4 日，不属于本窗口的新功能新闻。</li>
+<li>评分口径：本条只采用官方 GHSA 给出的级别和分数。CVE-2026-120779 的官方评分是 8.3、高危，不以与之矛盾的「严重、9.6 分」计算。CVE-2026-121662、CVE-2026-121663、CVE-2026-102230 被标为高危，但此次查询官方接口时未返回 CVSS 分数，文中不强行补分。</li>
+<li>待确认：这 10 条之外是否还有未列入上述通告列表的问题，本条未加推断。利用是否需要特定配置或用户操作，以各条 GHSA 原文为准。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://code.visualstudio.com/updates/v1_145" target="_blank" rel="noopener">VS Code 1.145 更新说明</a><span class="role">官方</span></li>
+        <li><a href="https://github.com/microsoft/vscode/releases/tag/1.145.3" target="_blank" rel="noopener">GitHub：VS Code 1.145.3</a><span class="role">官方</span></li>
+        <li><a href="https://github.com/microsoft/vscode/security/advisories" target="_blank" rel="noopener">GitHub Security Advisories（VS Code）</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
