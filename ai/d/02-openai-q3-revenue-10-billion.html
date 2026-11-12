@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>彭博：OpenAI 第三季度营收首次达到 100 亿美元，同期经营亏损 109 亿美元 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>彭博：OpenAI 第三季度营收首次达到 100 亿美元，同期经营亏损 109 亿美元</h1>
+    <p class="lede">知情人士对彭博说，截至 9 月的第三季度，OpenAI 营收约 100 亿美元，这是该公司单季营收第一次来到这个量级；同一季度的经营亏损是 109 亿美元。这些数字来自 10 日的投资者电话会，OpenAI 拒绝置评。</p>
+    <div class="meta">
+      <span>2026-11-11</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>彭博报道，一名知情人士说，OpenAI 在截至 9 月的第三季度营收达到 100 亿美元，这是它单季营收第一次跨过这一门槛。增幅大约是上一季度的近五成，也接近上年同期的三倍。石英财经转述同一组彭博数字时补充：第二季度营收约为 67 亿美元，因此这个「近五成」是有参照的。报道还写到，这些财务细节是 11 月 10 日投资者电话会上向出资人通报的，总裁格雷格·布罗克曼和首席财务官萨拉·弗赖尔参加了电话会。OpenAI 拒绝置评。</p>
+<p>赚钱的速度在加快，亏损的绝对额也不小。石英财经转述彭博说，同一季度的经营亏损是 109 亿美元；经调整的营业利润率从第二季度的 -150% 收窄到第三季度的 -109%。也就是说，亏损相对营收的比例在改善，但亏损金额本身仍与营收处在同一量级。彭博把营收增长主要归因于对新模型的需求，以及公司用更有针对性的定价、折扣，和更多面向企业、能替人办事的智能体产品把业务推回来。这些都是转述中的解释，不是公司自己对外发布的季报。</p>
+<p>年化经常性收入也需要把口径说清楚。彭博称，截至 9 月末，OpenAI 的年化营收大约是 500 亿美元。石英财经特别写到，这个数字低于此前外界常引用的 680 亿美元，因为那一更高的算法把合作伙伴的流水也算了进去。这和简报此前对 Anthropic 的提醒是同一类问题：两家公司算「年化收入」的方法并不一样。彭博同时写到，Anthropic 第三季度营收约 170 亿美元，相对第二季度的增速大约是 47%，而再往前一个季度曾经超过 140%。石英财经还补充，第二季度 Anthropic 曾以约 116 亿美元、对 OpenAI 的约 67 亿美元，第一次在单季营收上超过对手。不同口径不能直接拿来排座次。</p>
+<p>需要把新信息和旧信息分开。OpenAI 正在推进一轮估值约 1.25 万亿美元的融资、其中已先完成约 110 亿美元、以及把公开上市时间推到 2027 年，这些在本周早些时候已经报道过，不能写成今天才出现的新进展。今天真正新的，是第三季度这组尚未被公司官方确认的经营数字：营收第一次到 100 亿美元，亏损仍高，利润率有所收窄。在公司自己公布经审计或正式披露的财务之前，它们仍然是知情人士对投资者通报的转述。</p>
+<p>对读者来说，这条新闻的意义不在于再比一次谁「更大」，而在于看清两家公司此刻各自的节奏。OpenAI 的营收在加快，但仍在用高额亏损换规模；Anthropic 的单季收入更高，增速已经从高位放慢，同时又在走上市路演。数字好看与否，最终还要等各方用统一、可核对的口径说话。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：彭博及其转述（科技博客 TechCrunch、石英财经、《海峡时报》）都写到第三季度营收约 100 亿美元，约为上季近五成、上年同期近三倍，数字来自 10 日投资者电话会，OpenAI 拒绝置评。</li>
+<li>石英财经对彭博的转述额外给出：经营亏损 109 亿美元，经调整营业利润率由 -150% 收窄至 -109%，9 月末年化营收约 500 亿美元，并提醒外界曾用过含合作伙伴流水的 680 亿美元口径。</li>
+<li>与 Anthropic 的比较须标明口径不同：彭博称 Anthropic 第三季度营收约 170 亿美元，环比增速约 47%；两家历史上对收入的统计方法并不相同。</li>
+<li>待确认：这些数字尚未经公司正式对外披露或审计；最终利润率、年化口径和与 Anthropic 的对比，都要以后续官方文件为准。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://qz.com/openai-revenue-operating-loss-10-billion-third-quarter-111126" target="_blank" rel="noopener">Quartz</a><span class="role">主来源</span></li>
+        <li><a href="https://techcrunch.com/2026/11/11/openais-quarterly-revenue-reportedly-crosses-10b-for-the-first-time/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+        <li><a href="https://www.straitstimes.com/business/openai-q3-revenue-soars-nearly-50-to-us10-billion" target="_blank" rel="noopener">The Straits Times</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

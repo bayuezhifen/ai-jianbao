@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Node.js 发布 26.13.1、24.22.3 和 22.23.5 安全更新，修复 16 个漏洞，最高为高危 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">语言 / 运行时 / 框架</div>
+    <h1>Node.js 发布 26.13.1、24.22.3 和 22.23.5 安全更新，修复 16 个漏洞，最高为高危</h1>
+    <p class="lede">Node.js 项目 11 日为仍在维护的三条版本线发布安全更新，一共修补 16 个漏洞，其中 7 个被标为高危。官方建议尽快升到对应补丁版本并重启服务。</p>
+    <div class="meta">
+      <span>2026-11-11</span>
+      <span class="dot"></span>
+      <span>语言 / 运行时 / 框架</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Node.js 项目在 11 日的安全公告里宣布，为 26.x、24.x 和 22.x 三条仍在维护的版本线提供更新，对应版本号分别是 26.13.1、24.22.3 和 22.23.5。公告写明，这次修复里最高的严重级别是「高」。把公告中逐条列出的编号数一遍，一共是 16 个漏洞：7 个高危、6 个中危、3 个低危。其中部分还涉及 llhttp、undici 和 sqlite 等随发行版一起走的依赖更新。已经停止维护的旧版本同样会受这些漏洞影响，但不会再得到补丁，公告再次提醒应迁到仍受支持的版本。</p>
+<p>高危条目主要集中在 HTTP/2 和 TLS 上，而且多数可以被未认证的客户端触发。例如 CVE-2026-123863：攻击者可以让 HTTP/2 会话在拆除时触发断言失败，从而使进程退出，明文和加密连接都适用，公告把它写成此前 CVE-2024-27983 修复没有盖住的变种。CVE-2026-123864 更麻烦一些：在 HTTPS 场景下，一次零长度的 TLS 写入可能重入解析器，让服务器把堆上本属于其他连接的内存，包括私钥或其他用户的请求，复制进当前请求体；明文的 node:http 不受这条影响。CVE-2026-123865 则是会话在关闭过程中遇到协议错误时清理不彻底，造成内存和文件描述符一直泄漏，攻击者还可以先发送 GOAWAY 来稳定地触发。此外还有把已释放的响应内存发给对端、TLS 服务器上可远程触发的未捕获异常、TLS 1.2 重协商时客户端单方面改掉服务器名以绕过客户端证书校验，以及 respondWithFile 在重置时的释放后使用。</p>
+<p>中危和低危也不宜完全略过。中危里包括超长 origin 导致的堆溢出、按主机名配置的双向认证证书机构校验失效、HTTP/2 会话内存上限统计不准、代理密码出现在错误信息里、以及 https.Agent 跨策略复用 TLS 会话造成的证书校验绕过。低危则涉及权限模型里通配符路径授权过宽、fs.watch 递归监视时泄漏本应拒绝的子路径名称，以及 zlib 参数更新与销毁顺序不当引发的内部断言。对普通服务来说，最应当先处理的仍是那几条可远程触发的高危 HTTP/2 和 TLS 问题。</p>
+<p>一个值得单独说明、但不必写成产品新闻的细节是：公告在若干高危条目的致谢里写到，克里斯·罗尔夫与 Claude 以及 Anthropic Research 合作报告了这些漏洞，修复由 Node.js 维护者完成。这只说明漏洞是怎么被发现的，并不等于 Anthropic 发布了新产品，因此不单独进入 Claude 栏。</p>
+<p>对使用者而言，动作很直接：按自己所在的版本线升到 26.13.1、24.22.3 或 22.23.5，然后重启进程或服务，让新的二进制真正跑起来。只把包下载下来、却让旧进程继续服务，等于没有修。若生产环境还停在已经结束维护的版本上，这次不会有官方补丁，只能先升级到仍受支持的线路。公告没有把这些漏洞写成「已在野外大规模利用」，但也没有排除已经被探测的可能。对于对外提供 HTTP/2 或 HTTPS 的服务，把补丁尽快打上，是眼下最稳妥的做法。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>官方为首要依据：nodejs.org 11 日安全公告列出三条版本线的补丁编号，并逐条给出 CVE 与严重级别。将公告条目计数后为 16 个漏洞（7 高、6 中、3 低），与安全媒体对同一公告的概括一致。</li>
+<li>影响范围：多条高危问题可被未认证客户端触发，主要影响 HTTP/2 与 HTTPS；明文 HTTP 不受其中一条堆内存泄露影响。三条仍在维护的版本线最高级别均为高危。</li>
+<li>待确认：这些漏洞是否已出现大规模野外利用，公告未作断定；旧的已停止维护版本受影响但不会再得到官方补丁。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://nodejs.org/en/blog/vulnerability/november-2026-security-releases" target="_blank" rel="noopener">Node.js</a><span class="role">官方</span></li>
+        <li><a href="https://nodejs.org/en/blog/release/v26.13.1" target="_blank" rel="noopener">Node.js 26.13.1 发行说明</a><span class="role">官方</span></li>
+        <li><a href="https://securityonline.info/nodejs-http2-tls-vulnerabilities-november-2026/" target="_blank" rel="noopener">SecurityOnline</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

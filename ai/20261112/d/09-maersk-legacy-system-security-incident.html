@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>马士基确认一处收购来的本地旧系统遭未授权访问并被取走数据，勒索团伙索赔尚未得到公司证实 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>马士基确认一处收购来的本地旧系统遭未授权访问并被取走数据，勒索团伙索赔尚未得到公司证实</h1>
+    <p class="lede">马士基 11 日确认，在一套来自此前收购的本地旧系统上发现未授权访问和数据提取。自称 WhiteArmor 的团伙随后公开索要 500 万美元，并声称拿走约 100 GB 数据；这些说法尚未得到公司确认。</p>
+    <div class="meta">
+      <span>2026-11-11</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>丹麦航运与物流集团 A.P. 穆勒－马士基在 11 日发布客户通告，标题就是「信息技术安全事件」。通告写明：公司发现一起涉及未授权访问、并从「此前一次收购留下来的本地旧系统」中提取数据的事件。网络安全团队在发现问题后立即展开全面调查，调查仍在进行，并已采取措施保护受影响的系统。到目前为止，马士基称「现有发现强烈表明，没有敏感数据被披露」；事件被隔离在这套本地系统上，没有迹象显示其他马士基系统，或通过应用程序接口、电子数据交换与之相连的客户和合作伙伴系统受到影响。公司表示，目前预计不会干扰客户运营，客户仍可照常使用马士基平台预订和管理货物。</p>
+<p>通告里没有点名这套系统、没有说明被取走的是哪类数据，也没有给出入侵发生的时间。这些空白随后被一个自称 WhiteArmor 的勒索团伙试图填上。Security Affairs 等安全媒体报道，该团伙把马士基写进了其 Tor 泄露网站，索要 500 万美元比特币，并给出 30 天期限。团伙自称从 OCF／LF Logistics 平台拿走大约 100 GB 数据，还列举了近 3 万条司机记录、明文保存的密码、33 个超级管理员账户、已签署的签收单，以及库存、采购订单、预先发货通知和带电话、邮箱、设备识别码的移动设备日志。这些细节全部来自攻击者单方面的说法，没有经过独立验证，马士基的通告也没有确认其中任何一项。</p>
+<p>系统身份只能说到「有可能对得上，但公司没认」。马士基在 2022 年从利丰集团收购了 LF Logistics，而攻击者把被盗平台写成「合同物流部门、前身是 LF Logistics」。这与通告里「来自此前收购的本地旧系统」在时间线上可以对上，但马士基没有点名 LF Logistics，也没有确认被入侵的就是这套平台。在公司补充说明之前，不宜把攻击者的命名写成已确认的事实。</p>
+<p>马士基还提醒客户：对任何声称与此事有关、却又显得突兀的联络保持警惕，并通过日常的马士基联系人核实。通告说，如果后续发现有必要通知受影响的当事方，公司会再发更新。对一家在全球集装箱运输和物流里体量很大的公司来说，把事件限定在「本地旧系统、暂未见敏感数据公开、主系统未受影响」，是目前官方愿意给出的边界。这并不等于风险已经消失：调查尚未结束，攻击者已经在公开索要赎金，被盗数据是否会真的被公布，仍要看后面几天的进展。</p>
+<p>历史对照只适合作为背景，不能把两次事件写成同一类事故。2017 年，NotPetya 曾迫使马士基大规模重装服务器和工作站，并造成数日的运营中断。这一次，公司明确说预计不会干扰客户运营。两次在手法、范围和公开信息上都不同，除了提醒物流业对网络攻击并不陌生之外，不应做简单类比。眼下更需要盯住的，是马士基会不会修正「没有敏感数据被披露」的判断，以及那些尚未被证实的泄露清单会不会变成可核验的数据。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>已确认：马士基 11 日官方通告承认，一套来自此前收购的本地旧系统遭到未授权访问和数据提取；初步判断没有敏感数据被公开，未见其他系统或客户接口受影响，预计不干扰运营。调查仍在进行。</li>
+<li>未确认：WhiteArmor 声称盗走约 100 GB 数据、索要 500 万美元，以及司机记录、明文密码、管理员账户等清单，目前只见于攻击者站点及安全媒体转述，马士基未予证实。被入侵系统是否就是前 LF Logistics 平台，同样未经公司确认。</li>
+<li>待观察：调查结论会否修正，公司是否通知特定受影响方，以及泄露网站上的数据是否会被实际公布。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.maersk.com/news/articles/2026/11/11/it-security-incident" target="_blank" rel="noopener">Maersk</a><span class="role">官方</span></li>
+        <li><a href="https://securityaffairs.com/202869/data-breach/whitearmor-demands-5-million-from-maersk-claims-theft-of-100gb-of-data.html" target="_blank" rel="noopener">Security Affairs</a><span class="role">次要</span></li>
+        <li><a href="https://container-news.com/maersk-confirms-security-breach-amid-hacker-claims-of-major-data-theft/" target="_blank" rel="noopener">Container News</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
