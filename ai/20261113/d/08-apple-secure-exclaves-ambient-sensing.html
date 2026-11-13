@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>苹果公布 Secure Exclaves：摄像头和麦克风数据在隔离环境处理，主系统也无法读取原始信息 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">隐私与监管</div>
+    <h1>苹果公布 Secure Exclaves：摄像头和麦克风数据在隔离环境处理，主系统也无法读取原始信息</h1>
+    <p class="lede">苹果安全研究博客在 11 月 12 日发表长文，介绍名为 Secure Exclaves 的新安全架构。摄像头和麦克风的环境感知数据在与主系统隔离的环境中处理，主操作系统、应用程序和苹果都无法访问原始信息；只有在安全指示确认可见后，完整传感器数据才被允许离开隔离区。</p>
+    <div class="meta">
+      <span>2026-11-13</span>
+      <span class="dot"></span>
+      <span>隐私与监管</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>苹果安全工程与架构团队和核心操作系统团队 11 月 12 日在公司安全研究博客发表《Secure Exclaves and Ambient Sensing》。文章的出发点是：像 HomeView 识别最多六名已登记用户、以及“Hey Siri”这样的功能，必须处理摄像头或麦克风的环境信息，但又不能把这些数据录下来，也不能交给操作系统的其他部分。苹果的做法是把处理放进名为 Secure Exclaves 的隔离运行时，只向主系统交出很薄的元数据，例如是否听到某个特定声音、是否识别到已登记用户，处理完成后丢弃原始流。</p>
+<p>文章区分了两种模式。环境模式下，传感器可以对特定触发作出反应，但只有规定好的元数据能离开隔离区；活动模式下，完整的音视频可以交给主操作系统，同时必须有一份难以篡改的指示，告诉用户传感器已经完全打开。苹果解释，传统的硬件指示灯不适合环境感知，因为它会一直亮着，用户就分不清设备只是在听唤醒词，还是已经在录音录像。为此公司设计了隔离区指示控制器，用来决定数据何时可以离开隔离边界。对使用屏幕指示点的设备，独立的显示隔离区还会检查屏幕上真实画出的像素，包括颜色、形状、持续时间和亮度，避免恶意软件藏起或伪造提示。</p>
+<p>官方点名这套机制已经用在多个产品上：保护 HomeView 的人物识别，以及 Siri Recap、Live Rewind；也用于 iPhone 18 Pro、iPhone 18 Pro Max 和 iPhone Duo 的屏幕摄像头与麦克风指示，以及 MacBook Neo 和 HomeView 的摄像头指示。以 iPhone 18 Pro 的“Hey Siri”为例，设备先由常开处理器低功耗监听唤醒词，疑似命中后再交给音频隔离区和 Siri 隔离区做第二轮识别。在确认唤醒之前，主系统只能收到“需要唤醒 Siri”的通知，拿不到音频。只有用户进入主动会话，并且麦克风指示完成显示和安全检查之后，音频才会被放到 Siri 服务。IT之家和 MacRumors 对这套流程的转述与官方文章相符。</p>
+<p>底层上，苹果称隔离区使用定制的 L4 微内核，并用安全页表监控器管理内存类型，使主内核不能重新标记或映射隔离区的私有内存，甚至监控器自己也不保留这些页面的映射。组件之间通过预先定义的安全进程间通信交换数据，默认没有权限，只有被明确授予的能力才能访问相应资源。苹果还提到，正在对微内核做形式化验证，但写明这项工作是逐步推进的，并没有覆盖整个微内核。这是一篇技术说明，不是当天发布的新机；它把已经出现在新产品上的隐私边界，用可以核对的架构语言写了出来。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>苹果官方博客是主键。IT之家 12 日 13:17 的报道和 MacRumors 12 日稿件在产品名单、环境/活动两种模式、以及 iPhone 18 Pro 上“Hey Siri”须先显示麦克风指示点等关键点上，与官方文章一致。</li>
+<li>产品范围以官方为准：HomeView、Siri Recap、Live Rewind，以及 iPhone 18 Pro / Pro Max、iPhone Duo、MacBook Neo 上的指示机制。不把尚未出现在这篇官方文章里的机型写进去。</li>
+<li>形式化验证被苹果自己限定为尚未覆盖整个微内核，不能写成已经完成全部证明。</li>
+<li>这是安全架构说明，不是 12 日的硬件发布会。</li>
+<li>待确认：各机型软件版本何时完整启用这些指示校验，以及独立安全研究者后续的复核。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://security.apple.com/blog/secure-exclaves/" target="_blank" rel="noopener">Apple 安全研究博客</a><span class="role">官方</span></li>
+        <li><a href="https://www.ithome.com/1/026/040.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+        <li><a href="https://www.macrumors.com/2026/11/12/apple-homeview-secure-exclaves/" target="_blank" rel="noopener">MacRumors</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

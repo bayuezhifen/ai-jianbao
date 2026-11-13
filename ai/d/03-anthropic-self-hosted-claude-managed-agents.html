@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 推出自托管版 Claude Managed Agents，会话记录和凭证可放在客户自己的环境 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 推出自托管版 Claude Managed Agents，会话记录和凭证可放在客户自己的环境</h1>
+    <p class="lede">Anthropic 在 11 月 12 日把 Claude Managed Agents 的自托管版本开到私有测试。客户可以在自己的云或机房里运行服务端、数据库和沙箱，会话历史和凭证留在自己这边；但模型推理请求仍要发到外部的模型服务。</p>
+    <div class="meta">
+      <span>2026-11-13</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 的产品文档和 Help Net Security 的报道都写到，自托管版 Claude Managed Agents 在 11 月 12 日以私有测试的形式开放，需要通过客户对应的客户经理申请。和过去不同的是：以前客户最多只能把智能体跑代码的沙箱放在自己这边，会话记录、凭证保管和调度仍由 Anthropic 托管；现在客户可以自己运行 Managed Agents 服务端、PostgreSQL 数据库，以及执行命令和文件工具的工作进程。官方文档写得很清楚：Anthropic 对这台自托管服务器没有远程访问权限，也拿不到它的日志。</p>
+<p>需要同时写明白的限制是：Claude 模型本身并不在客户网络里运行。每次智能体要询问模型，对话内容仍会发到客户指定的推理服务，默认是 Anthropic 的 Claude API，也可以改成 Amazon Bedrock、Google 上的 Claude、微软 Foundry，或客户自己的网关。也就是说，历史和密钥可以不出自己的环境，但提示词和模型回复还是会离开内网。若客户与 Anthropic 签有零数据保留协议，文档称这些模型调用按普通 Messages API 请求适用同一安排；Anthropic 托管版会由公司保存会话记录，自托管版则由客户自己保存在数据库里。</p>
+<p>安全设计按官方的四条原则展开。调度器和沙箱是分开的，会话历史和保险库密钥不进沙箱；对 MCP 工具和受支持的接口调用，凭证由沙箱外的代理附加。客户可以把密钥放进自己的密钥管理服务。环境可以设置允许访问的主机名单，其他地址一律拦住。智能体每一步的工具调用和返回结果可经 OpenTelemetry 导出，方便和现有监控接到一起。Help Net Security 也提醒：这些保护主要覆盖 MCP 和“受支持的接口调用”，智能体若还要访问其他服务，需要事先核对。</p>
+<p>自托管也把原来由 Anthropic 承担的运维交给了客户，包括服务器加固、补丁、防火墙和数据库备份。文档还写，部分能力与托管版并不完全对齐，例如要从头建立智能体和数据，不能直接从托管服务里搬过来。这是一项面向已有客户经理通道的私有测试，不是对所有用户默认开放的公共功能。对于把无人值守的智能体用在修构建、做测试或处理告警的团队，意义在于把会话和凭证的控制权收回到自己的安全边界里，而不是把模型本身搬进内网。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：Anthropic 平台文档和 Help Net Security 都确认 11 月 12 日开放自托管私有测试，客户自行运行服务端、数据库和沙箱，会话记录留在本地，模型调用仍走外部推理服务。</li>
+<li>官方文档补充了更细的边界：Anthropic 不能远程访问自托管服务器；发往 Claude API 的请求会带上会话、智能体和环境的内部编号，这些编号不含名称和内容，但编码了创建时间，且无法关闭。</li>
+<li>零数据保留：文档区分了托管版和自托管版——托管版由 Anthropic 保存会话，自托管版由客户保存；发给 Claude API 的模型调用仍按其与客户的数据保留协议执行。</li>
+<li>Unite.AI、The Next Web 等转述与上述口径一致，本刊主要依据官方文档和 Help Net Security，不把二手转写当成独立源。</li>
+<li>待确认：私有测试的开放范围、与托管版的功能差距（如定时任务、webhook 是否仍缺失），以及后续是否转为一般可用。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access" target="_blank" rel="noopener">Anthropic 平台文档</a><span class="role">官方</span></li>
+        <li><a href="https://www.helpnetsecurity.com/2026/11/12/anthropic-self-hosted-claude-managed-agents/" target="_blank" rel="noopener">Help Net Security</a><span class="role">主来源</span></li>
+        <li><a href="https://claude.com/fr/resources/articles/self-hosted-claude-managed-agents" target="_blank" rel="noopener">Anthropic 说明（自托管 Managed Agents）</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
