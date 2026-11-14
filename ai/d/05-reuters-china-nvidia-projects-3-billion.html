@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>路透：超32亿美元中国算力项目仍围绕受管制的英伟达芯片展开 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>路透：超32亿美元中国算力项目仍围绕受管制的英伟达芯片展开</h1>
+    <p class="lede">路透查阅一百五十多份采购、投资和合同材料后估算，与受出口管制的英伟达处理器相关的中国算力项目合计超过 230 亿元人民币（约 32 亿美元）。这一数字包含机房和电力等基建，并不等于芯片采购额本身。</p>
+    <div class="meta">
+      <span>2026-11-14</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>路透 11 月 13 日刊发独家调查称，尽管英伟达表示美国出口管制已实质把它挡在中国人工智能数据中心市场之外，该社仍梳理出一批继续围绕其受限处理器规划或建设的项目。记者查阅了 150 多份采购公告、投资计划、施工合同和公司披露，识别出合计申报金额超过 230 亿元人民币（约 32 亿美元）的项目和设备协议。路透写明，这一口径涵盖规划投资、已签合同和已建成设施，也包括建筑和电力系统，因此不能理解成只花在英伟达芯片上的金额。</p>
+<p>配套的资料说明列出了若干具体项目：福建仙游一个拟建、金额约 62 亿元的算力中心，材料中写明采用 H100；陕西方面，国有工程集团国机下属公司参与一个约 30 亿元、指定 H100 和 H200 的项目；吉林一份政府材料提到约 22.6 亿元的项目，计划把 H100 与国产芯片搭配，开发商预计八成资金来自贷款；内蒙古一个约 15 亿元的方案拟安装 625 台 H200 服务器。甘肃一份 7 月的施工合同金额约 11.6 亿元，招标文件写明计划安装大约 3072 颗 H100 和 H200，但材料并不能证明这些处理器已经到货。江苏无锡市政府 2025 年 3 月曾称，一个使用 H800 的集群已经投入运行。</p>
+<p>这些项目说明，需求并没有因为官方销售渠道收紧而消失。黄仁勋去年曾说，英伟达在中国的市场份额已从 95% 降到零，公司也把中国数据中心计算收入排除在预测之外。与此同时，路透援引 10 月转述的 IDC 数据称，2026 年上半年英伟达仍占中国人工智能加速器出货的 34%。两套数字衡量的对象不同，也不能说明调查中这些受限芯片是如何进入使用方的。</p>
+<p>调查发布时，正值黄仁勋因相关丑闻辞职、美国政界要求收紧管制。路透引述詹姆斯敦基金会分析师 Sunny Cheung 的话说，华盛顿不能只看表面上的买家，还要看算力最终由谁使用、用来做什么。中国商务部和英伟达当时没有立即回应置评请求。路透并写明，这些项目并未被指与 Megaspeed 或针对黄仁勋的指控有直接关联；英伟达董事会已启动独立调查，并表示没有理由认为公司机密或美国国家安全已受损，目前也没有公开结论指黄仁勋违反了出口管制法律。</p>
+<p>对已经开工或已经运行的机房来说，管制再收紧，可能意味着供货延误、改用国产芯片，或把原方案推倒重来。对英伟达而言，这篇调查并不改写它“难以在中国数据中心市场直接销售”的官方表述，但把“需求仍在、落实路径更受关注”这件事，推到了公开材料上。后续若美国更新许可或远程调用规则，这些项目会是最先感到压力的一批。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：路透主稿与同日 Factbox 均写明金额超过 230 亿元人民币（约 32 亿美元），来自 150 多份公开材料，口径包含基建，不等于芯片采购额；并列出福建、陕西、吉林、内蒙古、甘肃、无锡等地项目的公开描述。</li>
+<li>公司官方立场仍是：出口管制已实质将其排除在中国数据中心计算市场之外。路透转述的 IDC 上半年 34% 出货占比，与公司自身表述衡量的不是同一件事，文中已分开写。</li>
+<li>中国商务部和英伟达在稿件见报时尚未回应。项目与 Megaspeed / 黄仁勋个人指控之间，路透明确写了“未建立关联”。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.reuters.com/5f374b32b07b/world/china/huang-exit-us-scrutiny-imperil-3-billion-chinese-ai-projects-reliant-nvidia-2026-11-13/" target="_blank" rel="noopener">Reuters</a><span class="role">主来源</span></li>
+        <li><a href="https://www.investing.com/news/stock-market-news/chinas-3-billionplus-pipeline-of-nvidiapowered-ai-data-centres-5024599" target="_blank" rel="noopener">Reuters Factbox（Investing.com 转载）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

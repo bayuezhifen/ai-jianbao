@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Bot 宣布可加入线上会议，提问、分派工作并跟踪决议 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>Grok Bot 宣布可加入线上会议，提问、分派工作并跟踪决议</h1>
+    <p class="lede">Grok Bot 官方账号 11 月 13 日宣布，机器人现在可以加入会议：用户可以在会上向它提问、把工作交给它，或让它记录团队做出的决定。官方文档写明，目前支持 Google Meet、Zoom 和 Microsoft Teams。</p>
+    <div class="meta">
+      <span>2026-11-14</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Grok Bot 官方账号 @bot 于 11 月 13 日 19:11（世界协调时，北京时间 14 日凌晨 3:11）发帖称：“Grok Bot 现在可以加入会议。你可以向它提问、把工作交给它，或让它跟踪团队做出的决定。”这是一次单独为会议能力发出的产品说明，而不是顺便提一句。帖子附有演示视频。</p>
+<p>官方文档《把机器人加入会议》写得更具体。机器人可以加入 Google Meet、Zoom 或 Microsoft Teams 的通话，负责听会、做记录，在会议聊天里被点名时回答问题，并在会议结束后把摘要和待办事项发到与用户的对话里。若用户使用 Pages，还会生成更长的会议报告。文档说明，该功能面向 Team、Enterprise 和 Ultra 方案；企业版由管理员在团队控制台的机器人能力设置里开关会议权限。关掉之后，机器人不能再加入或阅读会议。</p>
+<p>加入方式并不复杂：把会议链接贴到与机器人的对话里，请它加入并做记录，确认它弹出的提示，再由会议主持人放行。它在会里的显示名称会带上“某人的 Bot”或“Team Bot”以及正在转写的提示。如果机器人已跟随用户日历，也可以按日程自行加入。用户还可以把互动关掉，只让它听会和做记录、不在会里发言；也可以取消已安排的会议，或中途让它退出。文档特别写明，它不会在会议中分享用户的登录凭证。</p>
+<p>会中交流走会议聊天，需要点名。Zoom 的私聊会得到私聊回复；若问题来自会议室设备，则按来自会议室而不是某一个人处理。如果有人提出机器人不便当众回答的请求，它会告知发起这次会议的用户是谁在问，并让用户决定是否提供。会议结束后，用户随时可以再要过去的摘要或转写。</p>
+<p>需要把时间和范围说清楚。文档页面显示会议能力此前已有说明，11 月 11 日前后的产品材料里也出现过相关表述；但 13 日晚这次是官方账号专门宣布“现在可以加入会议”。本条依据的是这条官方帖子和现行文档，不引申到模型版本或尚未证实的裁员传言。截至本窗口，尚未看到公司就定价或开放地区给出超出上述方案范围的新说明。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：官方账号帖文与 docs.x.ai 文档均确认 Grok Bot 可加入会议；文档明确支持 Google Meet、Zoom 和 Microsoft Teams，并列出听会、记录、会中作答、会后摘要与待办等能力，以及 Team / Enterprise / Ultra 的方案范围。</li>
+<li>时间：帖文时间为 2026-11-13T19:11:36Z，帖文 ID 为 2121320089920430181，来自已验证的 @bot 账号。文档本身可能早于这条宣布更新，故本条以 13 日官方帖作为本窗口的新闻由头，文档用于核对能力细节。</li>
+<li>第三方对“早期测试”的评价未在官方帖或文档中出现，正文不采用。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/bot/status/2121320089920430181" target="_blank" rel="noopener">Grok Bot（@bot）</a><span class="role">官方</span></li>
+        <li><a href="https://docs.x.ai/grok-bot/meetings" target="_blank" rel="noopener">SpaceXSI / xAI 文档</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
