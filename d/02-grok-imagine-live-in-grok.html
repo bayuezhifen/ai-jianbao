@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grok Imagine 图像与视频生成已直接接入 Grok · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Grok / xAI</div>
+    <h1>Grok Imagine 图像与视频生成已直接接入 Grok</h1>
+    <p class="lede">Grok Imagine 官方账号在 15 日 2:33（上海时间）宣布：“图像和视频创作现已在 Grok 上线。打开 Grok 就能开始创作。”这则帖子早于今早 8:20 截稿，今早简报未收，午报补录。官方主帖未说明资费和适用套餐。</p>
+    <div class="meta">
+      <span>2026-11-15</span>
+      <span class="dot"></span>
+      <span>Grok / xAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Grok Imagine 的官方账号 @imagine 于世界协调时 14 日 18:33（上海时间 15 日 2:33）发帖称：“图像和视频创作现已在 Grok 上线。打开 Grok 就能开始创作。”帖文只有这两句，没有配图、没有外链，也没有写价格、适用套餐、开放地区，或原先独立入口此后怎么安排。这则声明比今早 8:20 截稿早了近六个小时，今早简报没有收录，故在午报补上。</p>
+<p>科技媒体 ORIENS 随后记录到，Grok 官方账号约一分钟后转发了这条帖子，并写正把更多产品收进同一套 Grok 体验，好让创作、开发和办事都在一个入口完成。本报在截稿前未能用同一接口直接取回那则转发原文，因此转发措辞以 ORIENS 的转述为准，不以本报自行核对过的原文对待。Grok 账号在声明后约四十五分钟到一小时的用户回复里，把这件事说得更具体：图像和视频创作被收进 Grok 主对话，原来的独立标签页不再单独保留，但功能仍可在主界面的图像或视频模式里使用，应用程序接口也还在；官方状态页显示服务可用。这些回复把变动写成“整合，而不是停办”，并提醒用户直接打开 Grok 即可。</p>
+<p>需要分开写的是，主帖本身没有给出资费和资格。Grok 稍后在另一则回复里说，套餐细节和额度写在价格页上，本报没有在截稿前逐项核对价格页是否同步改版，因此不能把“免费开放”或“仅限某档套餐”写成已公布的条件。ORIENS 也写明，他们打开 grok.com 和 grok.com/imagine 时没有读到说明正文，条件无法从产品页确认。</p>
+<p>此前有媒体报道 Grok Imagine 视频生成团队裁员。官方这两则产品帖没有提及人事，Grok 账号在 15 日上午的一则用户回复里提到，《The Information》13 日报道 SpaceX 人工智能团队从 Grok Imagine 裁减约 60 人、留下少数人维护，同时把优先级转向编程工具和 Grok Bot——并写明“没有官方确认”。把产品入口整合与裁员写成因果关系，目前没有官方依据。</p>
+<p>今早简报的 Grok 栏写的是马斯克关于文本水印“只在法律要求或用户提出时开启”的表态，与这次产品入口调整不是同一件事。午报以 Imagine 接入 Grok 作为本栏补录主条；水印口径仍以今早归档为准，此处不再重复展开。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：@imagine 主帖原文可核；ORIENS 对发帖时间和主帖措辞的记录与本报读取一致。Grok 账号在随后回复中确认功能已进入主对话、独立标签页收进图像/视频模式、接口仍可用，与“现已在 Grok 上线”的方向相符。</li>
+<li>分歧与转述：ORIENS 记录的 Grok 官方转发原文，本报未能直接取回，转发里“把更多产品收进同一套体验”的句子只作为媒体转述。资费、套餐和地区，主帖与 ORIENS 均写明未说明。</li>
+<li>人事：裁员说法来自先前媒体报道及 Grok 账号今日回复中的转述，官方产品帖未提及，不能与入口整合写成已证实的因果关系。</li>
+<li>时间：声明在上海时间 15 日 2:33，属于今早窗口但被漏收，不是午后才发布的新闻。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://x.com/imagine/status/2121672946968318285" target="_blank" rel="noopener">Grok Imagine 官方账号</a><span class="role">官方</span></li>
+        <li><a href="https://ai-oriens.com/en/news/grok-imagine-in-grok/" target="_blank" rel="noopener">ORIENS</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/grok/status/2121682385599140224" target="_blank" rel="noopener">Grok 账号回复（独立标签页收进主对话）</a><span class="role">次要</span></li>
+        <li><a href="https://x.com/grok/status/2121686429973499910" target="_blank" rel="noopener">Grok 账号回复（主对话内使用）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
