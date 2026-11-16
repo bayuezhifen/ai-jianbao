@@ -82,7 +82,7 @@
       <div class="when">
         <span>2026-11-16</span>
         <span class="dot"></span>
-        <span>周一 09:37</span>
+        <span>周一 10:00</span>
         <span class="dot"></span>
         <span>上海</span>
       </div>
@@ -92,7 +92,7 @@
 
     <div class="kpis">
       <div class="kpi"><div class="n">19,600</div><div class="l">新增文件</div><div class="hint">去掉 Office 锁后 13,741</div></div>
-      <div class="kpi"><div class="n">19,678</div><div class="l">文件编辑</div><div class="hint">write，不含 read</div></div>
+      <div class="kpi"><div class="n">788</div><div class="l">文件编辑</div><div class="hint">已有文件 320 + 再次保存 468</div></div>
       <div class="kpi"><div class="n">107</div><div class="l">活跃账户</div><div class="hint">xfer 104 ∪ CON 105</div></div>
       <div class="kpi"><div class="n">0</div><div class="l">失败登录</div><div class="hint">connection_log 无失败条目</div></div>
     </div>
@@ -140,8 +140,8 @@
     </article>
 
     <article class="card">
-      <h3>新增和编辑几乎绑在一起</h3>
-      <p>create 文件 19,600（其中 Office <code>~$</code> 锁 5,859）。write 19,678，其中 19,313 条路径同周也 create 过——CIFS 对新文件通常先 create 再 write。真实文档大约 create 13,741 / write 13,819。</p>
+      <h3>编辑按新口径，不含新建时的第一次写入</h3>
+      <p>新增仍是 create 文件 19,600（其中 Office <code>~$</code> 锁 5,859，去掉锁后 13,741）。日志里原始 write 19,678 次，但其中大部分是新建空文件后紧跟着的首写，不计入编辑。编辑改为已有文件写入 320 次，加上新建后再次保存 468 次，合计 788，涉及 587 个文件；已排除锁文件、Thumbs.db 和临时文件。</p>
     </article>
 
     <article class="card">
@@ -222,7 +222,7 @@
 
     <article class="card">
       <h3>口径</h3>
-      <p class="note">按 <code>transfer_log.id</code> 计数，不做复合键去重。数据全部来自 live 库 11-09..15。Office <code>~$</code> 会抬高 create/write。</p>
+      <p class="note">按 <code>transfer_log.id</code> 计数，不做复合键去重。数据全部来自 live 库 11-09..15。编辑口径已调整：不含新建后的第一次 write，并去掉 Office <code>~$</code>、Thumbs.db、临时文件。</p>
     </article>
 
     <footer>NAS管家 · 每周一发出 · Asia/Shanghai</footer>
