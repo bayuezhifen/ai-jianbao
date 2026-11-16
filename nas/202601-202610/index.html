@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-NAS 简报 · 2026年1–10月</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 2rem 1rem 3.5rem; }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center;
+    color: var(--muted); font-size: .86rem; margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 { font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.25; margin: 0; }
+  .sub { margin: .4rem 0 0; color: var(--muted); font-size: .92rem; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin: .9rem 0 1.1rem; }
+  .kpi {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: .85rem 1rem; box-shadow: var(--shadow);
+  }
+  .kpi .n { font-size: 1.55rem; font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
+  .kpi .l { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
+  .kpi .hint { color: var(--quiet); font-size: .72rem; margin-top: .15rem; }
+  .sec {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: .75rem; margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem; font-weight: 650; letter-spacing: .12em; margin: 0; color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem; font-weight: 600; padding: .15rem .5rem; border-radius: 999px;
+    background: var(--chip); color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem; box-shadow: var(--shadow); margin: 0 0 .7rem;
+  }
+  .card h3 { font-size: 1.05rem; line-height: 1.4; margin: 0 0 .4rem; }
+  .card p { margin: 0; color: #3f3a36; font-size: .95rem; }
+  .card ul { margin: .35rem 0 0; padding-left: 1.1rem; color: #3f3a36; font-size: .9rem; }
+  .card li { margin: .15rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+  .barrow { display: grid; grid-template-columns: 7.2rem 1fr 4.4rem; gap: .45rem; align-items: center; margin: .32rem 0; font-size: .82rem; }
+  .barlab { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bartrack { height: 8px; background: #efe9de; border-radius: 99px; overflow: hidden; }
+  .barfill { display: block; height: 100%; background: #c2410c; border-radius: 99px; }
+  .barn { text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .note { margin: 0; color: var(--muted); font-size: .92rem; }
+  .muted { color: var(--quiet); font-size: .72rem; }
+  .scroll { overflow-x: auto; margin: .45rem -0.2rem 0; }
+  table {
+    width: 100%; border-collapse: collapse; font-size: .78rem;
+    font-variant-numeric: tabular-nums; min-width: 36rem;
+  }
+  th, td { padding: .38rem .4rem; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: .72rem; }
+  td.num { text-align: right; }
+  footer { margin-top: 1.75rem; color: var(--quiet); font-size: .78rem; }
+  a { color: var(--link); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-16</span>
+        <span class="dot"></span>
+        <span>周一 10:14</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>GLP-NAS 1–10月简报</h1>
+      <p class="sub">统计窗口 2026-01-01 00:00 — 2026-10-31 23:59 · 只读 · 按月新口径</p>
+    </header>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">1,418,690</div><div class="l">新增文件</div><div class="hint">去掉 Office 锁后 1,181,411，去重路径 1,120,171</div></div>
+      <div class="kpi"><div class="n">65,678</div><div class="l">文件编辑</div><div class="hint">已有文件 12,491 + 再次保存 53,187</div></div>
+      <div class="kpi"><div class="n">169</div><div class="l">活跃账户</div><div class="hint">10 个月并集，xfer 143 ∪ CON 169</div></div>
+      <div class="kpi"><div class="n">410</div><div class="l">失败登录</div><div class="hint">全部来自办公网，无外网</div></div>
+    </div>
+
+    <div class="sec"><h2>用量</h2><span class="badge">10,187,877 次文件操作</span></div>
+
+    <article class="card">
+      <h3>1 月和 10 月更忙，2 月明显回落</h3>
+      <p>十个月一共 10,187,877 次文件操作。最忙的一天是 10 月 19 日（279,099）。1 月新增最高，2 月受春节前后空白影响最低，3 月之后大体回升，10 月再次走高。</p>
+      <div class="barrow">
+        <span class="barlab">1月</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">1,443,316</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">2月</span>
+        <span class="bartrack"><span class="barfill" style="width:30.5%"></span></span>
+        <span class="barn">439,878</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">3月</span>
+        <span class="bartrack"><span class="barfill" style="width:50.3%"></span></span>
+        <span class="barn">725,573</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">4月</span>
+        <span class="bartrack"><span class="barfill" style="width:60.9%"></span></span>
+        <span class="barn">878,853</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">5月</span>
+        <span class="bartrack"><span class="barfill" style="width:55.3%"></span></span>
+        <span class="barn">798,800</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">6月</span>
+        <span class="bartrack"><span class="barfill" style="width:82.5%"></span></span>
+        <span class="barn">1,190,152</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">7月</span>
+        <span class="bartrack"><span class="barfill" style="width:86.8%"></span></span>
+        <span class="barn">1,252,872</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">8月</span>
+        <span class="bartrack"><span class="barfill" style="width:67.3%"></span></span>
+        <span class="barn">972,034</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">9月</span>
+        <span class="bartrack"><span class="barfill" style="width:77.9%"></span></span>
+        <span class="barn">1,124,309</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10月</span>
+        <span class="bartrack"><span class="barfill" style="width:94.4%"></span></span>
+        <span class="barn">1,362,090</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>编辑按新口径，不含新建时的第一次写入</h3>
+      <p>新增仍是 create 文件 1,418,690 次（其中 Office <code>~$</code> 锁 237,279，去掉锁后 1,181,411，十个月去重路径 1,120,171）。日志里原始 write 有 1,433,344 次，大部分是新建后的首写，不计入编辑。编辑改为：当月未新建过的文件上的写入 12,491 次，加上当月新建后的再次保存 53,187 次，合计 65,678；已排除锁文件、Thumbs.db 和临时文件。各月「涉及文件」按月分别去重后相加为 44,443，不是十个月拉通去重。</p>
+      <p style="margin-top:.55rem">各月新增：</p>
+      <div class="barrow">
+        <span class="barlab">1月</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">383,129</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">2月</span>
+        <span class="bartrack"><span class="barfill" style="width:16.9%"></span></span>
+        <span class="barn">64,599</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">3月</span>
+        <span class="bartrack"><span class="barfill" style="width:21.2%"></span></span>
+        <span class="barn">81,409</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">4月</span>
+        <span class="bartrack"><span class="barfill" style="width:30.3%"></span></span>
+        <span class="barn">116,226</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">5月</span>
+        <span class="bartrack"><span class="barfill" style="width:21.7%"></span></span>
+        <span class="barn">82,979</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">6月</span>
+        <span class="bartrack"><span class="barfill" style="width:30.1%"></span></span>
+        <span class="barn">115,408</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">7月</span>
+        <span class="bartrack"><span class="barfill" style="width:42.5%"></span></span>
+        <span class="barn">162,780</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">8月</span>
+        <span class="bartrack"><span class="barfill" style="width:29.8%"></span></span>
+        <span class="barn">113,991</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">9月</span>
+        <span class="bartrack"><span class="barfill" style="width:31.5%"></span></span>
+        <span class="barn">120,502</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10月</span>
+        <span class="bartrack"><span class="barfill" style="width:46.4%"></span></span>
+        <span class="barn">177,667</span>
+      </div>
+      <p style="margin-top:.55rem">各月编辑：</p>
+      <div class="barrow">
+        <span class="barlab">1月</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">24,787</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">2月</span>
+        <span class="bartrack"><span class="barfill" style="width:10.1%"></span></span>
+        <span class="barn">2,506</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">3月</span>
+        <span class="bartrack"><span class="barfill" style="width:20.6%"></span></span>
+        <span class="barn">5,102</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">4月</span>
+        <span class="bartrack"><span class="barfill" style="width:17.0%"></span></span>
+        <span class="barn">4,206</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">5月</span>
+        <span class="bartrack"><span class="barfill" style="width:14.5%"></span></span>
+        <span class="barn">3,602</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">6月</span>
+        <span class="bartrack"><span class="barfill" style="width:16.8%"></span></span>
+        <span class="barn">4,155</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">7月</span>
+        <span class="bartrack"><span class="barfill" style="width:17.4%"></span></span>
+        <span class="barn">4,322</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">8月</span>
+        <span class="bartrack"><span class="barfill" style="width:17.3%"></span></span>
+        <span class="barn">4,289</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">9月</span>
+        <span class="bartrack"><span class="barfill" style="width:19.0%"></span></span>
+        <span class="barn">4,698</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10月</span>
+        <span class="bartrack"><span class="barfill" style="width:32.3%"></span></span>
+        <span class="barn">8,011</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>按月明细</h3>
+      <p>活跃账户是当月传输日志与连接日志账号的并集；最下面的 169 才是十个月并集，不是各月相加。</p>
+      <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>月份</th><th>新增</th><th>编辑</th><th>已有 / 再保存</th>
+            <th>涉及文件</th><th>活跃</th><th>失败登录</th><th>最忙一天</th><th>覆盖</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr><td>1月</td><td class='num'>383,129</td><td class='num'>24,787</td><td class='num'>2,630 / 22,157</td><td class='num'>13,919</td><td class='num'>118</td><td class='num'>80</td><td>01-24 · 183,112</td><td>30/31<br><span class='muted'>传 01-01；连 01-01、01-02</span></td></tr>
+        <tr><td>2月</td><td class='num'>64,599</td><td class='num'>2,506</td><td class='num'>487 / 2,019</td><td class='num'>1,574</td><td class='num'>107</td><td class='num'>18</td><td>02-04 · 68,259</td><td>13/28<br><span class='muted'>传 15 天无记录；连 14 天无记录</span></td></tr>
+        <tr><td>3月</td><td class='num'>81,409</td><td class='num'>5,102</td><td class='num'>654 / 4,448</td><td class='num'>3,801</td><td class='num'>117</td><td class='num'>55</td><td>03-20 · 54,848</td><td>31/31</td></tr>
+        <tr><td>4月</td><td class='num'>116,226</td><td class='num'>4,206</td><td class='num'>1,198 / 3,008</td><td class='num'>3,047</td><td class='num'>119</td><td class='num'>41</td><td>04-29 · 70,807</td><td>29/30<br><span class='muted'>传 04-05</span></td></tr>
+        <tr><td>5月</td><td class='num'>82,979</td><td class='num'>3,602</td><td class='num'>1,101 / 2,501</td><td class='num'>2,813</td><td class='num'>108</td><td class='num'>37</td><td>05-06 · 81,355</td><td>31/31</td></tr>
+        <tr><td>6月</td><td class='num'>115,408</td><td class='num'>4,155</td><td class='num'>1,286 / 2,869</td><td class='num'>3,140</td><td class='num'>117</td><td class='num'>62</td><td>06-25 · 210,061</td><td>30/30</td></tr>
+        <tr><td>7月</td><td class='num'>162,780</td><td class='num'>4,322</td><td class='num'>1,765 / 2,557</td><td class='num'>3,339</td><td class='num'>121</td><td class='num'>82</td><td>07-06 · 92,934</td><td>31/31</td></tr>
+        <tr><td>8月</td><td class='num'>113,991</td><td class='num'>4,289</td><td class='num'>1,037 / 3,252</td><td class='num'>3,279</td><td class='num'>121</td><td class='num'>26</td><td>08-04 · 87,168</td><td>31/31</td></tr>
+        <tr><td>9月</td><td class='num'>120,502</td><td class='num'>4,698</td><td class='num'>1,055 / 3,643</td><td class='num'>3,615</td><td class='num'>119</td><td class='num'>3</td><td>09-15 · 80,448</td><td>30/30</td></tr>
+        <tr><td>10月</td><td class='num'>177,667</td><td class='num'>8,011</td><td class='num'>1,278 / 6,733</td><td class='num'>5,916</td><td class='num'>115</td><td class='num'>6</td><td>10-19 · 279,099</td><td>31/31</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>最忙共享</h3>
+      <p>十个月累计：home 2,384,079，其次是环境影响部-水生组、质量保证部-QA组。1 月的高峰主要落在 home（SPR、文件接收、QA 相关目录）；10 月则是环境影响部-水生组/1-分析电子版数据特别忙，当月还有较多删除。</p>
+      <div class="barrow">
+        <span class="barlab">home</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">2,384,079</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">环境影响部-水生组</span>
+        <span class="bartrack"><span class="barfill" style="width:77.9%"></span></span>
+        <span class="barn">1,856,323</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">质量保证部-QA组</span>
+        <span class="bartrack"><span class="barfill" style="width:74.1%"></span></span>
+        <span class="barn">1,765,719</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">环境影响部-陆生组</span>
+        <span class="bartrack"><span class="barfill" style="width:41.9%"></span></span>
+        <span class="barn">998,845</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">农药残留部-田间试验组</span>
+        <span class="bartrack"><span class="barfill" style="width:37.9%"></span></span>
+        <span class="barn">903,934</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">综合业务部</span>
+        <span class="bartrack"><span class="barfill" style="width:28.4%"></span></span>
+        <span class="barn">677,643</span>
+      </div>
+    </article>
+
+    <div class="sec"><h2>账户</h2><span class="badge">Top weiyan 875,264、chenyuzhao 572,327、liuhuayan 556,402</span></div>
+
+    <article class="card">
+      <h3>十个月文件操作最多的账户</h3>
+      <p>传输日志 143 人 ∪ 连接日志 169 人 = 活跃 169。独立客户端 IP 233。1 月 chenyuzhao 当月操作超过 31 万次，带动了那个月的新增和编辑。</p>
+      <div class="barrow">
+        <span class="barlab">weiyan</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">875,264</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">chenyuzhao</span>
+        <span class="bartrack"><span class="barfill" style="width:65.4%"></span></span>
+        <span class="barn">572,327</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">liuhuayan</span>
+        <span class="bartrack"><span class="barfill" style="width:63.6%"></span></span>
+        <span class="barn">556,402</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">weiyumai</span>
+        <span class="bartrack"><span class="barfill" style="width:47.8%"></span></span>
+        <span class="barn">418,294</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">dengxuemei</span>
+        <span class="bartrack"><span class="barfill" style="width:47.4%"></span></span>
+        <span class="barn">414,931</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">chenweicheng</span>
+        <span class="bartrack"><span class="barfill" style="width:30.6%"></span></span>
+        <span class="barn">268,128</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">liuxueying</span>
+        <span class="bartrack"><span class="barfill" style="width:30.5%"></span></span>
+        <span class="barn">266,903</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">xiesiyu</span>
+        <span class="bartrack"><span class="barfill" style="width:28.2%"></span></span>
+        <span class="barn">246,969</span>
+      </div>
+      <ul>
+        <li>weiyan · 875,264</li>
+        <li>chenyuzhao · 572,327</li>
+        <li>liuhuayan · 556,402</li>
+        <li>weiyumai · 418,294</li>
+        <li>dengxuemei · 414,931</li>
+        <li>chenweicheng · 268,128</li>
+        <li>liuxueying · 266,903</li>
+        <li>xiesiyu · 246,969</li>
+        <li>chenlili · 238,745</li>
+        <li>cailong · 238,486</li>
+      </ul>
+    </article>
+
+    <div class="sec"><h2>安全</h2><span class="badge warn">失败登录 410</span></div>
+
+    <article class="card">
+      <h3>失败登录都在办公网，没有外网地址</h3>
+      <p>连接日志里按与周报相同的「失败 / 授权失败」口径，十个月共 410 次，全部来自办公网 IP，外网为 0。前几个月多一些（1 月 80、7 月 82），9 月 3 次、10 月 6 次，明显回落。看起来是密码输错，没有集中从外网撞库的迹象。</p>
+    </article>
+
+    <div class="sec"><h2>口径与覆盖</h2><span class="badge">传输 287/304 天有记录</span></div>
+
+    <article class="card">
+      <h3>归档完整覆盖窗口，零记录的日子没有补数</h3>
+      <p>数据来自 NAS 上 <code>/SystemLog2/local</code> 的 12 份本地归档压缩包，只读下载。活库只覆盖 11 月以后，这份年报到 10 月为止，没用活库。相邻压缩包会在交界日各出现一次（例如 1 月 8 日），但按 utcsec + 用户 + 事件 + 路径 + IP 核对，这 11 个交界日的交集都是 0：同一天被拆在前后两段，没有重复记账。各归档的 <code>transfer_log.id</code> 都从 1 重新编号，所以跨包不用 id 去重。第一份去掉 2025 年 12 月的记录，最后一份去掉 11 月 1–2 日。</p>
+      <p style="margin-top:.55rem">窗口里一共 304 天。传输日志有记录 287 天，连接日志 288 天。没有记录的日期都落在本来就覆盖该时段的归档里，按 0 处理，没有补数：元旦 1 月 1 日；春节前后 2 月 13 日无文件操作、2 月 14–27 日传输和连接都没有记录（2 月 17 日是春节）；清明 4 月 5 日无文件操作，但当天有连接记录。1 月 2 日有文件操作、连接日志没有记录。</p>
+    </article>
+
+    <footer>NAS管家 · 2026 年 1–10 月汇总 · 与每周简报同一站点，不覆盖周报首页</footer>
+  </div>
+</body>
+</html>
