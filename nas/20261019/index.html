@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-NAS 每周简报 · 10月12日–10月18日</title>
+<style>
+
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem 3.5rem; }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center;
+    color: var(--muted); font-size: .86rem; margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 { font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.25; margin: 0; }
+  .sub { margin: .4rem 0 0; color: var(--muted); font-size: .92rem; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin: .9rem 0 1.1rem; }
+  .kpi {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: .85rem 1rem; box-shadow: var(--shadow);
+  }
+  .kpi .n { font-size: 1.55rem; font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
+  .kpi .l { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
+  .kpi .hint { color: var(--quiet); font-size: .72rem; margin-top: .15rem; }
+  .sec {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: .75rem; margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem; font-weight: 650; letter-spacing: .12em; margin: 0; color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem; font-weight: 600; padding: .15rem .5rem; border-radius: 999px;
+    background: var(--chip); color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem; box-shadow: var(--shadow); margin: 0 0 .7rem;
+  }
+  .card h3 { font-size: 1.05rem; line-height: 1.4; margin: 0 0 .4rem; }
+  .card p { margin: 0; color: #3f3a36; font-size: .95rem; }
+  .card ul { margin: .35rem 0 0; padding-left: 1.1rem; color: #3f3a36; font-size: .9rem; }
+  .card li { margin: .15rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+  .note { margin: 0; color: var(--muted); font-size: .92rem; }
+  footer { margin-top: 1.75rem; color: var(--quiet); font-size: .78rem; }
+
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-10-19</span>
+        <span class="dot"></span>
+        <span>周一 08:26</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>GLP-NAS 每周简报</h1>
+      <p class="sub">统计窗口 2026-10-12 00:00 — 2026-10-18 23:59 · 只读 · <strong>数据缺口</strong></p>
+    </header>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">—</div><div class="l">新增文件</div><div class="hint">未拉取</div></div>
+      <div class="kpi"><div class="n">—</div><div class="l">文件编辑</div><div class="hint">未拉取</div></div>
+      <div class="kpi"><div class="n">—</div><div class="l">活跃账户</div><div class="hint">未拉取</div></div>
+      <div class="kpi"><div class="n">—</div><div class="l">失败登录</div><div class="hint">未拉取</div></div>
+    </div>
+
+    <div class="sec"><h2>用量</h2><span class="badge warn">无数据</span></div>
+    <article class="card">
+      <h3>Windows / 桌面客户端未连通</h3>
+      <p>已注册机器 ThinkBook-Wu 当前 <code>connected=false</code>。本计算机探测 <code>http://192.168.1.50:8500</code> 超时。File Station / Log Center 只读拉取需经用户 Windows，按约定不编造 create / write / 日直方图数字。</p>
+    </article>
+    <article class="card">
+      <h3>缺什么</h3>
+      <p>往期口径需要的 <code>transfer_log</code>（按 <code>ldate</code>+<code>event</code>，<code>isdir=0</code> 计新增与编辑）与共享忙时排行，本周全部缺失。</p>
+    </article>
+
+    <div class="sec"><h2>账户</h2><span class="badge warn">无数据</span></div>
+    <article class="card">
+      <h3>活跃账户与 Top 操作者未统计</h3>
+      <p><code>transfer_log</code> ∪ <code>connection_log</code> 未取到。无 Synology MCP；无可用的本周 xfer 本地缓存。</p>
+    </article>
+
+    <div class="sec"><h2>安全</h2><span class="badge warn">未检查</span></div>
+    <article class="card">
+      <h3>失败登录与现会话未读</h3>
+      <p>未调用 <code>SYNO.Core.CurrentConnection</code>、失败登录日志或 Security Advisor 日报。不沿用上周数字冒充本周。</p>
+    </article>
+    <article class="card">
+      <h3>SMB / 配置口径提醒（未现场复核）</h3>
+      <p>若补跑：只报 <code>SYNO.Core.FileServ.SMB.get</code> 具名键（如 <code>enable_ntlmv1_auth</code>、<code>smb_min_protocol</code>、<code>smb_max_protocol</code>）。用户已确认界面 min SMB2 / max SMB3，<strong>不要把 API.Info 的 min/max 或数字 1 说成 SMB1</strong>。</p>
+    </article>
+
+    <p class="note">缺口原因：Grok Bot 桌面客户端 / ThinkBook-Wu 未连接；NAS 只读拉取需经用户 Windows。补连后可重跑窗口 10/12-10/18。</p>
+
+    <footer>NAS管家 · 每周一发出 · 本周为缺口页</footer>
+  </div>
+</body>
+</html>

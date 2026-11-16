@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GLP-NAS 每周简报 · 10月5–11日</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap { max-width: 40rem; margin: 0 auto; padding: 2rem 1rem 3.5rem; }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex; flex-wrap: wrap; gap: .4rem .6rem; align-items: center;
+    color: var(--muted); font-size: .86rem; margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 { font-size: 1.7rem; letter-spacing: -.02em; line-height: 1.25; margin: 0; }
+  .sub { margin: .4rem 0 0; color: var(--muted); font-size: .92rem; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem; margin: .9rem 0 1.1rem; }
+  .kpi {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: .85rem 1rem; box-shadow: var(--shadow);
+  }
+  .kpi .n { font-size: 1.55rem; font-weight: 700; letter-spacing: -.03em; line-height: 1.15; }
+  .kpi .l { color: var(--muted); font-size: .78rem; margin-top: .2rem; }
+  .kpi .hint { color: var(--quiet); font-size: .72rem; margin-top: .15rem; }
+  .sec {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: .75rem; margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem; font-weight: 650; letter-spacing: .12em; margin: 0; color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem; font-weight: 600; padding: .15rem .5rem; border-radius: 999px;
+    background: var(--chip); color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem; box-shadow: var(--shadow); margin: 0 0 .7rem;
+  }
+  .card h3 { font-size: 1.05rem; line-height: 1.4; margin: 0 0 .4rem; }
+  .card p { margin: 0; color: #3f3a36; font-size: .95rem; }
+  .card ul { margin: .35rem 0 0; padding-left: 1.1rem; color: #3f3a36; font-size: .9rem; }
+  .card li { margin: .15rem 0; }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .86em; }
+  .barrow { display: grid; grid-template-columns: 7.2rem 1fr 3.6rem; gap: .45rem; align-items: center; margin: .32rem 0; font-size: .82rem; }
+  .barlab { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .bartrack { height: 8px; background: #efe9de; border-radius: 99px; overflow: hidden; }
+  .barfill { display: block; height: 100%; background: #c2410c; border-radius: 99px; }
+  .barn { text-align: right; color: var(--ink); font-variant-numeric: tabular-nums; }
+  .note { margin: 0; color: var(--muted); font-size: .92rem; }
+  footer { margin-top: 1.75rem; color: var(--quiet); font-size: .78rem; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-10-12</span>
+        <span class="dot"></span>
+        <span>周一 15:17</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>GLP-NAS 每周简报</h1>
+      <p class="sub">统计窗口 2026-10-05 00:00 — 2026-10-11 23:59 · 只读 · live 库 7 天无缺日</p>
+    </header>
+
+    <div class="kpis">
+      <div class="kpi"><div class="n">25,104</div><div class="l">新增文件</div><div class="hint">去掉 Office 锁后 21,646</div></div>
+      <div class="kpi"><div class="n">25,417</div><div class="l">文件编辑</div><div class="hint">write，不含 read</div></div>
+      <div class="kpi"><div class="n">109</div><div class="l">活跃账户</div><div class="hint">xfer 105 ∪ CON 106</div></div>
+      <div class="kpi"><div class="n">0</div><div class="l">失败登录</div><div class="hint">connection_log 无失败条目</div></div>
+    </div>
+
+    <div class="sec"><h2>用量</h2><span class="badge">160,396 次文件操作</span></div>
+
+    <article class="card">
+      <h3>周四最忙，国庆前半周偏静</h3>
+      <p>最忙是 周四 10-08（66,964）。国庆假期 10-05..07 合计仅 491 条；10-08 起恢复，周日 635。本窗口为周一至周日。</p>
+      <div class="barrow">
+        <span class="barlab">10-05 · 周一</span>
+        <span class="bartrack"><span class="barfill" style="width:0.2%"></span></span>
+        <span class="barn">122</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-06 · 周二</span>
+        <span class="bartrack"><span class="barfill" style="width:0.0%"></span></span>
+        <span class="barn">21</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-07 · 周三</span>
+        <span class="bartrack"><span class="barfill" style="width:0.5%"></span></span>
+        <span class="barn">348</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-08 · 周四</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">66,964</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-09 · 周五</span>
+        <span class="bartrack"><span class="barfill" style="width:55.0%"></span></span>
+        <span class="barn">36,849</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-10 · 周六</span>
+        <span class="bartrack"><span class="barfill" style="width:82.8%"></span></span>
+        <span class="barn">55,457</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">10-11 · 周日</span>
+        <span class="bartrack"><span class="barfill" style="width:0.9%"></span></span>
+        <span class="barn">635</span>
+      </div>
+    </article>
+
+    <article class="card">
+      <h3>新增和编辑几乎绑在一起</h3>
+      <p>create 文件 25,104（其中 Office <code>~$</code> 锁 3,458）。write 25,417，其中 25,106 条路径同周也 create 过——CIFS 对新文件通常先 create 再 write。真实文档大约 create 21,646 / write 21,959。</p>
+    </article>
+
+    <article class="card">
+      <h3>最忙共享</h3>
+      <p>环境影响部-陆生组 38,640，质量保证部-QA组 31,353，环境影响部-水生组 31,070。</p>
+      <div class="barrow">
+        <span class="barlab">环境影响部-陆生组</span>
+        <span class="bartrack"><span class="barfill" style="width:100.0%"></span></span>
+        <span class="barn">38,640</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">质量保证部-QA组</span>
+        <span class="bartrack"><span class="barfill" style="width:81.1%"></span></span>
+        <span class="barn">31,353</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">环境影响部-水生组</span>
+        <span class="bartrack"><span class="barfill" style="width:80.4%"></span></span>
+        <span class="barn">31,070</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">home</span>
+        <span class="bartrack"><span class="barfill" style="width:38.5%"></span></span>
+        <span class="barn">14,869</span>
+      </div>
+      <div class="barrow">
+        <span class="barlab">质量保证部</span>
+        <span class="bartrack"><span class="barfill" style="width:25.8%"></span></span>
+        <span class="barn">9,977</span>
+      </div>
+      <p style="margin-top:.55rem">深层文件夹：质量保证部-QA组/环境项目报告、环境影响部-陆生组/归档需打印的计划书、环境影响部-水生组/13-计划书复审安排。</p>
+    </article>
+
+    <div class="sec"><h2>账户</h2><span class="badge">Top mopeixin 25,639、liliyun 20,737、xuyoumei 8,483</span></div>
+
+    <article class="card">
+      <h3>Top 10 文件操作账户</h3>
+      <p>transfer_log 105 人 ∪ connection_log 106 人 = 活跃 109。独立客户端 IP 110。</p>
+      <ul>
+        <li>mopeixin · 25,639（create 6,517 / write 6,507）</li>
+        <li>liliyun · 20,737（create 6,164 / write 6,169）</li>
+        <li>xuyoumei · 8,483（create 920 / write 914）</li>
+        <li>weiyan · 7,768（create 1,908 / write 1,908）</li>
+        <li>linjiale · 7,304（create 737 / write 736）</li>
+        <li>dengxuemei · 7,066（create 637 / write 621）</li>
+        <li>liuhuayan · 4,674（create 488 / write 487）</li>
+        <li>leijiamin · 3,645（create 141 / write 141）</li>
+        <li>weijufen · 3,625（create 556 / write 562）</li>
+        <li>hejing · 3,039（create 167 / write 173）</li>
+      </ul>
+    </article>
+
+    <div class="sec"><h2>安全</h2><span class="badge ok">失败登录 0</span></div>
+
+    <article class="card">
+      <h3>本周无失败登录</h3>
+      <p>connection_log 本周仅有 share access 与成功 DSM/SSH 登录，无 fail/OTP/密码错误。成功登录类 38 条。</p>
+    </article>
+
+    <article class="card">
+      <h3>现会话与协议</h3>
+      <p><code>SYNO.Core.CurrentConnection</code>：guest=0，admin=0。类型 {'SMB3': 61, 'SMB3, signing': 12, 'HTTP/HTTPS': 17, 'SMB2.1': 4}（无 SMB1）。WAN 2 条均为 wuxiangwei（DS finder）。</p>
+      <p style="margin-top:.45rem">SMB 具名键 <code>SYNO.Core.FileServ.SMB.get</code>：<code>enable_ntlmv1_auth=True</code>；<code>smb_min_protocol=1</code>，<code>smb_max_protocol=3</code>。界面 min SMB2 / max SMB3，不把 API 数字 1 说成 SMB1。</p>
+    </article>
+
+    <article class="card">
+      <h3>QuickConnect / OTP / 分享 / 快照</h3>
+      <ul>
+        <li>QuickConnect <code>enabled=False</code>，alias <code>SPRGLP-NAS</code>，domain <code>quickconnect.cn</code>；UPnP <code>enabled=True</code>。</li>
+        <li>OTP 强制策略本次接口返回为空，未重新确认（上周为 <code>otp_enforce_option=none</code>）。</li>
+        <li>DSM Web：<code>http_port=8500</code>，<code>enable_https=True</code>，<code>enable_https_redirect=False</code>。</li>
+        <li>分享链接 10 条中 9 条无密码；仍 valid 无密码：<code>/质量保证部/主计划表</code>、<code>/home/Home2024Retail.zip</code>、<code>/home/20241138 28%丙硫菌唑·啶氧菌酯悬浮剂-20251021已发-待委托方反馈.zip</code>、<code>/home/软件/spss25.zip</code>、<code>/home/屏幕录制 2026-06-30 163303.mp4</code>、<code>/home/SW_DVD5_Office_Professional_Plus_2016_64Bit_ChnSimp_MLF_X20-42426.zip</code>。</li>
+        <li>快照：26 共享里仅 <code>环境影响部-总目录</code> 184 份，其余 0。</li>
+        <li>勒索痕迹：加密后缀 0、勒索信文件名 0。</li>
+        <li>SA 日报 <code>1791734402-20261011.html</code>；升级检查 <code>update.available=false</code>。</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h3>口径</h3>
+      <p class="note">按 <code>transfer_log.id</code> 计数，不做复合键去重。数据全部来自 live 库 10-05..11。Office <code>~$</code> 会抬高 create/write。</p>
+    </article>
+
+    <footer>NAS管家 · 每周一发出 · Asia/Shanghai</footer>
+  </div>
+</body>
+</html>
