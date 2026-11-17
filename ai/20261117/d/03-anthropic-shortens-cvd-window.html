@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 缩短协调漏洞披露时限，严重漏洞将改为 30 天 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 缩短协调漏洞披露时限，严重漏洞将改为 30 天</h1>
+    <p class="lede">Anthropic 前沿红队 16 日宣布，自 2027 年 1 月 1 日起，其协调漏洞披露政策中高危和严重漏洞的公开时限由 90 天缩短为 30 天，其余漏洞为 45 天。公司给出的理由是，人工智能加快了同一缺陷被再次发现的速度。</p>
+    <div class="meta">
+      <span>2026-11-17</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 前沿红队 16 日更新了公司的协调漏洞披露政策。对 2027 年 1 月 1 日及以后向厂商或维护者报告的漏洞，高危和严重级别的公开时限由 90 天缩短为 30 天，其余级别为 45 天。已经在进行中的报告仍按原时限处理。官方文章把原因说得很直白：过去假定修复按人的节奏推进、同一缺陷很少被别人再次发现，这两点现在都站不住了；“当一个漏洞可以在几个月里保持非公开时，90 天窗口是说得通的。我们不再相信这一点。”</p>
+<p>除了缩短窗口，政策还有两处配套调整。若维护者在首次报告后没有回应，公司将在 15 天而不是 30 天后寻求外部漏洞协调机构介入；补丁发布后，完整技术细节的等待期由 45 天改为 30 天。正在被利用的漏洞仍维持 7 天窗口，这一条没有改。政策也不适用于未经人工复核的、由人工智能自动扫出的结果，例如 OSS Scanner 的发现。</p>
+<p>对于难以在 30 天或 45 天内修好的缺陷，比如关键基础设施软件，或必须改技术规范才能解决的问题，Anthropic 表示会与厂商另行商定时间表。公司也承认，更短的时限会给维护者增加压力，因此会继续在报告里附上可操作的修复建议，并在可能的情况下提供补丁或缓解方案；向同一项目集中报送大量问题时，仍会先商定一个可承受的节奏。</p>
+<p>对一批已经超过现行 90 天时限、但尚未公开的高危和严重漏洞，Anthropic 正通知相关维护者再给 30 天。此后，这些报告将按新政策，从 2027 年 1 月 1 日起在公司的披露看板中公开。The Next Web 同时提到，谷歌 Project Zero 也在缩短窗口：2027 年 2 月 2 日起改为 60 天，2028 年 1 月 3 日起再降到 30 天。两条线是平行发生的政策调整，并不是同一份文件。</p>
+<p>这项更新改的是 Anthropic 自己发现并报送漏洞时的公开节奏，并不等于行业已经形成新的强制标准，更不意味着所有厂商都必须在 30 天内完成修复。它真正透露的，是头部实验室认为：由模型加速的漏洞发现，已经让传统的 90 天默契显得偏慢。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：Anthropic 官方文章与 The Next Web 均确认，高危和严重漏洞时限由 90 天改为 30 天、其余为 45 天，适用于 2027 年 1 月 1 日起的新报告；进行中的报告沿用旧时限；15 天升级外部协调、补丁后 30 天再公开完整细节、正在被利用的漏洞仍为 7 天。</li>
+<li>例外：关键基础设施和规范类缺陷可另商时间表，以及政策不覆盖未经人工复核的自动扫描结果，均来自官方文章，The Next Web 亦有转述。</li>
+<li>背景对照：The Next Web 引述 SecurityWeek，提到谷歌 Project Zero 将分步把窗口降到 30 天。这是另一家机构的安排，本报仅作对照，不写成 Anthropic 与谷歌的联合行动。</li>
+<li>待确认：那批已超期但仍未公开的高危漏洞将在 2027 年初如何逐条披露，以及维护者能否在新时限内完成修复。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://thenextweb.com/news/anthropic-disclosure-window-30-days-ai-vulnerabilities" target="_blank" rel="noopener">The Next Web</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

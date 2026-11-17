@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TensorWave 与 OpenAI 达成六年协议，提供 457 兆瓦 AMD 算力 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>TensorWave 与 OpenAI 达成六年协议，提供 457 兆瓦 AMD 算力</h1>
+    <p class="lede">AMD 投资支持的人工智能云厂商 TensorWave 16 日宣布，将在六年内为 OpenAI 提供 457 兆瓦专用、单租户算力，采用 AMD Instinct MI455X 与 Helios 机架级系统。首批产能计划 2027 年上半年投运，全部部署预计 2028 年初完成。</p>
+    <div class="meta">
+      <span>2026-11-17</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>拉斯维加斯的人工智能云厂商 TensorWave 16 日宣布，已与 OpenAI 达成六年协议，将在美国多个数据中心为对方提供 457 兆瓦专用、单租户算力。系统采用 AMD Instinct MI455X 加速卡，并按 AMD 的 Helios 机架级方案来设计和互联，机架之间使用以太网。双方没有公布合同金额，也没有点名具体机房地点。</p>
+<p>按公司说明，第一批产能计划在 2027 年上半年投运，全部部署预计 2028 年初完成。这些机柜将只服务 OpenAI，不和其他租户混用。TensorWave 总裁兼联合创始人彼得·托马西克把这件事概括为：能不能稳定、迅速地交出数百兆瓦的先进算力，正在成为头部实验室挑选供应商的分水岭。AMD 人工智能业务高级副总裁瓦姆西·博帕纳在同一份公告里，称之为面向 OpenAI 的“标志性部署”。</p>
+<p>The Next Web 写到，这份协议落在 OpenAI 与 AMD 已有的合作框架下，TensorWave 是双方首次公开点名的“新云”供应商。OpenAI 负责计算资源的首席技术官乌代·鲁达拉朱说，这是在推进公司此前已经宣布的 AMD 合作。TensorWave 目前只使用 AMD 硬件，曾是首家公开部署 MI300X 的公有云厂商，随后又上线了 MI325X 和 MI355X；对这家公司而言，这是迄今规模最大的一次交付。</p>
+<p>资本和市场背景也可对照来看。TensorWave 在今年 6 月完成 3.5 亿美元 B 轮融资，投资方包括 Magnetar、AMD Ventures 和 Nexus Venture Partners。公司称已锁定超过 2 吉瓦的长期数据中心容量。需要说清楚的是：457 兆瓦是规划中的交付规模，不是已经上线的算力；2027 年上半年能否如期交出第一批机柜，仍取决于供电、机房和供应链。</p>
+<p>在英伟达人事动荡、美国又收紧先进芯片远程访问规则的同一窗口里，OpenAI 把一部分大规模训练和推理产能明确押在 AMD 的下一代机架上，本身就是一条值得单独记下的供应链消息。它并不能自动改写当前的芯片格局，但说明头部实验室仍在为 2027 年至 2028 年的算力提前锁量。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：TensorWave 官方博客与 The Next Web 均确认六年协议、457 兆瓦、AMD Instinct MI455X 与 Helios、专用单租户、2027 年上半年首批、2028 年初全部到位，且未披露金额和地点。</li>
+<li>引述：OpenAI 计算业务首席技术官乌代·鲁达拉朱、TensorWave 联合创始人彼得·托马西克、AMD 高级副总裁瓦姆西·博帕纳的表态，均出现在官方公告及 The Next Web 的转述中。</li>
+<li>公司背景：只采用 AMD 硬件、曾首发 MI300X，以及 3.5 亿美元 B 轮、超过 2 吉瓦长期容量，来自 The Next Web 对公告的整理。</li>
+<li>待确认：具体机房地点、合同金额，以及 2027 年上半年首批产能能否按期投运。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://thenextweb.com/news/tensorwave-openai-457mw-amd-helios" target="_blank" rel="noopener">The Next Web</a><span class="role">主来源</span></li>
+        <li><a href="https://tensorwave.com/blog/tensorwave-to-provide-openai-with-457-megawatts-of-amd-powered-ai-infrastructure" target="_blank" rel="noopener">TensorWave</a><span class="role">官方</span></li>
+        <li><a href="https://www.businesswire.com/news/home/20261116130015/en/TensorWave-Announces-Agreement-with-OpenAI-to-Deliver-More-Than-450MW-of-AMD-Powered-AI-Infrastructure" target="_blank" rel="noopener">Business Wire</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
