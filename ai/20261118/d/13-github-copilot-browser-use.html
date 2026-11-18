@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub Copilot 浏览器操控进入公开预览，可在 VS Code 和 JetBrains 中启用 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>GitHub Copilot 浏览器操控进入公开预览，可在 VS Code 和 JetBrains 中启用</h1>
+    <p class="lede">GitHub 17 日宣布，配合 Chrome 扩展，Copilot 的浏览器使用功能已在 Copilot CLI、Copilot 应用、VS Code 和 JetBrains 进入公开预览，可用于调试网页和做浏览器内自动化。</p>
+    <div class="meta">
+      <span>2026-11-18</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>GitHub 17 日在官方 changelog 中宣布，Copilot 的浏览器使用功能进入公开预览。只要安装 GitHub Copilot 的 Chrome 扩展，并在客户端里打开相应开关，就可以让 Copilot 在浏览器里打开页面、实时调试网页应用、自动跑浏览器测试，或处理其他需要“看着网页操作”的任务。官方写明，目前覆盖 Copilot CLI、Copilot 应用、VS Code 和 JetBrains。功能默认并不打开：在 CLI 里要通过插件菜单启用并新开会话，在应用里则是到设置中的 Computer Use 下打开 Browser Use，在 VS Code 和 JetBrains 里同样需要到设置中启用，再确认扩展状态为已连接。</p>
+<p>同一天，GitHub 还为 Ignite 同期发布补了另外两则更新。面向 JetBrains 的插件增加了远程访问、设备端语音输入和云沙箱预览等能力，并提醒对已结束支持的旧版 JetBrains IDE，需要升级到受支持的版本。Copilot 应用则增加了 Azure DevOps 仓库支持，并把对 GitHub Enterprise Server 的支持升到正式可用。这些与“能直接操作浏览器”不是同一件事，但都属于开发者在现有工具里当天能看到的新能力，因此在详情里一并交代，首页卡片仍以浏览器预览为主。</p>
+<p>这是一次公开预览，而不是对所有用户默认开启的稳定功能。官方也把它放在更大的“计算机使用”方向里，即让 Copilot 不只是在编辑器里改代码，还能触达浏览器里的实际页面。对开发者而言，调试登录态、管理后台或前端交互时，这可能减少在编辑器和浏览器之间来回复制报错的步骤；但把浏览会话交给智能体，也意味着扩展权限、网站登录态和测试环境隔离需要重新评估。changelog 写明，扩展设置里可以管理权限级别，并开关实验性功能。</p>
+<p>需要避免的写法，是把这一天 GitHub 和微软围绕模型、评测和 Copilot 的大量 Ignite 更新，全部塞进同一张卡片。模型发布已在行业栏和 OpenAI 栏处理。本条只记录：在 VS Code、JetBrains 和 Copilot 自己的应用、命令行里，多出了一种经用户明确打开的浏览器操作能力。</p>
+<p>公开预览阶段，功能是否稳定、对哪些网站会要求额外授权，都还需要时间观察。建议先在测试配置文件里试用，而不是一上来就把它接到生产账号或含有客户数据的管理后台。GitHub 在说明里提供了反馈入口，这也符合预览版的通常做法：先让愿意尝试的人打开，再决定是否升为默认能力。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：17 日 changelog 宣布浏览器使用进入公开预览，覆盖 CLI、Copilot 应用、VS Code 和 JetBrains，并需安装 Chrome 扩展、在设置中启用；同日 JetBrains 插件与 Copilot 应用的 Ignite 更新亦可在对应 changelog 核到。</li>
+<li>限制：公开预览、默认关闭；GitHub Enterprise Server 支持被写为正式可用，与浏览器功能的预览状态不同，不宜混写。</li>
+<li>待确认：预览的稳定性、企业策略中如何管控扩展权限，以及后续是否升为默认能力。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
+        <li><a href="https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases/" target="_blank" rel="noopener">GitHub Changelog（JetBrains）</a><span class="role">官方</span></li>
+        <li><a href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/" target="_blank" rel="noopener">GitHub Changelog（Copilot 应用）</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

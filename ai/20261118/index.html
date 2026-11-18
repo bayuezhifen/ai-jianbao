@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-11-18</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-18</span>
+        <span class="dot"></span>
+        <span>周三 08:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-nvidia-q3-fy2027-earnings.html">英伟达公布 2027 财年三季报：营收 1158 亿美元同比增 103%，并指引四季度约 1300 亿美元</a></h3>
+      <p>英伟达 17 日美股收盘后公布截至 10 月 25 日的 2027 财年第三季度业绩：营收 1158 亿美元，同比增 103%、环比增 20%；数据中心营收 1076 亿美元，同比增 110%。公司预计第四季度营收约 1300 亿美元（上下 3%），并写明指引不考虑来自中国的数据中心计算营收。这是黄仁勋辞任后的首份季报，由临时首席执行官兼首席财务官科莱特·克雷斯主持。</p>
+      <a class="src detail" href="d/01-nvidia-q3-fy2027-earnings.html" data-original="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-third-quarter-fiscal-2027">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/02-microsoft-mai-ignite-models.html">微软在 Ignite 发布 MAI Code 2、Cyber 2 Flash 等七款自研模型，强调更低成本的企业级能力</a></h3>
+      <p>微软 17 日在 Ignite 期间宣布推出七款自研模型，其中包括面向日常企业编程的 MAI Code 2 与 Code 2 Flash，以及面向安全防御的 MAI Cyber 2 Flash。官方称 Code 2 已进入 GitHub Copilot，并在多组编程基准上给出低于竞品报价的对比；Axios 将此举概括为微软要以更便宜的专用模型，与 OpenAI、Anthropic 竞争。</p>
+      <a class="src detail" href="d/02-microsoft-mai-ignite-models.html" data-original="https://microsoft.ai/news/microsoft-ignite-2026/">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/03-google-gemini-tasks-free.html">谷歌向六个国家的 Gemini 免费用户开放 Tasks，可代为打电话、预约和购物</a></h3>
+      <p>谷歌 17 日宣布，Gemini Tasks 即日起免费向美国、日本、韩国、加拿大、澳大利亚和印度的用户推出，并使用 Gemini 4 Hydrogen。官方介绍称，它可代为给商家打电话并预约、分析账单，以及通过 Google Pay 完成购物；美国用户还可先试用部分进阶能力。TechCrunch 和 9to5Google 亦作了报道。</p>
+      <a class="src detail" href="d/03-google-gemini-tasks-free.html" data-original="https://blog.google/innovation-and-ai/products/gemini-app/tasks-in-gemini-free-new-features/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/04-openai-gpt-6-2-astra-sol.html">OpenAI 推出 GPT-6.2 Astra 与 Sol，面向专业工作与日常任务，并下调 Astra 的 API 价格</a></h3>
+      <p>OpenAI 17 日发布 GPT-6.2 Astra 和 GPT-6.2 Sol。官方称 Astra 面向高难度专业项目，Sol 面向日常工作；两者即日起向 ChatGPT 的 Plus、Pro、Enterprise 和 Edu 用户在 ChatGPT Work 与 Codex 中开放，开发者也可通过 API 调用。Astra 的 API 输入和输出价格较 GPT-6 Astra 下调 20%，缓存输入再享折扣；Sol 的 API 价格仍与 GPT-6.1 Sol 相同。</p>
+      <a class="src detail" href="d/04-openai-gpt-6-2-astra-sol.html" data-original="https://openai.com/index/introducing-gpt-6-2-astra-sol/">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/05-openai-nato-daybreak-cyber.html">OpenAI 宣布与北约及盟国网络安全机构深化合作，向经审核的防御团队提供 Daybreak 能力</a></h3>
+      <p>OpenAI 17 日宣布，通过 Daybreak 项目向北约通信与信息局（NCIA）等经审核的防御团队提供网络安全相关模型，用于审查软件、排查异常、验证漏洞和测试修复。声明称北约相关使用一度达到每月约 3000 亿输入与输出 token，并提到该机构已参与北约合作网络防御卓越中心的 Crossed Swords 演练；欧盟网络安全局及法、德、波兰等机构也被列为已获得相关能力的对象。</p>
+      <a class="src detail" href="d/05-openai-nato-daybreak-cyber.html" data-original="https://openai.com/index/strengthening-nato-allied-cyber-defences-ai/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3><a href="d/06-anthropic-ipo-amazon-google-stakes.html">Anthropic 修订招股书披露：上市后亚马逊与谷歌将合计持股约 28.4%，并获 260 亿美元定向认购</a></h3>
+      <p>Anthropic 17 日在修订后的招股文件中披露更多上市后股权结构。TechCrunch 报道，完成发行和同期定向增发后，亚马逊将持有约 14.7% 股份，谷歌约 13.7%，合计约 28.4%，均为无投票权股份。若亚马逊把可转换票据全部转股，持股可升至约 23.8%，但现有安排并未立即全部转换。文件还称，包括英伟达、谷歌、微软、AMD 等在内的一组科技公司同意认购 260 亿美元无投票权股份，其中谷歌和英伟达各承诺 100 亿美元。</p>
+      <a class="src detail" href="d/06-anthropic-ipo-amazon-google-stakes.html" data-original="https://techcrunch.com/2026/11/17/amazon-and-google-will-together-own-nearly-30-of-anthropic-after-its-ipo/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3><a href="d/07-huang-statement-board-will-not-reinstate.html">黄仁勋辞任后首度公开表态愿在董事会认为合适时回归，董事长琼斯称无意让他复职</a></h3>
+      <p>黄仁勋 17 日发表辞任后的首份公开声明，称对自己给董事会带来的问题深感抱歉，并表示若董事会认为回归符合股东、员工、公司和美国的利益，他愿再次出任首席执行官。英伟达当天随后举行财报电话会，董事长哈维·琼斯说，董事会已于 11 月 12 日一致接受黄仁勋辞去总裁、首席执行官和董事职务，无意让他复职，并已聘请 Heidrick &amp; Struggles 物色继任者。</p>
+      <a class="src detail" href="d/07-huang-statement-board-will-not-reinstate.html" data-original="https://www.cnbc.com/2026/11/17/nvidia-jensen-huang-statement.html">阅读详情</a>
+    </article>
+    <div class="sec"><h2>Grok / xAI</h2></div>
+    <article class="card">
+      <h3><a href="d/08-musk-grok-48-soft-rollout.html">马斯克称 Grok 4.8 已向部分 Bot 用户软发布，距全面开放还有一两周打磨</a></h3>
+      <p>马斯克 18 日凌晨（上海时间）在 X 上回应有关 Grok 4.8 的讨论时说：“Grok 4.8 has not rolled out for general use yet, just some trials behind the scenes。”随后又补充：“We did do a soft rollout to some Bot users, but still have another week or two of polish before general release。”这是他在本窗口内就发布节奏给出的新说法，并未宣布正式上线日期。</p>
+      <a class="src detail" href="d/08-musk-grok-48-soft-rollout.html" data-original="https://x.com/elonmusk/status/2122758986483269956">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索 Cursor 更新日志与相关报道，本窗口无新的产品主条。最新正式更新仍为 11 月 6 日的语音对话等，不在本窗。</p>
+    </article>
+    <div class="sec"><h2>CPU / 服务器</h2></div>
+    <article class="card">
+      <h3><a href="d/09-amd-completes-taalas-acquisition.html">AMD 宣布完成收购推理芯片公司 Taalas，计划将其技术纳入加速器路线图</a></h3>
+      <p>AMD 17 日宣布完成对多伦多推理芯片公司 Taalas 的收购，称将把其技术纳入加速器路线图，并与 Instinct GPU、EPYC、ROCm 以及 Helios 等机架级方案结合。这与昨日已报的 World Labs 交割不是同一笔交易。此次交割稿未公布价格；约 29 亿美元（含或有对价）的数字来自今年 8 月协议及随后季报，并非今天新披露。</p>
+      <a class="src detail" href="d/09-amd-completes-taalas-acquisition.html" data-original="https://newsroom.amd.com/news/amd-completes-acquisition-taalas-advance-ai-inference-innovation/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索高通、联发科、苹果硅相关动态，本窗口无新的芯片发布。小米国际版所用平台已随 9 月国行出现，见消费电子栏。</p>
+    </article>
+    <div class="sec"><h2>存储与网络硬件</h2></div>
+    <article class="card">
+      <h3><a href="d/10-arista-etherlink-r4-distributed-inference.html">阿里斯塔推出 Etherlink R4 系列，把低时延路由对准分布式人工智能推理</a></h3>
+      <p>阿里斯塔 17 日宣布推出面向分布式推理的 Etherlink R4 路由平台，包括紧凑型 7020HR4/7020R4、双主控 7282R4、相干传输 7280R4，以及 25.6 Tbps 可插拔光线路系统。官方称该系列基于 5 纳米芯片，较采用 7 纳米或 16 纳米芯片的对比平台功耗最多可低约 60%；除加固型号 7020HR4 预定 2027 年初上市外，其余已经供货。Network World 等作了报道。</p>
+      <a class="src detail" href="d/10-arista-etherlink-r4-distributed-inference.html" data-original="https://www.arista.com/en/company/news/press-release/25174-pr-20261117">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/11-samsung-apple-dram-long-term-talks.html">韩媒称三星与苹果接近达成四到五年 DRAM 长期协议，2027 年上半年起执行</a></h3>
+      <p>韩国《每日经济新闻》17 日独家报道，三星电子与苹果接近签署 DRAM 长期供货协议，拟自 2027 年上半年起执行四到五年，并设定最低供应量，价格再按市况确定。报道还称，苹果近期已与 SK 海力士签署对存储厂更有利的长期协议。三星和苹果均未公开确认，协议也尚未宣布签署完成。TrendForce 和 MacRumors 作了转述。</p>
+      <a class="src detail" href="d/11-samsung-apple-dram-long-term-talks.html" data-original="https://www.mk.co.kr/en/business/12211342">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>群晖 / Synology</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索群晖英文与中文站安全通告及新闻。最新通告 Synology-SA-26:19 的英文站最后更新为 11 月 13 日，本窗口无新的通告或产品发布。</p>
+    </article>
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+    <article class="card">
+      <h3><a href="d/12-chrome-158-stable-security-update.html">Chrome 158 稳定版上线，一次修复 204 个安全漏洞，其中 6 个为严重级</a></h3>
+      <p>谷歌 17 日把 Chrome 158 推到 Windows、macOS 和 Linux 稳定通道，版本为 158.0.8127.36（Linux）以及 158.0.8127.36/.37（Windows 和 macOS）。官方列出 204 项安全修复，其中 6 项为严重级，涉及 WebView、GPU、Media、垃圾回收、ANGLE 和 WebAudio 等组件的内存破坏问题。微软同一天在 Edge 安全说明中称已注意到这批 Chromium 修复，正在准备相应更新，稳定版尚未跟进。官方并未在这篇说明里写这些漏洞已遭在野利用。</p>
+      <a class="src detail" href="d/12-chrome-158-stable-security-update.html" data-original="https://chromereleases.googleblog.com/2026/11/stable-channel-update-for-desktop_01699533288.html">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索主流语言与运行时发布说明。Oracle 与 OpenJDK 的 11 月安全更新见「漏洞与勒索」栏 Java4Shell 一条，本栏不重复做卡。</p>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索开源治理与许可证相关动态，本窗口无新的主条。</p>
+    </article>
+    <div class="sec"><h2>开发者工具</h2></div>
+    <article class="card">
+      <h3><a href="d/13-github-copilot-browser-use.html">GitHub Copilot 浏览器操控进入公开预览，可在 VS Code 和 JetBrains 中启用</a></h3>
+      <p>GitHub 17 日宣布，配合 Chrome 扩展，Copilot 的「浏览器使用」已在 Copilot CLI、Copilot 应用、VS Code 和 JetBrains 进入公开预览，可以打开并操作网页、调试 Web 应用或做浏览器内自动化。该功能默认关闭，需安装扩展并在设置中打开。同一天，面向 JetBrains 的插件和 Copilot 应用也随 Ignite 更新了远程访问、语音输入和 Azure DevOps 仓库等能力。</p>
+      <a class="src detail" href="d/13-github-copilot-browser-use.html" data-original="https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3><a href="d/14-java4shell-openjdk-base64.html">OpenJDK 被披露 Java4Shell 漏洞，Oracle 已随 11 月补丁修复，CISA 呼吁立即更新</a></h3>
+      <p>安全公司 Calif 17 日披露，OpenJDK 在部分 x86-64 处理器上的硬件加速 Base64 解码存在内存损坏漏洞 CVE-2026-114938，被称作 Java4Shell。研究人员称，该问题影响 OpenJDK 17.0.6 及之后版本，以及据此构建的 Oracle、Amazon Corretto、Eclipse Temurin、Microsoft Build of OpenJDK 等发行版，并可在 Jenkins、Jira、Confluence、Keycloak 等应用的默认配置下造成未认证远程代码执行。Oracle 已在 17 日的季度补丁中修复，CISA 同一天呼吁尽快安装；Java 8 和 11 不受该条漏洞影响。</p>
+      <a class="src detail" href="d/14-java4shell-openjdk-base64.html" data-original="https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/15-pypi-agent-framework-malicious-releases.html">微软 agent-framework 的两个 PyPI 版本被植入窃密程序，约一小时后已从仓库下架</a></h3>
+      <p>Wiz 和 Aikido 披露，11 月 18 日凌晨（上海时间），微软 Agent Framework 的 PyPI 元包 agent-framework 相继出现 1.26.1 和 1.26.2 两个恶意版本，安装后会留下启动钩子，在每次运行 Python 时收集 Azure、Azure DevOps 和 GitHub Actions 等环境中的令牌与密钥。两个版本大约在一个小时后已从 PyPI 消失。GitHub 上的官方仓库没有对应标签，研究人员认为它们可能是在正常发布流程之外被上传的；最近的安全版本是 1.26.0。截至截稿，尚未见到微软官方声明，根因也仍未确认。</p>
+      <a class="src detail" href="d/15-pypi-agent-framework-malicious-releases.html" data-original="https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/16-cisa-kev-puppet-enterprise.html">CISA 将 Puppet Enterprise 反序列化漏洞列入已知被利用目录，联邦机构须在 12 月 1 日前处置</a></h3>
+      <p>CISA 17 日将 Perforce Puppet Enterprise 反序列化漏洞 CVE-2026-115731 列入已知被利用漏洞目录。目录说明称，持有经证书机构签发的代理证书的攻击者，可通过特制的报告请求在 Puppet 服务器上执行代码。漏洞并非今天才发现，厂商已在 Puppet Enterprise 2023.8.13、2025.12.1 和 2026.0.1 中修复；新信息是 CISA 确认已遭利用，并要求联邦机构在 12 月 1 日前完成处置。目录未将该利用归为勒索软件活动。</p>
+      <a class="src detail" href="d/16-cisa-kev-puppet-enterprise.html" data-original="https://www.cisa.gov/news-events/alerts/2026/11/17/cisa-adds-one-known-exploited-vulnerability-catalog">阅读详情</a>
+    </article>
+    <div class="sec"><h2>身份与访问</h2></div>
+    <article class="card">
+      <h3><a href="d/17-entra-passkeys-default-new-accounts.html">微软 Entra 宣布新账户将默认使用通行密钥，并加强特权管理和智能体权限管控</a></h3>
+      <p>微软身份与网络访问产品负责人 Yina Arenas 17 日在 Ignite 相关公告中说，Entra 将把通行密钥作为新账户的默认凭据，并预览把通行密钥与受信任的身份核验贯穿签发、敏感访问和账户恢复。同期还预览了面向更多用户、资源和人工智能智能体的即时特权管理，以及用 Edge 工作配置文件在个人设备上访问企业私有应用的方案。多数能力仍标为预览，须与本月初的 Entra 月度功能汇总区分开来。</p>
+      <a class="src detail" href="d/17-entra-passkeys-default-new-accounts.html" data-original="https://techcommunity.microsoft.com/blog/microsoft-entra-blog/ai-is-changing-access-see-how-entra-helps-you-stay-ahead-/4556456">阅读详情</a>
+    </article>
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3><a href="d/18-ireland-dpc-x-grok-bot-training-pause.html">爱尔兰数据保护委员会称，X 已暂停将 Grok Bot 采集的第三方数据用于训练</a></h3>
+      <p>POLITICO 17 日报道，爱尔兰数据保护委员会（DPC）对 X 将 Grok Bot 自 10 月下旬起采集的第三方个人数据用于训练提出“重大关切”，并要求暂停相关处理。委员 Dale Sunderland 对这家媒体表示，X 已向监管机构确认已经暂停。这针对的是智能体替用户采集到的他人数据，而不仅是用户自己发布的内容。截稿时主要见到 POLITICO 对委员的转述，X 未向该报置评，也未见 DPC 官网另行发布新闻稿。</p>
+      <a class="src detail" href="d/18-ireland-dpc-x-grok-bot-training-pause.html" data-original="https://www.politico.eu/article/x-stops-training-ai-with-agents-data-after-ireland-intervened/">阅读详情</a>
+    </article>
+    <div class="sec"><h2>消费电子</h2></div>
+    <article class="card">
+      <h3><a href="d/19-xiaomi-18-pro-global-launch-paris.html">小米 18 Pro 系列国际版在巴黎发布，背屏旗舰出海，1399 欧元起</a></h3>
+      <p>小米 17 日在巴黎发布 18 Pro 与 18 Pro Max 国际版，把 AI 百变背屏带到海外。18 Pro 起价 1399 欧元，18 Pro Max 起价 1599 欧元；国际版电池分别改为 6000 毫安时和 7050 毫安时，Pro 有线充电为 90 瓦，低于国行。两机分别搭载第六代骁龙 8 至尊版与第六代骁龙 8 超级至尊版，并配备徕卡双 2 亿像素影像。国行已于 9 月 23 日发布，起售 5999 元；国际开售日期尚未宣布。</p>
+      <a class="src detail" href="d/19-xiaomi-18-pro-global-launch-paris.html" data-original="https://www.mi.com/global/launch/xiaomi-launch-november-2026/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索应用商店、广告与支付政策动态，本窗口无新的主条。</p>
+    </article>
+
+    <footer>IT 行业简报 · 2026-11-18 08:20 上海 · 归档 2026-11-18-0820</footer>
+  </div>
+</body>
+</html>

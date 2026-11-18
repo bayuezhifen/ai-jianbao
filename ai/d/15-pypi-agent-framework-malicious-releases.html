@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软 agent-framework 的两个 PyPI 版本被植入窃密程序，约一小时后已从仓库下架 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>微软 agent-framework 的两个 PyPI 版本被植入窃密程序，约一小时后已从仓库下架</h1>
+    <p class="lede">Wiz 和 Aikido 披露，微软 Agent Framework 的 PyPI 元包 agent-framework 在 18 日凌晨（上海时间）先后出现 1.26.1 和 1.26.2 两个恶意版本，会在安装后窃取云和持续集成凭证。两个版本约一小时后已从 PyPI 消失；截至截稿未见微软官方定性。</p>
+    <div class="meta">
+      <span>2026-11-18</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>安全公司 Wiz 和 Aikido 披露，微软 Agent Framework 在 PyPI 上的元包 agent-framework，于 17 日 20 时 35 分（协调世界时，上海时间 18 日 4 时 35 分）之后先后出现 1.26.1 和 1.26.2 两个恶意版本。研究人员称，安装这些版本后，会在 Python 的站点包目录里放下启动钩子，之后每次启动 Python 都会运行一段窃密程序，重点收集 Azure、Azure DevOps 和 GitHub Actions 等环境里的令牌与密钥，并外发到第三方接收服务。两个版本大约在 21 时 30 分（协调世界时，上海时间 5 时 30 分）已从 PyPI 上消失，窗口大约一小时。最近的安全版本是 1.26.0。</p>
+<p>Wiz 指出，GitHub 上的 microsoft/agent-framework 仓库里没有对应的 python-1.26.1 标签，1.26.1 只有 wheel 包，并且仍然依赖 agent-framework-core 的 1.26.0，因而“可能”绕过了正常发布流程。Aikido 则强调，两个恶意版本的间隔只有约 33 分钟。两家都没有把根因写成已经查清，也明确说，截至他们发稿时还没有微软官方声明。因此，本报只记录“PyPI 上出现了打着该项目名称的恶意版本，并且很快被拿下”，不写成“微软官方代码仓库已被攻破”或“内部账号确定失窃”。</p>
+<p>影响评估需要分开看。Wiz 提到该包每周约有 4.1 万次下载，Aikido 提到每月约 19 万次，量级相近但统计口径不同，不能混用。攻击者使用的接收服务是免费档，有请求条数上限，但这并不意味着风险可以忽略：只要有凭证被发出去，就应当视为可能已经泄露。另外，两个版本留下的钩子文件名并不相同，只搜索其中一个，可能会漏掉另一种。卸载软件包也不能挽回已经送出的密钥。研究人员给出的处理建议很直接：清理钩子文件，并把该环境能够接触到的云和持续集成凭证全部轮换。</p>
+<p>这条新闻出在 18 日凌晨的短暂窗口里，前一天的简报不可能写到。它也提醒了一个更普遍的问题：即便是与大厂项目同名的软件包，安装来源仍然是公共仓库里的具体版本号。在官方说明出来之前，开发者和持续集成管理员应当检查自己是否在那一个小时里安装过 1.26.1 或 1.26.2，而不是等待定性后再行动。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：1.26.1 与 1.26.2 两个恶意版本、约一小时后从 PyPI 消失、会留下启动钩子并收集云和持续集成凭证、官方仓库未见对应标签，Wiz 与 Aikido 的核心时间线和现象描述相符。</li>
+<li>限制：截稿时未见微软官方声明，根因未确认；不能写成官方仓库失守。两家给出的下载量口径不同，不可混用。本报不扩散完整的外发地址。</li>
+<li>待确认：微软官方调查结论、实际被安装次数，以及是否还有其他被冒用的相关包。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi" target="_blank" rel="noopener">Wiz</a><span class="role">主来源</span></li>
+        <li><a href="https://www.aikido.dev/blog/two-malicious-agent-framework-releases-hit-pypi-in-33-minutes" target="_blank" rel="noopener">Aikido</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 推出 GPT-6.2 Astra 与 Sol，面向专业工作与日常任务，并下调 Astra 的 API 价格 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 推出 GPT-6.2 Astra 与 Sol，面向专业工作与日常任务，并下调 Astra 的 API 价格</h1>
+    <p class="lede">OpenAI 17 日发布 GPT-6.2 Astra 和 GPT-6.2 Sol。前者面向高难度专业项目，后者面向日常工作；两者即日起在 ChatGPT Work、Codex 和 API 中提供，Astra 的 API 单价较上代下调。</p>
+    <div class="meta">
+      <span>2026-11-18</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 17 日在官网发布 GPT-6.2 Astra 和 GPT-6.2 Sol。产品更新列表把两条都标为当天的产品新闻。官方的分工很明确：Astra 面向“最难的那些专业项目”，Sol 面向日常工作。公司称，两个模型都尽量用更少的输出 token 完成更难的任务，从而在用量限额内多做一些事情。对开发者而言，Astra 在 API 中的输入和输出价格较 GPT-6 Astra 下调 20%，缓存输入再打六折，官方给出的标价是每百万 token 输入 8 美元、缓存输入 0.40 美元、输出 40 美元；Sol 的 API 价格则仍与 GPT-6.1 Sol 相同。</p>
+<p>在可用性上，官方写明：即日起，ChatGPT 的 Plus、Pro、Enterprise 和 Edu 用户可在 ChatGPT Work 和 Codex 中使用这两个模型。订阅 Pro 500 的用户可以在两个模型上使用 Ultrafast；Pro 200 的用户则是第一次获得 Ultrafast，先从 Sol 开始。企业与教育工作区需要管理员开启后，符合条件的用户才能用上。开发者可通过 API 调用 <code>gpt-6.2-astra</code> 和 <code>gpt-6.2-sol</code>，两个模型在发布时都提供 Ultrafast。Axios 在报道微软自研模型时，也确认 OpenAI 于周二发布了这对模型，并提到 Astra 较上代降价 20%。</p>
+<p>官方用多组内部或合作评测来说明“专业输出”的变化。例如，在考察多步骤专业工作的 Agents’ Last Exam 上，公司称 Astra 比 GPT-6 Astra 高 5.2 分，成本不到三分之一，并比 Claude Fable 5.2 高 5.5 分、成本约为后者的 5%；在 Terminal-Bench-Science 和 Vals Science Index 上，Astra 也被写成新的领先成绩。Sol 在 Cognition 的 FrontierCode 2.0 上与 Astra 相差约 0.5 分，成本约为五分之一；在 OpenAI 自己的 LifeVal 日常任务评测上，Sol 的成绩高于 GPT-6 Astra，成本约为七分之一。这些都是厂商选定的基准和成本算法，适合用来理解官方想强调的方向，而不能单独当作排行榜定论。文中还提到，面向律师的 Astra for Law 是建立在 GPT-6.2 Astra 上的配置，并在法律文书评测 Harvey LAB-AA 上给出更高分数；同日另有 ChatGPT for Sales，本报不将其展开成第二条，以免把模型发布写成套件汇总。</p>
+<p>安全方面，官方称此次部署配有迄今最严的防护，并写明两个模型都达到其准备框架下生物和化学能力的“高”阈值，Astra 还是首个对外发布、达到“人工智能自我改进”高阈值的模型。公司把这一档解释为：相当于给每位研究人员配上一名很强的研究工程师助手（相对 2024 年的基线）。更细的测试与限制写在同日发布的系统卡里。对这类自评，报道只转述官方定义，不把它写成已经出现自我改进的系统。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：发布日期、两个型号的定位、ChatGPT Work / Codex / API 的开放范围，以及 Astra API 降价 20%、缓存输入六折的标价，均可在 OpenAI 官网核到；Axios 对周二发布和 Astra 降价的转述与官网相符。</li>
+<li>口径：各项基准领先幅度和“成本只有几分之一”均来自官方选定的评测和计价方式，须保留厂商口径；系统卡中的能力阈值是公司自己的准备框架，不是监管认定。</li>
+<li>同日但未单独成条：ChatGPT for Sales、Astra for Law 向企业客户开放申请，只在正文中略作交代。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/introducing-gpt-6-2-astra-sol/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://openai.com/news/product-releases/" target="_blank" rel="noopener">OpenAI 产品更新</a><span class="role">官方</span></li>
+        <li><a href="https://www.axios.com/2026/11/17/microsoft-ai-models-openai-anthropic-ignite" target="_blank" rel="noopener">Axios</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

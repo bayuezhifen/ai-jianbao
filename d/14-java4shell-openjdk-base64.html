@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenJDK 被披露 Java4Shell 漏洞，Oracle 已随 11 月补丁修复，CISA 呼吁立即更新 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>OpenJDK 被披露 Java4Shell 漏洞，Oracle 已随 11 月补丁修复，CISA 呼吁立即更新</h1>
+    <p class="lede">安全公司 Calif 17 日披露 OpenJDK 硬件加速 Base64 解码中的内存损坏漏洞 CVE-2026-114938，并称可在部分企业应用的默认配置下造成远程代码执行。Oracle 已在当天的季度补丁中修复，CISA 呼吁立即安装。</p>
+    <div class="meta">
+      <span>2026-11-18</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>安全公司 Calif 17 日披露，OpenJDK 在部分 x86-64 处理器上使用的硬件加速 Base64 解码功能存在内存损坏漏洞，编号为 CVE-2026-114938，并被称作 Java4Shell。BleepingComputer 当天的报道写道，研究人员认为该问题影响 OpenJDK 17.0.6 及之后版本，以及据此构建的多家发行版，包括 Oracle Java SE、Amazon Corretto、Eclipse Temurin、Microsoft Build of OpenJDK、Azul Zulu 和红帽 OpenJDK。Calif 给出的 CVSS 4.0 评分为 9.2（严重），Oracle 用 CVSS 3.1 给出的评分是 8.1（高）。漏洞本身针对的是受支持处理器上那条加速解码路径，并不是所有 Java 程序、所有 CPU 都会走到同一段代码。</p>
+<p>Calif 称，他们已在多种广泛使用的企业应用默认配置下完成远程代码执行验证。被点名的未认证场景包括 Keycloak、Atlassian Jira、Atlassian Confluence、JFrog Artifactory、Jenkins 和 PingFederate；需要认证的场景则包括 Apache Kafka Broker、Apache Solr、Elasticsearch、Gerrit 和 Spinnaker。研究人员也强调，并不存在一条对所有应用通用的利用方式，攻击者必须为具体应用找到把特制数据送到脆弱解码路径的办法。本报只记录这些已经被公开点名的影响面，不复述具体构造或验证步骤。</p>
+<p>补丁方面，Oracle 在 17 日的季度关键安全更新中修复了该漏洞。OpenJDK 方面，窗口内可见的修复版本包括 17.0.21.1、21.0.13.1、25.0.5.1 和 27.0.1.1。需要单独写明的是：同期还有 Java SE 11 和 8 的安全更新，但 Java 8 与 11 不受 CVE-2026-114938 这条漏洞影响。美国网络安全与基础设施安全局同一天发布警报，敦促机构立即安装 Oracle 的 11 月补丁。若暂时无法升级运行时，Calif 建议以关闭该硬件加速解码路径作为临时缓解，这只是权宜办法，不能替代更新。</p>
+<p>这是本期漏洞栏最值得优先处理的一条，原因很直接：影响的是大量企业应用共同依赖的 Java 运行时，而不是某一家的单独产品。CISA 的警报和 Oracle、OpenJDK 的补丁同日出现，说明厂商和政府侧都把它当成需要马上处理的问题。是否已经出现大规模在野攻击，公开材料里没有写成既成事实，本报也不作这样的断言。运维和开发团队应当先核对自己的发行版和版本号，再决定是更新运行时还是先加上临时缓解。</p>
+<p>对无法立刻升级的系统，临时关闭硬件加速解码只是权宜办法，且只覆盖这条特定路径，并不处理 11 月补丁包里的其他修复。企业还应当向应用供应商确认：自己使用的 Jenkins、Jira 或其他产品，是否需要在更新 Java 运行时之外再打应用层补丁。公开报道没有把“已经出现大规模攻击”写成事实，但把更新拖到方便的维护窗口，显然和 CISA 的紧急语气不符。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：CVE-2026-114938、17 日披露与修补、影响 OpenJDK 17.0.6 及之后和多家发行版、CISA 呼吁立即打补丁，均可在 BleepingComputer、CISA 警报和 OpenJDK/Oracle 说明中交叉核对。</li>
+<li>评分差异：Calif 给出 CVSS 4.0 的 9.2，Oracle 给出 CVSS 3.1 的 8.1，应并存，不单取较高的那个写成“官方评级”。</li>
+<li>限制：本报不复述利用构造。Java 8 与 11 不受该条影响，但它们仍可能包含 11 月补丁包里的其他修复。</li>
+<li>待确认：是否出现大规模在野利用，以及各 Linux 发行版和云镜像跟进修复的时间。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/critical-java4shell-flaw-allows-rce-attacks-on-major-java-applications/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/17/critical-java-vulnerability-requires-immediate-patching" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://openjdk.org/groups/vulnerability/advisories/2026-11-17" target="_blank" rel="noopener">OpenJDK 安全公告</a><span class="role">官方</span></li>
+        <li><a href="https://www.oracle.com/java/technologies/javase/27-0-1-1-relnotes.html" target="_blank" rel="noopener">Oracle Java SE 发行说明</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

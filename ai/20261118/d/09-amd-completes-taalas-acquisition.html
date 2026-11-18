@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AMD 宣布完成收购推理芯片公司 Taalas，计划将其技术纳入加速器路线图 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">CPU / 服务器</div>
+    <h1>AMD 宣布完成收购推理芯片公司 Taalas，计划将其技术纳入加速器路线图</h1>
+    <p class="lede">AMD 17 日宣布完成对多伦多推理芯片公司 Taalas 的收购，计划把相关技术与 Instinct、EPYC、ROCm 和机架级方案一起做系统级产品。交割公告未重申对价。</p>
+    <div class="meta">
+      <span>2026-11-18</span>
+      <span class="dot"></span>
+      <span>CPU / 服务器</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>AMD 17 日在新闻室宣布，已经完成对 Taalas 的收购。Taalas 是一家总部位于多伦多的推理芯片公司。官方交割稿说，将把 Taalas 的技术纳入 AMD 的加速器路线图，并与 Instinct GPU、EPYC 处理器、ROCm 软件以及 Helios 等机架级方案结合，做成系统级产品。稿件强调的是推理侧能力，而不是再讲一遍训练芯片。Yahoo Finance 等转载了交割消息，并提到当天股价有所反应，但这些市场波动不是本条的重点。</p>
+<p>必须把它和另一笔刚刚完成的交易分开。昨日午报已经写过：AMD 完成收购 World Labs，李飞飞出任执行副总裁兼首席科学家。那是一家世界模型公司，与这次的推理芯片收购不是同一件事，也不能写成“又一次宣布完成 World Labs 交割”。两笔交易时间接近，更容易混在一起，所以标题和正文都点明了 Taalas 的业务方向。</p>
+<p>对价方面，17 日的交割稿并没有公布价格，也没有给出首款联合产品的时间表。外界常提到的约 29 亿美元，以及其中最多约 14 亿美元的或有对价，来自今年 8 月宣布协议时的报道和随后的季报披露，并不是今天新给出的数字。本报只把它当作背景，不写进“今日公布作价”。截至截稿，本报也尚未看到路透社或彭博社就交割本身发出的独立快讯，因此事实依据以 AMD 官网声明为主。</p>
+<p>对服务器和加速器市场来说，这条消息的意义在于：AMD 在已有 GPU 和 CPU 之外，又把一家专门做推理芯片的公司收进自家路线图，想在系统层面把推理效率做进去。至于技术会以独立芯片、IP 模块还是机架方案出现，官方现在没有说，只能等到后续产品计划。</p>
+<p>AMD 近年在加速器上同时铺 GPU、CPU 和机架方案，推理芯片若能并进同一套软件和供货体系，对已经在用 Instinct 或 EPYC 的客户才有实际意义。现在缺的正是这一步的时间表。在官方给出产品形态之前，本报只把这次交割记录为路线图上的一次收官，而不预测它会替代或补充哪一代 GPU。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：AMD 新闻室将交割日期标为 2026 年 11 月 17 日，收购对象为 Taalas，并将技术与 Instinct、EPYC、ROCm、Helios 一并表述；二次报道确认的是交割本身，而不是新的对价。</li>
+<li>须区分：此事与 16–17 日已报的 World Labs 交割不是同一笔交易；约 29 亿美元及或有对价是今年 8 月以来的旧数字，不能写成今日披露。</li>
+<li>待确认：整合后的首款产品形态和时间表，以及主要推理客户是否已纳入评估。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://newsroom.amd.com/news/amd-completes-acquisition-taalas-advance-ai-inference-innovation/" target="_blank" rel="noopener">AMD Newsroom</a><span class="role">官方</span></li>
+        <li><a href="https://nz.finance.yahoo.com/news/amd-stock-rises-chip-deal-175746205.html" target="_blank" rel="noopener">Yahoo Finance / GuruFocus</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
