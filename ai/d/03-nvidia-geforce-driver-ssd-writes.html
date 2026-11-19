@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用户反馈 GeForce 新驱动闲置时异常写入 SSD，高者每小时约 30GB，官方尚未确认 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">英伟达 / NVIDIA</div>
+    <h1>用户反馈 GeForce 新驱动闲置时异常写入 SSD，高者每小时约 30GB，官方尚未确认</h1>
+    <p class="lede">有用户反映，英伟达 GeForce 驱动 621.14 和 621.24 会在电脑闲置时由后台进程反复重写日志，向固态硬盘写入大量数据。英伟达截至发稿尚未公开确认，也没有给出官方修复。</p>
+    <div class="meta">
+      <span>2026-11-19</span>
+      <span class="dot"></span>
+      <span>英伟达 / NVIDIA</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Tom's Hardware 18 日报道，有用户在英伟达论坛指出，GeForce 驱动 621.14（11 月 4 日发布）会在电脑闲置时持续重写二进制日志，把真实写入落到硬盘上。IT之家 19 日 9 时 42 分（上海时间）跟进，游民星空 11 时 25 分也作了转述，时点都在今早简报之后。问题被指向名为“NVIDIA Display Container LS”的后台服务，对应进程是 NVDisplay.Container.exe，日志文件名为 nvlog.nvlgstg。这个服务本身是控制面板和 NVIDIA App 所需，并不等于可以随手关掉。</p>
+<p>写入量的说法并不统一。Tom's Hardware 转述的一则测试是：用 Windows 资源监视器、性能计数器和 CrystalDiskInfo 对照，五分钟里该进程的输入输出约 515MB，C 盘实际写入约 270MB，折合大约每小时 3GB，而且与磁盘“已写入数据单元”对得上。另有用户称，较新的 621.24 在极端情况下可到大约每小时 30GB；还有人提到，用 Alt+Tab 切换窗口时可能额外写出 500MB 到 1GB。游民星空转述的个案里，甚至出现过单日接近 1TB、六天累计 5.4TB 的说法。这些都是用户自测，不是实验室里的统一基准，不同机器差异很大，也有人在同一版本驱动上没有遇到异常。</p>
+<p>对固态硬盘寿命的换算更要小心。Tom's Hardware 按较低速率估计，一年可能用掉一块典型 1TB 硬盘标称耐久度的约 5%；IT之家按较高速率、每天开机八小时估算，一年额外写入可到约 87.6TB，相当于一块标称 600TB 写入寿命的 1TB 硬盘大约 15% 的额定耐久度。两边用的假设不同，不能把其中某一个百分比写成已证实的损耗。621.24 的发布说明里没有列出这项问题，英伟达也尚未公开承认或给出修复时间。</p>
+<p>有用户说，删掉已有日志后写入量会下降；也有人建议先退回 621.01，或尝试禁用相关进程。这些都不是官方方案，可能带来显示设置或控制面板不可用等副作用，只适合在确认自己机器确实出现异常写入后再慎重尝试。用户可用资源监视器的磁盘视图，查看 NVDisplay.Container.exe 是否在闲置时持续写入。上月 AMD 显卡驱动也曾出现闲置狂写固态硬盘的情况，AMD 已在 11 月 13 日推送修复；两边的具体机制并不相同，不宜写成同一缺陷。在厂商确认之前，本条只记录已公开的用户反馈和媒体转述。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：Tom's Hardware、IT之家与游民星空均指向 621.14 / 621.24、进程 NVDisplay.Container.exe 以及日志文件 nvlog.nvlgstg；三方都写明并非所有系统都会出现，且英伟达尚未发布官方说明。</li>
+<li>数字差异：约每小时 3GB 来自对 621.14 的一组对照测试；约每小时 30GB、单日近 1TB 等为其他用户报告，媒体未做统一复现，本报亦未实测。</li>
+<li>寿命换算：5% 与 15% 等来自不同假设，只可作量级参考，不是实测损耗。</li>
+<li>待确认：英伟达是否承认缺陷、影响范围，以及修复会打在哪个驱动版本。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.tomshardware.com/pc-components/gpu-drivers/nvidia-geforce-driver-bug-reportedly-hammers-ssds-with-up-to-30gb-of-writes-per-hour-users-trace-massive-idle-wear-to-background-service-newer-driver-reportedly-still-affected" target="_blank" rel="noopener">Tom&#x27;s Hardware</a><span class="role">主来源</span></li>
+        <li><a href="https://www.ithome.com/1/029/169.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+        <li><a href="https://www.gamersky.com/hardware/202611/2249306.shtml" target="_blank" rel="noopener">游民星空</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
