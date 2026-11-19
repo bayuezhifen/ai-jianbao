@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>福布斯称 GPT-6 Cyber 在苹果产品中发现约 35 个漏洞，部分可避开锁定模式防护 · IT 行业简报</title>
+<title>CISA 同日还将 LiteLLM、Apache Axis 与 REDCap 漏洞列入已知被利用目录 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,33 +172,30 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">漏洞与勒索</div>
-    <h1>福布斯称 GPT-6 Cyber 在苹果产品中发现约 35 个漏洞，部分可避开锁定模式防护</h1>
-    <p class="lede">福布斯报道，OpenAI 与安全公司 Calif 使用尚未对公众开放的 GPT-6 Cyber，在苹果几乎全线产品中发现约 35 个漏洞，其中一些可能让恶意网站控制 iPhone 或 Mac。Calif 称，苹果在接获通知后已修复其中许多问题。</p>
+    <h1>CISA 同日还将 LiteLLM、Apache Axis 与 REDCap 漏洞列入已知被利用目录</h1>
+    <p class="lede">CISA 在 11 月 18 日加入已知被利用目录的另外三枚漏洞，分别影响 BerriAI 的 LiteLLM、已停止维护的 Apache Axis 1.x，以及范德比大学的科研数据采集系统 REDCap。目录均写明存在在野利用证据，勒索软件使用情况为未知。</p>
     <div class="meta">
-      <span>2026-11-18</span>
+      <span>2026-11-19</span>
       <span class="dot"></span>
       <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>福布斯记者托马斯·布鲁斯特报道，OpenAI 与长期合作的安全公司 Calif，使用该公司的网络安全模型 GPT-6 Cyber，在苹果硬件和软件里发现了大约 35 个漏洞。福布斯日本站 18 日上午刊出该文的日文版，英文标题为“OpenAI’s New Hacking Model Found Dozens Of Holes In Apple Tech”。报道称，漏洞不仅出现在 iPhone 和 Mac 上，也涉及 iPad、Apple Watch、Apple TV 以及头戴设备 Vision Pro，覆盖了苹果几乎全部主要产品，严重程度不一。其中一些缺陷，可能使恶意网站取得对 Mac 或 iPhone 的控制。</p>
-<p>报道还写，研究人员利用 GPT-6 Cyber，编写了可避开 iPhone「锁定模式」部分防护的攻击代码。锁定模式会主动减少系统功能，从而收窄攻击面。需要说明的是，这篇报道并没有公开具体利用步骤，本报也不转述技术细节。GPT-6 Cyber 本身并不向普通 ChatGPT 用户开放。福布斯日本站写道，OpenAI 在 11 月 5 日宣布，通过限定项目 Daybreak Red，向经过审核的一部分使用者先行提供，调用途径是应用程序接口和编程助手 Codex。这与今早简报里 Calif 借助人工智能发现 OpenJDK「Java4Shell」漏洞，是同一家安全公司、同一类研究路径，但针对的是另一条产品线，不能混写成同一件事。</p>
-<p>关于修复，Calif 对福布斯表示，苹果在接到通知后，已经修补了其中许多问题。截稿时，本报没有检索到苹果公司就这批约 35 个漏洞单独发表的声明，因此“发现数量、影响范围和修复进度”目前主要以福布斯转述的研究方说法为准，不宜写成已经得到苹果官方逐条确认。对普通用户来说，眼下更实际的做法，是安装已经发布的系统更新，而不是根据这篇报道去判断某一台设备是否仍暴露在某个未公开漏洞之下。</p>
-<p>这件事的另一层含义，是漏洞发现和漏洞利用的速度都被人工智能推快了。福布斯的文章强调，厂商若能更早发现缺陷，修补会更主动；但同一套能力若被攻击者使用，从发现到写成攻击代码的时间也会缩短，因此“发现之后要多快修完”变得更关键。GPT-6 Cyber 目前仍限制在经过审核的防御用途里，并不等于这类能力不会外溢。把报道中的约 35 个漏洞写成“苹果全线产品已被攻破”，或写成“锁定模式已经失效”，都不准确：这是研究环境下的发现与部分防护被绕过的演示，且研究方称多数问题已在通知后得到修复。</p></div>
+      <div class="body"><p>在把群晖 DSM 漏洞列入目录的同一天，CISA 还加入了三枚与人工智能网关、老旧 Java 组件和医学研究平台有关的漏洞。BerriAI LiteLLM 的 CVE-2026-40217 被描述为“未受保护的替代通道”：攻击者可通过在 <code>/guardrails/test_custom_code</code> 接口改写字节码，执行任意代码。官方目录把联邦机构的处置截止日期定为 2026 年 12 月 2 日，并且不要求必须先做取证排查。Apache Axis 的 CVE-2026-90436 是不安全的反射：未经身份验证的远程攻击者可以构造 SOAP 故障消息，让 Axis 加载并实例化攻击者指定的类，前提是类路径上存在合适的类。范德比大学 REDCap 的 CVE-2026-90817 是代码注入，未认证攻击者可能通过构造 HTTP 请求，从公开调查入口走到本不该对外的控制器，从而在服务器上执行代码。</p>
+<p>Axis 和 REDCap 两条的截止日期同为 11 月 21 日，并且都被标记为需要进行取证排查，这与群晖那一条的处理要求相同，时间明显紧于 LiteLLM。四枚漏洞的“已知勒索软件利用”栏都是“未知”，不能据此判断它们没有被用于勒索，只能说明 CISA 尚未把它标成已确认的勒索活动。CISA 强调，新的约束来自第 26-04 号约束性运营指令，联邦机构须按风险优先修补那些一旦利用就能完全控制资产的高风险目录漏洞，并在打补丁前判断系统是否已经失陷。指令的直接对象是联邦民事机构，但 CISA 仍建议所有组织按同样原则处理。</p>
+<p>安全媒体在跟进时补充了一些修复线索：Apache Axis 1.x 已停止维护，宜迁移到 Axis 2 或应用已公布的补丁；REDCap 被提到的修复版本包括 16.0.49、17.3.10 和 17.4.4。LiteLLM 的具体安全修复版本在不同转述里并不完全一致，本报不以相互冲突的版本号代替厂商通告。运行 AI 网关、老旧 Java SOAP 栈或科研调查系统的团队，应以项目自己的安全公告和升级说明为准，尽快修补或隔离暴露面。</p>
+<p>这三枚漏洞与群晖那一条共同构成 18 日的目录更新，但影响的对象完全不同，因此单独成篇，避免和 NAS 用户须立即升级的提醒混在一起。本报没有获得这三枚漏洞的在野利用规模或归因，也不把“已有概念验证”这类二手说法写成 CISA 官方结论。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul>
-<li>一致处：福布斯日本站与布鲁斯特在福布斯英文作者页上的标题和导语相符，均称约 35 个漏洞、覆盖多款苹果设备，并提到恶意网站可能控制 iPhone 或 Mac，以及针对锁定模式部分防护的攻击代码。</li>
-<li>口径：数量、产品范围和修复情况目前来自福布斯对 OpenAI、Calif 研究的报道；本窗口未能独立打开英文原稿全文，也未见苹果官方就这批漏洞发布单独说明。</li>
-<li>待确认：已修复条目的公开致谢或安全更新说明，以及英文原稿中是否还有比日文版更具体的披露范围。</li>
-</ul>
+      <ul><li>官方目录已核对：LiteLLM 截止日期 2026-12-02、不强制取证排查；Axis 与 REDCap 截止日期 2026-11-21、需取证排查；四条勒索软件使用情况均为未知。</li><li>技术描述以 CISA 短说明为准：LiteLLM 的字节码改写发生在 /guardrails/test_custom_code；Axis 通过构造的 SOAP 故障加载指定类；REDCap 能从公开调查入口到达非预期控制器。</li><li>修复版本：Axis 1.x 停维、REDCap 的具体版本号来自安全媒体转述，LiteLLM 版本号存在出入，本报建议以厂商通告为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://forbesjapan.com/articles/detail/108435" target="_blank" rel="noopener">Forbes JAPAN</a><span class="role">主来源</span></li>
-        <li><a href="https://www.forbes.com/sites/thomasbrewster/" target="_blank" rel="noopener">Forbes（布鲁斯特作者页）</a><span class="role">次要</span></li>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://securityonline.info/cisa-adds-4-exploited-flaws-kev-synology-litellm/" target="_blank" rel="noopener">SecurityOnline</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

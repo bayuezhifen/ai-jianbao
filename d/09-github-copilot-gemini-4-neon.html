@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GitHub Copilot 浏览器操控进入公开预览，可在 VS Code 和 JetBrains 中启用 · IT 行业简报</title>
+<title>GitHub Copilot 正式提供 Gemini 4 Neon · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,35 +172,29 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">开发者工具</div>
-    <h1>GitHub Copilot 浏览器操控进入公开预览，可在 VS Code 和 JetBrains 中启用</h1>
-    <p class="lede">GitHub 17 日宣布，配合 Chrome 扩展，Copilot 的浏览器使用功能已在 Copilot CLI、Copilot 应用、VS Code 和 JetBrains 进入公开预览，可用于调试网页和做浏览器内自动化。</p>
+    <h1>GitHub Copilot 正式提供 Gemini 4 Neon</h1>
+    <p class="lede">GitHub 宣布 Gemini 4 Neon 已在 Copilot 正式可用，面向智能体式编程、多步工具调用和知识工作。谷歌称其质量接近 Gemini 4 Carbon，但单次任务的 token 成本更低、开始应答更快。</p>
     <div class="meta">
-      <span>2026-11-18</span>
+      <span>2026-11-19</span>
       <span class="dot"></span>
       <span>开发者工具</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>GitHub 17 日在官方 changelog 中宣布，Copilot 的浏览器使用功能进入公开预览。只要安装 GitHub Copilot 的 Chrome 扩展，并在客户端里打开相应开关，就可以让 Copilot 在浏览器里打开页面、实时调试网页应用、自动跑浏览器测试，或处理其他需要“看着网页操作”的任务。官方写明，目前覆盖 Copilot CLI、Copilot 应用、VS Code 和 JetBrains。功能默认并不打开：在 CLI 里要通过插件菜单启用并新开会话，在应用里则是到设置中的 Computer Use 下打开 Browser Use，在 VS Code 和 JetBrains 里同样需要到设置中启用，再确认扩展状态为已连接。</p>
-<p>同一天，GitHub 还为 Ignite 同期发布补了另外两则更新。面向 JetBrains 的插件增加了远程访问、设备端语音输入和云沙箱预览等能力，并提醒对已结束支持的旧版 JetBrains IDE，需要升级到受支持的版本。Copilot 应用则增加了 Azure DevOps 仓库支持，并把对 GitHub Enterprise Server 的支持升到正式可用。这些与“能直接操作浏览器”不是同一件事，但都属于开发者在现有工具里当天能看到的新能力，因此在详情里一并交代，首页卡片仍以浏览器预览为主。</p>
-<p>这是一次公开预览，而不是对所有用户默认开启的稳定功能。官方也把它放在更大的“计算机使用”方向里，即让 Copilot 不只是在编辑器里改代码，还能触达浏览器里的实际页面。对开发者而言，调试登录态、管理后台或前端交互时，这可能减少在编辑器和浏览器之间来回复制报错的步骤；但把浏览会话交给智能体，也意味着扩展权限、网站登录态和测试环境隔离需要重新评估。changelog 写明，扩展设置里可以管理权限级别，并开关实验性功能。</p>
-<p>需要避免的写法，是把这一天 GitHub 和微软围绕模型、评测和 Copilot 的大量 Ignite 更新，全部塞进同一张卡片。模型发布已在行业栏和 OpenAI 栏处理。本条只记录：在 VS Code、JetBrains 和 Copilot 自己的应用、命令行里，多出了一种经用户明确打开的浏览器操作能力。</p>
-<p>公开预览阶段，功能是否稳定、对哪些网站会要求额外授权，都还需要时间观察。建议先在测试配置文件里试用，而不是一上来就把它接到生产账号或含有客户数据的管理后台。GitHub 在说明里提供了反馈入口，这也符合预览版的通常做法：先让愿意尝试的人打开，再决定是否升为默认能力。</p></div>
+      <div class="body"><p>GitHub 在 11 月 18 日的变更日志中宣布，Gemini 4 Neon 已在 GitHub Copilot 中正式提供。官方把它定位为适合智能体式编程、多步工具调用和知识工作的模型。按照谷歌的说法，Neon 的质量接近 Gemini 4 Carbon，但完成同样任务消耗的 token 更少；与 Carbon 相比，它开始给出回应的速度更快，在编程任务里更少做未被要求的改动，也不那么容易对代码、工具或测试结果作出没有依据的断言。这些对比来自谷歌的自称，GitHub 的公告并没有附上自己的评测表，本报把它当作厂商口径，而不是已经由第三方复核的结论。</p>
+<p>可用性方面，Neon 面向 Copilot 的 Pro+、Max、商业版和企业版用户，可在模型选择器里选用，覆盖 Visual Studio Code、Visual Studio、Copilot 命令行、编程智能体、Copilot 应用、github.com、GitHub 移动端，以及 JetBrains、Xcode 和 Eclipse。GitHub 写明会逐步推送，如果一时还看不到，可以稍后再查。计费按供应商目录价、在按量计费模式下结算。企业版和商业版管理员可以通过 Copilot 设置里的模型策略管理是否开放；在默认开启新模型的前提下，除非管理员关掉全局默认或单独关闭该模型，新模型会自动可用。</p>
+<p>把这条放进“开发者工具”栏，是因为它改变的是 Copilot 里可选的模型菜单，而不是 Cursor 或其他编辑器自己的版本。昨日简报已经写过 Copilot 的浏览器操控公开预览，那是 11 月 17 日的变更，本期不再重复。Neon 的加入，意味着 GitHub 在自己的助手里继续同时接入多家前沿模型，并且明确把“少改不该改的地方、少说没有依据的话”当成卖点之一。这对在仓库里跑自动改动的团队更有实际意义，因为乱改和幻觉往往比模型“不够聪明”更麻烦。</p>
+<p>尚未公开的信息包括：GitHub 或独立机构给出的对比评测、推送完成的时间表，以及在不同编辑器里是否同步到位。想试用的人应以 GitHub 文档中的模型与定价说明，以及自己工作区管理员的策略为准。本条只记录 18 日这则正式可用的公告。</p>
+<p>对已经在用 Copilot 的团队来说，更实际的动作是先看自己的套餐是否在名单里，再由管理员确认模型策略没有关掉新模型，最后在编辑器的模型列表里核对是否出现 Neon。定价以 GitHub 的模型与价格文档为准，不同供应商的目录价并不相同，不宜把“更便宜”理解成 Copilot 订阅费本身下调。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul>
-<li>一致处：17 日 changelog 宣布浏览器使用进入公开预览，覆盖 CLI、Copilot 应用、VS Code 和 JetBrains，并需安装 Chrome 扩展、在设置中启用；同日 JetBrains 插件与 Copilot 应用的 Ignite 更新亦可在对应 changelog 核到。</li>
-<li>限制：公开预览、默认关闭；GitHub Enterprise Server 支持被写为正式可用，与浏览器功能的预览状态不同，不宜混写。</li>
-<li>待确认：预览的稳定性、企业策略中如何管控扩展权限，以及后续是否升为默认能力。</li>
-</ul>
+      <ul><li>主要依据：GitHub 2026-11-18 变更日志，写明正式可用、适用套餐、编辑器范围、逐步推送以及管理员策略。</li><li>质量与成本对比来自公告中“据谷歌称”，不是 GitHub 或本报的独立评测。</li><li>与昨报区分：Copilot 浏览器操控属于 11 月 17 日变更，已见昨晨简报，本期不重复。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://github.blog/changelog/2026-11-17-let-github-copilot-interact-with-your-browser/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
-        <li><a href="https://github.blog/changelog/2026-11-17-github-copilot-in-jetbrains-ignite-releases/" target="_blank" rel="noopener">GitHub Changelog（JetBrains）</a><span class="role">官方</span></li>
-        <li><a href="https://github.blog/changelog/2026-11-17-github-copilot-app-microsoft-ignite-releases/" target="_blank" rel="noopener">GitHub Changelog（Copilot 应用）</a><span class="role">官方</span></li>
+        <li><a href="https://github.blog/changelog/2026-11-18-gemini-4-neon-in-github-copilot/" target="_blank" rel="noopener">GitHub Changelog</a><span class="role">官方</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

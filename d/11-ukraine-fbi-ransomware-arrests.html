@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CISA 将 Puppet Enterprise 反序列化漏洞列入已知被利用目录，联邦机构须在 12 月 1 日前处置 · IT 行业简报</title>
+<title>乌克兰警方与联邦调查局逮捕四人，涉跨境勒索软件、至少 28 家企业已支付逾 4050 万美元 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,35 +172,28 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">漏洞与勒索</div>
-    <h1>CISA 将 Puppet Enterprise 反序列化漏洞列入已知被利用目录，联邦机构须在 12 月 1 日前处置</h1>
-    <p class="lede">美国网络安全与基础设施安全局 17 日将 Perforce Puppet Enterprise 的反序列化漏洞 CVE-2026-115731 列入已知被利用漏洞目录，确认已遭在野利用。漏洞本身更早披露，补丁已发布，新信息是被利用确认和联邦修复期限。</p>
+    <h1>乌克兰警方与联邦调查局逮捕四人，涉跨境勒索软件、至少 28 家企业已支付逾 4050 万美元</h1>
+    <p class="lede">BleepingComputer 报道，乌克兰警方与美国联邦调查局经过约两年调查，逮捕了四名涉嫌参与国际勒索软件活动的人员。乌克兰国家警察称，至少 28 家企业已支付超过 4050 万美元赎金。</p>
     <div class="meta">
-      <span>2026-11-18</span>
+      <span>2026-11-19</span>
       <span class="dot"></span>
       <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>美国网络安全与基础设施安全局 17 日宣布，向已知被利用漏洞目录新增一条：Perforce Puppet Enterprise 的反序列化漏洞 CVE-2026-115731。通报写明，作出这一决定的依据是已经出现在野利用的证据。目录和配套说明的大意是：攻击者如果持有经证书机构签发的代理证书，就可能通过特制的报告提交请求，在 Puppet 服务器上执行代码。换句话说，风险最高的是那些允许自动签发证书、或对代理身份审核不严的环境；并非所有 Puppet 部署都自动暴露在同一条件下。</p>
-<p>必须把“今天新发现的漏洞”和“今天被确认已遭利用”区分开。公开资料显示，这条漏洞的披露和厂商修复要更早，并不等于 17 日才出现补丁。Perforce / Puppet 方面已在 Puppet Enterprise 2023.8.13、2025.12.1 和 2026.0.1 中提供修复。CISA 此举的新信息是：美国联邦民用行政机构被要求在 12 月 1 日前完成处置，同时向更广泛的组织发出“这是已知被利用条目、应当优先处理”的信号。目录没有把该利用归类为勒索软件活动，本报也不作这样的延伸。</p>
-<p>对使用 Puppet Enterprise 做配置管理的团队，实际动作比较明确：先核对这些受影响版本是否仍在生产环境中，再升级到厂商给出的修复版本，并收紧证书自动签发和报告处理相关的权限与审计。CISA 近年对已知被利用目录的定位，是把“已有利用证据且有明确修复方法”的漏洞单独拉出来，要求联邦机构按截止日期处理；其他行业没有同一强制力，但把这条放进优先补丁队列，仍然是合理的做法。</p>
-<p>本期漏洞栏同时有 Java4Shell 和这条 KEV。前者是当天集中披露并给出补丁的新问题，影响面更广；后者是把一条既有漏洞升级为“确认已被利用”。两张卡片不宜合并，否则会把“新漏洞”和“旧漏洞被利用确认”混成一件事。</p>
-<p>配置管理一旦被用来在大量服务器上执行代码，危害会沿自动化通道扩散，这也是这类漏洞会被优先列入已知被利用目录的原因。处置时除了升级，还应当检查近期的证书签发和报告处理记录，确认是否有异常代理或异常报告。CISA 对联邦机构还提出过“打补丁前要评估系统是否已被侵入”的一般要求，其他组织可以按自身风险决定是否做同样的排查。</p></div>
+      <div class="body"><p>BleepingComputer 11 月 18 日报道，乌克兰当局与联邦调查局合作，逮捕了四名涉嫌参与国际勒索软件组织的人员。调查持续约两年，针对的是一个至少有 27 名成员、来自乌克兰、哈萨克斯坦、俄罗斯和其他国家的网络犯罪组织。执法部门还表示，该组织与一个跨越八个司法管辖区、超过 60 人的更大网络有关联，其中包含原 Conti 勒索软件团伙的成员。受害对象被描述为石油天然气、制药、制造、物流、金融以及关键基础设施领域的机构。</p>
+<p>乌克兰国家警察代理局长马克西姆·楚茨基里泽对 Censor.NET 说，警方已确认至少 28 家企业向黑客支付了超过 4050 万美元赎金，约合 18 亿格里夫纳，并强调这只是已经付出的钱，全部损失仍在统计。报道转述，攻击者会先研究受害者的财务状况、资产、员工和系统弱点，再窃取数据、加密系统并索要加密货币。其中一起针对美国公司的攻击窃取了 1.4 TB 数据，并扩散到同一集团的其他公司；最初索要 1000 万美元，经过谈判后收到 500 万美元。</p>
+<p>法国网络安全媒体 LeMagIT 较早根据乌克兰法院记录点名部分受害企业，包括 Warren Oil Company、Maxxis International-USA、Newpark Resources 和 Quantum Health。BleepingComputer 引述这些材料称，Warren Oil 在 2024 年 8 月的攻击中被拷走 1.4 TB 数据，并支付了当时约合 500 万美元的 84.5 枚比特币；Newpark Resources 在 2024 年 12 月支付 150 万美元；Quantum Health 在 2026 年 6 月于起初 1500 万美元的勒索后支付了 500 万美元。法院记录把该组织使用的勒索软件称为 Chaos；LeMagIT 还提到，BlackSuit 曾在 2024 年 11 月把 Maxxis International 列为受害者。报道特别写明，乌克兰当局并没有把这四名被逮捕的嫌疑人本身认定为前 Conti 成员。</p>
+<p>对这类执法新闻，应当把已经宣布的逮捕和仍在调查的部分分开。目前公开的是四人落网、28 家企业已支付逾 4050 万美元，以及法院记录中出现的部分受害者和赎金数字；组织其余成员是否到案、如何定性，都还没有在这篇报道里写完。本报没有查阅乌克兰法院原件，受害企业名单和单笔金额以 BleepingComputer 对法院记录及 LeMagIT 的转述为准。本条也不把 Chaos、BlackSuit 和 Conti 之间的人员流散写成已经由检方在本案中全部坐实的同一组织。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul>
-<li>一致处：CISA 17 日将 CVE-2026-115731 列入 KEV、确认已遭利用、联邦修复期限为 12 月 1 日，可在 CISA 警报和目录中核对；修复版本 2023.8.13、2025.12.1、2026.0.1 见于 Puppet Enterprise 更新说明。</li>
-<li>限制：漏洞并非 17 日首次披露，补丁也不是今天才有；目录未将该利用归为勒索软件。本报不把“已被利用”写成大规模破坏已经发生。</li>
-<li>待确认：在野利用的规模和目标范围，以及各发行版和下游镜像的升级进度。</li>
-</ul>
+      <ul><li>主干事实：四人被捕、调查约两年、至少 28 家企业支付逾 4050 万美元，来自 BleepingComputer 对乌克兰国家警察的引述。</li><li>受害企业与单笔赎金：主要来自该文对 LeMagIT 及乌克兰法院记录的转述，本报未查阅原件。</li><li>界限：更大网络与前 Conti 成员的关联，是对整个犯罪网络的描述；报道明确写了当局未将被捕四人本人认定为前 Conti 成员。使用的勒索软件名称在不同材料里出现 Chaos 与 BlackSuit，不宜合并成单一定性。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/17/cisa-adds-one-known-exploited-vulnerability-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
-        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV 目录</a><span class="role">官方</span></li>
-        <li><a href="https://www.puppet.com/products/puppet-enterprise/whats-new" target="_blank" rel="noopener">Puppet Enterprise 更新说明</a><span class="role">官方</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/ukraine-fbi-arrest-ransomware-gang-members-tied-to-40m-in-ransoms/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

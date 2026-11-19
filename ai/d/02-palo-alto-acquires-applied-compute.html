@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>微软 agent-framework 的两个 PyPI 版本被植入窃密程序，约一小时后已从仓库下架 · IT 行业简报</title>
+<title>帕洛阿尔托网络将以约 45 亿美元全股票收购 Applied Compute · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,34 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">漏洞与勒索</div>
-    <h1>微软 agent-framework 的两个 PyPI 版本被植入窃密程序，约一小时后已从仓库下架</h1>
-    <p class="lede">Wiz 和 Aikido 披露，微软 Agent Framework 的 PyPI 元包 agent-framework 在 18 日凌晨（上海时间）先后出现 1.26.1 和 1.26.2 两个恶意版本，会在安装后窃取云和持续集成凭证。两个版本约一小时后已从 PyPI 消失；截至截稿未见微软官方定性。</p>
+    <div class="sec-label">行业</div>
+    <h1>帕洛阿尔托网络将以约 45 亿美元全股票收购 Applied Compute</h1>
+    <p class="lede">网络安全公司帕洛阿尔托网络宣布，已达成协议以约 45 亿美元全股票收购 Applied Compute，把开源权重模型的后期训练与推理平台收入囊中。交易仍须通过监管审批，预计在 2027 财年第三季度完成。</p>
     <div class="meta">
-      <span>2026-11-18</span>
+      <span>2026-11-19</span>
       <span class="dot"></span>
-      <span>漏洞与勒索</span>
+      <span>行业</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>安全公司 Wiz 和 Aikido 披露，微软 Agent Framework 在 PyPI 上的元包 agent-framework，于 17 日 20 时 35 分（协调世界时，上海时间 18 日 4 时 35 分）之后先后出现 1.26.1 和 1.26.2 两个恶意版本。研究人员称，安装这些版本后，会在 Python 的站点包目录里放下启动钩子，之后每次启动 Python 都会运行一段窃密程序，重点收集 Azure、Azure DevOps 和 GitHub Actions 等环境里的令牌与密钥，并外发到第三方接收服务。两个版本大约在 21 时 30 分（协调世界时，上海时间 5 时 30 分）已从 PyPI 上消失，窗口大约一小时。最近的安全版本是 1.26.0。</p>
-<p>Wiz 指出，GitHub 上的 microsoft/agent-framework 仓库里没有对应的 python-1.26.1 标签，1.26.1 只有 wheel 包，并且仍然依赖 agent-framework-core 的 1.26.0，因而“可能”绕过了正常发布流程。Aikido 则强调，两个恶意版本的间隔只有约 33 分钟。两家都没有把根因写成已经查清，也明确说，截至他们发稿时还没有微软官方声明。因此，本报只记录“PyPI 上出现了打着该项目名称的恶意版本，并且很快被拿下”，不写成“微软官方代码仓库已被攻破”或“内部账号确定失窃”。</p>
-<p>影响评估需要分开看。Wiz 提到该包每周约有 4.1 万次下载，Aikido 提到每月约 19 万次，量级相近但统计口径不同，不能混用。攻击者使用的接收服务是免费档，有请求条数上限，但这并不意味着风险可以忽略：只要有凭证被发出去，就应当视为可能已经泄露。另外，两个版本留下的钩子文件名并不相同，只搜索其中一个，可能会漏掉另一种。卸载软件包也不能挽回已经送出的密钥。研究人员给出的处理建议很直接：清理钩子文件，并把该环境能够接触到的云和持续集成凭证全部轮换。</p>
-<p>这条新闻出在 18 日凌晨的短暂窗口里，前一天的简报不可能写到。它也提醒了一个更普遍的问题：即便是与大厂项目同名的软件包，安装来源仍然是公共仓库里的具体版本号。在官方说明出来之前，开发者和持续集成管理员应当检查自己是否在那一个小时里安装过 1.26.1 或 1.26.2，而不是等待定性后再行动。</p></div>
+      <div class="body"><p>帕洛阿尔托网络 11 月 18 日宣布，已与 Applied Compute 达成确定协议，将以全股票方式收购这家开源权重模型后期训练与推理平台公司，交易对价约 45 亿美元，最终金额还可能按约定调整。公司把这笔买卖的意义概括为：企业以后会同时使用开放权重模型和封闭的前沿模型，而目前还没有大型供应商把这类开放模型的训练、适配和部署，连同安全能力一起交付。收购完成后，Applied Compute 的平台和研究团队将并入帕洛阿尔托，面向公有云和主权环境提供带有安全设计的开放模型能力，同时继续服务人工智能原生成长型和大型企业客户。</p>
+<p>Applied Compute 联合创始人兼首席执行官亚什·帕蒂尔，将在交易完成后出任帕洛阿尔托网络的联席首席人工智能官。帕洛阿尔托董事长兼首席执行官尼克希·阿罗拉在声明中说，公司是先以潜在客户身份接触这项平台，Unit 42 的前沿人工智能评估也确认了其安全基础；他判断，每一家企业都将运行开放与封闭模型的组合，而这些模型都需要被保护。帕蒂尔则表示，加入后会把安全放在产品的中心，并加快进入大型机构客户的步伐。Axios、Bloomberg Law 等也确认了 45 亿美元的交易规模和全股票结构。</p>
+<p>交易还需满足包括监管批准在内的常规交割条件，公司预计在 2027 财年第三季度完成。更细的财务影响，帕洛阿尔托表示将在 11 月 18 日下午 1 点 30 分（太平洋时间）的 2027 财年第一季度财报电话会上说明。本报截稿时没有把会上的口头补充当作已核对事实写入。对网络安全行业而言，这是近年少见的、直接买下“如何把开源模型训起来、跑起来”这一层能力的大型交易，也反映出厂商不再只满足于给现成的聊天机器人加安全套件。</p>
+<p>需要说清楚的是：协议已经签署，并不等于收购已经完成，更不等于双方产品会立刻打通。对价、交割时间和人事安排均以公司正式新闻稿为准。本条不讨论市场上对协同效应或摊薄的猜测，只记录已经公布的交易结构和官方口径。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul>
-<li>一致处：1.26.1 与 1.26.2 两个恶意版本、约一小时后从 PyPI 消失、会留下启动钩子并收集云和持续集成凭证、官方仓库未见对应标签，Wiz 与 Aikido 的核心时间线和现象描述相符。</li>
-<li>限制：截稿时未见微软官方声明，根因未确认；不能写成官方仓库失守。两家给出的下载量口径不同，不可混用。本报不扩散完整的外发地址。</li>
-<li>待确认：微软官方调查结论、实际被安装次数，以及是否还有其他被冒用的相关包。</li>
-</ul>
+      <ul><li>一致处：约 45 亿美元、全股票、后期训练与推理平台、预计 2027 财年第三季度交割、帕蒂尔将任联席首席人工智能官，官方新闻稿与 Axios、Bloomberg Law 相符。</li><li>待观察：监管审批结果、最终对价调整，以及财报电话会上是否补充新的财务细节。本报未把电话会内容当作已核实事实。</li><li>口径边界：这是确定协议，不是已经交割；开放权重模型的安全训练与部署是官方对交易目的的表述，并非对当前产品能力的实测。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.wiz.io/blog/malicious-version-of-microsofts-agent-framework-published-to-pypi" target="_blank" rel="noopener">Wiz</a><span class="role">主来源</span></li>
-        <li><a href="https://www.aikido.dev/blog/two-malicious-agent-framework-releases-hit-pypi-in-33-minutes" target="_blank" rel="noopener">Aikido</a><span class="role">次要</span></li>
+        <li><a href="https://www.paloaltonetworks.com/company/press/2026/palo-alto-networks-to-acquire-applied-compute--bringing-secure-open-weight-ai-to-the-enterprise" target="_blank" rel="noopener">Palo Alto Networks</a><span class="role">官方</span></li>
+        <li><a href="https://www.axios.com/pro/enterprise-software-deals/2026/11/18/palo-alto-networks-applied-compute" target="_blank" rel="noopener">Axios</a><span class="role">次要</span></li>
+        <li><a href="https://news.bloomberglaw.com/mergers-and-acquisitions/palo-alto-networks-buys-applied-compute-in-4-5-billion-deal-1" target="_blank" rel="noopener">Bloomberg Law</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

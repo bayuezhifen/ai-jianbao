@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>爱尔兰数据保护委员会称，X 已暂停将 Grok Bot 采集的第三方数据用于训练 · IT 行业简报</title>
+<title>CISA 同日还将 LiteLLM、Apache Axis 与 REDCap 漏洞列入已知被利用目录 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,33 +171,31 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">隐私与监管</div>
-    <h1>爱尔兰数据保护委员会称，X 已暂停将 Grok Bot 采集的第三方数据用于训练</h1>
-    <p class="lede">POLITICO 17 日报道，爱尔兰数据保护委员会对 X 将 Grok Bot 采集的第三方个人数据用于训练提出重大关切并要求暂停；委员称 X 已向监管机构确认暂停相关处理。</p>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 同日还将 LiteLLM、Apache Axis 与 REDCap 漏洞列入已知被利用目录</h1>
+    <p class="lede">CISA 在 11 月 18 日加入已知被利用目录的另外三枚漏洞，分别影响 BerriAI 的 LiteLLM、已停止维护的 Apache Axis 1.x，以及范德比大学的科研数据采集系统 REDCap。目录均写明存在在野利用证据，勒索软件使用情况为未知。</p>
     <div class="meta">
-      <span>2026-11-18</span>
+      <span>2026-11-19</span>
       <span class="dot"></span>
-      <span>隐私与监管</span>
+      <span>漏洞与勒索</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>欧洲政治新闻网站 POLITICO 17 日报道，爱尔兰数据保护委员会（DPC）介入了 X 将 Grok Bot 采集到的第三方个人数据用于训练这一做法。报道称，Grok Bot 自 10 月下旬起会替用户办事，过程中可能收集到并非用户本人的信息；委员会对此提出“重大关切”，并要求暂停相关处理。委员 Dale Sunderland 对 POLITICO 表示，X 已向监管机构确认，已经暂停把这类数据用于训练。稿件刊出时间为中欧时间 17 日 11 时 54 分，约合上海时间 18 时 54 分，落在本窗口内。</p>
-<p>这件事的焦点，不是用户自己发在 X 上的帖子能不能拿去训练，而是智能体在代办过程中碰到的“别人的数据”能不能再进入模型训练。Grok Bot 如果能读邮件、看日历或访问外部页面，收集范围就会超出用户主动公开发布的内容。爱尔兰作为部分科技公司在欧盟的主要监管地，这次用的是行政关切和要求暂停，而不是已经作出的罚款决定或法院判决。报道也写明，X 没有向该报另外置评。截稿时，本报尚未检索到 DPC 官网就同一事项单独发布的新闻稿，因此事实依据仍是 POLITICO 对委员的转述。</p>
-<p>把这条放在“隐私与监管”栏，而不是只写进 Grok 产品栏，是因为真正新的进展发生在监管侧：一家欧盟数据监管机构明确要求停止某类训练用途，并且称公司已经确认暂停。至于暂停是否覆盖所有地区、是否包括历史已入库的数据、以及未来会不会改成经过另行同意后再使用，公开报道都还没有写清。本窗口内马斯克就 Grok 4.8 发布节奏的说明，是另一条产品消息，与这次训练数据争议不是同一件事，不宜混写成“4.8 因为监管而推迟”。</p>
-<p>对用户和机构客户来说，眼下能确认的只有两点：监管机构认为“智能体替你采集到的他人数据”不能未经约束地进入训练；X 方面至少已向爱尔兰监管机构表示暂停了这类处理。在更多官方文件出来之前，不宜把暂停理解成 Grok Bot 停止服务，也不宜理解成欧盟已经完成立法定调。</p></div>
+      <div class="body"><p>在把群晖 DSM 漏洞列入目录的同一天，CISA 还加入了三枚与人工智能网关、老旧 Java 组件和医学研究平台有关的漏洞。BerriAI LiteLLM 的 CVE-2026-40217 被描述为“未受保护的替代通道”：攻击者可通过在 <code>/guardrails/test_custom_code</code> 接口改写字节码，执行任意代码。官方目录把联邦机构的处置截止日期定为 2026 年 12 月 2 日，并且不要求必须先做取证排查。Apache Axis 的 CVE-2026-90436 是不安全的反射：未经身份验证的远程攻击者可以构造 SOAP 故障消息，让 Axis 加载并实例化攻击者指定的类，前提是类路径上存在合适的类。范德比大学 REDCap 的 CVE-2026-90817 是代码注入，未认证攻击者可能通过构造 HTTP 请求，从公开调查入口走到本不该对外的控制器，从而在服务器上执行代码。</p>
+<p>Axis 和 REDCap 两条的截止日期同为 11 月 21 日，并且都被标记为需要进行取证排查，这与群晖那一条的处理要求相同，时间明显紧于 LiteLLM。四枚漏洞的“已知勒索软件利用”栏都是“未知”，不能据此判断它们没有被用于勒索，只能说明 CISA 尚未把它标成已确认的勒索活动。CISA 强调，新的约束来自第 26-04 号约束性运营指令，联邦机构须按风险优先修补那些一旦利用就能完全控制资产的高风险目录漏洞，并在打补丁前判断系统是否已经失陷。指令的直接对象是联邦民事机构，但 CISA 仍建议所有组织按同样原则处理。</p>
+<p>安全媒体在跟进时补充了一些修复线索：Apache Axis 1.x 已停止维护，宜迁移到 Axis 2 或应用已公布的补丁；REDCap 被提到的修复版本包括 16.0.49、17.3.10 和 17.4.4。LiteLLM 的具体安全修复版本在不同转述里并不完全一致，本报不以相互冲突的版本号代替厂商通告。运行 AI 网关、老旧 Java SOAP 栈或科研调查系统的团队，应以项目自己的安全公告和升级说明为准，尽快修补或隔离暴露面。</p>
+<p>这三枚漏洞与群晖那一条共同构成 18 日的目录更新，但影响的对象完全不同，因此单独成篇，避免和 NAS 用户须立即升级的提醒混在一起。本报没有获得这三枚漏洞的在野利用规模或归因，也不把“已有概念验证”这类二手说法写成 CISA 官方结论。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul>
-<li>一致处：目前公开报道以 POLITICO 17 日稿为准，要点为 DPC 提出重大关切并要求暂停、委员称 X 已确认暂停将 Grok Bot 采集的第三方数据用于训练。</li>
-<li>限制：截稿时未见 DPC 官网对等新闻稿，也未见 X 向该报置评，故须保留“据 POLITICO 转述”的限定；这不是罚款或判决。</li>
-<li>待确认：暂停的地域和数据范围、历史数据如何处理，以及其他欧盟或各国监管机构是否跟进。</li>
-</ul>
+      <ul><li>官方目录已核对：LiteLLM 截止日期 2026-12-02、不强制取证排查；Axis 与 REDCap 截止日期 2026-11-21、需取证排查；四条勒索软件使用情况均为未知。</li><li>技术描述以 CISA 短说明为准：LiteLLM 的字节码改写发生在 /guardrails/test_custom_code；Axis 通过构造的 SOAP 故障加载指定类；REDCap 能从公开调查入口到达非预期控制器。</li><li>修复版本：Axis 1.x 停维、REDCap 的具体版本号来自安全媒体转述，LiteLLM 版本号存在出入，本报建议以厂商通告为准。</li></ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.politico.eu/article/x-stops-training-ai-with-agents-data-after-ireland-intervened/" target="_blank" rel="noopener">POLITICO</a><span class="role">主来源</span></li>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/18/cisa-adds-four-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA KEV Catalog</a><span class="role">官方</span></li>
+        <li><a href="https://securityonline.info/cisa-adds-4-exploited-flaws-kev-synology-litellm/" target="_blank" rel="noopener">SecurityOnline</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
