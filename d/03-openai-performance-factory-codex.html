@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>与法国《费加罗报》集团合作，ChatGPT 将展示其报道摘要并链回原文 · IT 行业简报</title>
+<title>OpenAI 公布 Performance Factory，用 Codex 自动排查并修复性能回退 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,34 +172,33 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">OpenAI</div>
-    <h1>与法国《费加罗报》集团合作，ChatGPT 将展示其报道摘要并链回原文</h1>
-    <p class="lede">OpenAI 与法国费加罗报业集团宣布达成战略合作，ChatGPT 将以摘要和摘录的方式呈现《费加罗报》及旗下媒体的新闻与档案，并附上原文链接。晨报未单列，本条作补记。</p>
+    <h1>OpenAI 公布 Performance Factory，用 Codex 自动排查并修复性能回退</h1>
+    <p class="lede">OpenAI 19 日撰文介绍内部系统 Performance Factory：在性能告警响起后，由 Codex 智能体自动调查回退、提出修复，并在上线后复查是否回到基线，工程师仍负责审阅。</p>
     <div class="meta">
-      <span>2026-11-19</span>
+      <span>2026-11-20</span>
       <span class="dot"></span>
       <span>OpenAI</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 官方于 11 月 18 日宣布，与法国费加罗报业集团达成战略合作，目的是让更多人在 ChatGPT 里发现并阅读《费加罗报》的报道。按照双方公开说明，合作范围覆盖该报及旗下相关出版物的时事报道和档案内容，领域包括新闻、商业、文化和生活。这些文章会以摘要和摘录的形式出现，并带上指向原文的链接。这是今早窗口内已经发出、晨报未单独成卡的一项，本午补记。</p>
-<p>费加罗报业集团首席执行官马克·弗耶说，集团希望与人工智能研究与落地方面的领先机构建立有实质内容的合作，把六百多名记者组成的采编力量，同 OpenAI 的技术能力和触达范围结合起来，为读者带来新的使用方式。OpenAI 媒体合作副总裁瓦伦·谢蒂则表示，《费加罗报》帮助读者理解法国和更广阔世界正在发生的事，他们希望用人工智能让更多人看到这些报道，并称这符合公司与新闻机构合作、把优质新闻连接到新读者的既有做法。</p>
-<p>双方还写明，《费加罗报》将保持对新闻的编辑独立和内容把关。费加罗方面计划在内部多个团队引入 ChatGPT Enterprise，用于日常工作，并在其人工智能章程和采编标准的约束下，继续探索把 OpenAI 技术用在工作流程和读者服务里。OpenAI 把这次合作放在它与全球多家新闻机构已有安排的延长线上，强调要提高可靠信息的可发现性，并给出版方探索负责任的应用。</p>
-<p>近两年，OpenAI 已经与多家新闻机构谈过类似的内容展现合作，这次是法国主流日报集团加入。对读者来说，更直接的变化是：用中文或法文在 ChatGPT 里问起法国时事、商业或文化话题时，有机会看到来自《费加罗报》的摘要，并被带到原站点。对报社来说，这是把采编成果送到新入口的一种方式，但读者是否真的点回原文、订阅会不会因此增加，目前都没有可核对的数据。把“发现报道”写成“稿件已被允许拿去训练模型”，目前也缺少公开依据。</p>
-<p>需要说清楚的是：目前公开材料讲的是“可发现、可摘要、可链回原文”，并没有列出付费墙如何处理、授权年限、训练数据是否被用于模型训练，或商业分成如何计算。这些细节要以日后的产品界面和合同披露为准。本条也不宜写成 ChatGPT 从此可以代替阅读原报，摘要只是入口，判断仍应回到记者写就的原文。</p></div>
+      <div class="body"><p>OpenAI 19 日在官网发表技术文章，介绍一套名为 Performance Factory 的内部系统。文章作者是技术员工 Okay Zed 与 Cyrus Forbes。他们写到，智能体开发的节奏已经让传统的性能工程方式难以跟上，于是公司用 Codex 和自有模型，搭起一条在云端自动调查并处理性能问题的流水线，以便继续推进产品路线图，同时把 ChatGPT 的响应速度维持住。</p>
+<p>目前已经跑起来的第一条流水线，叫做回归工作流。性能告警触发后，系统会自动开出任务；一个智能体去调查变慢的原因，把发现写进任务，并给出一份供工程师审阅的修复建议。修复上线之后，另一个智能体再接手同一项任务，检查性能是否回到原先的基线。文章说，从调查、撰写修复到验证缓解，这条工作流已经把处理回退的过程从头到尾自动化了。在刚过三个月的时间里，它跟踪了 1700 多次调查，并在其中 600 多起里定位到根因，相当于每天约 17 次自动调查。</p>
+<p>文章把这条路写成一个逐步放手的过程：早先工程师要自己盯指标、查日志、做性能剖析，后来可以让 Codex 当搭档一起查；再往后，团队把排查步骤收成名为 perf-forensics 的可复用技能，告警几乎只要贴进 Codex，就能得到一份诊断。再往后，调查被搬到云端自动启动，结果发到 Slack，但修复和复查仍要人来做。Performance Factory 要解决的，正是告警堆积之后，连哪些回退值得先看都要在对话线程里翻找的问题。作者也提醒，这是把已有的调查方法交给智能体去执行，而不是把最终合并代码的决定交给模型自己做。</p>
+<p>需要说清楚界限。这是一篇面向工程实践的内部系统介绍，不是 ChatGPT 的新功能上线，也不是对外提供的性能产品。文中给出的 1700 次、600 起根因，都是公司自己统计的工作量，外界难以复核。截至本报截稿，尚未看到其他实验室用对等口径公布类似流水线的对比结果。它说明的是：OpenAI 已经把 Codex 用到自己的线上服务运维里，而且仍然把工程师的审阅留在关键节点上。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
       <ul>
-<li>一致处：OpenAI 官方新闻稿与《费加罗报》18 日报道均确认战略合作、ChatGPT 以摘要和摘录呈现并链回原文，以及费加罗将保持编辑独立、内部计划引入 ChatGPT Enterprise。</li>
-<li>未披露：授权范围的财务条款、是否允许将稿件用于模型训练、以及上线时间表，两边公开稿件均未写明。</li>
-<li>时间：官方标注为 11 月 18 日，属今早覆盖窗口内已出现、晨报未单列的补记。</li>
+<li>一致处：OpenAI 官方博客写明回归工作流的步骤、工程师审阅修复，以及三个多月内 1700 多次调查、600 多起定位到根因、约每天 17 次自动调查。VentureBeat 等转述与官网数字相符。</li>
+<li>定位：这是内部工程系统的介绍，不是面向用户的新模型或新产品发布，官网与转述稿均未把它写成 ChatGPT 功能更新。</li>
+<li>待确认：修复建议被工程师采纳的比例、误报多少，以及是否会把这套方法对外提供，文章没有给出。</li>
 </ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
-        <li><a href="https://www.lefigaro.fr/medias/chatgpt-sera-plus-complet-et-plus-fiable-en-2027-grace-a-nos-contenus-le-figaro-scelle-un-accord-strategique-avec-openai-20261118" target="_blank" rel="noopener">Le Figaro</a><span class="role">主来源</span></li>
+        <li><a href="https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://venturebeat.com/orchestration/exclusive-openai-reveals-performance-factory-a-codex-powered-software-optimization-system-that-keeps-chatgpt-fast" target="_blank" rel="noopener">VentureBeat</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

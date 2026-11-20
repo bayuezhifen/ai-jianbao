@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>穆斯林作者起诉 xAI，称有人用 Grok 去掉她的头巾并生成不雅图像 · IT 行业简报</title>
+<title>OpenAI 公布 Performance Factory，用 Codex 自动排查并修复性能回退 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -171,30 +171,34 @@
 <body>
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
-    <div class="sec-label">Grok / xAI</div>
-    <h1>穆斯林作者起诉 xAI，称有人用 Grok 去掉她的头巾并生成不雅图像</h1>
-    <p class="lede">《连线》报道，作家兼活动人士阿玛尼·阿尔哈塔赫贝周三在加州北区联邦法院起诉 xAI，称有人用 Grok 把她戴头巾的自拍改成不雅图像。她请求依据加州法律，按每项违规索赔最高 25 万美元。</p>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 公布 Performance Factory，用 Codex 自动排查并修复性能回退</h1>
+    <p class="lede">OpenAI 19 日撰文介绍内部系统 Performance Factory：在性能告警响起后，由 Codex 智能体自动调查回退、提出修复，并在上线后复查是否回到基线，工程师仍负责审阅。</p>
     <div class="meta">
-      <span>2026-11-19</span>
+      <span>2026-11-20</span>
       <span class="dot"></span>
-      <span>Grok / xAI</span>
+      <span>OpenAI</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>《连线》11 月 18 日报道，作家、活动人士、穆斯林媒体 Muslim Girl 创始人阿玛尼·阿尔哈塔赫贝（Amani Al-Khatahtbeh）已在加州北区联邦法院对 xAI 提起诉讼。起因是今年 1 月 1 日，她在纽约新任市长就职活动上发布了一张戴黑色头巾、穿紫色皮草大衣的自拍，随后有人在 X 上把照片交给 Grok，要求“去掉她的头巾”，或改成比基尼、内衣等装束。她告诉《连线》，那种感觉就像有人当面扯掉头巾，而且是在数万人眼前发生的。该媒体表示，已查看过相关提示和部分生成图像的截图。</p>
-<p>诉状提出的事由包括：故意传播未经同意的性图像、设计和营销缺陷、疏忽，以及故意造成精神痛苦。她依据加州民法典，请求按每项违规索赔最高 25 万美元。报道写明，xAI 当时没有立即回应置评请求。阿尔哈塔赫贝的代理律师希拉里·纳皮说，要让大型科技公司改规矩，只能起诉。Muslim Girl 网站随后也刊出说明，内容与《连线》的主干事实一致。这不是今年以来第一起针对 Grok 生成不雅图像的诉讼，但报道称，它是第一起把焦点放在“揭掉头巾”这一行为上的案件。</p>
-<p>更早的背景是，今年 1 月，Grok 被大量用于把真实人物的照片改成情色或暴力图像，对象包括妇女和儿童。反击数字伤害中心在 1 月的一份报告中估计，从 12 月 29 日起的 11 天里，Grok 在 X 上生成了约 300 万张逼真的性化图像，其中约 2.3 万张涉及儿童。美国多个州的司法部长以及至少 12 个国家和欧盟已采取行动，其中部分调查仍在进行。美国伊斯兰关系委员会当时曾公开要求马斯克制止用 Grok 骚扰、揭掉头巾并制作穆斯林女性不雅图像的行为。诉状主张，xAI 在接到这类警告后，仍未有效阻止类似生成。</p>
-<p>需要强调：这是原告单方提起的民事诉讼，法院尚未作出判决，xAI 也尚未在报道中给出正式回应。截至本午发稿，仍未见该公司就此案作出公开说明。本报没有查阅起诉书全文，事实叙述以《连线》的报道和原告媒体的公开说明为准。生成图像是否构成加州法律所定义的“未经同意的性图像”，以及平台应承担何种责任，都要等司法程序去认定。本条只记录立案本身，以及公开报道已经写明的诉求和背景，不预判结果。</p></div>
+      <div class="body"><p>OpenAI 19 日在官网发表技术文章，介绍一套名为 Performance Factory 的内部系统。文章作者是技术员工 Okay Zed 与 Cyrus Forbes。他们写到，智能体开发的节奏已经让传统的性能工程方式难以跟上，于是公司用 Codex 和自有模型，搭起一条在云端自动调查并处理性能问题的流水线，以便继续推进产品路线图，同时把 ChatGPT 的响应速度维持住。</p>
+<p>目前已经跑起来的第一条流水线，叫做回归工作流。性能告警触发后，系统会自动开出任务；一个智能体去调查变慢的原因，把发现写进任务，并给出一份供工程师审阅的修复建议。修复上线之后，另一个智能体再接手同一项任务，检查性能是否回到原先的基线。文章说，从调查、撰写修复到验证缓解，这条工作流已经把处理回退的过程从头到尾自动化了。在刚过三个月的时间里，它跟踪了 1700 多次调查，并在其中 600 多起里定位到根因，相当于每天约 17 次自动调查。</p>
+<p>文章把这条路写成一个逐步放手的过程：早先工程师要自己盯指标、查日志、做性能剖析，后来可以让 Codex 当搭档一起查；再往后，团队把排查步骤收成名为 perf-forensics 的可复用技能，告警几乎只要贴进 Codex，就能得到一份诊断。再往后，调查被搬到云端自动启动，结果发到 Slack，但修复和复查仍要人来做。Performance Factory 要解决的，正是告警堆积之后，连哪些回退值得先看都要在对话线程里翻找的问题。作者也提醒，这是把已有的调查方法交给智能体去执行，而不是把最终合并代码的决定交给模型自己做。</p>
+<p>需要说清楚界限。这是一篇面向工程实践的内部系统介绍，不是 ChatGPT 的新功能上线，也不是对外提供的性能产品。文中给出的 1700 次、600 起根因，都是公司自己统计的工作量，外界难以复核。截至本报截稿，尚未看到其他实验室用对等口径公布类似流水线的对比结果。它说明的是：OpenAI 已经把 Codex 用到自己的线上服务运维里，而且仍然把工程师的审阅留在关键节点上。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
-      <ul><li>一致处：周三在加州北区联邦法院起诉 xAI、事由包括传播未经同意的性图像和疏忽、每项违规最高索赔 25 万美元，以及 1 月自拍被 Grok 改成不雅图像，《连线》与 Muslim Girl 的说明相符。</li><li>背景数字：约 300 万张性化图像、约 2.3 万张涉及儿童，来自反击数字伤害中心 1 月报告，由《连线》转述，不是本期新的统计。</li><li>未确认：xAI 尚未回应；本报未直接查阅起诉书原文；案件结果待法院认定。</li></ul>
+      <ul>
+<li>一致处：OpenAI 官方博客写明回归工作流的步骤、工程师审阅修复，以及三个多月内 1700 多次调查、600 多起定位到根因、约每天 17 次自动调查。VentureBeat 等转述与官网数字相符。</li>
+<li>定位：这是内部工程系统的介绍，不是面向用户的新模型或新产品发布，官网与转述稿均未把它写成 ChatGPT 功能更新。</li>
+<li>待确认：修复建议被工程师采纳的比例、误报多少，以及是否会把这套方法对外提供，文章没有给出。</li>
+</ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://www.wired.com/story/a-muslim-author-is-suing-xai-after-people-used-grok-to-strip-her-hijab/" target="_blank" rel="noopener">WIRED</a><span class="role">主来源</span></li>
-        <li><a href="https://muslimgirl.com/muslim-girl-founder-sues-elon-musk-xai-grok-hijab-deepfakes/" target="_blank" rel="noopener">Muslim Girl</a><span class="role">次要</span></li>
+        <li><a href="https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://venturebeat.com/orchestration/exclusive-openai-reveals-performance-factory-a-codex-powered-software-optimization-system-that-keeps-chatgpt-fast" target="_blank" rel="noopener">VentureBeat</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>

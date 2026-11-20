@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IT 行业简报 · 2026-11-19</title>
+<title>IT 行业简报 · 2026-11-20</title>
 <style>
   :root {
     color-scheme: light;
@@ -104,6 +104,7 @@
   }
   .src:hover { text-decoration: underline; }
   .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
   .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
   .card h3 a {
     color: inherit;
@@ -114,32 +115,43 @@
     margin-top: 1.75rem;
     color: var(--quiet);
     font-size: .78rem;
+
   }
 </style>
 </head>
+
 <body>
   <div class="wrap">
     <header>
       <div class="when">
-        <span>2026-11-19</span>
+        <span>2026-11-20</span>
         <span class="dot"></span>
-        <span>周四 14:10</span>
+        <span>周五 08:20</span>
         <span class="dot"></span>
         <span>上海</span>
       </div>
       <h1>IT 行业简报</h1>
     </header>
+
     <div class="sec"><h2>行业</h2></div>
+
     <article class="card">
-      <h3><a href="d/01-tencent-us-gpu-remote-access-curbs.html">腾讯称美国限制远程调用先进芯片，短期会拖慢下一代模型训练</a></h3>
-      <p>腾讯总裁刘炽平在三季报电话会上说，美国新近限制通过境外数据中心远程调用先进芯片，会让中国企业手里的先进算力变少，下一代模型短期内可能要花更长时间；长期看，这会加快国产芯片和供应链补位。首席战略官詹姆斯·米切尔则表示，腾讯云目前以推理为主，收入不会因此受到实质性冲击。</p>
-      <a class="src detail" href="d/01-tencent-us-gpu-remote-access-curbs.html" data-original="https://www.theregister.com/systems/2026/11/19/chinese-web-giant-tencent-says-new-us-gpu-ban-sets-everyone-back-in-china/5310927">阅读详情</a>
+      <h3><a href="d/01-anthropic-ipo-first-day-close.html">Anthropic 首日收于 97.17 美元，较发行价上涨约 17%，开盘冲高后回落</a></h3>
+      <p>Anthropic 以代码 ANT 迎来纳斯达克首个交易日，开盘 111.50 美元，收于 97.17 美元，较 83 美元发行价上涨约 17%，完全稀释市值约 1.8 万亿美元。同期美国三大股指下跌约 2%，这场规模创纪录的上市并未把更广泛的人工智能交易重新点燃。</p>
+      <a class="src detail" href="d/01-anthropic-ipo-first-day-close.html" data-original="https://www.cnbc.com/2026/11/19/anthropic-ipo-ant-live-updates.html">阅读详情</a>
     </article>
-    <div class="sec"><h2>OpenAI</h2></div>
     <article class="card">
-      <h3><a href="d/02-openai-figaro-journalism-partnership.html">与法国《费加罗报》集团合作，ChatGPT 将展示其报道摘要并链回原文</a></h3>
-      <p>OpenAI 与法国费加罗报业集团宣布达成战略合作，ChatGPT 将以摘要和摘录的方式呈现《费加罗报》及旗下媒体的新闻与档案内容，并附上原文链接。费加罗方面表示将保持编辑独立，还计划在内部引入 ChatGPT Enterprise。此为 18 日已公布、晨报未单列的补记。</p>
-      <a class="src detail" href="d/02-openai-figaro-journalism-partnership.html" data-original="https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership">阅读详情</a>
+      <h3><a href="d/02-google-blue-origin-suncatcher-2029.html">谷歌选定蓝色起源 New Glenn，计划 2029 年一季度发射 Suncatcher 计算卫星</a></h3>
+      <p>谷歌与蓝色起源 19 日宣布发射服务协议，由 New Glenn 运载火箭在 2029 年一季度执行 Project Suncatcher 的首次专用重型发射，把搭载谷歌张量处理单元、算力大约相当于一个数据中心机柜的卫星送入太阳同步轨道。</p>
+      <a class="src detail" href="d/02-google-blue-origin-suncatcher-2029.html" data-original="https://blog.google/innovation-and-ai/models-and-research/google-research/blue-origin-project-suncatcher-partnership/">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>OpenAI</h2></div>
+
+    <article class="card">
+      <h3><a href="d/03-openai-performance-factory-codex.html">OpenAI 公布 Performance Factory，用 Codex 自动排查并修复性能回退</a></h3>
+      <p>OpenAI 介绍内部系统 Performance Factory：性能告警响起后，由 Codex 智能体自动调查回退、提出修复，并在上线后复查是否回到基线。公司称三个多月里完成 1700 多次调查、在 600 多起中定位到根因，工程师仍负责审阅。</p>
+      <a class="src detail" href="d/03-openai-performance-factory-codex.html" data-original="https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast/">阅读详情</a>
     </article>
     <div class="sec">
       <h2>Claude / Anthropic</h2>
@@ -147,24 +159,23 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>Anthropic 定价上市晨报已收；股票预计今日以代码 ANT 在纳斯达克交易，但美国股市尚未开盘，本窗口无开盘报价，也无新的产品发布。</p>
+      <p>首日交易见行业栏。本窗口未见 Claude 模型或产品的新进展。</p>
     </article>
+
     <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+
     <article class="card">
-      <h3><a href="d/03-nvidia-geforce-driver-ssd-writes.html">用户反馈 GeForce 新驱动闲置时异常写入 SSD，高者每小时约 30GB，官方尚未确认</a></h3>
-      <p>Tom&#x27;s Hardware 和 IT之家等报道，有用户反映英伟达 GeForce 驱动 621.14、621.24 会在电脑闲置时由后台进程反复重写日志，向固态硬盘写入数据；621.14 有实测约每小时 3GB，也有人说 621.24 可到约每小时 30GB。并非所有机器都会出现，英伟达截至发稿尚未公开确认或给出官方修复。</p>
-      <a class="src detail" href="d/03-nvidia-geforce-driver-ssd-writes.html" data-original="https://www.tomshardware.com/pc-components/gpu-drivers/nvidia-geforce-driver-bug-reportedly-hammers-ssds-with-up-to-30gb-of-writes-per-hour-users-trace-massive-idle-wear-to-background-service-newer-driver-reportedly-still-affected">阅读详情</a>
+      <h3><a href="d/04-nvidia-gentlemen-ransomware-investigation.html">Gentlemen 勒索团伙声称攻入英伟达并设定 11 月 28 日泄密倒计时，公司称自有系统未见失陷</a></h3>
+      <p>Gentlemen 勒索团伙在泄露网站上挂出英伟达，并设定 11 月 28 日倒计时。英伟达回应称，自有系统和网络未见失陷，正在调查一起可能影响到第三方合作伙伴的事件；网站上尚未放出可核验的被窃文件。</p>
+      <a class="src detail" href="d/04-nvidia-gentlemen-ransomware-investigation.html" data-original="https://www.bleepingcomputer.com/news/security/nvidia-investigating-gentlemen-ransomware-breach-claims/">阅读详情</a>
     </article>
-    <div class="sec"><h2>Grok / xAI</h2></div>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
     <article class="card">
-      <h3><a href="d/04-musk-grok-48-multiple-beta-variants.html">马斯克称「Grok 4.8」目前是多个测试中的模型变体，尚未确定哪一个会大范围开放</a></h3>
-      <p>马斯克今天上午在 X 上回复称，“Grok 4.8”目前是多个仍在测试的模型变体，他们还不确定哪一个会大范围开放。这条帖子是在回复一段流传的讲话剪辑；剪辑的文字整理里，马斯克谈到 4.8 仍在强化学习阶段，Grok Bot 用户有时会碰到不同版本。</p>
-      <a class="src detail" href="d/04-musk-grok-48-multiple-beta-variants.html" data-original="https://x.com/elonmusk/status/2123226994246828250">阅读详情</a>
-    </article>
-    <article class="card">
-      <h3><a href="d/05-amani-sues-xai-grok-hijab-images.html">穆斯林作者起诉 xAI，称有人用 Grok 去掉她的头巾并生成不雅图像</a></h3>
-      <p>《连线》报道，作家、活动人士阿玛尼·阿尔哈塔赫贝周三在加州北区联邦法院起诉 xAI，称有人用 Grok 把她戴头巾的自拍改成不雅图像，诉由包括传播未经同意的性图像、产品缺陷和疏忽。截至午报，仍未见 xAI 就此案作出公开回应。本条保留晨报，无新的立案进展。</p>
-      <a class="src detail" href="d/05-amani-sues-xai-grok-hijab-images.html" data-original="https://www.wired.com/story/a-muslim-author-is-suing-xai-after-people-used-grok-to-strip-her-hijab/">阅读详情</a>
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口检索了马斯克与 xAI 相关动态，未见关于训练、版本阶梯或发布时点的新主张，故不单列。</p>
     </article>
     <div class="sec">
       <h2>Cursor</h2>
@@ -172,7 +183,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索 Cursor 官方文档与更新说明，本窗口无新的产品主条。</p>
+      <p>已检索 Cursor 更新与官方日志，本窗口无新的产品主条。Origin 代码托管仍为 8 月已推出的早期测试，无新进展。</p>
     </article>
     <div class="sec">
       <h2>CPU / 服务器</h2>
@@ -180,7 +191,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索英特尔、AMD 官方与主流报道，本窗口无新的处理器发布或并购主条。</p>
+      <p>已检索 Intel、AMD 官方与主流报道。第六代 EPYC 量产供货等消息早于本窗口，本窗无新的主条。</p>
     </article>
     <div class="sec">
       <h2>手机与端侧 SoC</h2>
@@ -188,7 +199,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>高通加州裁员晨报已收；本窗口无新的芯片发布。</p>
+      <p>高通加州裁员昨晨已收。本窗口未见高通、联发科或苹果硅的新产品或新进展主条。</p>
     </article>
     <div class="sec">
       <h2>存储与网络硬件</h2>
@@ -196,7 +207,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索 DRAM、SSD 与交换机动态；英伟达驱动异常写入固态硬盘见「英伟达」栏。</p>
+      <p>已检索 DRAM、SSD 与网络硬件动态，本窗口无足够交叉核对的新主条。</p>
     </article>
     <div class="sec">
       <h2>群晖 / Synology</h2>
@@ -204,15 +215,15 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索群晖英文与中文站新闻及安全通告。CISA 将 DSM 漏洞列入已知被利用目录晨报已收，本窗口无新的通告或产品发布。威联通最新可查通告仍为 11 月 13 日 QSA-26-21，无新条。</p>
+      <p>已检索群晖英文与中文站新闻及安全通告。最新可查通告仍为 11 月 13 日的 Synology-SA-26:19，CISA 将 DSM 漏洞列入已知被利用目录昨晨已收，本窗口无新的通告或产品发布。</p>
     </article>
-    <div class="sec">
-      <h2>操作系统与桌面</h2>
-      <span class="badge">这窗口无新产品/无新进展</span>
-    </div>
+
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+
     <article class="card">
-      <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索 Windows、macOS 与 Linux 更新，本窗口无新的系统主条。</p>
+      <h3><a href="d/05-windows-11-kb5132057-preview.html">Windows 11 发布可选预览更新 KB5132057，带来新版搜索和暗光人脸识别补光</a></h3>
+      <p>微软 19 日向 Windows 11 25H2 和 26H2 推送可选预览更新 KB5132057，版本升至 26200.10075 与 26300.10075。更新主打重新设计的 Windows 搜索，并带来暗光环境下的人脸识别补光，以及可手动打开的新「运行」对话框。</p>
+      <a class="src detail" href="d/05-windows-11-kb5132057-preview.html" data-original="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/11/kb5132057-windows-11-25h2-26h2-update">阅读详情</a>
     </article>
     <div class="sec">
       <h2>语言 / 运行时 / 框架</h2>
@@ -220,7 +231,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索主流语言与运行时发布说明，本窗口无新的版本主条。</p>
+      <p>已检索主流语言、运行时与框架发布说明，本窗口无新的版本主条。</p>
     </article>
     <div class="sec">
       <h2>开源治理与许可证</h2>
@@ -236,7 +247,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>GitHub Copilot 正式提供 Gemini 4 Neon 晨报已收，本窗口无新的主条。</p>
+      <p>GitHub Copilot 正式提供 Gemini 4 Neon 昨晨已收；VS Code 1.147 稳定版发布于 18 日，不在本窗口。本窗无新的主条。</p>
     </article>
     <div class="sec">
       <h2>漏洞与勒索</h2>
@@ -244,7 +255,7 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>CISA 已知被利用目录、勒索软件逮捕与 Apache Roller 通告晨报已收；本窗口未见新的 CISA 条目或威联通新通告。</p>
+      <p>Gentlemen 相关声称及英伟达回应见英伟达栏。本窗口未见新的 CISA 已知被利用目录条目，也未见威联通新通告。</p>
     </article>
     <div class="sec">
       <h2>身份与访问</h2>
@@ -252,15 +263,15 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索。微软 Entra 等 Ignite 相关宣布昨报已收，本窗口无新的主条。</p>
+      <p>已检索。微软 Entra 等 Ignite 相关宣布此前已报，本窗口无新的主条。</p>
     </article>
-    <div class="sec">
-      <h2>隐私与监管</h2>
-      <span class="badge">这窗口无新产品/无新进展</span>
-    </div>
+
+    <div class="sec"><h2>隐私与监管</h2></div>
+
     <article class="card">
-      <h3>这窗口无新产品/无新进展</h3>
-      <p>商务部堵住第三国数据中心远程租用先进芯片的临时最终规则，以及限制进口中国数据中心光模块的报道，此前已报；腾讯管理层对远程调用限制的表态见行业栏。</p>
+      <h3><a href="d/06-tsmc-samsung-china-chip-shipment-curbs.html">台积电收紧对大陆设计客户的先进制程代工，金融时报称三星也暂停部分对华出货</a></h3>
+      <p>路透社援引知情人士报道，台积电正收紧对大陆芯片设计客户的先进制程代工，16 纳米及以下订单原则上须取得美国出口许可。金融时报称，三星电子也暂停了部分对华出货，以便向美国商务部申请许可。商务部相关规则本报 17 日已报，本条写的是规则生效后的代工执行动作。</p>
+      <a class="src detail" href="d/06-tsmc-samsung-china-chip-shipment-curbs.html" data-original="https://www.investing.com/news/stock-market-news/tsmc-tightens-china-ai-chip-curbs-as-new-us-rules-close-manufacturing-loophole-sources-say-5038806">阅读详情</a>
     </article>
     <div class="sec">
       <h2>消费电子</h2>
@@ -268,16 +279,18 @@
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索消费电子新品与发布，本窗口无新的主条。</p>
-    </article>
-    <div class="sec"><h2>大厂平台政策</h2></div>
-    <article class="card">
-      <h3><a href="d/06-google-play-foldable-adaptive-ready-2027.html">谷歌 Play 规定 2027 年 4 月起应用须达到折叠屏基础适配，否则可能无法上架或更新</a></h3>
-      <p>谷歌宣布，从 2027 年 4 月起，在 Play 商店发布或更新的应用须达到折叠屏「第三档、基础适配」要求，包括铺满屏幕、折叠与旋转时保留状态，并支持多窗口；达不到要求的应用可能无法上架或更新，展示位也可能变少。游戏的基础适配截止到 2027 年 8 月，但折叠屏截图须与应用一样在 4 月前提交。</p>
-      <a class="src detail" href="d/06-google-play-foldable-adaptive-ready-2027.html" data-original="https://developer.android.com/blog/posts/google-play-adaptive-quality-standards">阅读详情</a>
+      <p>已检索消费电子新品与发布。华为 Mate X8 仍定于 11 月 24 日发布会，本窗口无新的整机发布主条。</p>
     </article>
 
-    <footer>IT 行业简报 · 2026-11-19 14:10 上海 · 归档 2026-11-19-1410</footer>
+    <div class="sec"><h2>大厂平台政策</h2></div>
+
+    <article class="card">
+      <h3><a href="d/07-android-developer-verification-global-2027.html">谷歌宣布 Android 开发者验证将于 2027 年 1 月起向全球铺开</a></h3>
+      <p>谷歌 19 日宣布，Android 开发者验证将从 2027 年 1 月起向全球铺开，先与谷歌 Play、Galaxy Store 以及荣耀、OPPO、小米、传音、vivo 等渠道同步推进，随后数月内扩大到认证安卓设备上的所有安装来源。这与昨午已报的 Play 折叠屏基础适配不是同一项规则。</p>
+      <a class="src detail" href="d/07-android-developer-verification-global-2027.html" data-original="https://developer.android.com/blog/posts/android-developer-verification-2027">阅读详情</a>
+    </article>
+
+    <footer>IT 行业简报 · 2026-11-20 08:20 上海 · 归档 2026-11-20-0820</footer>
   </div>
 </body>
 </html>
