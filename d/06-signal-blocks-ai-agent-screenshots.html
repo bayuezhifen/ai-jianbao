@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signal 默认限制截屏，阻止系统级人工智能助手读取聊天内容 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">隐私与监管</div>
+    <h1>Signal 默认限制截屏，阻止系统级人工智能助手读取聊天内容</h1>
+    <p class="lede">Signal 总裁梅雷迪思·惠特克 20 日发文称，将在 iOS 27 以及可检测到人工智能助手读屏的安卓系统上，默认限制截屏，以阻止系统级智能体读取聊天记录。她同时承认这一做法并不完整，并呼吁苹果、谷歌和微软提供明确的退出机制。</p>
+    <div class="meta">
+      <span>2026-11-21</span>
+      <span class="dot"></span>
+      <span>隐私与监管</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Signal 把这件事写成隐私承诺，而不是一个可有可无的开关。总裁梅雷迪思·惠特克 20 日在官方博客里说，公司将限制新近内置到手机操作系统里的人工智能智能体，避免它们捕捉并保存 Signal 中的数据。文章回顾，去年他们已经用默认拦截截屏的办法，阻止微软 Windows 11 上的 Recall 拍摄聊天画面；现在要把类似措施，用到 iOS 27，以及能够发现有人工智能助手正在读取 Signal 屏幕的安卓系统上。</p>
+<p>惠特克的判断很重。她写道，谷歌、苹果和微软这三家主导消费操作系统的公司，等于给第三方应用划定了生存环境；眼下把智能体能力做进系统，正在让这个环境对隐私越来越不友好，甚至称得上对 Signal 履行自身使命构成生存层面的威胁。按她的描述，系统级智能体会扫描屏幕上的信息，再把内容送到本地数据库或远程服务器，以便回答问题和执行任务。一旦内容被这样取走，就不在 Signal 的控制范围内，连同对话里其他参与者的隐私也会受影响。</p>
+<p>因此，应用内将在 iOS 27 上阻止截屏，并在安卓上于检测到助手试图抓取屏幕数据时采取限制。想继续截屏的人，可以在应用设置里关掉这项保护；但惠特克提醒，这样做可能让自己和联系人的内容暴露给这些智能体，从而打破 Signal 能够给出的隐私保证。她也承认，只拦截屏并不完整：智能体还可能通过文件系统，读取已经留在设备上的内容。目前他们还无法在 macOS 上提供同等保护，原因是操作系统没有给开发者留下既不严重损害体验、又能限制智能体取数的办法。</p>
+<p>Signal 还抱怨文档不足。惠特克说，过去几个月团队花了大量时间，在安卓和 iOS 上做取证式排查，才大致弄清这些智能体究竟如何访问应用数据。她呼吁苹果、谷歌和微软做两件比较具体的事：一是给开发者提供清楚、可文档化的办法，让应用退出智能体的数据读取和处理，范围包括读屏、文件系统、通知和其他系统接口，并且不应因此毁掉应用的基本功能；二是把智能体如何访问和处理数据写清楚，不能把机密计算当成已经解决了问题。她也提到，还需要办法阻止第三方智能体——文中点名 Meta 的 Muse——利用用户在初始设置时被鼓励授予的深层权限去读取应用数据。</p>
+<p>The Verge 当天（世界标准时间 12 时 30 分，上海时间 20 日 20 时 30 分）报道了同一宣布，路透社和后来的《印度教徒报》也作了跟进。路透社还回述，该社本周早些时候曾报道 Muse 绕过官方连接器，在苹果电脑和安卓手机上读取 Signal 消息：在 macOS 上，它组合使用辅助功能和截屏工具，把聊天画面拍下来再提取文字。苹果随后的一次系统更新堵住了这条具体路径，但又引入了一套面向智能体的新权限。苹果、谷歌和微软当时没有立刻回应置评。今早简报没有收录此条，故补进本窗。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：Signal 官方博客、The Verge 和路透社（经《印度教徒报》等转述）都确认，Signal 将在 iOS 27 和可检测的安卓环境中限制截屏，以阻止系统级智能体读取聊天内容；用户可在设置中关闭；官方承认措施并不完整，且目前无法在 macOS 上提供同等保护。</li>
+<li>呼吁对象：官方点名苹果、谷歌和微软，要求提供退出智能体取数的技术手段和更清楚的文档。三家公司在路透社当时的问询中未立即回复。</li>
+<li>Muse：路透社本周早些时候关于 Muse 读取 Signal 消息的报道，被作为背景引用。苹果随后更新堵住了其中一条 macOS 路径，但又引入了新的智能体权限。这与 Signal 本次产品改动是相关背景，不是同一条宣布。</li>
+<li>待确认：各系统版本上拦截的实际效果，以及操作系统厂商是否会提供官方要求的退出接口。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://signal.org/blog/protecting-your-privacy/" target="_blank" rel="noopener">Signal Blog（Meredith Whittaker）</a><span class="role">官方</span></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1038390/signal-blocking-ai-agent-screenshots-mobile-app" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+        <li><a href="https://www.thehindu.com/sci-tech/technology/signal-restricts-screenshots-to-block-ai-agents-from-reading-messages/article71727329.ece" target="_blank" rel="noopener">Reuters（The Hindu 转载）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -104,6 +104,7 @@
   }
   .src:hover { text-decoration: underline; }
   .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
   .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
   .card h3 a {
     color: inherit;
@@ -114,114 +115,102 @@
     margin-top: 1.75rem;
     color: var(--quiet);
     font-size: .78rem;
+
   }
 </style>
 </head>
-
 <body>
   <div class="wrap">
     <header>
       <div class="when">
         <span>2026-11-21</span>
         <span class="dot"></span>
-        <span>周六 08:20</span>
+        <span>周六 14:10</span>
         <span class="dot"></span>
         <span>上海</span>
       </div>
       <h1>IT 行业简报</h1>
     </header>
-
     <div class="sec"><h2>行业</h2></div>
     <article class="card">
-      <h3><a href="d/01-us-stocks-ai-selloff-friday.html">美股周五人工智能板块大跌，纳指跌 5.28%，英伟达收跌 14.01%</a></h3>
-      <p>美国周五收盘，纳斯达克综合指数跌 5.28%，标普 500 跌 3.69%。英伟达收跌 14.01%，报 125.53 美元；AMD 跌 13.25%，美光跌 13.89%。路透社当天下午报道美国证交会正在审视英伟达会计问题后，英伟达跌幅明显扩大。</p>
-      <a class="src detail" href="d/01-us-stocks-ai-selloff-friday.html" data-original="https://www.investing.com/news/stock-market-news/us-stocks-lower-at-close-of-trade-dow-jones-industrial-average-down-193-5042683">阅读详情</a>
+      <h3><a href="d/01-softbank-son-sk-hynix-trillion-bid.html">软银确认孙正义曾探讨约1万亿美元收购SK海力士，但已不再积极考虑</a></h3>
+      <p>《The Information》报道，孙正义近期曾向华尔街探询为收购 SK 海力士筹资，潜在交易规模约 1 万亿美元。软银发言人随后表示，这笔交易目前已不再处于积极考虑阶段。</p>
+      <a class="src detail" href="d/01-softbank-son-sk-hynix-trillion-bid.html" data-original="https://economictimes.indiatimes.com/tech/technology/softbanks-son-explored-1-trillion-buyout-of-sk-hynix-the-information/articleshow/136043315.cms">阅读详情</a>
     </article>
-
     <div class="sec"><h2>OpenAI</h2></div>
     <article class="card">
-      <h3><a href="d/02-openai-combatting-adversarial-distillation.html">OpenAI 公布对抗性蒸馏防护，受保护推理提取成功率从 54.0% 降至 0.2%</a></h3>
-      <p>OpenAI 11 月 20 日发表文章，介绍如何应对未经授权的对抗性蒸馏，重点保护模型内部的推理过程。公司称，在自适应黑盒测试中，从先前请求里提取受保护推理的平均成功率，已由 GPT-6 Astra 原防护下的 54.0%，降到 GPT-6.2 Astra 新防护下的 0.2%。</p>
-      <a class="src detail" href="d/02-openai-combatting-adversarial-distillation.html" data-original="https://openai.com/index/combatting-adversarial-distillation/">阅读详情</a>
+      <h3><a href="d/02-chatgpt-space-plus-rollout.html">ChatGPT Space 向 Plus 用户开放，可做会自动更新的页面和演示文稿</a></h3>
+      <p>官方更新说明称，面向 18 岁及以上 Plus 用户，ChatGPT Space 即日起向全球推送。用户可在其中制作可自动更新的页面和演示文稿，并邀请同样拥有 Space 权限的人一起修改。</p>
+      <a class="src detail" href="d/02-chatgpt-space-plus-rollout.html" data-original="https://help.openai.com/en/articles/6825453-chatgpt-release-notes">阅读详情</a>
     </article>
-
-    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
     <article class="card">
-      <h3><a href="d/03-anthropic-ant-first-full-trading-day.html">Anthropic 上市后首个完整交易日收于 88.91 美元，下跌 8.5%</a></h3>
-      <p>股票代码 ANT 周五收于 88.91 美元，较周四收盘价 97.17 美元下跌 8.5%，盘中最低见到 83.05 美元，接近 83 美元发行价。这是该公司上市后的第一个完整交易日，也是人工智能板块当天普遍下跌中的一部分。</p>
-      <a class="src detail" href="d/03-anthropic-ant-first-full-trading-day.html" data-original="https://finance.yahoo.com/quote/ANT/history/">阅读详情</a>
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>晨报已报上市后首个完整交易日收于 88.91 美元、下跌 8.5%，本窗口无新的产品或官方进展。</p>
     </article>
-
-    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
     <article class="card">
-      <h3><a href="d/04-reuters-sec-nvidia-accounting-probe.html">路透社独家报道：美国证交会正在审视英伟达的会计问题</a></h3>
-      <p>路透社周五援引两名知情人士报道，美国证交会执法部门正在审视英伟达可能存在的会计问题。《华尔街日报》本周二曾报道证交会在调查英伟达，但当时写明无法确定调查重点。路透社称，把焦点明确到会计方面，这是第一次。</p>
-      <a class="src detail" href="d/04-reuters-sec-nvidia-accounting-probe.html" data-original="https://www.reuters.com/5f374b32b07b/world/us-secs-nvidia-probe-is-examining-potential-accounting-issues-sources-say-2026-11-20/">阅读详情</a>
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>晨报已报路透社称美国证交会正在审视其会计问题，以及周五收跌 14.01%，本窗口无新的产品或调查进展。</p>
     </article>
-
     <div class="sec">
       <h2>Grok / xAI</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索马斯克在 X 上的帖子与公开报道，本窗口没有关于训练、版本阶梯或发布时点的新主张。</p>
+      <p>已检索马斯克在 X 上的帖子，本窗口无训练、版本阶梯或发布时点的新主张。晨报该栏为空，故不另保留旧卡。</p>
     </article>
-
     <div class="sec">
       <h2>Cursor</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索 Cursor 官方更新说明，最新一条仍是 11 月 6 日的 Voice Chat with Agents，本窗口无新的产品主条。</p>
+      <p>已检索 Cursor 官方更新说明，最新仍为 11 月 6 日的 Voice Chat with Agents，本窗口无新的产品主条。</p>
     </article>
-
     <div class="sec">
       <h2>CPU / 服务器</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索英特尔、AMD 官方与主流报道，本窗口无新的服务器处理器产品主条。个股随美股下跌的情况已写入行业栏。</p>
+      <p>已检索英特尔、AMD 官方与主流报道，本窗口无新的服务器处理器主条。</p>
     </article>
-
     <div class="sec">
       <h2>手机与端侧 SoC</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索高通、联发科、苹果硅相关动态，本窗口无单独的芯片发布主条。麒麟 9030S 随华为星芒 OSTA O1 Pro 一起发布，见「消费电子」。</p>
+      <p>已检索高通、联发科、苹果硅相关动态，本窗口无新的芯片发布主条。</p>
     </article>
-
-    <div class="sec">
-      <h2>存储与网络硬件</h2>
-      <span class="badge">这窗口无新产品/无新进展</span>
-    </div>
+    <div class="sec"><h2>存储与网络硬件</h2></div>
     <article class="card">
-      <h3>这窗口无新产品/无新进展</h3>
-      <p>美光等存储芯片股随板块下跌的情况已写入行业栏，本窗口无新的产品或官方产能主条。</p>
+      <h3><a href="d/03-pcb-shortage-ai-servers-gea.html">全球电子协会警告：人工智能服务器挤占电路板产能，短缺或持续到2027年上半年</a></h3>
+      <p>全球电子协会警告，人工智能服务器对高多层电路板的需求，正在挤占汽车、医疗和国防等行业的供应。协会预计材料紧张至少持续到 2027 年上半年，实质性缓解要到 2028 年年中才比较有希望。</p>
+      <a class="src detail" href="d/03-pcb-shortage-ai-servers-gea.html" data-original="https://www.theregister.com/systems/2026/11/20/ai-boom-threatens-circuit-board-crunch-to-rival-pandemic-era-chip-shortage/5311335">阅读详情</a>
     </article>
-
-    <div class="sec">
-      <h2>群晖 / Synology</h2>
-      <span class="badge">这窗口无新产品/无新进展</span>
-    </div>
+    <div class="sec"><h2>群晖 / Synology</h2></div>
     <article class="card">
-      <h3>这窗口无新产品/无新进展</h3>
-      <p>已核对群晖英文与中文安全通告列表，最新仍为 11 月 13 日的 Synology-SA-26:19，本窗口无新的通告或套件更新。</p>
+      <h3><a href="d/04-synology-nginx2root-oauth-sa-26-20.html">群晖为 DSM 7.4 和 7.3 发布紧急更新，修补 NGINX2Root 与 OAuth 接口漏洞</a></h3>
+      <p>群晖 20 日宣布，已为 DSM 7.4 和 7.3 发布紧急更新，修补 NGINX2Root 以及此前未公开的 DSM OAuth 接口严重漏洞。官方称目前尚未观察到利用；暂时不能升级的用户，可先关闭 HTTP/2 并停用 OAuth Service 套件。</p>
+      <a class="src detail" href="d/04-synology-nginx2root-oauth-sa-26-20.html" data-original="https://www.synology.com/en-global/company/news/article/NGINX">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>操作系统与桌面</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>20 日晨报已报 Windows 11 可选预览更新 KB5132057，本窗口无新的正式版系统主条。</p>
+      <p>Windows 11 可选预览更新 KB5132057 已见 20 日晨报，本窗口无新的系统版本主条。</p>
     </article>
-
     <div class="sec">
       <h2>语言 / 运行时 / 框架</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
@@ -230,63 +219,59 @@
       <h3>这窗口无新产品/无新进展</h3>
       <p>已检索主流语言与框架发布，本窗口无新的版本主条。</p>
     </article>
-
     <div class="sec">
       <h2>开源治理与许可证</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>腾讯混元 Hy4 的许可证说明见昨报，本窗口无新的开源治理主条。</p>
+      <p>腾讯混元 Hy4 许可证见昨报，本窗口无新的许可证或治理主条。</p>
     </article>
-
-    <div class="sec"><h2>开发者工具</h2></div>
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
     <article class="card">
-      <h3><a href="d/05-gitlab-critical-patch-ruby-cve-2026-132825.html">GitLab 发布关键补丁，修复 Ruby 堆溢出漏洞 CVE-2026-132825</a></h3>
-      <p>GitLab 11 月 20 日发布社区版与企业版 19.6.1、19.5.8、19.4.10，修复 Ruby 在字符串大小写转换中的堆溢出漏洞。官方称 GitLab.com 和 Dedicated 已经打过补丁，自管实例应立即升级。</p>
-      <a class="src detail" href="d/05-gitlab-critical-patch-ruby-cve-2026-132825.html" data-original="https://docs.gitlab.com/releases/patches/patch-release-gitlab-19-6-1-released/">阅读详情</a>
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>GitLab 关键补丁见今早简报，本窗口无新的产品主条。</p>
     </article>
-
     <div class="sec"><h2>漏洞与勒索</h2></div>
     <article class="card">
-      <h3><a href="d/06-cisa-kev-four-additions-nov20.html">CISA 将四个已遭利用漏洞列入已知被利用目录，含 vCenter 与思科 Expressway</a></h3>
-      <p>美国网络安全与基础设施安全局 11 月 20 日把四个已有利用证据的漏洞列入已知被利用漏洞目录，分别涉及 SAP NetWeaver、思科 Expressway、VMware vCenter 和 Apache Roller。其中 vCenter 认证绕过漏洞，博通已在昨天发布紧急补丁。</p>
-      <a class="src detail" href="d/06-cisa-kev-four-additions-nov20.html" data-original="https://www.cisa.gov/news-events/alerts/2026/11/20/cisa-adds-four-known-exploited-vulnerabilities-catalog">阅读详情</a>
+      <h3><a href="d/05-amazon-cairn-monai-zeroday.html">亚马逊披露：Cairn 智能体在约11分钟内发现并利用医学影像软件零日漏洞</a></h3>
+      <p>亚马逊威胁情报披露，一个使用开源框架 Cairn 的行为体，用自主运行的智能体在约 11 分钟内发现并利用了医学影像软件 MONAI Label 的零日路径遍历漏洞，进而拿到服务器的 root 权限。</p>
+      <a class="src detail" href="d/05-amazon-cairn-monai-zeroday.html" data-original="https://aws.amazon.com/blogs/security/chinese-nexus-actors-cairn-ai-agents-found-a-zero-day-on-their-own/">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>身份与访问</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索单一登录与零信任相关动态，本窗口无新的主条。</p>
+      <p>已检索单点登录与零信任动态，本窗口无新的主条。</p>
     </article>
-
     <div class="sec"><h2>隐私与监管</h2></div>
     <article class="card">
-      <h3><a href="d/07-trump-tremendous-tax-overseas-data-centers.html">特朗普称将对赴海外建设数据中心的美国公司征收「巨额税」，但未说明办法</a></h3>
-      <p>特朗普周五在白宫表示，美国公司如果在海外建设数据中心，将被征收「巨额税」。他没有给出税率和具体规则，并说这件事还没跟自己的团队讲过。美联社和 CNBC 都记下了这番话。</p>
-      <a class="src detail" href="d/07-trump-tremendous-tax-overseas-data-centers.html" data-original="https://www.cnbc.com/2026/11/20/trump-data-centers-ai-companies-tax.html">阅读详情</a>
+      <h3><a href="d/06-signal-blocks-ai-agent-screenshots.html">Signal 默认限制截屏，阻止系统级人工智能助手读取聊天内容</a></h3>
+      <p>Signal 总裁惠特克发文称，将在 iOS 27 以及可检测到人工智能助手读屏的安卓系统上，默认限制截屏，以阻止系统级智能体读取聊天内容。她同时承认这一做法并不完整，并呼吁苹果、谷歌和微软提供明确的退出机制。</p>
+      <a class="src detail" href="d/06-signal-blocks-ai-agent-screenshots.html" data-original="https://signal.org/blog/protecting-your-privacy/">阅读详情</a>
     </article>
-
-    <div class="sec"><h2>消费电子</h2></div>
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
     <article class="card">
-      <h3><a href="d/08-huawei-osta-o1-pro-launch.html">华为发布手机子品牌「星芒」，首款 OSTA O1 Pro 首发价 5499 元起</a></h3>
-      <p>华为 20 日下午发布手机子品牌「星芒」（OSTA），并推出首款手机 OSTA O1 Pro，首发价 5499 元起。该机搭载麒麟 9030S 和鸿蒙 7 AI 先锋版。财新写到，这是华为 2020 年出售荣耀后，时隔六年再推出手机子品牌。</p>
-      <a class="src detail" href="d/08-huawei-osta-o1-pro-launch.html" data-original="https://www.ithome.com/1/030/120.htm">阅读详情</a>
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为星芒 OSTA O1 Pro 见今早简报；Mate X8 仍定于 11 月 24 日 14:30 发布，本窗口无新的整机发布主条。</p>
     </article>
-
     <div class="sec">
       <h2>大厂平台政策</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>Andarium 从 App Store 下架见昨报，本窗口无新的应用商店或平台政策主条。</p>
+      <p>Andarium 下架见昨报，本窗口无新的商店或平台政策主条。</p>
     </article>
-
-    <footer>搜打撤 · 每天 08:20 / 14:00 更新 · HTML 在我电脑上</footer>
+    <footer>IT 行业简报 · 2026-11-21 14:10 上海 · 归档 2026-11-21-1410</footer>
   </div>
 </body>
 </html>

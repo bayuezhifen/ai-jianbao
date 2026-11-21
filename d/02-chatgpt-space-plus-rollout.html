@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OpenAI 公布对抗性蒸馏防护，受保护推理提取成功率从 54.0% 降至 0.2% · IT 行业简报</title>
+<title>ChatGPT Space 向 Plus 用户开放，可做会自动更新的页面和演示文稿 · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,8 +172,8 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">OpenAI</div>
-    <h1>OpenAI 公布对抗性蒸馏防护，受保护推理提取成功率从 54.0% 降至 0.2%</h1>
-    <p class="lede">OpenAI 11 月 20 日发表文章，介绍如何应对未经授权的对抗性蒸馏，重点保护模型内部的推理过程。公司称，在自适应黑盒测试中，从先前请求里提取受保护推理的平均成功率，已由 GPT-6 Astra 原防护下的 54.0%，降到 GPT-6.2 Astra 新防护下的 0.2%。</p>
+    <h1>ChatGPT Space 向 Plus 用户开放，可做会自动更新的页面和演示文稿</h1>
+    <p class="lede">OpenAI 在 20 日的更新说明中宣布，ChatGPT Space 即日起向全球符合条件的 Plus 用户推送。Plus 用户可以制作可自动更新的页面和演示文稿，并邀请同样拥有 Space 权限的人一起修改。</p>
     <div class="meta">
       <span>2026-11-21</span>
       <span class="dot"></span>
@@ -181,24 +181,27 @@
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 在 11 月 20 日于官网发表题为「Combatting adversarial distillation」的文章，把未经授权的蒸馏称作安全问题，而不只是知识产权纠纷。文章的核心判断是：攻击者如果用前沿模型的输出去训练另一套模型，有可能把原模型的能力带走，却带不走原模型配套的使用限制。公司特别强调要保护「受保护的推理过程」，也就是模型在给出最终答案之前、内部生成的中间步骤；这些内容往往比最终回复包含更多信息，也因此更适合被拿去当训练数据。</p>
-<p>在衡量效果时，OpenAI 给出了一组内部测试数字。测试方式是自适应黑盒评估，由自动化红队根据系统反应调整攻击方法，并分别尝试提取「先前请求」和「当前请求」里的受保护推理。结果显示：从先前请求中提取的平均攻击成功率，从 GPT-6 Astra 原有防护下的 54.0%，降到 GPT-6.2 Astra 更新防护后的 0.2%；从当前请求中提取的成功率，则从 22.9% 降到 0.9%。公司还写，这两项在新防护下的平均成功率都低于 1%，并表示正把部分改进同步用到 GPT-6 Astra 上。需要说明的是，这是公司自己的红队评估，外界目前还无法用同一套方法复现。</p>
-<p>防护被分成两层。一层针对单次请求：用对抗训练让模型识别并拒绝泄露受保护推理，再用输入和输出分类器检查助手回复和工具调用参数，同时在应用程序接口里限制推理内容被跨对话、跨模型复用。文章提到，今年 9 月披露过有人把加密后的推理搬到另一段对话里、再要求模型用可读方式还原；公司称已经加强了用户、工作区和模型系列之间的隔离，并让 GPT-6.2 Astra 和 Sol 的受保护推理与当时的对话历史绑定。另一层针对成规模的活动：一旦发现协同提取，就对相关账号网络执行措施，并把可分享的线索提供给其他模型厂商。公司说，今年已多次在自家平台上看到未经授权的蒸馏活动，每周处置的账号从数千到数万不等，夏季以来明显增多。</p>
-<p>在政策层面，文章回顾了两件已公开的事：今年 2 月，OpenAI 曾向美国国会通报，称有迹象显示 DeepSeek 试图蒸馏美国的前沿模型；9 月，公司又把一起提取受保护推理的活动，部分归因于与月之暗面（Moonshot AI，Kimi 的开发商）有关联的个人。它还写，计划稍后公布更多近期已打断的活动，并表示支持《芯片安全法》、AI OVERWATCH 法案和 MATCH 法案。这些点到名的说法来自 OpenAI 单方陈述，被点名的机构如何回应，本文截稿时没有一并核对。</p></div>
+      <div class="body"><p>OpenAI 的产品更新说明把日期写在 11 月 20 日，标题很直接：ChatGPT Space 正在向 Plus 用户推送。官方写明，面向 18 岁及以上的 Plus 用户，即日起在全球范围内逐步开放。此前，这一功能主要提供给 Pro、Business 和 Enterprise 订阅。Engadget 当天的报道把它概括成：月费 20 美元的 Plus 档也可以建立自己的 Space 了。</p>
+<p>Space 被放在侧边栏里，用来替代原来的资料库（Library），成为页面、演示文稿、图片和上传文件的新入口。官方举例说，用户可以做一份会自己更新的待办清单、带三维模型的学习笔记，或是能跟着 Slack 里最新决定走的项目计划。页面和幻灯片可以设定成根据已连接的应用和工具自动更新；也可以在评论里点名 ChatGPT，请它按意见改一版。网页、桌面应用以及 iOS、安卓都可以创建和编辑页面。</p>
+<p>权限比“发一个公开链接”要严。官方写明：要打开别人分享的页面或演示文稿，需要有查看许可，并且登录的是已开通 Space 的 Plus、Pro、Business 或 Enterprise 账号。免费用户打不开分享内容，目前也不提供公开链接。Engadget 还补充了一点：Plus 用户目前还不能在 Space 里使用 Dot 智能体；稿件称，OpenAI 从 19 日起开始在一小部分 Plus 用户中测试 Dot，但这并不是今天一并开放的能力。官方更新说明则写，如果已经拥有 Dot，可以邀请它一起协作——这更像是对更高档位用户的说明，和 Engadget 对普通 Plus 的限制并不矛盾，只是适用对象不同。</p>
+<p>Engadget 回顾说，Space 是今年 9 月开发者大会上推出的协作空间，用来和同事、朋友以及已配置的 Dot 一起处理文档和其他文件。今天这条新闻的重点，不是再宣布一个全新品类，而是把已经存在的工作区下放到更常见的付费档。Tom's Guide 21 日的报道也跟进了同一变化，并强调文档可以按设定频率，从已连接的邮箱或即时通讯工具里取新信息。</p>
+<p>今早 08:20 的简报写的是 OpenAI 对抗性蒸馏防护，没有单列 Space 对 Plus 开放。官方说明的落款是 20 日，Engadget 的报道时间是当天美东下午 1 时，换算成上海时间已是 21 日凌晨，因此补进本窗。需要说清楚的是：这是既有功能的扩面，不是新模型发布；免费用户仍然进不了分享页，公开链接也还没有。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
       <ul>
-<li>一致处：OpenAI 官网文章写明发布日期为 2026 年 11 月 20 日。</li>
-<li>关键数字均来自官方表格：先前请求 54.0%→0.2%，当前请求 22.9%→0.9%。这是公司内部自适应黑盒评估，不是第三方复现。</li>
-<li>DeepSeek、月之暗面相关表述，是 OpenAI 对今年 2 月通报和 9 月报告的回顾，不是本窗口新的独立调查结论。</li>
-<li>待确认：被点名机构的回应，以及其他厂商能否用相同方法达到接近的防护效果。</li>
+<li>一致处：OpenAI 官方更新说明、Engadget 和 Tom's Guide 都确认，Space 正在向 18 岁及以上的 Plus 用户全球推送，可创建页面和演示文稿，并支持按已连接应用自动更新。</li>
+<li>权限：官方明确免费用户无法打开分享内容，且不提供公开链接。须登录已开通 Space 的 Plus、Pro、Business 或 Enterprise 账号。</li>
+<li>Dot：官方提到“若已有 Dot，可邀请其协作”；Engadget 写明普通 Plus 目前还不能在 Space 里使用 Dot。两者针对的账户档位不同，并不互相否定。</li>
+<li>待确认：各地账户实际开放进度，以及 Plus 用户何时能在 Space 中使用 Dot。</li>
 </ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://openai.com/index/combatting-adversarial-distillation/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">OpenAI Help Center（ChatGPT 更新说明）</a><span class="role">官方</span></li>
+        <li><a href="https://www.engadget.com/2323016/openai-brings-its-collaborative-space-hubs-to-plus-users/" target="_blank" rel="noopener">Engadget</a><span class="role">次要</span></li>
+        <li><a href="https://www.tomsguide.com/ai/chatgpt/chatgpt-just-got-a-massive-upgrade-it-can-now-create-documents-that-update-themselves" target="_blank" rel="noopener">Tom&#x27;s Guide</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
