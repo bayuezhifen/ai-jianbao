@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ChatGPT Space 向 Plus 用户开放，可做会自动更新的页面和演示文稿 · IT 行业简报</title>
+<title>OpenAI 复盘周六故障：Postgres 副本维护失败，ChatGPT 与 API 错误率一度达75% · IT 行业简报</title>
 <style>
   :root {
     color-scheme: light;
@@ -172,36 +172,34 @@
   <div class="wrap">
     <a class="back" href="../">← 返回本期简报</a>
     <div class="sec-label">OpenAI</div>
-    <h1>ChatGPT Space 向 Plus 用户开放，可做会自动更新的页面和演示文稿</h1>
-    <p class="lede">OpenAI 在 20 日的更新说明中宣布，ChatGPT Space 即日起向全球符合条件的 Plus 用户推送。Plus 用户可以制作可自动更新的页面和演示文稿，并邀请同样拥有 Space 权限的人一起修改。</p>
+    <h1>OpenAI 复盘周六故障：Postgres 副本维护失败，ChatGPT 与 API 错误率一度达75%</h1>
+    <p class="lede">OpenAI 今天发布事故复盘称，11 月 21 日太平洋时间 1:48 至 5:21，一次 Postgres 只读副本维护导致两侧副本同时失效，付费和免费版 ChatGPT 的请求故障率一度达到 75%。</p>
     <div class="meta">
-      <span>2026-11-21</span>
+      <span>2026-11-22</span>
       <span class="dot"></span>
       <span>OpenAI</span>
       
     </div>
     <div class="paper">
-      <div class="body"><p>OpenAI 的产品更新说明把日期写在 11 月 20 日，标题很直接：ChatGPT Space 正在向 Plus 用户推送。官方写明，面向 18 岁及以上的 Plus 用户，即日起在全球范围内逐步开放。此前，这一功能主要提供给 Pro、Business 和 Enterprise 订阅。Engadget 当天的报道把它概括成：月费 20 美元的 Plus 档也可以建立自己的 Space 了。</p>
-<p>Space 被放在侧边栏里，用来替代原来的资料库（Library），成为页面、演示文稿、图片和上传文件的新入口。官方举例说，用户可以做一份会自己更新的待办清单、带三维模型的学习笔记，或是能跟着 Slack 里最新决定走的项目计划。页面和幻灯片可以设定成根据已连接的应用和工具自动更新；也可以在评论里点名 ChatGPT，请它按意见改一版。网页、桌面应用以及 iOS、安卓都可以创建和编辑页面。</p>
-<p>权限比“发一个公开链接”要严。官方写明：要打开别人分享的页面或演示文稿，需要有查看许可，并且登录的是已开通 Space 的 Plus、Pro、Business 或 Enterprise 账号。免费用户打不开分享内容，目前也不提供公开链接。Engadget 还补充了一点：Plus 用户目前还不能在 Space 里使用 Dot 智能体；稿件称，OpenAI 从 19 日起开始在一小部分 Plus 用户中测试 Dot，但这并不是今天一并开放的能力。官方更新说明则写，如果已经拥有 Dot，可以邀请它一起协作——这更像是对更高档位用户的说明，和 Engadget 对普通 Plus 的限制并不矛盾，只是适用对象不同。</p>
-<p>Engadget 回顾说，Space 是今年 9 月开发者大会上推出的协作空间，用来和同事、朋友以及已配置的 Dot 一起处理文档和其他文件。今天这条新闻的重点，不是再宣布一个全新品类，而是把已经存在的工作区下放到更常见的付费档。Tom's Guide 21 日的报道也跟进了同一变化，并强调文档可以按设定频率，从已连接的邮箱或即时通讯工具里取新信息。</p>
-<p>今早 08:20 的简报写的是 OpenAI 对抗性蒸馏防护，没有单列 Space 对 Plus 开放。官方说明的落款是 20 日，Engadget 的报道时间是当天美东下午 1 时，换算成上海时间已是 21 日凌晨，因此补进本窗。需要说清楚的是：这是既有功能的扩面，不是新模型发布；免费用户仍然进不了分享页，公开链接也还没有。</p></div>
+      <div class="body"><p>OpenAI 在状态页发布了周六那场大面积故障的书面复盘。公司写道，11 月 21 日太平洋时间 1 时 48 分至 5 时 21 分（上海时间当天 17 时 48 分至 21 时 21 分），大量请求失败，付费和免费版 ChatGPT 的故障率一度达到 75%。事故持续约三个半小时。这不是模型本身的发布或功能更新，而是一次基础设施维护把身份认证这条公共路径打穿了。</p>
+<p>直接原因写得很具体。维护针对的是主 API 服务所依赖的一套 Postgres 数据库，结果两个只读副本同时失效。OpenAI 解释说，虽然出问题的是副本而不是主库，但这些副本是承重的：主 API 服务承担用户认证和栈内服务之间的认证，依赖它们的请求路径随之失败。团队曾多次尝试救活原有副本，也尝试在其他地区拉起替代实例，都没有成功，最后是与服务商一起，在同一地区新开了两个副本，故障才被压住。</p>
+<p>复盘里还写了已经做完和准备做的事。已经落地的包括：暂停同类维护、调整配置以减少连接抖动、增加可按比例把流量从副本切走的功能开关，并验证过把查询全部打到主库的假设。下一步则包括设立维护前审查、在维护窗口准备热备、保证关键服务所在地区有足够余量，以及为副本延迟失控准备短期自动恢复和长期架构改动。公司承认，这种量级的故障会直接伤到客户的产品和业务。</p>
+<p>需要分开看的是：这次复盘解释的是周六晚上的故障，并不是今天又发生了新的宕机；OpenAI 官网新闻栏今天也没有新的产品稿。今早 08:20 的简报没有写这场周六傍晚的故障，故本窗按官方复盘补上。</p>
+<p>从时间上说，故障开始于昨天下午简报发出之后，结束于今天凌晨之前，所以两期都没有赶上实时记录，只有今天这份复盘把原因和补救写清楚了。复盘也提醒了一个很普通、却容易被忽略的点：只读副本看起来像是可以从主库重建的附属品，但一旦认证、会话这类公共路径把它们当成承重构件，副本同时失效就会变成全站故障。OpenAI 自己也把这次归为“维护窗口不应演变成大面积停服”的问题，而不是一次来自外部的攻击。</p></div>
     </div>
     <div class="cross-check">
       <h2>交叉核对</h2>
       <ul>
-<li>一致处：OpenAI 官方更新说明、Engadget 和 Tom's Guide 都确认，Space 正在向 18 岁及以上的 Plus 用户全球推送，可创建页面和演示文稿，并支持按已连接应用自动更新。</li>
-<li>权限：官方明确免费用户无法打开分享内容，且不提供公开链接。须登录已开通 Space 的 Plus、Pro、Business 或 Enterprise 账号。</li>
-<li>Dot：官方提到“若已有 Dot，可邀请其协作”；Engadget 写明普通 Plus 目前还不能在 Space 里使用 Dot。两者针对的账户档位不同，并不互相否定。</li>
-<li>待确认：各地账户实际开放进度，以及 Plus 用户何时能在 Space 中使用 Dot。</li>
+<li>一致处：官方状态页复盘与后续技术转述都写明，故障窗口为 11 月 21 日太平洋时间 1:48–5:21，峰值故障率 75%，直接原因是 Postgres 只读副本在维护中同时失效，影响承担认证的主 API 服务。</li>
+<li>时区：11 月已结束夏令时，按太平洋标准时间 UTC−8 换算，对应上海时间 11 月 21 日 17:48–21:21，也就是昨天下午简报发布之后、今早简报之前。</li>
+<li>待确认：OpenAI 未点名该数据库的云服务商；也未公布受影响的具体请求量、各套餐之间的差异，以及是否有数据损坏。复盘聚焦可用性和恢复步骤。</li>
 </ul>
     </div>
     <div class="sources">
       <h2>参考来源</h2>
       <ul>
-        <li><a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" target="_blank" rel="noopener">OpenAI Help Center（ChatGPT 更新说明）</a><span class="role">官方</span></li>
-        <li><a href="https://www.engadget.com/2323016/openai-brings-its-collaborative-space-hubs-to-plus-users/" target="_blank" rel="noopener">Engadget</a><span class="role">次要</span></li>
-        <li><a href="https://www.tomsguide.com/ai/chatgpt/chatgpt-just-got-a-massive-upgrade-it-can-now-create-documents-that-update-themselves" target="_blank" rel="noopener">Tom&#x27;s Guide</a><span class="role">次要</span></li>
+        <li><a href="https://status.openai.com/incidents/01JMYB602A6H2E04Y1497J434X/write-up" target="_blank" rel="noopener">OpenAI Status</a><span class="role">官方</span></li>
+        <li><a href="https://azeemhassni.com/blog/wire-openai-api-outage-postgres-replicas/" target="_blank" rel="noopener">Azeem Hassni</a><span class="role">次要</span></li>
       </ul>
     </div>
     <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
