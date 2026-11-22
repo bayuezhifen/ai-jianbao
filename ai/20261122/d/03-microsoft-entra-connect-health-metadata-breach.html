@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软确认 Entra Connect Health 漏洞遭利用，租户联系人与配置元数据被读取 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">身份与访问</div>
+    <h1>微软确认 Entra Connect Health 漏洞遭利用，租户联系人与配置元数据被读取</h1>
+    <p class="lede">微软通知受影响客户，Entra Connect Health 接口存在漏洞并已被利用，攻击者只读获取了租户级元数据，包括管理员和技术联系人邮箱。公司称 11 月 19 日已在服务端修复，未发现配置被改，客户不必自行打补丁。</p>
+    <div class="meta">
+      <span>2026-11-22</span>
+      <span class="dot"></span>
+      <span>身份与访问</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软正在向受影响的机构发出安全通知：其用于监控本地身份基础设施的云服务 Entra Connect Health，接口存在漏洞，并且已经被用来读取租户级元数据。BleepingComputer 21 日报道了这份发给管理员的通知。微软在通知中写，11 月 20 日调查结束后可以确认，与该组织相关的租户级元数据遭到了未经授权的只读访问；同时，“我们没有发现未经授权的配置更改”。</p>
+<p>按通知列出的范围，被读取的信息包括：租户技术联系人和管理员账户的电子邮箱；租户标识、显示名称、初始域名、国家代码和区域信息；微软 Entra 的许可等级，以及目录同步是否开启、最近一次同步时间；Connect Health 的开通状态。此外，还有一张早已过期、原先用来向微软一项已于 2024 年底停用的内部服务注册代理的证书，它仍留在 Connect Health 的存储里，并仍会被接口返回。微软强调，漏洞没有暴露用户密码、密码哈希、认证令牌、仍有效的密钥、本地服务器与 Active Directory 的拓扑，以及 Azure 订阅信息。</p>
+<p>关于时间线，通知称该漏洞于 7 月 23 日被引入，微软在 11 月 9 日发现，11 月 19 日部署了服务端修复，11 月 20 日结束调查并开始通知客户。公司对 BleepingComputer 确认，已通过 Azure Service Health 向受影响客户发出说明，并提供指引和支持。微软没有公布受影响的机构数量，也没有说明是谁在利用、攻击最早从何时开始。BleepingComputer 写到，已有十多名管理员在讨论区确认收到通知，也有托管服务商表示，多家客户租户的通知是错开几小时陆续到达的。</p>
+<p>微软说，客户不必为修补这个漏洞再安装软件或自行升级。但它建议安全团队警惕针对已暴露管理员邮箱和租户信息的定向钓鱼、社会工程，并确保特权账户使用抗钓鱼的多因素认证，同时检查 Connect Health 配置，以及微软 Entra 的审计日志和登录日志。公司还提供了一段 PowerShell 脚本，用来查看可能被暴露的元数据类型；不过脚本显示的是当前配置，并不是当时实际被取走的内容。对依赖 Entra 做混合身份同步的机构来说，这次事件的直接风险，更多是暴露出的联系人和租户画像被拿去发钓鱼，而不是域控被当场改掉。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：BleepingComputer 所引微软通知，与微软对这家媒体的书面确认一致——漏洞存在于 Entra Connect Health，11 月 19 日已在服务端修复，并已通知受影响客户；调查结论是只读访问租户级联系人和配置元数据，未发现配置被改。</li>
+<li>时间：漏洞引入于 7 月 23 日，发现于 11 月 9 日，修复于 11 月 19 日，调查结束并于 11 月 20 日开始通知；面向公众的报道出现在 11 月 21 日，已进入本窗口。</li>
+<li>未知项：受影响租户数量、攻击者身份、利用起始时间，官方均未披露。通知中“可能修改监控配置”是调查开始时的风险描述，最终结论是没有发现未经授权的配置更改，两者不要写成互相打架。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.bleepingcomputer.com/news/security/microsoft-entra-connect-health-flaw-exploited-to-steal-tenant-data/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">主来源</span></li>
+        <li><a href="https://windiscover.com/posts/microsoft-entra-data-breach-july-bug.html" target="_blank" rel="noopener">WinDiscover（转述微软通知）</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
