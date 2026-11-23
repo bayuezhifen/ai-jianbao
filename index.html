@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>IT 行业简报 · 2026-11-22</title>
+<title>IT 行业简报 · 2026-11-23 08:20</title>
 <style>
   :root {
     color-scheme: light;
@@ -104,6 +104,7 @@
   }
   .src:hover { text-decoration: underline; }
   .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
   .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
   .card h3 a {
     color: inherit;
@@ -114,6 +115,7 @@
     margin-top: 1.75rem;
     color: var(--quiet);
     font-size: .78rem;
+
   }
 </style>
 </head>
@@ -121,9 +123,9 @@
   <div class="wrap">
     <header>
       <div class="when">
-        <span>2026-11-22</span>
+        <span>2026-11-23</span>
         <span class="dot"></span>
-        <span>周日 14:10</span>
+        <span>周一 08:20</span>
         <span class="dot"></span>
         <span>上海</span>
       </div>
@@ -132,108 +134,94 @@
 
     <div class="sec"><h2>行业</h2></div>
     <article class="card">
-      <h3><a href="d/01-amazon-nears-decart-7-5-billion-deal.html">金融时报：亚马逊接近以约75亿美元收购人工智能初创公司Decart</a></h3>
-      <p>《金融时报》报道，亚马逊正就以约75亿美元收购旧金山人工智能初创公司 Decart 进入后期洽谈，交易最早可能于下周宣布。报道称，Decart 的软件能提高模型推理效率，并已是亚马逊自研芯片 Trainium3 的早期用户；此事尚未成交，双方也还没有公开确认。</p>
-      <a class="src detail" href="d/01-amazon-nears-decart-7-5-billion-deal.html" data-original="https://seekingalpha.com/news/4675396-amazon-nears-75b-deal-buy-ai-start-up-decart">阅读详情</a>
+      <h3><a href="d/01-ft-ai-server-vendors-reprice-after-contracts.html">金融时报：戴尔等厂商在合同签订数月后，要求人工智能服务器加价最多约45%</a></h3>
+      <p>《金融时报》报道，戴尔、联想、惠普企业和超微电脑等厂商，在合同签订数月后仍向客户追加大幅加价，幅度约25%至45%。内存价格自2024年初已上涨逾400%。英国交易商XTX Markets早前已在爱尔兰起诉戴尔。</p>
+      <a class="src detail" href="d/01-ft-ai-server-vendors-reprice-after-contracts.html" data-original="https://seekingalpha.com/news/4675407-tech-suppliers-jack-up-ai-server-prices-after-contracts-inked---ft">阅读详情</a>
     </article>
-
     <div class="sec"><h2>OpenAI</h2></div>
     <article class="card">
-      <h3><a href="d/02-openai-postgres-replica-outage-writeup.html">OpenAI 复盘周六故障：Postgres 副本维护失败，ChatGPT 与 API 错误率一度达75%</a></h3>
-      <p>OpenAI 今天发布事故复盘称，11月21日太平洋时间1:48至5:21（上海时间当天17:48至21:21），一次 Postgres 只读副本维护导致两侧副本同时失效，付费和免费版 ChatGPT 的请求故障率一度达到75%。故障出在承担身份认证的主 API 服务；公司称已暂停同类维护，并计划增加热备和副本延迟恢复能力。</p>
-      <a class="src detail" href="d/02-openai-postgres-replica-outage-writeup.html" data-original="https://status.openai.com/incidents/01JMYB602A6H2E04Y1497J434X/write-up">阅读详情</a>
+      <h3><a href="d/02-openai-pachocki-perplexity-development-limits.html">OpenAI 首席科学家提议用困惑度衡量预训练进度，并据此设定行业开发上限</a></h3>
+      <p>OpenAI 首席科学家雅各布·帕乔基撰文，主张把困惑度（或等价的交叉熵损失）作为各实验室可互相对照的进度指标，并在监控能力达到明确里程碑之前，据此设定共同的开发上限。他同时公布了公司内部的预训练困惑度走势。</p>
+      <a class="src detail" href="d/02-openai-pachocki-perplexity-development-limits.html" data-original="https://openai.com/index/perplexity-and-intelligence/">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>Claude / Anthropic</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>本窗口无新的产品发布；阿尔珀格与 Claude 合作的黎曼猜想形式化证明及社区核验，见今晨简报「行业」栏。上市后首个完整交易日收盘见昨报。</p>
+      <p>黎曼猜想形式化证明核验见前日行业栏；官网新闻室本窗口无新的产品主条。</p>
     </article>
-
-    <div class="sec">
-      <h2>英伟达 / NVIDIA</h2>
-      <span class="badge">这窗口无新产品/无新进展</span>
-    </div>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
     <article class="card">
-      <h3>这窗口无新产品/无新进展</h3>
-      <p>美国证交会审视会计问题与周五收跌见昨报；已检索英伟达新闻室，本窗口无新的主条。</p>
+      <h3><a href="d/03-dni-clayton-nvidia-chips-china-access.html">美国国家情报总监称英伟达先进芯片「人人都想要」，并认为中方可能已经拿到</a></h3>
+      <p>美国国家情报总监杰伊·克莱顿周日在电视节目中说，英伟达芯片是「人人都想要的珍宝」，并表示他预计中方已经找到获取这些先进芯片的途径。他同时提到，美方正在调查一名与前首席执行官黄仁勋有关联的涉嫌间谍；现有报道未指控黄仁勋本人违法。</p>
+      <a class="src detail" href="d/03-dni-clayton-nvidia-chips-china-access.html" data-original="https://www.semafor.com/article/11/22/2026/us-spy-chief-calls-nvidia-chips-jewels">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>Grok / xAI</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索马斯克在 X 上的帖子与 x.ai/news，本窗口无训练、版本阶梯或发布时点的新主张。晨报该栏为空，故不保留旧卡。</p>
+      <p>已检索马斯克在 X 上的帖子与 x.ai/news，本窗口无训练、版本阶梯或发布时点的新主张。</p>
     </article>
-
     <div class="sec">
       <h2>Cursor</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索 Cursor 官方更新说明，最新仍为 11 月 6 日的 Voice Chat with Agents，本窗口无新的产品主条。</p>
+      <p>官方更新说明最新仍为 11 月 6 日的 Voice Chat with Agents。</p>
     </article>
-
     <div class="sec">
       <h2>CPU / 服务器</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索英特尔、AMD 官方新闻室与主流报道，本窗口无新的服务器处理器主条。</p>
+      <p>戴尔等厂商对已签人工智能服务器订单追价，见本期行业栏。</p>
     </article>
-
     <div class="sec">
       <h2>手机与端侧 SoC</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索高通、联发科、苹果硅相关动态，本窗口无新的芯片发布主条。</p>
+      <p>已检索高通、联发科与苹果硅动态，本窗口无新的主条。</p>
     </article>
-
     <div class="sec">
       <h2>存储与网络硬件</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>电路板短缺与软银探询收购 SK 海力士见昨报，本窗口无新的主条。</p>
+      <p>内存价格上涨及整机加价，见本期行业栏。</p>
     </article>
-
     <div class="sec">
       <h2>群晖 / Synology</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>DSM 7.4 和 7.3 紧急更新见昨报；已复核官方新闻与安全通告，本窗口无新的通告或套件主条。</p>
+      <p>DSM 紧急更新见前报；本窗口安全通告页无新条目。</p>
     </article>
-
     <div class="sec">
       <h2>操作系统与桌面</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>Debian 13.8 点更新见今晨简报，本窗口无新的系统发布主条。</p>
+      <p>Debian 13.8 见昨报；本窗口无新的系统发布主条。</p>
     </article>
-
     <div class="sec">
       <h2>语言 / 运行时 / 框架</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>已检索主流语言与框架发布，本窗口无新的版本主条。</p>
+      <p>已检索语言与运行时发布动态，本窗口无新的主条。</p>
     </article>
-
     <div class="sec">
       <h2>开源治理与许可证</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
@@ -242,48 +230,42 @@
       <h3>这窗口无新产品/无新进展</h3>
       <p>已检索开源治理与许可证动态，本窗口无新的主条。</p>
     </article>
-
     <div class="sec">
       <h2>开发者工具</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>GitLab 关键补丁见昨报，本窗口无新的产品主条。</p>
+      <p>GitLab 补丁见前报；本窗口无新的主条。</p>
     </article>
-
     <div class="sec"><h2>漏洞与勒索</h2></div>
     <article class="card">
-      <h3><a href="d/03-ghostscript-upload2shell-cve-2026-125396.html">研究人员演示：Ghostscript 漏洞 Upload2Shell 可把常见文件上传变成命令执行</a></h3>
-      <p>安全公司 pwn.ai 本周演示，已修复的 Ghostscript 漏洞 CVE-2026-125396（Upload2Shell）可通过常见的上传、预览和打印功能触发，在约十款应用中执行命令。漏洞已于9月8日随 10.08.0 修复，但发行版和容器里的旧副本仍可能未更新；目前没有在野利用的公开报告。</p>
-      <a class="src detail" href="d/03-ghostscript-upload2shell-cve-2026-125396.html" data-original="https://thehackernews.com/2026/11/researchers-demonstrate-ghostscript.html">阅读详情</a>
+      <h3><a href="d/04-glinet-goodcloud-flaw-malware-firmware-4111.html">攻击者利用 GL.iNet 云管理漏洞感染路由器和 KVM，稳定安全固件已于11月22日放出</a></h3>
+      <p>GL.iNet 确认有人利用其 GoodCloud 远程管理漏洞，在部分路由器和 KVM 设备上植入恶意软件。云端攻击路径已封，但已感染设备不会自动清除。面向 Flint 2 等机型的稳定固件 4.11.1 已在 11 月 22 日放出。</p>
+      <a class="src detail" href="d/04-glinet-goodcloud-flaw-malware-firmware-4111.html" data-original="https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>身份与访问</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>微软确认 Entra Connect Health 漏洞遭利用见今晨简报，本窗口无新的主条。</p>
+      <p>微软 Entra Connect Health 遭利用见昨报；本窗口无新的主条。</p>
     </article>
-
     <div class="sec"><h2>隐私与监管</h2></div>
     <article class="card">
-      <h3><a href="d/04-openrouter-offboards-providers-zdr-review.html">OpenRouter 下架三家推理供应商，125个端点退出「零数据保留」名单</a></h3>
-      <p>路由平台 OpenRouter 今天宣布，根据安全研究的调查结果，已将三家推理供应商移出平台，并把125个端点移出「零数据保留」资格，同时通知可能受影响的客户。公司称自身未被入侵；Dragos 等研究显示，部分供应商出现提示词被窃或未兑现零保留承诺的情况，Together AI 等已发布事件说明。</p>
-      <a class="src detail" href="d/04-openrouter-offboards-providers-zdr-review.html" data-original="https://openrouter.ai/blog/announcements/data-processing-incidents-on-inference-providers/">阅读详情</a>
+      <h3><a href="d/05-cleverbridge-payment-card-data-copied-cvv.html">Cleverbridge 确认支付卡数据被复制，客户通知中包含卡号、有效期和安全码</a></h3>
+      <p>面向软件和订阅销售的电商平台 Cleverbridge 确认，11 月 4 日发现未经授权的活动后，调查认定有第三方复制了平台上存储的支付卡数据。BleepingComputer 看到的客户通知写明，被复制信息包括卡号、有效期和 CVV/CVC 安全码。</p>
+      <a class="src detail" href="d/05-cleverbridge-payment-card-data-copied-cvv.html" data-original="https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/">阅读详情</a>
     </article>
-
     <div class="sec">
       <h2>消费电子</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
     </div>
     <article class="card">
       <h3>这窗口无新产品/无新进展</h3>
-      <p>华为星芒 OSTA O1 Pro 见昨报；Mate X8 仍定于 11 月 24 日 14:30 发布，本窗口无新的整机发布主条。</p>
+      <p>华为星芒 OSTA O1 Pro 见前报；Mate X8 仍定于 11 月 24 日 14:30 发布，本窗口无新的整机发布主条。</p>
     </article>
-
     <div class="sec">
       <h2>大厂平台政策</h2>
       <span class="badge">这窗口无新产品/无新进展</span>
@@ -293,7 +275,7 @@
       <p>已检索应用商店与平台政策动态，本窗口无新的主条。</p>
     </article>
 
-    <footer>IT 行业简报 · 2026-11-22 14:10 上海 · 归档 2026-11-22-1410</footer>
+    <footer>IT 行业简报 · 2026-11-23 08:20 上海 · 归档 2026-11-23-0820</footer>
   </div>
 </body>
 </html>

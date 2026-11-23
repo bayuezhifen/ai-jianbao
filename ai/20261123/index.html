@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-11-23 08:20</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-23</span>
+        <span class="dot"></span>
+        <span>周一 08:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-ft-ai-server-vendors-reprice-after-contracts.html">金融时报：戴尔等厂商在合同签订数月后，要求人工智能服务器加价最多约45%</a></h3>
+      <p>《金融时报》报道，戴尔、联想、惠普企业和超微电脑等厂商，在合同签订数月后仍向客户追加大幅加价，幅度约25%至45%。内存价格自2024年初已上涨逾400%。英国交易商XTX Markets早前已在爱尔兰起诉戴尔。</p>
+      <a class="src detail" href="d/01-ft-ai-server-vendors-reprice-after-contracts.html" data-original="https://seekingalpha.com/news/4675407-tech-suppliers-jack-up-ai-server-prices-after-contracts-inked---ft">阅读详情</a>
+    </article>
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/02-openai-pachocki-perplexity-development-limits.html">OpenAI 首席科学家提议用困惑度衡量预训练进度，并据此设定行业开发上限</a></h3>
+      <p>OpenAI 首席科学家雅各布·帕乔基撰文，主张把困惑度（或等价的交叉熵损失）作为各实验室可互相对照的进度指标，并在监控能力达到明确里程碑之前，据此设定共同的开发上限。他同时公布了公司内部的预训练困惑度走势。</p>
+      <a class="src detail" href="d/02-openai-pachocki-perplexity-development-limits.html" data-original="https://openai.com/index/perplexity-and-intelligence/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>黎曼猜想形式化证明核验见前日行业栏；官网新闻室本窗口无新的产品主条。</p>
+    </article>
+    <div class="sec"><h2>英伟达 / NVIDIA</h2></div>
+    <article class="card">
+      <h3><a href="d/03-dni-clayton-nvidia-chips-china-access.html">美国国家情报总监称英伟达先进芯片「人人都想要」，并认为中方可能已经拿到</a></h3>
+      <p>美国国家情报总监杰伊·克莱顿周日在电视节目中说，英伟达芯片是「人人都想要的珍宝」，并表示他预计中方已经找到获取这些先进芯片的途径。他同时提到，美方正在调查一名与前首席执行官黄仁勋有关联的涉嫌间谍；现有报道未指控黄仁勋本人违法。</p>
+      <a class="src detail" href="d/03-dni-clayton-nvidia-chips-china-access.html" data-original="https://www.semafor.com/article/11/22/2026/us-spy-chief-calls-nvidia-chips-jewels">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索马斯克在 X 上的帖子与 x.ai/news，本窗口无训练、版本阶梯或发布时点的新主张。</p>
+    </article>
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>官方更新说明最新仍为 11 月 6 日的 Voice Chat with Agents。</p>
+    </article>
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>戴尔等厂商对已签人工智能服务器订单追价，见本期行业栏。</p>
+    </article>
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索高通、联发科与苹果硅动态，本窗口无新的主条。</p>
+    </article>
+    <div class="sec">
+      <h2>存储与网络硬件</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>内存价格上涨及整机加价，见本期行业栏。</p>
+    </article>
+    <div class="sec">
+      <h2>群晖 / Synology</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>DSM 紧急更新见前报；本窗口安全通告页无新条目。</p>
+    </article>
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Debian 13.8 见昨报；本窗口无新的系统发布主条。</p>
+    </article>
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索语言与运行时发布动态，本窗口无新的主条。</p>
+    </article>
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索开源治理与许可证动态，本窗口无新的主条。</p>
+    </article>
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>GitLab 补丁见前报；本窗口无新的主条。</p>
+    </article>
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3><a href="d/04-glinet-goodcloud-flaw-malware-firmware-4111.html">攻击者利用 GL.iNet 云管理漏洞感染路由器和 KVM，稳定安全固件已于11月22日放出</a></h3>
+      <p>GL.iNet 确认有人利用其 GoodCloud 远程管理漏洞，在部分路由器和 KVM 设备上植入恶意软件。云端攻击路径已封，但已感染设备不会自动清除。面向 Flint 2 等机型的稳定固件 4.11.1 已在 11 月 22 日放出。</p>
+      <a class="src detail" href="d/04-glinet-goodcloud-flaw-malware-firmware-4111.html" data-original="https://www.bleepingcomputer.com/news/security/hackers-exploit-glinet-cloud-flaw-to-infect-routers-kvm-devices/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>微软 Entra Connect Health 遭利用见昨报；本窗口无新的主条。</p>
+    </article>
+    <div class="sec"><h2>隐私与监管</h2></div>
+    <article class="card">
+      <h3><a href="d/05-cleverbridge-payment-card-data-copied-cvv.html">Cleverbridge 确认支付卡数据被复制，客户通知中包含卡号、有效期和安全码</a></h3>
+      <p>面向软件和订阅销售的电商平台 Cleverbridge 确认，11 月 4 日发现未经授权的活动后，调查认定有第三方复制了平台上存储的支付卡数据。BleepingComputer 看到的客户通知写明，被复制信息包括卡号、有效期和 CVV/CVC 安全码。</p>
+      <a class="src detail" href="d/05-cleverbridge-payment-card-data-copied-cvv.html" data-original="https://www.bleepingcomputer.com/news/security/cleverbridge-warns-hackers-stole-credit-card-numbers-cvvs-in-data-breach/">阅读详情</a>
+    </article>
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为星芒 OSTA O1 Pro 见前报；Mate X8 仍定于 11 月 24 日 14:30 发布，本窗口无新的整机发布主条。</p>
+    </article>
+    <div class="sec">
+      <h2>大厂平台政策</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索应用商店与平台政策动态，本窗口无新的主条。</p>
+    </article>
+
+    <footer>IT 行业简报 · 2026-11-23 08:20 上海 · 归档 2026-11-23-0820</footer>
+  </div>
+</body>
+</html>

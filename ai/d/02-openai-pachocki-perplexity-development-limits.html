@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 首席科学家提议用困惑度衡量预训练进度，并据此设定行业开发上限 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 首席科学家提议用困惑度衡量预训练进度，并据此设定行业开发上限</h1>
+    <p class="lede">OpenAI 首席科学家雅各布·帕乔基撰文，主张把困惑度（或等价的交叉熵损失）作为各实验室可互相对照的进度指标，并在监控能力达到明确里程碑之前，据此设定共同的开发上限。他同时公布了公司内部的预训练困惑度走势。</p>
+    <div class="meta">
+      <span>2026-11-23</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 于 11 月 22 日在官网发表首席科学家雅各布·帕乔基的长文《困惑度与智力》。TechCrunch 在太平洋时间当天下午 1 时 14 分（上海时间 23 日凌晨 5 时 14 分）跟进报道。这不是一次新模型发布，而是一篇关于如何衡量、并以何种尺度约束前沿开发的公开论述。帕乔基写道，现代人工智能看起来方法很多，但真正把能力长出来的，主要还是在大规模数据上训练一个压缩器或预测器；要看清这条曲线，就需要一个能跨实验室对照的指标。</p><p>他主张采用困惑度，或与之等价的交叉熵损失。按他的定义，困惑度衡量的是模型平均而言把下一个词元预测得多准，数值越低，预测越好。文章给出了公司内部主评估集上的一组对数困惑度：GPT-3.5 约 0.99，对应流畅对话、也是最初 ChatGPT 的基础；GPT-4 约 0.91，已经能够较好地使用思维链，并推动了后来对推理能力的专门挖掘；当前损失已降到 0.8 以下，并在网络安全和数学等领域出现了他认为具有变革意义的能力。</p><p>文中还有两个他用来外推的区间。其一是，当模型达到约 0.76 的对数困惑度后，开始在数学开放问题上连续给出突破性结果。其二是，按近来的进度外推，进入约 0.68 至 0.7 的窗口时，还可能再冒出今天未必在测的新能力；与此同时，现有的对齐审计方式可能进一步失效，模型对评测和训练的觉察也会上升。他因此建议前沿开发者在这类模型首次投入使用前，共同建立评估和安全论证的规范，并设定以困惑度等关键指标衡量的共同上限：在监控能力达到某个具体里程碑——例如找到思维链监控的替代方案——之前，先不越过这条线。</p><p>帕乔基也写了这个指标的短处：各实验室的评估集和训练数据不同，直接对比并不容易；困惑度并不对应某一项人们真正关心的任务；思维链推理能显著提高能力，却不降低模型本身的困惑度；数据固有熵也不清楚，损失不可能降到零。他仍认为，这个指标经受了时间考验，并决定先公开内部测量，以便推动形成可对照的科学依据。TechCrunch 还转述萨姆·阿尔特曼的评价，称这是 OpenAI「近来发表的最重要内容之一」。本报未能独立打开阿尔特曼的原始发言，只按 TechCrunch 的转述记录。</p><p>需要把边界说清。这篇文章是倡议，不是已经谈成的行业公约，更不是哪一家实验室今天宣布停训。帕乔基希望它成为后续分段设限、控制节奏的起点，但其他实验室会不会采用同一套评估集，目前并没有公开承诺。对读者来说，眼下能核对住的是：OpenAI 主动公布了自己的预训练困惑度曲线，并提出把该指标写成共同上限；至于上限设在哪一条刻度、监控里程碑如何验收，都还只停留在倡议层。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：OpenAI 官网原文与 TechCrunch 报道都确认作者是首席科学家雅各布·帕乔基，核心主张是用困惑度（或交叉熵损失）衡量预训练进度，并据此讨论共同开发上限；文中给出的 GPT-3.5 约 0.99、GPT-4 约 0.91、当前低于 0.8 等数字，两边可以对应。</li><li>时间：官网标注 2026 年 11 月 22 日；TechCrunch 标注太平洋时间 11 月 22 日下午 1:14（上海时间 23 日 05:14），落在本窗口。</li><li>分歧与转述：阿尔特曼“近来最重要内容之一”的评价仅见于 TechCrunch 转述，本报未见其原始发言页。</li><li>待确认：其他实验室是否同意同一评估集和上限；0.76、0.68–0.7 等区间对应哪一代内部模型，原文没有点名；这不是新模型发布，也不是已签署的行业协议。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://openai.com/index/perplexity-and-intelligence/" target="_blank" rel="noopener">OpenAI</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/11/22/openais-chief-scientist-has-thoughts-on-how-to-limit-ai-development/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
