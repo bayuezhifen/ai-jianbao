@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anthropic 推出 Claude Ship，可按团队策略审核、修复并批准拉取请求 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">Claude / Anthropic</div>
+    <h1>Anthropic 推出 Claude Ship，可按团队策略审核、修复并批准拉取请求</h1>
+    <p class="lede">Anthropic 11 月 23 日宣布推出 Claude Ship。套件里，代码审查已正式可用；负责处理失败检查、合并冲突和审查意见的 PR Steward，以及可按仓库策略批准变更的 Claude Approvals，目前仍是测试版，面向 Claude 团队版与企业版、托管在 GitHub 上的仓库开放。</p>
+    <div class="meta">
+      <span>2026-11-24</span>
+      <span class="dot"></span>
+      <span>Claude / Anthropic</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Anthropic 在官网文章中推出了名为 Claude Ship 的工作流。TechCrunch 标注的发布时间是太平洋时间 11 月 23 日下午 2 时 05 分，折合上海时间 24 日凌晨 6 时 05 分，落在本窗口内。《维尔格》和路透社当天也作了报道。公司要解决的问题很直接：越来越多的代码由智能体写出之后，审查和合并反而成了瓶颈。Anthropic 自己的说法是，在 Claude Code 团队内部，大部分代码已由 Claude 编写，他们希望拉取请求提交之后的步骤也能同样快。</p><p>Claude Ship 并不是单一按钮，而是三件套。代码审查已经正式可用，用来给拉取请求找问题。PR Steward 还在测试：它处理持续集成失败、合并冲突，以及代码审查提出的意见，并在每次推送后说明改了什么、必要时如何回退。最引起外界注意的是同样处于测试阶段的 Claude Approvals——团队把批准策略写成仓库里的一份文件，审批过程可以参考代码审查结论或公司自己的分类器，策略本身用自然语言书写。也就是说，在策略允许的范围内，常规变更可以由智能体批准，而不必每一笔都等人点头。</p><p>Anthropic 把控制权留在团队手里，这一点在官方说明和 TechCrunch 的转述里是一致的。功能先向 Claude 团队版和企业版开放，而且针对的是 GitHub 上的仓库。因为批准能力仍是测试版，公司建议先用只观察、不真正合并的模式跑一段时间，也可以先只开一个仓库，并设置月度花费上限。团队仍可决定它在哪里运行、审查用快速、标准还是深入档，以及哪些变更必须交给人来决定。开发者也可以在 Claude Code 里使用 <code>/ship</code> 命令。</p><p>这套产品的意义，不在于「人工智能又会写代码了」，而在于它把批准权写进了可检查的策略文件。写代码的速度上去之后，若是每一笔改动仍要等人看完，瓶颈只是后移，并没有消失；可如果批准也交给模型，出错的责任和回滚路径就必须事先约定清楚。Anthropic 没有宣称可以取消人工把关，相反，它把「先观察、再放开」写成了建议步骤。试点客户的反馈也强调，人仍然留在环节里，只是把时间更多地用在真正需要判断的改动上。</p><p>眼下能核对住的是产品形态和开放范围，而不是它在各家公司里已经替人签了多少单。测试版意味着策略冲突、误批准和费用控制都还需要时间检验。本窗口没有在官网上核到更靠后的正式转正时间表。对已经在用 Claude 写代码的团队，这是一条可以按仓库逐步打开的新能力；对还没有把审查流程写成明确规则的团队，先补那份策略文件，可能比立刻打开自动批准更要紧。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：Anthropic 官网、TechCrunch 与《维尔格》均记录 11 月 23 日推出 Claude Ship；代码审查已正式可用，PR Steward 与 Claude Approvals 为测试版，面向 Claude 团队版和企业版、GitHub 仓库。</li><li>时间：TechCrunch 标注太平洋时间 11 月 23 日 14:05，对应上海时间 24 日 06:05，属本窗口新主条。</li><li>控制措施：官方与媒体均提到可先以观察模式运行、先在单个仓库启用，并保留人工升级路径。</li><li>待确认：自动批准在真实生产仓库中的误通过率，以及测试版转正式可用的时间，官网尚未给出。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://claude.com/resources/articles/introducing-claude-ship" target="_blank" rel="noopener">Anthropic</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/11/23/anthropic-launches-claude-ship-letting-ai-agents-review-fix-and-approve-code-changes/" target="_blank" rel="noopener">TechCrunch</a><span class="role">主来源</span></li>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1040134/anthropic-claude-ship-ai-pull-requests" target="_blank" rel="noopener">The Verge</a><span class="role">次要</span></li>
+        <li><a href="https://code.claude.com/docs/en/claude-ship" target="_blank" rel="noopener">Claude 文档</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
