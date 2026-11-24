@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文心 5.5 Flash Preview 以 Apache 2.0 协议放出权重，今晨简报未收入 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>文心 5.5 Flash Preview 以 Apache 2.0 协议放出权重，今晨简报未收入</h1>
+    <p class="lede">文心 5.5 Flash Preview 的权重已按 Apache 2.0 协议出现在 Hugging Face。仓库时间戳显示它们在 11 月 23 日 17 时（上海）上线，今晨简报未收入；雷峰网今日报道正式开源。这是 11 月 11 日发布时预告的开源步骤。</p>
+    <div class="meta">
+      <span>2026-11-24</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>文心 5.5 Flash Preview 在 11 月 11 日发布时就写过，权重将以 Apache 2.0 协议开源，中文报道里出现过 11 月 25 日这一目标日期。OrcaRouter 根据 Hugging Face 的接口记录写道：11 月 23 日 9 时 00 分至 9 时 01 分（协调世界时），也就是上海时间当天下午 17 时刚过，百度组织下在约 39 秒内相继出现默认、FP8 和 BF16 三个公开仓库。这个时间点落在昨天下午简报之后、今晨 08:20 简报的覆盖窗口之内，但今晨未单列，本窗补上。雷峰网 11 月 24 日 12 时 10 分报道称，权重已正式开源，可在 Hugging Face 和 ModelScope 下载。</p><p>记者核到了 Hugging Face 上的 baidu/ERNIE-5.5-Flash-Preview 模型卡。它与 11 月 11 日的官方发布页口径一致：这是建立在先前开源的 ERNIE 5.5 Flash Base 之上的第一款后训练模型，采用专家混合架构，总参数约 2800 亿，每个词元激活约 140 亿，上下文窗口为 100 万词元，面向编程、三维建模、知识工作和内容创作。模型卡同时写得很清楚：Preview 是后训练过程中的中间检查点，部分能力可能仍有不足，后训练仍在进行，正式版还会再改。它不是「训练已经结束的最终发布」。</p><p>OrcaRouter 对三个仓库的体量作了核对，称默认构建约 166GB（多数权重为分块 FP8，路由专家等使用更低精度），FP8 构建约 302GB，BF16 构建约 600GB，后者被模型卡当作微调和无法运行低精度内核时的退路。雷峰网也写到 ModelScope 提供镜像。本报打开过 Hugging Face 仓库，但在发稿时未能成功打开 ModelScope 页面，后一处只按报道记录，不以本报当场复核为准。</p><p>许可是这次更值得单独说的变化。OrcaRouter 对照仓库里的 LICENSE 文本后写道：Preview 权重附带的是未经改写的标准 Apache 2.0；相比之下，Flash Base 仍带有地域排除（不含欧盟、英国和韩国）、年收入门槛，以及「Powered by ERNIE」一类标识和通知义务。模型卡也提醒，Apache 2.0 只覆盖 Preview 权重，Base 仍受它自己的协议约束。需要同时记下的是：OrcaRouter 称，截至 11 月 24 日，11 月 11 日那篇官方发布页仍写着「权重将很快在 Apache 2.0 下开源」，句子尚未改掉。因此，判断是否已经开源，应当以仓库和许可证文本为准，而不是那句尚未更新的预告。</p><p>模型卡上的基准成绩来自百度自己的运行，和竞品分数的来源并不总是同一套复现，本报不把这些数字写成独立评测结论。对打算本地部署的人来说，眼下能核对住的是：权重已经公开，许可是 Apache 2.0，而且官方仍把它定位为预览检查点。具体该用哪一套量化文件、硬件能不能跑起来，以及商业使用是否还要再读许可证，只能回到仓库本身。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：雷峰网 11 月 24 日报道文心 5.5 Flash Preview 以 Apache 2.0 正式开源；Hugging Face 上 baidu/ERNIE-5.5-Flash-Preview 模型卡可公开访问，参数口径（2800 亿总参数、140 亿激活、100 万上下文）与 11 月 11 日官方发布页一致。</li><li>时间：OrcaRouter 记录仓库创建于 2026 年 11 月 23 日 09:00 至 09:01 UTC（上海时间 17:00），属今晨窗口但今晨未收；雷峰网稿件时间为 24 日 12:10。</li><li>许可：OrcaRouter 称 Preview 为标准 Apache 2.0，且比 Flash Base 更宽松；本报以该对照和模型卡「仅覆盖 Preview 权重」的说明为准，完整条款仍以仓库 LICENSE 为准。</li><li>待确认：发稿时官方 11 月 11 日发布页是否仍写「即将开源」；ModelScope 镜像本报未能当场打开页面复核；百度自报基准并非独立评测。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.leiphone.com/category/industrynews/X2LHtIreyiO6depw.html" target="_blank" rel="noopener">雷峰网</a><span class="role">主来源</span></li>
+        <li><a href="https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview" target="_blank" rel="noopener">Hugging Face · ERNIE-5.5-Flash-Preview</a><span class="role">官方</span></li>
+        <li><a href="https://ernie.baidu.com/zh/release/ernie-5-5-flash-preview/" target="_blank" rel="noopener">文心官方发布页</a><span class="role">官方</span></li>
+        <li><a href="https://www.orcarouter.ai/zh-CN/blog/ernie-5-5-flash-preview-weights-released" target="_blank" rel="noopener">OrcaRouter</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

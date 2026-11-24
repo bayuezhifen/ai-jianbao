@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>华为宣布鸿蒙终端设备数突破 1 亿台，统计口径为 HarmonyOS 5、6、7 的手机、平板和电脑 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>华为宣布鸿蒙终端设备数突破 1 亿台，统计口径为 HarmonyOS 5、6、7 的手机、平板和电脑</h1>
+    <p class="lede">新华社今日报道，华为宣布搭载鸿蒙操作系统 HarmonyOS 5、6、7 的手机、平板和电脑设备数量已突破 1 亿台。IT之家核对官方说明后写道，数据来自华为内部统计，截止至 11 月 16 日，用时 883 天。</p>
+    <div class="meta">
+      <span>2026-11-24</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>新华网 11 月 24 日 9 时 02 分刊发新华社从深圳发出的报道：华为终端有限公司当天宣布，搭载鸿蒙操作系统 HarmonyOS 5、6、7 的手机、平板和电脑设备数量已突破 1 亿台。报道同时给出生态数字：目前可获取的应用和服务超过 46 万项，注册开发者超过 1200 万人。中国新闻网当天也报道了同一宣布。对今晨 08:20 简报而言，这是窗口开始之后才公开的里程碑，不是新的系统大版本发布。</p><p>口径需要写准确。IT之家当天 10 时 42 分跟进，并核对了华为官方海报上的小字：数据来源于华为内部统计，统计对象是搭载 HarmonyOS 5、6、7 的手机、平板和电脑，截止时间是 2026 年 11 月 16 日；官方同时称，终端设备数用时 883 天突破 1 亿。也就是说，这不是把所有物联网设备都算进去的「万物」总数，也不能把 11 月 16 日之后到宣布当天的增量再往上加。本报没有获得另一套可公开核对的第三方出货统计，因此只记录华为的内部口径。</p><p>这条宣布要放在近两年的系统迭代里看。新华社回顾，鸿蒙操作系统 2019 年首次发布，2024 年 10 月正式发布原生鸿蒙，到 2026 年 11 月终端数量跨过 1 亿台。IT之家则按版本梳理：2024 年 10 月发布原生鸿蒙 HarmonyOS NEXT（5.0），2025 年 10 月发布 HarmonyOS 6，今年 9 月发布 HarmonyOS 7。1 亿台是规模节点，用来说明生态是否站得住，而不是今天又推出了新的桌面或手机系统。</p><p>开源底座是另一条线。新华社写到，鸿蒙把生态底座开源，开源鸿蒙已汇聚 1.4 万余名贡献者，形成 120 余个行业发行版，并在电力、水务、工业等领域落地；合作伙伴贡献的创新能力超过 160 项，被超过 1600 款应用集成调用。这些数字同样来自官方或官方转述，本报没有逐一核对每个行业发行版的名单。对开发者而言，它说明的是：消费端过亿和行业发行版是并行推进的，不能把「1 亿台」理解成开源鸿蒙在工业现场的装机量。</p><p>还需要把今天下午的发布会和这条里程碑分开。华为仍定于 11 月 24 日 14 时 30 分举行发布会，外界预告将推出 Mate X8、Mate 90 Air 和 WATCH Air 等产品。本窗口截稿时发布会尚未开始，因此这里只报已经公开的终端规模，不提前把尚未发布的整机写成既成事实。1 亿台是华为自己宣布的台阶，后续还要看应用质量和升级意愿，而不能只看这一张海报。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：新华社、中国新闻网和 IT之家均报道华为于 2026 年 11 月 24 日宣布，搭载 HarmonyOS 5、6、7 的手机、平板和电脑设备数突破 1 亿台；新华社还写到应用和服务超过 46 万项、注册开发者超过 1200 万人。</li><li>时间：新华网稿件时间为 24 日 09:02，IT之家为 10:42，均晚于今晨 08:20 简报。</li><li>统计口径：IT之家核对官方说明，数据为华为内部统计，截止至 11 月 16 日，用时 883 天；统计对象不包括未点名的其他品类。</li><li>待确认：无独立的第三方出货或激活数据可复核这 1 亿台；开源鸿蒙贡献者与行业发行版数字来自官方转述。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.xinhuanet.com/20261124/68842538167d4e59a875056d5eb885ad/c.html" target="_blank" rel="noopener">新华网</a><span class="role">主来源</span></li>
+        <li><a href="https://www.ithome.com/1/031/313.htm" target="_blank" rel="noopener">IT之家</a><span class="role">次要</span></li>
+        <li><a href="https://www.chinanews.com.cn/cj/2026/11-24/10736865.shtml" target="_blank" rel="noopener">中国新闻网</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
