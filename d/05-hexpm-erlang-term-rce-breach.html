@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hex.pm 遭未认证远程代码执行攻击，官方称约 20 分钟内完成封堵和修补 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>Hex.pm 遭未认证远程代码执行攻击，官方称约 20 分钟内完成封堵和修补</h1>
+    <p class="lede">Elixir 官方包仓库 Hex.pm 11 月 24 日披露，11 月 23 日有攻击者利用 Erlang 外部项反序列化漏洞，在未登录的情况下在 6 台 Web 服务器上执行命令。流量在约 20 分钟内被封堵并完成修补。官方未发现软件包被篡改，但因读操作未记日志，不能排除账号相关数据被读取。</p>
+    <div class="meta">
+      <span>2026-11-25</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>Hex 官方博客于 11 月 24 日由 Peter Ullrich、Jonatan Männchen 和 Eric Meadows-Jönsson 联名发布，回顾了前一天的安全事件。11 月 23 日 18:16 至 18:29（世界协调时），攻击者向 hex.pm 发送了 69 个恶意请求，6 台 Web 服务器受到影响。错误追踪系统 Sentry 在 18:16:00 记下第一笔错误。18:27 起加入防火墙规则，约 18:30 至 18:33 完全生效；18:30 至 18:31，全部服务器已被换成拒绝这类载荷的修补版本。官方的说法是：从发现到封堵并完成修补，大约 20 分钟。</p>
+<p>漏洞编号为 CVE-2026-129514，GitHub 公告 GHSA-9pmm-hf4r-27pg 把它定为严重级别，并写明已在 11 月 23 日遭实际利用。公告解释，hex.pm 在路由和登录之前，就会用 <code>Plug.Crypto.non_executable_binary_to_term/2</code> 解码 <code>application/vnd.hex+erlang</code> 格式的请求体。这个解码函数会挡住函数和新原子，但放行带有 <code>__struct__</code> 键的映射，于是攻击者可以送入一个被运行时当成结构体的值。随后在方法覆盖、错误报告和 <code>inspect</code> 协议分派的链条里，结构体被转换成一次可执行的函数调用，最终在 BEAM 进程的用户权限下运行操作系统命令。修复办法是：解码结果里一旦出现带 <code>__struct__</code> 的映射，就返回错误并应答 400。受影响区间被写为 2016 年 2 月 23 日起、直至 2026 年 11 月 23 日修补之前。</p>
+<p>关于损失，官方的调查结论写得很克制。他们没有发现未经授权的软件包改动，也没有发现数据库被改写，或者攻击者还留在系统里。可是数据库读取没有日志，因此不能排除攻击者读过库里的数据，包括电子邮箱、密码哈希、应用程序接口密钥哈希、双重验证密钥、会话和审计日志。官方提醒用户小心声称来自 Hex 的邮件，点开链接前先确认域名是 hex.pm，可疑邮件可转到 security@hex.pm。他们核对了事件期间写入软件包存储的每一个文件，没有发现异常；对私有包的读取来自己方服务器，且与当时各组织自己发布的版本对得上，但来自已被攻陷服务器的读取会看起来像内部读取，因而无法完全排除，私有文档的读取同样没有日志。受影响组织会由官方另行通知。</p>
+<p>攻击者的命令可能读到服务器使用的凭证，因此官方已更换存储、内容分发网络、邮件和数据库凭证，以及用于签发会话和访问令牌的密钥，这会使所有人退出 hex.pm 和 Hex 客户端。他们正在做一套支持密钥轮换的新仓库签名系统，新的客户端将在随后几天发布；在此之前，不要信任第三方镜像，只从 repo.hex.pm 取包。用户被建议：在 hex.pm 修改密码；在安全页面为验证器应用执行「设置新应用」并保存新的恢复码；待新签名系统的客户端发布后再更新，Elixir 用户可运行 <code>mix local.hex --force</code>，使用 rebar3 或 Gleam 的人也要一并更新。时间线上还写到，他们已向瑞典数据保护机构 IMY 报告个人数据泄露，并向美国网络安全与基础设施安全局（CISA）和欧盟网络安全局（ENISA）作了报告；CVE 于 11 月 24 日 13:48（世界协调时，约合上海 21:48）公布，晚于昨报 14:10，今晨未收，故于午报补录。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：Hex 官方博客与 GitHub 安全公告均确认，CVE-2026-129514 为未认证远程代码执行，攻击发生在 11 月 23 日，当日完成封堵和修补；根因是 Erlang 外部项解码放行了带 <code>__struct__</code> 的映射；官方未发现软件包被篡改或数据库被改写，但不能排除读取。</li>
+<li>时间：事件在 11 月 23 日 18:16–18:29（世界协调时）；博客与公告日期为 11 月 24 日；CVE 公布于 11 月 24 日 13:48（世界协调时），晚于昨报 14:10，今晨简报未收，属本窗口补录。</li>
+<li>待确认：是否有私有包或私有文档确实被读取，官方将直接通知受影响组织；新的仓库签名客户端具体何时发布；CISA 是否会把该漏洞列入已知被利用目录，目前尚未见到 11 月 25 日的新目录条目。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://hex.pm/blog/security-incident-on-hexpm" target="_blank" rel="noopener">Hex 官方博客</a><span class="role">官方</span></li>
+        <li><a href="https://github.com/hexpm/hexpm/security/advisories/GHSA-9pmm-hf4r-27pg" target="_blank" rel="noopener">GitHub 安全公告 GHSA-9pmm-hf4r-27pg</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
