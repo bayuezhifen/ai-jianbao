@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JetBrains 为 Java4Shell 发布各线 IDE 缓解更新，苹果芯片等 ARM64 不受影响 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>JetBrains 为 Java4Shell 发布各线 IDE 缓解更新，苹果芯片等 ARM64 不受影响</h1>
+    <p class="lede">OpenJDK 的 Java4Shell 已在 11 月 18 日简报中报道。JetBrains 11 月 24 日宣布，为 IntelliJ IDEA、PyCharm 等各条产品线发布缓解更新，默认关闭有漏洞的 Base64 加速指令。该公司说，只有运行在特定 x86-64 处理器上的 IDE 才会暴露，ARM64（包括苹果芯片）不受影响。</p>
+    <div class="meta">
+      <span>2026-11-25</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>JetBrains 于 11 月 24 日在安全博客发文，要求用户立即更新 IntelliJ IDEA、PyCharm、WebStorm、PhpStorm、GoLand、Rider、CLion、RubyMine、RustRover、DataGrip 等 IDE，以及 ReSharper、Toolbox 和 Gateway。事由是 OpenJDK 中被称作 Java4Shell 的漏洞，编号 CVE-2026-114938，弱点类型为越界写入。11 月 18 日简报已报道 Oracle 与 OpenJDK 在 11 月 17 日随补丁修复了这一问题；本期写的是 JetBrains 产品线就此给出的缓解更新，而不是把上游披露当成一条新漏洞。</p>
+<p>漏洞出在 HotSpot 虚拟机的 Base64 解码器。为了加快解码，它在支持 AVX-512 VBMI 的 x86-64 处理器上会走一条内置加速路径；畸形输入会让这条路径写到 Java 数组末尾以外，进而破坏邻近内存。漏洞报告者已在若干服务端 Java 应用中演示了借此执行任意代码。受影响的是 OpenJDK 17.0.6 及之后的 17 系列，以及 21、25、27 等分支；Oracle Java SE 8 的 Performance Pack（8u511-perf 及更早）也被点名，普通的 Java 8 和 Java 11 构建则不受影响。</p>
+<p>JetBrains 的 IDE 都捆绑了基于 OpenJDK 的 JetBrains Runtime。所有当前捆绑 JBR 17（17.0.6 及以后）、21 或 25 的版本都在受影响范围内，远程开发后端和 HTTP Client 命令行工具也包括在内。不过，公司把实际暴露条件写得很窄：只有既运行在支持 AVX-512 VBMI 的 x86-64 处理器上——例如 Ice Lake 起的英特尔至强、部分第十代和第十一代酷睿，以及基于 Zen 4 及更新架构的 AMD 处理器——又去解码攻击者能够控制的 Base64 数据时，IDE 才会暴露。ARM64，包括苹果芯片，不被认为受影响。发文时，JetBrains 说尚未发现该漏洞被用来攻击其 IDE 的案例。</p>
+<p>此次更新并不是先换上已经打好补丁的新运行时，而是在所有 IDE 的默认虚拟机参数里加上 <code>-XX:-UseBASE64Intrinsics</code>，关掉那条有漏洞的加速路径，让 Base64 解码退回普通的 Java 实现。公司提醒，这条参数在所有平台上都能被接受，只是解码可能会变慢。上游修复正在另行并入 JetBrains Runtime，新的运行时构建就绪后会再更新博文。各条产品线给出了对应版本号，例如 IntelliJ IDEA 2026.3.0.1、2026.2.5.1 等，用户应按自己所在的 2026.3 到 2025.2 分支选择已列出的修复版。</p>
+<p>还有一件容易被忽略的事：IDE 更新只覆盖编辑器自己的运行时，不能代替项目里用于构建、测试和运行配置的 JDK。那些运行时需要单独升级到已修复的发行版。若暂时无法更新 IDE，也可以先手动加上同一条虚拟机参数。对仍在 x86-64 服务器或工作站上使用 JetBrains 工具的人来说，这是一条可以立刻执行的缓解；对已经全面改用苹果芯片的开发者，官方结论是这条漏洞本身不构成暴露，但项目依赖的 JDK 该补还是要补。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：漏洞编号 CVE-2026-114938、11 月 17 日由 Oracle 与 OpenJDK 修复，这些与 11 月 18 日简报及 OpenJDK 公告一致。JetBrains 11 月 24 日博文确认，缓解方式是在 IDE 默认参数中关闭 Base64 加速指令，并给出各产品线版本表。</li>
+<li>范围：官方明确只有支持 AVX-512 VBMI 的 x86-64 才会暴露，ARM64（包括苹果芯片）不受影响；项目使用的 JDK 需另行更新。发文时未见针对 JetBrains IDE 的在野利用。</li>
+<li>待确认：已打补丁的新 JetBrains Runtime 构建何时全面替换当前「先关开关」的缓解，博文称会另行更新；本报未在受影响硬件上复现该漏洞。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blog.jetbrains.com/security/2026/11/java4shell-vulnerability/" target="_blank" rel="noopener">JetBrains 安全博客</a><span class="role">官方</span></li>
+        <li><a href="https://openjdk.org/groups/vulnerability/advisories/2026-11-17" target="_blank" rel="noopener">OpenJDK 漏洞公告（2026/11/17）</a><span class="role">官方</span></li>
+        <li><a href="https://blog.jetbrains.com/teamcity/2026/11/java4shell-cve-2026-114938-what-it-means-for-teamcity/" target="_blank" rel="noopener">JetBrains TeamCity 说明</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA 将 Drupal 核心远程代码执行等三项漏洞列入已知被利用目录 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 Drupal 核心远程代码执行等三项漏洞列入已知被利用目录</h1>
+    <p class="lede">美国网络安全与基础设施安全局 11 月 24 日把三项漏洞加入已知被利用漏洞目录，理由是已有活跃利用证据。清单包括已停止维护的 Idunno AntiCsrf 反序列化问题、Drupal 核心远程代码执行，以及 Optimizely Web Experimentation 的关键状态数据可被外部控制。</p>
+    <div class="meta">
+      <span>2026-11-25</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>美国网络安全与基础设施安全局（CISA）在 11 月 24 日的警报中宣布，基于已有活跃利用的证据，向已知被利用漏洞目录（KEV）新增三项条目：CVE-2026-131914，Idunno AntiCsrf 对不可信数据的反序列化；CVE-2026-132165，Drupal 核心远程代码执行；CVE-2026-132224，Optimizely Web Experimentation 的关键状态数据可被外部控制。警报提醒，这类漏洞是常见的攻击入口，对联邦政务系统风险很高，并再次指向约束联邦民事行政部门的 BOD 26-04：对目录中、且利用后能完全控制对外暴露资产的高风险漏洞，应优先修补，还要检查补丁打上之前系统是否已被侵入。</p>
+<p>三项之中，Drupal 这一条对站点运营者最直接。Drupal 安全公告 SA-CORE-2026-017 把该问题定为高度严重的远程代码执行，修复版本为 Drupal 11.4.13、11.3.22 和 10.6.22；11.2 及更早、10.5 及更早已经停止安全维护，Drupal 8 和 9 也已结束支持。官方建议立即升级；若暂时升不了，应先按说明保护安装程序，避免攻击者利用 <code>/core/install.php</code> 一类入口重装或接管站点。BleepingComputer 在漏洞修补阶段就曾报道，Drupal 方面担心利用方式会很快出现。这次被列入 KEV，意味着 CISA 认为利用已经发生，而不是还停留在「可能会被利用」。</p>
+<p>Optimizely Web Experimentation 这一条，背景要更早一些。The Register 在 11 月 17 日曾报道，该平台的缺陷可被用来把恶意脚本投放到客户网站上。CISA 现在将其作为「关键状态数据可被外部控制」加入目录，要求尽快处理。公开建议是将产品更新到 2026 年 11 月 17 日及以后的发行版。需要分开写的是：The Register 当时写的是利用如何把大型网站变成恶意软件分发渠道，CISA 此番确认的是该漏洞已满足列入 KEV 的标准，两者时间不同，不能把 17 日的报道当成 24 日才发生的入侵。</p>
+<p>第三条针对的是 Idunno.AntiCsrf 这个已不再维护的防跨站请求伪造组件。Mandiant 的漏洞披露指出问题出在反序列化，建议的处置不是继续给旧模块打补丁，而是把它移除，改用仍在维护的防伪措施。对仍把该组件留在老项目里的团队来说，目录收录意味着应当当作已经有人在利用，而不是还可以慢慢替换。</p>
+<p>CISA 的目录对联邦机构有约束力，对其他组织是强烈建议。本报在警报原文中没有看到另行公布的统一截止日，因此不把第三方转述的日期写成官方时限。对 Drupal 站点、仍在使用 Optimizely Web Experimentation 的网站，以及代码里还留着 Idunno.AntiCsrf 的系统，眼下能做的是：先核对版本和组件是否在列，再按厂商说明升级、下线或替换，并检查补丁之前有没有被侵入的痕迹。昨日简报已报道的 MONAI Label 与 N-able 条目不在此次新增之列，不应混为一谈。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致处：CISA 11 月 24 日警报明确列出 CVE-2026-131914、CVE-2026-132165、CVE-2026-132224 三项，并写明依据是活跃利用证据。Drupal 官方公告给出的修复版本与「先保护安装程序」的临时办法，可与 CISA 条目交叉对应。</li>
+<li>背景与时点：Optimizely 相关利用报道见于 The Register 11 月 17 日稿，早于此次列入目录；本报把 24 日的新事实写成「被列入 KEV」，而不是写成当天才首次出现攻击。</li>
+<li>Idunno：Mandiant 披露建议移除已停止维护的模块，与「打官方补丁」的处置不同，已在正文区分。</li>
+<li>待确认：CISA 警报原文未在本报所读页面中给出统一的修复截止日，第三方报道中的日期未采用。本报未独立复核三项漏洞的在野利用样本。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/24/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://www.drupal.org/sa-core-2026-017" target="_blank" rel="noopener">Drupal 安全公告 SA-CORE-2026-017</a><span class="role">官方</span></li>
+        <li><a href="https://www.theregister.com/cyber-crime/2026/11/17/optimizely-hack-turns-worlds-biggest-websites-into-malware-dispensers/5310448" target="_blank" rel="noopener">The Register</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
