@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenAI 将合并 Chat 与 Work，ChatGPT 与 Codex 从 12 月起共用用量额度 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">OpenAI</div>
+    <h1>OpenAI 将合并 Chat 与 Work，ChatGPT 与 Codex 从 12 月起共用用量额度</h1>
+    <p class="lede">OpenAI 帮助中心更新说明，自 12 月起，Plus、Pro 和 Business 套餐的用量额度将在 ChatGPT 与 Codex 之间共用。The Verge 和 TechCrunch 均报道了这一变化，并指出公司同时在把 Chat 与 Work 收进同一套界面。</p>
+    <div class="meta">
+      <span>2026-11-26</span>
+      <span class="dot"></span>
+      <span>OpenAI</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>OpenAI 帮助中心近日更新了《Understanding ChatGPT and Codex usage limits》一文，写明从 12 月起，Plus、Pro 和 Business 套餐的用量额度将在 ChatGPT 与 Codex 之间共用，原因是公司要把 Work 一侧的智能体能力收进 ChatGPT 的主界面。用量按词元计算，选用更强的模型和更复杂的任务一般会消耗得更快；即时对话（Instant）不占用这份额度，用尽之后仍可继续使用即时对话。用户可在「设置 → 用量」里查看合并后的剩余额度和重置时间；用尽后可等待重置、升级套餐，或购买积分以继续使用符合条件的功能。一小部分用户可能在 12 月前先看到这一变化，以便公司收集反馈。</p><p>The Verge 于 11 月 25 日 16:39（协调世界时，约合上海时间 26 日 0:39）报道了同一安排，并写到 OpenAI 预计「大多数用户不必比现在更频繁地等待用量重置」。TechCrunch 于太平洋时间 11 月 25 日 12:03（约合上海时间 26 日 4:03）补充了执行细节：产品负责人蒂博·索蒂奥此前在 X 上表示，统一后的 Chat 与 Work 体验已开始向一小部分 Pro 用户推送；这是在公司早先给用户的邮件之后。OpenAI 发言人对 TechCrunch 说，大多数用户预计不会更频繁地等到重置，但用量最大的一小部分人可能会更早碰到上限。这正是部分订阅用户在社区里担心的事情：两项原来分开的额度并到一处后，在付同样费用的情况下，用高级推理模型的机会可能变少。</p><p>官方目前没有公布合并后的具体额度，也没有给出与原先两套限额如何换算的对照表。因此，现在能够确认的是机制，而不是每个人会多出或少掉多少用量。帮助中心把这次调整说成「正在为过渡做准备，以减少对工作流程的打扰」，但没有承诺所有重度用户的可用量都不会下降。TechCrunch 还提到，Anthropic 已在 9 月把对话界面 Claude 与偏工作场景的 Cowork 收进同一套界面，说明把聊天和办事放到一处，并不是只有 OpenAI 在做；两边的计费规则并不相同，不能直接类比。</p><p>对订户来说，12 月的变化会落在两个层面：界面上，Chat 与 Work 将逐步不再分成两套入口；计费上，ChatGPT 与 Codex 将共用一份词元额度。若日常把对话和写代码、跑智能体分得很开，合并后更容易在一处把额度用完。若主要使用即时对话，官方说明是不受这次限额约束的。具体还要等设置页里的用量数字出来，以及 12 月更广泛推开时官方会不会再补一份对照说明。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：OpenAI 帮助中心、The Verge 和 TechCrunch 均确认，Plus、Pro、Business 将从 12 月起在 ChatGPT 与 Codex 之间共用用量额度；即时对话不计入；大多数用户预计不必比现在更频繁地等待重置。</li><li>时间：The Verge 发布于 11 月 25 日 16:39 UTC，TechCrunch 发布于 11 月 25 日 12:03 PST，均落在本窗口（昨日 14:00 之后的夜间至今晨）。</li><li>差异：帮助中心和 The Verge 侧重于 ChatGPT 与 Codex 共用额度；TechCrunch 更多写统一 Chat 与 Work 界面，并转述发言人关于「用量最大的一小部分人可能更早碰到上限」的说明。</li><li>待确认：合并后的具体额度及与旧限额的换算，官方尚未公布；小范围提前推送的实际覆盖面，本报无法独立统计。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.theverge.com/ai-artificial-intelligence/1042187/openai-is-combining-chatgpt-and-codex-usage-limits" target="_blank" rel="noopener">The Verge</a><span class="role">主来源</span></li>
+        <li><a href="https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits" target="_blank" rel="noopener">OpenAI Help Center</a><span class="role">官方</span></li>
+        <li><a href="https://techcrunch.com/2026/11/25/openai-says-heavy-chatgpt-users-may-hit-limits-sooner-as-it-merges-chat-and-work/" target="_blank" rel="noopener">TechCrunch</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

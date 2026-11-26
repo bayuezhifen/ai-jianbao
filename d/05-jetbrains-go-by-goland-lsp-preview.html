@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JetBrains 推出 Go by GoLand 公开预览，可在 VS Code 和 Cursor 里使用 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">开发者工具</div>
+    <h1>JetBrains 推出 Go by GoLand 公开预览，可在 VS Code 和 Cursor 里使用</h1>
+    <p class="lede">JetBrains 11 月 25 日宣布，面向 VS Code 系编辑器的 Go by GoLand 语言服务器进入免费公开预览，可在 VS Code 和 Cursor 中使用 GoLand 的一部分语言能力。官方文档同步提供了安装说明。</p>
+    <div class="meta">
+      <span>2026-11-26</span>
+      <span class="dot"></span>
+      <span>开发者工具</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>JetBrains 在 11 月 25 日的博客中宣布，Go by GoLand 语言服务器进入公开预览。这是一个面向 VS Code 系编辑器的扩展，采用语言服务器协议和调试适配器协议，可在 VS Code 和 Cursor 里使用 GoLand 的一部分语言能力，而不必打开 IntelliJ 平台上的 GoLand 本身。公司把这个预览版定位为免费的测试版，目的是收集性能反馈和功能需求。官方帮助文档同步上线，并单独写了在 Cursor 中的安装步骤。</p><p>博客强调，开发已经不只发生在一个窗口里。文中引用的内部统计称，2026 年几乎所有 Go 开发者（98.2%）都会使用编程智能体，其中 82% 会在 IDE、终端或远程环境等至少两个界面里和智能体一起工作；只有 8% 的人很少或从不审阅人工智能生成的代码。公司的判断是：代码仍要由开发者负责，因此项目级的搜索、索引、重构和调试仍然重要。Go by GoLand 被写成把这些能力从 IntelliJ 平台带出去的第一步。</p><p>官方特别强调它对超大型代码库的处理。博客写道，团队在一个接近 9300 万行、跨 34 个模块、规模超过两份 Linux 内核的仓库里做了测试：跳转到定义大约 11 毫秒，在全部 34 个模块里查找实现大约 13 秒，过程中内存占用约 833 MiB，大约相当于 16 GB 笔记本内存的 5%。这些是 JetBrains 自己的基准，不是第三方复现，不能写成已经公认的成绩。官方也写明，当前预览的能力仍然有限，后续还会加功能。现阶段支持的包括：跳转到定义和实现、查找引用、查看调用层次和类型层次；以及代码分析、重构、运行、调试和测试等一部分能力。帮助文档还提醒，预览构建会在 30 天后过期，需要再装更新的预览版才能继续用。</p><p>对 Go 开发者来说，这不是新的语言版本，也不是 GoLand 桌面 IDE 的大版本，而是把现有语言智能接到更常见的编辑器和智能体工作流里。预览免费，但功能明显还不完整，官方也把它当成收集意见的步骤。本报没有在本地安装这一扩展做对照测试，安装、性能和过期策略应以官方文档为准。若主要工作已经在 Cursor 或 VS Code 里完成，这是一条可以立刻试用的新通道；若仍以 GoLand 本尊为主，它暂时是补充，而不是替代。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul><li>一致处：JetBrains 博客与官方帮助文档均确认，Go by GoLand 是面向 VS Code 系编辑器（含 Cursor）的 LSP/DAP 扩展，目前为免费公开预览。</li><li>时间：博客日期为 2026 年 11 月 25 日，昨报未收入，属本窗口或可补录的同日发布。</li><li>基准与限制：9300 万行仓库、跳转 11 毫秒、查找实现 13 秒、内存约 833 MiB，均来自公司自测；帮助文档写明预览构建 30 天过期。本报未安装验证。</li><li>待确认：预览版当前功能清单仍会随构建变化，完整能力以帮助文档和扩展市场页面为准。</li></ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://blog.jetbrains.com/go/2026/11/25/go-by-goland-public-preview/" target="_blank" rel="noopener">JetBrains Blog</a><span class="role">官方</span></li>
+        <li><a href="https://www.jetbrains.com/help/go-lsp/About-go-by-goland.html" target="_blank" rel="noopener">Go by GoLand 文档</a><span class="role">官方</span></li>
+        <li><a href="https://www.jetbrains.com/help/go-lsp/get_started_cursor.html" target="_blank" rel="noopener">Cursor 安装说明</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

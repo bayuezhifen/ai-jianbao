@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-11-26 08:20</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-26</span>
+        <span class="dot"></span>
+        <span>周四 08:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-fcc-spacex-starmind-orbital-datacenters.html">美国联邦通信委员会批准 SpaceX 部署最多 100 万颗在轨数据中心卫星</a></h3>
+      <p>美国联邦通信委员会 11 月 25 日批准 SpaceX 的 Starmind 计划，允许部署最多 100 万颗在轨数据中心卫星，并称这是美国首次为这类星座发放许可。马斯克在 X 上回复主席卡里，称这将是美国和世界的重要资产。</p>
+      <a class="src detail" href="d/01-fcc-spacex-starmind-orbital-datacenters.html" data-original="https://siliconangle.com/2026/11/25/fcc-clears-spacex-to-put-up-to-1-million-starmind-data-centers-in-space/">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/02-openai-chatgpt-codex-shared-usage-limits.html">OpenAI 将合并 Chat 与 Work，ChatGPT 与 Codex 从 12 月起共用用量额度</a></h3>
+      <p>OpenAI 帮助中心更新说明，自 12 月起 Plus、Pro 和 Business 套餐的用量将在 ChatGPT 与 Codex 之间共用，即时对话不计入。The Verge 和 TechCrunch 均报道了这一变化，并指出用量最大的一小部分用户可能会更早碰到上限。</p>
+      <a class="src detail" href="d/02-openai-chatgpt-codex-shared-usage-limits.html" data-original="https://www.theverge.com/ai-artificial-intelligence/1042187/openai-is-combining-chatgpt-and-codex-usage-limits">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>Claude / Anthropic</h2></div>
+    <article class="card">
+      <h3><a href="d/03-anthropic-messages-api-rust-migration.html">Anthropic 把 Messages API 从 Python 迁到 Rust，单请求 CPU 约降七成</a></h3>
+      <p>Anthropic 发文介绍把 Messages API 从 Python 迁到 Rust，并用线上流量做对照验证。公司称新接口单请求大约少用 70% 的 CPU，首个词元中位等待时间大约缩短 20%，迁移过程中服务没有停机。</p>
+      <a class="src detail" href="d/03-anthropic-messages-api-rust-migration.html" data-original="https://www.anthropic.com/research/migrating-api-to-rust">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>黄仁勋复职后全员大会致歉，以及供应链所称 B300 新单交期，见昨报；本窗口英伟达新闻室无新稿。</p>
+    </article>
+
+    <div class="sec">
+      <h2>Grok / xAI</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>已检索马斯克在 X 上的帖子与 x.ai/news，本窗口无训练、版本阶梯或发布时点的新主张。马斯克回复联邦通信委员会主席卡里、称 Starmind 将是美国和世界的重要资产，见本期行业栏。</p>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>官方更新说明最新仍为 11 月 6 日的 Voice Chat with Agents。</p>
+    </article>
+
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口无新的主条。</p>
+    </article>
+
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为 Mate X8 搭载麒麟 9050 Pro，见前报消费电子栏。</p>
+    </article>
+
+    <div class="sec"><h2>存储与网络硬件</h2></div>
+    <article class="card">
+      <h3><a href="d/04-trendforce-cuts-2027-memory-outlook.html">TrendForce 下调 2027 年存储展望，DRAM 营收预测降至 1.15 万亿美元</a></h3>
+      <p>TrendForce 11 月 25 日称，中国云服务商削减 2027 年存储器订单，遂将明年 DRAM 营收预测下调至 1.15 万亿美元（仍同比增长 69%），NAND Flash 下调至约 4193 亿美元（同比增长 29%）。</p>
+      <a class="src detail" href="d/04-trendforce-cuts-2027-memory-outlook.html" data-original="https://www.trendforce.com/presscenter/news/20261125-13321.html">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>群晖 / Synology</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>DSM 紧急更新见前报。本窗口中英文安全通告页无新条目，英文列表最新公开条目仍为 11 月 13 日的 Synology-SA-26:19。</p>
+    </article>
+
+    <div class="sec">
+      <h2>操作系统与桌面</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>鸿蒙终端设备数突破 1 亿台见前报；华为新品预装 HarmonyOS 7，见前报消费电子栏。</p>
+    </article>
+
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Anthropic 将 Messages API 从 Python 迁至 Rust，见本期 Claude / Anthropic 栏。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口无新的主条。</p>
+    </article>
+
+    <div class="sec"><h2>开发者工具</h2></div>
+    <article class="card">
+      <h3><a href="d/05-jetbrains-go-by-goland-lsp-preview.html">JetBrains 推出 Go by GoLand 公开预览，可在 VS Code 和 Cursor 里使用</a></h3>
+      <p>JetBrains 宣布面向 VS Code 系编辑器的 Go by GoLand 语言服务器进入免费公开预览，可在 VS Code 和 Cursor 中使用 GoLand 的一部分语言能力。官方文档同时提供了安装说明。</p>
+      <a class="src detail" href="d/05-jetbrains-go-by-goland-lsp-preview.html" data-original="https://blog.jetbrains.com/go/2026/11/25/go-by-goland-public-preview/">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3><a href="d/06-cisa-adds-10-kev-mitel-juniper-xen.html">CISA 将 Mitel、Juniper 等 10 项漏洞列入已知被利用目录</a></h3>
+      <p>美国网络与基础设施安全局 11 月 25 日将 10 项漏洞列入已知被利用目录，涉及丹佛斯 AK-SM 800A、HPE 瞻博 Session Smart、Mitel MiCollab 和 Vates Xen Orchestra，表示已有活跃利用的证据。</p>
+      <a class="src detail" href="d/06-cisa-adds-10-kev-mitel-juniper-xen.html" data-original="https://www.cisa.gov/news-events/alerts/2026/11/25/cisa-adds-10-known-exploited-vulnerabilities-catalog">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Inception 勒索组织针对 SSO 凭证开展大规模语音钓鱼，见昨报。</p>
+    </article>
+
+    <div class="sec">
+      <h2>隐私与监管</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>商务部继续暂停对美出口镓锗锑等两用物项原则上不予许可的条款，见昨报。</p>
+    </article>
+
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为发布 Mate X8、Mate 90 Air 与 WATCH Air，见昨报。</p>
+    </article>
+
+    <div class="sec"><h2>大厂平台政策</h2></div>
+    <article class="card">
+      <h3><a href="d/07-korea-kmcc-google-apple-payment-order.html">韩国责令谷歌与苹果三个月内整改应用内支付和审核规则</a></h3>
+      <p>韩国放送通信委员会通报，已于 23 日向谷歌和苹果发出书面改正命令，要求一个月内提交执行计划，三个月内改进应用内支付政策和审核程序。朝鲜日报报道了这次通报。</p>
+      <a class="src detail" href="d/07-korea-kmcc-google-apple-payment-order.html" data-original="https://biz.chosun.com/en/en-it/2026/11/25/XSOSWKZAAFCTJJTLTVM3A3AB3I/">阅读详情</a>
+    </article>
+
+    <footer>IT 行业简报 · 2026-11-26 08:20 上海 · 归档 2026-11-26-0820</footer>
+  </div>
+</body>
+</html>
