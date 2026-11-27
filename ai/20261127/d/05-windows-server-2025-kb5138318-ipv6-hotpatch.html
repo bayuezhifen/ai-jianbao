@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微软为 Windows Server 2025 再发不重启热补丁，修复会致系统停止的 IPv6 路由故障 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">操作系统与桌面</div>
+    <h1>微软为 Windows Server 2025 再发不重启热补丁，修复会致系统停止的 IPv6 路由故障</h1>
+    <p class="lede">微软 11 月 25 日发布带外热补丁 KB5138318，修复 11 月安全热补丁 KB5131077 引入的问题：在启用路由器通告并收到有时限 IPv6 路由的 Windows Server 2025 上，路由计时到期时可能出现 0x139 停止错误。官方写明安装后无需重启。《注册》11 月 26 日作了报道。</p>
+    <div class="meta">
+      <span>2026-11-27</span>
+      <span class="dot"></span>
+      <span>操作系统与桌面</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>微软在 11 月 25 日发布了带外热补丁 KB5138318（操作系统内部版本 26100.33732），用于修复同月安全热补丁 KB5131077 带来的故障。官方说明写明：部分启用了路由器通告（Router Advertisement）、并且会收到有时限 IPv6 路由的 Windows Server 2025 设备，在路由计时到期时可能意外停止，错误代码为 0x139（KERNEL_SECURITY_CHECK_FAILURE）。这不是定期安全更新里的新漏洞修复，而是对上一个热补丁副作用的紧急更正，安装后立即生效，不必重启。</p>
+<p>《注册》11 月 26 日报道了同一份更新。文章解释，0x139 表示内核发现关键数据结构被破坏后主动停机；微软已经定位到触发条件是路由计时到期，但还没有说明底层代码究竟错在哪里。对管理员来说，热补丁的卖点本来就是少重启、少中断，可一旦热补丁自己把机器打停，这个优点就打了折扣。</p>
+<p>官方支持页把适用范围写为 Windows Server 2025 Datacenter: Azure Edition 的热补丁通道。安装前需要先具备基准更新 KB5126646，以及版本不低于 26100.33634 的服务堆栈更新；这次包里也会带上较新的服务堆栈更新 KB5131079。已经装过此前更新的设备，只会再下载其中的新增部分。微软目前未公布已知问题。获取途径包括 Windows Update、Microsoft Update Catalog 和 WSUS，官方称符合条件的设备会从 Windows 更新自动安装。</p>
+<p>《注册》还提到，近几个月 Windows Server 更新多次在正式补丁之后再出带外修复，这次又是用新的热补丁去修补旧热补丁。资产管理公司 Lansweeper 的监测数据显示，Windows Server 2025 在其统计的服务器里约占 7%，仍远低于 Server 2022 和 2019；真正会碰到这次故障的，只是已经安装了受影响热补丁、并且采用上述 IPv6 配置的那一部分系统。管理员若走的是 Azure Edition 热补丁通道，应确认 KB5138318 已经到位；其他版本是否以同一方式提供这份修复，应以微软支持页和更新目录为准，不宜自行扩大适用范围。</p>
+<p>若要核对自己是否已具备安装条件，官方建议在提升权限的命令提示符里查看服务堆栈包版本，确认达到 26100.33634 或更高，并先装好基准更新 KB5126646。这次故障只在特定网络条件下出现，并非所有装过 11 月热补丁的服务器都会停机；但一旦触发，表现就是整机停止，而不是一条可以忽略的日志。因此，走热补丁通道的管理员应把这次带外更新视为优先项，而不是等到下一次定期补丁再处理。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：微软支持页和《注册》都确认，KB5138318 用于修复 KB5131077 之后、在启用路由器通告并收到有时限 IPv6 路由时可能出现的 0x139 停止错误；更新于 11 月 25 日发布，安装后无需重启。</li>
+<li>范围需按官方页面理解：支持页写明适用于 Windows Server 2025 Datacenter: Azure Edition 热补丁通道，并列出基准更新和服务堆栈更新前提。《注册》行文较笼统地写作 Windows Server 2025，本期以官方适用范围为准。</li>
+<li>未说明：微软尚未解释导致数据结构被破坏的具体代码缺陷；也未公布受影响设备数量。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://support.microsoft.com/en-us/servicing/os/hotpatch/windows-server-2025/2026/kb5138318-windows-server-2025-security-update" target="_blank" rel="noopener">Microsoft</a><span class="role">官方</span></li>
+        <li><a href="https://www.theregister.com/os-platforms/2026/11/26/microsoft-hotpatches-hotpatch-that-could-crash-windows-server-2025/5312301" target="_blank" rel="noopener">The Register</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>

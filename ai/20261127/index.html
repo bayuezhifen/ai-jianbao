@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IT 行业简报 · 2026-11-27 08:20</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 40rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  header { margin-bottom: 1.25rem; }
+  .when {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: .45rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  h1 {
+    font-size: 1.7rem;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+    margin: 0;
+  }
+  .sec {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: .75rem;
+    margin: 1.6rem 0 .7rem;
+  }
+  .sec h2 {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    margin: 0;
+    color: var(--muted);
+  }
+  .badge {
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .5rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .badge.warn { background: #ffedd5; color: var(--accent); }
+  .badge.ok { background: #ecfccb; color: var(--ok); }
+  .card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1rem 1.05rem 1.05rem;
+    box-shadow: var(--shadow);
+    margin: 0 0 .7rem;
+  }
+  .card h3 {
+    font-size: 1.05rem;
+    line-height: 1.4;
+    margin: 0 0 .4rem;
+  }
+  .card p {
+    margin: 0;
+    color: #3f3a36;
+    font-size: .95rem;
+  }
+  .src {
+    display: inline-flex;
+    align-items: center;
+    gap: .25rem;
+    margin-top: .7rem;
+    font-size: .8rem;
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .src:hover { text-decoration: underline; }
+  .src::after { content: "↗"; font-size: .75em; opacity: .7; }
+  /* Detail pages: card title + .src.detail → d/NN-slug.html (no external arrow) */
+  .src.detail::after { content: "→"; font-size: .75em; opacity: .7; }
+  .card h3 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  .card h3 a:hover { color: var(--accent); }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="when">
+        <span>2026-11-27</span>
+        <span class="dot"></span>
+        <span>周五 08:20</span>
+        <span class="dot"></span>
+        <span>上海</span>
+      </div>
+      <h1>IT 行业简报</h1>
+    </header>
+
+    <div class="sec"><h2>行业</h2></div>
+    <article class="card">
+      <h3><a href="d/01-nvidia-halts-ai-server-shipments-southeast-asia.html">英伟达暂停向马来西亚、新加坡、泰国和印度尼西亚交付搭载其芯片的服务器</a></h3>
+      <p>《金融时报》11 月 26 日引述知情人士报道，英伟达已要求戴尔、超微电脑等制造合作伙伴，停止向上述四国发运服务器。此事正值美国收紧出口管制，旨在堵住经第三国数据中心远程调用先进芯片的路径。英伟达当时未就此置评，停运会持续多久也还不清楚。</p>
+      <a class="src detail" href="d/01-nvidia-halts-ai-server-shipments-southeast-asia.html" data-original="https://www.ft.com/content/7838a715-07d4-4605-aa60-21f5af2b2370">阅读详情</a>
+    </article>
+
+    <div class="sec"><h2>OpenAI</h2></div>
+    <article class="card">
+      <h3><a href="d/02-openai-gpt-62-usage-billing-fix.html">OpenAI 称 GPT-6.2 用量曾被少计，修正后 Astra 会提早约四成触顶</a></h3>
+      <p>OpenAI 工程师 Tibo 11 月 26 日在 X 上说，GPT-6.2 发布时误给 Astra 和 Sol 算了过低用量，现已纠正。与上周相比，同样工作在 Astra 上会提早约 40%、在 Sol 上提早约 25% 触及限额。公司表示不会追收此前差额，并向部分付费用户各补一次已存储的用量重置。昨午简报未收录，本期补上。</p>
+      <a class="src detail" href="d/02-openai-gpt-62-usage-billing-fix.html" data-original="https://x.com/thsottiaux/status/2125784147889393806">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>Claude / Anthropic</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Anthropic 把 Messages API 迁到 Rust，见昨晨报；Artifacts「安装为应用」见前日午报。</p>
+    </article>
+
+    <div class="sec">
+      <h2>英伟达 / NVIDIA</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>暂停向东南亚四国交付服务器，见本期行业栏。标普将其列入负面信用观察、铠侠合作用 SSD 扩展 GPU 显存，见昨午报。</p>
+    </article>
+
+    <div class="sec"><h2>Grok / xAI</h2></div>
+    <article class="card">
+      <h3><a href="d/03-grok-bot-usage-optimization.html">Grok Bot 称套餐用量约增 11%，例行任务最多可多出约五成</a></h3>
+      <p>Grok Bot 团队成员 Sam Sokolin 11 月 26 日在 X 上说，经过近期优化，用户套餐用量大约多出 11%，例行任务最多可多出约 50%。他解释，这是因为在简单、重复的步骤上减少了不必经过模型的调用。马斯克随后转发了这条说明。</p>
+      <a class="src detail" href="d/03-grok-bot-usage-optimization.html" data-original="https://x.com/SamSokolin/status/2126027973568466949">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>Cursor</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>官方更新说明最新仍为 11 月 6 日的 Voice Chat with Agents。</p>
+    </article>
+
+    <div class="sec">
+      <h2>CPU / 服务器</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口无新的主条。</p>
+    </article>
+
+    <div class="sec">
+      <h2>手机与端侧 SoC</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为 Mate X8 搭载麒麟 9050 Pro，见前报。</p>
+    </article>
+
+    <div class="sec"><h2>存储与网络硬件</h2></div>
+    <article class="card">
+      <h3><a href="d/04-samsung-500-layer-nand-isscc.html">三星开发出 500 层级 NAND，计划明年商品化并在 ISSCC 发表</a></h3>
+      <p>韩国《首尔经济》11 月 26 日援引业界消息称，三星已开发出超过 500 层的 NAND，单芯片容量约 1.5 Tb，并计划于 2027 年 2 月在 ISSCC 发表，商品化目标为明年。这不是三星官方新闻稿。昨晨与昨午简报均未收录，本期补上。</p>
+      <a class="src detail" href="d/04-samsung-500-layer-nand-isscc.html" data-original="https://en.sedaily.com/business/2026/11/26/samsung-develops-worlds-first-500-layer-nand-flash">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>群晖 / Synology</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>NGINX2Root 与 DSM OAuth 严重通告及 BeeStation 修复版本，见昨午报。本窗口中英文安全通告列表无更新，最新条目时间仍为 11 月 26 日 12:03。</p>
+    </article>
+
+    <div class="sec"><h2>操作系统与桌面</h2></div>
+    <article class="card">
+      <h3><a href="d/05-windows-server-2025-kb5138318-ipv6-hotpatch.html">微软为 Windows Server 2025 再发不重启热补丁，修复会致系统停止的 IPv6 路由故障</a></h3>
+      <p>微软 11 月 25 日发布带外热补丁 KB5138318，修复 11 月安全热补丁 KB5131077 引入的问题：在启用路由器通告并收到有时限 IPv6 路由的 Windows Server 2025 上，路由计时到期时可能出现 0x139 停止错误。官方写明适用于 Azure Edition 热补丁通道，安装后无需重启。</p>
+      <a class="src detail" href="d/05-windows-server-2025-kb5138318-ipv6-hotpatch.html" data-original="https://support.microsoft.com/en-us/servicing/os/hotpatch/windows-server-2025/2026/kb5138318-windows-server-2025-security-update">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>语言 / 运行时 / 框架</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口无新的主条。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开源治理与许可证</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>本窗口无新的主条。</p>
+    </article>
+
+    <div class="sec">
+      <h2>开发者工具</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>JetBrains 推出 Go by GoLand 公开预览，见昨晨报。</p>
+    </article>
+
+    <div class="sec"><h2>漏洞与勒索</h2></div>
+    <article class="card">
+      <h3><a href="d/06-drupal-cve-2026-136716-installer-bypass.html">Drupal 称上周安装程序补丁仍留缺口，新的高危漏洞已遭利用</a></h3>
+      <p>Drupal 11 月 25 日发布 SA-CORE-2026-019，编号 CVE-2026-136716。通告写明，上周修补安装程序漏洞后，仍处于异常或未完成安装状态的站点（含生产环境）可能被接管，且界面上不易察觉。Drupal 确认该漏洞已在野外被利用，并要求升级后运行 update.php。</p>
+      <a class="src detail" href="d/06-drupal-cve-2026-136716-installer-bypass.html" data-original="https://www.drupal.org/sa-core-2026-019">阅读详情</a>
+    </article>
+    <article class="card">
+      <h3><a href="d/07-microsoft-artex-ai-pentest-framework-abuse.html">微软：中国与朝鲜相关黑客正把 ARTEX 人工智能渗透框架用于实战</a></h3>
+      <p>微软威胁情报 11 月 25 日发文指出，2026 年 7 月公开的开源人工智能渗透测试框架 ARTEX，已被用于自动完成侦察、凭证攻击和漏洞利用。《注册》11 月 26 日报道了这份研究。微软点名盐台风、晶台风以及朝鲜相关的 Onyx Sleet、Pearl Sleet 等已将其纳入工具链。</p>
+      <a class="src detail" href="d/07-microsoft-artex-ai-pentest-framework-abuse.html" data-original="https://www.microsoft.com/en-us/security/blog/2026/11/25/what-defenders-need-to-know-artex-agentic-ai-framework-threat-actors-abuse/">阅读详情</a>
+    </article>
+
+    <div class="sec">
+      <h2>身份与访问</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>Inception 勒索组织针对 SSO 凭证开展大规模语音钓鱼，见前报。</p>
+    </article>
+
+    <div class="sec">
+      <h2>隐私与监管</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>英伟达所涉美国出口新规，见本期行业栏。商务部继续暂停对美出口镓锗锑等两用物项原则上不予许可的条款，见前报。</p>
+    </article>
+
+    <div class="sec">
+      <h2>消费电子</h2>
+      <span class="badge">这窗口无新产品/无新进展</span>
+    </div>
+    <article class="card">
+      <h3>这窗口无新产品/无新进展</h3>
+      <p>华为发布 Mate X8、Mate 90 Air 与 WATCH Air，见前报。</p>
+    </article>
+
+    <div class="sec"><h2>大厂平台政策</h2></div>
+    <article class="card">
+      <h3><a href="d/08-google-play-trader-address-worldwide.html">谷歌将从明年 3 月起在全球公开展示交易者开发者的地址和电话</a></h3>
+      <p>《Verge》11 月 26 日报道，为满足欧盟《数字服务法》，Google Play 要求开发者在 2027 年 2 月 1 日前申报是否属于交易者；一旦确认，将从 3 月 1 日起向全球用户展示电话和地址，且不接受邮政信箱。苹果面对同一法规，只在相关欧洲国家展示地址，并允许在提供证明后使用邮政信箱。</p>
+      <a class="src detail" href="d/08-google-play-trader-address-worldwide.html" data-original="https://www.theverge.com/tech/1043228/android-play-store-google-developer-address-eu">阅读详情</a>
+    </article>
+
+    <footer>IT 行业简报 · 2026-11-27 08:20 上海 · 归档 2026-11-27-0820</footer>
+  </div>
+</body>
+</html>

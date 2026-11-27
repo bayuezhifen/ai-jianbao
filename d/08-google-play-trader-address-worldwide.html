@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>谷歌将从明年 3 月起在全球公开展示交易者开发者的地址和电话 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">大厂平台政策</div>
+    <h1>谷歌将从明年 3 月起在全球公开展示交易者开发者的地址和电话</h1>
+    <p class="lede">《Verge》11 月 26 日报道，为满足欧盟《数字服务法》，Google Play 要求开发者在 2027 年 2 月 1 日前申报是否属于交易者；一旦确认，将从 3 月 1 日起向全球用户展示电话和地址，且不接受邮政信箱。苹果面对同一法规，只在相关欧洲国家展示地址，并允许在提供证明后使用邮政信箱。</p>
+    <div class="meta">
+      <span>2026-11-27</span>
+      <span class="dot"></span>
+      <span>大厂平台政策</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>《Verge》11 月 26 日报道，谷歌宣布将调整 Google Play 上的开发者信息公开方式。为落实欧盟《数字服务法》以及英国的相应要求，开发者须在 2027 年 2 月 1 日前申报自己是否属于「交易者」。谷歌的大致标准是：如果应用会持续或较大量地带来收入，通常就应申报为交易者；若应用只是爱好、非商业用途，或不在英国和欧洲发布，则可免除。一经确认为交易者，电话号码和地址将从 2027 年 3 月 1 日起向用户公开展示，而且是面向全球，不只是欧洲。</p>
+<p>独立开发者最担心的是住址暴露。谷歌在支付资料里不接受邮政信箱作为地址，这意味着许多没有单独办公场所的个人开发者，要么把家庭住址公开到商店页面，要么去租用注册代理或其他商务地址服务。《Verge》引述《电子报》的采访说，已有开发者在考虑专门为此租一间私人办公室。报道还写明，编辑部已向谷歌询问：为何不允许公示邮政信箱，以及为何要把联系方式展示到全球，待收到回复后再补充。</p>
+<p>苹果受到同一套法规约束，但做法不同。它只在相关的欧洲国家展示开发者地址，而不是向全世界公开；同时也允许开发者提供邮政信箱，前提是向苹果提交能把该信箱与常用地址对应起来的收据或账单。对个人开发者来说，这在公示范围和地址形式上，都比谷歌目前的方案留出了更多余地。</p>
+<p>这件事的核心不是应用商店突然改了审核口味，而是欧洲对「交易者」信息披露的要求，被谷歌做成了全球统一展示。商店希望用户能找到应用的经营者，但个人开发者的家庭地址一旦公开，可能带来骚扰甚至人身风险。开发者需要在明年 2 月 1 日的申报截止日前，想好自己是否属于交易者、以及用什么地址来满足公示要求。谷歌帮助文档对交易者申报另有说明，具体以 Play 管理中心的正式规则为准。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>多方一致：《Verge》与谷歌 Play 帮助文档都提到交易者申报及在商店展示联系方式；时间点为 2027 年 2 月 1 日前申报、3 月 1 日起公示。苹果开发者文档也写明，其《数字服务法》交易者信息主要在相关欧洲国家展示，并可在提供证明后使用邮政信箱。</li>
+<li>分歧在执行：谷歌将把电话和地址展示给全球用户，且支付资料地址不接受邮政信箱；苹果将展示范围限制在相关欧洲国家，并允许符合条件的邮政信箱。这是同一法规下的不同产品策略，不是两家对法规条文本身有不同解读那么简单。</li>
+<li>待更新：谷歌尚未在《Verge》后续更新中公开解释「为何全球展示」和「为何不接受邮政信箱」；个人开发者实际风险因国家而异，本期不作推断。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.theverge.com/tech/1043228/android-play-store-google-developer-address-eu" target="_blank" rel="noopener">The Verge</a><span class="role">主来源</span></li>
+        <li><a href="https://support.google.com/googleplay/android-developer/answer/17594752?hl=en" target="_blank" rel="noopener">Google Play Console Help</a><span class="role">官方</span></li>
+        <li><a href="https://developer.apple.com/help/app-store-connect/manage-compliance-information/manage-european-union-digital-services-act-trader-requirements/" target="_blank" rel="noopener">Apple Developer</a><span class="role">官方</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
