@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CISA 将 GeoServer 两处漏洞和 Drupal 安装程序漏洞列入已知被利用目录 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">漏洞与勒索</div>
+    <h1>CISA 将 GeoServer 两处漏洞和 Drupal 安装程序漏洞列入已知被利用目录</h1>
+    <p class="lede">美国网络与基础设施安全局 11 月 27 日把三处漏洞列入已知被利用目录：GeoServer 的 CVE-2026-120705、CVE-2026-129243，以及 Drupal 的 CVE-2026-136716。加拿大网络中心同日更新通告，确认前两处已有实际利用报告。</p>
+    <div class="meta">
+      <span>2026-11-28</span>
+      <span class="dot"></span>
+      <span>漏洞与勒索</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>CISA 在 11 月 27 日的警报中说，已根据实际利用证据，把三处漏洞加入已知被利用目录（KEV）：OSGeo GeoServer 的 XML 注入漏洞 CVE-2026-120705、授权校验不当漏洞 CVE-2026-129243，以及 Drupal 核心的 CVE-2026-136716。该局提醒联邦民用行政机构按 BOD 26-04 优先修复目录中的高风险漏洞，并建议其他机构也把这些条目纳入补丁优先级。Drupal 这一处，昨晨简报已报道项目方称安装程序补丁仍有缺口、新的高危漏洞已遭利用；本期新进展是它被正式列入 KEV。</p>
+<p>GeoServer 是开源地理空间基金会的地图发布软件，常见于公共停电图、管网资产图和现场作业图层。项目组在 11 月 23 日的安全说明中写到，CVE-2026-120705 是未经身份验证即可利用的 WFS GetFeatureById XML 注入，CVE-2026-129243 则是用带前缀的服务名（例如 x/WFS）绕过服务安全规则，两处均为高危。官方建议升到 GeoServer 3.0.2、2.28.6 或 2.27.7。这两处修复已包含在 10 月的版本里，详细编号是在 CVE 分配完成后才公布的。</p>
+<p>加拿大网络网络安全中心 11 月 25 日已发通告，并在 11 月 27 日更新：公开报道显示上述两处 GeoServer 漏洞已被利用，且 CISA 已把它们列入 KEV。安全公司 Red Tiger 同日的说明还提到，香港政府计算机安全事故协调中心发出高威胁警报，比利时网络安全中心也警告存在利用。CISA 条目写明，这两处还可能与路径泄露、可预测的「记住我」密钥以及管理员代码执行等其他漏洞组合使用。项目方建议不要只改密钥，因为同一类文件读取仍可能把新密钥暴露出来。目前没有机构公布攻击者是谁、影响了多少台服务器，也没有把这两处与特定勒索活动直接挂钩。</p>
+<p>对仍在使用旧版本的单位来说，眼下能做的是尽快升到上述修复版，或把已停止维护的版本迁到仍在支持的分支，并限制地图服务对公网的暴露。Red Tiger 转述 CISA 条目称，联邦民用机构须在 11 月 30 日前完成修复；该文还提到，香港政府计算机安全事故协调中心列出 GeoServer 所依赖的 GeoTools 库在 35.2、34.6、33.7 之前的版本同样受影响，这对直接使用 GeoTools 的产品也有意义。KEV 本身不是新的漏洞发现，而是把「已被用于实战」这一状态正式记录下来，补丁窗口因此更紧。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：CISA 警报、加拿大网络中心 11 月 27 日更新，以及 GeoServer 11 月 23 日说明，在两个编号、修复版本（3.0.2 / 2.28.6 / 2.27.7）和「已有实际利用报告」这一点上相符。</li>
+<li>补充：Red Tiger 转述了 CVSS 分值、WFS 注入与服务名前缀绕过的公开描述，以及香港、比利时同日的警示；Drupal CVE-2026-136716 的利用情况见昨晨报，本期只记录它被列入 KEV。</li>
+<li>待确认：利用规模、攻击者身份，以及这些漏洞是否已被用于勒索，公开材料均未说明。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://www.cisa.gov/news-events/alerts/2026/11/27/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a><span class="role">官方</span></li>
+        <li><a href="https://geoserver.org/vulnerability/2026/11/23/cve-update.html" target="_blank" rel="noopener">GeoServer</a><span class="role">官方</span></li>
+        <li><a href="https://www.cyber.gc.ca/en/alerts-advisories/geoserver-security-advisory-av26-1207" target="_blank" rel="noopener">Canadian Centre for Cyber Security</a><span class="role">次要</span></li>
+        <li><a href="https://www.redtigersecurity.com/advisory/geoserver-kev-cve-2026-120705-129243" target="_blank" rel="noopener">Red Tiger Security</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
