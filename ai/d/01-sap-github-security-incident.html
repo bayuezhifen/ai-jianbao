@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SAP 确认出现可疑活动，德媒称其 GitHub 开发环境遭入侵 · IT 行业简报</title>
+<style>
+  :root {
+    color-scheme: light;
+    --bg: #f3f1ec;
+    --paper: #fffcf7;
+    --ink: #1a1916;
+    --muted: #6b6560;
+    --line: #ece7de;
+    --chip: #f4eee4;
+    --accent: #c2410c;
+    --ok: #3f6212;
+    --quiet: #78716c;
+    --link: #1d4ed8;
+    --shadow: 0 1px 2px rgba(28,25,23,.04), 0 8px 24px rgba(28,25,23,.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background:
+      radial-gradient(1200px 400px at 50% -80px, #fde68a33, transparent),
+      var(--bg);
+    color: var(--ink);
+    font: 16px/1.7 "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Source Han Sans SC", ui-sans-serif, system-ui, sans-serif;
+  }
+  .wrap {
+    max-width: 42rem;
+    margin: 0 auto;
+    padding: 2rem 1rem 3.5rem;
+  }
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .back:hover { color: var(--accent); }
+  .sec-label {
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .12em;
+    color: var(--muted);
+    margin: 0 0 .55rem;
+  }
+  h1 {
+    font-size: 1.55rem;
+    letter-spacing: -.02em;
+    line-height: 1.3;
+    margin: 0 0 .55rem;
+  }
+  .lede {
+    margin: 0 0 .85rem;
+    color: #3f3a36;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    font-weight: 450;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem .6rem;
+    align-items: center;
+    color: var(--muted);
+    font-size: .86rem;
+    margin-bottom: 1.1rem;
+  }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: #d6d3d1; }
+  .badge-gap {
+    display: inline-flex;
+    align-items: center;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .15rem .55rem;
+    border-radius: 999px;
+    background: #ffedd5;
+    color: var(--accent);
+  }
+  .paper {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 1.25rem 1.2rem 1.35rem;
+    box-shadow: var(--shadow);
+  }
+  .body {
+    color: #3f3a36;
+    font-size: 1.02rem;
+    line-height: 1.85;
+  }
+  .body p { margin: 0 0 1rem; }
+  .body p:last-child { margin-bottom: 0; }
+  .cross-check {
+    margin-top: 1.35rem;
+    padding: 1rem 1.05rem;
+    background: #faf7f2;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+  }
+  .cross-check h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .cross-check ul {
+    margin: 0;
+    padding-left: 1.15rem;
+    color: #3f3a36;
+    font-size: .92rem;
+    line-height: 1.7;
+  }
+  .cross-check li { margin: 0 0 .35rem; }
+  .cross-check li:last-child { margin-bottom: 0; }
+  .sources {
+    margin-top: 1.35rem;
+  }
+  .sources h2 {
+    margin: 0 0 .55rem;
+    font-size: .78rem;
+    font-weight: 650;
+    letter-spacing: .1em;
+    color: var(--muted);
+  }
+  .sources ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sources li {
+    margin: 0 0 .45rem;
+    font-size: .9rem;
+  }
+  .sources a {
+    color: var(--link);
+    text-decoration: none;
+    font-weight: 550;
+  }
+  .sources a:hover { text-decoration: underline; }
+  .sources a::after { content: "↗"; font-size: .75em; opacity: .7; margin-left: .2rem; }
+  .sources .role {
+    margin-left: .4rem;
+    font-size: .72rem;
+    font-weight: 600;
+    padding: .1rem .4rem;
+    border-radius: 999px;
+    background: var(--chip);
+    color: var(--quiet);
+  }
+  .note {
+    margin-top: 1.5rem;
+    color: var(--quiet);
+    font-size: .78rem;
+    line-height: 1.55;
+  }
+  footer {
+    margin-top: 1.75rem;
+    color: var(--quiet);
+    font-size: .78rem;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="../">← 返回本期简报</a>
+    <div class="sec-label">行业</div>
+    <h1>SAP 确认出现可疑活动，德媒称其 GitHub 开发环境遭入侵</h1>
+    <p class="lede">SAP 周五向多家媒体确认，已发现可疑活动并采取防护措施，目前调查尚未发现客户业务数据被未授权访问。德国《明镜》周刊此前报道，攻击者利用员工认证令牌进入其 GitHub 环境，复制并改动了源代码。SAP 没有证实这些细节。</p>
+    <div class="meta">
+      <span>2026-11-28</span>
+      <span class="dot"></span>
+      <span>行业</span>
+      
+    </div>
+    <div class="paper">
+      <div class="body"><p>德国企业软件公司 SAP 周五分别向《记录报》和 BleepingComputer 确认，公司已发现可疑活动，并立即采取必要措施，以保护客户并维护服务安全。发言人说：「根据目前调查，我们没有发现客户业务数据遭到未授权访问。」这句话只覆盖「到目前为止的调查结果」，并不等于事件已经查清或已经结束。SAP 没有说明可疑活动发生在哪一类系统里，也没有告诉从 GitHub 仓库取代码、或间接受这些仓库影响的客户，是否需要采取额外动作。BleepingComputer 追问后，发言人拒绝再谈细节。</p>
+<p>更具体的入侵经过，目前主要来自德国媒体，而不是 SAP 自己的公告。《明镜》周刊周四率先报道，攻击者进入了 SAP 托管在 GitHub 上的软件开发环境，可能借助员工认证令牌复制并改动了源代码；报道还提到，攻击过程中或许使用了人工智能工具。德国新闻社（dpa）在独立查阅部分内部通报后写道，公司在事件公开数日前，就已经提醒员工留意 GitHub 环境中的异常，并建议他们评估是否需要更换登录凭据。《记录报》转述《商报》的报道称，SAP 内部把应急响应称作「Project Granite」，紧急措施包括限制 GitHub 访问、暂停自动化开发流程，以及更换用于核验软件真伪的数字密钥。这些说法都还没有得到 SAP 公开确认，不能当成已经定论的技术结论。</p>
+<p>眼下最关键、也最不清楚的一点是：即便源代码曾被复制或改动，改动后的代码有没有进入交付给客户的软件。SAP 没有点名受影响的仓库，也没有公布攻击者身份、入侵途径，以及事件是否已经完全控制。专注 SAP 环境安全的 Onapsis 告诉 Cybersecurity Dive，它正密切跟踪事态，并建议客户只从官方渠道获取 SAP 软件，通过 SAP 渠道核验签名，留意官方是否更换签名密钥或证书；同时把相关库和构建工具固定在稳定版本上，不要让持续集成工具在缺少人工复核的情况下自动更新，必要时暂停 Dependabot、Renovate 一类自动升级，改为人工审看。</p>
+<p>《记录报》还提到，今年 4 月曾有攻击者向 SAP 参与开发的若干开源软件包注入恶意代码，试图从开发者和自动化环境里窃取信息。目前没有公开证据表明两起事件有关，不宜直接串在一起讲。德国联邦信息安全办公室（BSI）前一天刚就智能体人工智能被用于攻击发出警告，BleepingComputer 在同一篇报道里写到了这件事，但 SAP 并未把本次可疑活动归因于这类工具。今晨简报未收录这条，午报补上。</p></div>
+    </div>
+    <div class="cross-check">
+      <h2>交叉核对</h2>
+      <ul>
+<li>一致：SAP 周五向《记录报》、BleepingComputer 和 Cybersecurity Dive 给出的口径相同，都是已发现可疑活动、已采取措施，以及目前未发现客户业务数据被未授权访问。</li>
+<li>未获官方证实：GitHub 环境、员工令牌、源代码被复制或改动、Project Granite、限制 GitHub 访问、暂停自动化流程和更换签名密钥，均来自《明镜》周刊、dpa 或《商报》等报道，SAP 没有在公开声明里逐项确认。</li>
+<li>待确认：改动后的代码是否进入客户软件、受影响仓库范围、攻击者身份和入侵是否已经完全控制，目前都没有官方说明。与 4 月开源包投毒是否有关，现有报道也写明尚不清楚。</li>
+</ul>
+    </div>
+    <div class="sources">
+      <h2>参考来源</h2>
+      <ul>
+        <li><a href="https://therecord.media/sap-germany-cyberattack-github" target="_blank" rel="noopener">The Record</a><span class="role">主来源</span></li>
+        <li><a href="https://www.bleepingcomputer.com/news/security/sap-confirms-security-incident-after-suspicious-github-activity/" target="_blank" rel="noopener">BleepingComputer</a><span class="role">官方</span></li>
+        <li><a href="https://www.cybersecuritydive.com/news/sap-investigates-attack-source-code/875820/" target="_blank" rel="noopener">Cybersecurity Dive</a><span class="role">次要</span></li>
+      </ul>
+    </div>
+    <p class="note">本页为搜打撤原创整理报道，基于公开多方信息交叉核对；非原文转载。</p>
+    <footer>搜打撤 · IT 行业简报</footer>
+  </div>
+</body>
+</html>
